@@ -3196,7 +3196,7 @@
       "crew": "G.U.N. pilot",
       "form": "B3 laser-cannon mech",
       "qualities": "Pilot-operated hover mech. Flight uses normal Move; GM tracks altitude and attack pattern.",
-      "bio": "Original STTH by McShmoodle. Community homebrew B3 Bigfoot laser-cannon variant, using supplied artwork and user-specified armament. 65 HP, Dodge 3, movement 4. Assign a pilot Actor UUID; weapons use that pilot. Laser cannon replaces the homing missile launcher; no missile attack or homing bonus. Hover flight uses normal movement with GM adjudication. One shared HP pool; no component targeting automation. Suggested complete value 9200 Mobiums; resale 4600, homebrew estimates."
+      "bio": "Original STTH by McShmoodle. Community homebrew B3 Bigfoot laser-cannon variant, using supplied artwork and user-specified armament. 65 HP, Dodge 3, movement 4. Assign a pilot Actor UUID; weapons use that pilot. Carries both a laser cannon and homing missile launchers. Homing missiles gain +1 Advantage and require three Interacts to recharge; laser cannon requires one Interact. Hover flight uses normal movement with GM adjudication. One shared HP pool; no component targeting automation. Suggested complete value 10100 Mobiums; resale 5050, homebrew estimates."
     },
     "items": [
       {
@@ -3229,6 +3229,28 @@
           "price": 1100,
           "description": "Pilot-operated laser cannon. One target within 8 squares; Ranged versus Dodge using normal attack rules. Requires one Interact recharge after firing. No homing bonus, automatic piercing, area damage or status.",
           "source": "Community homebrew — user-specified B3 laser loadout; untested"
+        }
+      },
+      {
+        "name": "Homing Missile Salvo",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 7,
+          "description": "+1 Advantage; three Interacts to recharge.",
+          "advantage": 1,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion",
+          "price": 900
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-b3-bigfoot.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "rosterAddition": "b3-homing-missiles"
+          }
         }
       },
       {
