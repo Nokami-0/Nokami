@@ -1,3 +1,7 @@
+# 2.0.22
+
+- Add supplied Flying Dog token art and a vehicle-sheet version retaining machine guns, homing missiles and flight encounter traits. Preserve original NPC version.
+
 # 2.0.21
 
 - Correct B3 Bigfoot armament: keep the laser cannon and restore Homing Missile Salvo. Repair Library adds missiles to already imported B3 compendium entries without resetting stats.

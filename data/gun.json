@@ -2564,7 +2564,7 @@
   {
     "name": "R-1/A Flying Dog",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png",
     "system": {
       "attributes": {
         "speed": 5,
@@ -2695,12 +2695,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "R-1/A Flying Dog",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.22"
       }
     }
   },
@@ -3319,6 +3323,140 @@
         "gunKey": "B3 Bigfoot — Vehicle",
         "homebrew": true,
         "communityRosterVersion": "2.0.19"
+      }
+    }
+  },
+  {
+    "name": "R-1/A Flying Dog — Vehicle",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png",
+    "system": {
+      "speed": 5,
+      "power": 5,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 70,
+        "max": 70
+      },
+      "dodge": 4,
+      "movement": 8,
+      "critThreshold": 3,
+      "passengers": 1,
+      "width": 2,
+      "length": 2,
+      "pilot": "",
+      "crew": "G.U.N. pilot",
+      "form": "Hover combat craft",
+      "qualities": "Pilot-operated flying craft; uses normal Move for flight. No walking legs or landing attack.",
+      "bio": "Original STTH by McShmoodle. Community homebrew Flying Dog vehicle conversion; not official rulebook stats. Assign a pilot Actor UUID. Machine guns and homing missiles use the pilot’s Ranged skill. Flight altitude, attack pattern and cockpit exposure require GM adjudication. One HP pool; no automatic component targeting. No additional damage reduction. Suggested complete value 9500 Mobiums; resale 4750, homebrew estimates."
+    },
+    "items": [
+      {
+        "name": "Machine-Gun Sweep",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "aoe": "3x3",
+          "source": "Homebrew STTH conversion",
+          "price": 700,
+          "notes": "Homebrew weapon valuation in Mobiums. Suggested resale is half the listed price. Integrated vehicle mount."
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      },
+      {
+        "name": "Homing Missile Salvo",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 7,
+          "description": "+1 Advantage; three Interacts to recharge.",
+          "advantage": 1,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion",
+          "price": 900,
+          "notes": "Homebrew weapon valuation in Mobiums. Suggested resale is half the listed price. Integrated vehicle mount."
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      },
+      {
+        "name": "Pilot Operated",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Assign a pilot Actor UUID on the vehicle sheet before vehicle actions and weapon rolls.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      },
+      {
+        "name": "Attack Pattern",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Never lands. Attack the cockpit from elevated positions, flight or ranged fire.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      },
+      {
+        "name": "Cockpit Weak Point",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Targeting the cockpit in an exposed window gains +1 Advantage. Attacks on other parts suffer +1 Disadvantage. Bonuses/penalties are homebrew STTH balance values.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      }
+    ],
+    "prototypeToken": {
+      "name": "R-1/A Flying Dog — Vehicle",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "R-1/A Flying Dog — Vehicle",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.22"
       }
     }
   }
