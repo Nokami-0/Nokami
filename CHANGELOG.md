@@ -1,3 +1,7 @@
+# 2.0.29
+
+- Apply uploaded Gun Beetle artwork to the existing flying NPC and its items, preserving stats and Pod Gun.
+
 # 2.0.28
 
 - Add Blue Eagle vehicle version with supplied jet art and existing missile/flight profile. Preserve original NPC template.

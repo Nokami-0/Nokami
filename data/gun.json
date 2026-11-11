@@ -977,7 +977,7 @@
   {
     "name": "Gun Beetle",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-beetle.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -1024,7 +1024,8 @@
           "range": 5,
           "description": "",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-beetle.png"
       },
       {
         "name": "Can Fly",
@@ -1033,7 +1034,8 @@
           "slots": 0,
           "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-beetle.png"
       },
       {
         "name": "Suffocation Immunity",
@@ -1045,7 +1047,8 @@
           "modifierTarget": "suffocating",
           "modifierValue": 1,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-beetle.png"
       }
     ],
     "prototypeToken": {
@@ -1058,12 +1061,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-beetle.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Gun Beetle",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.29"
       }
     }
   },
