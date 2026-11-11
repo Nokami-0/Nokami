@@ -2967,5 +2967,60 @@
         "gunKey": "G.U.N. Police Car"
       }
     }
+  },
+  {
+    "name": "G.U.N. Mad Convoy",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-mad-convoy.png",
+    "prototypeToken": {
+      "name": "G.U.N. Mad Convoy",
+      "actorLink": false,
+      "width": 2,
+      "height": 3,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-mad-convoy.png"
+      },
+      "bar1": {
+        "attribute": "hp"
+      }
+    },
+    "system": {
+      "speed": 3,
+      "power": 5,
+      "dexterityModifier": -2,
+      "hp": {
+        "value": 60,
+        "max": 60
+      },
+      "dodge": 1,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 2,
+      "width": 2,
+      "length": 4,
+      "pilot": "",
+      "crew": "Driver and co-driver; cargo compartment",
+      "qualities": "Heavy road cargo truck. Two cab occupants including driver. Cargo capacity is scenario-defined; no mounted weapons or automatic armor reduction.",
+      "form": "Heavy transport truck",
+      "bio": "Original STTH by McShmoodle. Community homebrew G.U.N. Mad Convoy transport profile using supplied artwork; not official STTH statistics. Assign a pilot Actor UUID before driving actions. Two cab occupants including the driver. Cargo bay holds equipment or scenario cargo; no measured tonnage or passenger conversion is assumed. Use standard vehicle Ram (Speed + Power = 8 base damage), not a free attack. Shares one HP pool; cab and cargo box are not separate damageable parts. No flight or mounted guns. Suggested complete vehicle value 3500 Mobiums; resale 1750 Mobiums, homebrew estimates excluding cargo."
+    },
+    "items": [
+      {
+        "name": "Cargo Compartment",
+        "type": "vehicleUpgrade",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-mad-convoy.png",
+        "system": {
+          "slots": 0,
+          "equipped": true,
+          "description": "Enclosed equipment and cargo storage. GM determines reasonable load for the scene. Cargo does not grant extra attacks, crew actions, armor, or passenger seats.",
+          "source": "Community homebrew — G.U.N. Mad Convoy"
+        }
+      }
+    ],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Mad Convoy"
+      }
+    }
   }
 ]

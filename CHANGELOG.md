@@ -1,3 +1,7 @@
+# 2.0.18
+
+- Add G.U.N. Mad Convoy cargo vehicle with supplied token, driver/co-driver capacity and homebrew transport stats and value.
+
 # 2.0.17
 
 - Add G.U.N. Police Car vehicle with supplied artwork, driving stats, four-person capacity and emergency lights/siren. No mounted weapons; standard vehicle Ram action remains available.
