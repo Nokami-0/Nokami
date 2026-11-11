@@ -6221,5 +6221,50 @@
         "communityRosterVersion": "2.0.37-biolizard-phase-2"
       }
     }
+  },
+  {
+    "name": "G.U.N. HUMV",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-humv.svg",
+    "system": {
+      "speed": 3,
+      "power": 3,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 30,
+        "max": 30
+      },
+      "dodge": 1,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 4,
+      "width": 1,
+      "length": 2,
+      "qualities": "Ground vehicle; driver-operated.",
+      "bio": "Original STTH by McShmoodle. Provisional community G.U.N. HUMV using the existing Car/Truck transport template: 30 HP, Speed 3, Power 3, Dodge 1, movement 4, critical threshold 2. Capacity 4 is a homebrew configuration. Assign a driver Actor UUID before vehicle actions. No mounted weapon, flight or passive damage reduction is assigned. Token footprint 1×2 is provisional; adjust to scene scale.",
+      "form": "Four-wheeled military utility vehicle",
+      "pilot": "",
+      "crew": "G.U.N. driver"
+    },
+    "items": [],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. HUMV",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-humv"
+      }
+    },
+    "prototypeToken": {
+      "name": "G.U.N. HUMV",
+      "actorLink": false,
+      "width": 1,
+      "height": 2,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-humv.svg"
+      },
+      "bar1": {
+        "attribute": "hp"
+      }
+    }
   }
 ]
