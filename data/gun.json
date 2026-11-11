@@ -4784,5 +4784,97 @@
         "communityRosterVersion": "2.0.37-blue-falcon-pulse"
       }
     }
+  },
+  {
+    "name": "G.U.N. Hot Shot Pilot",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-hot-shot-pilot.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 2,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 2
+      },
+      "skills": {
+        "ride": 3,
+        "ranged": 2,
+        "perceive": 2,
+        "tech": 1
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 1,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Sub-Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Original STTH by McShmoodle. Hot Shot pilot using the existing community G.U.N. Pilot / Driver profile. Human crew member, separate from the Hot Shot mech. Import this pilot as a world Actor, then assign that Actor UUID to Hot Shot's Pilot field. No robotic suffocation immunity or mech weapons apply to the dismounted pilot. Numerical statistics are provisional homebrew.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Service Pistol",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 4,
+          "description": "Removable.",
+          "removable": true,
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-hot-shot-pilot.svg"
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Hot Shot Pilot",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-hot-shot-pilot.svg"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Hot Shot Pilot",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-hot-shot-pilot"
+      }
+    }
   }
 ]
