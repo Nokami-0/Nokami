@@ -1,3 +1,7 @@
+# 2.0.30
+
+- Apply supplied missile Gun Beetle artwork to Rocket Beetle, retaining Tracking Rocket, flight and limited ammunition.
+
 # 2.0.29
 
 - Apply uploaded Gun Beetle artwork to the existing flying NPC and its items, preserving stats and Pod Gun.
