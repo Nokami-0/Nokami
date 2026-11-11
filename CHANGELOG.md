@@ -1,3 +1,7 @@
+# 2.0.31
+
+- Apply supplied G.U.N. Bomb Beetle artwork to the existing NPC and its items, preserving Bomb Drop and flight.
+
 # 2.0.30
 
 - Apply supplied missile Gun Beetle artwork to Rocket Beetle, retaining Tracking Rocket, flight and limited ammunition.

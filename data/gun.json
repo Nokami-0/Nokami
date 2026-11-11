@@ -1077,7 +1077,7 @@
   {
     "name": "Bomb Beetle",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bomb-beetle.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -1130,7 +1130,8 @@
           "effectHits": 2,
           "recharge": 3,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bomb-beetle.png"
       },
       {
         "name": "Can Fly",
@@ -1139,7 +1140,8 @@
           "slots": 0,
           "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bomb-beetle.png"
       },
       {
         "name": "Suffocation Immunity",
@@ -1151,7 +1153,8 @@
           "modifierTarget": "suffocating",
           "modifierValue": 1,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bomb-beetle.png"
       }
     ],
     "prototypeToken": {
@@ -1164,12 +1167,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-bomb-beetle.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Bomb Beetle",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.31"
       }
     }
   },
