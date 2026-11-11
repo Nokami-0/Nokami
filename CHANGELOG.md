@@ -1,3 +1,12 @@
+# 2.0.12
+
+- Restore all 250 submitted token variants and the recovered 114-profile Eggman roster.
+- Add 163 explicitly labeled homebrew encounter profiles for remaining uploads; all uploaded variants now have combat stats and abilities.
+- Add STTH — Uploaded Enemies & Vehicles; expand Eggman Empire to 277 profiles.
+- Restore E-2000 transformation controls and corrected uploaded artwork mappings.
+- Preserve existing world Actors and keep the working manifest/download links.
+- Validate artwork references, derived HP, attack skills and duplicate-free repeat imports.
+
 ## 2.0.10 - Supplied enemy roster
 
 - 80 custom profiles, plus a Buzzer artwork variant, with 77 token images including E-2000 flight mode and printed enemy art.

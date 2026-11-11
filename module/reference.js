@@ -29,26 +29,32 @@ export async function buildLibrary(){if(!game.user.isGM)return;
  let np=game.packs.get('world.stth-npcs');if(!np)np=await CompendiumCollection.createCompendium({name:'stth-npcs',label:'STTH — Henchmen',type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const nl=np.locked;if(nl)await np.configure({locked:false});try{const docs=await np.getDocuments();const rows=await(await fetch(`systems/${ID}/data/npcs.json`)).json();for(const row of rows)if(!docs.some(d=>d.getFlag(ID,'catalogKey')===row.name))await Actor.create({...row,flags:{[ID]:{catalogKey:row.name}}},{pack:np.collection});}finally{if(nl)await np.configure({locked:true});}
 
- await buildEggmanLibrary();await buildGunLibrary();
+ await buildEggmanLibrary();await buildGunLibrary();await buildUploadedLibrary();
 
 }
 
 
 export async function buildEggmanLibrary(){return buildFactionLibrary('eggman-empire','Eggman Empire','eggmanKey');}
 export async function buildGunLibrary(){return buildFactionLibrary('gun','G.U.N.','gunKey');}
-async function buildFactionLibrary(file,label,key){
+export async function buildUploadedLibrary(){return buildFactionLibrary('token-art','Uploaded Enemies & Vehicles','tokenArtKey','uploaded-enemies');}
+async function buildFactionLibrary(file,label,key,packName=file){
  if(!game.user.isGM)return;
  const rows=await(await fetch(`systems/${ID}/data/${file}.json`)).json();
- let pack=game.packs.get(`world.stth-${file}`);
- if(!pack)pack=await CompendiumCollection.createCompendium({name:`stth-${file}`,label:`STTH — ${label}`,type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
+ let pack=game.packs.get(`world.stth-${packName}`);
+ if(!pack)pack=await CompendiumCollection.createCompendium({name:`stth-${packName}`,label:`STTH — ${label}`,type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const locked=pack.locked;if(locked)await pack.configure({locked:false});
  try{
   const docs=await pack.getDocuments();const folders=new Map();
   for(const row of rows){
-   if(docs.some(d=>d.getFlag(ID,key)===row.name))continue;
+   const existing=docs.find(d=>d.getFlag(ID,key)===(row.flags?.[ID]?.[key]??row.name));
+   if(existing){
+    if(row.flags?.[ID]?.communityRosterVersion && (existing.img!==row.img || existing.prototypeToken?.texture?.src!==row.prototypeToken?.texture?.src || existing.getFlag(ID,'communityRosterVersion')!==row.flags[ID].communityRosterVersion))await existing.update({img:row.img,'prototypeToken.texture.src':row.prototypeToken?.texture?.src||row.img,[`flags.${ID}.communityRosterVersion`]:row.flags[ID].communityRosterVersion});
+    continue;
+   }
    const tier=row.type==='vehicle'?'Vehicles':row.system.npcTier;let folder=folders.get(tier)||pack.folders.find(f=>f.name===tier)?.id;
    if(!folder){const f=await Folder.create({name:tier,type:'Actor',sorting:'a'},{pack:pack.collection});folder=f.id;}
    folders.set(tier,folder);await Actor.create({...row,folder},{pack:pack.collection});
   }
  }finally{if(locked)await pack.configure({locked:true});}
 }
+

@@ -2,7 +2,7 @@
   {
     "name": "Moto Bug ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-motto-bug.png",
     "system": {
       "attributes": {
         "speed": 3,
@@ -47,12 +47,22 @@
           "slots": 0
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-motto-bug.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   },
   {
     "name": "Buzzbomber/Buzzer ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-buzz-bomber.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -87,12 +97,22 @@
           "description": "Stinger Laser (Ranged): Damage 5"
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-buzz-bomber.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   },
   {
     "name": "Crabmeat ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-crab-meat.png",
     "system": {
       "attributes": {
         "speed": 1,
@@ -149,12 +169,22 @@
           "slots": 0
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-crab-meat.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   },
   {
     "name": "Burrobot ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-burrobot.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -189,12 +219,22 @@
           "description": "Nose Drill (Melee): Damage 4"
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-burrobot.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   },
   {
     "name": "Chopper/Jaws ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-chopper.png",
     "system": {
       "attributes": {
         "speed": 3,
@@ -229,7 +269,17 @@
           "description": "Jaws (Melee): 4 Damage\n\n\n\n\n                                   127\nSOURCEPAGE 128"
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-chopper.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   },
   {
     "name": "Citizen ",
@@ -378,7 +428,7 @@
   {
     "name": "Moto Bug ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-motto-bug.png",
     "system": {
       "attributes": {
         "speed": 3,
@@ -423,12 +473,22 @@
           "slots": 0
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-motto-bug.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   },
   {
     "name": "Crabmeat ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-crab-meat.png",
     "system": {
       "attributes": {
         "speed": 1,
@@ -485,12 +545,22 @@
           "slots": 0
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-crab-meat.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   },
   {
     "name": "Buzzbomber ",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-buzz-bomber.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -559,6 +629,16 @@
           "slots": 0
         }
       }
-    ]
+    ],
+    "prototypeToken": {
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/upload-buzz-bomber.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "communityRosterVersion": "2.0.11"
+      }
+    }
   }
 ]

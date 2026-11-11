@@ -1,14 +1,8 @@
-# Sonic Tag-Team Heroes — Manual Edition 2.0.11
+# Sonic Tag-Team Heroes for Foundry VTT 14 — 2.0.12
 
-Read MANUAL-INSTALL.txt before installing. Requires Foundry VTT 14.
+Unofficial adaptation of STTH 1.5.0. Original game by McShmoodle.
 
-Original game by McShmoodle.
-
-# Sonic Tag-Team Heroes for Foundry VTT 14
-
-Unofficial adaptation of STTH 1.5.0 by McShmoodle.
-
-## Install
+## Install or update
 
 In Foundry Setup → Game Systems → Install System, paste:
 
@@ -16,14 +10,23 @@ In Foundry Setup → Game Systems → Install System, paste:
 https://raw.githubusercontent.com/Nokami-0/Nokami/main/system.json
 ```
 
-Create a world with Sonic Tag-Team Heroes. Use the STTH Library to build the equipment, ability, vehicle, and Henchmen compendiums.
+Existing installs can use Check for Update. Launch the world as GM and let the library finish building. If needed, use Configure Settings → Sonic Tag-Team Heroes → STTH Library → Build / Repair Library.
 
-Includes native V14 character, NPC, vehicle, and item sheets, checks and combat helpers, resources, and reusable catalog entries. The original rulebook PDFs are not distributed in this public package; use your own copy of STTH 1.5.0.
+## Enemies and uploaded artwork
 
-Validation: 64 automated tests; live Foundry 14 testing remains pending. Some custom powers and exceptional effects require GM handling.
+- **STTH — Uploaded Enemies & Vehicles:** all 250 uploaded token variants, each with playable stats and abilities. 87 inherit recovered authored profiles; 163 use new, explicitly marked homebrew encounter profiles.
+- **STTH — Eggman Empire:** 277 profiles, including the recovered roster and new homebrew enemies and vehicles.
+- **STTH — G.U.N.:** 30 profiles.
+- **STTH — Henchmen:** the original 11 entries.
 
-See [AUDIT.md](AUDIT.md) for tested controls, rules fixes and remaining manual rules.
+These collections overlap: uploaded variants reuse appropriate faction stats. Drag a compendium entry into Actors, then onto a scene. Previously imported world Actors are preserved; import a fresh copy to use updated art and stats. An older NPC Token Art compendium may remain in existing worlds; use Uploaded Enemies & Vehicles for the playable versions.
 
-[Eggman Empire](EGGMAN-EMPIRE.md): 33 NPC profiles, variants and multipart boss components, automatically imported into a separate Actor compendium.
+Ships, transports and other crewed vehicle profiles require an assigned pilot Actor UUID. Large ships and bases use provisional encounter abstractions rather than full-scale simulations. Homebrew profiles are untested starting values, not official STTH statistics. Special traits that need GM handling say so in their descriptions.
 
-[G.U.N.](GUN.md): 30 homebrew personnel, robot, boss and vehicle profiles in a separate Actor compendium.
+Includes character, NPC, vehicle and item sheets, combat helpers, resources and equipment catalogs. Rulebook PDFs are not included; use your own STTH 1.5.0 copy.
+
+## Credits and validation
+
+Original game by McShmoodle. Sonic characters belong to SEGA. Token artwork supplied by the user; original artists retain their rights.
+
+Automated tests cover rules, derived stats, artwork paths and repeat compendium imports. Live Foundry VTT 14 testing remains pending. See AUDIT.md for limitations in the base system.
