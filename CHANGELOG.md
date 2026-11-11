@@ -1,3 +1,7 @@
+# 2.0.7
+
+Add separate G.U.N. Actor compendium with 30 homebrew profiles and generic book reskins. Shared faction importer keeps both compendiums distinct and avoids duplicates. Human crews do not gain robotic suffocation immunity. Pilot labels identify the appropriate faction default. 64 automated tests. See GUN.md for roster, provenance and manual encounter mechanics.
+
 # 2.0.6
 
 Add Eggman Empire Actor compendium: 33 sourced NPC profiles, armed variants, escorts and multipart bosses. Support printed NPC stat overrides, pilot-derived skills/mental ratings, HP N/A parts, ammunition-based Orbinaut Dodge, zero-damage Klagen attacks and TP-cost attacks. 60 automated tests. See EGGMAN-EMPIRE.md for roster, source ambiguities and manual encounter rules.

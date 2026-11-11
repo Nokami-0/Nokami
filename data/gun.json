@@ -1,0 +1,2838 @@
+[
+  {
+    "name": "G.U.N. Soldier",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 2,
+        "dexterity": 3,
+        "intellect": 2,
+        "charisma": 2
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "melee,move,ranged,perceive",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew.\nOrganize two to five soldiers using the standard Squad rule. No robotic or suffocation immunities.",
+      "profileSource": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew.",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Service Rifle",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "Removable.",
+          "removable": true,
+          "source": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew."
+        }
+      },
+      {
+        "name": "Unarmed Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew."
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Soldier",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Soldier",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Heavy Trooper",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 2,
+        "charisma": 2
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 2,
+        "perceive": 1
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": -5,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nHomebrew heavy infantry role; no Squad bonus.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Heavy Launcher",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "+1 Disadvantage; 3\u00d73 AoE; Burning on second hit; recharge three Interacts.",
+          "advantage": -1,
+          "aoe": "3x3",
+          "effect": "burning",
+          "effectHits": 2,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Unarmed Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Heavy Trooper",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Heavy Trooper",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Recon Trooper",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 2,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 2
+      },
+      "skills": {
+        "ranged": 2,
+        "sneak": 2,
+        "perceive": 2
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nHomebrew reconnaissance role; range and weapon modifiers are custom equipment.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Precision Rifle",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 10,
+          "description": "+1 Advantage; recharge one Interact; removable.",
+          "advantage": 1,
+          "recharge": 1,
+          "removable": true,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Unarmed Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Recon Trooper",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Recon Trooper",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Captain",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 2,
+        "dexterity": 3,
+        "intellect": 3,
+        "charisma": 3
+      },
+      "skills": {
+        "melee": 2,
+        "ranged": 2,
+        "perceive": 2,
+        "persuade": 1,
+        "resolve": 2
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 1,
+      "critThreshold": 1,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Sub-Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "G.U.N. reskin of STTH 1.5.0 Marshal, p132; sidearm range 4 is homebrew.\n",
+      "profileSource": "G.U.N. reskin of STTH 1.5.0 Marshal, p132; sidearm range 4 is homebrew.",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Sidearm",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 4,
+          "description": "Removable.",
+          "removable": true,
+          "source": "G.U.N. reskin of STTH 1.5.0 Marshal, p132; sidearm range 4 is homebrew."
+        }
+      },
+      {
+        "name": "Unarmed Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "G.U.N. reskin of STTH 1.5.0 Marshal, p132; sidearm range 4 is homebrew."
+        }
+      },
+      {
+        "name": "Battle Commander",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Action: Difficulty 1 Persuade. Success grants a Squad of up to four Henchmen +1 Advantage on its next check.",
+          "source": "G.U.N. reskin of STTH 1.5.0 Marshal, p132; sidearm range 4 is homebrew."
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Captain",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Captain",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Commander",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 4,
+        "charisma": 5
+      },
+      "skills": {
+        "acrobat": 2,
+        "run": 2,
+        "melee": 4,
+        "move": 2,
+        "climb": 2,
+        "ranged": 4,
+        "ride": 2,
+        "perceive": 1,
+        "tech": 1,
+        "knowledge": 1,
+        "persuade": 3,
+        "deceive": 1,
+        "resolve": 3
+      },
+      "hp": {
+        "value": 50,
+        "max": 50
+      },
+      "hpBonus": 30,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 2,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew.\nGeneric senior command role, not a canon stat block for Abraham Tower.",
+      "profileSource": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew.",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Heavy Baton",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "+1 Disadvantage; removable.",
+          "advantage": -1,
+          "removable": true,
+          "source": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew."
+        }
+      },
+      {
+        "name": "Stun Sidearm",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 4,
+          "description": "Stunned on second hit; removable.",
+          "effect": "stunned",
+          "effectHits": 2,
+          "removable": true,
+          "source": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew."
+        }
+      },
+      {
+        "name": "Tactical Direction",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Forfeit Move or Interact to give one Sub-Boss or a Squad of up to four Henchmen an immediate free Move or Interact.",
+          "source": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew."
+        }
+      },
+      {
+        "name": "One Step Ahead",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Once per encounter after another character checks: Difficulty 2 Knowledge. Success forces that check to be rerolled.",
+          "source": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew."
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Commander",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Commander",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Pilot / Driver",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 2,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 2
+      },
+      "skills": {
+        "ride": 3,
+        "ranged": 2,
+        "perceive": 2,
+        "tech": 1
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 1,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Sub-Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nDefault crew profile. Link this Actor UUID from a pilot-operated machine. Homebrew, not a printed personnel profile.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Service Pistol",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 4,
+          "description": "Removable.",
+          "removable": true,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Pilot / Driver",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Pilot / Driver",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Gun Hunter",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nBipedal gun platform; standard standalone infantry robot.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Gunfire",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 5,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Mechanical Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Gun Hunter",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Gun Hunter",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Laser Hunter",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2,
+        "perceive": 1
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": -5,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nStronger ranged variant. Charge duration is an STTH balance choice.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Charged Laser",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 7,
+          "description": "+1 Advantage; recharge two Interacts.",
+          "advantage": 1,
+          "recharge": 2,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Mechanical Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Laser Hunter",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Laser Hunter",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Shield Hunter",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 2
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": -5,
+      "profileDodge": 3,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nThe shield is a positional defense, not an invulnerable HP barrier. Base Dodge includes its defensive equipment.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Shielded Gunfire",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 5,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Shield Bash",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Knocked Back on second hit.",
+          "effect": "prone",
+          "effectHits": 2,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Firing Window",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "While defending, frontal Ranged attacks suffer +1 Disadvantage. After it fires, remove this penalty until its next turn. The GM tracks the shield opening.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Shield Hunter",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Shield Hunter",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Mono Beetle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -5,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nUnarmed flying platform; do not grant it an invented gun.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Hover Obstacle",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "No damaging weapon. Can provide an aerial stepping point when the GM allows appropriate movement/Homing Attack.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Mono Beetle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Mono Beetle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Gun Beetle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -5,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "ranged,perceive",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Pod Gun",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 5,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Gun Beetle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Gun Beetle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Bomb Beetle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Bomb Drop",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 3,
+          "description": "3\u00d73 AoE; Burning on second hit; recharge three Interacts; drop beneath the pod.",
+          "aoe": "3x3",
+          "effect": "burning",
+          "effectHits": 2,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Bomb Beetle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Bomb Beetle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Spark Beetle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Electric Discharge",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 2,
+          "description": "Stunned on second hit.",
+          "effect": "stunned",
+          "effectHits": 2,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Electric Barrier",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "GM alternates active/inactive on this beetle\u2019s turns, starting active. While active, incoming Spin/Melee attacks suffer +1 Disadvantage; a Slip may deal 2 electrical damage to the attacker. Inactive turns offer a clear opening. This timing and numeric effect are homebrew.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Spark Beetle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Spark Beetle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Spring Beetle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -5,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Spring Platform",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "A character reaching the top may spend one movement square to launch one extra Height upward. GM adjudicates landing; this conversion supplies no damaging weapon.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Spring Beetle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Spring Beetle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Gold Beetle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 4,
+        "power": 1,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -5,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 8,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Fleeting Target",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Appears briefly; withdraws at the end of its next turn unless intercepted. No weapon. On defeat the GM may grant 5 bonus Rings once; an optional homebrew reward, not a score-to-Rings equivalence.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Gold Beetle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Gold Beetle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Gun Wing",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 2,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2,
+        "perceive": 1
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Wing Gunfire",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Gun Wing",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Gun Wing",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Bomb Wing",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 2,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Bombing Run",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 4,
+          "description": "3\u00d73 AoE; Burning on second hit; recharge three Interacts.",
+          "aoe": "3x3",
+          "effect": "burning",
+          "effectHits": 2,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Bomb Wing",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Bomb Wing",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Rocket Beetle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 2,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\nLater-series Beetle variant. Four-shot ammunition is represented by the attack\u2019s quantity.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Tracking Rocket",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "Four rockets; +1 Advantage; three Interacts to recharge. Quantity tracks remaining rockets.",
+          "advantage": 1,
+          "recharge": 3,
+          "ammoLimited": true,
+          "quantity": 4,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Rocket Beetle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Rocket Beetle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Rhino Jet",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 2,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 2,
+        "run": 1
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": -5,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Charging Ram",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "After moving at least two squares directly toward target, add +1 Advantage manually. Knocked Back on second hit.",
+          "effect": "prone",
+          "effectHits": 2,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Charge Burst",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "May double its Move once every other turn while moving directly toward a visible target. GM tracks straight-line movement and cooldown.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Rhino Jet",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Rhino Jet",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Rhino Cannon",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2,
+        "melee": 1
+      },
+      "hp": {
+        "value": 20,
+        "max": 20
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Cannon",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "+1 Disadvantage; recharge two Interacts.",
+          "advantage": -1,
+          "recharge": 2,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Hull Ram",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Rhino Cannon",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Rhino Cannon",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Rhino Spike",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 2,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 2
+      },
+      "hp": {
+        "value": 20,
+        "max": 20
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Spiked Ram",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Knocked Back on second hit.",
+          "effect": "prone",
+          "effectHits": 2,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Spiked Roof",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Attacks directly onto the roof suffer +1 Disadvantage. A Slip from a roof-facing Spin/Melee attack may deal 2 damage. Attacks from low sides avoid this penalty. GM resolves facing.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Rhino Spike",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Rhino Spike",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Rhino Metal",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 4,
+        "dexterity": 2,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 2
+      },
+      "hp": {
+        "value": 25,
+        "max": 25
+      },
+      "hpBonus": 0,
+      "profileDodge": 3,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Armored Ram",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Knocked Back on second hit.",
+          "effect": "prone",
+          "effectHits": 2,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Armored Shell",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Ordinary frontal/roof attacks suffer +1 Disadvantage. GM may require exposing the underside or an appropriate armor-bypassing ability; never grant damage immunity without an accessible counter. This is a balanced adaptation of the game\u2019s much tougher armored model.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Rhino Metal",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Rhino Metal",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "Blue Eagle",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 5,
+        "power": 3,
+        "dexterity": 4,
+        "intellect": 2,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 3,
+        "ride": 2
+      },
+      "hp": {
+        "value": 25,
+        "max": 25
+      },
+      "hpBonus": 5,
+      "profileDodge": 3,
+      "profileInitiative": 3,
+      "profileMovement": 8,
+      "initiativeTrick": 1,
+      "critThreshold": 1,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Sub-Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Homebrew STTH conversion\n",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Missile Pass",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 8,
+          "description": "3\u00d73 AoE; three Interacts to recharge.",
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Flyby Pattern",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Makes low passes, then banks away. GM resolves approach, altitude, firing arc and any opportunity to attack from underneath.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Blue Eagle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Blue Eagle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "F-6t Big Foot",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 5,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 2
+      },
+      "skills": {
+        "melee": 2,
+        "ranged": 3,
+        "ride": 3,
+        "perceive": 2,
+        "tech": 1
+      },
+      "hp": {
+        "value": 65,
+        "max": 65
+      },
+      "hpBonus": 35,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 3,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "Homebrew STTH conversion\nHomebrew boss conversion. Treat reach, pattern windows and pilot survivability as encounter rules, not automatic effects. No canon STTH stats exist for this mech.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged",
+      "pilotLabel": "G.U.N. Pilot / Driver"
+    },
+    "items": [
+      {
+        "name": "Machine-Gun Sweep",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "3\u00d73 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "aoe": "3x3",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Homing Missile Salvo",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 7,
+          "description": "+1 Advantage; three Interacts to recharge.",
+          "advantage": 1,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Hull Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Use only while landed/within reach.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Pilot Operated",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Default mental attributes and unlisted skills use the G.U.N. Pilot / Driver profile. Set the pilot Actor UUID on the sheet.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Attack Pattern",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Make 3 overhead gun pass(es), then land to fire missiles. During the missile/recovery turn, attacks aimed at the exposed cockpit gain +1 Advantage. GM tracks pattern and altitude.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Cockpit Weak Point",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Targeting the cockpit in an exposed window gains +1 Advantage. Attacks on other parts suffer +1 Disadvantage. Bonuses/penalties are homebrew STTH balance values.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "F-6t Big Foot",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "F-6t Big Foot",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "B-3x Hot Shot",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 4,
+        "power": 5,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 2
+      },
+      "skills": {
+        "melee": 2,
+        "ranged": 3,
+        "ride": 3,
+        "perceive": 2,
+        "tech": 1
+      },
+      "hp": {
+        "value": 65,
+        "max": 65
+      },
+      "hpBonus": 35,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 8,
+      "initiativeTrick": 2,
+      "critThreshold": 3,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "Homebrew STTH conversion\nHomebrew boss conversion. Treat reach, pattern windows and pilot survivability as encounter rules, not automatic effects. No canon STTH stats exist for this mech.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged",
+      "pilotLabel": "G.U.N. Pilot / Driver"
+    },
+    "items": [
+      {
+        "name": "Machine-Gun Sweep",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "3\u00d73 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "aoe": "3x3",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Homing Missile Salvo",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 7,
+          "description": "+1 Advantage; three Interacts to recharge.",
+          "advantage": 1,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Hull Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Use only while landed/within reach.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Pilot Operated",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Default mental attributes and unlisted skills use the G.U.N. Pilot / Driver profile. Set the pilot Actor UUID on the sheet.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Attack Pattern",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Make 1 overhead gun pass(es), then land to fire missiles. During the missile/recovery turn, attacks aimed at the exposed cockpit gain +1 Advantage. GM tracks pattern and altitude.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Cockpit Weak Point",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Targeting the cockpit in an exposed window gains +1 Advantage. Attacks on other parts suffer +1 Disadvantage. Bonuses/penalties are homebrew STTH balance values.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "B-3x Hot Shot",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "B-3x Hot Shot",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "R-1/A Flying Dog",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 5,
+        "power": 5,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 2
+      },
+      "skills": {
+        "melee": 2,
+        "ranged": 3,
+        "ride": 3,
+        "perceive": 2,
+        "tech": 1
+      },
+      "hp": {
+        "value": 70,
+        "max": 70
+      },
+      "hpBonus": 40,
+      "profileDodge": 4,
+      "profileInitiative": 3,
+      "profileMovement": 8,
+      "initiativeTrick": 2,
+      "critThreshold": 3,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "Homebrew STTH conversion\nHomebrew boss conversion. Treat reach, pattern windows and pilot survivability as encounter rules, not automatic effects. No canon STTH stats exist for this mech.",
+      "profileSource": "Homebrew STTH conversion",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged",
+      "pilotLabel": "G.U.N. Pilot / Driver"
+    },
+    "items": [
+      {
+        "name": "Machine-Gun Sweep",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "3\u00d73 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "aoe": "3x3",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Homing Missile Salvo",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 7,
+          "description": "+1 Advantage; three Interacts to recharge.",
+          "advantage": 1,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Pilot Operated",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Default mental attributes and unlisted skills use the G.U.N. Pilot / Driver profile. Set the pilot Actor UUID on the sheet.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Attack Pattern",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Never lands. Attack the cockpit from elevated positions, flight or ranged fire.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Cockpit Weak Point",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Targeting the cockpit in an exposed window gains +1 Advantage. Attacks on other parts suffer +1 Disadvantage. Bonuses/penalties are homebrew STTH balance values.",
+          "source": "Homebrew STTH conversion"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "R-1/A Flying Dog",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "R-1/A Flying Dog",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Armed Motorcycle",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "speed": 3,
+      "power": 2,
+      "dexterityModifier": 1,
+      "hp": {
+        "value": 20,
+        "max": 20
+      },
+      "dodge": 2,
+      "movement": 4,
+      "critThreshold": 1,
+      "passengers": 2,
+      "width": 1,
+      "length": 2,
+      "qualities": "",
+      "bio": "STTH 1.5.0 Dark Rider p111, G.U.N. reskin; footprint simplified.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
+      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+    },
+    "items": [
+      {
+        "name": "Mounted Machine Gun",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 5,
+          "description": "Book Dark Rider machine gun: Range 5, cone, 3\u00d73 selectable AoE.",
+          "arc": "cone",
+          "aoe": "3x3"
+        }
+      }
+    ],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Armed Motorcycle",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Troop Truck",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "speed": 3,
+      "power": 3,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 30,
+        "max": 30
+      },
+      "dodge": 1,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 6,
+      "width": 1,
+      "length": 2,
+      "qualities": "",
+      "bio": "STTH 1.5.0 Car/Truck p103; G.U.N. transport reskin. Passenger count 6 is a homebrew configuration.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
+      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+    },
+    "items": [],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Troop Truck",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Helicopter",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "speed": 3,
+      "power": 3,
+      "dexterityModifier": 1,
+      "hp": {
+        "value": 30,
+        "max": 30
+      },
+      "dodge": 2,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 4,
+      "width": 1,
+      "length": 2,
+      "qualities": "Can Fly; Helicopter Blades: blade-square attacks halve damage; touching active blades inflicts critical damage. GM resolves.",
+      "bio": "STTH 1.5.0 Helicopter p105; G.U.N. reskin. Unarmed transport, blade footprint must follow the book.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
+      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+    },
+    "items": [],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Helicopter",
+        "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Transport Shuttle",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "speed": 5,
+      "power": 5,
+      "dexterityModifier": -1,
+      "hp": {
+        "value": 50,
+        "max": 50
+      },
+      "dodge": 1,
+      "movement": 8,
+      "critThreshold": 3,
+      "passengers": 30,
+      "width": 1,
+      "length": 2,
+      "qualities": "Can Fly",
+      "bio": "STTH 1.5.0 Shuttle p106; G.U.N. transport reskin. Unarmed transport.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
+      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+    },
+    "items": [],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Transport Shuttle",
+        "homebrew": true
+      }
+    }
+  }
+]

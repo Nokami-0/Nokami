@@ -5,7 +5,7 @@ const s=(initial='')=>new f.StringField({initial});const b=()=>new f.BooleanFiel
 const resource=initial=>new f.SchemaField({value:n(initial),max:n(initial)});
 export class CharacterData extends foundry.abstract.TypeDataModel {
  static defineSchema(){return {
-  npcTier:s(),profileSource:s(),profileDodge:new f.NumberField({initial:null,nullable:true,integer:true,min:0,max:6}),profileInitiative:new f.NumberField({initial:null,nullable:true,integer:true,min:0}),profileMovement:new f.NumberField({initial:null,nullable:true,integer:true,min:0}),hpNotApplicable:b(),initiativeNotApplicable:b(),usesPilot:b(),pilot:s(),pilotDexModifier:new f.NumberField({initial:0,integer:true}),pilotSkillOverrides:s(),heroType:s('speed'),archetype:s('genius'),species:s('Mobian'),bio:s(),appearance:s(),personality:s(),height:n(),
+  npcTier:s(),profileSource:s(),profileDodge:new f.NumberField({initial:null,nullable:true,integer:true,min:0,max:6}),profileInitiative:new f.NumberField({initial:null,nullable:true,integer:true,min:0}),profileMovement:new f.NumberField({initial:null,nullable:true,integer:true,min:0}),hpNotApplicable:b(),initiativeNotApplicable:b(),usesPilot:b(),pilotLabel:s('Dr. Eggman'),pilot:s(),pilotDexModifier:new f.NumberField({initial:0,integer:true}),pilotSkillOverrides:s(),heroType:s('speed'),archetype:s('genius'),species:s('Mobian'),bio:s(),appearance:s(),personality:s(),height:n(),
   attributes:new f.SchemaField(Object.fromEntries(Object.keys(ATTRIBUTES).map(k=>[k,n(k==='speed'?4:1,1,7)]))),
   skills:new f.SchemaField(Object.fromEntries(Object.keys(SKILLS).map(k=>[k,n(0,0,12)]))),
   hp:resource(10),tp:resource(15),rings:n(),mobiums:n(),crits:n(),critThreshold:n(),initiativeTrick:n(),
