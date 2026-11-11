@@ -5109,7 +5109,7 @@
       "npcTier": "Henchman",
       "pilotDexModifier": 0,
       "usesPilot": false,
-      "bio": "Original STTH by McShmoodle. Provisional community Artificial Chaos Bubble variant using the existing Artificial Chaos starter statistics; not an official STTH profile. Bubble-form artwork is a separate roster option. Retains the starter attacks pending a dedicated ability pass; artwork alone grants no automatic shield, damage immunity, splitting or regeneration.",
+      "bio": "Original STTH by McShmoodle. Provisional community Artificial Chaos Bubble profile. Can produce Artificial Cells using its Produce Artificial Cell Action, maximum three active per Bubble. Production and parent tracking require GM token placement; no automatic summoning. Retains its starter attacks. All numerical values and production limits are homebrew.",
       "profileSource": "Provisional community Artificial Chaos Bubble variant using the existing Artificial Chaos starter statistics; not an official STTH profile.",
       "tp": {
         "value": 0,
@@ -5145,6 +5145,21 @@
           "description": "Homebrew starter attack: one target, normal Ranged versus Dodge. No automatic homing or armor bypass.",
           "source": "Provisional community Artificial Chaos Bubble variant using the existing Artificial Chaos starter statistics; not an official STTH profile."
         }
+      },
+      {
+        "name": "Produce Artificial Cell",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/artificial-chaos-bubble.svg",
+        "system": {
+          "slots": 0,
+          "description": "Action: produce one Artificial Cell in an unoccupied adjacent square. Maximum three active cells created by this Bubble at a time; production fails if no legal space or the limit is reached. GM imports the Artificial Cell actor from G.U.N. Henchmen, places a new unlinked token, and records its parent. It first acts next round on the parent's initiative, with its own normal turn and HP. At 0 HP a cell is defeated; remove it and free its slot. Cells persist if their parent is defeated, but that parent cannot produce more. No HP cost, instant cell attack, recursive production or unlimited swarm. Token placement, active count and initiative are manual. Production rules and limits are homebrew.",
+          "source": "Community homebrew — user-requested Artificial Cell production"
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "rosterAddition": "bubble-produce-artificial-cell"
+          }
+        }
       }
     ],
     "prototypeToken": {
@@ -5166,7 +5181,98 @@
       "sonic-tag-team-heroes": {
         "gunKey": "Artificial Chaos Bubble",
         "homebrew": true,
-        "communityRosterVersion": "2.0.37-artificial-chaos-bubble"
+        "communityRosterVersion": "2.0.37-bubble-cells"
+      }
+    }
+  },
+  {
+    "name": "Artificial Cell",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/artificial-cell.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 2,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -5,
+      "profileDodge": 1,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Artificial life-form",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Original STTH by McShmoodle. Provisional community Artificial Cell profile; production limits and all statistics are homebrew. Produced by Artificial Chaos Bubble. GM places the token adjacent to its parent and records parent ownership; it first acts on the following round on its parent's initiative. Each cell has one normal turn and separate HP. No automatic production, parent tracking or cleanup is implemented.",
+      "profileSource": "Provisional community Artificial Cell profile; production limits and all statistics are homebrew.",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Cell Energy Shot",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/artificial-cell.svg",
+        "system": {
+          "skill": "ranged",
+          "damage": 3,
+          "damageMode": "fixed",
+          "range": 4,
+          "slots": 0,
+          "description": "Action; one target. Normal Ranged versus Dodge.",
+          "source": "Provisional community Artificial Cell profile; production limits and all statistics are homebrew."
+        }
+      },
+      {
+        "name": "Cell Body Strike",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/artificial-cell.svg",
+        "system": {
+          "skill": "melee",
+          "damage": 2,
+          "damageMode": "fixed",
+          "range": 1,
+          "slots": 0,
+          "description": "Action; one adjacent target. Normal Melee versus Dodge.",
+          "source": "Provisional community Artificial Cell profile; production limits and all statistics are homebrew."
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Artificial Cell",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/artificial-cell.svg"
+      },
+      "bar1": {
+        "attribute": "hp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Artificial Cell",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-artificial-cell"
       }
     }
   }
