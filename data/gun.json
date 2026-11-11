@@ -4505,5 +4505,109 @@
         "communityRosterVersion": "2.0.37-hawk-2"
       }
     }
+  },
+  {
+    "name": "Big Foot Type A",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot-type-a.svg",
+    "system": {
+      "speed": 3,
+      "power": 5,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 65,
+        "max": 65
+      },
+      "dodge": 3,
+      "movement": 4,
+      "critThreshold": 3,
+      "passengers": 1,
+      "width": 2,
+      "length": 2,
+      "pilot": "",
+      "crew": "G.U.N. pilot",
+      "form": "Bipedal hover mech",
+      "qualities": "Pilot-operated hover mech; gun-only loadout. Flight uses normal Move; GM tracks altitude.",
+      "bio": "Original STTH by McShmoodle. Provisional community Big Foot Type A variant based on the existing Big Foot vehicle profile. Gun-only loadout as specified by the user: Machine-Gun Sweep is the only equipped weapon. No missiles, laser cannon or separate hull-strike weapon. Assign a pilot Actor UUID before vehicle actions and weapon rolls. 65 HP, Dodge 3, movement 4; inherited starter values are untested homebrew. One shared HP pool; hover flight and altitude require GM adjudication."
+    },
+    "items": [
+      {
+        "name": "Machine-Gun Sweep",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "aoe": "3x3",
+          "source": "Homebrew STTH conversion",
+          "price": 700,
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot-type-a.svg",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot-type-a.svg"
+      },
+      {
+        "name": "Pilot Operated",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Assign the pilot Actor UUID on the vehicle sheet. Use that pilot for vehicle actions and weapons.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot-type-a.svg"
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot-type-a.svg"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Big Foot Type A",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot-type-a.svg"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Big Foot Type A",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-bigfoot-type-a"
+      }
+    }
   }
 ]
