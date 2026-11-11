@@ -2141,7 +2141,7 @@
   {
     "name": "Blue Eagle",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png",
     "system": {
       "attributes": {
         "speed": 5,
@@ -2236,12 +2236,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Blue Eagle",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.28"
       }
     }
   },
@@ -3645,6 +3649,102 @@
         "gunKey": "G.U.N. Giga Trooper",
         "homebrew": true,
         "vehicleConversionVersion": "2.0.25"
+      }
+    }
+  },
+  {
+    "name": "Blue Eagle — Vehicle",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png",
+    "system": {
+      "speed": 5,
+      "power": 3,
+      "dexterityModifier": 1,
+      "hp": {
+        "value": 25,
+        "max": 25
+      },
+      "dodge": 3,
+      "movement": 8,
+      "critThreshold": 1,
+      "passengers": 1,
+      "width": 2,
+      "length": 2,
+      "pilot": "",
+      "crew": "G.U.N. pilot",
+      "form": "Blue Eagle jet",
+      "qualities": "Pilot-operated jet. Flight, altitude, firing arc and approach are GM-adjudicated.",
+      "bio": "Original STTH by McShmoodle. Community homebrew Blue Eagle jet vehicle conversion with supplied art; not official STTH stats. Assign a pilot Actor UUID before vehicle actions or attacks. Missile Pass retains existing damage 7, range 8, 3x3 area and three Interacts recharge. GM resolves all area targets and forward approach. One HP pool; no automatic component targeting. Suggested value 6000 Mobiums; resale 3000, homebrew estimates."
+    },
+    "items": [
+      {
+        "name": "Missile Pass",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 8,
+          "description": "3×3 AoE; three Interacts to recharge.",
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "Homebrew STTH conversion",
+          "price": 900
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png"
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png"
+      },
+      {
+        "name": "Flyby Pattern",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Makes low passes, then banks away. GM resolves approach, altitude, firing arc and any opportunity to attack from underneath.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png"
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png"
+      }
+    ],
+    "prototypeToken": {
+      "name": "Blue Eagle — Vehicle",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Blue Eagle — Vehicle",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.28"
       }
     }
   }

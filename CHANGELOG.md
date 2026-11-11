@@ -1,3 +1,8 @@
+# 2.0.28
+
+- Add Blue Eagle vehicle version with supplied jet art and existing missile/flight profile. Preserve original NPC template.
+- Add priced Blue Eagle missile weapon to the catalog.
+
 # 2.0.27
 
 - Arm the G.U.N. Helicopter with artwork-inspired nose autocannon and rocket pods, with homebrew stats and prices.

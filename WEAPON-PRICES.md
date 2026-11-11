@@ -430,3 +430,4 @@ Values are in Mobiums. Existing listed prices are preserved; other values and 50
 | Giga Trooper Stomp | Vehicle mount | fixed | 8 | 1 | 250 | 125 | Homebrew estimated value |
 | Helicopter Nose Autocannon | Vehicle mount | fixed | 6 | 6 | 600 | 300 | Homebrew estimated value |
 | Helicopter Rocket Pods | Vehicle mount | fixed | 8 | 8 | 900 | 450 | Homebrew estimated value |
+| Blue Eagle — Missile Pass | Vehicle mount | fixed | 7 | 8 | 900 | 450 | Homebrew estimated value |

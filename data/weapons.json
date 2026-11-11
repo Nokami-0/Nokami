@@ -477,6 +477,32 @@
     }
   },
   {
+    "name": "Blue Eagle — Missile Pass",
+    "type": "vehicleWeapon",
+    "system": {
+      "skill": "ranged",
+      "damage": 7,
+      "damageMode": "fixed",
+      "slots": 0,
+      "range": 8,
+      "description": "3×3 AoE; three Interacts to recharge.",
+      "aoe": "3x3",
+      "recharge": 3,
+      "source": "Homebrew STTH conversion",
+      "price": 900,
+      "notes": "Homebrew value 900 Mobiums; suggested resale 450. Integrated vehicle weapon; requires pilot and suitable chassis."
+    },
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png",
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "62218bf36c4847dc056d",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 450,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
     "name": "Body Ram",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/eggkeeper.png",
