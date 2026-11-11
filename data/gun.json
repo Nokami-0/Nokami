@@ -4880,5 +4880,106 @@
         "communityRosterVersion": "2.0.37-hot-shot-pilot"
       }
     }
+  },
+  {
+    "name": "G.U.N. Soldier Recruit",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-soldier-recruit.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 2,
+        "dexterity": 3,
+        "intellect": 2,
+        "charisma": 2
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "melee,move,ranged,perceive",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Original STTH by McShmoodle. Community G.U.N. Soldier Recruit variant using the existing G.U.N. Soldier starter statistics. Human Henchman; no robotic immunities. Sidearm adaptation uses damage 5 and range 4; ammunition capacity is a homebrew abstraction of 20 attack uses. All variant statistics are provisional homebrew.",
+      "profileSource": "Community homebrew recruit variant based on existing G.U.N. Soldier; untested.",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Service Pistol",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 4,
+          "description": "Removable.",
+          "removable": true,
+          "source": "Community homebrew recruit variant based on existing G.U.N. Soldier; untested.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-soldier-recruit.svg"
+      },
+      {
+        "name": "Unarmed Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "Community homebrew recruit variant based on existing G.U.N. Soldier; untested."
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-soldier-recruit.svg"
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Soldier Recruit",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-soldier-recruit.svg"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Soldier Recruit",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-recruit"
+      }
+    }
   }
 ]
