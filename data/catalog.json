@@ -2971,5 +2971,25 @@
       "description": "Action; one adjacent target. Available with spikes retracted. No extra attack, forced movement or automatic Stun.",
       "source": "Community homebrew; untested"
     }
+  },
+  {
+    "name": "Super Ring (30)",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/super-ring-30.svg",
+    "system": {
+      "description": "Gain 30 Rings. Stored until used. Consumes one item on use.",
+      "source": "Community variant using the existing Super Ring consumable rules; 30-ring amount requested by the user.",
+      "subtype": "rings",
+      "quantity": 1,
+      "modifierValue": 30,
+      "slots": 0,
+      "notes": "Purchase price is not established; GM sets availability and price."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "super-ring-30-1",
+        "homebrew": true
+      }
+    }
   }
 ]
