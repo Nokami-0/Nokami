@@ -51,5 +51,7 @@
       "path": "lang/en.json"
     }
   ],
-  "url": "https://github.com/Nokami-0/Nokami"
+  "url": "https://github.com/Nokami-0/Nokami",
+  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/system.json",
+  "download": "https://github.com/Nokami-0/Nokami/archive/refs/heads/main.zip"
 }
