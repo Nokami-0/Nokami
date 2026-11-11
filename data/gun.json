@@ -6034,7 +6034,7 @@
       "npcTier": "Boss",
       "pilotDexModifier": 0,
       "usesPilot": false,
-      "bio": "Original STTH by McShmoodle. Provisional community Biolizard boss starter profile; not official STTH statistics. Uses the existing mech-boss numerical template as an initial encounter baseline, with biological attacks instead of pilot-operated weapons. Included under G.U.N. research creations. This starter profile does not yet implement a complete game-accurate boss phase sequence. No pilot, flight, robotic immunity or regeneration is assumed.",
+      "bio": "Original STTH by McShmoodle. Provisional community Biolizard boss profile. Select an unlinked scene token and run the Biolizard — Switch Phase macro to toggle between Biolizard and Phase 2. Transformation changes name and portrait/token art while preserving HP, TP, conditions, items, recharge, position and initiative. Both forms currently share starter attacks and stats; distinct phase attacks and automatic HP-threshold transitions are not implemented.",
       "profileSource": "Provisional community Biolizard boss starter profile; not official STTH statistics.",
       "tp": {
         "value": 15,
@@ -6146,7 +6146,7 @@
       "npcTier": "Boss",
       "pilotDexModifier": 0,
       "usesPilot": false,
-      "bio": "Original STTH by McShmoodle. Provisional community Biolizard Phase 2 variant using the existing Biolizard starter statistics; not official STTH statistics. Separate phase artwork and roster entry for GM-controlled encounter staging. Retains Bite, Tail Sweep and Energy Orb. Phase-specific abilities, weak points, automatic transformation and HP transfer are not implemented. If swapping actors mid-encounter, the GM sets HP and initiative to suit the encounter rather than treating this as an automatic extra creature.",
+      "bio": "Original STTH by McShmoodle. Provisional community Biolizard boss profile. Select an unlinked scene token and run the Biolizard — Switch Phase macro to toggle between Biolizard and Phase 2. Transformation changes name and portrait/token art while preserving HP, TP, conditions, items, recharge, position and initiative. Both forms currently share starter attacks and stats; distinct phase attacks and automatic HP-threshold transitions are not implemented.",
       "profileSource": "Provisional community Biolizard Phase 2 variant using the existing Biolizard starter statistics; not official STTH statistics.",
       "tp": {
         "value": 15,
