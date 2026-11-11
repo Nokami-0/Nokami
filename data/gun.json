@@ -2969,7 +2969,7 @@
   {
     "name": "G.U.N. Armed Motorcycle",
     "type": "vehicle",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-motorcycle.svg",
     "system": {
       "speed": 3,
       "power": 2,
@@ -3016,7 +3016,20 @@
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "G.U.N. Armed Motorcycle",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-motorcycle-art"
+      }
+    },
+    "prototypeToken": {
+      "name": "G.U.N. Armed Motorcycle",
+      "actorLink": false,
+      "width": 1,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-motorcycle.svg"
       }
     }
   },
