@@ -127,7 +127,7 @@
   {
     "name": "Silver Moon Ring",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/silver-moon-ring.svg",
     "system": {
       "description": "Use after one check to upgrade a Trick to a Critical Trick.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -137,6 +137,11 @@
       "ringPrice": 8,
       "modifierValue": 0,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "silver-moon-ring-1"
+      }
     }
   },
   {
