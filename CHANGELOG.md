@@ -1,3 +1,9 @@
+# 2.0.32
+
+- Add explicit homebrew ammunition capacities to ranged attacks, preserving existing limited-ammo counts. TP-powered and status-only attacks retain their own resource rules.
+- Vehicle weapons consume one attack-use on firing and reject empty ammo. Recharge never refills ammo.
+- Item sheets show remaining ammo/quantity and capacity; Repair Library applies ammo to matching faction and weapon catalog entries, preserving depleted counts on later repairs. World actors are preserved.
+
 # 2.0.31
 
 - Apply supplied G.U.N. Bomb Beetle artwork to the existing NPC and its items, preserving Bomb Drop and flight.

@@ -5,7 +5,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Gain 5 Rings. Stored until used.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "rings",
       "quantity": 1,
       "price": 60,
@@ -20,7 +20,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Gain 10 Rings. Stored until used.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "rings",
       "quantity": 1,
       "price": 110,
@@ -35,7 +35,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "+1 Dodge. Negate the next successful damaging attack, then break. A crit with that hit causes Stunned but no Ring loss or crit suffered.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "barrier",
       "quantity": 1,
       "price": 50,
@@ -50,7 +50,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "For 3 rounds or encounter end: +2 movement squares and +2 skill ranks on Speed checks.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "sneakers",
       "quantity": 1,
       "price": 80,
@@ -65,7 +65,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Barrier benefits; +2 Rings when gaining Rings with a Trick. Immune to energy/laser/electric hazards unless a crit is dealt. Breaks in water; select shield bypass/exemption manually.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "thunder",
       "quantity": 1,
       "price": 100,
@@ -80,7 +80,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Barrier benefits; +1 Spin/Melee damage. Heat hazards do not break it unless a crit is dealt. Breaks in water.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "flame",
       "quantity": 1,
       "price": 100,
@@ -95,7 +95,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Barrier benefits; +1 Spin and Acrobat rank. Infinite underwater air while active.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "aqua",
       "quantity": 1,
       "price": 100,
@@ -110,7 +110,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Use after one check to negate its Slip or Critical Slip penalty.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "redstar",
       "quantity": 1,
       "price": 60,
@@ -125,7 +125,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Use after one check to upgrade a Trick to a Critical Trick.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "silvermoon",
       "quantity": 1,
       "price": 80,
@@ -140,7 +140,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Increase initiative placement by 1 for one round, once per round.",
-      "source": "STTH 1.5.0, p. 37\u201338",
+      "source": "STTH 1.5.0, p. 37–38",
       "subtype": "cola",
       "quantity": 1,
       "price": 50,
@@ -342,8 +342,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "melee",
       "damageMode": "melee",
       "damage": 1,
@@ -362,8 +362,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "melee",
       "damageMode": "melee",
       "damage": 0,
@@ -382,8 +382,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "melee",
       "damageMode": "melee",
       "damage": 2,
@@ -402,8 +402,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "ranged",
       "damageMode": "fixed",
       "damage": 6,
@@ -414,7 +414,16 @@
       "removable": true,
       "gearKind": "Light Ranged",
       "recharge": 0,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -422,8 +431,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "ranged",
       "damageMode": "fixed",
       "damage": 5,
@@ -434,7 +443,16 @@
       "removable": true,
       "gearKind": "Accurate Ranged",
       "recharge": 0,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -442,8 +460,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "ranged",
       "damageMode": "fixed",
       "damage": 7,
@@ -454,7 +472,16 @@
       "removable": true,
       "gearKind": "Heavy Ranged",
       "recharge": 0,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -462,8 +489,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "ranged",
       "damageMode": "fixed",
       "damage": 8,
@@ -474,7 +501,16 @@
       "removable": true,
       "gearKind": "Homing Ranged",
       "recharge": 3,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 4,
+      "ammoMax": 4,
+      "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -482,8 +518,8 @@
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
-      "source": "STTH 1.5.0, p. 94\u201395",
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3×3 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94–95",
       "skill": "ranged",
       "damageMode": "fixed",
       "damage": 9,
@@ -494,7 +530,16 @@
       "removable": true,
       "gearKind": "Explosives",
       "recharge": 3,
-      "aoe": "3x3"
+      "aoe": "3x3",
+      "ammoLimited": true,
+      "quantity": 6,
+      "ammoMax": 6,
+      "notes": "\nHomebrew ammunition capacity: 6 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -767,7 +812,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "+1 Initiative; may only choose once.",
-      "source": "STTH 1.5.0, p. 79\u201381",
+      "source": "STTH 1.5.0, p. 79–81",
       "slots": 0,
       "modifier": "initiative",
       "modifierTarget": "",
@@ -780,7 +825,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "+1 Dodge; may only choose once, maximum total Dodge 6.",
-      "source": "STTH 1.5.0, p. 79\u201381",
+      "source": "STTH 1.5.0, p. 79–81",
       "slots": 0,
       "modifier": "dodge",
       "modifierTarget": "",
@@ -793,7 +838,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Immune to Burning.",
-      "source": "STTH 1.5.0, p. 79\u201381",
+      "source": "STTH 1.5.0, p. 79–81",
       "slots": 0,
       "modifier": "immunity",
       "modifierTarget": "burning",
@@ -806,7 +851,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Immune to Soaked speed penalty.",
-      "source": "STTH 1.5.0, p. 79\u201381",
+      "source": "STTH 1.5.0, p. 79–81",
       "slots": 0,
       "modifier": "immunity",
       "modifierTarget": "soaked",
@@ -819,7 +864,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Does not need to breathe.",
-      "source": "STTH 1.5.0, p. 79\u201381",
+      "source": "STTH 1.5.0, p. 79–81",
       "slots": 0,
       "modifier": "immunity",
       "modifierTarget": "suffocating",
@@ -865,7 +910,16 @@
       "damageMode": "fixed",
       "damage": 5,
       "range": 0,
-      "slots": 0
+      "slots": 0,
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -874,7 +928,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Aim vs Dodge; partner Spin or Melee uses default damage. Initiator crits add +2 damage. Long range.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 5,
       "skill": "spin",
       "aimSkill": "spin",
@@ -892,7 +946,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Combine both Spin attacks; Medium range. Extra hits +1 damage or Knocked Back.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 10,
       "skill": "spin",
       "aimSkill": "spin",
@@ -909,8 +963,8 @@
     "type": "tagTeam",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "3\u00d73 debris cloud. Base strongest Speed attack \u22121; additional hits +2 damage. Obscures vision with +1 Disadvantage.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "description": "3×3 debris cloud. Base strongest Speed attack −1; additional hits +2 damage. Obscures vision with +1 Disadvantage.",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 15,
       "skill": "run",
       "aimSkill": "run",
@@ -928,7 +982,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Throw partner using default Spin/Melee damage, range Dexterity. Initiator crits can inflict crits.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 5,
       "skill": "move",
       "aimSkill": "move",
@@ -946,7 +1000,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Melee range; either hero may choose Spin, Melee or Ranged. Extra hits +1 damage or Stunned.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 10,
       "skill": "melee",
       "aimSkill": "melee",
@@ -963,8 +1017,8 @@
     "type": "tagTeam",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Strongest Power attack +5; 3\u00d73 shockwave. Extra hits +2 damage.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "description": "Strongest Power attack +5; 3×3 shockwave. Extra hits +2 damage.",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 15,
       "skill": "move",
       "aimSkill": "move",
@@ -982,7 +1036,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Normal Ranged distance. Partner default Spin/Melee damage. Initiator Tricks inflict Stunned.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 5,
       "skill": "ranged",
       "aimSkill": "ranged",
@@ -1000,7 +1054,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Melee range; either hero chooses Spin/Melee/Ranged. Extra hits +1 damage or Dazzled.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 10,
       "skill": "ranged",
       "aimSkill": "ranged",
@@ -1017,8 +1071,8 @@
     "type": "tagTeam",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Strongest Fly attack; 5\u00d75 area. Extra hits +2 damage or Dazzled.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "description": "Strongest Fly attack; 5×5 area. Extra hits +2 damage or Dazzled.",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 15,
       "skill": "ranged",
       "aimSkill": "ranged",
@@ -1036,7 +1090,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Choose Perceive, Knowledge, Persuade or Resolve at creation. Non-Technique ally attacks using strongest Signature Attack.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 5,
       "skill": "knowledge",
       "aimSkill": "knowledge",
@@ -1054,7 +1108,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Difficulty 1 chosen mental check. On success ally makes an immediate additional attack after their normal one. Resolve these two attacks separately.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 10,
       "skill": "knowledge",
       "aimSkill": "knowledge",
@@ -1071,8 +1125,8 @@
     "type": "tagTeam",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "Chosen mental skill plus ally non-attack skill. Strongest Technique attack \u22123, minimum1; dislodged objects up to Power2 add base damage. 3\u00d73 area; extra hits +2 or Restrained.",
-      "source": "STTH 1.5.0, p. 81\u201385",
+      "description": "Chosen mental skill plus ally non-attack skill. Strongest Technique attack −3, minimum1; dislodged objects up to Power2 add base damage. 3×3 area; extra hits +2 or Restrained.",
+      "source": "STTH 1.5.0, p. 81–85",
       "tpCost": 15,
       "skill": "tech",
       "aimSkill": "tech",
@@ -1090,7 +1144,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Genius: once per session on success, Difficulty2 chosen Intellect skill to create a temporary helpful device. Failed attempt cannot retry this encounter.",
-      "source": "STTH 1.5.0, p. 88\u201389",
+      "source": "STTH 1.5.0, p. 88–89",
       "slots": 0
     }
   },
@@ -1100,7 +1154,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Figurehead: once per session on success, Difficulty2 chosen Charisma skill to recruit temporary allies. Failed attempt cannot retry this encounter.",
-      "source": "STTH 1.5.0, p. 88\u201389",
+      "source": "STTH 1.5.0, p. 88–89",
       "slots": 0
     }
   },
@@ -1110,7 +1164,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
       "description": "Generalist: once per session, reroll own or ally check and keep better result.",
-      "source": "STTH 1.5.0, p. 88\u201389",
+      "source": "STTH 1.5.0, p. 88–89",
       "slots": 0
     }
   },
@@ -1127,7 +1181,16 @@
       "arc": "360",
       "advantage": 0,
       "recharge": 0,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -1143,7 +1206,16 @@
       "arc": "Cone",
       "advantage": 2,
       "recharge": 3,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 4,
+      "ammoMax": 4,
+      "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -1159,7 +1231,16 @@
       "arc": "Cone",
       "advantage": 0,
       "recharge": 0,
-      "aoe": "3x3"
+      "aoe": "3x3",
+      "ammoLimited": true,
+      "quantity": 30,
+      "ammoMax": 30,
+      "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -1175,7 +1256,16 @@
       "arc": "Cone",
       "advantage": 0,
       "recharge": 0,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -1191,7 +1281,16 @@
       "arc": "Straight",
       "advantage": 0,
       "recharge": 3,
-      "aoe": "3x3"
+      "aoe": "3x3",
+      "ammoLimited": true,
+      "quantity": 6,
+      "ammoMax": 6,
+      "notes": "\nHomebrew ammunition capacity: 6 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -1207,7 +1306,16 @@
       "arc": "Straight",
       "advantage": -1,
       "recharge": 3,
-      "aoe": ""
+      "aoe": "",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
@@ -1224,7 +1332,7 @@
     "type": "vehicleUpgrade",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "+2 Speed, \u22121 Power, \u22121 Dexterity; does not stack with Booster. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "description": "+2 Speed, −1 Power, −1 Dexterity; does not stack with Booster. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
       "source": "STTH 1.5.0, p. 109"
     }
   },
@@ -1269,7 +1377,7 @@
     "type": "vehicleUpgrade",
     "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
     "system": {
-      "description": "+10 HP, \u22121 Speed; does not stack with Light Armor. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "description": "+10 HP, −1 Speed; does not stack with Light Armor. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
       "source": "STTH 1.5.0, p. 109"
     }
   },
@@ -1292,7 +1400,7 @@
     }
   },
   {
-    "name": "Egg Hammer \u2014 Hammer Swing",
+    "name": "Egg Hammer — Hammer Swing",
     "type": "attack",
     "system": {
       "skill": "melee",
@@ -1307,7 +1415,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-hammer.png"
   },
   {
-    "name": "Egg Hammer \u2014 Hammer Spin",
+    "name": "Egg Hammer — Hammer Spin",
     "type": "attack",
     "system": {
       "skill": "melee",
@@ -1315,7 +1423,7 @@
       "damageMode": "fixed",
       "slots": 0,
       "range": 1,
-      "description": "Deal 2 damage to all opponents within the attacker\u2019s Melee range; forfeit Move.\n\nReusable NPC attack from Egg Hammer. Import only the intended attack options; duplicate items do not grant additional Actions. Hammer attacks require the same usable hammer: disable all associated hammer attack items together when disarmed. Area targeting and special effects require GM handling.",
+      "description": "Deal 2 damage to all opponents within the attacker’s Melee range; forfeit Move.\n\nReusable NPC attack from Egg Hammer. Import only the intended attack options; duplicate items do not grant additional Actions. Hammer attacks require the same usable hammer: disable all associated hammer attack items together when disarmed. Area targeting and special effects require GM handling.",
       "removable": true,
       "movementCost": "all",
       "source": "STTH 1.5.0 p.131"
@@ -1323,7 +1431,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-hammer.png"
   },
   {
-    "name": "Egg Hammer \u2014 Giant Fist",
+    "name": "Egg Hammer — Giant Fist",
     "type": "attack",
     "system": {
       "skill": "melee",
@@ -1339,7 +1447,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-hammer.png"
   },
   {
-    "name": "Heavy Egg Hammer \u2014 Heavy Hammer Smash",
+    "name": "Heavy Egg Hammer — Heavy Hammer Smash",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/heavy-egg-hammer.png",
     "system": {
@@ -1354,7 +1462,7 @@
     }
   },
   {
-    "name": "Heavy Egg Hammer \u2014 Whirling Hammer",
+    "name": "Heavy Egg Hammer — Whirling Hammer",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/heavy-egg-hammer.png",
     "system": {
@@ -1369,7 +1477,7 @@
     }
   },
   {
-    "name": "Heavy Egg Hammer \u2014 Armored Fist",
+    "name": "Heavy Egg Hammer — Armored Fist",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/heavy-egg-hammer.png",
     "system": {
@@ -1384,7 +1492,7 @@
     }
   },
   {
-    "name": "Heavy Egg Hammer \u2014 Giant Fist",
+    "name": "Heavy Egg Hammer — Giant Fist",
     "type": "attack",
     "system": {
       "skill": "melee",
@@ -1400,7 +1508,7 @@
     "img": "systems/sonic-tag-team-heroes/assets/tokens/heavy-egg-hammer.png"
   },
   {
-    "name": "Eggrobo \u2014 Heavy Laser",
+    "name": "Eggrobo — Heavy Laser",
     "type": "attack",
     "system": {
       "skill": "ranged",
@@ -1411,12 +1519,21 @@
       "description": "+1 Disadvantage; removable.\n\nReusable NPC attack from Eggrobo. Normal Action cost; importing multiple attacks grants choices, not extra Actions. Stabilized and Charged Laser are alternate firing modes of one removable gun: disable both if that gun is removed, disabled or broken. GM handles phase costs and cooldowns. The existing source profile does not specify a numeric range (stored as 0); GM sets the appropriate range from the source and scene, rather than treating 0 as a new range rule.",
       "advantage": -1,
       "removable": true,
-      "source": "STTH 1.5.0 p.132"
+      "source": "STTH 1.5.0 p.132",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
     },
-    "img": "systems/sonic-tag-team-heroes/assets/tokens/eggrobo.png"
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/eggrobo.png",
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
+    }
   },
   {
-    "name": "Eggrobo 2 \u2014 Stabilized Laser",
+    "name": "Eggrobo 2 — Stabilized Laser",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/eggrobo-2.png",
     "system": {
@@ -1427,11 +1544,20 @@
       "slots": 0,
       "source": "Community homebrew; untested",
       "description": "Removable; no inherent Disadvantage. Costs an Action unless explicitly stated otherwise. GM resolves multi-target attacks, phase costs, positioning and special effects manually.\n\nReusable NPC attack from Eggrobo 2. Normal Action cost; importing multiple attacks grants choices, not extra Actions. Stabilized and Charged Laser are alternate firing modes of one removable gun: disable both if that gun is removed, disabled or broken. GM handles phase costs and cooldowns.",
-      "removable": true
+      "removable": true,
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Eggrobo 2 \u2014 Charged Laser",
+    "name": "Eggrobo 2 — Charged Laser",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/eggrobo-2.png",
     "system": {
@@ -1442,11 +1568,20 @@
       "slots": 0,
       "source": "Community homebrew; untested",
       "description": "Removable. Forfeit Move; not consecutive turns. Costs an Action unless explicitly stated otherwise. GM resolves multi-target attacks, phase costs, positioning and special effects manually.\n\nReusable NPC attack from Eggrobo 2. Normal Action cost; importing multiple attacks grants choices, not extra Actions. Stabilized and Charged Laser are alternate firing modes of one removable gun: disable both if that gun is removed, disabled or broken. GM handles phase costs and cooldowns.",
-      "removable": true
+      "removable": true,
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Eggrobo 2 \u2014 Metal Fist",
+    "name": "Eggrobo 2 — Metal Fist",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/eggrobo-2.png",
     "system": {
@@ -1460,7 +1595,7 @@
     }
   },
   {
-    "name": "Egg Breaker \u2014 Breaker Mace Smash",
+    "name": "Egg Breaker — Breaker Mace Smash",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-breaker.png",
     "system": {
@@ -1474,7 +1609,7 @@
     }
   },
   {
-    "name": "Egg Breaker \u2014 Spiked Ball Launch",
+    "name": "Egg Breaker — Spiked Ball Launch",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-breaker.png",
     "system": {
@@ -1483,12 +1618,21 @@
       "damageMode": "fixed",
       "range": 8,
       "slots": 0,
-      "description": "Action; forfeit Interact. One visible target within 8 squares; normal cover and line of sight. The mace is unavailable after launch until the end of Egg Breaker\u2019s next turn; during that interval it cannot use Mace Smash or Mace Sweep. Cannot launch on consecutive turns. No free return hit. GM tracks availability and phase cost. Reusable NPC attack; follow Egg Breaker weapon-cycle notes. Importing attack options grants no extra Actions.",
-      "source": "Community homebrew; untested"
+      "description": "Action; forfeit Interact. One visible target within 8 squares; normal cover and line of sight. The mace is unavailable after launch until the end of Egg Breaker’s next turn; during that interval it cannot use Mace Smash or Mace Sweep. Cannot launch on consecutive turns. No free return hit. GM tracks availability and phase cost. Reusable NPC attack; follow Egg Breaker weapon-cycle notes. Importing attack options grants no extra Actions.",
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Breaker \u2014 Ground Shockwave",
+    "name": "Egg Breaker — Ground Shockwave",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-breaker.png",
     "system": {
@@ -1502,7 +1646,7 @@
     }
   },
   {
-    "name": "Egg Breaker \u2014 Breaker Mace Sweep",
+    "name": "Egg Breaker — Breaker Mace Sweep",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-breaker.png",
     "system": {
@@ -1516,7 +1660,7 @@
     }
   },
   {
-    "name": "Egg Breaker \u2014 Heavy Fist",
+    "name": "Egg Breaker — Heavy Fist",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-breaker.png",
     "system": {
@@ -1530,7 +1674,7 @@
     }
   },
   {
-    "name": "Egg Golem \u2014 Stone Fist",
+    "name": "Egg Golem — Stone Fist",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-golem.png",
     "system": {
@@ -1544,7 +1688,7 @@
     }
   },
   {
-    "name": "Egg Golem \u2014 Double-Fist Slam",
+    "name": "Egg Golem — Double-Fist Slam",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-golem.png",
     "system": {
@@ -1558,7 +1702,7 @@
     }
   },
   {
-    "name": "Egg Golem \u2014 Sweeping Arms",
+    "name": "Egg Golem — Sweeping Arms",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-golem.png",
     "system": {
@@ -1572,7 +1716,7 @@
     }
   },
   {
-    "name": "Egg Golem \u2014 Head Smash",
+    "name": "Egg Golem — Head Smash",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-golem.png",
     "system": {
@@ -1586,7 +1730,7 @@
     }
   },
   {
-    "name": "Gun Flapper \u2014 Machine-Gun Burst",
+    "name": "Gun Flapper — Machine-Gun Burst",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flapper.png",
     "system": {
@@ -1596,11 +1740,20 @@
       "range": 6,
       "slots": 0,
       "description": "Action; one visible target within 6 squares. Normal line of sight, cover and defense. One attack roll for the whole burst; no per-bullet extra attacks. Alternate firing modes of the same integrated gun; disabling that gun disables both modes. No extra Actions.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 30,
+      "ammoMax": 30,
+      "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Gun Flapper \u2014 Sweeping Burst",
+    "name": "Gun Flapper — Sweeping Burst",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flapper.png",
     "system": {
@@ -1610,11 +1763,20 @@
       "range": 6,
       "slots": 0,
       "description": "Action; forfeit Move and Interact. Up to 2 different visible targets within 6 squares that are within 2 squares of each other. Separate Ranged rolls; each target can be hit once. Cannot use on consecutive turns. Does not also fire Machine-Gun Burst. Button rolls one target; GM handles the second target, phase costs and cooldown. Alternate firing modes of the same integrated gun; disabling that gun disables both modes. No extra Actions.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 30,
+      "ammoMax": 30,
+      "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Falco \u2014 Bombing Pass",
+    "name": "Falco — Bombing Pass",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/falco.png",
     "system": {
@@ -1624,11 +1786,20 @@
       "range": 3,
       "slots": 0,
       "description": "Action; forfeit Interact. Requires being airborne above or within 3 squares of the target position, normal line of sight and height/range rules. Attack up to 2 different targets in the same or adjacent ground squares, separate Ranged rolls; each target at most once. Cannot use on consecutive turns or while carrying a Pawn. No persistent fire or extra splash. Button rolls one target; GM handles the second target, positioning and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 6,
+      "ammoMax": 6,
+      "notes": "\nHomebrew ammunition capacity: 6 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Falco \u2014 Diving Strike",
+    "name": "Falco — Diving Strike",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/falco.png",
     "system": {
@@ -1642,7 +1813,7 @@
     }
   },
   {
-    "name": "Egg Launcher \u2014 Homing Missile",
+    "name": "Egg Launcher — Homing Missile",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-launcher.png",
     "system": {
@@ -1654,11 +1825,18 @@
       "ammoLimited": true,
       "quantity": 4,
       "description": "Action; one visible target within 8 squares. Consumes one missile through the normal ammunition handler, including on a miss. Four missiles total, shared between horizontal and vertical mounts; no separate free ammunition pools. Cannot fire at quantity 0. Normal defense, line of sight and cover apply; homing does not guarantee a hit or bypass solid obstacles. No automatic splash, follow-up missile or free lock-on bonus. Reusable NPC attack. Import only one Homing Missile item per launcher; copies do not grant additional physical missiles.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoMax": 4,
+      "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Launcher \u2014 Spinning Body Strike",
+    "name": "Egg Launcher — Spinning Body Strike",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-launcher.png",
     "system": {
@@ -1672,7 +1850,7 @@
     }
   },
   {
-    "name": "Egg Fighter Gunner \u2014 Gun-Arm Burst",
+    "name": "Egg Fighter Gunner — Gun-Arm Burst",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter-gunner.png",
     "system": {
@@ -1682,11 +1860,20 @@
       "range": 6,
       "slots": 0,
       "description": "Action; one visible target within 6 squares. Normal cover and line of sight. One attack roll for the burst, not one per bullet. Requires at least one functioning gun arm.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 30,
+      "ammoMax": 30,
+      "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Fighter Gunner \u2014 Twin-Gun Crossfire",
+    "name": "Egg Fighter Gunner — Twin-Gun Crossfire",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter-gunner.png",
     "system": {
@@ -1696,11 +1883,20 @@
       "range": 6,
       "slots": 0,
       "description": "Action; forfeit Move and Interact. Requires both gun arms functioning. Attack up to 2 different visible targets within 6 squares and within 2 squares of each other, separate Ranged rolls, each target once. Cannot use on consecutive turns or also fire Gun-Arm Burst that turn. Button rolls one target; GM handles second target, phase costs and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Fighter Gunner \u2014 Gun-Arm Bash",
+    "name": "Egg Fighter Gunner — Gun-Arm Bash",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter-gunner.png",
     "system": {
@@ -1714,7 +1910,7 @@
     }
   },
   {
-    "name": "Egg Fighter \u2014 Swinging Punch",
+    "name": "Egg Fighter — Swinging Punch",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter.png",
     "system": {
@@ -1728,7 +1924,7 @@
     }
   },
   {
-    "name": "Egg Fighter \u2014 Heavy Punch",
+    "name": "Egg Fighter — Heavy Punch",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter.png",
     "system": {
@@ -1743,7 +1939,7 @@
     }
   },
   {
-    "name": "Egg Fighter \u2014 Chainsword Slash",
+    "name": "Egg Fighter — Chainsword Slash",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter-chainsword-shield.png",
     "system": {
@@ -1758,7 +1954,7 @@
     }
   },
   {
-    "name": "Egg Fighter \u2014 Heavy Chainsword Cleave",
+    "name": "Egg Fighter — Heavy Chainsword Cleave",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter-chainsword-shield.png",
     "system": {
@@ -1774,7 +1970,7 @@
     }
   },
   {
-    "name": "Egg Fighter \u2014 Shield Bash",
+    "name": "Egg Fighter — Shield Bash",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter-chainsword-shield.png",
     "system": {
@@ -1789,7 +1985,7 @@
     }
   },
   {
-    "name": "Egg Fighter \u2014 Knight Shield",
+    "name": "Egg Fighter — Knight Shield",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-fighter-chainsword-shield.png",
     "system": {
@@ -1799,7 +1995,7 @@
     }
   },
   {
-    "name": "Egg Chaser \u2014 Pursuit Laser",
+    "name": "Egg Chaser — Pursuit Laser",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-chaser.png",
     "system": {
@@ -1809,11 +2005,20 @@
       "range": 8,
       "slots": 0,
       "description": "Action; one visible target within 8 squares. Normal cover, range and defense. Twin emitters are one attack, not two free shots. Beams do not penetrate solid obstacles.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Chaser \u2014 Charged Lane Laser",
+    "name": "Egg Chaser — Charged Lane Laser",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-chaser.png",
     "system": {
@@ -1823,11 +2028,20 @@
       "range": 8,
       "slots": 0,
       "description": "Action; forfeit Move and Interact to mark one visible 1-square-wide, 4-square-long straight lane entirely within 8 squares and line of sight. At the start of the next turn, resolve against up to 2 different creatures still in the marked lane, separate Ranged rolls, each creature at most once. No tracking after marking; blockers stop the beam. Occupants can move away normally. Cannot use on consecutive turns or fire Pursuit Laser on the charging turn. The stored shot uses the original Action, with no extra Action cost at release; the robot can then take its normal new turn. Defeat or disabling the laser cancels the charge. Button rolls at impact, not marking; GM handles markers, delayed rolls and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Aero-Chaser \u2014 Twin Laser",
+    "name": "Aero-Chaser — Twin Laser",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/aero-chaser.png",
     "system": {
@@ -1837,11 +2051,20 @@
       "range": 8,
       "slots": 0,
       "description": "Action; one visible target. Normal cover and defense; two emitters make one attack roll. No automatic armor bypass or second shot.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Aero-Chaser \u2014 Homing Missile",
+    "name": "Aero-Chaser — Homing Missile",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/aero-chaser.png",
     "system": {
@@ -1853,11 +2076,18 @@
       "description": "Action; one visible target. Consumes one of 4 missiles through the normal ammunition handler, including on a miss. Normal cover and line of sight; no automatic hit, splash or tracking around solid walls. No automatic regeneration.",
       "source": "Community homebrew; untested",
       "ammoLimited": true,
-      "quantity": 4
+      "quantity": 4,
+      "ammoMax": 4,
+      "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Aero-Chaser \u2014 Charged Lane Beam",
+    "name": "Aero-Chaser — Charged Lane Beam",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/aero-chaser.png",
     "system": {
@@ -1867,11 +2097,20 @@
       "range": 8,
       "slots": 0,
       "description": "Action; forfeit Move and Interact. Mark one visible 1-square-wide, 4-square-long straight lane entirely within 8 squares. At the start of the next turn, attack up to 2 different creatures still in that lane, separate rolls, once per creature. Obstacles block the beam and occupants can move away. Cannot use on consecutive turns. Do not roll at launch; use the attack at impact. Defeat or disabling the emitters cancels it. The stored Action pays for impact; no extra Action is charged at release. GM handles markers, delayed rolls and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Mosquito \u2014 Grapple Stinger",
+    "name": "Mosquito — Grapple Stinger",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/mosquito.png",
     "system": {
@@ -1881,11 +2120,20 @@
       "range": 5,
       "slots": 0,
       "description": "Action; forfeit Move. Mark one visible ground square within 5 squares. At the start of the next turn, attack a creature still in that square; no tracking or automatic hit. If empty, the attack misses without a roll. The stinger anchors there until the end of that next turn, whether it hits or misses; Mosquito cannot move while anchored and Dodge becomes 1. At retraction restore normal movement and Dodge 2. Cannot launch again while anchored or on consecutive turns. No automatic grab, poison or blood drain. GM handles marker, delay, anchoring and retraction; roll the attack at impact, not marking.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Mosquito \u2014 Energy Sphere Rain",
+    "name": "Mosquito — Energy Sphere Rain",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/mosquito.png",
     "system": {
@@ -1895,11 +2143,20 @@
       "range": 6,
       "slots": 0,
       "description": "Action; forfeit Interact. Up to 2 different visible targets within 6 squares and within 2 squares of each other, separate Ranged rolls; each target once. Cannot use on consecutive turns. No lingering spheres or automatic splash. Button rolls one target; GM handles second target, phase costs and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Mosquito \u2014 Low Dash",
+    "name": "Mosquito — Low Dash",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/mosquito.png",
     "system": {
@@ -1913,7 +2170,7 @@
     }
   },
   {
-    "name": "Sasori \u2014 Tail Laser",
+    "name": "Sasori — Tail Laser",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/sasori.png",
     "system": {
@@ -1923,11 +2180,20 @@
       "range": 5,
       "slots": 0,
       "description": "Action; one visible target within 5 squares. The tail must face the target; normal line of sight and cover apply. One energy shot, no automatic hit, poison or ongoing damage. Cannot use if the tail cannon is explicitly disabled.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Sasori \u2014 Pincer Snap",
+    "name": "Sasori — Pincer Snap",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/sasori.png",
     "system": {
@@ -1941,7 +2207,7 @@
     }
   },
   {
-    "name": "Rhinobot \u2014 Horn Jab",
+    "name": "Rhinobot — Horn Jab",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/rhinobot.png",
     "system": {
@@ -1955,7 +2221,7 @@
     }
   },
   {
-    "name": "Rhinobot \u2014 Charging Gore",
+    "name": "Rhinobot — Charging Gore",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/rhinobot.png",
     "system": {
@@ -1969,37 +2235,37 @@
     }
   },
   {
-    "name": "Search Flapper \u2014 Searchlight",
+    "name": "Search Flapper — Searchlight",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/search-flapper.png",
     "system": {
       "slots": 0,
-      "description": "Action; inspect a visible 3-square-long, 1-square-wide straight strip starting adjacent to the Flapper. Roll Intellect + Perceive against the ordinary detection difficulty or the target\u2019s appropriate concealment result, as determined by the GM. The light illuminates this strip until the start of its next turn, but cannot see through solid cover or automatically defeat invisibility/concealment. GM handles light, perception roll and any hidden targets; no automated vision change.",
+      "description": "Action; inspect a visible 3-square-long, 1-square-wide straight strip starting adjacent to the Flapper. Roll Intellect + Perceive against the ordinary detection difficulty or the target’s appropriate concealment result, as determined by the GM. The light illuminates this strip until the start of its next turn, but cannot see through solid cover or automatically defeat invisibility/concealment. GM handles light, perception roll and any hidden targets; no automated vision change.",
       "source": "Community homebrew; GM adjudication"
     }
   },
   {
-    "name": "Search Flapper \u2014 Spotter Lock",
+    "name": "Search Flapper — Spotter Lock",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/search-flapper.png",
     "system": {
       "slots": 0,
-      "description": "After successfully detecting one creature with Searchlight, spend Interact to broadcast its position. One allied Egg Pawn within 6 squares receiving the signal gains +1 Advantage on its next attack against that creature before the start of the Search Flapper\u2019s next turn. Normal line of sight and range still apply; it does not allow attacks through walls. One broadcast per round; multiple Search Flappers\u2019 spotter bonuses do not stack. GM applies the bonus manually in the roll dialog.",
+      "description": "After successfully detecting one creature with Searchlight, spend Interact to broadcast its position. One allied Egg Pawn within 6 squares receiving the signal gains +1 Advantage on its next attack against that creature before the start of the Search Flapper’s next turn. Normal line of sight and range still apply; it does not allow attacks through walls. One broadcast per round; multiple Search Flappers’ spotter bonuses do not stack. GM applies the bonus manually in the roll dialog.",
       "source": "Community homebrew; GM adjudication"
     }
   },
   {
-    "name": "Search Flapper \u2014 Reinforcement Alarm",
+    "name": "Search Flapper — Reinforcement Alarm",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/search-flapper.png",
     "system": {
       "slots": 0,
-      "description": "Once per scene, spend an Action after detecting an enemy to alert up to 2 ordinary Egg Pawns designated as reserves before the encounter. They arrive at a GM-marked accessible entry point at the start of the Flapper\u2019s next turn and use ordinary initiative, with no free immediate attack. Alarm can be prevented before arrival by disabling the Flapper or cutting its communication. No additional Pawns if none were allocated, no cloning existing combatants, no healing/resetting reserves, no endless spawning. GM places the preselected actors/tokens and tracks arrival; not automated.",
+      "description": "Once per scene, spend an Action after detecting an enemy to alert up to 2 ordinary Egg Pawns designated as reserves before the encounter. They arrive at a GM-marked accessible entry point at the start of the Flapper’s next turn and use ordinary initiative, with no free immediate attack. Alarm can be prevented before arrival by disabling the Flapper or cutting its communication. No additional Pawns if none were allocated, no cloning existing combatants, no healing/resetting reserves, no endless spawning. GM places the preselected actors/tokens and tracks arrival; not automated.",
       "source": "Community homebrew; GM adjudication"
     }
   },
   {
-    "name": "Spinner \u2014 Spinning Blades",
+    "name": "Spinner — Spinning Blades",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/spinner.png",
     "system": {
@@ -2013,7 +2279,7 @@
     }
   },
   {
-    "name": "Egg Bommer \u2014 Juggled Bomb",
+    "name": "Egg Bommer — Juggled Bomb",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-bommer.png",
     "system": {
@@ -2025,11 +2291,18 @@
       "ammoLimited": true,
       "quantity": 3,
       "description": "Action; one visible target within 5 squares. Consumes one bomb through normal ammunition tracking, even on a miss. Three bombs total; no free extra shots, automatic splash, lingering fire or ongoing Burning. The three-shot limit is a homebrew balance choice. Normal cover and defense apply.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoMax": 3,
+      "notes": "\nHomebrew ammunition capacity: 3 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Bommer \u2014 Spiked Ball Ram",
+    "name": "Egg Bommer — Spiked Ball Ram",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-bommer.png",
     "system": {
@@ -2043,7 +2316,7 @@
     }
   },
   {
-    "name": "Drill Worm \u2014 Drill Jaws",
+    "name": "Drill Worm — Drill Jaws",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/drill-worm.png",
     "system": {
@@ -2057,7 +2330,7 @@
     }
   },
   {
-    "name": "Drill Worm \u2014 Burrowing Eruption",
+    "name": "Drill Worm — Burrowing Eruption",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/drill-worm.png",
     "system": {
@@ -2066,12 +2339,12 @@
       "damageMode": "fixed",
       "range": 3,
       "slots": 0,
-      "description": "Action; requires already burrowed in suitable ground. Choose and visibly mark a 2x2-square emergence footprint within 3 squares of current position, connected through diggable terrain. At the start of the next turn, emerge and attack up to 2 different grounded creatures in or adjacent to that footprint, separate Melee rolls, each creature once. This relocation uses the next turn\u2019s Move; no second Move that turn. Defenders may leave or prepare normally. No tracking, automatic hit or attack through an intact reinforced floor. Must remain surfaced until at least the start of the following turn. Defeat/disable cancels eruption. Button rolls at impact; GM handles markers, placement, delayed attacks and movement cost.",
+      "description": "Action; requires already burrowed in suitable ground. Choose and visibly mark a 2x2-square emergence footprint within 3 squares of current position, connected through diggable terrain. At the start of the next turn, emerge and attack up to 2 different grounded creatures in or adjacent to that footprint, separate Melee rolls, each creature once. This relocation uses the next turn’s Move; no second Move that turn. Defenders may leave or prepare normally. No tracking, automatic hit or attack through an intact reinforced floor. Must remain surfaced until at least the start of the following turn. Defeat/disable cancels eruption. Button rolls at impact; GM handles markers, placement, delayed attacks and movement cost.",
       "source": "Community homebrew; untested"
     }
   },
   {
-    "name": "Cannon Flapper \u2014 Cannon Shot",
+    "name": "Cannon Flapper — Cannon Shot",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/cannon-flapper.png",
     "system": {
@@ -2081,11 +2354,20 @@
       "range": 6,
       "slots": 0,
       "description": "Action; forfeit Move. One visible target within 6 squares. Normal cover, range and defense. Cannot use on consecutive turns: mark the cannon cooling until the end of its next turn. No free second shot, automatic splash or homing around obstacles. GM tracks phase cost and cooldown; ordinary attack button rolls one target.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Bat \u2014 Swooping Strike",
+    "name": "Bat — Swooping Strike",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/bat.png",
     "system": {
@@ -2099,7 +2381,7 @@
     }
   },
   {
-    "name": "Death Queen \u2014 Leg Laser",
+    "name": "Death Queen — Leg Laser",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-queen.png",
     "system": {
@@ -2109,11 +2391,20 @@
       "range": 8,
       "slots": 0,
       "description": "Action; one visible target within 8 squares. Multiple leg emitters count as one attack roll, not a free attack per leg. Normal cover, line of sight and defense.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Death Queen \u2014 Laser Fan",
+    "name": "Death Queen — Laser Fan",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-queen.png",
     "system": {
@@ -2123,11 +2414,20 @@
       "range": 8,
       "slots": 0,
       "description": "Action; forfeit Move and Interact. Up to 3 different visible targets within 8 squares, separate Ranged rolls; each target once. Cannot use on consecutive turns. No simultaneous Leg Laser or Stinger attack. GM handles targets, phase costs and cooldown; button rolls one target.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Death Queen \u2014 Energy Stinger",
+    "name": "Death Queen — Energy Stinger",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-queen.png",
     "system": {
@@ -2136,12 +2436,12 @@
       "damageMode": "fixed",
       "range": 3,
       "slots": 0,
-      "description": "Action; one visible target within 3 squares of the token edge. Energy extends the stinger\u2019s reach; no automatic armor bypass, poison, impalement or damage over time.",
+      "description": "Action; one visible target within 3 squares of the token edge. Energy extends the stinger’s reach; no automatic armor bypass, poison, impalement or damage over time.",
       "source": "Community homebrew; untested"
     }
   },
   {
-    "name": "Death Queen \u2014 Arena Slam",
+    "name": "Death Queen — Arena Slam",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-queen.png",
     "system": {
@@ -2155,7 +2455,7 @@
     }
   },
   {
-    "name": "Death Crab \u2014 Crushing Stomp",
+    "name": "Death Crab — Crushing Stomp",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-crab.png",
     "system": {
@@ -2169,7 +2469,7 @@
     }
   },
   {
-    "name": "Death Crab \u2014 Sweeping Legs",
+    "name": "Death Crab — Sweeping Legs",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-crab.png",
     "system": {
@@ -2183,7 +2483,7 @@
     }
   },
   {
-    "name": "Death Crab \u2014 Rubble Hurl",
+    "name": "Death Crab — Rubble Hurl",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-crab.png",
     "system": {
@@ -2193,11 +2493,20 @@
       "range": 8,
       "slots": 0,
       "description": "Action; forfeit Interact. One visible target within 8 squares, normal cover and defense. Requires an accessible loose boulder or substantial rubble beside a leg; consumes that piece. No infinite conjured rocks, automatic splash or secondary collision damage. GM checks rubble availability.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Death Ball \u2014 Bumper Ram",
+    "name": "Death Ball — Bumper Ram",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-ball.png",
     "system": {
@@ -2211,27 +2520,27 @@
     }
   },
   {
-    "name": "Death Ball \u2014 Bumper Screens",
+    "name": "Death Ball — Bumper Screens",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-ball.png",
     "system": {
       "slots": 0,
-      "description": "Reduce HP damage from direct melee hits by 4, minimum 0, while the screens function. Ranged attacks and redirected Mine Tanks bypass this custom reduction. Does not prevent conditions, normal critical effects or Ring loss. Instead of damage, a melee attack scoring at least 2 successful hits may disable the screens until the start of Death Ball\u2019s next turn. GM handles reduction and temporary disable. This softened tabletop protection is not the game\u2019s complete physical-attack deflection.",
+      "description": "Reduce HP damage from direct melee hits by 4, minimum 0, while the screens function. Ranged attacks and redirected Mine Tanks bypass this custom reduction. Does not prevent conditions, normal critical effects or Ring loss. Instead of damage, a melee attack scoring at least 2 successful hits may disable the screens until the start of Death Ball’s next turn. GM handles reduction and temporary disable. This softened tabletop protection is not the game’s complete physical-attack deflection.",
       "source": "Community homebrew; GM adjudication"
     }
   },
   {
-    "name": "Death Ball \u2014 Mine Tank Drop",
+    "name": "Death Ball — Mine Tank Drop",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-ball.png",
     "system": {
       "slots": 0,
-      "description": "Action; deploy one visible mine marker on a valid floor or ceiling square within 4 squares, normal line of sight. Three mines total per scene, maximum 3 active. A mine arms at the start of Death Ball\u2019s next turn. At the start of each later Death Ball turn, it may roll 1 square along its existing unobstructed surface toward the nearest visible opponent, without crossing gaps or changing surfaces. On entering or being entered by an occupied square, roll Death Ball\u2019s Intellect + Tech against that creature\u2019s Dodge; a hit deals 6 base HP damage plus normal excess hits. The mine is consumed whether it hits or misses. One target and one attack per mine, no blast splash, no additional critical/Ring effects from this custom hazard. A successful damaging attack against a mine\u2019s Dodge 1 destroys it safely. GM tracks markers, supply, timing and rolls; mines are hazards, not extra actor turns.",
+      "description": "Action; deploy one visible mine marker on a valid floor or ceiling square within 4 squares, normal line of sight. Three mines total per scene, maximum 3 active. A mine arms at the start of Death Ball’s next turn. At the start of each later Death Ball turn, it may roll 1 square along its existing unobstructed surface toward the nearest visible opponent, without crossing gaps or changing surfaces. On entering or being entered by an occupied square, roll Death Ball’s Intellect + Tech against that creature’s Dodge; a hit deals 6 base HP damage plus normal excess hits. The mine is consumed whether it hits or misses. One target and one attack per mine, no blast splash, no additional critical/Ring effects from this custom hazard. A successful damaging attack against a mine’s Dodge 1 destroys it safely. GM tracks markers, supply, timing and rolls; mines are hazards, not extra actor turns.",
       "source": "Community homebrew; GM adjudication"
     }
   },
   {
-    "name": "Death Ball \u2014 Redirect Mine Tank",
+    "name": "Death Ball — Redirect Mine Tank",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-ball.png",
     "system": {
@@ -2241,7 +2550,7 @@
     }
   },
   {
-    "name": "Egg Flame \u2014 Flame Jet",
+    "name": "Egg Flame — Flame Jet",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-flame.png",
     "system": {
@@ -2253,11 +2562,20 @@
       "effect": "burning",
       "effectHits": 2,
       "description": "Action; one visible target within 3 squares. Fire attack; on at least 2 successful attack hits apply Burning under normal STTH rules. Normal defense and fire protection apply. No persistent terrain or automatic additional damage from remaining in the original line.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Flame \u2014 Flame Fan",
+    "name": "Egg Flame — Flame Fan",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-flame.png",
     "system": {
@@ -2269,11 +2587,20 @@
       "effect": "burning",
       "effectHits": 2,
       "description": "Action; forfeit Move and Interact. Up to 2 different visible targets along the same straight 3-square line starting adjacent to the robot, separate Ranged rolls; each target once. Burning on at least 2 hits against that target. Cannot use on consecutive turns. Does not also fire Flame Jet. Button rolls one target; GM handles second target, Burning, geometry, phase costs and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Flame \u2014 Melt Ice",
+    "name": "Egg Flame — Melt Ice",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-flame.png",
     "system": {
@@ -2283,7 +2610,7 @@
     }
   },
   {
-    "name": "Egg Typhoon \u2014 Wind Blast",
+    "name": "Egg Typhoon — Wind Blast",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-typhoon.png",
     "system": {
@@ -2293,11 +2620,20 @@
       "range": 3,
       "slots": 0,
       "description": "Action; one visible target within 3 squares. Normal Ranged attack and defense. On at least 2 successful attack hits, may push the target 1 square directly away into a space its body can enter. Cannot push through solid barriers or occupied squares; no additional collision damage. Normal falling rules apply if pushed off a ledge. GM resolves forced movement.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Typhoon \u2014 Gale Sweep",
+    "name": "Egg Typhoon — Gale Sweep",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-typhoon.png",
     "system": {
@@ -2307,11 +2643,20 @@
       "range": 3,
       "slots": 0,
       "description": "Action; forfeit Move and Interact. Up to 2 different visible targets along one straight 3-square line starting adjacent to the robot, separate Ranged rolls; each target once. On at least 2 hits against a target, may push it 1 square directly away using Wind Blast restrictions. Cannot use on consecutive turns or also use Wind Blast that turn. Button rolls one target; GM resolves second target, geometry, pushes, phase costs and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Typhoon \u2014 Clear the Air",
+    "name": "Egg Typhoon — Clear the Air",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-typhoon.png",
     "system": {
@@ -2321,7 +2666,7 @@
     }
   },
   {
-    "name": "Egg Blizzard \u2014 Freezing Jet",
+    "name": "Egg Blizzard — Freezing Jet",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-blizzard.png",
     "system": {
@@ -2330,12 +2675,21 @@
       "damageMode": "fixed",
       "range": 3,
       "slots": 0,
-      "description": "Action; one visible target within 3 squares. On at least 2 successful attack hits, apply Restrained until the start of Egg Blizzard\u2019s next turn as a temporary ice binding, not a new Frozen condition. An affected target may spend an Action and pass Power + Melee or Dexterity + Move, Difficulty 2, to break free early; an adjacent ally may spend an Action to break the ice without damaging the captive. Normal defense applies. GM handles ice binding, escape and expiry; no automatic Stunned, unconsciousness or vulnerability.",
-      "source": "Community homebrew; untested"
+      "description": "Action; one visible target within 3 squares. On at least 2 successful attack hits, apply Restrained until the start of Egg Blizzard’s next turn as a temporary ice binding, not a new Frozen condition. An affected target may spend an Action and pass Power + Melee or Dexterity + Move, Difficulty 2, to break free early; an adjacent ally may spend an Action to break the ice without damaging the captive. Normal defense applies. GM handles ice binding, escape and expiry; no automatic Stunned, unconsciousness or vulnerability.",
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Blizzard \u2014 Blizzard Fan",
+    "name": "Egg Blizzard — Blizzard Fan",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-blizzard.png",
     "system": {
@@ -2345,11 +2699,20 @@
       "range": 3,
       "slots": 0,
       "description": "Action; forfeit Move and Interact. Up to 2 different visible targets along one straight 3-square line starting adjacent to the robot, separate Ranged rolls; each target once. On at least 2 hits against a target, apply the same short ice binding as Freezing Jet. Cannot use on consecutive turns or also use Freezing Jet that turn. Button rolls one target; GM handles second target, binding, geometry, phase costs and cooldown.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Egg Blizzard \u2014 Freeze Surface",
+    "name": "Egg Blizzard — Freeze Surface",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-blizzard.png",
     "system": {
@@ -2359,7 +2722,7 @@
     }
   },
   {
-    "name": "Mecha-Bu \u2014 Buzz-Saw Horn",
+    "name": "Mecha-Bu — Buzz-Saw Horn",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/mecha-bu.png",
     "system": {
@@ -2373,7 +2736,7 @@
     }
   },
   {
-    "name": "Mecha-Bu \u2014 Returning Saw \u2014 Optional",
+    "name": "Mecha-Bu — Returning Saw — Optional",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/mecha-bu.png",
     "system": {
@@ -2384,11 +2747,20 @@
       "slots": 0,
       "disabled": true,
       "description": "Optional Sonic Superstars-style loadout; disabled by default. GM may enable before the encounter. Action; one visible target within 4 squares. The same saw is unavailable for any other attack until the start of its next turn, when it returns. No second return-path hit or free extra attack. This option allows normal turning rather than the classic fixed-facing patrol. GM tracks shared saw state and selected version.",
-      "source": "Community homebrew; optional newer-game variant"
+      "source": "Community homebrew; optional newer-game variant",
+      "ammoLimited": true,
+      "quantity": 20,
+      "ammoMax": 20,
+      "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Mosqui \u2014 Needle Jab",
+    "name": "Mosqui — Needle Jab",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/mosqui.png",
     "system": {
@@ -2402,7 +2774,7 @@
     }
   },
   {
-    "name": "Mosqui \u2014 Nosedive",
+    "name": "Mosqui — Nosedive",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/mosqui.png",
     "system": {
@@ -2416,7 +2788,7 @@
     }
   },
   {
-    "name": "Little Fighter \u2014 Hopping Strike",
+    "name": "Little Fighter — Hopping Strike",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/little-fighter.png",
     "system": {
@@ -2430,7 +2802,7 @@
     }
   },
   {
-    "name": "Newtron \u2014 Energy Spit",
+    "name": "Newtron — Energy Spit",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/newtron.png",
     "system": {
@@ -2440,11 +2812,20 @@
       "range": 5,
       "slots": 0,
       "description": "Action; one visible target within 5 squares. Normal defense and cover. Firing reveals its location and ends active camouflage until the start of its next turn. No free shot when becoming visible.",
-      "source": "Community homebrew; untested"
+      "source": "Community homebrew; untested",
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "ammoVersion": "2.0.32"
+      }
     }
   },
   {
-    "name": "Newtron \u2014 Rocket Charge \u2014 Optional",
+    "name": "Newtron — Rocket Charge — Optional",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/newtron.png",
     "system": {
@@ -2459,17 +2840,17 @@
     }
   },
   {
-    "name": "Newtron \u2014 Optical Camouflage",
+    "name": "Newtron — Optical Camouflage",
     "type": "talent",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/newtron.png",
     "system": {
       "slots": 0,
-      "description": "Action; while stationary against a suitable wall or matching surface, attempt normal Sneak against observers\u2019 Perceive, with +1 Advantage to this concealment check. Success conceals its position until detected, moving or attacking. Not automatic invisibility, intangibility or immunity: known location, appropriate perception and ordinary area attacks still follow normal table rules. Attacking ends camouflage until at least the start of its next turn, and reactivating requires another Action. GM handles concealment and bonus; token invisibility is not applied automatically.",
+      "description": "Action; while stationary against a suitable wall or matching surface, attempt normal Sneak against observers’ Perceive, with +1 Advantage to this concealment check. Success conceals its position until detected, moving or attacking. Not automatic invisibility, intangibility or immunity: known location, appropriate perception and ordinary area attacks still follow normal table rules. Attacking ends camouflage until at least the start of its next turn, and reactivating requires another Action. GM handles concealment and bonus; token invisibility is not applied automatically.",
       "source": "Community homebrew; GM adjudication"
     }
   },
   {
-    "name": "Skorp \u2014 Spiked Tail Strike",
+    "name": "Skorp — Spiked Tail Strike",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/skorp.png",
     "system": {
@@ -2478,12 +2859,12 @@
       "damageMode": "fixed",
       "range": 2,
       "slots": 0,
-      "description": "Action; forfeit Move. One visible target within 2 squares. Extend and retract the mace tail as one attack; no second return-path hit, extra attack, poison or automatic Stun. Requires functioning tail. After resolution, Rear Opening applies until the start of Skorp\u2019s next turn. GM checks movement cost and position.",
+      "description": "Action; forfeit Move. One visible target within 2 squares. Extend and retract the mace tail as one attack; no second return-path hit, extra attack, poison or automatic Stun. Requires functioning tail. After resolution, Rear Opening applies until the start of Skorp’s next turn. GM checks movement cost and position.",
       "source": "Community homebrew; untested"
     }
   },
   {
-    "name": "Skorp \u2014 Drill-Claw Jab",
+    "name": "Skorp — Drill-Claw Jab",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/skorp.png",
     "system": {
@@ -2497,7 +2878,7 @@
     }
   },
   {
-    "name": "Shellcracker \u2014 Extending Claw",
+    "name": "Shellcracker — Extending Claw",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/shellcracker.png",
     "system": {
@@ -2511,7 +2892,7 @@
     }
   },
   {
-    "name": "Shellcracker \u2014 Small Pincer",
+    "name": "Shellcracker — Small Pincer",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/shellcracker.png",
     "system": {
@@ -2525,7 +2906,7 @@
     }
   },
   {
-    "name": "Splats \u2014 Spring Bump",
+    "name": "Splats — Spring Bump",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/splats.png",
     "system": {
@@ -2539,7 +2920,7 @@
     }
   },
   {
-    "name": "Spike Flapper \u2014 Spike Ram",
+    "name": "Spike Flapper — Spike Ram",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/spike-flapper.png",
     "system": {
@@ -2553,7 +2934,7 @@
     }
   },
   {
-    "name": "Spike Flapper \u2014 Hull Bump",
+    "name": "Spike Flapper — Hull Bump",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/spike-flapper.png",
     "system": {

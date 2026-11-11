@@ -49,7 +49,16 @@
           "range": 6,
           "description": "Removable.",
           "removable": true,
-          "source": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew."
+          "source": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -143,7 +152,16 @@
           "effect": "burning",
           "effectHits": 2,
           "recharge": 3,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -235,7 +253,16 @@
           "advantage": 1,
           "recharge": 1,
           "removable": true,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -327,7 +354,16 @@
           "range": 4,
           "description": "Removable.",
           "removable": true,
-          "source": "G.U.N. reskin of STTH 1.5.0 Marshal, p132; sidearm range 4 is homebrew."
+          "source": "G.U.N. reskin of STTH 1.5.0 Marshal, p132; sidearm range 4 is homebrew.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -453,7 +489,16 @@
           "effect": "stunned",
           "effectHits": 2,
           "removable": true,
-          "source": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew."
+          "source": "G.U.N. reskin of STTH 1.5.0 Kingpin, p138; sidearm range 4 is homebrew.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -549,7 +594,16 @@
           "range": 4,
           "description": "Removable.",
           "removable": true,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       }
     ],
@@ -624,7 +678,16 @@
           "slots": 0,
           "range": 5,
           "description": "",
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -726,7 +789,16 @@
           "description": "+1 Advantage; recharge two Interacts.",
           "advantage": 1,
           "recharge": 2,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 12,
+          "ammoMax": 12,
+          "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -826,7 +898,16 @@
           "slots": 0,
           "range": 5,
           "description": "",
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -1023,9 +1104,18 @@
           "slots": 0,
           "range": 5,
           "description": "",
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-beetle.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-beetle.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Can Fly",
@@ -1129,9 +1219,18 @@
           "effect": "burning",
           "effectHits": 2,
           "recharge": 3,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 6,
+          "ammoMax": 6,
+          "notes": "\nHomebrew ammunition capacity: 6 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bomb-beetle.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bomb-beetle.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Can Fly",
@@ -1233,7 +1332,16 @@
           "description": "Stunned on second hit.",
           "effect": "stunned",
           "effectHits": 2,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -1516,7 +1624,16 @@
           "slots": 0,
           "range": 6,
           "description": "",
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -1615,7 +1732,16 @@
           "effect": "burning",
           "effectHits": 2,
           "recharge": 3,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 6,
+          "ammoMax": 6,
+          "notes": "\nHomebrew ammunition capacity: 6 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -1714,9 +1840,16 @@
           "recharge": 3,
           "ammoLimited": true,
           "quantity": 4,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rocket-beetle.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rocket-beetle.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Can Fly",
@@ -1917,7 +2050,16 @@
           "description": "+1 Disadvantage; recharge two Interacts.",
           "advantage": -1,
           "recharge": 2,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2213,7 +2355,16 @@
           "description": "3×3 AoE; three Interacts to recharge.",
           "aoe": "3x3",
           "recharge": 3,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2327,7 +2478,16 @@
           "range": 6,
           "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2342,7 +2502,16 @@
           "description": "+1 Advantage; three Interacts to recharge.",
           "advantage": 1,
           "recharge": 3,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2487,7 +2656,16 @@
           "range": 6,
           "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2502,7 +2680,16 @@
           "description": "+1 Advantage; three Interacts to recharge.",
           "advantage": 1,
           "recharge": 3,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2643,7 +2830,16 @@
           "range": 6,
           "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2658,7 +2854,16 @@
           "description": "+1 Advantage; three Interacts to recharge.",
           "advantage": 1,
           "recharge": 3,
-          "source": "Homebrew STTH conversion"
+          "source": "Homebrew STTH conversion",
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -2767,7 +2972,16 @@
           "range": 5,
           "description": "Book Dark Rider machine gun: Range 5, cone, 3×3 selectable AoE.",
           "arc": "cone",
-          "aoe": "3x3"
+          "aoe": "3x3",
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       }
     ],
@@ -2861,12 +3075,16 @@
           "arc": "forward",
           "facing": "forward",
           "description": "Pilot-operated nose-mounted cannon; one target in the forward firing arc. Ranged versus Dodge. GM checks facing and line of sight. No automatic blast, homing or additional attacks. Art-inspired homebrew loadout; exact real-world weapon model and ammunition are not assumed.",
-          "notes": "Homebrew estimated price 600 Mobiums; resale 300. Vehicle mount; price excludes installation and ammunition.",
-          "source": "Community homebrew — supplied helicopter artwork; untested"
+          "notes": "Homebrew estimated price 600 Mobiums; resale 300. Vehicle mount; price excludes installation and ammunition.\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill.",
+          "source": "Community homebrew — supplied helicopter artwork; untested",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20
         },
         "flags": {
           "sonic-tag-team-heroes": {
-            "rosterAddition": "a8d690ae95a0e4528657"
+            "rosterAddition": "a8d690ae95a0e4528657",
+            "ammoVersion": "2.0.32"
           }
         }
       },
@@ -2885,12 +3103,16 @@
           "arc": "forward",
           "facing": "forward",
           "description": "Pilot-operated rocket-pod salvo; one target in the forward firing arc. Ranged versus Dodge. Recharge with three Interacts after firing. GM checks facing and line of sight. No automatic blast, homing or additional attacks. Art-inspired homebrew loadout; exact real-world weapon model and ammunition are not assumed.",
-          "notes": "Homebrew estimated price 900 Mobiums; resale 450. Vehicle mount; price excludes installation and ammunition.",
-          "source": "Community homebrew — supplied helicopter artwork; untested"
+          "notes": "Homebrew estimated price 900 Mobiums; resale 450. Vehicle mount; price excludes installation and ammunition.\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill.",
+          "source": "Community homebrew — supplied helicopter artwork; untested",
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4
         },
         "flags": {
           "sonic-tag-team-heroes": {
-            "rosterAddition": "da01c293f81ac1abf744"
+            "rosterAddition": "da01c293f81ac1abf744",
+            "ammoVersion": "2.0.32"
           }
         }
       }
@@ -2995,7 +3217,16 @@
           "arc": "360",
           "facing": "turret",
           "description": "Vehicle-mounted weapon. Uses the assigned pilot’s Ranged skill; GM checks turret direction and line of sight. Requires one Interact recharge after firing. Normal attack and defense rules; no automatic blast or extra hits.",
-          "source": "Community homebrew — G.U.N. Tank; untested"
+          "source": "Community homebrew — G.U.N. Tank; untested",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -3013,7 +3244,16 @@
           "arc": "360",
           "facing": "turret",
           "description": "Vehicle-mounted weapon. Uses the assigned pilot’s Ranged skill; GM checks turret direction and line of sight. Normal attack and defense rules; no automatic blast or extra hits.",
-          "source": "Community homebrew — G.U.N. Tank; untested"
+          "source": "Community homebrew — G.U.N. Tank; untested",
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       }
     ],
@@ -3168,9 +3408,18 @@
           "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
           "source": "Homebrew STTH conversion",
-          "price": 700
+          "price": 700,
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Homing Missile Salvo",
@@ -3185,9 +3434,18 @@
           "advantage": 1,
           "recharge": 3,
           "source": "Homebrew STTH conversion",
-          "price": 900
+          "price": 900,
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Hull Strike",
@@ -3315,9 +3573,18 @@
           "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
           "source": "Homebrew STTH conversion",
-          "price": 700
+          "price": 700,
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30,
+          "notes": "\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-b3-bigfoot.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-b3-bigfoot.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "B3 Laser Cannon",
@@ -3332,7 +3599,16 @@
           "slots": 0,
           "price": 1100,
           "description": "Pilot-operated laser cannon. One target within 8 squares; Ranged versus Dodge using normal attack rules. Requires one Interact recharge after firing. No homing bonus, automatic piercing, area damage or status.",
-          "source": "Community homebrew — user-specified B3 laser loadout; untested"
+          "source": "Community homebrew — user-specified B3 laser loadout; untested",
+          "ammoLimited": true,
+          "quantity": 12,
+          "ammoMax": 12,
+          "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -3348,12 +3624,17 @@
           "advantage": 1,
           "recharge": 3,
           "source": "Homebrew STTH conversion",
-          "price": 900
+          "price": 900,
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
         "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-b3-bigfoot.png",
         "flags": {
           "sonic-tag-team-heroes": {
-            "rosterAddition": "b3-homing-missiles"
+            "rosterAddition": "b3-homing-missiles",
+            "ammoVersion": "2.0.32"
           }
         }
       },
@@ -3464,9 +3745,17 @@
           "aoe": "3x3",
           "source": "Homebrew STTH conversion",
           "price": 700,
-          "notes": "Homebrew weapon valuation in Mobiums. Suggested resale is half the listed price. Integrated vehicle mount."
+          "notes": "Homebrew weapon valuation in Mobiums. Suggested resale is half the listed price. Integrated vehicle mount.\nHomebrew ammunition capacity: 30 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill.",
+          "ammoLimited": true,
+          "quantity": 30,
+          "ammoMax": 30
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Homing Missile Salvo",
@@ -3482,9 +3771,17 @@
           "recharge": 3,
           "source": "Homebrew STTH conversion",
           "price": 900,
-          "notes": "Homebrew weapon valuation in Mobiums. Suggested resale is half the listed price. Integrated vehicle mount."
+          "notes": "Homebrew weapon valuation in Mobiums. Suggested resale is half the listed price. Integrated vehicle mount.\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill.",
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Flying Dog Laser Cannon",
@@ -3499,12 +3796,16 @@
           "slots": 0,
           "price": 1100,
           "description": "Pilot-operated laser cannon; one target within 8 squares. Ranged versus Dodge using normal attack rules. Recharge with one Interact after firing. No automatic area damage, armor bypass or status.",
-          "notes": "Homebrew value 1100 Mobiums; resale 550. Integrated vehicle mount.",
-          "source": "Community homebrew — user-specified Flying Dog laser loadout; untested"
+          "notes": "Homebrew value 1100 Mobiums; resale 550. Integrated vehicle mount.\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill.",
+          "source": "Community homebrew — user-specified Flying Dog laser loadout; untested",
+          "ammoLimited": true,
+          "quantity": 12,
+          "ammoMax": 12
         },
         "flags": {
           "sonic-tag-team-heroes": {
-            "rosterAddition": "flying-dog-laser"
+            "rosterAddition": "flying-dog-laser",
+            "ammoVersion": "2.0.32"
           }
         }
       },
@@ -3711,9 +4012,18 @@
           "aoe": "3x3",
           "recharge": 3,
           "source": "Homebrew STTH conversion",
-          "price": 900
+          "price": 900,
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-blue-eagle.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Can Fly",

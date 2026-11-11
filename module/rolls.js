@@ -52,6 +52,7 @@ export async function attack(actor,item,{spend=true}={}){owned(actor);if(conditi
  if(conditionStacks(actor,'dazzled'))for(const e of actor.effects.filter(e=>e.statuses.has('dazzled')))await e.delete();
 }
 export async function vehicleAttack(vehicle,item){
+ owned(vehicle);if(item.system.ammoLimited&&item.system.quantity<=0)throw Error('This attack is out of ammunition.');if(item.system.remainingRecharge>0)throw Error('This weapon must recharge before firing.');
  const turnKey=`${game.combat?.id??'free'}:${game.combat?.round??0}`;if(game.combat&&item.system.lastUsed===turnKey)throw Error('This weapon has already fired this round.');
  const pilot=await fromUuid(vehicle.system.pilot);if(!pilot)throw Error('Set a pilot Actor UUID on the vehicle sheet.');owned(pilot);
  const o=await prompt(item.name,field('defense','Target Dodge dice',2)+field('advantage','Net Advantage',item.system.advantage)+field('squares','Target vehicle squares hit',1)+field('spent','Hits spent on status',0));if(!o)return;
@@ -59,7 +60,7 @@ export async function vehicleAttack(vehicle,item){
  const r=await dice(pool(pilot.system.derived.attributes[SKILLS[sk]],pilot.system.derived.ranks[sk]+d.overflow));const defense=await dice(d,{defense:true});
  const dmg=attackDamage(item.system.damage,r.hits,defense.hits,{squares:num(o.squares),spentHits:num(o.spent)});
  await card(vehicle,item.name,renderResult(r)+`<p>Defense ${defense.hits} hits. <b>${dmg.damage} damage</b>. Range ${item.system.range}; arc ${esc(item.system.arc)}; facing ${esc(item.system.facing)}. GM adjudicates firing arc and AoE coverage.</p>`,{rolls:[...r.rolls,...defense.rolls]});
- await item.update({'system.remainingRecharge':item.system.recharge,'system.lastUsed':turnKey});
+ await item.update({'system.remainingRecharge':item.system.recharge,'system.lastUsed':turnKey,...(item.system.ammoLimited?{'system.quantity':Math.max(0,item.system.quantity-1)}:{})});
 }
 export async function spendPhase(actor,kind){
  if(!game.combat)return;if(conditionStacks(actor,'ko'))throw Error('This actor is KO.');if(conditionStacks(actor,'restrained')&&['action','move'].includes(kind))throw Error('Restrained prevents Action and Move phases. Use a saving throw to escape.');const key=`${game.combat.id}:${game.combat.round}:${game.combat.turn}`;const phases=actor.system.phases.key===key?{...actor.system.phases}:{key,move:0,interact:0,action:0};

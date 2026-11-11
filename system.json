@@ -2,7 +2,7 @@
   "id": "sonic-tag-team-heroes",
   "title": "Sonic Tag-Team Heroes",
   "description": "Native Foundry V14 rebuild of the unofficial STTH 1.5.0 conversion. Original game by McShmoodle.",
-  "version": "2.0.31",
+  "version": "2.0.32",
   "compatibility": {
     "minimum": "14",
     "maximum": "14",

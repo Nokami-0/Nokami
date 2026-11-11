@@ -16,7 +16,7 @@
       "passengers": 1,
       "qualities": "Personal Scale",
       "personal": true,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -36,7 +36,7 @@
       "passengers": 1,
       "qualities": "Personal Scale",
       "personal": true,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -56,7 +56,7 @@
       "passengers": 2,
       "qualities": "",
       "personal": false,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -76,7 +76,7 @@
       "passengers": 4,
       "qualities": "",
       "personal": false,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -96,7 +96,7 @@
       "passengers": 30,
       "qualities": "",
       "personal": false,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -116,7 +116,7 @@
       "passengers": 2,
       "qualities": "Can Float",
       "personal": false,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -136,7 +136,7 @@
       "passengers": 6,
       "qualities": "Can Float",
       "personal": false,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -156,7 +156,7 @@
       "passengers": 30,
       "qualities": "Can Float",
       "personal": false,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -176,7 +176,7 @@
       "passengers": 4,
       "qualities": "Can Fly; Stall Speed; includes Booster in listed Speed",
       "personal": false,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   },
   {
@@ -196,7 +196,7 @@
       "passengers": 1,
       "qualities": "Can Hover; Personal Scale; includes Booster in listed Speed",
       "personal": true,
-      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+      "bio": "STTH 1.5.0 vehicle profile, pp.102–111. Set form factor and mounted upgrades from the source diagram."
     }
   }
 ]

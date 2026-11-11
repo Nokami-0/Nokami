@@ -244,7 +244,16 @@
           "effectHits": 2,
           "aoe": "3x3",
           "recharge": 3,
-          "source": "STTH 1.5.0 p.136"
+          "source": "STTH 1.5.0 p.136",
+          "ammoLimited": true,
+          "quantity": 6,
+          "ammoMax": 6,
+          "notes": "\nHomebrew ammunition capacity: 6 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -364,7 +373,16 @@
           "effectHits": 2,
           "aoe": "3x3",
           "recharge": 3,
-          "source": "STTH 1.5.0 p.154"
+          "source": "STTH 1.5.0 p.154",
+          "ammoLimited": true,
+          "quantity": 6,
+          "ammoMax": 6,
+          "notes": "\nHomebrew ammunition capacity: 6 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -556,7 +574,16 @@
           "effect": "stunned",
           "effectHits": 2,
           "recharge": 3,
-          "source": "STTH 1.5.0 p.157"
+          "source": "STTH 1.5.0 p.157",
+          "ammoLimited": true,
+          "quantity": 4,
+          "ammoMax": 4,
+          "notes": "\nHomebrew ammunition capacity: 4 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -572,7 +599,16 @@
           "effect": "burning",
           "effectHits": 2,
           "recharge": 3,
-          "source": "STTH 1.5.0 p.157"
+          "source": "STTH 1.5.0 p.157",
+          "ammoLimited": true,
+          "quantity": 12,
+          "ammoMax": 12,
+          "notes": "\nHomebrew ammunition capacity: 12 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -590,7 +626,16 @@
           "effectHits": 2,
           "aoe": "3x3",
           "recharge": 3,
-          "source": "STTH 1.5.0 p.157"
+          "source": "STTH 1.5.0 p.157",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -983,7 +1028,16 @@
           "effectHits": 2,
           "aoe": "3x3",
           "recharge": 3,
-          "source": "STTH 1.5.0 p.162"
+          "source": "STTH 1.5.0 p.162",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -998,7 +1052,16 @@
           "description": "Inflicts Stunned and Dazzled; three Interacts to recharge.",
           "effect": "stunned, dazzled",
           "automaticEffect": true,
-          "source": "STTH 1.5.0 p.162"
+          "source": "STTH 1.5.0 p.162",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -1115,7 +1178,16 @@
           "range": 8,
           "slots": 0,
           "description": "Action; forfeit Interact. One visible target within 8 squares; normal cover and line of sight. The mace is unavailable after launch until the end of Egg Breaker’s next turn; during that interval it cannot use Mace Smash or Mace Sweep. Cannot launch on consecutive turns. No free return hit. GM tracks availability and phase cost.",
-          "source": "Community homebrew; untested"
+          "source": "Community homebrew; untested",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
         }
       },
       {
@@ -1270,9 +1342,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-big-arms.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-big-arms.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -1381,9 +1462,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-death-egg.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-death-egg.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -1451,9 +1541,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-cop-speerder.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-cop-speerder.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -1522,9 +1621,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-beater.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-beater.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -1634,9 +1742,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-albtross.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-albtross.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -1746,9 +1863,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-beetle.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-beetle.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -1858,9 +1984,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-booster.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-booster.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -1969,9 +2104,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-bomber-ship.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-bomber-ship.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -2039,9 +2183,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-balloon.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-balloon.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -2109,9 +2262,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-base.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-base.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -2180,9 +2342,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-devil-ray.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-devil-ray.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -2292,9 +2463,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-dealer.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-dealer.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -2404,9 +2584,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-emperor.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-emperor.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -2516,9 +2705,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-hornet.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-hornet.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -2628,9 +2826,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-hawk.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-hawk.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -2740,9 +2947,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-hammermk2.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-hammermk2.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -2852,9 +3068,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-super-egg-robo.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-super-egg-robo.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -2963,9 +3188,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-propeller-egg-moblie.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-propeller-egg-moblie.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3033,9 +3267,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-metal-carrier.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-metal-carrier.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3103,9 +3346,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-flying-battery.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-flying-battery.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3174,9 +3426,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-giant-egg-walker.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-giant-egg-walker.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -3285,9 +3546,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-eggman-space-ship.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-eggman-space-ship.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3355,9 +3625,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-eggcarier.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-eggcarier.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3426,9 +3705,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-shogun.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-shogun.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -3538,9 +3826,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-scarab.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-scarab.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -3649,9 +3946,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-press-cannon.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-press-cannon.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3719,9 +4025,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile1-5.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile1-5.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3789,9 +4104,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mech.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mech.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3859,9 +4183,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile-missile-type.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile-missile-type.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3929,9 +4262,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile-modified.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile-modified.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -3999,9 +4341,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile-mk2.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-mobile-mk2.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -4070,9 +4421,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-salamander.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-salamander.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -4182,9 +4542,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-viper.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-viper.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -4294,9 +4663,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-wyvern.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-wyvern.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -4406,9 +4784,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-walker-mk-2.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-walker-mk-2.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -4517,9 +4904,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-partyship.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-partyship.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -4587,9 +4983,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-tunnelbot-piloted.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-tunnelbot-piloted.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -4658,9 +5063,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-starl-mobile.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-starl-mobile.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -4770,9 +5184,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rotatatron.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rotatatron.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -4881,9 +5304,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rhinotank.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rhinotank.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -4951,9 +5383,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rhinoliner.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rhinoliner.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -5022,9 +5463,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rotatinator.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-rotatinator.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -5134,9 +5584,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-nega-wisp.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-nega-wisp.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -5245,9 +5704,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-tank.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-tank.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -5316,9 +5784,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-genesis.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-genesis.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -5428,9 +5905,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-interceptor.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-interceptor.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -5540,9 +6026,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-cauldran.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-cauldran.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -5651,9 +6146,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-carrier.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-carrier.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -5721,9 +6225,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-carrier-transformed.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-egg-carrier-transformed.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -5792,9 +6305,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-cooperation-mecha-group.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-cooperation-mecha-group.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -5904,9 +6426,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks."
+          "description": "Action; one target; normal attack and defense rules. No automatic status or extra attacks.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-bfb.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-bfb.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Close Strike",
@@ -6015,9 +6546,18 @@
           "damage": 8,
           "damageMode": "fixed",
           "range": 8,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-bull-train.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-bull-train.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -6085,9 +6625,18 @@
           "damage": 12,
           "damageMode": "fixed",
           "range": 12,
-          "description": "Action; one target; uses the assigned pilot. No automatic area damage."
+          "description": "Action; one target; uses the assigned pilot. No automatic area damage.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-blotfish-tranport.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-blotfish-tranport.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Crewed Chassis",
@@ -6160,9 +6709,18 @@
           "effectHits": 2,
           "aoe": "3x3",
           "recharge": 3,
-          "source": "STTH 1.5.0 p.162"
+          "source": "STTH 1.5.0 p.162",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-giant-egg-robo.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-giant-egg-robo.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Master Cannon",
@@ -6176,9 +6734,18 @@
           "description": "Inflicts Stunned and Dazzled; three Interacts to recharge.",
           "effect": "stunned, dazzled",
           "automaticEffect": true,
-          "source": "STTH 1.5.0 p.162"
+          "source": "STTH 1.5.0 p.162",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
         },
-        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-giant-egg-robo.png"
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-giant-egg-robo.png",
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        }
       },
       {
         "name": "Desperate Destruction",
