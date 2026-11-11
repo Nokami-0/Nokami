@@ -9095,9 +9095,11 @@
         "weaponCategory": "Equipment",
         "resaleValue": 100,
         "valuation": "Homebrew estimated value",
-        "ammoVersion": "2.0.32"
+        "ammoVersion": "2.0.32",
+        "artVersion": "pistol-1"
       }
-    }
+    },
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-pistol.svg"
   },
   {
     "name": "Service Rifle",
