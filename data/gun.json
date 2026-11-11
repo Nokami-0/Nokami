@@ -2006,7 +2006,7 @@
   {
     "name": "Rhino Cannon",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-cannon.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -2067,7 +2067,8 @@
           "sonic-tag-team-heroes": {
             "ammoVersion": "2.0.32"
           }
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-cannon.png"
       },
       {
         "name": "Hull Ram",
@@ -2080,7 +2081,8 @@
           "range": 1,
           "description": "",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-cannon.png"
       },
       {
         "name": "Suffocation Immunity",
@@ -2092,7 +2094,8 @@
           "modifierTarget": "suffocating",
           "modifierValue": 1,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-cannon.png"
       }
     ],
     "prototypeToken": {
@@ -2105,12 +2108,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-cannon.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Rhino Cannon",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.34"
       }
     }
   },

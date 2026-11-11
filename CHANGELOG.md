@@ -1,3 +1,7 @@
+# 2.0.34
+
+- Apply supplied G.U.N. Rhino Cannon token artwork, preserving cannon ammunition, ram and NPC stats.
+
 # 2.0.33
 
 - Apply supplied plain G.U.N. Rhino artwork to Rhino Jet and its items, retaining ram and charge traits. Cannon, Spike and Metal variants remain separate.
