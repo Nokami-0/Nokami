@@ -5521,6 +5521,62 @@
     }
   },
   {
+    "name": "Helicopter Nose Autocannon",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-helicopter.png",
+    "system": {
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 6,
+      "range": 6,
+      "slots": 0,
+      "recharge": 0,
+      "price": 600,
+      "arc": "forward",
+      "facing": "forward",
+      "description": "Pilot-operated nose-mounted cannon; one target in the forward firing arc. Ranged versus Dodge. GM checks facing and line of sight. No automatic blast, homing or additional attacks. Art-inspired homebrew loadout; exact real-world weapon model and ammunition are not assumed.",
+      "notes": "Homebrew estimated price 600 Mobiums; resale 300. Vehicle mount; price excludes installation and ammunition.",
+      "source": "Community homebrew — supplied helicopter artwork; untested"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "rosterAddition": "a8d690ae95a0e4528657",
+        "weaponKey": "a8d690ae95a0e4528657",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 300,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
+    "name": "Helicopter Rocket Pods",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-helicopter.png",
+    "system": {
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 8,
+      "range": 8,
+      "slots": 0,
+      "recharge": 3,
+      "price": 900,
+      "arc": "forward",
+      "facing": "forward",
+      "description": "Pilot-operated rocket-pod salvo; one target in the forward firing arc. Ranged versus Dodge. Recharge with three Interacts after firing. GM checks facing and line of sight. No automatic blast, homing or additional attacks. Art-inspired homebrew loadout; exact real-world weapon model and ammunition are not assumed.",
+      "notes": "Homebrew estimated price 900 Mobiums; resale 450. Vehicle mount; price excludes installation and ammunition.",
+      "source": "Community homebrew — supplied helicopter artwork; untested"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "rosterAddition": "da01c293f81ac1abf744",
+        "weaponKey": "da01c293f81ac1abf744",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 450,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
     "name": "Homing Attack",
     "type": "attack",
     "system": {

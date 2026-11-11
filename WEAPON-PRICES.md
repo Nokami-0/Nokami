@@ -428,3 +428,5 @@ Values are in Mobiums. Existing listed prices are preserved; other values and 50
 | Flying Dog Laser Cannon | Vehicle mount | fixed | 10 | 8 | 1100 | 550 | Homebrew estimated value |
 | Giga Trooper Heavy Punch | Vehicle mount | fixed | 9 | 1 | 300 | 150 | Homebrew estimated value |
 | Giga Trooper Stomp | Vehicle mount | fixed | 8 | 1 | 250 | 125 | Homebrew estimated value |
+| Helicopter Nose Autocannon | Vehicle mount | fixed | 6 | 6 | 600 | 300 | Homebrew estimated value |
+| Helicopter Rocket Pods | Vehicle mount | fixed | 8 | 8 | 900 | 450 | Homebrew estimated value |

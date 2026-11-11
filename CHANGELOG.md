@@ -1,3 +1,8 @@
+# 2.0.27
+
+- Arm the G.U.N. Helicopter with artwork-inspired nose autocannon and rocket pods, with homebrew stats and prices.
+- Repair Library adds both weapons to existing compendium entries; world actors remain unchanged.
+
 # 2.0.26
 
 - Apply supplied G.U.N. Helicopter token art and add a visible flight trait to its existing vehicle profile.

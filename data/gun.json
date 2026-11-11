@@ -2801,8 +2801,8 @@
       "passengers": 4,
       "width": 1,
       "length": 2,
-      "qualities": "Can Fly; Helicopter Blades: blade-square attacks halve damage; touching active blades inflicts critical damage. GM resolves.",
-      "bio": "STTH 1.5.0 Helicopter p105; G.U.N. reskin. Unarmed transport, blade footprint must follow the book.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
+      "qualities": "Can Fly; Helicopter Blades: blade-square attacks halve damage; touching active blades inflicts critical damage. GM resolves. Armed variant: forward nose autocannon and rocket pods. No homing or automated area damage.",
+      "bio": "STTH 1.5.0 Helicopter p105; G.U.N. reskin. Armed homebrew variant: nose autocannon and forward rocket pods inspired by supplied art; blade footprint follows the book.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
       "form": "Generic 1×2 footprint for use on the grid; adjust to match the book diagram and scene."
     },
     "items": [
@@ -2818,6 +2818,54 @@
         "flags": {
           "sonic-tag-team-heroes": {
             "rosterAddition": "gun-helicopter-flight"
+          }
+        }
+      },
+      {
+        "name": "Helicopter Nose Autocannon",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-helicopter.png",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 6,
+          "range": 6,
+          "slots": 0,
+          "recharge": 0,
+          "price": 600,
+          "arc": "forward",
+          "facing": "forward",
+          "description": "Pilot-operated nose-mounted cannon; one target in the forward firing arc. Ranged versus Dodge. GM checks facing and line of sight. No automatic blast, homing or additional attacks. Art-inspired homebrew loadout; exact real-world weapon model and ammunition are not assumed.",
+          "notes": "Homebrew estimated price 600 Mobiums; resale 300. Vehicle mount; price excludes installation and ammunition.",
+          "source": "Community homebrew — supplied helicopter artwork; untested"
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "rosterAddition": "a8d690ae95a0e4528657"
+          }
+        }
+      },
+      {
+        "name": "Helicopter Rocket Pods",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-helicopter.png",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 8,
+          "range": 8,
+          "slots": 0,
+          "recharge": 3,
+          "price": 900,
+          "arc": "forward",
+          "facing": "forward",
+          "description": "Pilot-operated rocket-pod salvo; one target in the forward firing arc. Ranged versus Dodge. Recharge with three Interacts after firing. GM checks facing and line of sight. No automatic blast, homing or additional attacks. Art-inspired homebrew loadout; exact real-world weapon model and ammunition are not assumed.",
+          "notes": "Homebrew estimated price 900 Mobiums; resale 450. Vehicle mount; price excludes installation and ammunition.",
+          "source": "Community homebrew — supplied helicopter artwork; untested"
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "rosterAddition": "da01c293f81ac1abf744"
           }
         }
       }
