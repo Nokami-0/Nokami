@@ -57,7 +57,7 @@
   {
     "name": "Power Sneakers",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/power-sneakers.svg",
     "system": {
       "description": "For 3 rounds or encounter end: +2 movement squares and +2 skill ranks on Speed checks.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -67,6 +67,11 @@
       "ringPrice": 8,
       "modifierValue": 0,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "power-sneakers-1"
+      }
     }
   },
   {
