@@ -1,3 +1,11 @@
+## 2.0.9 - PDF sheet styling
+
+- Blue checkerboard frame, white ink-outlined panels and printed-sheet headings.
+- Five attribute colors and skills grouped under their matching attributes.
+- Yellow resources, pink HP, cyan TP and green movement strip.
+- Large high-contrast values and visible keyboard focus retained.
+- Item and vehicle sheets share the printed style; original game credit to McShmoodle retained.
+
 # 2.0.7
 
 Add separate G.U.N. Actor compendium with 30 homebrew profiles and generic book reskins. Shared faction importer keeps both compendiums distinct and avoids duplicates. Human crews do not gain robotic suffocation immunity. Pilot labels identify the appropriate faction default. 64 automated tests. See GUN.md for roster, provenance and manual encounter mechanics.

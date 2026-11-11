@@ -10,3 +10,53 @@
 .stth .item-row span{font-size:14px;color:#10223d}
 .stth .stth-header input.name{color:#fff;background:transparent}
 .stth-die{width:34px;height:34px;font-size:18px;color:#10223d}
+
+/* STTH printed sheet: checkerboard frame, inked panels and attribute columns. */
+.stth{--ink:#111;--blue:#145bbd;--gold:#ffe744;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.stth .window-content{background-color:#e5f6ff;background-image:conic-gradient(#9bdcfa 25%,#e5f6ff 0 50%,#9bdcfa 0 75%,#e5f6ff 0);background-size:48px 48px;padding:14px}
+.stth-sheet{background:#fff;border:3px solid #111;outline:2px solid #fff;gap:8px;padding:9px;min-height:0;color:#111;overflow:auto}
+.stth-header{background:#fff;color:#111;border:2px solid #111;border-bottom:5px solid #111;border-radius:0;padding:8px;gap:12px}
+.stth-header img{border:2px solid #111;border-radius:0;width:76px;height:76px}
+.stth .stth-header input.name{color:#111;background:#fff;font-size:25px;font-weight:900;border-bottom:2px solid #111;border-radius:0}
+.stth .tagline{font-weight:900;letter-spacing:1px;font-style:italic;color:#111}
+.stth .tagline span{opacity:1;color:#444}
+.stth input,.stth select,.stth textarea{border-radius:0;border-color:#777;color:#111;background:#fff}
+.stth textarea{width:100%;padding:8px;line-height:1.5}
+.stth input[type=number]{color:#111;border:2px solid #555;font-size:20px;background:#fff;height:38px}
+.stth .resources{background:#ffe744;border:2px solid #111;border-radius:0;gap:8px;padding:8px}
+.stth .resources label{margin:0;background:#fff8b7;border:1px solid #111;padding:4px;font-size:12px;text-transform:uppercase}
+.stth .resources label:first-child{background:#ffc7e5}
+.stth .resources label:nth-child(2){background:#b8f6f5}
+.stth button{background:#fff;color:#111;border:1px solid #555;border-radius:0;font-weight:700;min-height:32px}
+.stth button:hover{background:#dff3ff;border-color:#111;box-shadow:inset 0 -3px #145bbd}
+.stth button:focus-visible,.stth input:focus-visible,.stth select:focus-visible,.stth textarea:focus-visible{outline:3px solid #145bbd;outline-offset:2px}
+.stth .tabs{gap:4px;border-bottom:3px solid #111;padding-bottom:5px;flex-shrink:0}
+.stth .tabs button{flex:1;font-size:12px;text-transform:uppercase;font-style:italic;border:2px solid #111;background:#e1f4fc;min-height:38px}
+.stth .tabs button.active{background:#145bbd;color:#fff;text-shadow:none}
+.stth .sheet-body{padding:0 3px 5px 0;flex:1 1 auto;min-height:120px}
+.stth .attribute-row{grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border:2px solid #111}
+.stth .attribute-column{--attribute:#00a9e4;background:var(--attribute);padding:6px;min-width:0;border-right:2px solid #111}
+.stth .attribute-column:last-child{border-right:0}
+.stth .attribute-column.power{--attribute:#ff565b}.stth .attribute-column.dexterity{--attribute:#fff337}.stth .attribute-column.intellect{--attribute:#aaa}.stth .attribute-column.charisma{--attribute:#c587f3}
+.stth label.attribute{background:transparent;border:0;border-radius:0;padding:0 0 7px;margin:0;gap:3px;text-transform:uppercase;font-size:12px;font-style:italic;flex-direction:column-reverse;color:#111}
+.stth .attribute small{order:-1;color:#111;font-size:10px;font-style:normal}
+.stth .attribute input[type=number]{width:75%;min-width:0;height:56px;font-size:30px;font-weight:900;border:2px solid #111}
+.stth .skill{display:grid;grid-template-columns:minmax(0,1fr) 48px;gap:3px;background:transparent;border-radius:0;padding:4px 0;border-top:1px solid #ffffff8c}
+.stth .skill button{padding:3px;font-size:12px;text-align:left;font-style:italic;overflow-wrap:anywhere;min-width:0}
+.stth .skill input[type=number]{width:48px;min-width:0;font-size:18px;height:32px}
+.stth .skill small{grid-column:1/-1;color:#111;font-size:10px}
+.stth .derived{background:#a1f6b1;border:2px solid #111;border-radius:0;margin:8px 0;padding:5px;gap:6px}
+.stth .derived span{font-size:15px;color:#111}
+.stth h2{color:#111;background:#fff;border:2px solid #111;border-bottom-width:4px;padding:6px 8px;font-weight:900;font-style:italic;text-transform:uppercase;font-size:17px;gap:8px}
+.stth .item-row{border:1px solid #777;border-top:0;background:#fff;padding:7px;flex-wrap:wrap}
+.stth .item-name{min-width:140px}
+.stth .item-group:has([data-type=tagTeam]) h2{background:#ffcdcf}
+.stth .item-group:has([data-type=attack]) h2,.stth .item-group:has([data-type=talent]) h2{background:#e1f4fc}
+.stth details{background:#f4f4f4;border:1px solid #777;border-radius:0}
+.stth summary{font-style:italic;text-transform:uppercase;font-size:12px}
+.stth .conditions .active{background:#145bbd;color:#fff}
+.stth .grid3{gap:8px 12px}.stth .grid3 label{font-size:12px;color:#111}
+.stth .vehicle .grid3{background:#e1f4fc;border:2px solid #111;padding:10px}
+.stth-reference article{background:#fff;color:#111;border:1px solid #111;margin:6px 0}
+@media(max-width:750px){.stth .attribute-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;border:0}.stth .attribute-column{border:2px solid #111}.stth .tabs button{flex:1 1 30%}.stth-header{flex-wrap:wrap}.stth .resources{gap:5px}}
+@media(max-width:480px){.stth .attribute-row,.stth .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}.stth .window-content{padding:8px}.stth-sheet{padding:5px}}
