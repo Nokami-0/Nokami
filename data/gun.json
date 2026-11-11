@@ -4211,5 +4211,48 @@
         "communityRosterVersion": "2.0.36"
       }
     }
+  },
+  {
+    "name": "GUN Jumper",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-jumper.svg",
+    "system": {
+      "speed": 2,
+      "power": 2,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 20,
+        "max": 20
+      },
+      "dodge": 1,
+      "movement": 2,
+      "critThreshold": 1,
+      "passengers": 1,
+      "width": 1,
+      "length": 1,
+      "qualities": "",
+      "bio": "G.U.N. vehicle. Community starter profile; these statistics are provisional and are not an official STTH book profile. Adjust statistics and equipment with the GM. Set a pilot Actor UUID before using vehicle actions.",
+      "form": "Provisional 1×1 footprint; adjust to suit the scene."
+    },
+    "items": [],
+    "prototypeToken": {
+      "name": "GUN Jumper",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-jumper.svg"
+      },
+      "bar1": {
+        "attribute": "hp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "GUN Jumper",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-jumper"
+      }
+    }
   }
 ]
