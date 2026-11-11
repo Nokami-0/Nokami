@@ -2991,5 +2991,25 @@
         "homebrew": true
       }
     }
+  },
+  {
+    "name": "Super Ring (50)",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/super-ring-50.svg",
+    "system": {
+      "description": "Gain 50 Rings. Stored until used. Consumes one item on use.",
+      "source": "Community variant using the existing Super Ring consumable rules; 50-ring amount requested by the user.",
+      "subtype": "rings",
+      "quantity": 1,
+      "modifierValue": 50,
+      "slots": 0,
+      "notes": "Purchase price is not established; GM sets availability and price."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "super-ring-50-1",
+        "homebrew": true
+      }
+    }
   }
 ]
