@@ -1,3 +1,7 @@
+# 2.0.24
+
+- Add G.U.N. Giga Trooper heavy robotic NPC with supplied token, homebrew melee attacks and reference weapon valuations.
+
 # 2.0.23
 
 - Add Flying Dog Laser Cannon alongside existing machine guns and homing missiles.

@@ -3481,5 +3481,117 @@
         "communityRosterVersion": "2.0.22"
       }
     }
+  },
+  {
+    "name": "G.U.N. Giga Trooper",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 5,
+        "dexterity": 2,
+        "intellect": 2,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 3,
+        "move": 2,
+        "perceive": 1,
+        "resolve": 2
+      },
+      "hp": {
+        "value": 45,
+        "max": 45
+      },
+      "hpBonus": 15,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 3,
+      "initiativeTrick": 0,
+      "critThreshold": 2,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "G.U.N. machine",
+      "npcTier": "Sub-Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Original STTH by McShmoodle. Community homebrew heavy robotic NPC for supplied Giga Trooper art; untested encounter values, not official STTH stats. Uses its own attributes and skills; no assigned pilot. One normal turn and HP pool. Punch and stomp are alternatives using the normal Action phase. Chassis toughness is represented by HP; no automatic damage reduction or multiattack. No ranged armament is assumed from this artwork.",
+      "profileSource": "Community homebrew — Giga Trooper; untested",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Giga Trooper Heavy Punch",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
+        "system": {
+          "skill": "melee",
+          "damageMode": "fixed",
+          "damage": 9,
+          "range": 1,
+          "slots": 0,
+          "price": 300,
+          "description": "Action; one adjacent target. Normal Melee versus Dodge. No automatic area damage, extra attack, knockback or status.",
+          "notes": "Integrated/innate reference value 300 Mobiums; not a purchasable standalone weapon. Salvage reference 150, GM approval.",
+          "source": "Community homebrew — Giga Trooper; untested"
+        }
+      },
+      {
+        "name": "Giga Trooper Stomp",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
+        "system": {
+          "skill": "melee",
+          "damageMode": "fixed",
+          "damage": 8,
+          "range": 1,
+          "slots": 0,
+          "price": 250,
+          "description": "Action; one adjacent target. Normal Melee versus Dodge. No automatic area damage, extra attack, knockback or status.",
+          "notes": "Integrated/innate reference value 250 Mobiums; not a purchasable standalone weapon. Salvage reference 125, GM approval.",
+          "source": "Community homebrew — Giga Trooper; untested"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
+        "system": {
+          "slots": 0,
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "description": "Robotic chassis does not make breath saves.",
+          "source": "Community homebrew"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Giga Trooper",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Giga Trooper",
+        "homebrew": true
+      }
+    }
   }
 ]
