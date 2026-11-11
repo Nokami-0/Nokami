@@ -245,7 +245,7 @@
   {
     "name": "Light Speed Shoes",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/light-speed-shoes.svg",
     "system": {
       "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
       "source": "STTH 1.5.0, p. 40",
@@ -255,6 +255,11 @@
       "price": 600,
       "ringPrice": 60,
       "gearKind": "upgrade-speed"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "light-speed-shoes-1"
+      }
     }
   },
   {
@@ -275,7 +280,7 @@
   {
     "name": "Rhythm Badge",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/rhythm-badge.svg",
     "system": {
       "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
       "source": "STTH 1.5.0, p. 40",
@@ -285,6 +290,11 @@
       "price": 600,
       "ringPrice": 60,
       "gearKind": "upgrade-dexterity"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "rhythm-badge-1"
+      }
     }
   },
   {
