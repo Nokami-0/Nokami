@@ -107,7 +107,7 @@
   {
     "name": "Red Star Ring",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/red-star-ring.svg",
     "system": {
       "description": "Use after one check to negate its Slip or Critical Slip penalty.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -117,6 +117,11 @@
       "ringPrice": 6,
       "modifierValue": 0,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "red-star-ring-1"
+      }
     }
   },
   {
