@@ -72,7 +72,7 @@
   {
     "name": "Thunder Shield",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/thunder-shield.svg",
     "system": {
       "description": "Barrier benefits; +2 Rings when gaining Rings with a Trick. Immune to energy/laser/electric hazards unless a crit is dealt. Breaks in water; select shield bypass/exemption manually.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -82,6 +82,11 @@
       "ringPrice": 10,
       "modifierValue": 0,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "thunder-shield-1"
+      }
     }
   },
   {
@@ -107,7 +112,7 @@
   {
     "name": "Aqua Shield",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/aqua-shield.svg",
     "system": {
       "description": "Barrier benefits; +1 Spin and Acrobat rank. Infinite underwater air while active.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -117,6 +122,11 @@
       "ringPrice": 10,
       "modifierValue": 0,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "aqua-shield-1"
+      }
     }
   },
   {
