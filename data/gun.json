@@ -2786,7 +2786,7 @@
   {
     "name": "G.U.N. Helicopter",
     "type": "vehicle",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-helicopter.png",
     "system": {
       "speed": 3,
       "power": 3,
@@ -2805,11 +2805,38 @@
       "bio": "STTH 1.5.0 Helicopter p105; G.U.N. reskin. Unarmed transport, blade footprint must follow the book.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
       "form": "Generic 1×2 footprint for use on the grid; adjust to match the book diagram and scene."
     },
-    "items": [],
+    "items": [
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-helicopter.png",
+        "system": {
+          "slots": 0,
+          "description": "Flight using the normal vehicle Move. Assign a pilot; GM tracks altitude and rotor footprint.",
+          "source": "STTH Helicopter profile; G.U.N. reskin"
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "rosterAddition": "gun-helicopter-flight"
+          }
+        }
+      }
+    ],
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "G.U.N. Helicopter",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.26"
+      }
+    },
+    "prototypeToken": {
+      "name": "G.U.N. Helicopter",
+      "actorLink": false,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-helicopter.png"
+      },
+      "bar1": {
+        "attribute": "hp"
       }
     }
   },

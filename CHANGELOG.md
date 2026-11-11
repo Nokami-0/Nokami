@@ -1,3 +1,7 @@
+# 2.0.26
+
+- Apply supplied G.U.N. Helicopter token art and add a visible flight trait to its existing vehicle profile.
+
 # 2.0.25
 
 - Correct Giga Trooper to a pilot-operated vehicle, retaining HP, art and melee loadout.
