@@ -1,3 +1,8 @@
+# 2.0.25
+
+- Correct Giga Trooper to a pilot-operated vehicle, retaining HP, art and melee loadout.
+- Repair Library converts its existing compendium template and puts it in Vehicles. Existing world actors remain unchanged.
+
 # 2.0.24
 
 - Add G.U.N. Giga Trooper heavy robotic NPC with supplied token, homebrew melee attacks and reference weapon valuations.

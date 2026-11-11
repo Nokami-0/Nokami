@@ -3484,51 +3484,32 @@
   },
   {
     "name": "G.U.N. Giga Trooper",
-    "type": "npc",
+    "type": "vehicle",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
     "system": {
-      "attributes": {
-        "speed": 2,
-        "power": 5,
-        "dexterity": 2,
-        "intellect": 2,
-        "charisma": 1
-      },
-      "skills": {
-        "melee": 3,
-        "move": 2,
-        "perceive": 1,
-        "resolve": 2
-      },
+      "speed": 2,
+      "power": 5,
+      "dexterityModifier": 0,
       "hp": {
         "value": 45,
         "max": 45
       },
-      "hpBonus": 15,
-      "profileDodge": 2,
-      "profileInitiative": 1,
-      "profileMovement": 3,
-      "initiativeTrick": 0,
+      "dodge": 2,
+      "movement": 3,
       "critThreshold": 2,
-      "squadSize": 1,
-      "squadSkills": "",
-      "heroType": "power",
-      "species": "G.U.N. machine",
-      "npcTier": "Sub-Boss",
-      "pilotDexModifier": 0,
-      "usesPilot": false,
-      "bio": "Original STTH by McShmoodle. Community homebrew heavy robotic NPC for supplied Giga Trooper art; untested encounter values, not official STTH stats. Uses its own attributes and skills; no assigned pilot. One normal turn and HP pool. Punch and stomp are alternatives using the normal Action phase. Chassis toughness is represented by HP; no automatic damage reduction or multiattack. No ranged armament is assumed from this artwork.",
-      "profileSource": "Community homebrew — Giga Trooper; untested",
-      "tp": {
-        "value": 0,
-        "max": 15
-      },
-      "pilotSkillOverrides": ""
+      "passengers": 1,
+      "width": 2,
+      "length": 2,
+      "pilot": "",
+      "crew": "G.U.N. pilot",
+      "form": "Giga Trooper combat mech",
+      "qualities": "Pilot-operated combat mech. No autonomous turn or passive damage reduction.",
+      "bio": "Original STTH by McShmoodle. Community homebrew Giga Trooper vehicle profile, corrected to pilot-operated at user request. 45 HP, Dodge 2, movement 3. Assign a pilot Actor UUID before vehicle actions and attacks. Heavy Punch and Stomp use the assigned pilot’s Melee skill. One shared HP pool; no component damage automation. No ranged weapon or flight is assumed. Stats remain untested homebrew encounter values."
     },
     "items": [
       {
         "name": "Giga Trooper Heavy Punch",
-        "type": "attack",
+        "type": "vehicleWeapon",
         "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
         "system": {
           "skill": "melee",
@@ -3544,7 +3525,7 @@
       },
       {
         "name": "Giga Trooper Stomp",
-        "type": "attack",
+        "type": "vehicleWeapon",
         "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
         "system": {
           "skill": "melee",
@@ -3580,9 +3561,6 @@
       "bar1": {
         "attribute": "hp"
       },
-      "bar2": {
-        "attribute": "tp"
-      },
       "texture": {
         "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png"
       }
@@ -3590,7 +3568,8 @@
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "G.U.N. Giga Trooper",
-        "homebrew": true
+        "homebrew": true,
+        "vehicleConversionVersion": "2.0.25"
       }
     }
   }

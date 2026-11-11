@@ -49,6 +49,15 @@ async function buildFactionLibrary(file,label,key,packName=file){
   for(const row of rows){
    const existing=docs.find(d=>d.getFlag(ID,key)===(row.flags?.[ID]?.[key]??row.name));
    if(existing){
+    // Upgrade the Giga Trooper compendium template; preserve imported world actors.
+    if(row.flags?.[ID]?.vehicleConversionVersion && existing.type!==row.type){
+     await existing.update({type:row.type,system:row.system,prototypeToken:row.prototypeToken,img:row.img,flags:row.flags});
+     if(existing.items.size)await existing.deleteEmbeddedDocuments('Item',existing.items.map(i=>i.id));
+     await existing.createEmbeddedDocuments('Item',row.items);
+     const folder=pack.folders.find(f=>f.name==='Vehicles')||await Folder.create({name:'Vehicles',type:'Actor',sorting:'a'},{pack:pack.collection});
+     await existing.update({folder:folder.id});
+    }
+
     // Add newly supplied signature weapons without replacing customized compendium data.
     for(const item of row.items||[]){
      const addition=item.flags?.[ID]?.rosterAddition;

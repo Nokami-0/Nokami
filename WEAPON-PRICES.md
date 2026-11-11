@@ -426,5 +426,5 @@ Values are in Mobiums. Existing listed prices are preserved; other values and 50
 | Big Foot — Hull Strike | Vehicle mount | fixed | 7 | 1 | 350 | 175 | Homebrew estimated value |
 | B3 Laser Cannon | Vehicle mount | fixed | 10 | 8 | 1100 | 550 | Homebrew estimated value |
 | Flying Dog Laser Cannon | Vehicle mount | fixed | 10 | 8 | 1100 | 550 | Homebrew estimated value |
-| Giga Trooper Heavy Punch | Integrated / innate reference | fixed | 9 | 1 | 300 | 150 | Homebrew estimated value |
-| Giga Trooper Stomp | Integrated / innate reference | fixed | 8 | 1 | 250 | 125 | Homebrew estimated value |
+| Giga Trooper Heavy Punch | Vehicle mount | fixed | 9 | 1 | 300 | 150 | Homebrew estimated value |
+| Giga Trooper Stomp | Vehicle mount | fixed | 8 | 1 | 250 | 125 | Homebrew estimated value |

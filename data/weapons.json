@@ -4401,7 +4401,7 @@
   },
   {
     "name": "Giga Trooper Heavy Punch",
-    "type": "attack",
+    "type": "vehicleWeapon",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
     "system": {
       "skill": "melee",
@@ -4411,13 +4411,13 @@
       "slots": 0,
       "price": 300,
       "description": "Action; one adjacent target. Normal Melee versus Dodge. No automatic area damage, extra attack, knockback or status.",
-      "notes": "Integrated/innate reference value 300 Mobiums; not a purchasable standalone weapon. Salvage reference 150, GM approval.",
+      "notes": "Homebrew chassis-integrated melee mount value. Suggested salvage is half listed price. Requires a suitable mech and assigned pilot.",
       "source": "Community homebrew — Giga Trooper; untested"
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "weaponKey": "9bf6107f86a19f9e4e52",
-        "weaponCategory": "Integrated / innate reference",
+        "weaponCategory": "Vehicle mount",
         "resaleValue": 150,
         "valuation": "Homebrew estimated value"
       }
@@ -4425,7 +4425,7 @@
   },
   {
     "name": "Giga Trooper Stomp",
-    "type": "attack",
+    "type": "vehicleWeapon",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-giga-trooper.png",
     "system": {
       "skill": "melee",
@@ -4435,13 +4435,13 @@
       "slots": 0,
       "price": 250,
       "description": "Action; one adjacent target. Normal Melee versus Dodge. No automatic area damage, extra attack, knockback or status.",
-      "notes": "Integrated/innate reference value 250 Mobiums; not a purchasable standalone weapon. Salvage reference 125, GM approval.",
+      "notes": "Homebrew chassis-integrated melee mount value. Suggested salvage is half listed price. Requires a suitable mech and assigned pilot.",
       "source": "Community homebrew — Giga Trooper; untested"
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "weaponKey": "d38d9812b9dba94e8f0b",
-        "weaponCategory": "Integrated / innate reference",
+        "weaponCategory": "Vehicle mount",
         "resaleValue": 125,
         "valuation": "Homebrew estimated value"
       }
