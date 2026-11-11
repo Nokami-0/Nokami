@@ -1,3 +1,8 @@
+# 2.0.36
+
+- Add distinct Rhino Rubber NPC with supplied token and homebrew bumper/ram profile; preserve other Rhino variants.
+- Add its integrated ram reference valuation to the weapon list.
+
 # 2.0.35
 
 - Apply supplied G.U.N. Spike Rhino artwork to Rhino Spike and its items, preserving its ram and spiked-roof trait.

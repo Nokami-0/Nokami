@@ -8944,6 +8944,30 @@
     }
   },
   {
+    "name": "Rubber Bumper Ram",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-rubber.png",
+    "system": {
+      "skill": "melee",
+      "damage": 5,
+      "damageMode": "fixed",
+      "range": 1,
+      "slots": 0,
+      "price": 200,
+      "description": "Action; one adjacent target. Normal Melee versus Dodge. May allocate extra hits to Knocked Back under the normal rules; no automatic bounce or free second attack.",
+      "notes": "Integrated reference value 200 Mobiums, suggested salvage 100. Not a standalone purchasable power.",
+      "source": "Community homebrew — Rubber Rhino"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "42a269ce2416470ffa88",
+        "weaponCategory": "Integrated / innate reference",
+        "resaleValue": 100,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
     "name": "Rubble Hurl",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/death-crab.png",
