@@ -1,3 +1,4 @@
+import {transformBiolizard,installBiolizardTransformation} from './biolizard.js';
 import {CharacterData,VehicleData,ItemData} from './models.js';
 import {STTHActor} from './actor.js';
 import {HeroSheet,GearSheet} from './sheets.js';
@@ -21,13 +22,13 @@ Hooks.once('init',()=>{
  game.settings.register(ID,'enforcePhases',{name:'Enforce spent phases for players',hint:'Optional turn guard; GM can override.',scope:'world',config:true,type:Boolean,default:false});
  game.settings.registerMenu(ID,'rules',{name:'STTH Rulebook',label:'Search Rules',icon:'fas fa-book',type:RulesReference,restricted:false});
  game.settings.registerMenu(ID,'library',{name:'STTH Library',label:'Build / Repair Library',icon:'fas fa-book-open',type:LibraryManager,restricted:true});
- game.stth={rollSkill,opposed,openRules,buildLibrary,damage};
+ game.stth={rollSkill,opposed,openRules,buildLibrary,damage,transformBiolizard};
  console.info('STTH V14 2.0.12 initialized: native ApplicationV2 sheets and dialogs.');
 });
 Hooks.once('ready',async()=>{
  installCombatHooks();installEquipmentValidation();
  if(game.user.isGM&&(!game.users.activeGM||game.users.activeGM.id===game.user.id)){
-  try{await buildLibrary();}
+  try{await buildLibrary();await installBiolizardTransformation();}
   catch(error){console.error('STTH library initialization failed',error);ui.notifications.error('STTH library initialization failed; use Build / Repair Library in system settings.');}
  }
 });
