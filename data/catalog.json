@@ -87,7 +87,7 @@
   {
     "name": "Flame Shield",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/flame-shield.svg",
     "system": {
       "description": "Barrier benefits; +1 Spin/Melee damage. Heat hazards do not break it unless a crit is dealt. Breaks in water.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -97,6 +97,11 @@
       "ringPrice": 10,
       "modifierValue": 0,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "flame-shield-1"
+      }
     }
   },
   {
