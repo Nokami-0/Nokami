@@ -1,3 +1,8 @@
+# 2.0.20
+
+- Add separate B3 Bigfoot vehicle with supplied art and laser cannon in place of homing missiles.
+- Add the homebrew B3 Laser Cannon and its value to the weapon catalog.
+
 # 2.0.19
 
 - Add supplied Big Foot art and a separate pilot-operated vehicle-sheet version retaining machine gun, homing missiles, hull strike and encounter traits. Preserve the existing NPC profile.
