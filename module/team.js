@@ -2,7 +2,7 @@ import {pool,SKILLS,tagDamage,advantageOpposed,blastResult,clamp} from './engine
 import {owned,prompt,field,select,card,dice,renderResult,num,esc,spendPhase,attack} from './rolls.js';
 import {itemDamage} from './actor.js';
 const ID='sonic-tag-team-heroes';
-function highest(a,skill){return Math.max(1,...a.items.filter(i=>i.type==='attack'&&(!skill||i.system.skill===skill)).map(i=>itemDamage(a,i)));}
+function highest(a,skill){return Math.max(1,...a.items.filter(i=>i.type==='attack'&&!i.system.disabled&&!i.system.broken&&(!i.system.slots||i.system.equipped)&&(!skill||i.system.skill===skill)).map(i=>itemDamage(a,i)));}
 function roundKey(){return `${game.combat?.id??'free'}:${game.combat?.round??0}`;}
 function alreadyUsed(){return game.combat&&game.messages.some(m=>m.getFlag(ID,'teamRound')===roundKey());}
 function actorChoices(exclude){return Object.fromEntries(game.actors.filter(a=>a.id!==exclude&&a.type==='character').map(a=>[a.id,a.name]));}
@@ -18,7 +18,7 @@ export async function tagTeam(actor,item){owned(actor);const choices=actorChoice
  await attack(partner,attacks[0],{spend:false});if(support.success)await attack(partner,attacks[0],{spend:false});return;
  }
  const ar=await dice(pool(actor.system.derived.attributes[SKILLS[sk]],actor.system.derived.ranks[sk]+d.overflow));const br=await dice(pool(partner.system.derived.attributes[SKILLS[pk]],partner.system.derived.ranks[pk]));const dr=await dice(d,{defense:true});
- let baseA=highest(actor),baseB=cost===5?partner.system.derived.attributes.power+(pk==='spin'?1:2):highest(partner,pk);if(cost===15){baseA=Math.max(1,baseA+item.system.damage)+num(o.bonus);}
+ let baseA=highest(actor),baseB=highest(partner,pk);if(cost===15){baseA=Math.max(1,baseA+item.system.damage)+num(o.bonus);}
  let dmg=tagDamage(cost,ar.hits,br.hits,dr.hits,baseA,baseB,{spentHits:num(o.spent)});
  if(cost===5&&actor.system.heroType==='speed'&&ar.hits>dr.hits)dmg.damage+=2*ar.criticalTricks;
  await card(actor,item.name,`<h4>${esc(actor.name)} (${esc(sk)})</h4>${renderResult(ar)}<h4>${esc(partner.name)} (${esc(pk)})</h4>${renderResult(br)}<p>Defense ${dr.hits} hits. <b>${dmg.damage} damage</b> before special move text. ${cost} TP paid by instigator.</p><p>${esc(item.system.description)}</p><p>Keep each participant’s Tricks and Slips separate. Apply special statuses, follow-up attacks and AoE per the move text. Teachable Moment uses its separate difficulty-1 support check, not combined damage.</p>`,{rolls:[...ar.rolls,...br.rolls,...dr.rolls],data:{teamRound:roundKey()}});

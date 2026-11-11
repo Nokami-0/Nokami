@@ -1,3 +1,7 @@
+# 2.0.5
+
+Rules and button audit: cancel-safe dialogs, vehicle/Technique guards, KO controls, skill caps, drowning recovery and NPC criticals, removable damaged gear, Dazzled attack penalty, Tag-Team weapon bonuses, and Power-scaling loadouts. Expanded to 52 tests. See AUDIT.md for scope and limitations.
+
 # 2.0.4
 
 Larger, bold numeric fields with explicit dark text on white, stronger borders and focus outlines; larger attribute, derived-stat, item-stat and chat-die numbers.

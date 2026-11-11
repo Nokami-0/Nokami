@@ -22,7 +22,7 @@ Hooks.once('init',()=>{
  game.settings.registerMenu(ID,'rules',{name:'STTH Rulebook',label:'Search Rules',icon:'fas fa-book',type:RulesReference,restricted:false});
  game.settings.registerMenu(ID,'library',{name:'STTH Library',label:'Build / Repair Library',icon:'fas fa-book-open',type:LibraryManager,restricted:true});
  game.stth={rollSkill,opposed,openRules,buildLibrary,damage};
- console.info('STTH V14 2.0.4 initialized: native ApplicationV2 sheets and dialogs.');
+ console.info('STTH V14 2.0.5 initialized: native ApplicationV2 sheets and dialogs.');
 });
 Hooks.once('ready',async()=>{
  installCombatHooks();installEquipmentValidation();

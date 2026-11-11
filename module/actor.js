@@ -13,6 +13,7 @@ export class STTHActor extends foundry.documents.Actor {
  if(this.type==='npc'&&s.squadSize>1){for(const k of s.squadSkills.split(','))if(k.trim() in ranks)ranks[k.trim()]+=s.squadSize-1;hp+=(s.squadSize-1)*5;}
  if(s.sneakersRounds>0){move+=2;for(const k in ranks)if(SKILLS[k]==='speed')ranks[k]+=2;}
  if(s.shield){dodge++;if(s.shield==='aqua'){ranks.spin++;ranks.acrobat++;}}
+ for(const k in ranks)ranks[k]=clamp(ranks[k],0,4);
  const drySpeed=a.speed;
  const soaked=conditionStacks(this,'soaked')||s.underwater;
  const immune=kind=>this.items.some(i=>(i.type==='talent'||i.system.equipped)&&i.system.modifier==='immunity'&&i.system.modifierTarget===kind&&!i.system.disabled&&!i.system.broken);

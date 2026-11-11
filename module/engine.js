@@ -59,7 +59,7 @@ export function applyDamage(state,damage,{critical=false,shield=false}={}){
  if(shield&&damage>0)return {...state,shieldBroken:true,stunned:critical,damage:0};
  if(pc){const crit=damage>0&&(critical||hp===0);const count=int(state.crits)+(crit?1:0);return {...state,hp,crits:count,rings:crit?0:int(state.rings),spilled:crit?ringSpill(state.rings,count):0,stunned:crit,ko:hp===0&&(crit?int(state.rings)===0:int(state.rings)===0),damage:int(damage)};}
  let crits=int(state.crits),threshold=int(state.threshold),bonus=0,stunned=false;
- if(damage>0&&(critical||hp===0)){if(crits<threshold){crits++;stunned=true;}else if(critical)bonus=10;}
+ if(critical||damage>0&&hp===0){if(crits<threshold){crits++;stunned=true;}else if(critical)bonus=10;}
  return {...state,hp:Math.max(0,hp-bonus),crits,stunned,ko:Math.max(0,hp-bonus)===0&&crits>=threshold&&!stunned,damage:int(damage)+bonus};
 }
 export function skillCost(rank,type,archetype,skill){const focus={speed:'speed',power:'power',fly:'dexterity',genius:'intellect',figurehead:'charisma'};const discount=archetype==='generalist'||SKILLS[skill]===focus[type==='technique'?archetype:type]?5:0;return 5*(int(rank)+1)+5-discount;}

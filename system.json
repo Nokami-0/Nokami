@@ -2,7 +2,7 @@
   "id": "sonic-tag-team-heroes",
   "title": "Sonic Tag-Team Heroes",
   "description": "Native Foundry V14 rebuild of the unofficial STTH 1.5.0 conversion. Original game by McShmoodle.",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "compatibility": {
     "minimum": "14",
     "maximum": "14",
@@ -53,5 +53,5 @@
   ],
   "url": "https://github.com/Nokami-0/Nokami",
   "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/system.json",
-  "download": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/dist/sonic-tag-team-heroes-2.0.4.zip"
+  "download": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/dist/sonic-tag-team-heroes-2.0.5.zip"
 }
