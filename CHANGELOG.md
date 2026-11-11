@@ -1,3 +1,7 @@
+# 2.0.37
+
+- Apply supplied Golden G.U.N. Beetle artwork to Gold Beetle, preserving its unarmed fleeting-target profile and flight.
+
 # 2.0.36
 
 - Add distinct Rhino Rubber NPC with supplied token and homebrew bumper/ram profile; preserve other Rhino variants.

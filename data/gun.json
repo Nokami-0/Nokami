@@ -1486,7 +1486,7 @@
   {
     "name": "Gold Beetle",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-gold-beetle.png",
     "system": {
       "attributes": {
         "speed": 4,
@@ -1529,7 +1529,8 @@
           "slots": 0,
           "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-gold-beetle.png"
       },
       {
         "name": "Fleeting Target",
@@ -1538,7 +1539,8 @@
           "slots": 0,
           "description": "Appears briefly; withdraws at the end of its next turn unless intercepted. No weapon. On defeat the GM may grant 5 bonus Rings once; an optional homebrew reward, not a score-to-Rings equivalence.",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-gold-beetle.png"
       },
       {
         "name": "Suffocation Immunity",
@@ -1550,7 +1552,8 @@
           "modifierTarget": "suffocating",
           "modifierValue": 1,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-gold-beetle.png"
       }
     ],
     "prototypeToken": {
@@ -1563,12 +1566,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-gold-beetle.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Gold Beetle",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37"
       }
     }
   },
