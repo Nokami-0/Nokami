@@ -5470,5 +5470,106 @@
         "communityRosterVersion": "2.0.37-sigma-team"
       }
     }
+  },
+  {
+    "name": "G.U.N. Spider Troop Soldier",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-spider-troop-soldier.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 2,
+        "dexterity": 3,
+        "intellect": 2,
+        "charisma": 2
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "melee,move,ranged,perceive",
+      "heroType": "power",
+      "species": "Human",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Original STTH by McShmoodle. Community Spider Troop soldier variant based on the existing G.U.N. Soldier starter profile; provisional. Represents one human soldier; use normal Squad controls for multiple members. Retains standard soldier statistics and equipment. No additional special abilities have been assigned.",
+      "profileSource": "Community Spider Troop soldier variant based on the existing G.U.N. Soldier starter profile; provisional.",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Service Rifle",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "Removable.",
+          "removable": true,
+          "source": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew.",
+          "ammoLimited": true,
+          "quantity": 20,
+          "ammoMax": 20,
+          "notes": "\nHomebrew ammunition capacity: 20 attack uses. Each confirmed attack consumes one round, burst, salvo or charge, including a miss; not individual bullets or each projectile in a salvo. Recharge does not refill ammo. GM supplies ammunition or recharges energy stores, then edits Remaining ammo; no automatic refill."
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "ammoVersion": "2.0.32"
+          }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-spider-troop-soldier.svg"
+      },
+      {
+        "name": "Unarmed Strike",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "G.U.N. reskin of STTH 1.5.0 Officer, p130; rifle range 6 is homebrew."
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-spider-troop-soldier.svg"
+      }
+    ],
+    "prototypeToken": {
+      "name": "G.U.N. Spider Troop Soldier",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-spider-troop-soldier.svg"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Spider Troop Soldier",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-spider-troop"
+      }
+    }
   }
 ]
