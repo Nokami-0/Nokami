@@ -4609,5 +4609,197 @@
         "communityRosterVersion": "2.0.37-bigfoot-type-a"
       }
     }
+  },
+  {
+    "name": "LZ-12R Blue Falcon",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+    "system": {
+      "speed": 4,
+      "power": 5,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 75,
+        "max": 75
+      },
+      "dodge": 3,
+      "movement": 6,
+      "critThreshold": 3,
+      "passengers": 1,
+      "width": 3,
+      "length": 3,
+      "pilot": "",
+      "crew": "G.U.N. pilot",
+      "form": "Large disk-shaped hover combat craft",
+      "qualities": "Flight and stationary hover; vertical and lateral maneuvering. Pilot-operated; one shared HP pool. Particle cannon has radial pulse and directional energy-slash modes.",
+      "bio": "Original STTH by McShmoodle. Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices. Assign a pilot Actor UUID. Arsenal: homing rockets, underside bombs, charged radial particle pulse and the user-requested Dark Beginnings energy-pulse slash. All weapons use the pilot’s Ranged skill. Read Charge & Shared Capacitor before either energy mode. Charge-up, shared cooldown, area targets, detachable launchers, countermeasures and ejection are GM-managed; weapon attack rolls, listed ammunition and individual recharge use existing system controls. No automatic damage application, component HP or reactive interception is implemented. Source references: https://sonic.fandom.com/wiki/Blue_Falcon ; official Dark Beginnings Episode 3: https://www.youtube.com/watch?v=A2d9sS-muqI . Slash is an adaptation of the user-identified visual, not an official attack name; flare mechanics are a homebrew interpretation. Numbers are provisional."
+    },
+    "items": [
+      {
+        "name": "Homing Rocket Salvo",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 8,
+          "range": 8,
+          "slots": 0,
+          "recharge": 1,
+          "description": "Action: launch a homing salvo at one target; +1 Advantage. One ammo use represents a salvo, not each projectile. Track detached launcher mounts under Detachable Rocket Launchers. No free multi-target attacks.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices.",
+          "advantage": 1,
+          "ammoLimited": true,
+          "quantity": 6,
+          "ammoMax": 6,
+          "notes": "Six salvo uses is a balance abstraction, not a claim about launcher count or canon ammunition. Replenishment is manual."
+        }
+      },
+      {
+        "name": "Underside Bomb Drop",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 7,
+          "range": 3,
+          "slots": 0,
+          "recharge": 0,
+          "description": "Action: drop bombs onto a GM-selected 3×3 area directly below or behind the craft, within 3 squares measured from its underside. Requires a clear downward path. GM resolves each target separately; do not fire repeatedly to simulate targets or consume extra ammo. No persistent minefield.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices.",
+          "aoe": "3x3",
+          "ammoLimited": true,
+          "quantity": 6,
+          "ammoMax": 6
+        }
+      },
+      {
+        "name": "Particle Cannon — 360° Energy Pulse",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 10,
+          "range": 4,
+          "slots": 0,
+          "recharge": 3,
+          "description": "Action, after charge-up: discharge a radial energy wave reaching 4 squares from the hull at the announced altitude. Exclude the craft itself. GM resolves all eligible targets separately using normal Dodge; cover and sufficient altitude separation can avoid the wave. This is a ring/plane, not a sphere. One discharge and shared cooldown with Energy Pulse Slash; see Charge & Shared Capacitor.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices.",
+          "arc": "360",
+          "notes": "Area selection and additional targets are manual. Never multiply full damage merely because a creature occupies several squares; use existing vehicle-area rules where applicable."
+        }
+      },
+      {
+        "name": "Particle Cannon — Energy Pulse Slash",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 9,
+          "range": 6,
+          "slots": 0,
+          "recharge": 3,
+          "description": "Action, after charge-up: release a directed slicing energy wave, representing the Dark Beginnings pulse/slash requested by the user. Select a 1-square-wide, up-to-6-square-long line in an announced direction/plane from the hull. GM resolves targets in the line separately against Dodge. No automatic armor bypass, severing or homing. Shares the particle cannon capacitor with the radial pulse.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices.",
+          "arc": "line",
+          "notes": "Descriptive adaptation name, not an official named technique. Direction/plane and targets are GM-managed."
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "slots": 0,
+          "description": "Sustained hover and free directional flight, including ascent, descent, strafing and turning, using normal Move and vehicle Ride checks. Movement 6 squares total per normal Move; vertical travel consumes movement. No automatic reaction immunity or extra turn.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices."
+        }
+      },
+      {
+        "name": "Charge & Shared Capacitor",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "slots": 0,
+          "description": "Before either particle mode, spend three Interact phases charging: red → yellow → blue. Track 0–3 charge manually in notes; changing mode does not bypass charging. At blue, spend an Action to fire either mode and reset charge to 0. Both modes then require three Interacts before another energy discharge. Use those same three recharge Interacts as the next red/yellow/blue charge sequence, rather than charging twice. Set BOTH energy weapons’ Remaining recharge to 3 after either fires, and reduce both together with each recharge Interact. The existing system blocks each weapon when its remaining recharge is positive; cross-mode synchronization and initial charge are manual. Lock direction/altitude on the final charging Interact so opponents can react. Rockets or bombs can be used with a normal Action while charging, but no free attacks are granted.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices."
+        }
+      },
+      {
+        "name": "Detachable Rocket Launchers",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "slots": 0,
+          "description": "GM may allow a called shot against an exposed rocket mount at +1 Disadvantage. A damaging hit may spend two excess hits to detach one mount instead of adding those hits to damage; this is a homebrew conversion. Apply ordinary hull damage to the shared HP pool; do not invent extra component HP. Record detached mounts manually. GM assigns remaining rockets to a dropped portable launcher, subtracts that ammunition from the craft, and creates a removable attack for its wielder using Ranged, damage 8, range 8 and +1 Advantage. No duplicated ammunition or extra attacks. With all mounts detached, disable Homing Rocket Salvo.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices."
+        }
+      },
+      {
+        "name": "Decoy Flares / Missile Countermeasures",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "slots": 0,
+          "description": "Optional homebrew interpretation of the Dark Beginnings diversion effect. Three uses per encounter, tracked manually. Spend an Interact to deploy decoys; until the start of the pilot’s next turn, the next guided-missile attack against this craft suffers +1 Disadvantage, then the decoys expire. GM applies the modifier. Does not affect beams, bullets, manually aimed/thrown rockets, or guarantee interception. No free Reaction or automatic missile deletion.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices."
+        }
+      },
+      {
+        "name": "Cockpit & Emergency Pilot Ejection",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "slots": 0,
+          "description": "Pilot is a separate actor. At imminent destruction the pilot may spend an available Interact to eject, or an adjacent rescuer may spend an Interact to activate the release. GM chooses a reachable unoccupied space and resolves falling, parachute and environmental hazards. No invulnerability, automatic survival or duplicate pilot token. Hull damage does not automatically reduce pilot HP; exposed-cockpit attacks require GM adjudication.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices."
+        }
+      },
+      {
+        "name": "Space-Capable Chassis",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "slots": 0,
+          "description": "Craft can operate in vacuum; normal flight/maneuver limits still apply. Sealed cockpit supports its occupant while intact; suit, oxygen duration and breach effects are GM-managed. No infinite oxygen or general environmental immunity is assumed.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices."
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
+        "system": {
+          "slots": 0,
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "description": "The machine chassis does not breathe. This immunity does not transfer to an exposed or ejected pilot.",
+          "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices."
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "LZ-12R Blue Falcon",
+      "actorLink": false,
+      "width": 3,
+      "height": 3,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg"
+      },
+      "bar1": {
+        "attribute": "hp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "LZ-12R Blue Falcon",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-blue-falcon"
+      }
+    }
   }
 ]
