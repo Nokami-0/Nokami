@@ -3348,7 +3348,7 @@
       "crew": "G.U.N. pilot",
       "form": "Hover combat craft",
       "qualities": "Pilot-operated flying craft; uses normal Move for flight. No walking legs or landing attack.",
-      "bio": "Original STTH by McShmoodle. Community homebrew Flying Dog vehicle conversion; not official rulebook stats. Assign a pilot Actor UUID. Machine guns and homing missiles use the pilot’s Ranged skill. Flight altitude, attack pattern and cockpit exposure require GM adjudication. One HP pool; no automatic component targeting. No additional damage reduction. Suggested complete value 9500 Mobiums; resale 4750, homebrew estimates."
+      "bio": "Original STTH by McShmoodle. Community homebrew Flying Dog vehicle conversion; not official rulebook stats. Assign a pilot Actor UUID. Laser cannon, machine guns and homing missiles use the pilot’s Ranged skill. Flight altitude, attack pattern and cockpit exposure require GM adjudication. One HP pool; no automatic component targeting. No additional damage reduction. Suggested complete value 10600 Mobiums; resale 5300, homebrew estimates."
     },
     "items": [
       {
@@ -3385,6 +3385,28 @@
           "notes": "Homebrew weapon valuation in Mobiums. Suggested resale is half the listed price. Integrated vehicle mount."
         },
         "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png"
+      },
+      {
+        "name": "Flying Dog Laser Cannon",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-flying-dog.png",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 10,
+          "range": 8,
+          "recharge": 1,
+          "slots": 0,
+          "price": 1100,
+          "description": "Pilot-operated laser cannon; one target within 8 squares. Ranged versus Dodge using normal attack rules. Recharge with one Interact after firing. No automatic area damage, armor bypass or status.",
+          "notes": "Homebrew value 1100 Mobiums; resale 550. Integrated vehicle mount.",
+          "source": "Community homebrew — user-specified Flying Dog laser loadout; untested"
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "rosterAddition": "flying-dog-laser"
+          }
+        }
       },
       {
         "name": "Can Fly",

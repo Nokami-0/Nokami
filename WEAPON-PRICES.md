@@ -425,3 +425,4 @@ Values are in Mobiums. Existing listed prices are preserved; other values and 50
 | Big Foot — Homing Missile Salvo | Vehicle mount | fixed | 8 | 7 | 900 | 450 | Homebrew estimated value |
 | Big Foot — Hull Strike | Vehicle mount | fixed | 7 | 1 | 350 | 175 | Homebrew estimated value |
 | B3 Laser Cannon | Vehicle mount | fixed | 10 | 8 | 1100 | 550 | Homebrew estimated value |
+| Flying Dog Laser Cannon | Vehicle mount | fixed | 10 | 8 | 1100 | 550 | Homebrew estimated value |

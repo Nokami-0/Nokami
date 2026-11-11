@@ -1,3 +1,8 @@
+# 2.0.23
+
+- Add Flying Dog Laser Cannon alongside existing machine guns and homing missiles.
+- Repair Library adds the weapon to existing vehicle compendium entries. Add weapon pricing.
+
 # 2.0.22
 
 - Add supplied Flying Dog token art and a vehicle-sheet version retaining machine guns, homing missiles and flight encounter traits. Preserve original NPC version.
