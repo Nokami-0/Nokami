@@ -629,7 +629,7 @@
   {
     "name": "Gun Hunter",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-hunter.svg",
     "system": {
       "attributes": {
         "speed": 2,
@@ -726,12 +726,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-hunter.svg"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Gun Hunter",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-hunter-art"
       }
     }
   },
