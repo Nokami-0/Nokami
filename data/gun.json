@@ -6109,5 +6109,117 @@
         "communityRosterVersion": "2.0.37-biolizard"
       }
     }
+  },
+  {
+    "name": "Biolizard — Phase 2",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/biolizard-phase-2.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 5,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 2
+      },
+      "skills": {
+        "melee": 2,
+        "ranged": 3,
+        "ride": 3,
+        "perceive": 2,
+        "tech": 1
+      },
+      "hp": {
+        "value": 65,
+        "max": 65
+      },
+      "hpBonus": 35,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 3,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Artificial life-form",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "Original STTH by McShmoodle. Provisional community Biolizard Phase 2 variant using the existing Biolizard starter statistics; not official STTH statistics. Separate phase artwork and roster entry for GM-controlled encounter staging. Retains Bite, Tail Sweep and Energy Orb. Phase-specific abilities, weak points, automatic transformation and HP transfer are not implemented. If swapping actors mid-encounter, the GM sets HP and initiative to suit the encounter rather than treating this as an automatic extra creature.",
+      "profileSource": "Provisional community Biolizard Phase 2 variant using the existing Biolizard starter statistics; not official STTH statistics.",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Bite",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/biolizard-phase-2.svg",
+        "system": {
+          "skill": "melee",
+          "damage": 8,
+          "damageMode": "fixed",
+          "range": 1,
+          "slots": 0,
+          "description": "Homebrew starter attack: one adjacent target, normal Melee versus Dodge.",
+          "source": "Provisional community Biolizard Phase 2 variant using the existing Biolizard starter statistics; not official STTH statistics."
+        }
+      },
+      {
+        "name": "Tail Sweep",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/biolizard-phase-2.svg",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "range": 2,
+          "slots": 0,
+          "description": "Homebrew starter attack: one target within 2 squares. Normal Melee versus Dodge; no automatic area hits or knockback.",
+          "source": "Provisional community Biolizard Phase 2 variant using the existing Biolizard starter statistics; not official STTH statistics."
+        }
+      },
+      {
+        "name": "Energy Orb",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/biolizard-phase-2.svg",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "range": 6,
+          "slots": 0,
+          "recharge": 1,
+          "description": "Homebrew starter attack: one target, normal Ranged versus Dodge. Recharge one Interact.",
+          "source": "Provisional community Biolizard Phase 2 variant using the existing Biolizard starter statistics; not official STTH statistics."
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Biolizard — Phase 2",
+      "actorLink": false,
+      "width": 4,
+      "height": 4,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/biolizard-phase-2.svg"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "Biolizard — Phase 2",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-biolizard-phase-2"
+      }
+    }
   }
 ]
