@@ -137,7 +137,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 6,
-          "description": "+1 Disadvantage; 3\u00d73 AoE; Burning on second hit; recharge three Interacts.",
+          "description": "+1 Disadvantage; 3×3 AoE; Burning on second hit; recharge three Interacts.",
           "advantage": -1,
           "aoe": "3x3",
           "effect": "burning",
@@ -1117,7 +1117,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 3,
-          "description": "3\u00d73 AoE; Burning on second hit; recharge three Interacts; drop beneath the pod.",
+          "description": "3×3 AoE; Burning on second hit; recharge three Interacts; drop beneath the pod.",
           "aoe": "3x3",
           "effect": "burning",
           "effectHits": 2,
@@ -1236,7 +1236,7 @@
         "type": "talent",
         "system": {
           "slots": 0,
-          "description": "GM alternates active/inactive on this beetle\u2019s turns, starting active. While active, incoming Spin/Melee attacks suffer +1 Disadvantage; a Slip may deal 2 electrical damage to the attacker. Inactive turns offer a clear opening. This timing and numeric effect are homebrew.",
+          "description": "GM alternates active/inactive on this beetle’s turns, starting active. While active, incoming Spin/Melee attacks suffer +1 Disadvantage; a Slip may deal 2 electrical damage to the attacker. Inactive turns offer a clear opening. This timing and numeric effect are homebrew.",
           "source": "Homebrew STTH conversion"
         }
       },
@@ -1596,7 +1596,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 4,
-          "description": "3\u00d73 AoE; Burning on second hit; recharge three Interacts.",
+          "description": "3×3 AoE; Burning on second hit; recharge three Interacts.",
           "aoe": "3x3",
           "effect": "burning",
           "effectHits": 2,
@@ -1677,7 +1677,7 @@
       "npcTier": "Henchman",
       "pilotDexModifier": 0,
       "usesPilot": false,
-      "bio": "Homebrew STTH conversion\nLater-series Beetle variant. Four-shot ammunition is represented by the attack\u2019s quantity.",
+      "bio": "Homebrew STTH conversion\nLater-series Beetle variant. Four-shot ammunition is represented by the attack’s quantity.",
       "profileSource": "Homebrew STTH conversion",
       "tp": {
         "value": 0,
@@ -2102,7 +2102,7 @@
         "type": "talent",
         "system": {
           "slots": 0,
-          "description": "Ordinary frontal/roof attacks suffer +1 Disadvantage. GM may require exposing the underside or an appropriate armor-bypassing ability; never grant damage immunity without an accessible counter. This is a balanced adaptation of the game\u2019s much tougher armored model.",
+          "description": "Ordinary frontal/roof attacks suffer +1 Disadvantage. GM may require exposing the underside or an appropriate armor-bypassing ability; never grant damage immunity without an accessible counter. This is a balanced adaptation of the game’s much tougher armored model.",
           "source": "Homebrew STTH conversion"
         }
       },
@@ -2189,7 +2189,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 8,
-          "description": "3\u00d73 AoE; three Interacts to recharge.",
+          "description": "3×3 AoE; three Interacts to recharge.",
           "aoe": "3x3",
           "recharge": 3,
           "source": "Homebrew STTH conversion"
@@ -2300,7 +2300,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 6,
-          "description": "3\u00d73 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
           "source": "Homebrew STTH conversion"
         }
@@ -2456,7 +2456,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 6,
-          "description": "3\u00d73 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
           "source": "Homebrew STTH conversion"
         }
@@ -2612,7 +2612,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 6,
-          "description": "3\u00d73 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
           "aoe": "3x3",
           "source": "Homebrew STTH conversion"
         }
@@ -2720,7 +2720,7 @@
       "length": 2,
       "qualities": "",
       "bio": "STTH 1.5.0 Dark Rider p111, G.U.N. reskin; footprint simplified.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
-      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+      "form": "Generic 1×2 footprint for use on the grid; adjust to match the book diagram and scene."
     },
     "items": [
       {
@@ -2732,7 +2732,7 @@
           "damageMode": "fixed",
           "slots": 0,
           "range": 5,
-          "description": "Book Dark Rider machine gun: Range 5, cone, 3\u00d73 selectable AoE.",
+          "description": "Book Dark Rider machine gun: Range 5, cone, 3×3 selectable AoE.",
           "arc": "cone",
           "aoe": "3x3"
         }
@@ -2765,7 +2765,7 @@
       "length": 2,
       "qualities": "",
       "bio": "STTH 1.5.0 Car/Truck p103; G.U.N. transport reskin. Passenger count 6 is a homebrew configuration.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
-      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+      "form": "Generic 1×2 footprint for use on the grid; adjust to match the book diagram and scene."
     },
     "items": [],
     "flags": {
@@ -2795,7 +2795,7 @@
       "length": 2,
       "qualities": "Can Fly; Helicopter Blades: blade-square attacks halve damage; touching active blades inflicts critical damage. GM resolves.",
       "bio": "STTH 1.5.0 Helicopter p105; G.U.N. reskin. Unarmed transport, blade footprint must follow the book.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
-      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+      "form": "Generic 1×2 footprint for use on the grid; adjust to match the book diagram and scene."
     },
     "items": [],
     "flags": {
@@ -2825,13 +2825,93 @@
       "length": 2,
       "qualities": "Can Fly",
       "bio": "STTH 1.5.0 Shuttle p106; G.U.N. transport reskin. Unarmed transport.\nSet a pilot Actor UUID before rolling vehicle actions or weapons.",
-      "form": "Generic 1\u00d72 footprint for use on the grid; adjust to match the book diagram and scene."
+      "form": "Generic 1×2 footprint for use on the grid; adjust to match the book diagram and scene."
     },
     "items": [],
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "G.U.N. Transport Shuttle",
         "homebrew": true
+      }
+    }
+  },
+  {
+    "name": "G.U.N. Tank",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-tank.png",
+    "prototypeToken": {
+      "name": "G.U.N. Tank",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-tank.png"
+      },
+      "bar1": {
+        "attribute": "hp"
+      }
+    },
+    "system": {
+      "speed": 2,
+      "power": 5,
+      "dexterityModifier": -1,
+      "hp": {
+        "value": 60,
+        "max": 60
+      },
+      "dodge": 1,
+      "movement": 3,
+      "critThreshold": 2,
+      "passengers": 3,
+      "width": 2,
+      "length": 3,
+      "pilot": "",
+      "crew": "Pilot / driver, gunner, commander",
+      "qualities": "Tracked armored vehicle; turret-mounted cannon and machine gun. No flight or additional passive damage reduction.",
+      "form": "Tank",
+      "bio": "Original STTH by McShmoodle. Community homebrew G.U.N. Tank using supplied artwork; not official rulebook stats. Assign a pilot Actor UUID before vehicle actions and weapon rolls. Crew listing is descriptive and grants no extra turns. Cannon recharges with one Interact. Vehicle weapons fire at most once per combat round under existing rules. Suggested hull value 6000 Mobiums; complete vehicle with both weapons 7200 Mobiums, estimated resale 3600 Mobiums. All values are homebrew and exclude ammunition. No automatic damage reduction or area damage."
+    },
+    "items": [
+      {
+        "name": "Tank Main Cannon",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-tank.png",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 10,
+          "range": 10,
+          "slots": 0,
+          "price": 900,
+          "recharge": 1,
+          "arc": "360",
+          "facing": "turret",
+          "description": "Vehicle-mounted weapon. Uses the assigned pilot’s Ranged skill; GM checks turret direction and line of sight. Requires one Interact recharge after firing. Normal attack and defense rules; no automatic blast or extra hits.",
+          "source": "Community homebrew — G.U.N. Tank; untested"
+        }
+      },
+      {
+        "name": "Tank Machine Gun",
+        "type": "vehicleWeapon",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-tank.png",
+        "system": {
+          "skill": "ranged",
+          "damageMode": "fixed",
+          "damage": 4,
+          "range": 6,
+          "slots": 0,
+          "price": 300,
+          "recharge": 0,
+          "arc": "360",
+          "facing": "turret",
+          "description": "Vehicle-mounted weapon. Uses the assigned pilot’s Ranged skill; GM checks turret direction and line of sight. Normal attack and defense rules; no automatic blast or extra hits.",
+          "source": "Community homebrew — G.U.N. Tank; untested"
+        }
+      }
+    ],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Tank"
       }
     }
   }

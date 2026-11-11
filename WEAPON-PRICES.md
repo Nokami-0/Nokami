@@ -419,3 +419,5 @@ Values are in Mobiums. Existing listed prices are preserved; other values and 50
 | Wrecking Ball | Vehicle mount | fixed | 8 | 1 | 400 | 200 | Homebrew estimated value |
 | Wrecking Slam | Integrated / innate reference | fixed | 9 | 1 | 250 | 125 | Homebrew estimated value |
 | Wrecking Slam | Vehicle mount | fixed | 9 | 1 | 400 | 200 | Homebrew estimated value |
+| Tank Main Cannon | Vehicle mount | fixed | 10 | 10 | 900 | 450 | Homebrew estimated value |
+| Tank Machine Gun | Vehicle mount | fixed | 4 | 6 | 300 | 150 | Homebrew estimated value |

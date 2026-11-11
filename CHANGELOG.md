@@ -1,3 +1,8 @@
+# 2.0.16
+
+- Add G.U.N. Tank vehicle with uploaded artwork, 60 HP, turret cannon and machine gun.
+- Add both weapons to the priced catalog; vehicle needs an assigned pilot. All tank stats and prices are community homebrew.
+
 # 2.0.15
 
 - Add a complete weapon and attack catalog with Mobium values and suggested resale prices in STTH — Weapons & Prices.

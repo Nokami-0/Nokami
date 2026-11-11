@@ -9443,6 +9443,60 @@
     }
   },
   {
+    "name": "Tank Machine Gun",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-tank.png",
+    "system": {
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 4,
+      "range": 6,
+      "slots": 0,
+      "price": 300,
+      "recharge": 0,
+      "arc": "360",
+      "facing": "turret",
+      "description": "Vehicle-mounted weapon. Uses the assigned pilot’s Ranged skill; GM checks turret direction and line of sight. Normal attack and defense rules; no automatic blast or extra hits.",
+      "source": "Community homebrew — G.U.N. Tank; untested",
+      "notes": "Homebrew estimated value: 300 Mobiums. Suggested resale: 150 Mobiums. Vehicle mount; requires suitable chassis and pilot."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "3f7a2211fd96ab6bae32",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 150,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
+    "name": "Tank Main Cannon",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-tank.png",
+    "system": {
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 10,
+      "range": 10,
+      "slots": 0,
+      "price": 900,
+      "recharge": 1,
+      "arc": "360",
+      "facing": "turret",
+      "description": "Vehicle-mounted weapon. Uses the assigned pilot’s Ranged skill; GM checks turret direction and line of sight. Requires one Interact recharge after firing. Normal attack and defense rules; no automatic blast or extra hits.",
+      "source": "Community homebrew — G.U.N. Tank; untested",
+      "notes": "Homebrew estimated value: 900 Mobiums. Suggested resale: 450 Mobiums. Vehicle mount; requires suitable chassis and pilot."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "88305315d29986fe2648",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 450,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
     "name": "Thruster Ram",
     "type": "attack",
     "img": "systems/sonic-tag-team-heroes/assets/tokens/big-shaker.png",
