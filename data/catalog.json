@@ -2,7 +2,7 @@
   {
     "name": "Super Ring (5)",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/super-ring-5.svg",
     "system": {
       "description": "Gain 5 Rings. Stored until used.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -12,12 +12,17 @@
       "ringPrice": 0,
       "modifierValue": 5,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "super-ring-5-numbered-1"
+      }
     }
   },
   {
     "name": "Super Ring (10)",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/super-ring-10.svg",
     "system": {
       "description": "Gain 10 Rings. Stored until used.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -27,6 +32,11 @@
       "ringPrice": 0,
       "modifierValue": 10,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "super-ring-10-numbered-1"
+      }
     }
   },
   {
