@@ -1,3 +1,9 @@
+# Sonic Tag-Team Heroes — Manual Edition 2.0.11
+
+Read MANUAL-INSTALL.txt before installing. Requires Foundry VTT 14.
+
+Original game by McShmoodle.
+
 # Sonic Tag-Team Heroes for Foundry VTT 14
 
 Unofficial adaptation of STTH 1.5.0 by McShmoodle.

@@ -1,0 +1,36 @@
+SONIC TAG-TEAM HEROES 2.0.11 — MANUAL INSTALL
+Requires Foundry VTT 14.
+
+1. Back up your worlds and close Foundry.
+2. Extract this ZIP. Copy the sonic-tag-team-heroes folder into your
+   Foundry User Data folder's Data/systems directory.
+   Final layout: Data/systems/sonic-tag-team-heroes/system.json
+   Do not nest it inside a second sonic-tag-team-heroes folder.
+   When updating, replace the old system folder after backing it up.
+3. Restart Foundry. Select Sonic Tag-Team Heroes when creating a world,
+   or launch your existing world using that system.
+4. Launch as GM and allow the first library build to finish.
+   If needed, open Game Settings > Configure Settings > Sonic Tag-Team
+   Heroes > STTH Library > Build / Repair Library.
+5. Open Compendium Packs. Eggman Empire and G.U.N. contain the existing
+   roster profiles. NPC Token Art (configure stats) contains all 250
+   distinct uploaded artwork names/variants. Drag an entry into Actors,
+   then onto a scene, or copy its image to an existing NPC.
+
+ARTWORK AND STATS
+101 existing roster entries now link to matching uploaded artwork.
+The separate Token Art compendium contains artwork-only NPCs, with system
+DEFAULT attributes/resources rather than researched combat profiles.
+Configure those stats before combat. Existing imported world actors are
+preserved; re-import the updated profile or set their image manually.
+All artwork is bundled locally; no GitHub download is required.
+This manual package omits remote manifest/download update links.
+
+CREDITS
+Original Sonic Tag-Team Heroes game by McShmoodle.
+Unofficial community Foundry adaptation. Sonic characters belong to SEGA.
+Token artwork supplied by the user; original artists retain their rights.
+
+VALIDATION
+Automated system tests and local file-reference checks were run.
+A live Foundry VTT 14 installation was not available for interactive testing.

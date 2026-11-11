@@ -1,3 +1,3 @@
-# Installation
+# Manual installation
 
-Use the manifest URL in README.md in Foundry Setup → Game Systems → Install System. Requires Foundry VTT 14. Back up existing worlds before updating.
+See MANUAL-INSTALL.txt for folder placement, importing NPCs, and artwork-only entries. Requires Foundry VTT 14.
