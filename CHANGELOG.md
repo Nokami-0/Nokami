@@ -1,3 +1,8 @@
+# 2.0.17
+
+- Add G.U.N. Police Car vehicle with supplied artwork, driving stats, four-person capacity and emergency lights/siren. No mounted weapons; standard vehicle Ram action remains available.
+- Homebrew estimated purchase/resale values are included in the vehicle notes.
+
 # 2.0.16
 
 - Add G.U.N. Tank vehicle with uploaded artwork, 60 HP, turret cannon and machine gun.

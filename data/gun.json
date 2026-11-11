@@ -2914,5 +2914,58 @@
         "gunKey": "G.U.N. Tank"
       }
     }
+  },
+  {
+    "name": "G.U.N. Police Car",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-police-car.png",
+    "prototypeToken": {
+      "name": "G.U.N. Police Car",
+      "actorLink": false,
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-police-car.png"
+      },
+      "bar1": {
+        "attribute": "hp"
+      }
+    },
+    "system": {
+      "speed": 4,
+      "power": 2,
+      "dexterityModifier": 1,
+      "hp": {
+        "value": 25,
+        "max": 25
+      },
+      "dodge": 2,
+      "movement": 6,
+      "critThreshold": 1,
+      "passengers": 4,
+      "width": 1,
+      "length": 2,
+      "pilot": "",
+      "crew": "Driver, partner and up to two additional occupants",
+      "qualities": "Road vehicle; four total occupants including driver. Emergency lights and siren. No mounted weapons.",
+      "form": "Patrol sedan",
+      "bio": "Original STTH by McShmoodle. Community homebrew G.U.N. Police Car using supplied artwork; untested encounter values, not official rulebook statistics. Assign a pilot Actor UUID for vehicle actions. Four total occupants including driver. Use the standard vehicle Ram action (Speed + Power = 6 base damage), not a free extra attack. Lights and siren are narrative equipment; no automatic bonus or traffic control. Suggested purchase value 1200 Mobiums, resale 600 Mobiums; homebrew estimates. No armor damage reduction or flight."
+    },
+    "items": [
+      {
+        "name": "Emergency Lights & Siren",
+        "type": "vehicleUpgrade",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-police-car.png",
+        "system": {
+          "slots": 0,
+          "equipped": true,
+          "description": "Emergency warning lights and siren. Activate or deactivate with GM adjudication. No automatic Advantage, fear effect, or right of way.",
+          "source": "Community homebrew — G.U.N. Police Car"
+        }
+      }
+    ],
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "G.U.N. Police Car"
+      }
+    }
   }
 ]
