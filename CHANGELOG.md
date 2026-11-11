@@ -1,3 +1,8 @@
+# 2.0.14
+
+- Add 64 vehicle-sheet profiles in STTH — Eggman Mechs — Vehicles, covering pilot-operated bosses, machines, ships and uploaded variants.
+- Preserve original NPC compendiums and world Actors; vehicle versions require an assigned pilot. Ordinary autonomous Badniks remain NPCs.
+
 # 2.0.13
 
 - Add the homebrew Laser Eye attack to Death egg robot(badnik): Ranged, damage 7, range 6 squares.

@@ -29,13 +29,14 @@ export async function buildLibrary(){if(!game.user.isGM)return;
  let np=game.packs.get('world.stth-npcs');if(!np)np=await CompendiumCollection.createCompendium({name:'stth-npcs',label:'STTH — Henchmen',type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const nl=np.locked;if(nl)await np.configure({locked:false});try{const docs=await np.getDocuments();const rows=await(await fetch(`systems/${ID}/data/npcs.json`)).json();for(const row of rows)if(!docs.some(d=>d.getFlag(ID,'catalogKey')===row.name))await Actor.create({...row,flags:{[ID]:{catalogKey:row.name}}},{pack:np.collection});}finally{if(nl)await np.configure({locked:true});}
 
- await buildEggmanLibrary();await buildGunLibrary();await buildUploadedLibrary();
+ await buildEggmanLibrary();await buildGunLibrary();await buildUploadedLibrary();await buildMechLibrary();
 
 }
 
 
 export async function buildEggmanLibrary(){return buildFactionLibrary('eggman-empire','Eggman Empire','eggmanKey');}
 export async function buildGunLibrary(){return buildFactionLibrary('gun','G.U.N.','gunKey');}
+export async function buildMechLibrary(){return buildFactionLibrary('eggman-mechs','Eggman Mechs — Vehicles','mechKey');}
 export async function buildUploadedLibrary(){return buildFactionLibrary('token-art','Uploaded Enemies & Vehicles','tokenArtKey','uploaded-enemies');}
 async function buildFactionLibrary(file,label,key,packName=file){
  if(!game.user.isGM)return;
