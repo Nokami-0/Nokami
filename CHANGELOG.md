@@ -1,3 +1,8 @@
+# 2.0.13
+
+- Add the homebrew Laser Eye attack to Death egg robot(badnik): Ranged, damage 7, range 6 squares.
+- Build / Repair Library adds the weapon to existing uploaded compendium entries without replacing their stats.
+
 # 2.0.12
 
 - Restore all 250 submitted token variants and the recovered 114-profile Eggman roster.

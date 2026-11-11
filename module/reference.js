@@ -48,6 +48,12 @@ async function buildFactionLibrary(file,label,key,packName=file){
   for(const row of rows){
    const existing=docs.find(d=>d.getFlag(ID,key)===(row.flags?.[ID]?.[key]??row.name));
    if(existing){
+    // Add newly supplied signature weapons without replacing customized compendium data.
+    for(const item of row.items||[]){
+     const addition=item.flags?.[ID]?.rosterAddition;
+     if(addition&&!existing.items.some(i=>i.flags?.[ID]?.rosterAddition===addition||i.name===item.name))await existing.createEmbeddedDocuments('Item',[item]);
+    }
+
     if(row.flags?.[ID]?.communityRosterVersion && (existing.img!==row.img || existing.prototypeToken?.texture?.src!==row.prototypeToken?.texture?.src || existing.getFlag(ID,'communityRosterVersion')!==row.flags[ID].communityRosterVersion))await existing.update({img:row.img,'prototypeToken.texture.src':row.prototypeToken?.texture?.src||row.img,[`flags.${ID}.communityRosterVersion`]:row.flags[ID].communityRosterVersion});
     continue;
    }

@@ -26364,6 +26364,26 @@
           "source": "STTH 1.5.0 p.154"
         },
         "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-death-egg-robot-badnik.png"
+      },
+      {
+        "name": "Laser Eye",
+        "type": "attack",
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/upload-death-egg-robot-badnik.png",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "range": 6,
+          "slots": 0,
+          "tpCost": 0,
+          "description": "Action; fire an eye-mounted laser at one target within 6 squares. Roll Ranged against Dodge using normal attack rules. No automatic area damage or status.",
+          "source": "Community homebrew — requested Badnik variant weapon; untested"
+        },
+        "flags": {
+          "sonic-tag-team-heroes": {
+            "rosterAddition": "badnik-laser-eye"
+          }
+        }
       }
     ],
     "prototypeToken": {
