@@ -83,7 +83,7 @@ export async function buildWeaponLibrary(){
  if(!pack)pack=await CompendiumCollection.createCompendium({name:'stth-weapons',label:'STTH — Weapons & Prices',type:'Item',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const locked=pack.locked;if(locked)await pack.configure({locked:false});
  try{const docs=await pack.getDocuments();const keys=new Set(docs.map(d=>d.getFlag(ID,'weaponKey')));const folders=new Map();
- for(const row of rows){const flags=row.flags[ID];if(keys.has(flags.weaponKey)){const existing=docs.find(d=>d.getFlag(ID,'weaponKey')===flags.weaponKey);if(existing)await syncAmmo(existing,row);continue;}
+ for(const row of rows){const flags=row.flags[ID];if(keys.has(flags.weaponKey)){const existing=docs.find(d=>d.getFlag(ID,'weaponKey')===flags.weaponKey);if(existing){await syncAmmo(existing,row);if(flags.artVersion&&existing.getFlag(ID,'artVersion')!==flags.artVersion)await existing.update({img:row.img,[`flags.${ID}.artVersion`]:flags.artVersion});}continue;}
  let folder=folders.get(flags.weaponCategory)||pack.folders.find(f=>f.name===flags.weaponCategory)?.id;
  if(!folder){folder=(await Folder.create({name:flags.weaponCategory,type:'Item',sorting:'a'},{pack:pack.collection})).id;folders.set(flags.weaponCategory,folder);}
  await Item.create({...row,folder},{pack:pack.collection});keys.add(flags.weaponKey);
