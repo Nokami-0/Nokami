@@ -1,3 +1,8 @@
+# 2.0.19
+
+- Add supplied Big Foot art and a separate pilot-operated vehicle-sheet version retaining machine gun, homing missiles, hull strike and encounter traits. Preserve the existing NPC profile.
+- Add priced Big Foot vehicle weapons to the weapon catalog.
+
 # 2.0.18
 
 - Add G.U.N. Mad Convoy cargo vehicle with supplied token, driver/co-driver capacity and homebrew transport stats and value.

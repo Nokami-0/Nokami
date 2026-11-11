@@ -421,3 +421,6 @@ Values are in Mobiums. Existing listed prices are preserved; other values and 50
 | Wrecking Slam | Vehicle mount | fixed | 9 | 1 | 400 | 200 | Homebrew estimated value |
 | Tank Main Cannon | Vehicle mount | fixed | 10 | 10 | 900 | 450 | Homebrew estimated value |
 | Tank Machine Gun | Vehicle mount | fixed | 4 | 6 | 300 | 150 | Homebrew estimated value |
+| Big Foot — Machine-Gun Sweep | Vehicle mount | fixed | 6 | 6 | 700 | 350 | Homebrew estimated value |
+| Big Foot — Homing Missile Salvo | Vehicle mount | fixed | 8 | 7 | 900 | 450 | Homebrew estimated value |
+| Big Foot — Hull Strike | Vehicle mount | fixed | 7 | 1 | 350 | 175 | Homebrew estimated value |

@@ -2248,7 +2248,7 @@
   {
     "name": "F-6t Big Foot",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png",
     "system": {
       "attributes": {
         "speed": 3,
@@ -2392,12 +2392,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "F-6t Big Foot",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.19"
       }
     }
   },
@@ -3020,6 +3024,153 @@
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "G.U.N. Mad Convoy"
+      }
+    }
+  },
+  {
+    "name": "F-6t Big Foot — Vehicle",
+    "type": "vehicle",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png",
+    "system": {
+      "speed": 3,
+      "power": 5,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 65,
+        "max": 65
+      },
+      "dodge": 3,
+      "movement": 4,
+      "critThreshold": 3,
+      "passengers": 1,
+      "width": 2,
+      "length": 2,
+      "pilot": "",
+      "crew": "G.U.N. pilot",
+      "form": "Bipedal hover mech",
+      "qualities": "Pilot-operated hover mech. Flight uses normal Move; GM tracks altitude and attack pattern.",
+      "bio": "Homebrew STTH conversion\nHomebrew boss conversion. Treat reach, pattern windows and pilot survivability as encounter rules, not automatic effects. No canon STTH stats exist for this mech.\n\nVehicle-sheet adaptation. Assign a pilot Actor UUID before movement checks and weapons; weapon rolls use the assigned pilot. 65 HP, Dodge 3, movement 4. Hover flight and cockpit exposure remain GM-adjudicated. One shared HP pool; no automatic component damage. Suggested complete mech value 9000 Mobiums, resale 4500; homebrew estimates."
+    },
+    "items": [
+      {
+        "name": "Machine-Gun Sweep",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 6,
+          "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+          "aoe": "3x3",
+          "source": "Homebrew STTH conversion",
+          "price": 700
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      },
+      {
+        "name": "Homing Missile Salvo",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 7,
+          "description": "+1 Advantage; three Interacts to recharge.",
+          "advantage": 1,
+          "recharge": 3,
+          "source": "Homebrew STTH conversion",
+          "price": 900
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      },
+      {
+        "name": "Hull Strike",
+        "type": "vehicleWeapon",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Use only while landed/within reach.",
+          "source": "Homebrew STTH conversion",
+          "price": 350
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Fly using the normal STTH flight rules unless the profile states otherwise.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      },
+      {
+        "name": "Pilot Operated",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Assign the pilot Actor UUID on the vehicle sheet. Use that pilot for vehicle actions and weapons.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      },
+      {
+        "name": "Attack Pattern",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Make 3 overhead gun pass(es), then land to fire missiles. During the missile/recovery turn, attacks aimed at the exposed cockpit gain +1 Advantage. GM tracks pattern and altitude.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      },
+      {
+        "name": "Cockpit Weak Point",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Targeting the cockpit in an exposed window gains +1 Advantage. Attacks on other parts suffer +1 Disadvantage. Bonuses/penalties are homebrew STTH balance values.",
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "Homebrew STTH conversion"
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      }
+    ],
+    "prototypeToken": {
+      "name": "F-6t Big Foot — Vehicle",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "gunKey": "F-6t Big Foot — Vehicle",
+        "homebrew": true,
+        "communityRosterVersion": "2.0.19"
       }
     }
   }

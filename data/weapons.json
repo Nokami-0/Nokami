@@ -329,6 +329,81 @@
     }
   },
   {
+    "name": "Big Foot — Homing Missile Salvo",
+    "type": "vehicleWeapon",
+    "system": {
+      "skill": "ranged",
+      "damage": 8,
+      "damageMode": "fixed",
+      "slots": 0,
+      "range": 7,
+      "description": "+1 Advantage; three Interacts to recharge.",
+      "advantage": 1,
+      "recharge": 3,
+      "source": "Homebrew STTH conversion",
+      "price": 900,
+      "notes": "Homebrew value 900 Mobiums; resale 450. Integrated vehicle mount; GM approves removal and installation."
+    },
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png",
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "10a517403381dc5a9fc3",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 450,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
+    "name": "Big Foot — Hull Strike",
+    "type": "vehicleWeapon",
+    "system": {
+      "skill": "melee",
+      "damage": 7,
+      "damageMode": "fixed",
+      "slots": 0,
+      "range": 1,
+      "description": "Use only while landed/within reach.",
+      "source": "Homebrew STTH conversion",
+      "price": 350,
+      "notes": "Homebrew value 350 Mobiums; resale 175. Integrated vehicle mount; GM approves removal and installation."
+    },
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png",
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "192817cd90986c8ce2c1",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 175,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
+    "name": "Big Foot — Machine-Gun Sweep",
+    "type": "vehicleWeapon",
+    "system": {
+      "skill": "ranged",
+      "damage": 6,
+      "damageMode": "fixed",
+      "slots": 0,
+      "range": 6,
+      "description": "3×3 selectable AoE; only base damage applies across the selected area. GM resolves arc and targets.",
+      "aoe": "3x3",
+      "source": "Homebrew STTH conversion",
+      "price": 700,
+      "notes": "Homebrew value 700 Mobiums; resale 350. Integrated vehicle mount; GM approves removal and installation."
+    },
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-bigfoot.png",
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "47ec3dba580cd7848a3d",
+        "weaponCategory": "Vehicle mount",
+        "resaleValue": 350,
+        "valuation": "Homebrew estimated value"
+      }
+    }
+  },
+  {
     "name": "Blaster",
     "type": "attack",
     "system": {
