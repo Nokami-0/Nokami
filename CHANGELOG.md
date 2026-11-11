@@ -1,3 +1,7 @@
+# 2.0.35
+
+- Apply supplied G.U.N. Spike Rhino artwork to Rhino Spike and its items, preserving its ram and spiked-roof trait.
+
 # 2.0.34
 
 - Apply supplied G.U.N. Rhino Cannon token artwork, preserving cannon ammunition, ram and NPC stats.

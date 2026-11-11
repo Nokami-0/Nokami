@@ -2124,7 +2124,7 @@
   {
     "name": "Rhino Spike",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-spike.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -2175,7 +2175,8 @@
           "effect": "prone",
           "effectHits": 2,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-spike.png"
       },
       {
         "name": "Spiked Roof",
@@ -2184,7 +2185,8 @@
           "slots": 0,
           "description": "Attacks directly onto the roof suffer +1 Disadvantage. A Slip from a roof-facing Spin/Melee attack may deal 2 damage. Attacks from low sides avoid this penalty. GM resolves facing.",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-spike.png"
       },
       {
         "name": "Suffocation Immunity",
@@ -2196,7 +2198,8 @@
           "modifierTarget": "suffocating",
           "modifierValue": 1,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-spike.png"
       }
     ],
     "prototypeToken": {
@@ -2209,12 +2212,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino-spike.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Rhino Spike",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.35"
       }
     }
   },
