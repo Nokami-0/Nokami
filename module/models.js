@@ -5,7 +5,7 @@ const s=(initial='')=>new f.StringField({initial});const b=()=>new f.BooleanFiel
 const resource=initial=>new f.SchemaField({value:n(initial),max:n(initial)});
 export class CharacterData extends foundry.abstract.TypeDataModel {
  static defineSchema(){return {
-  heroType:s('speed'),archetype:s('genius'),species:s('Mobian'),bio:s(),appearance:s(),personality:s(),height:n(),
+  npcTier:s(),profileSource:s(),profileDodge:new f.NumberField({initial:null,nullable:true,integer:true,min:0,max:6}),profileInitiative:new f.NumberField({initial:null,nullable:true,integer:true,min:0}),profileMovement:new f.NumberField({initial:null,nullable:true,integer:true,min:0}),hpNotApplicable:b(),initiativeNotApplicable:b(),usesPilot:b(),pilot:s(),pilotDexModifier:new f.NumberField({initial:0,integer:true}),pilotSkillOverrides:s(),heroType:s('speed'),archetype:s('genius'),species:s('Mobian'),bio:s(),appearance:s(),personality:s(),height:n(),
   attributes:new f.SchemaField(Object.fromEntries(Object.keys(ATTRIBUTES).map(k=>[k,n(k==='speed'?4:1,1,7)]))),
   skills:new f.SchemaField(Object.fromEntries(Object.keys(SKILLS).map(k=>[k,n(0,0,12)]))),
   hp:resource(10),tp:resource(15),rings:n(),mobiums:n(),crits:n(),critThreshold:n(),initiativeTrick:n(),
@@ -19,7 +19,7 @@ export class VehicleData extends foundry.abstract.TypeDataModel {
 }
 export class ItemData extends foundry.abstract.TypeDataModel {
  static defineSchema(){return {
-  description:s(),source:s(),skill:s('spin'),damage:new f.NumberField({initial:1,integer:true,min:-9}),damageMode:s('fixed'),range:n(1),advantage:new f.NumberField({initial:0,integer:true}),
+  ammoLimited:b(),statusOnly:b(),description:s(),source:s(),skill:s('spin'),damage:new f.NumberField({initial:1,integer:true,min:-9}),damageMode:s('fixed'),range:n(1),advantage:new f.NumberField({initial:0,integer:true}),
   extraDamage:n(1),aoe:s(),arc:s('360'),facing:s('forward'),effect:s(),effectHits:n(1),automaticEffect:b(),
   movementCost:s(),recharge:n(),remainingRecharge:n(),tpCost:n(),partnerType:s(),aimSkill:s(),partnerSkill:s(),comboKind:s('combined'),
   equipped:b(),slots:n(1),quantity:n(1),price:n(),ringPrice:n(),removable:b(),used:b(),modifier:s(),modifierValue:new f.NumberField({initial:0}),modifierTarget:s(),

@@ -21,7 +21,7 @@ Source: supplied Sonic Tag-Team Heroes 1.5.0 PDF, 189 pages. The PDF was locally
 
 ## Validation
 
-52 automated tests pass: engine examples, mocked V14 initialization, document saves/drop, gear rules, permissions, action dispatch coverage, cancellation, recharge, phase controls, healing, KO checks, drowning and loadout scaling. All four Handlebars templates compile. Each sheet control has a dispatcher branch; this does not prove every outcome of every control in Foundry itself.
+60 automated tests pass: engine examples, mocked V14 initialization, document saves/drop, gear rules, permissions, action dispatch coverage, cancellation, recharge, phase controls, healing, KO checks, drowning and loadout scaling. All four Handlebars templates compile. Each sheet control has a dispatcher branch; this does not prove every outcome of every control in Foundry itself.
 
 ## Coverage and remaining work
 
@@ -34,6 +34,6 @@ Source: supplied Sonic Tag-Team Heroes 1.5.0 PDF, 189 pages. The PDF was locally
 | Challenges and terrain | QTE, Zone and basic race tracking | Complex course rules, turns, hazards, jumps, flying, carrying, terrain costs and token movement |
 | Vehicles | Profiles, pilot rolls, repair and ram helpers | Firing arcs, collision placement, crew roles, advanced movement and damage placement |
 | Character creation | Stat validation, default attacks, placeholders and loadout builder | Talent choices and all prerequisites need GM review; four talent/attack slots are not universally enforced |
-| Bestiary and adventure | Eleven parsed Henchmen profiles | Full bestiary, sub-bosses, bosses and adventure-specific automation are not complete |
+| Bestiary and adventure | Eleven older Henchmen profiles plus 33 Eggman Empire profiles/variants/parts | Non-Empire named characters and advanced boss encounter automation remain incomplete |
 
 A licensed running Foundry V14 instance is not available in the build environment. All controls still need real-world acceptance testing, including player versus GM permissions, drag/drop, chat application, round transitions, compendium creation and every confirmation dialog. No claim is made that the whole PDF is completely automated.

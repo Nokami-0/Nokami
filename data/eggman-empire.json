@@ -1,0 +1,3837 @@
+[
+  {
+    "name": "Moto Bug",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 2,
+        "dexterity": 1,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -10,
+      "profileDodge": 1,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "run,melee",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.125. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.125",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Claws",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.125"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.125"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Moto Bug",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Moto Bug",
+        "sourcePage": 125
+      }
+    }
+  },
+  {
+    "name": "Buzzbomber / Buzzer",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -5,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "ranged,ride",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.126. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.126",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Stinger Laser",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "",
+          "source": "STTH 1.5.0 p.126"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.126"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.126"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Buzzbomber / Buzzer",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Buzzbomber / Buzzer",
+        "sourcePage": 126
+      }
+    }
+  },
+  {
+    "name": "Crabmeat",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 1,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -15,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "melee,ranged",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.126. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.126",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Pincer Claw",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.126"
+        }
+      },
+      {
+        "name": "Laser Pellets",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Hits everything within Melee range of the target. GM selects affected characters.",
+          "source": "STTH 1.5.0 p.126"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.126"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Crabmeat",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Crabmeat",
+        "sourcePage": 126
+      }
+    }
+  },
+  {
+    "name": "Orbinaut",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 1,
+        "power": 1,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -5,
+      "profileDodge": 4,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "ranged,resolve",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.127. Henchman.\nDodge equals remaining spiked balls, initially 4. The Spiked Ball Shot quantity tracks ammo and Dodge. Touch damage and Clam Up require GM resolution.",
+      "profileSource": "STTH 1.5.0 p.127",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Spiked Ball Shot",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 3,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Four spiked balls. Each shot expends one; remaining balls equal Dodge. No shots after ammo is exhausted.",
+          "quantity": 4,
+          "ammoLimited": true,
+          "subtype": "orbinaut",
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Clam Up",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Action: Difficulty 1 Resolve. Requires Dodge 3+. Success: only Ranged attacks can target Orbinaut until its following turn.",
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Touch Damage",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "With at least one spiked ball, Slips on incoming Spin/Melee attacks can deal 2 damage to the attacker.",
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.127"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Orbinaut",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Orbinaut",
+        "sourcePage": 127
+      }
+    }
+  },
+  {
+    "name": "Burrobot",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 2,
+        "dexterity": 2,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -10,
+      "profileDodge": 1,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "melee,sneak",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.127. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.127",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Nose Drill",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Ambush",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Before initiative, opposed Sneak vs Perceive. Success grants a free attack with +1 Advantage when the target enters range.",
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.127"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Burrobot",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Burrobot",
+        "sourcePage": 127
+      }
+    }
+  },
+  {
+    "name": "Chopper / Jaws",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 2,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "hpBonus": -10,
+      "profileDodge": 1,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "melee,perceive",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.127. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.127",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Jaws",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 4,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Swimmer \u2014 Soaked immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "",
+          "modifier": "immunity",
+          "modifierTarget": "soaked",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.127"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.127"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Chopper / Jaws",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Chopper / Jaws",
+        "sourcePage": 127
+      }
+    }
+  },
+  {
+    "name": "Egg Pawn \u2014 Unarmed",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\nEgg Pawns do not use the Squad rule. Armed variants have one selected loadout.",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Pawn \u2014 Unarmed",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Pawn \u2014 Unarmed",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Egg Pawn \u2014 Sword / Club",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\nEgg Pawns do not use the Squad rule. Armed variants have one selected loadout.",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Sword / Club",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Removable weapon.",
+          "removable": true,
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Pawn \u2014 Sword / Club",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Pawn \u2014 Sword / Club",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Egg Pawn \u2014 Hammer / Axe",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\nEgg Pawns do not use the Squad rule. Armed variants have one selected loadout.",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Hammer / Axe",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Removable weapon; +1 Disadvantage.",
+          "advantage": -1,
+          "removable": true,
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Pawn \u2014 Hammer / Axe",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Pawn \u2014 Hammer / Axe",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Egg Pawn \u2014 Light Launcher",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\nEgg Pawns do not use the Squad rule. Armed variants have one selected loadout.",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Light Launcher",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Removable weapon.",
+          "removable": true,
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Pawn \u2014 Light Launcher",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Pawn \u2014 Light Launcher",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Egg Pawn \u2014 Heavy Gun",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\nEgg Pawns do not use the Squad rule. Armed variants have one selected loadout.",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Heavy Gun",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Removable weapon; +1 Disadvantage.",
+          "advantage": -1,
+          "removable": true,
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Pawn \u2014 Heavy Gun",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Pawn \u2014 Heavy Gun",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Egg Pawn \u2014 Explosives",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\nEgg Pawns do not use the Squad rule. Armed variants have one selected loadout.",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Explosives",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Burning on second hit; 3\u00d73 AoE; three Interacts to recharge.",
+          "effect": "burning",
+          "effectHits": 2,
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Pawn \u2014 Explosives",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Pawn \u2014 Explosives",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Egg Pawn \u2014 Shield",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 1,
+        "ranged": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 3,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\nEgg Pawns do not use the Squad rule. Armed variants have one selected loadout.",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,ranged"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Shield",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Adds +1 Dodge, included in this variant\u2019s printed Dodge override.",
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Pawn \u2014 Shield",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Pawn \u2014 Shield",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Flapper \u2014 Laser",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2,
+        "perceive": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "ranged,perceive"
+    },
+    "items": [
+      {
+        "name": "Laser",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Flapper \u2014 Laser",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Flapper \u2014 Laser",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Flapper \u2014 Bomber",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 1,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2,
+        "perceive": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.128. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.128",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "ranged,perceive"
+    },
+    "items": [
+      {
+        "name": "Bomb Drop",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Burning on second hit; 3\u00d73 AoE; recharge three Interacts.",
+          "effect": "burning",
+          "effectHits": 2,
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.128"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.128"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Flapper \u2014 Bomber",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Flapper \u2014 Bomber",
+        "sourcePage": 128
+      }
+    }
+  },
+  {
+    "name": "Klagen",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 2,
+        "charisma": 1
+      },
+      "skills": {
+        "move": 2,
+        "perceive": 1
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": -10,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.129. Henchman.\n",
+      "profileSource": "STTH 1.5.0 p.129",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "move,perceive"
+    },
+    "items": [
+      {
+        "name": "Immobilization Field",
+        "type": "attack",
+        "system": {
+          "skill": "move",
+          "damage": 0,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Successful attack restrains without dealing damage. Each additional hit may increase the stack, up to four; this specific profile overrides the ordinary three-stack rule. Ends when Klagen is defeated. GM applies/removes the linked restraint.",
+          "statusOnly": true,
+          "effect": "restrained",
+          "effectHits": 1,
+          "source": "STTH 1.5.0 p.129"
+        }
+      },
+      {
+        "name": "Swimmer \u2014 Soaked immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "",
+          "modifier": "immunity",
+          "modifierTarget": "soaked",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.129"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.129"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Klagen",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Klagen",
+        "sourcePage": 129
+      }
+    }
+  },
+  {
+    "name": "Egg Hammer",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 1,
+        "power": 5,
+        "dexterity": 1,
+        "intellect": 2,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 3,
+        "move": 1,
+        "resolve": 2
+      },
+      "hp": {
+        "value": 30,
+        "max": 30
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 1,
+      "critThreshold": 2,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Sub-Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.131. Sub-Boss.\n",
+      "profileSource": "STTH 1.5.0 p.131",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,move,resolve"
+    },
+    "items": [
+      {
+        "name": "Hammer Swing",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Removable.",
+          "removable": true,
+          "source": "STTH 1.5.0 p.131"
+        }
+      },
+      {
+        "name": "Hammer Spin",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Deal 2 damage to all opponents within the attacker\u2019s Melee range; forfeit Move.",
+          "removable": true,
+          "movementCost": "all",
+          "source": "STTH 1.5.0 p.131"
+        }
+      },
+      {
+        "name": "Giant Fist",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Restrained on second hit.",
+          "effect": "restrained",
+          "effectHits": 2,
+          "source": "STTH 1.5.0 p.131"
+        }
+      },
+      {
+        "name": "Marching Orders",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Forfeit a Move or Interact to give a Squad of up to four Henchmen an immediate free Move or Interact.",
+          "source": "STTH 1.5.0 p.131"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.131"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Hammer",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Hammer",
+        "sourcePage": 131
+      }
+    }
+  },
+  {
+    "name": "Eggrobo",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 4,
+        "power": 2,
+        "dexterity": 4,
+        "intellect": 3,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 3,
+        "ride": 2,
+        "perceive": 1,
+        "tech": 1
+      },
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 2,
+      "profileMovement": 8,
+      "initiativeTrick": 1,
+      "critThreshold": 1,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Sub-Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.132. Sub-Boss.\n",
+      "profileSource": "STTH 1.5.0 p.132",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "pilotSkillOverrides": "ranged,ride,perceive,tech"
+    },
+    "items": [
+      {
+        "name": "Heavy Laser",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "+1 Disadvantage; removable.",
+          "advantage": -1,
+          "removable": true,
+          "source": "STTH 1.5.0 p.132"
+        }
+      },
+      {
+        "name": "Marching Orders",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Forfeit Move or Interact: a Squad of up to four Henchmen gains an immediate free Move or Interact.",
+          "source": "STTH 1.5.0 p.132"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.132"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.132"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Eggrobo",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Eggrobo",
+        "sourcePage": 132
+      }
+    }
+  },
+  {
+    "name": "Dr. Eggman",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2
+      },
+      "hp": {
+        "value": 50,
+        "max": 50
+      },
+      "hpBonus": 30,
+      "profileDodge": 3,
+      "profileInitiative": 3,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.150. Boss.\nNo critical threshold is printed in this profile; default is 0 rather than an invented threshold.",
+      "profileSource": "STTH 1.5.0 p.150",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "run,ranged,ride,tech,knowledge,persuade,deceive,resolve"
+    },
+    "items": [
+      {
+        "name": "Punch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.150"
+        }
+      },
+      {
+        "name": "Master Plan",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Interact: grant +1 Advantage on the next check to a Squad of up to four Henchmen or one Sub-Boss; alternatively grant a free Move or Interact.",
+          "source": "STTH 1.5.0 p.150"
+        }
+      },
+      {
+        "name": "Poor Loser",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Once per round when attacked: Difficulty 2 Resolve may redirect damage to an unharmed servant within two squares.",
+          "source": "STTH 1.5.0 p.150"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Dr. Eggman",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Dr. Eggman",
+        "sourcePage": 150
+      }
+    }
+  },
+  {
+    "name": "Metal Sonic",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 7,
+        "power": 4,
+        "dexterity": 4,
+        "intellect": 2,
+        "charisma": 1
+      },
+      "skills": {
+        "spin": 3,
+        "acrobat": 2,
+        "run": 4,
+        "melee": 2,
+        "ranged": 2,
+        "ride": 2,
+        "perceive": 2,
+        "resolve": 3
+      },
+      "hp": {
+        "value": 55,
+        "max": 55
+      },
+      "hpBonus": 30,
+      "profileDodge": 3,
+      "profileInitiative": 4,
+      "profileMovement": 16,
+      "initiativeTrick": 2,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.151. Boss.\nThe printed Crit Threshold has no number; default 0 is an unresolved source value, not a claimed book threshold. Double Initiative requires two combatant entries controlled by the GM.",
+      "profileSource": "STTH 1.5.0 p.151",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "spin,acrobat,run,melee,ranged,ride,perceive,resolve"
+    },
+    "items": [
+      {
+        "name": "Spin Dash",
+        "type": "attack",
+        "system": {
+          "skill": "spin",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Half Move only.",
+          "movementCost": "half",
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Homing Attack",
+        "type": "attack",
+        "system": {
+          "skill": "spin",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Half Move; +1 Advantage; spend extra hits for 2 damage to another target in Melee range of the original; repeatable.",
+          "advantage": 1,
+          "movementCost": "half",
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Claws",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "",
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "V. Maximum Overdrive Attack",
+        "type": "attack",
+        "system": {
+          "skill": "run",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "10 TP; inflicts Knocked Back.",
+          "tpCost": 10,
+          "effect": "prone",
+          "automaticEffect": true,
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Plasma Pulse Attack",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 30,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "15 TP; Stunned 2 and Dazzled.",
+          "tpCost": 15,
+          "effect": "stunned 2, dazzled",
+          "automaticEffect": true,
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Single-Minded",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Difficulty 1 Perceive; designate a visible target. +1 Advantage against it for rounds equal to hits; only one target at a time.",
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Black Shield",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Spend 5 TP: +2 Dodge until the beginning of next turn. GM changes bonus and restores it at expiry.",
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Double Initiative",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.151"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.151"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Metal Sonic",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Metal Sonic",
+        "sourcePage": 151
+      }
+    }
+  },
+  {
+    "name": "Egg Mobile \u2014 Base Chassis",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 5,
+        "power": 3,
+        "dexterity": 3,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2
+      },
+      "hp": {
+        "value": 0,
+        "max": 0
+      },
+      "hpBonus": -20,
+      "profileDodge": 2,
+      "profileInitiative": 3,
+      "profileMovement": 8,
+      "initiativeTrick": 2,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.135. Boss.\nHP is N/A in the book. This chassis uses 0 as a display placeholder, not a damageable zero-HP enemy. Choose a configured boss form before fighting.\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.135",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpNotApplicable": true,
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.135"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.135"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Mobile \u2014 Base Chassis",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Mobile \u2014 Base Chassis",
+        "sourcePage": 135
+      }
+    }
+  },
+  {
+    "name": "Egg Wrecker",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 5,
+        "dexterity": 3,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2,
+        "melee": 3
+      },
+      "hp": {
+        "value": 70,
+        "max": 70
+      },
+      "hpBonus": 40,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 2,
+      "initiativeTrick": 2,
+      "critThreshold": 2,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.136. Boss.\n\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.136",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee"
+    },
+    "items": [
+      {
+        "name": "Wrecking Ball",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "+1 Disadvantage.",
+          "advantage": -1,
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Wrecking Slam",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 9,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "+2 Disadvantage; 2 damage to all opponents in target\u2019s Melee range; forfeit Move.",
+          "advantage": -2,
+          "movementCost": "all",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Long Reach",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Can attack from Height 2 as though at ground level.",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.136"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Wrecker",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Wrecker",
+        "sourcePage": 136
+      }
+    }
+  },
+  {
+    "name": "Egg Lancer",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 5,
+        "power": 5,
+        "dexterity": 4,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2,
+        "melee": 3
+      },
+      "hp": {
+        "value": 70,
+        "max": 70
+      },
+      "hpBonus": 40,
+      "profileDodge": 3,
+      "profileInitiative": 3,
+      "profileMovement": 8,
+      "initiativeTrick": 2,
+      "critThreshold": 3,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Boss",
+      "pilotDexModifier": 1,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.136. Boss.\nTwo Light Laser Cannons and two Heavy Laser Cannons form the escort. Use their separate profiles.\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.136",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee"
+    },
+    "items": [
+      {
+        "name": "Pincer Pinch",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Damage 9 instead in the sweet-spot squares. GM adjusts base damage before resolving.",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Pincer Pinch \u2014 Sweet Spot",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 9,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Use only in the marked sweet-spot squares.",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Bombs Away",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Burning on second hit; 3\u00d73 AoE; three Interacts to recharge.",
+          "effect": "burning",
+          "effectHits": 2,
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Weak Point",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Attacks at the square immediately ahead of the cockpit gain +1 Advantage; all other areas impose +1 Disadvantage.",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Escort",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "After 15 damage, shift to ranged mode. Deploy an additional light/heavy laser after each further cumulative 10 HP lost, up to the four-escort formation. GM places escort actors and resolves phase changes.",
+          "source": "STTH 1.5.0 p.136"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.136"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Lancer",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Lancer",
+        "sourcePage": 136
+      }
+    }
+  },
+  {
+    "name": "Egg Lancer Escort \u2014 Light Laser Cannon",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 1,
+        "dexterity": 4,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 2
+      },
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "hpBonus": 0,
+      "profileDodge": 2,
+      "profileInitiative": 0,
+      "profileMovement": 4,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.137. Henchman.\nInitiative N/A: acts ahead of everyone at the start of each round. GM sets its combatant initiative. Moves and attacks on the same turn.",
+      "profileSource": "STTH 1.5.0 p.137",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "initiativeNotApplicable": true,
+      "pilotSkillOverrides": "ranged"
+    },
+    "items": [
+      {
+        "name": "Laser",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 5,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "",
+          "source": "STTH 1.5.0 p.137"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.137"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.137"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Lancer Escort \u2014 Light Laser Cannon",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Lancer Escort \u2014 Light Laser Cannon",
+        "sourcePage": 137
+      }
+    }
+  },
+  {
+    "name": "Egg Lancer Escort \u2014 Heavy Laser Cannon",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 2,
+        "power": 3,
+        "dexterity": 1,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {},
+      "hp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpBonus": -5,
+      "profileDodge": 1,
+      "profileInitiative": 0,
+      "profileMovement": 2,
+      "initiativeTrick": 0,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Henchman",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.137. Henchman.\nInitiative N/A. Resolve the charge and end-of-round hazard with the GM.",
+      "profileSource": "STTH 1.5.0 p.137",
+      "tp": {
+        "value": 0,
+        "max": 15
+      },
+      "initiativeNotApplicable": true,
+      "pilotSkillOverrides": ""
+    },
+    "items": [
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.137"
+        }
+      },
+      {
+        "name": "Laser Trap",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Position at the start of the round; charge for the round and fire after everyone acts. Ten-square straight line. Each caught character makes a Difficulty 1 Acrobat or Ride saving throw; failure deals 10 damage. This is a hazard, not an opposed weapon attack.",
+          "source": "STTH 1.5.0 p.137"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.137"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Lancer Escort \u2014 Heavy Laser Cannon",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Lancer Escort \u2014 Heavy Laser Cannon",
+        "sourcePage": 137
+      }
+    }
+  },
+  {
+    "name": "Death Egg Robot",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 1,
+        "power": 6,
+        "dexterity": 2,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2,
+        "melee": 4
+      },
+      "hp": {
+        "value": 75,
+        "max": 75
+      },
+      "hpBonus": 40,
+      "profileDodge": 4,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 3,
+      "critThreshold": 4,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": -1,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.154. Final Boss.\nGiant: occupies 2\u00d72 squares; body Height 2. Reduce incoming Knocked Back stacks by one. Resolve Giant turns/actions using pp152\u2013156.\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.154",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee"
+    },
+    "items": [
+      {
+        "name": "Claws",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 10,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 2,
+          "description": "+2 Disadvantage.",
+          "advantage": -2,
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Egg Bombs",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Stunned on second hit; 3\u00d73 AoE; three Interacts to recharge.",
+          "effect": "stunned",
+          "effectHits": 2,
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Moon Jump",
+        "type": "attack",
+        "system": {
+          "skill": "ride",
+          "damage": 50,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "10 TP; 2\u00d72 AoE. Must be airborne directly above the target at Height 2+; +2 Disadvantage.",
+          "tpCost": 10,
+          "advantage": -2,
+          "aoe": "2x2",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Deathly Defense",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Incoming front-facing Spin/Melee Slips deal 5 damage; Critical Slips may cause critical damage.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Rear Opening",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Spin/Melee attacks from behind the side last attacked gain +1 Advantage.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "System Overdrive",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "5 TP: gain an immediate Move. When already airborne use Speed 3 for that Move.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Stomp",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "15 TP: Knocked Back 3 against everyone in Melee range, including airborne targets up to Height 3.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Giant",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Long Reach",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Extended Reach",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Knocked Back Resistance",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.154"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.154"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Death Egg Robot",
+      "actorLink": false,
+      "width": 2,
+      "height": 2,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Death Egg Robot",
+        "sourcePage": 154
+      }
+    }
+  },
+  {
+    "name": "Egg Dragoon",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 5,
+        "power": 5,
+        "dexterity": 5,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2,
+        "melee": 4
+      },
+      "hp": {
+        "value": 75,
+        "max": 75
+      },
+      "hpBonus": 45,
+      "profileDodge": 4,
+      "profileInitiative": 3,
+      "profileMovement": 8,
+      "initiativeTrick": 3,
+      "critThreshold": 4,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": 2,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.157. Final Boss.\nReduce incoming Knocked Back stacks by one. The GM resolves final-boss turn cadence and enclosure geometry.\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.157",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee"
+    },
+    "items": [
+      {
+        "name": "Drill Attack",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "+1 Disadvantage; Stunned on second hit.",
+          "advantage": -1,
+          "effect": "stunned",
+          "effectHits": 2,
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Homing Shot",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "+2 Advantage; Stunned on second hit; three Interacts to recharge.",
+          "advantage": 2,
+          "effect": "stunned",
+          "effectHits": 2,
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Fire Beam",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 8,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Burning on second hit; three Interacts to recharge.",
+          "effect": "burning",
+          "effectHits": 2,
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Ice Wave",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "+1 Advantage; Restrained on second hit; 3\u00d73 AoE; three Interacts to recharge.",
+          "advantage": 1,
+          "effect": "restrained",
+          "effectHits": 2,
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Rapid Reload",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "5 TP: reset all attack recharge counters.",
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Separation Attack",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "10 TP: two Signature Attacks on the next turn.",
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Box In",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "15 TP: enclose a 4\u00d74 area through the end of the round. Difficulty 2 Acrobat save; failure takes 15 damage. Slips cause Stunned; Critical Slip may deal critical damage.",
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Can Fly",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Long Reach",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Knocked Back Resistance",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.157"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.157"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Egg Dragoon",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Egg Dragoon",
+        "sourcePage": 157
+      }
+    }
+  },
+  {
+    "name": "Biolizard \u2014 Head",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 6,
+        "dexterity": 4,
+        "intellect": 2,
+        "charisma": 1
+      },
+      "skills": {
+        "ranged": 3,
+        "resolve": 3
+      },
+      "hp": {
+        "value": 0,
+        "max": 0
+      },
+      "hpBonus": -35,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.159. Final Boss.\nHP N/A. Part of a shared multipart encounter. Only the torso\u2019s exposed life-support core accepts damage; other parts accept statuses. Do not treat this part\u2019s 0 display HP as KO.",
+      "profileSource": "STTH 1.5.0 p.159",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpNotApplicable": true,
+      "pilotSkillOverrides": "ranged,resolve"
+    },
+    "items": [
+      {
+        "name": "Electron Spheres",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "+1 Advantage; Stunned on second hit; three Interacts to recharge.",
+          "advantage": 1,
+          "effect": "stunned",
+          "effectHits": 2,
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Convenient Rails",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Within Melee range: Difficulty 2 Acrobat/Climb to reach the back at Height 2; Difficulty 1 if the head has any status.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.159"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Biolizard \u2014 Head",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Biolizard \u2014 Head",
+        "sourcePage": 159
+      }
+    }
+  },
+  {
+    "name": "Biolizard \u2014 Torso / Life-Support Core",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 1,
+        "power": 6,
+        "dexterity": 1,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "move": 3
+      },
+      "hp": {
+        "value": 75,
+        "max": 75
+      },
+      "hpBonus": 40,
+      "profileDodge": 1,
+      "profileInitiative": 1,
+      "profileMovement": 2,
+      "initiativeTrick": 2,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.159. Final Boss.\nOnly the exposed life-support core is damageable. Main body occupies roughly 3\u00d73 and stands at Height 2+. Tail/head are separate parts. Dashes in mental columns are unused, represented by placeholder 1s. Reduce incoming Knocked Back stacks by one. Source does not print a numeric critical threshold.",
+      "profileSource": "STTH 1.5.0 p.159",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "move"
+    },
+    "items": [
+      {
+        "name": "Violent Shake",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Opposed Move against the character on its body, or the highest Move among multiple riders. Success inflicts Knocked Back 3 in a chosen direction; extra hits may add Stunned or Knocked Back.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Ovum Minefield",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "At 50 HP or less, start on the torso\u2019s next turn: Height 1\u20132 becomes Tricky Terrain; Ranged attacks and saves to remain on the torso have +1 Disadvantage until the fight ends.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Magnetic Disruption",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "At 25 HP or less, start on torso\u2019s next turn: nearby characters levitate to Height 2; non-fliers count as Soaked. A crit or status interrupts the effect; the torso may restart it on its next turn.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Colossal",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Achilles Heel",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Knocked Back Resistance",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.159"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Biolizard \u2014 Torso / Life-Support Core",
+      "actorLink": false,
+      "width": 3,
+      "height": 3,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Biolizard \u2014 Torso / Life-Support Core",
+        "sourcePage": 159
+      }
+    }
+  },
+  {
+    "name": "Biolizard \u2014 Tail",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 6,
+        "dexterity": 3,
+        "intellect": 1,
+        "charisma": 1
+      },
+      "skills": {
+        "melee": 3
+      },
+      "hp": {
+        "value": 0,
+        "max": 0
+      },
+      "hpBonus": -35,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 0,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": false,
+      "bio": "STTH 1.5.0, p.159. Final Boss.\nHP N/A. Apply damage only to the torso\u2019s exposed core. Tail can suffer statuses; its 0 display HP is not a KO. Dashes in mental columns are unused placeholders.",
+      "profileSource": "STTH 1.5.0 p.159",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "hpNotApplicable": true,
+      "pilotSkillOverrides": "melee"
+    },
+    "items": [
+      {
+        "name": "Tail",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 6,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Inflicts Knocked Back.",
+          "effect": "prone",
+          "automaticEffect": true,
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Colossal",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Knocked Back Resistance",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.159"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.159"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Biolizard \u2014 Tail",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Biolizard \u2014 Tail",
+        "sourcePage": 159
+      }
+    }
+  },
+  {
+    "name": "Giant Eggman Robo \u2014 Left Hand",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 6,
+        "dexterity": 3,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2,
+        "melee": 3,
+        "move": 3
+      },
+      "hp": {
+        "value": 35,
+        "max": 35
+      },
+      "hpBonus": 0,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 2,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.162. Final Boss.\n35 HP per hand. Each hand is a separate part; GM manages adjacency, reach and platform geometry.\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.162",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,move"
+    },
+    "items": [
+      {
+        "name": "Hand Slam",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 9,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "+2 Disadvantage; Knocked Back on second hit; requires both hands.",
+          "advantage": -2,
+          "effect": "prone",
+          "effectHits": 2,
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Grab",
+        "type": "attack",
+        "system": {
+          "skill": "move",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Restrained on second hit; 2 damage to everyone in Melee range of target; forfeit Move.",
+          "effect": "restrained",
+          "effectHits": 2,
+          "movementCost": "all",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Re-Grip",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "With both hands active: Difficulty 2 Move; success grants the other hand +2 Advantage on its next attack.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Interdependent System",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "When only one hand remains, it becomes Soaked, reducing Speed to 1.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Colossal",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Long Reach",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.162"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Giant Eggman Robo \u2014 Left Hand",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Giant Eggman Robo \u2014 Left Hand",
+        "sourcePage": 162
+      }
+    }
+  },
+  {
+    "name": "Giant Eggman Robo \u2014 Right Hand",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 3,
+        "power": 6,
+        "dexterity": 3,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 4,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2,
+        "melee": 3,
+        "move": 3
+      },
+      "hp": {
+        "value": 35,
+        "max": 35
+      },
+      "hpBonus": 0,
+      "profileDodge": 3,
+      "profileInitiative": 2,
+      "profileMovement": 4,
+      "initiativeTrick": 2,
+      "critThreshold": 2,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.162. Final Boss.\n35 HP per hand. Each hand is a separate part; GM manages adjacency, reach and platform geometry.\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.162",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "melee,move"
+    },
+    "items": [
+      {
+        "name": "Hand Slam",
+        "type": "attack",
+        "system": {
+          "skill": "melee",
+          "damage": 9,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "+2 Disadvantage; Knocked Back on second hit; requires both hands.",
+          "advantage": -2,
+          "effect": "prone",
+          "effectHits": 2,
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Grab",
+        "type": "attack",
+        "system": {
+          "skill": "move",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 1,
+          "description": "Restrained on second hit; 2 damage to everyone in Melee range of target; forfeit Move.",
+          "effect": "restrained",
+          "effectHits": 2,
+          "movementCost": "all",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Re-Grip",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "With both hands active: Difficulty 2 Move; success grants the other hand +2 Advantage on its next attack.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Interdependent System",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "When only one hand remains, it becomes Soaked, reducing Speed to 1.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Colossal",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Long Reach",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.162"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Giant Eggman Robo \u2014 Right Hand",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Giant Eggman Robo \u2014 Right Hand",
+        "sourcePage": 162
+      }
+    }
+  },
+  {
+    "name": "Giant Eggman Robo \u2014 Head & Torso",
+    "type": "npc",
+    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "system": {
+      "attributes": {
+        "speed": 1,
+        "power": 7,
+        "dexterity": 3,
+        "intellect": 7,
+        "charisma": 5
+      },
+      "skills": {
+        "run": 3,
+        "ranged": 3,
+        "ride": 4,
+        "tech": 4,
+        "knowledge": 4,
+        "persuade": 2,
+        "deceive": 3,
+        "resolve": 2,
+        "move": 3
+      },
+      "hp": {
+        "value": 55,
+        "max": 55
+      },
+      "hpBonus": 15,
+      "profileDodge": 1,
+      "profileInitiative": 1,
+      "profileMovement": 1,
+      "initiativeTrick": 2,
+      "critThreshold": 2,
+      "squadSize": 1,
+      "squadSkills": "",
+      "heroType": "power",
+      "species": "Eggman Empire",
+      "npcTier": "Final Boss",
+      "pilotDexModifier": 0,
+      "usesPilot": true,
+      "bio": "STTH 1.5.0, p.162. Final Boss.\n55 HP for the head/torso part. Hands have independent HP. Colossal body/parts must be positioned to match the encounter layout.\nPilot-operated: listed mental values use Dr. Eggman as the default pilot. Set the pilot Actor UUID to inherit a different pilot\u2019s Dexterity (plus this profile modifier), Intellect, Charisma, and skills; printed skill ranks override pilot ranks. The GM resolves firing position and movement.",
+      "profileSource": "STTH 1.5.0 p.162",
+      "tp": {
+        "value": 15,
+        "max": 15
+      },
+      "pilotSkillOverrides": "ranged,move"
+    },
+    "items": [
+      {
+        "name": "Flame Thrower Nose",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 7,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Burning on second hit; 3\u00d73 AoE; three Interacts to recharge.",
+          "effect": "burning",
+          "effectHits": 2,
+          "aoe": "3x3",
+          "recharge": 3,
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Master Cannon",
+        "type": "attack",
+        "system": {
+          "skill": "ranged",
+          "damage": 30,
+          "damageMode": "fixed",
+          "slots": 0,
+          "range": 0,
+          "description": "Inflicts Stunned and Dazzled; three Interacts to recharge.",
+          "effect": "stunned, dazzled",
+          "automaticEffect": true,
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Desperate Destruction",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "After both hands are destroyed, spend Move or Interact (not both) to destroy an adjacent platform square. Affected characters save at Difficulty 1 Acrobat/Ride to an adjacent intact square; failure or no square causes a fall.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Colossal",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Long Reach",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Resolve this ability using the profile notes and STTH source.",
+          "source": "STTH 1.5.0 p.162"
+        }
+      },
+      {
+        "name": "Suffocation Immunity",
+        "type": "talent",
+        "system": {
+          "slots": 0,
+          "description": "Does not make breath saves.",
+          "modifier": "immunity",
+          "modifierTarget": "suffocating",
+          "modifierValue": 1,
+          "source": "STTH 1.5.0 p.162"
+        }
+      }
+    ],
+    "prototypeToken": {
+      "name": "Giant Eggman Robo \u2014 Head & Torso",
+      "actorLink": false,
+      "width": 1,
+      "height": 1,
+      "bar1": {
+        "attribute": "hp"
+      },
+      "bar2": {
+        "attribute": "tp"
+      }
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "eggmanKey": "Giant Eggman Robo \u2014 Head & Torso",
+        "sourcePage": 162
+      }
+    }
+  }
+]

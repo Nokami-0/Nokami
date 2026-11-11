@@ -8,7 +8,7 @@ export async function condition(actor,id,stacks=1){owned(actor);const max=['stun
  const data={name:CONDITIONS[id],img:`systems/${ID}/assets/${id}.svg`,statuses:[id],flags:{[ID]:{stacks:Math.min(max,stacks),round:game.combat?.round??0,turn:game.combat?.turn??0}}};
  if(existing)await existing.update({[`flags.${ID}.stacks`]:Math.min(max,stacks)});else await actor.createEmbeddedDocuments('ActiveEffect',[data]);
 }
-export async function damage(actor,amount,{critical=false,shield=true}={}){owned(actor);const s=actor.system;
+export async function damage(actor,amount,{critical=false,shield=true}={}){owned(actor);const s=actor.system;if(s.hpNotApplicable)throw Error('This part has HP N/A. Target its damageable core or configured boss form; apply statuses separately.');
  const state={hp:s.hp.value,rings:s.rings||0,crits:s.crits,pc:actor.type==='character',threshold:s.critThreshold||0};
  const r=applyDamage(state,amount,{critical,shield:shield&&Boolean(s.shield)});
  const update={'system.hp.value':r.hp,'system.crits':r.crits};if(actor.type==='character')update['system.rings']=r.rings;if(r.shieldBroken)update['system.shield']='';
