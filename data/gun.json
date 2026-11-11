@@ -2,7 +2,7 @@
   {
     "name": "G.U.N. Soldier",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-soldier-human.svg",
     "system": {
       "attributes": {
         "speed": 2,
@@ -85,12 +85,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-soldier-human.svg"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "G.U.N. Soldier",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.37-soldier-art"
       }
     }
   },
