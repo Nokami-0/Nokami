@@ -29,7 +29,7 @@ export async function buildLibrary(){if(!game.user.isGM)return;
  let np=game.packs.get('world.stth-npcs');if(!np)np=await CompendiumCollection.createCompendium({name:'stth-npcs',label:'STTH — Henchmen',type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const nl=np.locked;if(nl)await np.configure({locked:false});try{const docs=await np.getDocuments();const rows=await(await fetch(`systems/${ID}/data/npcs.json`)).json();for(const row of rows)if(!docs.some(d=>d.getFlag(ID,'catalogKey')===row.name))await Actor.create({...row,flags:{[ID]:{catalogKey:row.name}}},{pack:np.collection});}finally{if(nl)await np.configure({locked:true});}
 
- await buildEggmanLibrary();await buildGunLibrary();await buildUploadedLibrary();await buildMechLibrary();
+ await buildEggmanLibrary();await buildGunLibrary();await buildUploadedLibrary();await buildMechLibrary();await buildWeaponLibrary();
 
 }
 
@@ -65,3 +65,17 @@ async function buildFactionLibrary(file,label,key,packName=file){
  }finally{if(locked)await pack.configure({locked:true});}
 }
 
+
+export async function buildWeaponLibrary(){
+ if(!game.user.isGM)return;
+ const rows=await(await fetch(`systems/${ID}/data/weapons.json`)).json();
+ let pack=game.packs.get('world.stth-weapons');
+ if(!pack)pack=await CompendiumCollection.createCompendium({name:'stth-weapons',label:'STTH — Weapons & Prices',type:'Item',package:'world',ownership:{PLAYER:'OBSERVER'}});
+ const locked=pack.locked;if(locked)await pack.configure({locked:false});
+ try{const docs=await pack.getDocuments();const keys=new Set(docs.map(d=>d.getFlag(ID,'weaponKey')));const folders=new Map();
+ for(const row of rows){const flags=row.flags[ID];if(keys.has(flags.weaponKey))continue;
+ let folder=folders.get(flags.weaponCategory)||pack.folders.find(f=>f.name===flags.weaponCategory)?.id;
+ if(!folder){folder=(await Folder.create({name:flags.weaponCategory,type:'Item',sorting:'a'},{pack:pack.collection})).id;folders.set(flags.weaponCategory,folder);}
+ await Item.create({...row,folder},{pack:pack.collection});keys.add(flags.weaponKey);
+ }}finally{if(locked)await pack.configure({locked:true});}
+}

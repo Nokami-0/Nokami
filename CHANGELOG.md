@@ -1,3 +1,8 @@
+# 2.0.15
+
+- Add a complete weapon and attack catalog with Mobium values and suggested resale prices in STTH — Weapons & Prices.
+- Preserve listed equipment prices; label new estimates and integrated/innate reference valuations.
+
 # 2.0.14
 
 - Add 64 vehicle-sheet profiles in STTH — Eggman Mechs — Vehicles, covering pilot-operated bosses, machines, ships and uploaded variants.
