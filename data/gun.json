@@ -4631,8 +4631,8 @@
       "pilot": "",
       "crew": "G.U.N. pilot",
       "form": "Large disk-shaped hover combat craft",
-      "qualities": "Flight and stationary hover; vertical and lateral maneuvering. Pilot-operated; one shared HP pool. Particle cannon has radial pulse and directional energy-slash modes.",
-      "bio": "Original STTH by McShmoodle. Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices. Assign a pilot Actor UUID. Arsenal: homing rockets, underside bombs, charged radial particle pulse and the user-requested Dark Beginnings energy-pulse slash. All weapons use the pilot’s Ranged skill. Read Charge & Shared Capacitor before either energy mode. Charge-up, shared cooldown, area targets, detachable launchers, countermeasures and ejection are GM-managed; weapon attack rolls, listed ammunition and individual recharge use existing system controls. No automatic damage application, component HP or reactive interception is implemented. Source references: https://sonic.fandom.com/wiki/Blue_Falcon ; official Dark Beginnings Episode 3: https://www.youtube.com/watch?v=A2d9sS-muqI . Slash is an adaptation of the user-identified visual, not an official attack name; flare mechanics are a homebrew interpretation. Numbers are provisional."
+      "qualities": "Flight and stationary hover; vertical and lateral maneuvering. Pilot-operated; one shared HP pool. Particle cannon has radial pulse and directed beam-cannon modes.",
+      "bio": "Original STTH by McShmoodle. Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices. Assign a pilot Actor UUID. Arsenal: homing rockets, underside bombs, charged radial particle pulse and a directed beam-cannon firing mode. All weapons use the pilot’s Ranged skill. Read Charge & Shared Capacitor before either energy mode. Charge-up, shared cooldown, area targets, detachable launchers, countermeasures and ejection are GM-managed; weapon attack rolls, listed ammunition and individual recharge use existing system controls. No automatic damage application, component HP or reactive interception is implemented. Source references: https://sonic.fandom.com/wiki/Blue_Falcon ; official Dark Beginnings Episode 3: https://www.youtube.com/watch?v=A2d9sS-muqI . Beam-cannon mode replaces the earlier slash adaptation at the user's request; firing-mode mechanics and flare mechanics are homebrew interpretations. Numbers are provisional."
     },
     "items": [
       {
@@ -4685,14 +4685,14 @@
           "range": 4,
           "slots": 0,
           "recharge": 3,
-          "description": "Action, after charge-up: discharge a radial energy wave reaching 4 squares from the hull at the announced altitude. Exclude the craft itself. GM resolves all eligible targets separately using normal Dodge; cover and sufficient altitude separation can avoid the wave. This is a ring/plane, not a sphere. One discharge and shared cooldown with Energy Pulse Slash; see Charge & Shared Capacitor.",
+          "description": "Action, after charge-up: discharge a radial energy wave reaching 4 squares from the hull at the announced altitude. Exclude the craft itself. GM resolves all eligible targets separately using normal Dodge; cover and sufficient altitude separation can avoid the wave. This is a ring/plane, not a sphere. One discharge and shared cooldown with Beam Cannon; see Charge & Shared Capacitor.",
           "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices.",
           "arc": "360",
           "notes": "Area selection and additional targets are manual. Never multiply full damage merely because a creature occupies several squares; use existing vehicle-area rules where applicable."
         }
       },
       {
-        "name": "Particle Cannon — Energy Pulse Slash",
+        "name": "Particle Cannon — Beam Cannon",
         "type": "vehicleWeapon",
         "img": "systems/sonic-tag-team-heroes/assets/tokens/blue-falcon.svg",
         "system": {
@@ -4702,10 +4702,10 @@
           "range": 6,
           "slots": 0,
           "recharge": 3,
-          "description": "Action, after charge-up: release a directed slicing energy wave, representing the Dark Beginnings pulse/slash requested by the user. Select a 1-square-wide, up-to-6-square-long line in an announced direction/plane from the hull. GM resolves targets in the line separately against Dodge. No automatic armor bypass, severing or homing. Shares the particle cannon capacitor with the radial pulse.",
+          "description": "Action, after charge-up: fire a directed particle beam along a 1-square-wide line up to 6 squares from the hull. Announce direction and altitude before firing. GM resolves targets in the beam separately against normal Dodge, accounting for cover and line of sight. Shares the particle cannon capacitor and three-Interact recharge with the 360° Energy Pulse. Numerical values and line dimensions are homebrew conversion choices.",
           "source": "Community homebrew STTH conversion — Blue Falcon (Shadow the Hedgehog and Dark Beginnings); all numerical values and action costs are adaptation choices.",
           "arc": "line",
-          "notes": "Descriptive adaptation name, not an official named technique. Direction/plane and targets are GM-managed."
+          "notes": "Directed beam-cannon mode. Target selection and shared charging/recharge are GM-managed."
         }
       },
       {
@@ -4798,7 +4798,7 @@
       "sonic-tag-team-heroes": {
         "gunKey": "LZ-12R Blue Falcon",
         "homebrew": true,
-        "communityRosterVersion": "2.0.37-blue-falcon"
+        "communityRosterVersion": "2.0.37-blue-falcon-beam"
       }
     }
   }
