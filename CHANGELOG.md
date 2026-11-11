@@ -1,3 +1,7 @@
+# 2.0.33
+
+- Apply supplied plain G.U.N. Rhino artwork to Rhino Jet and its items, retaining ram and charge traits. Cannon, Spike and Metal variants remain separate.
+
 # 2.0.32
 
 - Add explicit homebrew ammunition capacities to ranged attacks, preserving existing limited-ammo counts. TP-powered and status-only attacks retain their own resource rules.

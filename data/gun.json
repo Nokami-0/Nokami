@@ -1901,7 +1901,7 @@
   {
     "name": "Rhino Jet",
     "type": "npc",
-    "img": "systems/sonic-tag-team-heroes/assets/vehicle.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino.png",
     "system": {
       "attributes": {
         "speed": 2,
@@ -1953,7 +1953,8 @@
           "effect": "prone",
           "effectHits": 2,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino.png"
       },
       {
         "name": "Charge Burst",
@@ -1962,7 +1963,8 @@
           "slots": 0,
           "description": "May double its Move once every other turn while moving directly toward a visible target. GM tracks straight-line movement and cooldown.",
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino.png"
       },
       {
         "name": "Suffocation Immunity",
@@ -1974,7 +1976,8 @@
           "modifierTarget": "suffocating",
           "modifierValue": 1,
           "source": "Homebrew STTH conversion"
-        }
+        },
+        "img": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino.png"
       }
     ],
     "prototypeToken": {
@@ -1987,12 +1990,16 @@
       },
       "bar2": {
         "attribute": "tp"
+      },
+      "texture": {
+        "src": "systems/sonic-tag-team-heroes/assets/tokens/gun-rhino.png"
       }
     },
     "flags": {
       "sonic-tag-team-heroes": {
         "gunKey": "Rhino Jet",
-        "homebrew": true
+        "homebrew": true,
+        "communityRosterVersion": "2.0.33"
       }
     }
   },
