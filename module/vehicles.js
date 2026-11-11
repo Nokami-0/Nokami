@@ -1,0 +1,15 @@
+import {pool,SKILLS,advantageOpposed,attackDamage,clamp} from './engine.js';import {owned,prompt,select,field,dice,card,renderResult,num} from './rolls.js';
+export async function vehicleAction(vehicle){owned(vehicle);const pilot=await fromUuid(vehicle.system.pilot);if(!pilot)throw Error('Set the pilot Actor UUID first.');owned(pilot);
+ const o=await prompt('Vehicle action',select('action','Action',{ride:'Ride / maneuver',repair:'Repair (2 HP per hit)',coordination:'Coordination (Difficulty2)',juke:'Juke (Difficulty2)',evasion:'Evasion (Difficulty2, operator)',ram:'Ram (opposed Ride)',workshop:'Workshop repair (+5 HP/day)'},'ride')+select('skill','Skill (choose legal option for action)',Object.fromEntries(Object.keys(SKILLS).map(k=>[k,k])),'ride')+field('difficulty','Ride Difficulty',1)+field('defense','Ram target Dodge',2)+field('targetPower','Ram target Power',1));if(!o)return;
+ if(o.action==='workshop'){await vehicle.update({'system.hp.value':Math.min(vehicle.system.hp.max,vehicle.system.hp.value+5)});return;}
+ const sk=o.action==='repair'?'tech':['ride','evasion','ram'].includes(o.action)?'ride':o.skill;
+ if(o.action==='coordination'&&!['perceive','persuade','resolve'].includes(sk))throw Error('Coordination uses Perceive, Persuade or Resolve.');if(o.action==='juke'&&!['spin','move'].includes(sk))throw Error('Juke uses Spin or Move.');
+ const pp=pool(pilot.system.derived.attributes[SKILLS[sk]],pilot.system.derived.ranks[sk]);if(sk==='ride')pp.hit=Math.max(0,pp.hit+vehicle.system.dexterityModifier);
+ const difficulty=o.action==='repair'?0:['coordination','juke','evasion'].includes(o.action)?2:num(o.difficulty);const r=await dice(pp,{difficulty});let text='';
+ if(o.action==='repair'){const hp=Math.min(vehicle.system.hp.max,vehicle.system.hp.value+2*r.hits);await vehicle.update({'system.hp.value':hp});text=`Repaired ${2*r.hits} HP, capped at maximum. Current HP ${hp}.`;}
+ if(o.action==='coordination')text=r.success?'All allies in this vehicle gain +1 Advantage to their next check for one round. Apply in their roll dialogs.':'Coordination failed.';
+ if(o.action==='juke')text=r.success?'Immediate +1 movement square in the chosen direction. Move the token.':'Juke failed.';
+ if(o.action==='evasion'){text=r.success?'Attacks targeting this vehicle gain +1 Disadvantage for one round. Apply in attacker dialogs.':'Evasion failed.';}
+ if(o.action==='ram'){const d=await dice({hit:clamp(num(o.defense),0,6),trick:0},{defense:true});const base=vehicle.system.speed+vehicle.system.power;const outcome=attackDamage(base,r.hits,d.hits);text=`Defense ${d.hits} hits. ${outcome.damage} damage. Extra hits may inflict Knocked Back if target Power is no greater than vehicle Power. ${num(o.targetPower)>=vehicle.system.power?'Vehicle also takes half the inflicted damage (resolve with GM).':''}`;await card(vehicle,'Ram',renderResult(r)+`<p>${text}</p>`,{rolls:[...r.rolls,...d.rolls]});return;}
+ await card(vehicle,o.action,renderResult(r)+`<p>${text||`Difficulty ${difficulty}: ${r.success?'Success':'Failure'}`}</p>`,{rolls:r.rolls});
+}

@@ -1,0 +1,56 @@
+{
+  "id": "sonic-tag-team-heroes",
+  "title": "Sonic Tag-Team Heroes",
+  "description": "Native Foundry V14 rebuild of the unofficial STTH 1.5.0 conversion. Original game by McShmoodle.",
+  "version": "2.0.2",
+  "compatibility": {
+    "minimum": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Community adaptation; original game by McShmoodle"
+    }
+  ],
+  "esmodules": [
+    "module/main.js"
+  ],
+  "styles": [
+    "styles/stth.css"
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {},
+      "vehicle": {}
+    },
+    "Item": {
+      "attack": {},
+      "talent": {},
+      "gear": {},
+      "consumable": {},
+      "tagTeam": {},
+      "special": {},
+      "vehicleWeapon": {},
+      "vehicleUpgrade": {},
+      "reference": {}
+    }
+  },
+  "grid": {
+    "distance": 10,
+    "units": "ft"
+  },
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "tp",
+  "socket": false,
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "url": "https://github.com/Nokami-0/Nokami",
+  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/system.json",
+  "download": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/dist/sonic-tag-team-heroes-2.0.2.zip"
+}

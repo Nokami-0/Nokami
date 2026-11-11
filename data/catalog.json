@@ -1,0 +1,1294 @@
+[
+  {
+    "name": "Super Ring (5)",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Gain 5 Rings. Stored until used.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "rings",
+      "quantity": 1,
+      "price": 60,
+      "ringPrice": 0,
+      "modifierValue": 5,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Super Ring (10)",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Gain 10 Rings. Stored until used.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "rings",
+      "quantity": 1,
+      "price": 110,
+      "ringPrice": 0,
+      "modifierValue": 10,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Barrier Shield",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Dodge. Negate the next successful damaging attack, then break. A crit with that hit causes Stunned but no Ring loss or crit suffered.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "barrier",
+      "quantity": 1,
+      "price": 50,
+      "ringPrice": 5,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Power Sneakers",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "For 3 rounds or encounter end: +2 movement squares and +2 skill ranks on Speed checks.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "sneakers",
+      "quantity": 1,
+      "price": 80,
+      "ringPrice": 8,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Thunder Shield",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Barrier benefits; +2 Rings when gaining Rings with a Trick. Immune to energy/laser/electric hazards unless a crit is dealt. Breaks in water; select shield bypass/exemption manually.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "thunder",
+      "quantity": 1,
+      "price": 100,
+      "ringPrice": 10,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Flame Shield",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Barrier benefits; +1 Spin/Melee damage. Heat hazards do not break it unless a crit is dealt. Breaks in water.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "flame",
+      "quantity": 1,
+      "price": 100,
+      "ringPrice": 10,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Aqua Shield",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Barrier benefits; +1 Spin and Acrobat rank. Infinite underwater air while active.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "aqua",
+      "quantity": 1,
+      "price": 100,
+      "ringPrice": 10,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Red Star Ring",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Use after one check to negate its Slip or Critical Slip penalty.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "redstar",
+      "quantity": 1,
+      "price": 60,
+      "ringPrice": 6,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Silver Moon Ring",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Use after one check to upgrade a Trick to a Critical Trick.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "silvermoon",
+      "quantity": 1,
+      "price": 80,
+      "ringPrice": 8,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Chaos Cola",
+    "type": "consumable",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Increase initiative placement by 1 for one round, once per round.",
+      "source": "STTH 1.5.0, p. 37\u201338",
+      "subtype": "cola",
+      "quantity": 1,
+      "price": 50,
+      "ringPrice": 5,
+      "modifierValue": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Communicator",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Private communication within several miles.",
+      "source": "STTH 1.5.0, p. 39",
+      "price": 25,
+      "ringPrice": 3,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Cell Phone",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Calls, camera, video, GPS and internet where service exists.",
+      "source": "STTH 1.5.0, p. 39",
+      "price": 150,
+      "ringPrice": 15,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Flashlight",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Removes darkness Disadvantage up to Short range. A Slip may disable it until encounter end.",
+      "source": "STTH 1.5.0, p. 39",
+      "price": 10,
+      "ringPrice": 1,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Rope",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "10 feet. Use for +1 Climb Advantage, restrain a Stunned target with an Interact, or prevent falling.",
+      "source": "STTH 1.5.0, p. 39",
+      "price": 15,
+      "ringPrice": 2,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Light Speed Shoes",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "attribute",
+      "modifierTarget": "speed",
+      "modifierValue": 1,
+      "price": 600,
+      "ringPrice": 60,
+      "gearKind": "upgrade-speed"
+    }
+  },
+  {
+    "name": "Fighting Gloves",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "attribute",
+      "modifierTarget": "power",
+      "modifierValue": 1,
+      "price": 600,
+      "ringPrice": 60,
+      "gearKind": "upgrade-power"
+    }
+  },
+  {
+    "name": "Rhythm Badge",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "attribute",
+      "modifierTarget": "dexterity",
+      "modifierValue": 1,
+      "price": 600,
+      "ringPrice": 60,
+      "gearKind": "upgrade-dexterity"
+    }
+  },
+  {
+    "name": "Forehead Goggles",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "attribute",
+      "modifierTarget": "intellect",
+      "modifierValue": 1,
+      "price": 600,
+      "ringPrice": 60,
+      "gearKind": "upgrade-intellect"
+    }
+  },
+  {
+    "name": "Cool Sunglasses",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "attribute",
+      "modifierTarget": "charisma",
+      "modifierValue": 1,
+      "price": 600,
+      "ringPrice": 60,
+      "gearKind": "upgrade-charisma"
+    }
+  },
+  {
+    "name": "Speed Gem Bracelet",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "skill",
+      "modifierValue": 1,
+      "price": 250,
+      "gearKind": "bracelet-speed"
+    }
+  },
+  {
+    "name": "Power Gem Bracelet",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "skill",
+      "modifierValue": 1,
+      "price": 250,
+      "gearKind": "bracelet-power"
+    }
+  },
+  {
+    "name": "Dexterity Gem Bracelet",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "skill",
+      "modifierValue": 1,
+      "price": 250,
+      "gearKind": "bracelet-dexterity"
+    }
+  },
+  {
+    "name": "Intellect Gem Bracelet",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "skill",
+      "modifierValue": 1,
+      "price": 250,
+      "gearKind": "bracelet-intellect"
+    }
+  },
+  {
+    "name": "Charisma Gem Bracelet",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
+      "source": "STTH 1.5.0, p. 40",
+      "modifier": "skill",
+      "modifierValue": 1,
+      "price": 250,
+      "gearKind": "bracelet-charisma"
+    }
+  },
+  {
+    "name": "Light Melee",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "melee",
+      "damageMode": "melee",
+      "damage": 1,
+      "advantage": 0,
+      "range": 1,
+      "price": 100,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Light Melee",
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Accurate Melee",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "melee",
+      "damageMode": "melee",
+      "damage": 0,
+      "advantage": 1,
+      "range": 1,
+      "price": 150,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Accurate Melee",
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Heavy Melee",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "melee",
+      "damageMode": "melee",
+      "damage": 2,
+      "advantage": -1,
+      "range": 1,
+      "price": 150,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Heavy Melee",
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Light Ranged",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 6,
+      "advantage": 0,
+      "range": 0,
+      "price": 150,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Light Ranged",
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Accurate Ranged",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 5,
+      "advantage": 1,
+      "range": 0,
+      "price": 200,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Accurate Ranged",
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Heavy Ranged",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 7,
+      "advantage": -1,
+      "range": 0,
+      "price": 200,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Heavy Ranged",
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Homing Ranged",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 8,
+      "advantage": 2,
+      "range": 0,
+      "price": 250,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Homing Ranged",
+      "recharge": 3,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Explosives",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generic removable weapon. Gear takes one equipped slot; attacks require it to be equipped. Used weapons add +1 Disadvantage until repaired. Explosives have 3\u00d73 AoE; homing and explosives recharge with three Interacts.",
+      "source": "STTH 1.5.0, p. 94\u201395",
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 9,
+      "advantage": 0,
+      "range": 0,
+      "price": 250,
+      "slots": 1,
+      "removable": true,
+      "gearKind": "Explosives",
+      "recharge": 3,
+      "aoe": "3x3"
+    }
+  },
+  {
+    "name": "Defensive Gear",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Only one protective gear of each type. Not Removable.",
+      "source": "STTH 1.5.0, p. 95",
+      "modifier": "dodge",
+      "modifierTarget": "",
+      "modifierValue": 1,
+      "price": 200,
+      "gearKind": "Defensive Gear"
+    }
+  },
+  {
+    "name": "Combat Readiness Gear",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Only one protective gear of each type. Not Removable.",
+      "source": "STTH 1.5.0, p. 95",
+      "modifier": "initiative",
+      "modifierTarget": "",
+      "modifierValue": 1,
+      "price": 200,
+      "gearKind": "Combat Readiness Gear"
+    }
+  },
+  {
+    "name": "Fire Protection",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Only one protective gear of each type. Not Removable.",
+      "source": "STTH 1.5.0, p. 95",
+      "modifier": "immunity",
+      "modifierTarget": "burning",
+      "modifierValue": 1,
+      "price": 250,
+      "gearKind": "Fire Protection"
+    }
+  },
+  {
+    "name": "Water Protection",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Only one protective gear of each type. Not Removable.",
+      "source": "STTH 1.5.0, p. 95",
+      "modifier": "immunity",
+      "modifierTarget": "soaked",
+      "modifierValue": 1,
+      "price": 250,
+      "gearKind": "Water Protection"
+    }
+  },
+  {
+    "name": "Breathing Protection",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Only one protective gear of each type. Not Removable.",
+      "source": "STTH 1.5.0, p. 95",
+      "modifier": "immunity",
+      "modifierTarget": "suffocating",
+      "modifierValue": 1,
+      "price": 200,
+      "gearKind": "Breathing Protection"
+    }
+  },
+  {
+    "name": "Balance Stabilizer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Reduce inflicted status stack by 1. Apply manually before setting status.",
+      "source": "STTH 1.5.0, p. 95",
+      "price": 100,
+      "gearKind": "Balance Stabilizer",
+      "modifier": "resistance",
+      "modifierTarget": "prone",
+      "modifierValue": 1
+    }
+  },
+  {
+    "name": "Restraining Countermeasures",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Reduce inflicted status stack by 1. Apply manually before setting status.",
+      "source": "STTH 1.5.0, p. 95",
+      "price": 150,
+      "gearKind": "Restraining Countermeasures",
+      "modifier": "resistance",
+      "modifierTarget": "restrained",
+      "modifierValue": 1
+    }
+  },
+  {
+    "name": "Acrobat Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 150,
+      "modifier": "advantage",
+      "modifierTarget": "acrobat",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Run Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 200,
+      "modifier": "advantage",
+      "modifierTarget": "run",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Move Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 150,
+      "modifier": "advantage",
+      "modifierTarget": "move",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Climb Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 200,
+      "modifier": "advantage",
+      "modifierTarget": "climb",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Sneak Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 150,
+      "modifier": "advantage",
+      "modifierTarget": "sneak",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Ride Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 200,
+      "modifier": "advantage",
+      "modifierTarget": "ride",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Perceive Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 100,
+      "modifier": "advantage",
+      "modifierTarget": "perceive",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Tech Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 100,
+      "modifier": "advantage",
+      "modifierTarget": "tech",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Knowledge Enhancer",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Advantage to this skill in one specific context chosen with the GM. Apply in roll dialog only when relevant.",
+      "source": "STTH 1.5.0, p. 96",
+      "price": 100,
+      "modifier": "advantage",
+      "modifierTarget": "knowledge",
+      "modifierValue": 1,
+      "removable": true
+    }
+  },
+  {
+    "name": "Treasure Scope",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Once per encounter, Difficulty 2 Perceive to search for a random item; a Trick can find a helpful stage gimmick.",
+      "source": "STTH 1.5.0, p. 97",
+      "price": 250
+    }
+  },
+  {
+    "name": "Counterweight",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Reduce one Signature Attack Disadvantage by 1.",
+      "source": "STTH 1.5.0, p. 97",
+      "price": 150
+    }
+  },
+  {
+    "name": "Crystal Ring",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Reduce Interacts required to recharge one Signature Attack by 1.",
+      "source": "STTH 1.5.0, p. 97",
+      "price": 300
+    }
+  },
+  {
+    "name": "Warrior Feather",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Add one Signature Attack modifier following loadout rules.",
+      "source": "STTH 1.5.0, p. 97",
+      "price": 300
+    }
+  },
+  {
+    "name": "Quick Reflexes",
+    "type": "talent",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Initiative; may only choose once.",
+      "source": "STTH 1.5.0, p. 79\u201381",
+      "slots": 0,
+      "modifier": "initiative",
+      "modifierTarget": "",
+      "modifierValue": 1
+    }
+  },
+  {
+    "name": "Evasive",
+    "type": "talent",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Dodge; may only choose once, maximum total Dodge 6.",
+      "source": "STTH 1.5.0, p. 79\u201381",
+      "slots": 0,
+      "modifier": "dodge",
+      "modifierTarget": "",
+      "modifierValue": 1
+    }
+  },
+  {
+    "name": "Fireproof",
+    "type": "talent",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Immune to Burning.",
+      "source": "STTH 1.5.0, p. 79\u201381",
+      "slots": 0,
+      "modifier": "immunity",
+      "modifierTarget": "burning",
+      "modifierValue": 1
+    }
+  },
+  {
+    "name": "Amphibious",
+    "type": "talent",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Immune to Soaked speed penalty.",
+      "source": "STTH 1.5.0, p. 79\u201381",
+      "slots": 0,
+      "modifier": "immunity",
+      "modifierTarget": "soaked",
+      "modifierValue": 1
+    }
+  },
+  {
+    "name": "Suffocation Immunity",
+    "type": "talent",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Does not need to breathe.",
+      "source": "STTH 1.5.0, p. 79\u201381",
+      "slots": 0,
+      "modifier": "immunity",
+      "modifierTarget": "suffocating",
+      "modifierValue": 1
+    }
+  },
+  {
+    "name": "Default Spin Attack",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Default attack. First net hit does base damage; each further hit +1 damage. Spin reaches Height 1 without penalty; ranged distance equals Dexterity.",
+      "source": "STTH 1.5.0, p. 76",
+      "skill": "spin",
+      "damageMode": "spin",
+      "damage": 0,
+      "range": 1,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Default Melee Attack",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Default attack. First net hit does base damage; each further hit +1 damage. Spin reaches Height 1 without penalty; ranged distance equals Dexterity.",
+      "source": "STTH 1.5.0, p. 76",
+      "skill": "melee",
+      "damageMode": "melee",
+      "damage": 0,
+      "range": 1,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Default Ranged Attack",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Default attack. First net hit does base damage; each further hit +1 damage. Spin reaches Height 1 without penalty; ranged distance equals Dexterity.",
+      "source": "STTH 1.5.0, p. 76",
+      "skill": "ranged",
+      "damageMode": "fixed",
+      "damage": 5,
+      "range": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Spin Boost",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Aim vs Dodge; partner Spin or Melee uses default damage. Initiator crits add +2 damage. Long range.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 5,
+      "skill": "spin",
+      "aimSkill": "spin",
+      "partnerSkill": "spin",
+      "partnerType": "",
+      "comboKind": "aim",
+      "heroType": "speed",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Rolling Combo",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Combine both Spin attacks; Medium range. Extra hits +1 damage or Knocked Back.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 10,
+      "skill": "spin",
+      "aimSkill": "spin",
+      "partnerSkill": "spin",
+      "partnerType": "",
+      "comboKind": "combined",
+      "heroType": "speed",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Stormbreaker",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "3\u00d73 debris cloud. Base strongest Speed attack \u22121; additional hits +2 damage. Obscures vision with +1 Disadvantage.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 15,
+      "skill": "run",
+      "aimSkill": "run",
+      "partnerSkill": "move",
+      "partnerType": "power",
+      "comboKind": "combined",
+      "heroType": "speed",
+      "damage": -1,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Fastball Special",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Throw partner using default Spin/Melee damage, range Dexterity. Initiator crits can inflict crits.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 5,
+      "skill": "move",
+      "aimSkill": "move",
+      "partnerSkill": "spin",
+      "partnerType": "",
+      "comboKind": "aim",
+      "heroType": "power",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "One-Two Hit",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Melee range; either hero may choose Spin, Melee or Ranged. Extra hits +1 damage or Stunned.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 10,
+      "skill": "melee",
+      "aimSkill": "melee",
+      "partnerSkill": "melee",
+      "partnerType": "",
+      "comboKind": "combined",
+      "heroType": "power",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Divebomb",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Strongest Power attack +5; 3\u00d73 shockwave. Extra hits +2 damage.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 15,
+      "skill": "move",
+      "aimSkill": "move",
+      "partnerSkill": "ride",
+      "partnerType": "fly",
+      "comboKind": "combined",
+      "heroType": "power",
+      "damage": 5,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Thunder Shoot",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Normal Ranged distance. Partner default Spin/Melee damage. Initiator Tricks inflict Stunned.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 5,
+      "skill": "ranged",
+      "aimSkill": "ranged",
+      "partnerSkill": "spin",
+      "partnerType": "",
+      "comboKind": "aim",
+      "heroType": "fly",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Mega Strike",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Melee range; either hero chooses Spin/Melee/Ranged. Extra hits +1 damage or Dazzled.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 10,
+      "skill": "ranged",
+      "aimSkill": "ranged",
+      "partnerSkill": "melee",
+      "partnerType": "",
+      "comboKind": "combined",
+      "heroType": "fly",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Hailfire",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Strongest Fly attack; 5\u00d75 area. Extra hits +2 damage or Dazzled.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 15,
+      "skill": "ranged",
+      "aimSkill": "ranged",
+      "partnerSkill": "run",
+      "partnerType": "speed",
+      "comboKind": "combined",
+      "heroType": "fly",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Tactical Direction",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Choose Perceive, Knowledge, Persuade or Resolve at creation. Non-Technique ally attacks using strongest Signature Attack.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 5,
+      "skill": "knowledge",
+      "aimSkill": "knowledge",
+      "partnerSkill": "melee",
+      "partnerType": "",
+      "comboKind": "aim",
+      "heroType": "technique",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Teachable Moment",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Difficulty 1 chosen mental check. On success ally makes an immediate additional attack after their normal one. Resolve these two attacks separately.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 10,
+      "skill": "knowledge",
+      "aimSkill": "knowledge",
+      "partnerSkill": "melee",
+      "partnerType": "",
+      "comboKind": "teachable",
+      "heroType": "technique",
+      "damage": 0,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Cunning Trap",
+    "type": "tagTeam",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Chosen mental skill plus ally non-attack skill. Strongest Technique attack \u22123, minimum1; dislodged objects up to Power2 add base damage. 3\u00d73 area; extra hits +2 or Restrained.",
+      "source": "STTH 1.5.0, p. 81\u201385",
+      "tpCost": 15,
+      "skill": "tech",
+      "aimSkill": "tech",
+      "partnerSkill": "move",
+      "partnerType": "",
+      "comboKind": "combined",
+      "heroType": "technique",
+      "damage": -3,
+      "slots": 0
+    }
+  },
+  {
+    "name": "Inventive Solution",
+    "type": "special",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Genius: once per session on success, Difficulty2 chosen Intellect skill to create a temporary helpful device. Failed attempt cannot retry this encounter.",
+      "source": "STTH 1.5.0, p. 88\u201389",
+      "slots": 0
+    }
+  },
+  {
+    "name": "Rally Support",
+    "type": "special",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Figurehead: once per session on success, Difficulty2 chosen Charisma skill to recruit temporary allies. Failed attempt cannot retry this encounter.",
+      "source": "STTH 1.5.0, p. 88\u201389",
+      "slots": 0
+    }
+  },
+  {
+    "name": "Indomitable Will",
+    "type": "special",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Generalist: once per session, reroll own or ally check and keep better result.",
+      "source": "STTH 1.5.0, p. 88\u201389",
+      "slots": 0
+    }
+  },
+  {
+    "name": "Turret",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Vehicle weapon. Each mount can fire once per round. Flamethrower second hit inflicts Burning. Choose targets within Machine Gun AoE.",
+      "source": "STTH 1.5.0, p. 109",
+      "skill": "ranged",
+      "damage": 6,
+      "range": 5,
+      "arc": "360",
+      "advantage": 0,
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Homing Missile",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Vehicle weapon. Each mount can fire once per round. Flamethrower second hit inflicts Burning. Choose targets within Machine Gun AoE.",
+      "source": "STTH 1.5.0, p. 109",
+      "skill": "ranged",
+      "damage": 8,
+      "range": 5,
+      "arc": "Cone",
+      "advantage": 2,
+      "recharge": 3,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Machine Gun",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Vehicle weapon. Each mount can fire once per round. Flamethrower second hit inflicts Burning. Choose targets within Machine Gun AoE.",
+      "source": "STTH 1.5.0, p. 109",
+      "skill": "ranged",
+      "damage": 4,
+      "range": 5,
+      "arc": "Cone",
+      "advantage": 0,
+      "recharge": 0,
+      "aoe": "3x3"
+    }
+  },
+  {
+    "name": "Flamethrower",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Vehicle weapon. Each mount can fire once per round. Flamethrower second hit inflicts Burning. Choose targets within Machine Gun AoE.",
+      "source": "STTH 1.5.0, p. 109",
+      "skill": "ranged",
+      "damage": 6,
+      "range": 3,
+      "arc": "Cone",
+      "advantage": 0,
+      "recharge": 0,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Explosive Launcher",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Vehicle weapon. Each mount can fire once per round. Flamethrower second hit inflicts Burning. Choose targets within Machine Gun AoE.",
+      "source": "STTH 1.5.0, p. 109",
+      "skill": "ranged",
+      "damage": 9,
+      "range": 4,
+      "arc": "Straight",
+      "advantage": 0,
+      "recharge": 3,
+      "aoe": "3x3"
+    }
+  },
+  {
+    "name": "Power Laser",
+    "type": "vehicleWeapon",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Vehicle weapon. Each mount can fire once per round. Flamethrower second hit inflicts Burning. Choose targets within Machine Gun AoE.",
+      "source": "STTH 1.5.0, p. 109",
+      "skill": "ranged",
+      "damage": 10,
+      "range": 7,
+      "arc": "Straight",
+      "advantage": -1,
+      "recharge": 3,
+      "aoe": ""
+    }
+  },
+  {
+    "name": "Booster",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Speed. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Overcharged Booster",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+2 Speed, \u22121 Power, \u22121 Dexterity; does not stack with Booster. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Maneuvering Attachments",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Dexterity modifier; cannot apply if modifier already positive. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Antigravity Generator",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Can Hover; if already hovering, Can Fly. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Amphibious Retrofit",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Can Float. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Light Armor",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+5 HP; does not stack with Heavy Armor. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Heavy Armor",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+10 HP, \u22121 Speed; does not stack with Light Armor. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Shield Generator",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "+1 Dodge. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  },
+  {
+    "name": "Ramming Attachment",
+    "type": "vehicleUpgrade",
+    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "system": {
+      "description": "Treat Power +1 higher when ramming; Knocked Back stacks +1. Apply to vehicle profile manually; observe modification capacity and attribute minimum1.",
+      "source": "STTH 1.5.0, p. 109"
+    }
+  }
+]

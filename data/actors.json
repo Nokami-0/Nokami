@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Board",
+    "type": "vehicle",
+    "system": {
+      "speed": 2,
+      "power": 1,
+      "dexterityModifier": 2,
+      "hp": {
+        "value": 5,
+        "max": 5
+      },
+      "dodge": 0,
+      "movement": 2,
+      "critThreshold": 0,
+      "passengers": 1,
+      "qualities": "Personal Scale",
+      "personal": true,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Bicycle",
+    "type": "vehicle",
+    "system": {
+      "speed": 2,
+      "power": 1,
+      "dexterityModifier": 2,
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "dodge": 0,
+      "movement": 2,
+      "critThreshold": 0,
+      "passengers": 1,
+      "qualities": "Personal Scale",
+      "personal": true,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Motorcycle",
+    "type": "vehicle",
+    "system": {
+      "speed": 3,
+      "power": 2,
+      "dexterityModifier": 1,
+      "hp": {
+        "value": 20,
+        "max": 20
+      },
+      "dodge": 2,
+      "movement": 4,
+      "critThreshold": 1,
+      "passengers": 2,
+      "qualities": "",
+      "personal": false,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Car",
+    "type": "vehicle",
+    "system": {
+      "speed": 3,
+      "power": 3,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 30,
+        "max": 30
+      },
+      "dodge": 1,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 4,
+      "qualities": "",
+      "personal": false,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Bus",
+    "type": "vehicle",
+    "system": {
+      "speed": 3,
+      "power": 4,
+      "dexterityModifier": -1,
+      "hp": {
+        "value": 40,
+        "max": 40
+      },
+      "dodge": 1,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 30,
+      "qualities": "",
+      "personal": false,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Jet Ski",
+    "type": "vehicle",
+    "system": {
+      "speed": 3,
+      "power": 1,
+      "dexterityModifier": 1,
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "dodge": 2,
+      "movement": 4,
+      "critThreshold": 1,
+      "passengers": 2,
+      "qualities": "Can Float",
+      "personal": false,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Boat",
+    "type": "vehicle",
+    "system": {
+      "speed": 3,
+      "power": 3,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 30,
+        "max": 30
+      },
+      "dodge": 1,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 6,
+      "qualities": "Can Float",
+      "personal": false,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Ship",
+    "type": "vehicle",
+    "system": {
+      "speed": 3,
+      "power": 4,
+      "dexterityModifier": -1,
+      "hp": {
+        "value": 40,
+        "max": 40
+      },
+      "dodge": 1,
+      "movement": 4,
+      "critThreshold": 2,
+      "passengers": 30,
+      "qualities": "Can Float",
+      "personal": false,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "Tornado",
+    "type": "vehicle",
+    "system": {
+      "speed": 5,
+      "power": 3,
+      "dexterityModifier": 0,
+      "hp": {
+        "value": 30,
+        "max": 30
+      },
+      "dodge": 2,
+      "movement": 8,
+      "critThreshold": 2,
+      "passengers": 4,
+      "qualities": "Can Fly; Stall Speed; includes Booster in listed Speed",
+      "personal": false,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  },
+  {
+    "name": "TYPE-J",
+    "type": "vehicle",
+    "system": {
+      "speed": 5,
+      "power": 1,
+      "dexterityModifier": 2,
+      "hp": {
+        "value": 10,
+        "max": 10
+      },
+      "dodge": 0,
+      "movement": 8,
+      "critThreshold": 0,
+      "passengers": 1,
+      "qualities": "Can Hover; Personal Scale; includes Booster in listed Speed",
+      "personal": true,
+      "bio": "STTH 1.5.0 vehicle profile, pp.102\u2013111. Set form factor and mounted upgrades from the source diagram."
+    }
+  }
+]
