@@ -1,3 +1,4 @@
+import {imposeParryDisadvantage} from './parry-penalty.js';
 import {placeAttackTemplate} from './attack-areas.js';
 import {emitVisualEffect} from './visual-effects.js';
 import {transformBiolizard,installBiolizardTransformation} from './biolizard.js';
@@ -38,6 +39,15 @@ Hooks.once('ready',async()=>{
 });
 // V14 passes an HTMLElement through renderChatMessageHTML, never a jQuery wrapper.
 Hooks.on('renderChatMessageHTML',(message,html)=>{
+ for(const button of html.querySelectorAll('[data-stth-chat="parryPenalty"]'))button.addEventListener('click',async()=>{
+  if(button.disabled)return;button.disabled=true;
+  try{
+   const data=message.flags[ID];if(data?.kind!=='parry'||!data.success)return;
+   const attacker=await fromUuid(data.attacker);owned(attacker);
+   const applied=await imposeParryDisadvantage(attacker,message.id);
+   ui.notifications.info(applied?'Next-attack Disadvantage applied.':'This parry penalty was already applied.');
+  }catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;}
+ });
  for(const button of html.querySelectorAll('[data-stth-chat="damage"]'))button.addEventListener('click',async()=>{
   if(button.disabled)return;button.disabled=true;
   try{
