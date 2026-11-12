@@ -1,0 +1,137 @@
+{
+  "name": "Terminal Velocity Pawn",
+  "type": "npc",
+  "img": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg",
+  "system": {
+    "attributes": {
+      "speed": 3,
+      "power": 4,
+      "dexterity": 3,
+      "intellect": 2,
+      "charisma": 1
+    },
+    "skills": {
+      "melee": 3,
+      "move": 2,
+      "perceive": 2,
+      "resolve": 2,
+      "tech": 1,
+      "ride": 1
+    },
+    "hp": {
+      "value": 25,
+      "max": 25
+    },
+    "hpBonus": 0,
+    "profileDodge": 2,
+    "profileInitiative": 2,
+    "profileMovement": 4,
+    "initiativeTrick": 0,
+    "critThreshold": 1,
+    "squadSize": 1,
+    "squadSkills": "",
+    "heroType": "power",
+    "species": "Eggman Empire",
+    "npcTier": "Elite",
+    "pilotDexModifier": 0,
+    "usesPilot": false,
+    "bio": "Original STTH game by McShmoodle. Terminal Velocity Pawn: a homebrew combat adaptation of the silver-and-purple armored background Egg Pawns stationed at the space elevator in Sonic Colors / Ultimate. Their placement and spear equipment inspire this sentry profile; no canonical combat moveset or late-game combat difficulty is claimed.\n\nRole: armored corridor sentry, not a speed-chasing robot or boss. Holds elevator approaches and narrow walkways with a removable reach spear. Use Block (Power 4) against one declared incoming hit; equipped plating provides DR 2 afterward, per the system's custom defense rules. Choose Block, Dodge, or Parry once per hit. These are alternatives, not extra defenses. Plating DR does not stack with other armor DR.\n\nTactics: defend a choke point, make one normal spear attack per Action, and fall back if disarmed. A separate adjacent fist attack remains available without the spear. No free opportunity attack, automatic interception, forced fall, invulnerability, multiple turns, or resistance to the stage's black hole. Environmental hazards follow scene rules.\n\nCanon reference: Sonic Wiki Zone, Egg Pawn and Terminal Velocity pages describe these armored spear-bearing Pawns as background appearances. All statistics, armor DR and sentry tactics here are community homebrew and untested.",
+    "profileSource": "Community homebrew — untested; Terminal Velocity armored background Pawn from Sonic Colors / Ultimate",
+    "tp": {
+      "value": 0,
+      "max": 15
+    },
+    "pilotSkillOverrides": "melee,move,perceive,resolve,tech,ride"
+  },
+  "items": [
+    {
+      "name": "Terminal Velocity Spear",
+      "type": "attack",
+      "img": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg",
+      "system": {
+        "skill": "melee",
+        "damage": 6,
+        "damageMode": "fixed",
+        "range": 2,
+        "slots": 1,
+        "source": "Community homebrew — untested; Terminal Velocity armored background Pawn from Sonic Colors / Ultimate",
+        "equipped": true,
+        "removable": true,
+        "description": "Action; one target within 2 squares. Requires equipped, functioning spear. Uses normal Melee versus defense. Range 2 is a homebrew reach adaptation. No free charge, reaction strike, extra hit or automatic knockback.",
+        "gearKind": "terminal-velocity-spear"
+      }
+    },
+    {
+      "name": "Armored Fist",
+      "type": "attack",
+      "img": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg",
+      "system": {
+        "skill": "melee",
+        "damage": 5,
+        "damageMode": "fixed",
+        "range": 1,
+        "slots": 0,
+        "source": "Community homebrew — untested; Terminal Velocity armored background Pawn from Sonic Colors / Ultimate",
+        "description": "Action; one adjacent target. Integrated fallback attack when disarmed. No extra attack or automatic condition."
+      }
+    },
+    {
+      "name": "Terminal Velocity Plating",
+      "type": "gear",
+      "img": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg",
+      "system": {
+        "damageReduction": 2,
+        "slots": 2,
+        "equipped": true,
+        "gearKind": "body-armor",
+        "description": "Homebrew reinforced armor: DR 2 while equipped and functional. Only the strongest armor DR applies. Does not grant a Dodge bonus or damage immunity.",
+        "source": "Community homebrew — untested; Terminal Velocity armored background Pawn from Sonic Colors / Ultimate"
+      }
+    },
+    {
+      "name": "Space-Elevator Sentry",
+      "type": "talent",
+      "img": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg",
+      "system": {
+        "slots": 0,
+        "description": "Homebrew tactics: guard elevator access and narrow walkways, hold reach with the spear, and choose one defense per incoming attack. Block uses Power 4; armor DR 2 applies to remaining damage. No additional numerical bonus or free attack.",
+        "source": "Community homebrew — untested; Terminal Velocity armored background Pawn from Sonic Colors / Ultimate"
+      }
+    },
+    {
+      "name": "Suffocation Immunity",
+      "type": "talent",
+      "img": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg",
+      "system": {
+        "slots": 0,
+        "modifier": "immunity",
+        "modifierTarget": "suffocating",
+        "modifierValue": 1,
+        "description": "Machine: does not make breath saves. Does not grant immunity to damage, vacuum-related debris or black-hole hazards.",
+        "source": "Community homebrew — untested; Terminal Velocity armored background Pawn from Sonic Colors / Ultimate"
+      }
+    }
+  ],
+  "prototypeToken": {
+    "name": "Terminal Velocity Pawn",
+    "actorLink": false,
+    "texture": {
+      "src": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg"
+    },
+    "disposition": -1,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "width": 1,
+    "height": 1
+  },
+  "flags": {
+    "sonic-tag-team-heroes": {
+      "eggmanKey": "Terminal Velocity Pawn",
+      "communityRosterVersion": "2.0.54-terminal-velocity",
+      "tokenArtKey": "eggpawnelite",
+      "uploadedRosterVersion": "2.0.12",
+      "profileRevision": "terminal-velocity-1"
+    }
+  }
+}
