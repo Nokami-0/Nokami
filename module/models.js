@@ -19,7 +19,7 @@ export class VehicleData extends foundry.abstract.TypeDataModel {
 }
 export class ItemData extends foundry.abstract.TypeDataModel {
  static defineSchema(){return {
-  ammoMax:n(),ammoLimited:b(),statusOnly:b(),description:s(),source:s(),skill:s('spin'),damage:new f.NumberField({initial:1,integer:true,min:-9}),damageMode:s('fixed'),range:n(1),advantage:new f.NumberField({initial:0,integer:true}),
+  templateShape:s('auto'),templateDistance:n(),templateWidth:n(1,1),templateHeight:n(1,1),templateAngle:new f.NumberField({initial:90,min:1,max:180}),ammoMax:n(),ammoLimited:b(),statusOnly:b(),description:s(),source:s(),skill:s('spin'),damage:new f.NumberField({initial:1,integer:true,min:-9}),damageMode:s('fixed'),range:n(1),advantage:new f.NumberField({initial:0,integer:true}),
   extraDamage:n(1),aoe:s(),arc:s('360'),facing:s('forward'),effect:s(),effectHits:n(1),automaticEffect:b(),
   movementCost:s(),recharge:n(),remainingRecharge:n(),tpCost:n(),partnerType:s(),aimSkill:s(),partnerSkill:s(),comboKind:s('combined'),
   equipped:b(),slots:n(1),quantity:n(1),price:n(),ringPrice:n(),removable:b(),used:b(),modifier:s(),modifierValue:new f.NumberField({initial:0}),modifierTarget:s(),
