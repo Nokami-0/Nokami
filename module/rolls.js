@@ -1,3 +1,4 @@
+import {emitVisualEffect} from './visual-effects.js';
 const {Roll}=foundry.dice;
 const {ChatMessage}=foundry.documents;
 import {pool,tally,advantageFixed,advantageOpposed,attackDamage,SKILLS,ROWS,clamp,zoneRank} from './engine.js';
@@ -50,6 +51,7 @@ export async function attack(actor,item,{spend=true}={}){owned(actor);if(conditi
  if(item.system.ammoLimited)await item.update({'system.quantity':Math.max(0,item.system.quantity-1)});
  if(item.system.recharge)await item.update({'system.remainingRecharge':item.system.recharge});
  if(conditionStacks(actor,'dazzled'))for(const e of actor.effects.filter(e=>e.statuses.has('dazzled')))await e.delete();
+ void emitVisualEffect({actor,item,attack:atk,defense:def,damage:dmg});
 }
 export async function vehicleAttack(vehicle,item){
  owned(vehicle);if(item.system.ammoLimited&&item.system.quantity<=0)throw Error('This attack is out of ammunition.');if(item.system.remainingRecharge>0)throw Error('This weapon must recharge before firing.');
@@ -61,6 +63,7 @@ export async function vehicleAttack(vehicle,item){
  const dmg=attackDamage(item.system.damage,r.hits,defense.hits,{squares:num(o.squares),spentHits:num(o.spent)});
  await card(vehicle,item.name,renderResult(r)+`<p>Defense ${defense.hits} hits. <b>${dmg.damage} damage</b>. Range ${item.system.range}; arc ${esc(item.system.arc)}; facing ${esc(item.system.facing)}. GM adjudicates firing arc and AoE coverage.</p>`,{rolls:[...r.rolls,...defense.rolls]});
  await item.update({'system.remainingRecharge':item.system.recharge,'system.lastUsed':turnKey,...(item.system.ammoLimited?{'system.quantity':Math.max(0,item.system.quantity-1)}:{})});
+ void emitVisualEffect({actor:vehicle,item,attack:r,defense,damage:dmg,pilot});
 }
 export async function spendPhase(actor,kind){
  if(!game.combat)return;if(conditionStacks(actor,'ko'))throw Error('This actor is KO.');if(conditionStacks(actor,'restrained')&&['action','move'].includes(kind))throw Error('Restrained prevents Action and Move phases. Use a saving throw to escape.');const key=`${game.combat.id}:${game.combat.round}:${game.combat.turn}`;const phases=actor.system.phases.key===key?{...actor.system.phases}:{key,move:0,interact:0,action:0};
