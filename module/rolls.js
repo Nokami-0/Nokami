@@ -1,3 +1,4 @@
+import {parryDisadvantage,consumeParryDisadvantage} from './parry-penalty.js';
 import {emitVisualEffect} from './visual-effects.js';
 const {Roll}=foundry.dice;
 const {ChatMessage}=foundry.documents;
@@ -40,13 +41,14 @@ export async function attack(actor,item,{spend=true}={}){owned(actor);if(conditi
  const target=[...game.user.targets][0]?.actor;
  const o=await prompt(item.name,field('defense','Target Dodge dice (0–6)',target?.system.derived?.dodge??target?.system.dodge??0)+field('advantage','Net Advantage',item.system.advantage)+field('upgrade','Extra upgrades',0)+field('downgrade','Downgrades',0)+field('spent','Extra hits spent on status (instead of damage)',0)+field('squares','Vehicle squares hit by base AoE',1)+`<p>${esc(item.system.description)}</p><p>Range ${item.system.range||actor.system.derived.attributes.dexterity} squares. Resolve range, cover, Height and movement requirements before confirming. Select a target token for a damage button.</p>`);if(!o)return;
  if(!(item.system.skill in SKILLS))throw Error('Choose a valid attack skill on the item sheet.');const tpCost=item.system.tpCost||0;if(actor.system.tp.value<tpCost)throw Error(`Requires ${tpCost} TP.`);if(spend)await spendPhase(actor,'action');
- const d=advantageOpposed({hit:clamp(num(o.defense),0,6),trick:0},num(o.advantage),{cap:6});
+ const parried=parryDisadvantage(actor);
+ const d=advantageOpposed({hit:clamp(num(o.defense),0,6),trick:0},num(o.advantage)-parried,{cap:6});
  const sk=item.system.skill;if(!(sk in SKILLS))throw Error('Choose a valid attack skill on the item sheet.');if(conditionStacks(actor,'dazzled')&&!Math.min(actor.system.derived.attributes[SKILLS[sk]],actor.system.derived.ranks[sk]))d.hit=Math.min(6,d.hit+1);const p=pool(actor.system.derived.attributes[SKILLS[sk]],actor.system.derived.ranks[sk]+d.overflow,{masteryRanks:actor.system.derived.ranks[sk],upgrade:num(o.upgrade),downgrade:num(o.downgrade)+(conditionStacks(actor,'dazzled')?2:0)});
- const atk=await dice(p),def=await dice(d,{defense:true});let base=itemDamage(actor,item);if(actor.system.shield==='flame'&&['spin','melee'].includes(sk))base++;
+ const atk=await dice(p);if(parried)await consumeParryDisadvantage(actor);const def=await dice(d,{defense:true});let base=itemDamage(actor,item);if(actor.system.shield==='flame'&&['spin','melee'].includes(sk))base++;
  const dmg=attackDamage(base,atk.hits,def.hits,{spentHits:num(o.spent),extra:item.system.extraDamage||1,squares:num(o.squares,1)});
  if(item.system.statusOnly)dmg.damage=0;
  const outcome={kind:'damage',target:target?.uuid,damage:dmg.damage,criticalAvailable:atk.criticalTricks>0&&dmg.net>0,applied:false};
- await card(actor,item.name,renderResult(atk)+`<h4>Defense</h4>${renderResult(def)}<p>Base ${base}; ${dmg.net} net hits. <b>${dmg.damage} damage</b>. ${tpCost?tpCost+' TP spent.':''}</p><p>Status allocation: ${num(o.spent)} extra hits; ${esc(item.system.effect||'none')}. Apply chosen statuses separately.</p>${target&&dmg.damage?'<button type="button" data-stth-chat="damage">Apply damage</button>':''}${outcome.criticalAvailable?'<p>A Critical Trick can inflict a crit instead of another benefit. Choose it in the damage dialog.</p>':''}`,{rolls:[...atk.rolls,...def.rolls],data:outcome});
+ await card(actor,item.name,renderResult(atk)+`<h4>Defense</h4>${renderResult(def)}<p>${parried?'Parried: 1 Disadvantage applied and consumed. ':''}Base ${base}; ${dmg.net} net hits. <b>${dmg.damage} damage</b>. ${tpCost?tpCost+' TP spent.':''}</p><p>Status allocation: ${num(o.spent)} extra hits; ${esc(item.system.effect||'none')}. Apply chosen statuses separately.</p>${target&&dmg.damage?'<button type="button" data-stth-chat="damage">Apply damage</button>':''}${outcome.criticalAvailable?'<p>A Critical Trick can inflict a crit instead of another benefit. Choose it in the damage dialog.</p>':''}`,{rolls:[...atk.rolls,...def.rolls],data:outcome});
  if(tpCost)await actor.update({'system.tp.value':actor.system.tp.value-tpCost});
  if(item.system.ammoLimited)await item.update({'system.quantity':Math.max(0,item.system.quantity-1)});
  if(item.system.recharge)await item.update({'system.remainingRecharge':item.system.recharge});
@@ -58,10 +60,10 @@ export async function vehicleAttack(vehicle,item){
  const turnKey=`${game.combat?.id??'free'}:${game.combat?.round??0}`;if(game.combat&&item.system.lastUsed===turnKey)throw Error('This weapon has already fired this round.');
  const pilot=await fromUuid(vehicle.system.pilot);if(!pilot)throw Error('Set a pilot Actor UUID on the vehicle sheet.');owned(pilot);
  const o=await prompt(item.name,field('defense','Target Dodge dice',2)+field('advantage','Net Advantage',item.system.advantage)+field('squares','Target vehicle squares hit',1)+field('spent','Hits spent on status',0));if(!o)return;
- const d=advantageOpposed({hit:clamp(num(o.defense),0,6),trick:0},num(o.advantage),{cap:6});const sk=item.system.skill;
- const r=await dice(pool(pilot.system.derived.attributes[SKILLS[sk]],pilot.system.derived.ranks[sk]+d.overflow,{masteryRanks:pilot.system.derived.ranks[sk]}));const defense=await dice(d,{defense:true});
+ const parried=parryDisadvantage(vehicle);const d=advantageOpposed({hit:clamp(num(o.defense),0,6),trick:0},num(o.advantage)-parried,{cap:6});const sk=item.system.skill;
+ const r=await dice(pool(pilot.system.derived.attributes[SKILLS[sk]],pilot.system.derived.ranks[sk]+d.overflow,{masteryRanks:pilot.system.derived.ranks[sk]}));if(parried)await consumeParryDisadvantage(vehicle);const defense=await dice(d,{defense:true});
  const dmg=attackDamage(item.system.damage,r.hits,defense.hits,{squares:num(o.squares),spentHits:num(o.spent)});
- await card(vehicle,item.name,renderResult(r)+`<p>Defense ${defense.hits} hits. <b>${dmg.damage} damage</b>. Range ${item.system.range}; arc ${esc(item.system.arc)}; facing ${esc(item.system.facing)}. GM adjudicates firing arc and AoE coverage.</p>`,{rolls:[...r.rolls,...defense.rolls]});
+ await card(vehicle,item.name,renderResult(r)+`<p>${parried?'Parried: 1 Disadvantage applied and consumed. ':''}Defense ${defense.hits} hits. <b>${dmg.damage} damage</b>. Range ${item.system.range}; arc ${esc(item.system.arc)}; facing ${esc(item.system.facing)}. GM adjudicates firing arc and AoE coverage.</p>`,{rolls:[...r.rolls,...defense.rolls]});
  await item.update({'system.remainingRecharge':item.system.recharge,'system.lastUsed':turnKey,...(item.system.ammoLimited?{'system.quantity':Math.max(0,item.system.quantity-1)}:{})});
  void emitVisualEffect({actor:vehicle,item,attack:r,defense,damage:dmg,pilot});
 }
