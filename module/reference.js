@@ -69,7 +69,7 @@ async function buildFactionLibrary(file,label,key,packName=file){
      await existing.createEmbeddedDocuments('Item',row.items);
     }
 
-    for(const item of row.items||[]){const match=existing.items?.find(i=>i.name===item.name);if(match)await syncAmmo(match,item);}
+    for(const item of row.items||[]){const match=existing.items?.find(i=>i.name===item.name);if(match)await syncAmmo(match,item);if(match&&item.flags?.[ID]?.artVersion&&match.getFlag(ID,'artVersion')!==item.flags[ID].artVersion)await match.update({img:item.img,[`flags.${ID}.artVersion`]:item.flags[ID].artVersion});}
     // Upgrade the Giga Trooper compendium template; preserve imported world actors.
     if(row.flags?.[ID]?.vehicleConversionVersion && existing.type!==row.type){
      await existing.update({type:row.type,system:row.system,prototypeToken:row.prototypeToken,img:row.img,flags:row.flags});
