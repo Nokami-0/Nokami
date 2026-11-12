@@ -1,3 +1,4 @@
+import {emitVisualEffect} from './visual-effects.js';
 import {transformBiolizard,installBiolizardTransformation} from './biolizard.js';
 import {CharacterData,VehicleData,ItemData} from './models.js';
 import {STTHActor} from './actor.js';
@@ -18,11 +19,13 @@ Hooks.once('init',()=>{
  DocumentSheetConfig.registerSheet(Actor,ID,HeroSheet,{types:['character','npc','vehicle'],makeDefault:true,label:'STTH V14 Actor Sheet'});
  DocumentSheetConfig.registerSheet(Item,ID,GearSheet,{makeDefault:true,label:'STTH V14 Item Sheet'});
  CONFIG.Combat.initiative={formula:'1d6',decimals:0};
- CONFIG.statusEffects=Object.entries(CONDITIONS).map(([id,name])=>({id,name,img:`systems/${ID}/assets/${id}.svg`}));
+ const systemStatuses=Object.entries(CONDITIONS).map(([id,name])=>({id,name,img:`systems/${ID}/assets/${id}.svg`}));
+ CONFIG.statusEffects=[...(CONFIG.statusEffects||[]).filter(e=>!systemStatuses.some(s=>s.id===e.id)),...systemStatuses];
  game.settings.register(ID,'enforcePhases',{name:'Enforce spent phases for players',hint:'Optional turn guard; GM can override.',scope:'world',config:true,type:Boolean,default:false});
  game.settings.registerMenu(ID,'rules',{name:'STTH Rulebook',label:'Search Rules',icon:'fas fa-book',type:RulesReference,restricted:false});
  game.settings.registerMenu(ID,'library',{name:'STTH Library',label:'Build / Repair Library',icon:'fas fa-book-open',type:LibraryManager,restricted:true});
- game.stth={rollSkill,opposed,openRules,buildLibrary,damage,transformBiolizard};
+ game.settings.register(ID,'visualEffects',{name:'Optional attack animations',hint:'Play configured item animations when Sequencer is enabled. Other modules may also use STTH attack hooks.',scope:'world',config:true,type:Boolean,default:true});
+ game.stth={emitVisualEffect,rollSkill,opposed,openRules,buildLibrary,damage,transformBiolizard};
  console.info('STTH V14 2.0.12 initialized: native ApplicationV2 sheets and dialogs.');
 });
 Hooks.once('ready',async()=>{
