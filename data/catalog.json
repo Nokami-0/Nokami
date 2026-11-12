@@ -3101,5 +3101,23 @@
         "homebrew": true
       }
     }
+  },
+  {
+    "name": "Colored Gem",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/colored-gem.svg",
+    "system": {
+      "description": "Additional gem for a compatible Gem Bracelet. When installed, grants one additional rank in an associated skill, following the bracelet's existing rules. Maximum five additional gems per bracelet, six bonus ranks total. Bracelet and installed gems occupy one slot together. Installation and skill allocation are GM-managed; this loose gem grants no passive bonus by itself.",
+      "source": "Accessory entry based on the existing Gem Bracelet catalog rules, STTH 1.5.0 p.40.",
+      "price": 150,
+      "quantity": 1,
+      "slots": 0,
+      "notes": "Track the bonus on the bracelet when installed; do not apply it twice from the loose gem."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "colored-gem-1"
+      }
+    }
   }
 ]
