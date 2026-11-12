@@ -11227,5 +11227,33 @@
         "valuation": "Homebrew estimated value"
       }
     }
+  },
+  {
+    "name": "Laser Rifle",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/laser-rifle.svg",
+    "system": {
+      "skill": "ranged",
+      "damage": 6,
+      "damageMode": "fixed",
+      "range": 8,
+      "slots": 1,
+      "removable": true,
+      "ammoLimited": true,
+      "quantity": 12,
+      "ammoMax": 12,
+      "price": 250,
+      "description": "Action: fire at one visible target within 8 squares. Normal Ranged versus Dodge. Removable handheld weapon; equip before use. Single target, no automatic armor bypass.",
+      "source": "Provisional community Laser Rifle variant based on the existing Stabilized Laser profile.",
+      "notes": "Homebrew starter stats and estimated price. One charge per attack, including a miss. GM replenishes energy manually."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "weaponKey": "community-laser-rifle",
+        "weaponCategory": "Equipment",
+        "homebrew": true,
+        "artVersion": "laser-rifle-1"
+      }
+    }
   }
 ]
