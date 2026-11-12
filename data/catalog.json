@@ -42,7 +42,7 @@
   {
     "name": "Barrier Shield",
     "type": "consumable",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/barrier-shield.svg",
     "system": {
       "description": "+1 Dodge. Negate the next successful damaging attack, then break. A crit with that hit causes Stunned but no Ring loss or crit suffered.",
       "source": "STTH 1.5.0, p. 37–38",
@@ -52,6 +52,11 @@
       "ringPrice": 5,
       "modifierValue": 0,
       "slots": 0
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "barrier-shield-1"
+      }
     }
   },
   {
