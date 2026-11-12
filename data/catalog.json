@@ -340,7 +340,7 @@
   {
     "name": "Speed Gem Bracelet",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/gem-bracelet.svg",
     "system": {
       "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
       "source": "STTH 1.5.0, p. 40",
@@ -348,12 +348,17 @@
       "modifierValue": 1,
       "price": 250,
       "gearKind": "bracelet-speed"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "gem-bracelet-1"
+      }
     }
   },
   {
     "name": "Power Gem Bracelet",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/gem-bracelet.svg",
     "system": {
       "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
       "source": "STTH 1.5.0, p. 40",
@@ -361,12 +366,17 @@
       "modifierValue": 1,
       "price": 250,
       "gearKind": "bracelet-power"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "gem-bracelet-1"
+      }
     }
   },
   {
     "name": "Dexterity Gem Bracelet",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/gem-bracelet.svg",
     "system": {
       "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
       "source": "STTH 1.5.0, p. 40",
@@ -374,12 +384,17 @@
       "modifierValue": 1,
       "price": 250,
       "gearKind": "bracelet-dexterity"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "gem-bracelet-1"
+      }
     }
   },
   {
     "name": "Intellect Gem Bracelet",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/gem-bracelet.svg",
     "system": {
       "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
       "source": "STTH 1.5.0, p. 40",
@@ -387,12 +402,17 @@
       "modifierValue": 1,
       "price": 250,
       "gearKind": "bracelet-intellect"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "gem-bracelet-1"
+      }
     }
   },
   {
     "name": "Charisma Gem Bracelet",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/gem-bracelet.svg",
     "system": {
       "description": "Select one associated skill as modifier target; grants one rank. Up to five additional gems cost 150 Mobiums each, maximum six bonus ranks. Bracelet and gems take one slot together.",
       "source": "STTH 1.5.0, p. 40",
@@ -400,6 +420,11 @@
       "modifierValue": 1,
       "price": 250,
       "gearKind": "bracelet-charisma"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "gem-bracelet-1"
+      }
     }
   },
   {
