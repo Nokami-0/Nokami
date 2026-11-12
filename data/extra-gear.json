@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Egg Pawn Shield",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/egg-pawn-shield.svg",
+    "system": {
+      "description": "Reusable removable physical shield. While equipped and functional, grants damage reduction 1 using the custom armor rule. Only the highest equipped armor DR applies; does not stack with body armor. Does not activate a Barrier Shield, break automatically after a hit, or grant free attacks.",
+      "source": "Community homebrew — untested",
+      "damageReduction": 1,
+      "slots": 1,
+      "equipped": false,
+      "removable": true,
+      "gearKind": "physical-shield",
+      "quantity": 1,
+      "price": 100,
+      "notes": "Suggested homebrew price: 100 Mobiums. No automatic Dodge bonus. Broken or disabled shields grant no DR."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "egg-pawn-shield-1",
+        "homebrew": true
+      }
+    }
+  }
+]
