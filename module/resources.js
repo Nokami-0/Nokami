@@ -1,3 +1,4 @@
+import {blockDamage} from './defense-rules.js';
 import {armorReduction,reduceArmorDamage} from './armor.js';
 import {applyDamage,clamp,skillCost,SKILLS} from './engine.js';
 import {owned,prompt,field,select,card,num,spendPhase,dice} from './rolls.js';
@@ -9,14 +10,15 @@ export async function condition(actor,id,stacks=1){owned(actor);const max=['stun
  const data={name:CONDITIONS[id],img:`systems/${ID}/assets/${id}.svg`,statuses:[id],flags:{[ID]:{stacks:Math.min(max,stacks),round:game.combat?.round??0,turn:game.combat?.turn??0}}};
  if(existing)await existing.update({[`flags.${ID}.stacks`]:Math.min(max,stacks)});else await actor.createEmbeddedDocuments('ActiveEffect',[data]);
 }
-export async function damage(actor,amount,{critical=false,shield=true,bypassArmor=false}={}){owned(actor);const s=actor.system;if(s.hpNotApplicable)throw Error('This part has HP N/A. Target its damageable core or configured boss form; apply statuses separately.');
+export async function damage(actor,amount,{critical=false,shield=true,bypassArmor=false,block=false}={}){owned(actor);const s=actor.system;if(s.hpNotApplicable)throw Error('This part has HP N/A. Target its damageable core or configured boss form; apply statuses separately.');
  const state={hp:s.hp.value,rings:s.rings||0,crits:s.crits,pc:actor.type==='character',threshold:s.critThreshold||0};
- const armor=reduceArmorDamage(amount,armorReduction(actor.items),{bypass:bypassArmor,shield:shield&&Boolean(s.shield)});
- const r=applyDamage(state,armor.damage,{critical:critical&&(armor.incoming===0||armor.damage>0),shield:shield&&Boolean(s.shield)});
- r.armorPrevented=armor.prevented;
+ const blocked=blockDamage(amount,block&&!Boolean(shield&&s.shield)?s.derived?.attributes?.power??0:0);
+ const armor=reduceArmorDamage(blocked.damage,armorReduction(actor.items),{bypass:bypassArmor,shield:shield&&Boolean(s.shield)});
+ const r=applyDamage(state,armor.damage,{critical:critical&&((Number(amount)||0)===0||armor.damage>0),shield:shield&&Boolean(s.shield)});
+ r.armorPrevented=armor.prevented;r.blockPrevented=blocked.prevented;
  const update={'system.hp.value':r.hp,'system.crits':r.crits};if(actor.type==='character')update['system.rings']=r.rings;if(r.shieldBroken)update['system.shield']='';
  await actor.update(update);if(r.stunned)await condition(actor,'stunned',Math.max(1,conditionStacks(actor,'stunned')));if(r.ko)await condition(actor,'ko');
- await card(actor,'Damage resolved',`<p>${r.damage} damage. ${r.armorPrevented?`Armor prevented ${r.armorPrevented} damage. `:''}HP ${r.hp}. ${r.shieldBroken?'Shield broke and absorbed the hit.':''}${r.spilled?` ${r.spilled} Rings are recoverable for one round; GM places them on accessible adjacent squares.`:''}${r.stunned?' Stunned.':''}${r.ko?' KO.':''}</p><p>Spilled Rings are not automatically placed or collected. Energy/fire shield exceptions must be chosen before applying damage.</p>`);return r;
+ await card(actor,'Damage resolved',`<p>${r.damage} damage. ${r.blockPrevented?`Block prevented ${r.blockPrevented} damage. `:''}${r.armorPrevented?`Armor prevented ${r.armorPrevented} damage. `:''}HP ${r.hp}. ${r.shieldBroken?'Shield broke and absorbed the hit.':''}${r.spilled?` ${r.spilled} Rings are recoverable for one round; GM places them on accessible adjacent squares.`:''}${r.stunned?' Stunned.':''}${r.ko?' KO.':''}</p><p>Spilled Rings are not automatically placed or collected. Energy/fire shield exceptions must be chosen before applying damage.</p>`);return r;
 }
 export async function damageDialog(actor){const o=await prompt('Apply damage',field('damage','Damage',0)+select('armor','Apply armor damage reduction?',{yes:'Yes',no:'No — bypass armor'},'yes')+select('critical','Inflict a critical hit?',{no:'No',yes:'Yes'},'no')+select('shield','Use active shield?',{yes:'Yes — negate this hit and break shield',no:'No — bypass shield / exempt damage'},'yes'));if(o)await damage(actor,num(o.damage),{critical:o.critical==='yes',shield:o.shield==='yes',bypassArmor:o.armor==='no'});}
 export async function healRings(actor){owned(actor);const o=await prompt('Spend Rings',field('rings','Rings to spend (up to 5 per Interact)',Math.min(5,actor.system.rings))+select('resource','Recover',{hp:'HP',tp:'TP'},'hp'));if(!o)return;
@@ -42,4 +44,4 @@ export async function advance(actor){owned(actor);const choices={...Object.fromE
 export async function underwaterCheck(actor){owned(actor);if(actor.system.derived.immuneSuffocating){await actor.update({'system.underwater':true,'system.breathRounds':0});if(['thunder','flame'].includes(actor.system.shield))await actor.update({'system.shield':''});await condition(actor,'suffocating',0);if(actor.system.hp.value>0)await condition(actor,'ko',0);return card(actor,'Breathing','<p>Immune to suffocation / supplied with air.</p>');}if(['thunder','flame'].includes(actor.system.shield))await actor.update({'system.shield':''});const s=actor.system,round=s.breathRounds+1;if(round===1){await actor.update({'system.underwater':true,'system.breathRounds':1});return;}
  const p={hit:s.derived.attributes.power,trick:0};const difficulty=Math.max(1,round-1);const r=round-2>p.hit?{hits:0,success:false,rolls:[]}:await dice(p,{difficulty});const failed=!r.success;
  await actor.update({'system.underwater':true,'system.breathRounds':round,'system.tp.value':failed?Math.max(0,s.tp.value-5):s.tp.value});if(failed){await condition(actor,'suffocating');if(actor.type==='npc')await damage(actor,0,{critical:true,shield:false});else if(actor.system.tp.value===0)await condition(actor,'ko');}await card(actor,'Hold breath',`<p>${r.hits} hits against difficulty ${round-1}. ${failed?(actor.type==='npc'?'Suffer a crit.':'Lose 5 TP.'):'Breath held.'} Next interval increases Disadvantage by 1.</p>`,{rolls:r.rolls});}
-export async function endEncounter(actor){owned(actor);await actor.update({'system.crits':0,'system.sneakersRounds':0,'system.breathRounds':0,'system.phases':{}});for(const e of actor.effects.filter(e=>['stunned','dazzled'].some(id=>e.statuses.has(id))))await e.delete();}
+export async function endEncounter(actor){owned(actor);await actor.update({'flags.sonic-tag-team-heroes.-=parryReward':null,'system.crits':0,'system.sneakersRounds':0,'system.breathRounds':0,'system.phases':{}});for(const e of actor.effects.filter(e=>['stunned','dazzled'].some(id=>e.statuses.has(id))))await e.delete();}
