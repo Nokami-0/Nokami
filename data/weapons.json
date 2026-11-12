@@ -9589,7 +9589,7 @@
   {
     "name": "Spiked Shield Bash",
     "type": "attack",
-    "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-pawn-elite.png",
+    "img": "systems/sonic-tag-team-heroes/assets/egg-spiked-shield.svg",
     "system": {
       "skill": "melee",
       "damage": 5,
@@ -9607,7 +9607,8 @@
         "weaponKey": "7ad8fe72cad45e8bd97b",
         "weaponCategory": "Equipment",
         "resaleValue": 100,
-        "valuation": "Homebrew estimated value"
+        "valuation": "Homebrew estimated value",
+        "artVersion": "egg-spiked-shield-1"
       }
     }
   },
