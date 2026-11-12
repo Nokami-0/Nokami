@@ -1,17 +1,15 @@
 # Skill mastery — custom rule
 
-Each effective skill rank adds one extra d6 to the normal STTH skill pool. This is a custom rule for this adaptation, not a rule from the original book.
+Skill pools start with attribute d6s and add one d6 per effective skill rank. Ranks never convert dice to d10s.
 
-| Skill rank | Extra mastery dice |
-| --- | --- |
-| 0 | None |
-| 1 | 1d6 |
-| 2 | 2d6 |
-| 3 | 3d6 |
-| 4 | 4d6 |
+| Power | Melee rank | Normal pool |
+| --- | --- | --- |
+| 4 | 0 | 4d6 |
+| 4 | 1 | 5d6 |
+| 4 | 2 | 6d6 |
+| 4 | 3 | 7d6 |
+| 4 | 4 | 8d6 |
 
-For example, Power 4 and Melee 2 normally give 2d6 + 2d10; mastery adds 2d6, making the final pool 4d6 + 2d10. Resolve these dice with the normal success, Trick, and Slip rules; this adds dice rather than flat damage.
+The same formula applies when ranks exceed the attribute: Power 2 and Melee 4 rolls 6d6. Advantage overflow adds base d6s. Explicit Trick Die upgrades and downgrades still modify base dice; the extra rank dice remain d6s. Other success, Trick and Slip rules remain in place. Applies to skill checks, attacks, opposed checks, team actions and pilot skill rolls. Dodge and initiative are unchanged.
 
-This applies to skill checks, skill-based attacks, opposed checks, team actions, and pilot skill rolls. Effective ranks include existing rank bonuses and retain the existing rank cap. Advantage overflow can alter the standard pool but does not grant mastery dice. Upgrades and downgrades only change the standard pool; mastery dice remain d6s. Dodge and initiative do not receive skill mastery dice.
-
-Validation: 20 engine tests pass, including rank 0–4, upgrades/downgrades, and Advantage overflow. Updated roll modules pass JavaScript syntax checks. Live Foundry validation remains pending.
+This is a custom rule for this adaptation. Engine tests and syntax checks pass; live Foundry validation remains pending.
