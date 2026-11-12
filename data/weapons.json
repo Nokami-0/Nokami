@@ -4823,7 +4823,7 @@
   {
     "name": "Golden Axe",
     "type": "attack",
-    "img": "systems/sonic-tag-team-heroes/assets/tokens/hey-ho.png",
+    "img": "systems/sonic-tag-team-heroes/assets/golden-axe.svg",
     "system": {
       "skill": "melee",
       "damage": 8,
@@ -4841,7 +4841,8 @@
         "weaponKey": "5948ae85f9b8d52a8208",
         "weaponCategory": "Equipment",
         "resaleValue": 125,
-        "valuation": "Homebrew estimated value"
+        "valuation": "Homebrew estimated value",
+        "artVersion": "golden-axe-1"
       }
     }
   },
