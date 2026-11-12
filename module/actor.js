@@ -1,9 +1,10 @@
+import {armorReduction} from './armor.js';
 import {movement,clamp,SKILLS,ATTRIBUTES} from './engine.js';
 export const conditionStacks=(a,id)=>Math.max(0,...a.effects.filter(e=>!e.disabled&&e.statuses.has(id)).map(e=>Number(e.getFlag('sonic-tag-team-heroes','stacks')||1)));
 export function itemDamage(actor,item){if(item.system.statusOnly)return 0;const p=actor.system.derived?.attributes?.power??actor.system.attributes?.power??0;const mode=item.system.damageMode;return Math.max(1,mode==='spin'?p+1+item.system.damage:mode==='melee'?p+2+item.system.damage:item.system.damage);}
 export class STTHActor extends foundry.documents.Actor {
  prepareDerivedData(){super.prepareDerivedData();const s=this.system;
- if(this.type==='vehicle'){s.derived={hpMax:s.hp.max,dodge:s.dodge,movement:s.movement,initiative:0,gearUsed:0};return;}
+ if(this.type==='vehicle'){s.derived={damageReduction:armorReduction(this.items),hpMax:s.hp.max,dodge:s.dodge,movement:s.movement,initiative:0,gearUsed:0};return;}
  const a={...s.attributes},ranks={...s.skills};
  if(this.type==='npc'&&s.usesPilot&&s.pilot){const pilot=game.actors?.get(s.pilot.replace(/^Actor\./,''));if(pilot&&pilot!==this){const pa=pilot.system.derived?.attributes??pilot.system.attributes;const pr=pilot.system.derived?.ranks??pilot.system.skills;for(const k of ['dexterity','intellect','charisma'])a[k]=Math.max(1,(pa[k]||1)+(k==='dexterity'?s.pilotDexModifier:0));const overrides=new Set((s.pilotSkillOverrides||'').split(','));for(const k of Object.keys(SKILLS))if(!overrides.has(k))ranks[k]=pr[k]||0;}}
  let dodge=s.dodgeBonus,init=s.initiativeBonus,move=s.movementBonus,hp=s.hpBonus;let gearUsed=0;
@@ -26,7 +27,7 @@ export class STTHActor extends foundry.documents.Actor {
  const baseDodge=orb?orb.system.quantity:printed('profileDodge')?s.profileDodge:Math.ceil(a.dexterity/2);
  const baseInit=printed('profileInitiative')?s.profileInitiative:Math.ceil(a.speed/2);
  const baseMove=printed('profileMovement')?s.profileMovement:movement(drySpeed);
- s.derived={attributes:a,ranks,hpMax:5*a.power+5+hp,tpMax:15,dodge:clamp(baseDodge+dodge-2*(stun+restrain),0,6),initiative:Math.max(0,baseInit+init),movement:restrain?0:Math.max(0,(soaked&&!immune('soaked')?Math.floor((baseMove+move)/2):baseMove+move)),gearUsed,canFly:s.heroType==='fly'||this.items.some(i=>i.name==='Can Fly'&&!i.system.disabled),canSwim:a.dexterity>=3,immuneBurning:immune('burning'),immuneSuffocating:immune('suffocating')||s.shield==='aqua'};
+ s.derived={damageReduction:armorReduction(this.items),attributes:a,ranks,hpMax:5*a.power+5+hp,tpMax:15,dodge:clamp(baseDodge+dodge-2*(stun+restrain),0,6),initiative:Math.max(0,baseInit+init),movement:restrain?0:Math.max(0,(soaked&&!immune('soaked')?Math.floor((baseMove+move)/2):baseMove+move)),gearUsed,canFly:s.heroType==='fly'||this.items.some(i=>i.name==='Can Fly'&&!i.system.disabled),canSwim:a.dexterity>=3,immuneBurning:immune('burning'),immuneSuffocating:immune('suffocating')||s.shield==='aqua'};
  s.hp.max=s.derived.hpMax;s.tp.max=15;
  }
  getRollData(){return {...super.getRollData(),...this.system.derived};}
