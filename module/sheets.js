@@ -1,3 +1,4 @@
+import {defend} from './defenses.js';
 import {placeAttackTemplate,attackShapeLabel} from './attack-areas.js';
 import {vehicleAction} from './vehicles.js';
 import {loadoutWizard} from './loadouts.js';
@@ -76,6 +77,7 @@ export class HeroSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   for(const token of a.getActiveTokens?.()||[])await token.document.update({'texture.src':flags.forms[next]});
   return;
  }
+ if(action==='block'||action==='parry')return defend(a,action);
  if(action==='template')return placeAttackTemplate(a,item);
  if(action==='vehicleAction')return vehicleAction(a);if(action==='loadout')return loadoutWizard(a);if(action==='rules')return openRules();if(action==='skill')return rollSkill(a,button.dataset.skill);if(action==='dodge')return rollDodge(a);if(action==='edit')return item.sheet.render({force:true});if(action==='delete'){owned(a);if(await foundry.applications.api.DialogV2.confirm({rejectClose:false,window:{title:'Delete item?'},content:`<p>Delete ${esc(item.name)} from this actor?</p>`}))return item.delete();return;}
  if(action==='roll')return item.type==='tagTeam'?tagTeam(a,item):attack(a,item);if(action==='equip')return equip(a,item);if(action==='use')return useItem(a,item);
