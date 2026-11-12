@@ -1,3 +1,4 @@
+import {placeAttackTemplate} from './attack-areas.js';
 import {emitVisualEffect} from './visual-effects.js';
 import {transformBiolizard,installBiolizardTransformation} from './biolizard.js';
 import {CharacterData,VehicleData,ItemData} from './models.js';
@@ -25,7 +26,7 @@ Hooks.once('init',()=>{
  game.settings.registerMenu(ID,'rules',{name:'STTH Rulebook',label:'Search Rules',icon:'fas fa-book',type:RulesReference,restricted:false});
  game.settings.registerMenu(ID,'library',{name:'STTH Library',label:'Build / Repair Library',icon:'fas fa-book-open',type:LibraryManager,restricted:true});
  game.settings.register(ID,'visualEffects',{name:'Optional attack animations',hint:'Play configured item animations when Sequencer is enabled. Other modules may also use STTH attack hooks.',scope:'world',config:true,type:Boolean,default:true});
- game.stth={emitVisualEffect,rollSkill,opposed,openRules,buildLibrary,damage,transformBiolizard};
+ game.stth={placeAttackTemplate,emitVisualEffect,rollSkill,opposed,openRules,buildLibrary,damage,transformBiolizard};
  console.info('STTH V14 2.0.12 initialized: native ApplicationV2 sheets and dialogs.');
 });
 Hooks.once('ready',async()=>{
