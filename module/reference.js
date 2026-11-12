@@ -41,6 +41,12 @@ export async function buildUploadedLibrary(){return buildFactionLibrary('token-a
 async function buildFactionLibrary(file,label,key,packName=file){
  if(!game.user.isGM)return;
  const rows=await(await fetch(`systems/${ID}/data/${file}.json`)).json();
+ if(file==='token-art'){
+  const replacement=await(await fetch(`systems/${ID}/data/terminal-velocity-pawn.json`)).json();
+  const index=rows.findIndex(r=>r.flags?.[ID]?.tokenArtKey===replacement.flags[ID].tokenArtKey);
+  if(index>=0)rows[index]=replacement;else rows.push(replacement);
+ }
+
  if(file==='gun'){
   const diablon=await(await fetch(`systems/${ID}/data/diablon.json`)).json();
   const existingRow=rows.find(r=>r.flags?.[ID]?.gunKey==='Diablon'||r.name==='Diablon');
@@ -56,6 +62,13 @@ async function buildFactionLibrary(file,label,key,packName=file){
   for(const row of rows){
    const existing=docs.find(d=>d.getFlag(ID,key)===(row.flags?.[ID]?.[key]??row.name));
    if(existing){
+    // Explicit revision rebuilds only the renamed Terminal Velocity Pawn template.
+    if(row.flags?.[ID]?.profileRevision==='terminal-velocity-1'&&existing.getFlag(ID,'profileRevision')!==row.flags[ID].profileRevision){
+     await existing.update({name:row.name,system:row.system,prototypeToken:row.prototypeToken,img:row.img,flags:row.flags});
+     if(existing.items.size)await existing.deleteEmbeddedDocuments('Item',existing.items.map(i=>i.id));
+     await existing.createEmbeddedDocuments('Item',row.items);
+    }
+
     for(const item of row.items||[]){const match=existing.items?.find(i=>i.name===item.name);if(match)await syncAmmo(match,item);}
     // Upgrade the Giga Trooper compendium template; preserve imported world actors.
     if(row.flags?.[ID]?.vehicleConversionVersion && existing.type!==row.type){
