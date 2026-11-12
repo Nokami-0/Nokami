@@ -1,0 +1,1 @@
+English translation with dark red/black screenshot-inspired styling. Layout and mechanics retained. Screenshot is a visual reference; not verified pixel-identical in Foundry. Back up worlds before installing.

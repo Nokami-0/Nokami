@@ -1,0 +1,1 @@
+Icons across the actor and item sheets have been standardized to monochrome Font Awesome symbols based on the approved English mockup. This is a live Foundry UI, not a flattened screenshot.

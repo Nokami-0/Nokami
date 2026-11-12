@@ -1,0 +1,22 @@
+{
+  "Actor": {
+    "types": [
+      "personagem"
+    ],
+    "templates": {},
+    "personagem": {}
+  },
+  "Item": {
+    "types": [
+      "equipamento",
+      "poder",
+      "aptidao",
+      "elemento"
+    ],
+    "templates": {},
+    "equipamento": {},
+    "poder": {},
+    "aptidao": {},
+    "elemento": {}
+  }
+}

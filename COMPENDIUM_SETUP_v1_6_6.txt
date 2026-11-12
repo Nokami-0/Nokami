@@ -1,0 +1,18 @@
+Shinobi no Sho Revamp v1.6.6 — Native Drag-and-Drop Compendiums
+
+1. Install this system in Data/systems/shinobi-no-sho-revamp.
+2. Restart Foundry and open a world as GM.
+3. Game Settings > Configure Settings > System Settings >
+   Shinobi Compendiums — Clans, Powers, Techniques & Aptitudes > Build Drag-and-Drop Compendiums.
+4. Click Build Compendiums and wait for completion.
+5. Open the Compendium Packs sidebar; six world Item packs appear.
+6. Drag entries onto an open Shinobi no Sho character sheet.
+
+The original descriptions, system data and source flags are preserved. The categories
+are inferred from existing catalog metadata; some entries may require manual review.
+No complete mechanical automation of prerequisites, chakra or effects is implied.
+
+Because these are created as world compendiums at runtime, they are not prebuilt LevelDB
+packs embedded in the ZIP. Rebuilding skips existing records based on source IDs.
+
+Existing summoning, images and world importer are retained. Untested in live Foundry.

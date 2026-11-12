@@ -1,0 +1,1 @@
+Replaced icon-only inventory equip link with a labeled native button, direct embedded item lookup, duplicate-click guard and explicit errors. Equipping armor atomically unequips other armor. Equipment must be on an owned actor. No inventory migration or deletion. Restart Foundry after replacing system folder. Live Foundry validation still required.

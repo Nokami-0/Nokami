@@ -1,0 +1,1 @@
+v1.4.7: Take Damage dialog now lets the user select Vitality or Chakra. Existing Hardness, armor Absorption pool, character Absorption and bypass checkboxes are applied before damage to the selected resource. Damage is capped at the available resource; no automatic overflow. Special chakra-drain effects may bypass defenses according to their own rules. Foundry runtime not tested.

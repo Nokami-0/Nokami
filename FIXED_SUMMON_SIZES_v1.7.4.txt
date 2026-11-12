@@ -1,0 +1,1 @@
+Fixed sizes for Animal Path (8 species): Gargantuan; Shark Large; Kyodaigumo Huge; Ninken Medium; Monkey variants Large; Salamander Huge. Existing Doki Huge and bee restrictions retained. Size minimum NC restrictions still apply. Existing summoned actors are not retroactively resized. Not tested in live Foundry.

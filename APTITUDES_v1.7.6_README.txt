@@ -1,0 +1,10 @@
+Aptitude compendium v1.7.6
+
+Extracted named aptitude headings from the user-provided English PDFs.
+Basic Book: 70 entries; Advanced Book: 49 entries.
+
+IMPORTANT: These are individually named source-linked aptitude references, NOT fully verified mechanics. PDF multi-column reading order prevents safe automatic pairing of headings to exact prerequisite/benefit paragraphs. No automatic point costs, eligibility, or free-choice claims are made. All are draggable item documents; GM must consult source pages before applying benefits.
+
+Rebuild Organized Compendiums as GM. Folders are Basic/Advanced Book > category > Individual Aptitudes; category reference cards remain in Source References.
+
+No live Foundry test was performed.

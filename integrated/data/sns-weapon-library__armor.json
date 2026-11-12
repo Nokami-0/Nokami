@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Casual Clothes",
+    "kind": "Light",
+    "price": 10,
+    "absorption": 0,
+    "penalty": "None",
+    "slots": 0,
+    "note": "Ordinary clothing; no armor absorption."
+  },
+  {
+    "name": "Handle (Clothing)",
+    "kind": "Light",
+    "price": 5,
+    "absorption": 0,
+    "penalty": "None",
+    "slots": 0,
+    "note": "Basic Book table labels this clothing entry “Handle” in the supplied machine translation; name may be mistranslated."
+  },
+  {
+    "name": "Ninja Vest",
+    "kind": "Light",
+    "price": 100,
+    "absorption": 0,
+    "penalty": "None",
+    "slots": -1,
+    "note": "Adds +1 carrying compartment; Chunin rank or higher."
+  },
+  {
+    "name": "Durable Ninja Vest",
+    "kind": "Light",
+    "price": 150,
+    "absorption": 10,
+    "penalty": "None",
+    "slots": 1,
+    "note": "Reduces carrying compartments by 1; Chunin rank or higher."
+  },
+  {
+    "name": "Battle Armor",
+    "kind": "Heavy",
+    "price": 250,
+    "absorption": 15,
+    "penalty": "0 (−2 without Heavy Armor proficiency)",
+    "slots": 1,
+    "note": "Heavy armor; Strength 10 or Stamina 15 required. Don/doff 5 minutes."
+  },
+  {
+    "name": "Reinforced Battle Armor",
+    "kind": "Heavy",
+    "price": 600,
+    "absorption": 20,
+    "penalty": "−2 (−4 without Heavy Armor proficiency)",
+    "slots": 2,
+    "note": "Heavy armor; Strength 10 or Stamina 15 required. Don/doff 5 minutes."
+  },
+  {
+    "name": "Mugen Kōgai (Seimei Special Armor)",
+    "kind": "Special Heavy",
+    "price": null,
+    "absorption": 20,
+    "penalty": "1 (as printed)",
+    "slots": 2,
+    "bodyHardness": 2,
+    "note": "Spirit 10; Use Heavy Armor. +20 bonus absorption, +2 Body Hardness; chakra reserve max 10; gain 2 chakra on qualifying attacks; indestructible even after absorption reaches 0. Seimei Set Revised p.3. The wearer bonus is not the item’s own hardness."
+  }
+]

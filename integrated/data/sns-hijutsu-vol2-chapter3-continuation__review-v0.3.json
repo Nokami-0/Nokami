@@ -1,0 +1,28 @@
+{
+  "total": 65,
+  "headings_isolated": 56,
+  "still_not_isolated": [
+    "Shirohigi",
+    "Akahigi",
+    "Crystallization and Freezing",
+    "Razor Breeze",
+    "Black Lightning (Kuroi Kaminari)",
+    "Projectiles (Puppet Device)",
+    "Use Weapon: Sacred Treasures of the Six Paths",
+    "Rashoumon \u2014 Level 1",
+    "Rashoumon \u2014 Level 2",
+    "Rashoumon \u2014 Level 3"
+  ],
+  "known_alias_duplicates": [
+    "Suffocating Futton",
+    "Corrosive Yoton"
+  ],
+  "corrections": [
+    "Wind Capacity -> Tessenjutsu",
+    "Energy Extraction -> Kakuran Tensai",
+    "Puppet Projectiles verified",
+    "Rashoumon mechanics verified",
+    "Kohaku no Jouhei marked plot device"
+  ],
+  "limitations": "Source is machine translated. Heading boundaries and detailed weapon mechanics are not all manually checked. Do not claim complete verification."
+}

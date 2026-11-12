@@ -1,0 +1,1 @@
+v1.6.8: Reorganize existing compendium items; separate clans and Hijutsu by explicit source flags; split powers, techniques, skills, aptitudes; level folders only for explicit positive level; ambiguous associations to review. GM should run builder. Not tested live. Some source catalog item descriptions are automatically extracted and may need manual verification.

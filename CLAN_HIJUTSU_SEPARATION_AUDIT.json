@@ -1,0 +1,135 @@
+{
+  "clans": {
+    "Aburame": 6,
+    "Akimichi": 13,
+    "Hatake": 2,
+    "Hyuuga": 13,
+    "Inuzuka": 11,
+    "Nara": 7,
+    "Sarutobi": 1,
+    "Senju": 6,
+    "Uchiha": 10,
+    "Uzumaki": 2,
+    "Yamanaka": 5,
+    "Shimura": 6,
+    "Hoshigakure": 6,
+    "Fuuma": 2,
+    "Hoshigaki": 8,
+    "Hozuki": 5,
+    "Kaguya": 12,
+    "Yotsuki": 2,
+    "Yuki": 4
+  },
+  "hijutsu": {
+    "Dokujutsu": 1,
+    "Hachimon Tonkou": 28,
+    "Hibon Ninpou": 2,
+    "Jinchuuriki": 10,
+    "Kagura Shingan": 2,
+    "Kuchiyose": 9,
+    "Magen": 9,
+    "Senjutsu": 3,
+    "Saika Ikki": 8,
+    "Juuinka (Cursed Seal)": 4,
+    "Kamijutsu (Paper)": 5,
+    "Nintaijutsu": 10,
+    "Rinnegan": 8,
+    "Rinnegan \u2014 Animal Path": 5,
+    "Samurai": 7,
+    "Senninka": 5,
+    "Kugutsu no Jutsu": 25,
+    "Mateki": 8,
+    "Mei Kekkei Genkai": 26,
+    "Shouton": 22,
+    "Tessenjutsu": 5,
+    "Kakuran Tensai": 3,
+    "Ranton": 9,
+    "Rinbo: Hengoku": 3,
+    "Shakuton": 4,
+    "Souma no Jutsu": 5,
+    "Zetsu Seitai": 9,
+    "Kuroi Kaminari": 2,
+    "Chapter III \u2014 Special Weapons": 7,
+    "Chapter IV \u2014 Common Options": 4,
+    "Bakuton": 7,
+    "Buki Senmon": 6,
+    "Chouju Giga": 10,
+    "Daikiga": 8,
+    "Gorudogumo (Golden Spider)": 12,
+    "Hebinomichi": 7,
+    "Jingokuon": 18,
+    "Jashin Juusha": 11,
+    "Jiongu": 9,
+    "Jiton II": 9,
+    "Jinton": 10,
+    "Kibaku Nendo": 2,
+    "Kuchiyose: Weasel": 6,
+    "Kuchiyose: Salamander": 2,
+    "Kuchiyose: Turtle": 2,
+    "General Jinchuuriki": 17,
+    "Ichibi \u2014 Shukaku": 17,
+    "Nibi \u2014 Matatabi": 14,
+    "Sanbi \u2014 Isobu": 16,
+    "Yonbi \u2014 Son Goku": 14,
+    "Gobi \u2014 Kokuo": 18,
+    "Rokubi \u2014 Saiken": 18,
+    "Nanabi \u2014 Chomei": 16,
+    "Hachibi \u2014 Gyuki": 15,
+    "Kyuubi \u2014 Kurama": 16,
+    "Reibi \u2014 Zero-Tails": 25
+  },
+  "ambiguous": [
+    {
+      "item": "Versatility",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Versatility",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Fast Learning",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Natural Talent",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Advanced Technique",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Capacity",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Perfect Control",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Battle Instinct",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "God Of Thunder",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "(Flying God Of Thunder)",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "(Flying God Of Thunder - Second Step)",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "(Flying God Of Thunder: Guided Thunder)",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-basic-book-hijutsu__items.json"
+    },
+    {
+      "item": "Poisonous Projectile",
+      "source": "shinobi-no-sho-revamp/integrated/data/sns-hijutsu-vol2-pasted-hijutsus__items.json"
+    }
+  ]
+}

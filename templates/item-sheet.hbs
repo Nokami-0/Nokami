@@ -1,0 +1,166 @@
+<style>
+.shinobi.sheet.item .window-content {background:#09080d!important;color:#e8e5e8!important;}
+.shinobi.sheet.item form {background:#09080d!important;color:#e8e5e8!important;}
+.shinobi.sheet.item .sheet-header,.shinobi.sheet.item .sheet-body {background:#100e14!important;border-color:#513039!important;}
+.shinobi.sheet.item input,.shinobi.sheet.item textarea {background:#0a090e!important;color:#eee!important;border:1px solid #4a3038!important;}
+.shinobi.sheet.item .sheet-tabs {border-bottom-color:#a63a41!important;}
+.shinobi.sheet.item .sheet-tabs .item {background:#19141a!important;color:#eee!important;}
+.shinobi.sheet.item .sheet-tabs .item.active {background:#b13d44!important;color:#fff!important;}
+.shinobi.sheet.item label {color:#c8bac0!important;}
+
+/* Unified screenshot-matched iconography; keeps sheet layout responsive. */
+.shinobi-wrapper .fas, .shinobi-wrapper .far, .shinobi-wrapper .fab {font-style:normal;display:inline-block;vertical-align:middle;line-height:1;min-width:1em;text-align:center;}
+.shinobi-wrapper .icon-cell {width:26px;min-width:26px;text-align:center;}
+.shinobi-wrapper .icon-cell i {font-size:15px;opacity:.94;color:#e6e6e6;}
+.shinobi-wrapper .sns-nav .item i {font-size:15px;margin-right:5px;}
+.shinobi-wrapper .sns-box h3 i {margin-right:7px;}
+.shinobi-wrapper .energia-box.vit h3 i {color:#ef4249;}
+.shinobi-wrapper .energia-box.chk h3 i {color:#28aafa;}
+
+.shinobi.sheet.item .window-content {overflow-y:auto!important;min-height:0;}
+.shinobi.sheet.item .sheet-body,.shinobi.sheet.item .tab {overflow-y:auto!important;min-height:0;scrollbar-width:thin;}
+</style>
+<form class="{{cssClass}}" autocomplete="off" style="display: flex; flex-direction: column; height: 100%; background: #e6dfcf; padding: 15px; font-family: 'Marcellus', serif; color: #332b22; box-shadow: inset 0 0 20px rgba(0,0,0,0.1);">
+  
+  <header class="sheet-header" style="display: flex; gap: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.4); padding: 10px; border: 1px solid #a89f91; border-radius: 5px;">
+    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" style="width: 72px; height: 72px; object-fit: cover; border: 2px solid #332b22; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); cursor: pointer;"/>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <input name="name" type="text" value="{{item.name}}" placeholder="Item Name" style="font-size: 26px; font-weight: bold; border: none; border-bottom: 2px solid #5a4f40; background: transparent; color: #1a1510; font-family: 'Kaushan Script', cursive; width: 100%;"/>
+      <div style="font-size: 12px; color: #665c4d; margin-top: 5px; text-transform: uppercase; font-weight: bold;">
+        {{#if isPoder}}Power / Jutsu{{/if}}{{#if isAptidao}}Aptitude{{/if}}{{#if isEquipment}}Equipment{{/if}}{{#if isElement}}Element{{/if}}
+      </div>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary" style="display: flex; gap: 5px; margin-bottom: 10px; border-bottom: 2px solid #5a4f40; padding-bottom: 2px;">
+    <a class="item" data-tab="caracteristicas" style="font-weight: bold; cursor: pointer; padding: 5px 15px; background: rgba(230, 223, 207, 0.8); border: 1px solid #a89f91; border-bottom: none; border-radius: 5px 5px 0 0; color: #4a3e30; transition: 0.2s;"><i class="fas fa-cog" aria-hidden="true"></i> Features</a>
+    {{#if (or isPoder isAptidao isElement)}}
+    <a class="item" data-tab="detalhes" style="font-weight: bold; cursor: pointer; padding: 5px 15px; background: rgba(230, 223, 207, 0.8); border: 1px solid #a89f91; border-bottom: none; border-radius: 5px 5px 0 0; color: #4a3e30; transition: 0.2s;"><i class="fas fa-search" aria-hidden="true"></i> Details</a>
+    {{/if}}
+    <a class="item" data-tab="descricao" style="font-weight: bold; cursor: pointer; padding: 5px 15px; background: rgba(230, 223, 207, 0.8); border: 1px solid #a89f91; border-bottom: none; border-radius: 5px 5px 0 0; color: #4a3e30; transition: 0.2s;"><i class="fas fa-book-open" aria-hidden="true"></i> Description</a>
+  </nav>
+
+  <section class="sheet-body" style="flex: 1; overflow: hidden; background: rgba(245, 240, 230, 0.7); border: 1px solid #a89f91; border-radius: 3px; padding: 15px; box-shadow: 1px 1px 4px rgba(0,0,0,0.1);">
+    
+    <!-- ABA CARACTERÍSTICAS (Sem o display flex direto nela!) -->
+    <div class="tab" data-group="primary" data-tab="caracteristicas" style="height: 100%;">
+      <!-- Esta "caixa de proteção" trata do layout sem interferir com o Foundry -->
+      <div style="display: flex; flex-direction: column; gap: 15px; height: 100%;">
+        {{#if isPoder}}
+        <fieldset><legend>Power / Jutsu Hardness</legend>
+          <label>Hardness bonus</label><input type="number" name="system.hardness" min="0" step="1" value="{{system.hardness}}" />
+          <label>Defensive power active (add Hardness to actor)</label><input type="checkbox" name="system.hardnessActive" {{checked system.hardnessActive}} />
+          <small>Activate only for powers that grant defensive Hardness. Does not automatically activate when a jutsu is cast or expire by duration.</small>
+        </fieldset>
+        <div style="display: flex; gap: 15px; flex-shrink: 0;">
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">TYPE</label><input type="text" name="system.tipo" value="{{system.tipo}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px;"/></div>
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">ELEMENT</label><input type="text" name="system.elemento" value="{{system.elemento}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px;"/></div>
+        </div>
+        
+          <div style="flex:1"><label>LEGACY COST (REFERENCE ONLY)</label><input type="text" name="system.custo" value="{{system.custo}}" title="Original imported cost text; separate from automated numeric Chakra and Vitality costs"/></div>
+        {{/if}}
+
+        {{#if isAptidao}}
+        <div style="flex-shrink: 0;"><label style="font-weight: bold; font-size: 11px; color: darkred;">LEGACY COST (REFERENCE ONLY)</label><input type="text" name="system.custo" value="{{system.custo}}" style="width: 100%; border: 1px solid #c78b8b; background: rgba(250, 230, 230, 0.5); padding: 6px; border-radius: 3px; font-weight: bold; color: darkred;"/></div>
+        {{/if}}
+
+        {{#if isElement}}
+        <div style="display: flex; gap: 15px; flex-shrink: 0;">
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">ELEMENT LEVEL</label><input type="text" name="system.nivel" value="{{system.nivel}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px;"/></div>
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: darkred;">LEGACY COST (REFERENCE ONLY)</label><input type="text" name="system.custo" value="{{system.custo}}" style="width: 100%; border: 1px solid #c78b8b; background: rgba(250, 230, 230, 0.5); padding: 6px; border-radius: 3px; font-weight: bold; color: darkred;"/></div>
+        </div>
+        {{/if}}
+
+        {{#if isEquipment}}
+        <fieldset><legend>Weapon Rules</legend>
+        <label>Category</label><select name="system.weaponCategory">{{selectOptions weaponCategories selected=system.weaponCategory}}</select>
+        <label>Consumable (ammo, tags, bombs, poisons)</label><input type="checkbox" name="system.consumable" {{checked system.consumable}} />
+<label>Consumable Kind</label><select name="system.consumableKind"><option value="">None / Other</option><option value="ammunition" {{#if (eq system.consumableKind "ammunition")}}selected{{/if}}>Ammunition</option><option value="explosive-tag" {{#if (eq system.consumableKind "explosive-tag")}}selected{{/if}}>Explosive Tag</option><option value="smoke-bomb" {{#if (eq system.consumableKind "smoke-bomb")}}selected{{/if}}>Smoke Bomb</option><option value="flash-bomb" {{#if (eq system.consumableKind "flash-bomb")}}selected{{/if}}>Flash Bomb</option><option value="poison" {{#if (eq system.consumableKind "poison")}}selected{{/if}}>Poison</option></select>
+<label>Value per item (Ryo)</label><input type="number" name="system.valorRyo" min="0" step="1" value="{{system.valorRyo}}" title="Book value or GM-set value; 0 when unspecified" />
+        <fieldset><legend>Item Durability — Weapons &amp; Armor</legend>
+        <label>Hardness</label><input type="number" name="system.hardness" min="0" step="1" value="{{system.hardness}}" />
+        <label>Armor item</label><input type="checkbox" name="system.isArmor" {{checked system.isArmor}} />
+          <label>Wearer Body Hardness bonus</label><input type="number" name="system.bodyHardnessBonus" min="0" value="{{system.bodyHardnessBonus}}" />
+          <label>Remaining armor Absorption</label><input type="number" name="system.absorptionRemaining" min="0" value="{{system.absorptionRemaining}}" />
+          <label>Absorption</label><input type="number" name="system.absorption" min="0" step="1" value="{{system.absorption}}" />
+        <small>Equipment durability values. Zero may mean unspecified. These are separate from the wearer's Body Hardness and absorption bonuses.</small>
+        </fieldset>
+        <label>Weapon Damage (DDA)</label><input type="number" name="system.weaponDamage" value="{{system.weaponDamage}}" />
+        <label>Damage Modifier</label><input type="number" name="system.weaponBonus" value="{{system.weaponBonus}}" />
+        <label>Attack Type</label><select name="system.attackType">{{selectOptions attackTypes selected=system.attackType}}</select>
+        <label>Weapon Size</label><select name="system.weaponSize">{{selectOptions weaponSizes selected=system.weaponSize}}</select>
+        <label>Damage Type</label><select name="system.damageType">{{selectOptions damageTypes selected=system.damageType}}</select>
+        <label>Range (m)</label><input type="number" name="system.weaponRange" value="{{system.weaponRange}}" />
+        <label>Critical Threat (2d8)</label><select name="system.criticalRange">{{selectOptions criticalRanges selected=system.criticalRange}}</select>
+        <label>Units per Slot</label><input type="number" min="1" name="system.unitsPerSlot" value="{{system.unitsPerSlot}}" />
+        <label>Equipped</label><input type="checkbox" name="system.equipped" {{checked system.equipped}} />
+        </fieldset>
+        <div style="display: flex; gap: 15px; flex-shrink: 0;">
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">QUANTITY</label><input type="number" name="system.quantidade" value="{{system.quantidade}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px; text-align: center; font-size: 16px; font-weight: bold;"/></div>
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">SLOT COST</label><input type="number" name="system.peso" value="{{system.peso}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px; text-align: center; font-size: 16px; font-weight: bold;"/></div>
+        </div>
+        <div style="flex-shrink: 0;">
+          <label style="font-weight: bold; font-size: 11px; color: darkblue;">MODIFIER (+ or - Total Slots)</label>
+          <input type="number" name="system.modificadorCompartimento" value="{{system.modificadorCompartimento}}" style="width: 100%; border: 1px solid #8baac7; background: rgba(230, 240, 250, 0.8); padding: 6px; border-radius: 3px; text-align: center; font-weight: bold;"/>
+        </div>
+        {{/if}}
+
+        {{#if (or isPoder isElement)}}
+        <div style="flex-shrink:0; padding:8px; border:1px solid #8baac7; border-radius:4px">
+          <label>POWER LEVEL USED (Ninpou / Elemental Damage)</label>
+          <input type="number" name="system.nivelUsado" min="0" step="1" value="{{system.nivelUsado}}"/>
+          <small>Base damage = ceil(Spirit ÷ 2) + Power Level Used. This is separate from Chakra and Vitality costs.</small>
+        </div>
+        {{/if}}
+        {{#if (or isPoder isAptidao isElement)}}
+        <div style="display:flex; gap:12px; flex-shrink:0;">
+          <div style="flex:1;"><label>CHAKRA COST</label><input type="number" min="0" step="1" name="system.custoChakra" value="{{system.custoChakra}}"/></div>
+          <div style="flex:1;"><label>VITALITY COST</label><input type="number" min="0" step="1" name="system.custoVitalidade" value="{{system.custoVitalidade}}"/></div>
+        </div>
+        {{/if}}
+        <!-- A CAIXA DE TEXTO DAS CARACTERÍSTICAS -->
+        <div style="flex: 1; display: flex; flex-direction: column; min-height: 0;">
+          <label style="font-weight: bold; font-size: 11px; color: #5a4f40; margin-bottom: 5px;">FEATURE TEXT</label>
+          <textarea name="system.caracteristicas" style="flex: 1; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 3px; resize: none; font-family: 'Marcellus', serif; font-size: 14px;" placeholder="Write additional features here...">{{system.caracteristicas}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABA DETALHES -->
+    <div class="tab" data-group="primary" data-tab="detalhes" style="height: 100%;">
+      <!-- Caixa de proteção do Flexbox -->
+      <div style="display: flex; flex-direction: column; gap: 15px; height: 100%;">
+        {{#if isPoder}}
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <div style="flex:1"><label>POWER / JUTSU LEVEL</label><input type="text" name="system.nivel" value="{{system.nivel}}"/></div>
+          <div style="flex:1"><label>PREREQUISITE</label><input type="text" name="system.preRequisito" value="{{system.preRequisito}}"/></div>
+        </div>
+        <label>ADDITIONAL EFFECTS / TECHNIQUES</label><textarea name="system.efeitos" rows="5">{{system.efeitos}}</textarea>
+        {{/if}}
+        {{#if isAptidao}}
+        <div style="display: flex; gap: 15px; flex-shrink: 0;">
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">APTITUDE TYPE</label><input type="text" name="system.tipo" value="{{system.tipo}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px;"/></div>
+          <div style="flex: 1;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">APTITUDE LEVEL</label><input type="text" name="system.nivel" value="{{system.nivel}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px;"/></div>
+        </div>
+        <div style="flex-shrink: 0;"><label style="font-weight: bold; font-size: 11px; color: #5a4f40;">PREREQUISITE</label><input type="text" name="system.preRequisito" value="{{system.preRequisito}}" style="width: 100%; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 6px; border-radius: 3px;"/></div>
+        {{/if}}
+
+        {{#if isElement}}
+        <div style="flex: 1; display: flex; flex-direction: column; min-height: 0;">
+          <label style="font-weight: bold; font-size: 11px; color: #5a4f40; margin-bottom: 5px;">PURCHASED EFFECTS</label>
+          <textarea name="system.efeitos" style="flex: 1; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 3px; resize: none; font-family: 'Marcellus', serif; font-size: 14px;">{{system.efeitos}}</textarea>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- ABA DESCRIÇÃO -->
+    <div class="tab" data-group="primary" data-tab="descricao" style="height: 100%;">
+      <!-- Caixa de proteção do Flexbox -->
+      <div style="display: flex; flex-direction: column; height: 100%;">
+        <textarea name="system.descricao" style="flex: 1; min-height: 0; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.5); padding: 10px; border-radius: 3px; resize: none; font-family: 'Marcellus', serif; font-size: 14px;" placeholder="Write the item description here...">{{system.descricao}}</textarea>
+      </div>
+    </div>
+
+  </section>
+</form>

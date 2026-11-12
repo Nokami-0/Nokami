@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Shinobi Aptitudes — Basic Book source reference",
+    "type": "aptidao",
+    "book": "Basic Book",
+    "aptitudeCategory": "Shinobi Aptitudes",
+    "description": "This is a category reference for Shinobi Aptitudes. The Basic Book calls aptitudes “Skills” in its English translation. The Basic Book, page 57, defines Combat, Maneuvering, Skill Enhancements, Shinobi and General skills; the free-choice summary begins on page 58. Individual ability entries are NOT included in this reference item.",
+    "sourcePage": "57–58",
+    "referenceOnly": true
+  },
+  {
+    "name": "General Aptitudes — Basic Book source reference",
+    "type": "aptidao",
+    "book": "Basic Book",
+    "aptitudeCategory": "General Aptitudes",
+    "description": "This is a category reference for General Aptitudes. The Basic Book calls aptitudes “Skills” in its English translation. The Basic Book, page 57, defines Combat, Maneuvering, Skill Enhancements, Shinobi and General skills; the free-choice summary begins on page 58. Individual ability entries are NOT included in this reference item.",
+    "sourcePage": "57–58",
+    "referenceOnly": true
+  },
+  {
+    "name": "Technique Aptitudes — Basic Book source reference",
+    "type": "aptidao",
+    "book": "Basic Book",
+    "aptitudeCategory": "Technique Aptitudes",
+    "description": "This is a category reference for Technique Aptitudes. The Basic Book calls aptitudes “Skills” in its English translation. The Basic Book, page 57, defines Combat, Maneuvering, Skill Enhancements, Shinobi and General skills; the free-choice summary begins on page 58. Individual ability entries are NOT included in this reference item.",
+    "sourcePage": "57–58",
+    "referenceOnly": true
+  },
+  {
+    "name": "Maneuver Aptitudes — Basic Book source reference",
+    "type": "aptidao",
+    "book": "Basic Book",
+    "aptitudeCategory": "Maneuver Aptitudes",
+    "description": "This is a category reference for Maneuver Aptitudes. The Basic Book calls aptitudes “Skills” in its English translation. The Basic Book, page 57, defines Combat, Maneuvering, Skill Enhancements, Shinobi and General skills; the free-choice summary begins on page 58. Individual ability entries are NOT included in this reference item.",
+    "sourcePage": "57–58",
+    "referenceOnly": true
+  },
+  {
+    "name": "Combat Aptitudes — Basic Book source reference",
+    "type": "aptidao",
+    "book": "Basic Book",
+    "aptitudeCategory": "Combat Aptitudes",
+    "description": "This is a category reference for Combat Aptitudes. The Basic Book calls aptitudes “Skills” in its English translation. The Basic Book, page 57, defines Combat, Maneuvering, Skill Enhancements, Shinobi and General skills; the free-choice summary begins on page 58. Individual ability entries are NOT included in this reference item.",
+    "sourcePage": "57–58",
+    "referenceOnly": true
+  },
+  {
+    "name": "Free Choice Options — Basic Book source reference",
+    "type": "aptidao",
+    "book": "Basic Book",
+    "aptitudeCategory": "Free Choice Options",
+    "description": "This is a category reference for Free Choice Options. The Basic Book calls aptitudes “Skills” in its English translation. The Basic Book, page 57, defines Combat, Maneuvering, Skill Enhancements, Shinobi and General skills; the free-choice summary begins on page 58. Individual ability entries are NOT included in this reference item.",
+    "sourcePage": "57–58",
+    "referenceOnly": true
+  },
+  {
+    "name": "Shinobi Aptitudes — Advanced Book source reference",
+    "type": "aptidao",
+    "book": "Advanced Book",
+    "aptitudeCategory": "Shinobi Aptitudes",
+    "description": "This category is reserved for verified Shinobi Aptitudes entries from the Advanced Shinobi Guide. The Advanced Guide, pages 46–47, includes updated Kuchiyose species aptitude lists. This reference does NOT assert that every category contains new Advanced Guide aptitudes.",
+    "sourcePage": "46–47",
+    "referenceOnly": true
+  },
+  {
+    "name": "General Aptitudes — Advanced Book source reference",
+    "type": "aptidao",
+    "book": "Advanced Book",
+    "aptitudeCategory": "General Aptitudes",
+    "description": "This category is reserved for verified General Aptitudes entries from the Advanced Shinobi Guide. The Advanced Guide, pages 46–47, includes updated Kuchiyose species aptitude lists. This reference does NOT assert that every category contains new Advanced Guide aptitudes.",
+    "sourcePage": "46–47",
+    "referenceOnly": true
+  },
+  {
+    "name": "Technique Aptitudes — Advanced Book source reference",
+    "type": "aptidao",
+    "book": "Advanced Book",
+    "aptitudeCategory": "Technique Aptitudes",
+    "description": "This category is reserved for verified Technique Aptitudes entries from the Advanced Shinobi Guide. The Advanced Guide, pages 46–47, includes updated Kuchiyose species aptitude lists. This reference does NOT assert that every category contains new Advanced Guide aptitudes.",
+    "sourcePage": "46–47",
+    "referenceOnly": true
+  },
+  {
+    "name": "Maneuver Aptitudes — Advanced Book source reference",
+    "type": "aptidao",
+    "book": "Advanced Book",
+    "aptitudeCategory": "Maneuver Aptitudes",
+    "description": "This category is reserved for verified Maneuver Aptitudes entries from the Advanced Shinobi Guide. The Advanced Guide, pages 46–47, includes updated Kuchiyose species aptitude lists. This reference does NOT assert that every category contains new Advanced Guide aptitudes.",
+    "sourcePage": "46–47",
+    "referenceOnly": true
+  },
+  {
+    "name": "Combat Aptitudes — Advanced Book source reference",
+    "type": "aptidao",
+    "book": "Advanced Book",
+    "aptitudeCategory": "Combat Aptitudes",
+    "description": "This category is reserved for verified Combat Aptitudes entries from the Advanced Shinobi Guide. The Advanced Guide, pages 46–47, includes updated Kuchiyose species aptitude lists. This reference does NOT assert that every category contains new Advanced Guide aptitudes.",
+    "sourcePage": "46–47",
+    "referenceOnly": true
+  },
+  {
+    "name": "Free Choice Options — Advanced Book source reference",
+    "type": "aptidao",
+    "book": "Advanced Book",
+    "aptitudeCategory": "Free Choice Options",
+    "description": "This category is reserved for verified Free Choice Options entries from the Advanced Shinobi Guide. The Advanced Guide, pages 46–47, includes updated Kuchiyose species aptitude lists. This reference does NOT assert that every category contains new Advanced Guide aptitudes.",
+    "sourcePage": "46–47",
+    "referenceOnly": true
+  }
+]

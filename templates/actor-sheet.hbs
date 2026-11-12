@@ -1,0 +1,846 @@
+<style>
+  /* FONTES NINJA / ANIME */
+  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Yusei+Magic&family=Marcellus&display=swap');
+
+  /* ESTILOS GERAIS DA FICHA */
+  .shinobi.sheet.actor {
+    min-width: 0;
+    min-height: 0;
+  }
+  
+  .shinobi-wrapper {
+    background: #e6dfcf;
+    background-image: 
+      radial-gradient(circle at 100% 50%, rgba(0,0,0,0.05) 0%, transparent 50%),
+      radial-gradient(circle at 0% 0%, rgba(200, 180, 150, 0.4) 0%, transparent 40%);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Marcellus', serif;
+    color: #332b22;
+  }
+
+  .jp-text { font-family: 'Yusei Magic', sans-serif; }
+  .title-font { font-family: 'Kaushan Script', cursive; }
+
+  /* CABEÇALHO SUPERIOR (TÍTULO) */
+  .top-title-area {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+  }
+  .top-title-area .logo-placeholder {
+    width: 60px; height: 60px;
+    background: url('icons/svg/combat.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.7;
+    margin-right: 15px;
+  }
+  .top-title-area h1 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 42px;
+    margin: 0; border: none;
+    line-height: 1;
+    color: #1a1510;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+  }
+  .top-title-area .jp-sub {
+    font-size: 16px;
+    color: #665c4d;
+    margin-left: 10px;
+    letter-spacing: 2px;
+  }
+
+  /* ÁREA DE DADOS DO PERSONAGEM (CABEÇALHO) */
+  .header-grid-area {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  .profile-section {
+    position: relative;
+    width: 160px; height: 160px;
+    border: 3px solid #4a3e30;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+    background: #000;
+  }
+  .profile-section img {
+    width: 100%; height: 100%; object-fit: cover; border: none;
+  }
+  .profile-section .vertical-tag {
+    position: absolute;
+    left: -25px; top: 10px;
+    background: #e6dfcf;
+    border: 1px solid #4a3e30;
+    padding: 10px 5px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .dados-box {
+    flex: 1;
+    background: rgba(245, 240, 230, 0.6);
+    border: 1px solid #a89f91;
+    border-radius: 2px;
+    padding: 10px 15px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+  }
+  .dados-box::after {
+    content: "";
+    position: absolute; right: 10px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px; color: rgba(0,0,0,0.03);
+    pointer-events: none;
+  }
+
+  .dados-box .dados-title {
+    font-size: 12px; font-weight: bold; color: #5a4f40;
+    border-bottom: 1px solid #a89f91; padding-bottom: 2px; margin-bottom: 8px;
+    display: flex; justify-content: space-between;
+  }
+  
+  .dados-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px 15px;
+  }
+  .dados-grid .campo { display: flex; flex-direction: column; }
+  .dados-grid .campo.span-3 { grid-column: span 3; }
+  .dados-grid label { font-size: 10px; color: #665c4d; font-weight: bold; letter-spacing: 0.5px; }
+  .dados-grid input {
+    background: transparent; border: none; border-bottom: 1px solid #b8b0a1;
+    font-family: 'Marcellus', serif; font-size: 14px; color: #1a1510;
+    padding: 2px 0; border-radius: 0;
+  }
+  .dados-grid input:focus { outline: none; border-bottom: 2px solid #5a4f40; }
+  
+  .nc-box {
+    text-align: center;
+  }
+  .nc-box input {
+    width: 60px; height: 40px; font-size: 24px; font-weight: bold;
+    text-align: center; background: #dcd3c1; border: 1px solid #a89f91;
+    border-radius: 5px; color: #4a3e30; margin-top: 5px;
+  }
+
+  /* MENU DE NAVEGAÇÃO */
+  .sns-nav {
+    display: flex; gap: 5px; margin-bottom: 15px;
+    border-bottom: 2px solid #5a4f40; padding-bottom: 2px;
+  }
+  .sns-nav .item {
+    background: rgba(230, 223, 207, 0.8);
+    border: 1px solid #a89f91; border-bottom: none;
+    border-radius: 5px 5px 0 0; padding: 6px 15px;
+    font-weight: bold; font-size: 12px; color: #4a3e30;
+    cursor: pointer; display: flex; align-items: center; gap: 5px;
+    transition: 0.2s;
+  }
+  .sns-nav .item:hover { background: #f0eadd; }
+  .sns-nav .item.active { background: #5a4f40; color: #fff; }
+  .sns-nav .item .jp { font-family: 'Yusei Magic'; font-size: 16px; font-weight: normal; }
+
+  /* CORPO PRINCIPAL E CAIXAS */
+  .sheet-body { flex: 1; overflow-y: auto; overflow-x: hidden; padding-right: 5px; }
+  .sns-box {
+    background: rgba(245, 240, 230, 0.7);
+    border: 1px solid #a89f91;
+    border-radius: 3px; padding: 12px; margin-bottom: 12px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    position: relative; overflow: hidden;
+  }
+  .sns-box h3 {
+    margin: 0 0 10px 0; padding-bottom: 5px;
+    border-bottom: 1px solid #a89f91;
+    font-size: 15px; font-weight: bold; color: #332b22;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .sns-box h3 i { margin-right: 5px; opacity: 0.7; }
+
+  /* CAIXAS ESPECÍFICAS DE ENERGIA */
+  .energia-box { display: flex; flex-direction: column; align-items: center; padding: 10px; border-radius: 5px; position: relative; }
+  .energia-box.vit { background: rgba(250, 230, 230, 0.8); border: 1px solid #c78b8b; }
+  .energia-box.vit h3 { border: none; color: #a13d3d; font-size: 16px; margin-bottom: 5px; }
+  .energia-box.chk { background: rgba(230, 240, 250, 0.8); border: 1px solid #8baac7; }
+  .energia-box.chk h3 { border: none; color: #3d6ba1; font-size: 16px; margin-bottom: 5px; }
+  .energia-box.jashin { background: rgba(240, 230, 250, 0.8); border: 1px solid #a98bc7; }
+  .energia-box.jashin h3 { border: none; font-family: 'Kaushan Script'; font-size: 20px; margin-bottom: 5px; }
+  
+  .energia-inputs { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: bold; }
+  .energia-inputs label { font-size: 10px; color: #665c4d; }
+  .energia-inputs input { width: 50px; height: 35px; text-align: center; font-size: 18px; font-weight: bold; background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); border-radius: 3px; }
+
+  /* TABELAS */
+  table.sns-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.sns-table th { text-align: left; padding: 5px; color: #665c4d; font-size: 10px; border-bottom: 1px solid #c0b7a6; }
+  table.sns-table td { padding: 4px 5px; border-bottom: 1px dashed #dcd3c1; }
+  table.sns-table tr:last-child td { border-bottom: none; }
+  
+  .attr-input { width: 35px; text-align: center; font-size: 14px; font-weight: bold; background: transparent; border: 1px solid #b8b0a1; border-radius: 3px; }
+  .attr-input.error { border: 2px solid red; background: #ffe6e6; }
+  .attr-readonly { width: 35px; text-align: center; font-size: 14px; background: transparent; border: none; color: #5a4f40; }
+  
+  .icon-cell { width: 20px; text-align: center; font-size: 14px; opacity: 0.7; }
+  .quote-box { margin-top: auto; padding: 15px; font-family: 'Kaushan Script'; font-size: 18px; text-align: center; color: #5a4f40; line-height: 1.3; }
+
+  /* ESTATISTICAS DE COMBATE */
+  .estatisticas-table input, .estatisticas-table select {
+    background: rgba(0,0,0,0.03); border: 1px solid #b8b0a1; border-radius: 3px; padding: 3px; font-family: 'Marcellus';
+  }
+  .estatisticas-table .total-box {
+    background: #dcd3c1; font-weight: bold; font-size: 16px; border: none; width: 40px; text-align: center;
+  }
+
+/* Screenshot-matched dark crimson theme; original fields, tabs and mechanics retained. */
+.shinobi.sheet.actor {min-width: 720px; min-height: 520px; background: #09080d !important; color: #e8e5e8 !important;}
+.shinobi.sheet.actor .window-content {background: #09080d !important; padding: 0 !important; color: #e8e5e8 !important;}
+.shinobi.sheet.actor .shinobi-wrapper {background: #09080d !important; background-image: none !important; color: #e8e5e8 !important; padding: 10px !important;}
+.shinobi.sheet.actor .top-title-area {border-bottom: 1px solid #9d383c; padding-bottom: 9px; margin-bottom: 7px;}
+.shinobi.sheet.actor .top-title-area h1 {color: #c34d51 !important; text-shadow: 0 0 2px #481a20 !important;}
+.shinobi.sheet.actor .jp-sub {color: #8e888d !important;}
+.shinobi.sheet.actor .logo-placeholder {display:none !important;}
+.shinobi.sheet.actor .profile-section {border: 1px solid #3a3037 !important; background:#0a090e !important; box-shadow:none !important; flex-shrink:0;}
+.shinobi.sheet.actor .profile-section .vertical-tag {background:#2b0e13 !important; color:#e7b5b7 !important; border-color:#5b2229 !important;}
+.shinobi.sheet.actor .dados-box, .shinobi.sheet.actor .sns-box {background:#0e0d12 !important; border:1px solid #393038 !important; box-shadow:none !important; color:#e7e2e6 !important;}
+.shinobi.sheet.actor .dados-box::after {display:none !important;}
+.shinobi.sheet.actor .dados-title, .shinobi.sheet.actor .sns-box h3 {background:linear-gradient(90deg,#581e25,#200e13) !important; color:#f2e9eb !important; border:0 !important; border-left:4px solid #c54b51 !important; padding:7px 10px !important; margin:-10px -15px 10px !important; font-weight:bold;}
+.shinobi.sheet.actor .sns-box h3 {margin:-12px -12px 10px !important;}
+.shinobi.sheet.actor .dados-grid label, .shinobi.sheet.actor label, .shinobi.sheet.actor .sns-table th {color:#b4a9b0 !important;}
+.shinobi.sheet.actor input:not([type=checkbox]), .shinobi.sheet.actor select, .shinobi.sheet.actor textarea {background:#0a090e !important; color:#eee9ec !important; border:1px solid #44373e !important; border-radius:2px !important; box-shadow:none !important;}
+.shinobi.sheet.actor input:focus, .shinobi.sheet.actor textarea:focus {border-color:#c35158 !important; outline:none !important;}
+.shinobi.sheet.actor .nc-box input {background:#160b11 !important; border:1px solid #94363e !important; color:#c54b51 !important;}
+.shinobi.sheet.actor .sns-nav {border-bottom:2px solid #a63a41 !important; gap:5px !important;}
+.shinobi.sheet.actor .sns-nav .item, .shinobi.sheet.actor .sheet-tabs[data-group=secundario] .item {background:#17151c !important; border:1px solid #383038 !important; color:#d4cbd0 !important; border-radius:2px 2px 0 0 !important;}
+.shinobi.sheet.actor .sns-nav .item.active, .shinobi.sheet.actor .sheet-tabs[data-group=secundario] .item.active {background:#b13d44 !important; border-color:#b13d44 !important; color:#fff !important;}
+.shinobi.sheet.actor .sns-nav .item:hover, .shinobi.sheet.actor .sheet-tabs[data-group=secundario] .item:hover {background:#69252c !important; color:#fff !important;}
+.shinobi.sheet.actor .sheet-body {background:#09080d !important;}
+.shinobi.sheet.actor .sns-table {color:#e3dce1 !important;}
+.shinobi.sheet.actor .sns-table th {background:#1a0d12 !important; border-bottom:1px solid #9e3c44 !important;}
+.shinobi.sheet.actor .sns-table td {border-bottom:1px solid #2d252c !important;}
+.shinobi.sheet.actor .sns-table tr:nth-child(even) {background:#252329 !important;}
+.shinobi.sheet.actor .sns-table a, .shinobi.sheet.actor a.rollable {color:#e7e1e5 !important;}
+.shinobi.sheet.actor .energia-box.vit {background:#160d12 !important; border-color:#8e323c !important;}
+.shinobi.sheet.actor .energia-box.chk {background:#0b1018 !important; border-color:#274b6d !important;}
+.shinobi.sheet.actor .energia-box.jashin {background:#170f1c !important; border-color:#654278 !important;}
+.shinobi.sheet.actor .energia-box.vit h3 {color:#ce535e !important;}
+.shinobi.sheet.actor .energia-box.chk h3 {color:#4b9bdb !important;}
+.shinobi.sheet.actor .energia-box.jashin h3 {color:#a78cc4 !important;}
+.shinobi.sheet.actor .attr-readonly {color:#ddd7dc !important;}
+.shinobi.sheet.actor .quote-box {color:#bf6a70 !important;}
+.shinobi.sheet.actor .item-create, .shinobi.sheet.actor button {color:#eee !important;}
+.shinobi.sheet.actor .item-create {background:#17141a !important; border:1px solid #5c4148 !important; padding:2px 6px !important;}
+.shinobi.sheet.actor .sns-box [style*="background: rgba"] {background:#101017 !important;}
+@media(max-width: 1000px) {.shinobi.sheet.actor .dados-grid {grid-template-columns:repeat(3,minmax(0,1fr)) !important;} .shinobi.sheet.actor .sns-nav {flex-wrap:wrap !important;} .shinobi.sheet.actor .header-grid-area {gap:12px !important;} }
+@media(max-width: 760px) {.shinobi.sheet.actor .header-grid-area {flex-wrap:wrap !important;} .shinobi.sheet.actor .dados-grid {grid-template-columns:repeat(2,minmax(0,1fr)) !important;} .shinobi.sheet.actor .profile-section {width:110px !important;height:110px !important;} }
+
+
+  /* Responsive sizing only; keep the screenshot's crimson/black palette and layout. */
+  .shinobi.sheet.actor { max-width: 100vw; max-height: 100vh; }
+  .shinobi.sheet.actor .window-content { min-width: 0; min-height: 0; overflow: hidden; }
+  .shinobi.sheet.actor .shinobi-wrapper { min-width: 0; min-height: 0; overflow: hidden; }
+  .shinobi.sheet.actor .sheet-body { min-width: 0; min-height: 0; overflow: auto; }
+  .shinobi.sheet.actor .sns-nav { overflow-x: auto; flex-wrap: nowrap; min-width: 0; scrollbar-width: thin; }
+  .shinobi.sheet.actor .sns-nav .item { flex: 0 0 auto; white-space: nowrap; }
+  .shinobi.sheet.actor .header-grid-area { min-width: 0; }
+  .shinobi.sheet.actor .dados-box { min-width: 0; }
+  .shinobi.sheet.actor .dados-grid { min-width: 0; }
+  .shinobi.sheet.actor .sns-table { min-width: 440px; }
+  @media (max-width: 760px) {
+    .shinobi.sheet.actor .shinobi-wrapper { padding: 10px; }
+    .shinobi.sheet.actor .header-grid-area { gap: 8px; align-items: flex-start; }
+    .shinobi.sheet.actor .profile-section { width: 86px; height: 86px; flex: 0 0 86px; }
+    .shinobi.sheet.actor .dados-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .shinobi.sheet.actor .dados-grid .campo.span-3 { grid-column: span 2; }
+    .shinobi.sheet.actor .top-title-area h1 { font-size: clamp(22px, 6vw, 42px); }
+    .shinobi.sheet.actor .sns-nav .item { padding: 6px 9px; }
+  }
+  @media (max-width: 560px) {
+    .shinobi.sheet.actor .header-grid-area { flex-wrap: wrap; }
+    .shinobi.sheet.actor .dados-box { flex: 1 1 100%; }
+    .shinobi.sheet.actor .sns-box { overflow-x: auto; }
+  }
+
+/* Screenshot-matched, monochrome Foundry iconography */
+.shinobi.sheet.actor .sns-nav .item i,
+.shinobi.sheet.actor .sheet-tabs .item i {font-size: 12px; margin-right: 5px; opacity: .9; vertical-align: middle;}
+.shinobi.sheet.actor .sns-box h3 i,
+.shinobi.sheet.actor .energia-box h3 i {font-size: 14px; margin-right: 7px; opacity: .85;}
+.shinobi.sheet.actor .icon-cell i {font-size: 13px; opacity: .75;}
+.shinobi.sheet.actor .item-edit i,
+.shinobi.sheet.actor .item-delete i {font-size: 12px; opacity: .85;}
+
+/* Unified screenshot-matched iconography; keeps sheet layout responsive. */
+.shinobi-wrapper .fas, .shinobi-wrapper .far, .shinobi-wrapper .fab {font-style:normal;display:inline-block;vertical-align:middle;line-height:1;min-width:1em;text-align:center;}
+.shinobi-wrapper .icon-cell {width:26px;min-width:26px;text-align:center;}
+.shinobi-wrapper .icon-cell i {font-size:15px;opacity:.94;color:#e6e6e6;}
+.shinobi-wrapper .sns-nav .item i {font-size:15px;margin-right:5px;}
+.shinobi-wrapper .sns-box h3 i {margin-right:7px;}
+.shinobi-wrapper .energia-box.vit h3 i {color:#ef4249;}
+.shinobi-wrapper .energia-box.chk h3 i {color:#28aafa;}
+
+
+/* Screenshot-matched Vitality and Chakra icons, independent of Font Awesome */
+.sns-resource-symbol { width: 1.35em; height: 1.35em; display: inline-block; vertical-align: -0.24em; margin-right: .22em; flex: 0 0 auto; }
+.sns-vitality-symbol { filter: drop-shadow(0 0 3px rgba(237,38,59,.35)); }
+.sns-chakra-symbol { filter: drop-shadow(0 0 3px rgba(36,184,255,.35)); }
+/* Ensure every tab, long inventory and sheet section is reachable. */
+.shinobi.sheet.actor .window-content {overflow: auto !important; min-height: 0;}
+.shinobi.sheet.actor form, .shinobi.sheet.actor .shinobi-wrapper {min-height:0; max-height:100%;}
+.shinobi.sheet.actor .sheet-body {overflow-y:auto !important; overflow-x:auto !important; min-height:0; scrollbar-width:thin;}
+.shinobi.sheet.actor .tab {overflow-y:auto; min-height:0;}
+.shinobi.sheet.actor .sns-box {max-width:100%;}
+</style>
+
+<form class="{{cssClass}} shinobi-wrapper" autocomplete="off">
+  
+  <!-- === TOPO: NOME E SUBTÍTULO === -->
+  <div class="top-title-area">
+    <div class="logo-placeholder"></div>
+    <div>
+      <h1>{{actor.name}}</h1>
+      <div class="jp-sub">千手 ネトラマ <span style="font-family: 'Marcellus'; font-size: 12px; margin-left: 10px; opacity: 0.7;">(Click 'Sheet' to edit the name)</span></div>
+    </div>
+  </div>
+
+  <!-- === CABEÇALHO: IMAGEM E DADOS === -->
+  <header class="header-grid-area">
+    <div class="profile-section">
+      <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+      <div class="vertical-tag">忍者</div>
+    </div>
+    
+    <div class="dados-box">
+      <div class="dados-title">
+        <span>CHARACTER INFORMATION</span>
+        <span style="font-weight: normal; margin-right: 70px;">NC</span>
+      </div>
+      <div style="display: flex; gap: 15px;">
+        <div class="dados-grid" style="flex: 1;">
+          <div class="campo span-3"><label>NAME</label><input name="name" type="text" value="{{actor.name}}"/></div>
+          <div class="campo"><label>GENDER</label><input name="system.cabecalho.genero" type="text" value="{{system.cabecalho.genero}}"/></div>
+          
+          <div class="campo"><label>CLAN | HIJUTSU</label><input name="system.cabecalho.cla" type="text" value="{{system.cabecalho.cla}}"/></div>
+          <div class="campo"><label>RANK</label><input name="system.cabecalho.patente" type="text" value="{{system.cabecalho.patente}}"/></div>
+          <div class="campo"><label>CURRENT AFFILIATION</label><input name="system.cabecalho.filiacao" type="text" value="{{system.cabecalho.filiacao}}"/></div>
+          
+          <div class="campo"><label>ALIGNMENT</label><input name="system.cabecalho.tendencia" type="text" value="{{system.cabecalho.tendencia}}"/></div>
+          <div class="campo"><label>AGE</label><input name="system.cabecalho.idade" type="text" value="{{system.cabecalho.idade}}"/></div>
+          <div class="campo"><label>BIRTHPLACE</label><input name="system.cabecalho.localNascimento" type="text" value="{{system.cabecalho.localNascimento}}"/></div>
+          <div class="campo"><label>SEXUALITY</label><input name="system.cabecalho.sexualidade" type="text" value="{{system.cabecalho.sexualidade}}"/></div>
+        </div>
+        <div class="nc-box">
+          <input name="system.cabecalho.nc" type="number" value="{{system.cabecalho.nc}}" data-dtype="Number"/>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- === NAVEGAÇÃO === -->
+  <nav class="sns-nav sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="principal"><i class="fas fa-user" aria-hidden="true"></i> <span class="jp">基本</span> MAIN</a>
+    <a class="item" data-tab="inventario"><i class="fas fa-toolbox" aria-hidden="true"></i> <span class="jp">道具</span> INVENTORY</a>
+    <a class="item" data-tab="poderes"><i class="fas fa-scroll" aria-hidden="true"></i> <span class="jp">術</span> POWERS</a>
+    <a class="item" data-tab="databook"><i class="fas fa-book" aria-hidden="true"></i> <span class="jp">書物</span> DATABOOK</a>
+    <a class="item" data-tab="configuracoes"><i class="fas fa-cog" aria-hidden="true"></i> <span class="jp">設定</span> SETTINGS</a>
+  </nav>
+
+  <!-- === CORPO DA FICHA === -->
+  <section class="sheet-body">
+    
+    <!-- ================= ABA PRINCIPAL ================= -->
+    <div class="tab principal" data-group="primary" data-tab="principal">
+      <div style="display: flex; flex-direction: column; height: 100%;">
+        
+        <nav class="sheet-tabs tabs" data-group="secundario" style="flex: 0 0 auto; display: flex; gap: 5px; margin-bottom: 10px; border-bottom: 2px solid #5a4f40; padding-bottom: 5px;">
+          <a class="item" data-tab="status" style="font-weight: bold; cursor: pointer; padding: 5px 15px; background: rgba(245,240,230,0.7); border: 1px solid #a89f91; border-radius: 5px 5px 0 0; color: #4a3e30;"><i class="fas fa-chart-bar" aria-hidden="true"></i> STATS & COMBAT</a>
+          <a class="item" data-tab="pericias" style="font-weight: bold; cursor: pointer; padding: 5px 15px; background: rgba(245,240,230,0.7); border: 1px solid #a89f91; border-radius: 5px 5px 0 0; color: #4a3e30;"><i class="fas fa-theater-masks" aria-hidden="true"></i> SKILLS & ABILITIES</a>
+        </nav>
+
+        <section class="principal-body" style="flex: 1;">
+          
+          <!-- SUB-ABA: STATUS -->
+          <div class="tab status" data-group="secundario" data-tab="status">
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+              
+              <!-- COLUNA ESQUERDA -->
+              <div style="flex: 0 0 320px; display: flex; flex-direction: column;">
+                
+                <div class="sns-box">
+                  <h3><i class="fas fa-hourglass-half" aria-hidden="true"></i> ATTRIBUTES <span style="font-size: 11px; color: {{#if evolucao.atributosNegativo}}red{{else}}#777{{/if}}; font-weight: normal;">(Remaining: {{evolucao.atributos}})</span></h3>
+                  <table class="sns-table">
+                    <thead><tr><th colspan="2">STATUS</th><th style="text-align: center;">VALUE</th><th style="text-align: center;">PRECISION</th><th style="text-align: center;">R.M.</th></tr></thead>
+                    <tbody>
+                      <tr><td class="icon-cell"><i class="fas fa-fist-raised" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Strength" data-precisao="{{system.atributos.for.precisao}}" style="cursor:pointer; font-weight:bold;">STRENGTH</a></td><td align="center"><input type="number" name="system.atributos.for.valor" value="{{system.atributos.for.valor}}" class="attr-input {{#if erros.atributos.for}}error{{/if}}"/></td><td align="center"><input type="number" value="{{system.atributos.for.precisao}}" class="attr-readonly" readonly/></td><td align="center"><input type="checkbox" name="system.atributos.for.resMaior" {{checked system.atributos.for.resMaior}}/></td></tr>
+                      <tr><td class="icon-cell"><i class="fas fa-running" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Destreza" data-precisao="{{system.atributos.des.precisao}}" style="cursor:pointer; font-weight:bold;">DEXTERITY</a></td><td align="center"><input type="number" name="system.atributos.des.valor" value="{{system.atributos.des.valor}}" class="attr-input {{#if erros.atributos.des}}error{{/if}}"/></td><td align="center"><input type="number" value="{{system.atributos.des.precisao}}" class="attr-readonly" readonly/></td><td align="center"><input type="checkbox" name="system.atributos.des.resMaior" {{checked system.atributos.des.resMaior}}/></td></tr>
+                      <tr><td class="icon-cell"><i class="fas fa-wind" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Agilidade" data-precisao="{{system.atributos.agi.precisao}}" style="cursor:pointer; font-weight:bold;">AGILITY</a></td><td align="center"><input type="number" name="system.atributos.agi.valor" value="{{system.atributos.agi.valor}}" class="attr-input {{#if erros.atributos.agi}}error{{/if}}"/></td><td align="center"><input type="number" value="{{system.atributos.agi.precisao}}" class="attr-readonly" readonly/></td><td align="center"><input type="checkbox" name="system.atributos.agi.resMaior" {{checked system.atributos.agi.resMaior}}/></td></tr>
+                      <tr><td class="icon-cell"><i class="fas fa-eye" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Perception" data-precisao="{{system.atributos.per.precisao}}" style="cursor:pointer; font-weight:bold;">PERCEPTION</a></td><td align="center"><input type="number" name="system.atributos.per.valor" value="{{system.atributos.per.valor}}" class="attr-input {{#if erros.atributos.per}}error{{/if}}"/></td><td align="center"><input type="number" value="{{system.atributos.per.precisao}}" class="attr-readonly" readonly/></td><td align="center"><input type="checkbox" name="system.atributos.per.resMaior" {{checked system.atributos.per.resMaior}}/></td></tr>
+                      <tr><td class="icon-cell"><i class="fas fa-shield-alt" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Vigor" data-precisao="{{system.atributos.vig.precisao}}" style="cursor:pointer; font-weight:bold;">VIGOR</a></td><td align="center"><input type="number" name="system.atributos.vig.valor" value="{{system.atributos.vig.valor}}" class="attr-input {{#if erros.atributos.vig}}error{{/if}}"/></td><td align="center"><input type="number" value="{{system.atributos.vig.precisao}}" class="attr-readonly" readonly/></td><td align="center"><input type="checkbox" name="system.atributos.vig.resMaior" {{checked system.atributos.vig.resMaior}}/></td></tr>
+                      <tr><td class="icon-cell"><i class="fas fa-book-open" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Intelligence" data-precisao="{{system.atributos.int.precisao}}" style="cursor:pointer; font-weight:bold;">INTELLIGENCE</a></td><td align="center"><input type="number" name="system.atributos.int.valor" value="{{system.atributos.int.valor}}" class="attr-input {{#if erros.atributos.int}}error{{/if}}"/></td><td align="center"><input type="number" value="{{system.atributos.int.precisao}}" class="attr-readonly" readonly/></td><td align="center"><input type="checkbox" name="system.atributos.int.resMaior" {{checked system.atributos.int.resMaior}}/></td></tr>
+                      <tr><td class="icon-cell"><i class="fas fa-fire-alt" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Spirit" data-precisao="{{system.atributos.esp.precisao}}" style="cursor:pointer; font-weight:bold;">SPIRIT</a></td><td align="center"><input type="number" name="system.atributos.esp.valor" value="{{system.atributos.esp.valor}}" class="attr-input {{#if erros.atributos.esp}}error{{/if}}"/></td><td align="center"><input type="number" value="{{system.atributos.esp.precisao}}" class="attr-readonly" readonly/></td><td align="center"><input type="checkbox" name="system.atributos.esp.resMaior" {{checked system.atributos.esp.resMaior}}/></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="sns-box">
+                  <h3>SOCIAL ATTRIBUTES <span style="font-size: 11px; color: {{#if evolucao.sociaisNegativo}}red{{else}}#777{{/if}}; font-weight: normal;">(Remaining: {{evolucao.sociais}})</span></h3>
+                  <table class="sns-table">
+                    <tbody>
+                      <tr><td class="icon-cell"><i class="fas fa-spa" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Carisma (Yang)" data-precisao="{{system.sociais.carisma.precisao}}" style="cursor:pointer; font-weight:bold;">CHARISMA (Yang)</a></td><td align="right"><input type="number" name="system.sociais.carisma.valor" value="{{system.sociais.carisma.valor}}" class="attr-input {{#if erros.sociais.carisma}}error{{/if}}"/></td></tr>
+                      <tr><td class="icon-cell"><i class="fas fa-theater-masks" aria-hidden="true"></i></td><td><a class="rollable" data-nome="Manipulation (Yin)" data-precisao="{{system.sociais.manipulacao.precisao}}" style="cursor:pointer; font-weight:bold;">MANIPULATION (Yin)</a></td><td align="right"><input type="number" name="system.sociais.manipulacao.valor" value="{{system.sociais.manipulacao.valor}}" class="attr-input {{#if erros.sociais.manipulacao}}error{{/if}}"/></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <div class="sns-box" style="text-align: center; background: rgba(230, 240, 230, 0.6); border-color: #7b9c7b;">
+                  <h3 style="justify-content: center; color: #4a6b4a; border-bottom: 1px solid #7b9c7b; margin-bottom: 10px;"><i class="fas fa-chart-line" aria-hidden="true"></i> PONTOS GERAIS (NC {{evolucao.ncAtual}})</h3>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 5px;">
+                    <div style="background: rgba(255,255,255,0.5); padding: 5px; border-radius: 3px; border: 1px solid #b8b0a1;"><strong>Attributes:</strong> <span style="font-size: 14px; font-weight:bold; color: {{#if evolucao.atributosNegativo}}#a13d3d{{else}}#332b22{{/if}};">{{evolucao.atributos}}</span></div>
+                    <div style="background: rgba(255,255,255,0.5); padding: 5px; border-radius: 3px; border: 1px solid #b8b0a1;"><strong>Skills:</strong> <span style="font-size: 14px; font-weight:bold; color: {{#if evolucao.periciasNegativo}}#a13d3d{{else}}#332b22{{/if}};">{{evolucao.pericias}}</span></div>
+                    <div style="background: rgba(255,255,255,0.5); padding: 5px; border-radius: 3px; border: 1px solid #b8b0a1;"><strong>Powers:</strong> <span style="font-size: 14px; font-weight:bold; color: {{#if evolucao.poderesNegativo}}#a13d3d{{else}}#332b22{{/if}};">{{evolucao.poderes}}</span></div>
+                    <div style="background: rgba(255,255,255,0.5); padding: 5px; border-radius: 3px; border: 1px solid #b8b0a1;"><strong>Social:</strong> <span style="font-size: 14px; font-weight:bold; color: {{#if evolucao.sociaisNegativo}}#a13d3d{{else}}#332b22{{/if}};">{{evolucao.sociais}}</span></div>
+                  </div>
+                  <div style="font-size: 10px; color: #665c4d; border-top: 1px dashed #b8b0a1; padding-top: 5px; margin-top: 5px;">
+                    <strong>Limits:</strong> Attribute [{{evolucao.limiteAtributo}}] | Skill/Power [{{evolucao.limitePericiaPoder}}]
+                  </div>
+                </div>
+
+                <div class="quote-box">
+                  "Peace is not something you wish for; it is something you build."
+                </div>
+
+              </div>
+
+              <!-- COLUNA DIREITA -->
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+                
+                <!-- VITALIDADE E CHAKRA -->
+                <div style="display: flex; gap: 15px;">
+                  <div class="energia-box vit" style="flex: 1;">
+                    <h3><svg class="sns-resource-symbol sns-vitality-symbol" viewBox="0 0 24 24" aria-label="Vitality" role="img"><path fill="#ed263b" d="M12 21.35 10.55 20.03C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"/></svg> VITALITY</h3>
+                    <div class="energia-inputs">
+                      <label>CURRENT</label><input type="number" name="system.energias.vitalidade.value" value="{{system.energias.vitalidade.value}}"/>
+                      <span>/</span>
+                      <label>MAX</label><input type="number" value="{{system.energias.vitalidade.max}}" readonly style="background:transparent; border:none;"/>
+                    </div>
+                  </div>
+                  <div class="energia-box chk" style="flex: 1;">
+                    <h3><svg class="sns-resource-symbol sns-chakra-symbol" viewBox="0 0 24 24" aria-label="Chakra" role="img"><path fill="#24b8ff" d="M12 2C9.5 6 5 11.5 5 16a7 7 0 0 0 14 0c0-4.5-4.5-10-7-14Z"/><path fill="#8de4ff" opacity=".6" d="M10 10c-2 3-3 5-3 7 0 2 1.5 3.5 3 4-1-2-1-4 0-6 1-2 1-3 0-5Z"/></svg> CHAKRA</h3>
+                    <div class="energia-inputs">
+                      <label>CURRENT</label><input type="number" name="system.energias.chakra.value" value="{{system.energias.chakra.value}}"/>
+                      <span>/</span>
+                      <label>MAX</label><input type="number" value="{{system.energias.chakra.max}}" readonly style="background:transparent; border:none;"/>
+                    </div>
+                    <div style="position: absolute; right: 10px; top: 10px; font-size: 40px; opacity: 0.2; font-family: 'Yusei Magic';">氣</div>
+                  </div>
+                </div>
+
+                <!-- RECURSO EXTRA -->
+                {{#if mostrarRecursoExtra}}
+                <div class="energia-box jashin" style="width: 100%; border-color: {{system.recursoExtra.cor}}; background: {{system.recursoExtra.cor}}11;">
+                  <h3 style="color: {{system.recursoExtra.cor}};">{{nomeRecursoExtra}}</h3>
+                  <div class="energia-inputs">
+                    <label>CURRENT</label><input type="number" name="system.recursoExtra.atual" value="{{system.recursoExtra.atual}}"/>
+                    <span>/</span>
+                    <label>MAX</label><input type="number" value="{{system.recursoExtra.max}}" readonly style="background:transparent; border:none;"/>
+                  </div>
+                </div>
+                {{/if}}
+
+                <!-- DEFESAS -->
+                <div class="sns-box" style="text-align: center;">
+                  <h3 style="justify-content: center;"><i class="fas fa-shield-alt" aria-hidden="true"></i> DEFENSES & CONDITIONS</h3>
+                  <div style="padding:8px 4px;text-align:left">
+                    <button type="button" class="sns-status-open" style="width:100%;cursor:pointer" title="Open all 26 Shinobi no Sho conditions"><i class="fas fa-list-check"></i> Status Effects ({{snsActiveCount}} active) — Open / Edit</button>
+                    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px">
+                      {{#each snsStatusEffects as |effect|}}
+                        {{#if effect.active}}<button type="button" class="sns-status-toggle" data-status-id="{{effect.id}}" title="Remove {{effect.name}}: {{effect.description}}" style="width:auto;padding:3px 8px;cursor:pointer;background:#f4d9d9;color:#5b1616;border:1px solid #b77">{{effect.name}} ×</button>{{/if}}
+                      {{/each}}
+                    </div>
+                  </div>
+                  <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+                    <div>
+                      <label style="font-size: 10px; font-weight: bold; color: #665c4d;">HARDNESS</label>
+                      <div style="display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 5px;">
+                        <input type="number" name="system.defesas.dureza" value="{{system.defesas.dureza}}" style="width: 40px; text-align: center; border: 1px solid #b8b0a1; background: rgba(0,0,0,0.05); font-size: 16px; border-radius: 3px;" title="Base"/>
+                        <span style="font-weight: bold;">=</span>
+                        <input type="number" value="{{system.defesas.durezaTotal}}" readonly style="width: 40px; text-align: center; background: transparent; border: none; font-size: 18px; font-weight: bold; color: #332b22;" title="Total (Com Buffs)"/>
+                      </div>
+                    </div>
+                    <div>
+                      <label style="font-size: 10px; font-weight: bold; color: #665c4d;">ABSORPTION</label><br>
+                      <input type="number" name="system.defesas.absorcao" value="{{system.defesas.absorcao}}" style="width: 80px; text-align: center; border: 1px solid #b8b0a1; background: rgba(0,0,0,0.05); font-size: 18px; font-weight: bold; margin-top: 5px; border-radius: 3px;"/>
+                    </div>
+                    <div>
+                      <label style="font-size: 10px; font-weight: bold; color: #a13d3d;">BLEEDING</label><br>
+                      <input type="number" name="system.defesas.sangramento" value="{{system.defesas.sangramento}}" style="width: 80px; text-align: center; border: 1px solid #c78b8b; background: rgba(250,230,230,0.5); font-size: 18px; font-weight: bold; color: #a13d3d; margin-top: 5px; border-radius: 3px;"/>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ESTATÍSTICAS DE COMBATE -->
+                <div class="sns-box">
+                  <h3><i class="fas fa-khanda" aria-hidden="true"></i> COMBAT STATISTICS</h3>
+                  <table class="sns-table estatisticas-table">
+                    <thead><tr><th>NAME</th><th style="text-align: center;">TOTAL</th><th>SKILL</th><th>VARIABLE</th><th style="text-align: center;">BONUS</th></tr></thead>
+                    <tbody>
+                      <tr>
+                        <td style="font-weight: bold;"><a class="roll-iniciativa" style="cursor: pointer; color: #a13d3d; text-decoration: underline;" title="Adicionar ao Rastreador de Combate">Initiative</a></td>
+                        <td align="center"><input type="number" class="total-box" value="{{system.energias.iniciativa.total}}" readonly /></td>
+                        <td>= <select name="system.energias.iniciativa.pericia" style="width: 110px;">{{selectOptions opcoesPericias selected=system.energias.iniciativa.pericia}}</select></td>
+                        <td>+ <select name="system.energias.iniciativa.atributo" style="width: 110px;">{{selectOptions opcoesAtributos selected=system.energias.iniciativa.atributo}}</select></td>
+                        <td align="center">+ <input type="number" name="system.energias.iniciativa.bonus" value="{{system.energias.iniciativa.bonus}}" style="width: 40px; text-align: center;"/></td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: bold;">Dodge</td>
+                        <td align="center"><input type="number" class="total-box" value="{{system.energias.reacaoEsquiva.total}}" readonly /></td>
+                        <td>= <select name="system.energias.reacaoEsquiva.pericia" style="width: 110px;">{{selectOptions opcoesCombate selected=system.energias.reacaoEsquiva.pericia}}</select></td>
+                        <td>+ <input type="number" value="{{system.energias.reacaoEsquiva.fixo}}" readonly style="width: 40px; text-align: center; background: transparent; border: none; font-weight: bold;"/></td>
+                        <td align="center">+ <input type="number" name="system.energias.reacaoEsquiva.bonus" value="{{system.energias.reacaoEsquiva.bonus}}" style="width: 40px; text-align: center;"/></td>
+                      </tr>
+                      <tr>
+                        <td style="font-weight: bold;">Movement</td>
+                        <td align="center"><input type="number" class="total-box" value="{{system.energias.deslocamento.total}}" readonly /></td>
+                        <td style="white-space: nowrap;">= <input type="number" name="system.energias.deslocamento.base" value="{{system.energias.deslocamento.base}}" style="width: 40px; text-align: center;"/> +</td>
+                        <td style="white-space: nowrap;"><select name="system.energias.deslocamento.atributo" style="width: 110px;">{{selectOptions opcoesAtributos selected=system.energias.deslocamento.atributo}}</select> ÷ <input type="number" name="system.energias.deslocamento.divisor" value="{{system.energias.deslocamento.divisor}}" style="width: 35px; text-align: center;"/></td>
+                        <td align="center">+ <input type="number" name="system.energias.deslocamento.bonus" value="{{system.energias.deslocamento.bonus}}" style="width: 40px; text-align: center;"/></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- CALCULADORA DE DANO -->
+                <div class="sns-box">
+                  <h3 style="color: #a13d3d;"><i class="fas fa-bolt" aria-hidden="true"></i> DAMAGE CALCULATOR</h3>
+                  <table class="sns-table" style="text-align: center;">
+                    <thead>
+                      <tr><th style="text-align: left;">TYPE</th><th title="Metade do Atributo">ATTR ½</th><th title="Dano da Arma">DDA</th><th>OTHER</th><th>+0,5</th><th style="font-weight: bold;">TOTAL</th><th>GR 1</th><th>GR 2</th><th>GR 3</th><th style="color: green;">GR 4</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="font-weight: bold; text-align: left;">WEAPON (STR)</td><td><input type="number" value="{{system.calculadora.danoForca.baseAtributo}}" class="attr-readonly" readonly /></td><td><input type="number" name="system.calculadora.danoForca.dda" value="{{system.calculadora.danoForca.dda}}" class="attr-input"/></td><td><input type="number" name="system.calculadora.danoForca.outro" value="{{system.calculadora.danoForca.outro}}" class="attr-input"/></td><td><input type="checkbox" name="system.calculadora.danoForca.meioGrau" {{checked system.calculadora.danoForca.meioGrau}}/></td><td><input type="number" value="{{system.calculadora.danoForca.totalBase}}" style="width: 35px; text-align: center; font-weight: bold; background: rgba(0,0,0,0.05); border: none; border-radius: 3px;" readonly /></td><td>{{system.calculadora.danoForca.grau1}}</td><td>{{system.calculadora.danoForca.grau2}}</td><td>{{system.calculadora.danoForca.grau3}}</td><td style="color: green; font-weight: bold;">{{system.calculadora.danoForca.grau4}}</td></tr>
+                      <tr><td style="font-weight: bold; text-align: left;">WEAPON (DEX)</td><td><input type="number" value="{{system.calculadora.danoDestreza.baseAtributo}}" class="attr-readonly" readonly /></td><td><input type="number" name="system.calculadora.danoDestreza.dda" value="{{system.calculadora.danoDestreza.dda}}" class="attr-input"/></td><td><input type="number" name="system.calculadora.danoDestreza.outro" value="{{system.calculadora.danoDestreza.outro}}" class="attr-input"/></td><td><input type="checkbox" name="system.calculadora.danoDestreza.meioGrau" {{checked system.calculadora.danoDestreza.meioGrau}}/></td><td><input type="number" value="{{system.calculadora.danoDestreza.totalBase}}" style="width: 35px; text-align: center; font-weight: bold; background: rgba(0,0,0,0.05); border: none; border-radius: 3px;" readonly /></td><td>{{system.calculadora.danoDestreza.grau1}}</td><td>{{system.calculadora.danoDestreza.grau2}}</td><td>{{system.calculadora.danoDestreza.grau3}}</td><td style="color: green; font-weight: bold;">{{system.calculadora.danoDestreza.grau4}}</td></tr>
+                      <tr><td style="font-weight: bold; text-align: left;">POWER (SPI)</td><td><input type="number" value="{{system.calculadora.danoEspirito.baseAtributo}}" class="attr-readonly" readonly /></td><td><input type="number" name="system.calculadora.danoEspirito.dda" value="{{system.calculadora.danoEspirito.dda}}" class="attr-input"/></td><td><input type="number" name="system.calculadora.danoEspirito.outro" value="{{system.calculadora.danoEspirito.outro}}" class="attr-input"/></td><td><input type="checkbox" name="system.calculadora.danoEspirito.meioGrau" {{checked system.calculadora.danoEspirito.meioGrau}}/></td><td><input type="number" value="{{system.calculadora.danoEspirito.totalBase}}" style="width: 35px; text-align: center; font-weight: bold; background: rgba(0,0,0,0.05); border: none; border-radius: 3px;" readonly /></td><td>{{system.calculadora.danoEspirito.grau1}}</td><td>{{system.calculadora.danoEspirito.grau2}}</td><td>{{system.calculadora.danoEspirito.grau3}}</td><td style="color: green; font-weight: bold;">{{system.calculadora.danoEspirito.grau4}}</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div> <!-- FIM SUB-ABA STATUS -->
+
+          <!-- SUB-ABA PERICIAS -->
+          <div class="tab pericias" data-group="secundario" data-tab="pericias">
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+              
+              <!-- COMBATE -->
+              <div class="sns-box" style="flex: 1; min-width: 280px;">
+                <h3>COMBAT SKILLS <span style="font-size: 11px; font-weight: normal; color: {{#if evolucao.periciasNegativo}}red{{else}}#777{{/if}};">(Remaining: {{evolucao.pericias}})</span></h3>
+                <table class="sns-table" style="text-align: center;">
+                  <thead><tr><th style="text-align: left;">NAME</th><th>TOTAL</th><th>BASE</th><th>ATTRIBUTE</th><th>BONUS</th></tr></thead>
+                  <tbody>
+                    {{#each listaCombate as |combate|}}
+                    <tr>
+                      <td style="font-weight: bold; text-align: left;"><a class="rollable" data-nome="{{combate.nomeAmigavel}}" data-precisao="{{combate.dados.total}}" style="cursor: pointer;">{{combate.nomeAmigavel}}</a></td>
+                      <td><input type="number" value="{{combate.dados.total}}" class="attr-readonly" style="font-weight: bold;" readonly /></td>
+                      <td><input type="number" name="system.combate.{{combate.chave}}.base" value="{{combate.dados.base}}" class="attr-input {{#if combate.erroLimite}}error{{/if}}"/></td>
+                      <td><select name="system.combate.{{combate.chave}}.attr" style="width: 90px; padding: 2px; border: 1px solid #b8b0a1; background: transparent;">{{selectOptions ../opcoesAtributos selected=combate.dados.attr}}</select></td>
+                      <td><input type="number" name="system.combate.{{combate.chave}}.outro" value="{{combate.dados.outro}}" class="attr-input"/></td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- SOCIAIS -->
+              <div class="sns-box" style="flex: 1; min-width: 280px;">
+                <h3>SOCIAL SKILLS <span style="font-size: 11px; font-weight: normal; color: #777;">(Uses Skill Points)</span></h3>
+                <table class="sns-table" style="text-align: center;">
+                  <thead><tr><th style="text-align: left;">ABILITY</th><th>TOTAL</th><th>BASE</th><th>PTS</th><th>OTHER</th></tr></thead>
+                  <tbody>
+                    {{#each listaSociais as |social|}}
+                    <tr>
+                      <td style="font-weight: bold; text-align: left;"><a class="rollable" data-nome="{{social.nomeAmigavel}}" data-precisao="{{social.dados.total}}" style="cursor: pointer;">{{social.nomeAmigavel}}</a> <span style="font-size: 9px; opacity: 0.7;">({{social.siglaAttr}})</span></td>
+                      <td><input type="number" value="{{social.dados.total}}" class="attr-readonly" style="font-weight: bold;" readonly /></td>
+                      <td><input type="number" value="{{social.dados.base}}" class="attr-readonly" readonly /></td>
+                      <td><input type="number" name="system.periciasSociais.{{social.chave}}.pontos" value="{{social.dados.pontos}}" class="attr-input {{#if social.erroLimite}}error{{/if}}"/></td>
+                      <td><input type="number" name="system.periciasSociais.{{social.chave}}.outro" value="{{social.dados.outro}}" class="attr-input"/></td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- GERAIS -->
+              <div class="sns-box" style="flex: 1; min-width: 280px;">
+                <h3>GENERAL SKILLS <span style="font-size: 11px; font-weight: normal; color: {{#if evolucao.periciasNegativo}}red{{else}}#777{{/if}};">(Remaining: {{evolucao.pericias}})</span></h3>
+                <table class="sns-table" style="text-align: center;">
+                  <thead><tr><th style="text-align: left;">ABILITY</th><th>TOTAL</th><th>BASE</th><th>PTS</th><th>OTHER</th></tr></thead>
+                  <tbody>
+                    {{#each listaPericias as |pericia|}}
+                    <tr>
+                      <td style="font-weight: bold; text-align: left;"><a class="rollable" data-nome="{{pericia.nomeAmigavel}}" data-precisao="{{pericia.dados.total}}" style="cursor: pointer;">{{pericia.nomeAmigavel}}</a> <span style="font-size: 9px; opacity: 0.7;">({{pericia.siglaAttr}})</span></td>
+                      <td><input type="number" value="{{pericia.dados.total}}" class="attr-readonly" style="font-weight: bold;" readonly /></td>
+                      <td><input type="number" value="{{pericia.dados.base}}" class="attr-readonly" readonly /></td>
+                      <td><input type="number" name="system.pericias.{{pericia.chave}}.pontos" value="{{pericia.dados.pontos}}" class="attr-input {{#if pericia.erroLimite}}error{{/if}}" {{#if pericia.isLocked}}readonly style="background: #e0e0e0;" title="Requires enabling 'Chemist'"{{/if}}/></td>
+                      <td><input type="number" name="system.pericias.{{pericia.chave}}.outro" value="{{pericia.dados.outro}}" class="attr-input" {{#if pericia.isLocked}}readonly style="background: #e0e0e0;"{{/if}}/></td>
+                    </tr>
+                    {{#if pericia.showMechanismsRules}}
+                    <tr>
+                      <td colspan="5" style="text-align: left;">
+                        <details>
+                          <summary>Mechanics rules</summary>
+                          <p>Trained, Intelligence-based skill. Disable, reactivate or sabotage a device. You can rig it to fail after use. Repairs are outside this skill.</p>
+                          <p>Operating a mechanism takes 2 turns. Apply −4 to the check without a toolkit.</p>
+                          <ul>
+                            <li>Difficulty 8 to jam a lock or projectile launcher.</li>
+                            <li>Difficulty 12 to sabotage a wagon wheel or drawbridge.</li>
+                            <li>Difficulty 16 to disable or reactivate a standard trap.</li>
+                            <li>Difficulty 20 to disable or reactivate an advanced trap.</li>
+                          </ul>
+                          <p>Building a trap requires Engineer, materials, GM approval, 10 minutes and one toolkit use. No construction check is required. You cannot build the trap under pressure.</p>
+                          <p>For the Sky Ninja handheld kunai launcher, use Mechanisms to jam the device. Firing uses a normal ranged weapon attack.</p>
+                        </details>
+                      </td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div> <!-- FIM SUB-ABA PERICIAS -->
+
+        </section>
+      </div>
+    </div> <!-- FIM ABA PRINCIPAL -->
+
+    <!-- ABA INVENTÁRIO -->
+    <div class="tab inventario" data-group="primary" data-tab="inventario">
+      <div class="sns-box">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;padding:10px;border:1px solid #b8a678;border-radius:6px;background:rgba(217,185,103,.13)">
+          <label for="sns-ryo-balance" style="font-weight:bold"><i class="fas fa-coins"></i> RYO BALANCE (両)</label>
+          <input id="sns-ryo-balance" type="number" min="0" step="1" name="system.ryo" value="{{system.ryo}}" style="width:140px;text-align:right" title="Current Ryo held by this character"/>
+          <span title="Sum of quantity × item value">Inventory value: <strong>{{inventoryValueRyo}} Ryo</strong></span>
+        </div>
+        <div style="border:1px solid #b8a678;padding:10px;margin-bottom:10px;border-radius:6px">
+          <strong><i class="fas fa-shield-alt"></i> Equipped Armor:</strong> {{#if equippedArmor}}{{equippedArmor.name}}{{else}}None{{/if}}
+          <span style="margin-left:10px">Body Hardness bonus: +{{armorHardnessBonus}}</span>
+          <span style="margin-left:10px">Armor Absorption: {{armorAbsorptionRemaining}} / {{armorAbsorptionMax}}</span>
+          <button type="button" class="sns-armor-damage" style="width:auto;margin:5px">Take Damage</button>
+          {{#if equippedArmor}}<button type="button" class="sns-armor-repair" style="width:auto;margin:5px" title="GM only">Restore Armor Absorption (GM)</button>{{/if}}
+          <small style="display:block">Only one armor can be equipped. Hardness is included in the defense total. Armor Absorption is spent, then character Absorption reduces remaining damage, before the selected Vitality or Chakra resource when using Take Damage. Armor penalties and special exceptions are listed on the item and may require GM adjudication.</small>
+        </div>
+        <h3><i class="fas fa-briefcase" aria-hidden="true"></i> EQUIPMENT <a class="item-create" data-type="equipamento" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px;">+ Add Item</a></h3>
+        <table class="sns-table" style="text-align: center;">
+          <thead><tr><th style="text-align: left;">ITEM NAME</th><th style="width: 60px;">QTY</th><th style="width: 60px;">SLOTS</th><th style="width: 90px;">VALUE (RYO)</th><th style="width: 150px;">ACTIONS</th></tr></thead>
+          <tbody>
+            {{#each equipamentos as |item|}}
+            <tr class="item-row" data-item-id="{{item.id}}">
+              <td style="font-weight:bold;text-align:left;cursor:pointer" class="item-to-chat" title="Send item to chat"><img src="{{item.img}}" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;border-radius:3px"/>{{item.name}}</td>
+              <td>{{item.system.quantidade}}</td>
+              <td title="Total occupied slots for this stack">{{item.slotsUsed}}</td><td title="Value per unit: {{item.system.valorRyo}} Ryo">{{item.system.valorRyo}}</td>
+              <td>
+                <a class="weapon-attack" title="Calculate weapon damage" style="cursor:pointer;margin-right:8px"><i class="fas fa-dice-d20"></i></a>
+                <button type="button" class="weapon-equip" data-item-id="{{item.id}}" aria-pressed="{{#if item.system.equipped}}true{{else}}false{{/if}}" title="{{#if item.system.equipped}}Unequip{{else}}Equip{{/if}} {{item.name}}" style="width:auto;display:inline-flex;align-items:center;gap:4px;margin-right:6px;padding:2px 5px;font-size:11px;line-height:16px">{{#if item.system.equipped}}<i class="fas fa-check-circle"></i> Unequip{{else}}<i class="far fa-circle"></i> Equip{{/if}}</button>
+                {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" title="Edit" style="cursor:pointer;margin-right:10px"><i class="fas fa-edit"></i></a>
+                <a class="item-delete" title="Delete" style="cursor:pointer"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" style="font-weight: bold; text-align: right; padding-top: 15px;">INVENTORY SLOTS (USED / MAX):</td>
+              <td colspan="2" style="font-weight: bold; font-size: 18px; padding-top: 15px; color: {{#if compartimentosExcedidos}}#a13d3d{{else}}#3d6ba1{{/if}};">{{compartimentosUsados}} / {{compartimentosMaximos}}</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p><strong>Slot calculation:</strong> Base {{compartimentosBase}} + Added {{slotsAdded}} − Removed {{slotsRemoved}} = Maximum {{compartimentosMaximos}}. Used {{compartimentosUsados}}; Available {{compartimentosDisponiveis}}.</p>
+        <p><small>Stack slot usage = ceil(quantity / units per slot) × item slot cost. Slot modifiers add or remove capacity.</small></p>
+        <p>Equipment encumbrance beyond 3 occupied slots: -{{encumbranceMovementPenalty}} m movement, -{{encumbranceAccuracyPenalty}} accuracy. Apply these penalties manually during combat.</p>
+      </div>
+    </div>
+
+    <!-- ABA PODERES -->
+    <div class="tab poderes" data-group="primary" data-tab="poderes">
+      <button type="button" class="sns-ability-browser-open" style="margin:8px 0;width:auto"><i class="fas fa-book-open"></i> Browse Clan &amp; Hijutsu Compendiums</button>
+      
+      <!-- NOVA SECÇÃO: ELEMENTOS -->
+      <div class="sns-box" style="margin-bottom: 15px; border-color: darkorange; background: rgba(255, 245, 230, 0.8);">
+        <h3 style="color: darkorange;"><i class="fas fa-fire" aria-hidden="true"></i> ELEMENTS <span style="font-size: 11px; font-weight: normal; color: #777;">(Affinities)</span> <a class="item-create" data-type="elemento" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px; color: darkorange;">+ Add Element</a></h3>
+        <table class="sns-table" style="text-align: center;">
+          <thead><tr><th style="text-align: left;">NAME</th><th>LEVEL</th><th>EFFECTS</th><th>COST</th><th>ACTIONS</th></tr></thead>
+          <tbody>
+            {{#each elementos as |item|}}
+            <tr class="item-row" data-item-id="{{item.id}}">
+              <td style="font-weight: bold; cursor: pointer; text-align: left; color: darkorange;" class="item-to-chat"><img src="{{item.img}}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px; border-radius:3px;"/>{{item.name}}</td>
+              <td>{{item.system.nivel}}</td><td>{{item.system.efeitos}}</td><td style="font-weight: bold;">{{item.system.custoChakra}} Chakra / {{item.system.custoVitalidade}} Vitality</td>
+              <td><a class="ninpou-damage" title="Calculate Spirit + Power Level base damage" style="cursor:pointer; margin-right:7px; font-weight:bold;">Damage</a> <a class="item-use" title="Use ability and pay Chakra/Vitality" style="cursor:pointer; margin-right:7px; font-weight:bold;">Use</a> {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" style="cursor: pointer; margin-right: 10px;"><i class="fas fa-edit" aria-label="Edit"></i></a><a class="item-delete" style="cursor: pointer;"><i class="fas fa-trash" aria-label="Delete"></i></a></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sns-box" style="margin-bottom: 15px;">
+        <h3><i class="fas fa-scroll" aria-hidden="true"></i> POWERS (Jutsu / Hijutsu) <span style="font-size: 11px; font-weight: normal;">(Remaining: {{evolucao.poderes}})</span> <a class="item-create" data-type="poder" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px;">+ Add Power</a></h3>
+        <table class="sns-table" style="text-align: center;">
+          <thead><tr><th style="text-align: left;">NAME</th><th>TYPE</th><th>ELEMENT</th><th>COST</th><th>ACTIONS</th></tr></thead>
+          <tbody>
+            {{#each poderes as |item|}}
+            <tr class="item-row" data-item-id="{{item.id}}">
+              <td style="font-weight: bold; cursor: pointer; text-align: left;" class="item-to-chat"><img src="{{item.img}}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"/>{{item.name}}</td>
+              <td>{{item.system.tipo}}</td><td>{{item.system.elemento}}</td><td style="font-weight: bold;">{{item.system.custoChakra}} Chakra / {{item.system.custoVitalidade}} Vitality</td>
+              <td><a class="ninpou-damage" title="Calculate Spirit + Power Level base damage" style="cursor:pointer; margin-right:7px; font-weight:bold;">Damage</a> <a class="item-use" title="Use ability and pay Chakra/Vitality" style="cursor:pointer; margin-right:7px; font-weight:bold;">Use</a> {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" style="cursor: pointer; margin-right: 10px;"><i class="fas fa-edit" aria-label="Edit"></i></a><a class="item-delete" style="cursor: pointer;"><i class="fas fa-trash" aria-label="Delete"></i></a></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display: flex; gap: 15px;">
+        <div class="sns-box" style="flex: 1;">
+          <h3><i class="far fa-star" aria-hidden="true"></i> FREE APTITUDES <a class="item-create" data-type="aptidao" data-gratuita="true" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px;">+ Add</a></h3>
+          <table class="sns-table" style="text-align: center;">
+            <thead><tr><th style="text-align: left;">NAME</th><th>TYPE</th><th>COST</th><th>ACTIONS</th></tr></thead>
+            <tbody>
+              {{#each aptidoesGratuitas as |item|}}
+              <tr class="item-row" data-item-id="{{item.id}}">
+                <td style="font-weight: bold; cursor: pointer; text-align: left;" class="item-to-chat"><img src="{{item.img}}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"/>{{item.name}}</td>
+                <td>{{item.system.tipo}}</td><td style="font-weight: bold;">{{item.system.custoChakra}} Chakra / {{item.system.custoVitalidade}} Vitality</td>
+                <td><a class="item-use" title="Use ability and pay Chakra/Vitality" style="cursor:pointer; margin-right:7px; font-weight:bold;">Use</a> {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" style="cursor: pointer; margin-right: 10px;"><i class="fas fa-edit" aria-label="Edit"></i></a><a class="item-delete" style="cursor: pointer;"><i class="fas fa-trash" aria-label="Delete"></i></a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <div class="sns-box" style="flex: 1;">
+          <h3><i class="fas fa-star" aria-hidden="true"></i> APTITUDES (Purchased) <a class="item-create" data-type="aptidao" data-gratuita="false" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px;">+ Add</a></h3>
+          <table class="sns-table" style="text-align: center;">
+            <thead><tr><th style="text-align: left;">NAME</th><th>TYPE</th><th>COST</th><th>ACTIONS</th></tr></thead>
+            <tbody>
+              {{#each aptidoes as |item|}}
+              <tr class="item-row" data-item-id="{{item.id}}">
+                <td style="font-weight: bold; cursor: pointer; text-align: left;" class="item-to-chat"><img src="{{item.img}}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"/>{{item.name}}</td>
+                <td>{{item.system.tipo}}</td><td style="font-weight: bold;">{{item.system.custoChakra}} Chakra / {{item.system.custoVitalidade}} Vitality</td>
+                <td><a class="item-use" title="Use ability and pay Chakra/Vitality" style="cursor:pointer; margin-right:7px; font-weight:bold;">Use</a> {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" style="cursor: pointer; margin-right: 10px;"><i class="fas fa-edit" aria-label="Edit"></i></a><a class="item-delete" style="cursor: pointer;"><i class="fas fa-trash" aria-label="Delete"></i></a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div> <!-- FIM DA ABA PODERES -->
+
+    <!-- ABA DATABOOK -->
+    <div class="tab databook" data-group="primary" data-tab="databook">
+      <div style="display: flex; flex-direction: column; gap: 15px; height: 100%;">
+        <div class="sns-box" style="flex: 1; display: flex; flex-direction: column; min-height: 250px;">
+          <h3><i class="fas fa-book-open" aria-hidden="true"></i> BIOGRAPHY & HISTORY</h3>
+          <div style="flex: 1; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.3); padding: 5px; overflow-y: auto;">
+            {{editor biografiaHTML target="system.databook.biografia" button=false editable=editable engine="prosemirror"}}
+          </div>
+        </div>
+        <div style="display: flex; gap: 15px; flex: 1;">
+          <div class="sns-box" style="flex: 1; display: flex; flex-direction: column; min-height: 250px;">
+            <h3><i class="fas fa-handshake" aria-hidden="true"></i> RELATIONSHIPS & BONDS</h3>
+            <div style="flex: 1; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.3); padding: 5px; overflow-y: auto;">
+              {{editor relacoesHTML target="system.databook.relacoesTexto" button=false editable=editable engine="prosemirror"}}
+            </div>
+          </div>
+          <div class="sns-box" style="flex: 1; display: flex; flex-direction: column; min-height: 250px;">
+            <h3><i class="fas fa-lightbulb" aria-hidden="true"></i> TRIVIA & NOTES</h3>
+            <div style="flex: 1; border: 1px solid #b8b0a1; background: rgba(255,255,255,0.3); padding: 5px; overflow-y: auto;">
+              {{editor curiosidadesHTML target="system.databook.curiosidades" button=false editable=editable engine="prosemirror"}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABA CONFIGS -->
+    <div class="tab configuracoes" data-group="primary" data-tab="configuracoes">
+      <div class="sns-box">
+        <h2><i class="fas fa-cog" aria-hidden="true"></i> SHEET SETTINGS</h2>
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+          <div style="border: 1px solid #b8b0a1; border-radius: 5px; background: rgba(255,255,255,0.3); padding: 10px;">
+            <h3 style="border-bottom: 1px solid #b8b0a1; font-size: 14px;">Advancement Rules (Powers)</h3>
+            <div style="display: flex; gap: 15px;">
+              <label><input type="checkbox" name="system.configuracoes.regraTresPontos" {{checked system.configuracoes.regraTresPontos}} data-dtype="Boolean"> 3 Points</label>
+              <label><input type="checkbox" name="system.configuracoes.regraQuatroPontos" {{checked system.configuracoes.regraQuatroPontos}} data-dtype="Boolean"> 4 Points</label>
+            </div>
+          </div>
+          <div style="border: 1px solid #b8b0a1; border-radius: 5px; background: rgba(255,255,255,0.3); padding: 10px;">
+            <h3 style="border-bottom: 1px solid #b8b0a1; font-size: 14px;">Unrestricted Aptitudes</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+              <label><input type="checkbox" name="system.configuracoes.acuidade" {{checked system.configuracoes.acuidade}}> Finesse (Melee uses DEX)</label>
+              <label><input type="checkbox" name="system.configuracoes.combateDefensivo" {{checked system.configuracoes.combateDefensivo}}> Defensive Combat (-2 Melee, +3 Dodge)</label>
+              <label><input type="checkbox" name="system.configuracoes.diligente" {{checked system.configuracoes.diligente}}> Diligent (+3 Initiative)</label>
+              <label><input type="checkbox" name="system.configuracoes.quimico" {{checked system.configuracoes.quimico}}> Chemist (Unlocks Poisoncraft)</label>
+              <label><input type="checkbox" name="system.configuracoes.velocista" {{checked system.configuracoes.velocista}}> Sprinter (Movement /1)</label>
+              <label><input type="checkbox" name="system.configuracoes.shunjutsu1" {{checked system.configuracoes.shunjutsu1}}> Shunjutsu Lv. 1 (Movement uses SPI)</label>
+              <label><input type="checkbox" name="system.configuracoes.burroCarga" {{checked system.configuracoes.burroCarga}}> Pack Mule (Increases Inventory)</label>
+            </div>
+          </div>
+          <div style="border: 1px solid #b8b0a1; border-radius: 5px; background: rgba(255,255,255,0.3); padding: 10px;">
+            <h3 style="border-bottom: 1px solid #b8b0a1; font-size: 14px;">Simple Conditions</h3>
+            <label><input type="checkbox" name="system.configuracoes.acelerado" {{checked system.configuracoes.acelerado}}> Accelerated (+2 Init., Movement /1)</label>
+          </div>
+          <div style="border: 1px solid #b8b0a1; border-radius: 5px; background: rgba(255,255,255,0.3); padding: 10px;">
+            <h3 style="border-bottom: 1px solid #b8b0a1; font-size: 14px;">Restricted Aptitudes and Conditions</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+              <label><input type="checkbox" name="system.configuracoes.armaduraOssea" {{checked system.configuracoes.armaduraOssea}}> Bone Armor (+ Hardness from VIG)</label>
+              <label><input type="checkbox" name="system.configuracoes.byakugou" {{checked system.configuracoes.byakugou}}> Byakugou no In (-15 Chakra)</label>
+              <label><input type="checkbox" name="system.configuracoes.chakraExpandido" {{checked system.configuracoes.chakraExpandido}}> Expanded Chakra (+50% Chakra)</label>
+              <label><input type="checkbox" name="system.configuracoes.cloneReserva" {{checked system.configuracoes.cloneReserva}}> Reserve Clone (-3 Vit, -5 Chakra)</label>
+              <label><input type="checkbox" name="system.configuracoes.controlePerfeito1" {{checked system.configuracoes.controlePerfeito1}}> Perfect Control Lv. 1 (Chakra = INT)</label>
+              <label><input type="checkbox" name="system.configuracoes.controlePerfeito2" {{checked system.configuracoes.controlePerfeito2}}> Perfect Control Lv. 2 (+INT Chakra)</label>
+              <label><input type="checkbox" name="system.configuracoes.corpulencia" {{checked system.configuracoes.corpulencia}}> Stout Build (+VIG×3 Vitality)</label>
+              <label><input type="checkbox" name="system.configuracoes.furtividadePerceptiva" {{checked system.configuracoes.furtividadePerceptiva}}> Perceptive Stealth (Uses PER)</label>
+              <label><input type="checkbox" name="system.configuracoes.mantoBijuu" {{checked system.configuracoes.mantoBijuu}}> Bijuu Cloak (+1 Hardness)</label>
+              <label><input type="checkbox" name="system.configuracoes.modoBijuu" {{checked system.configuracoes.modoBijuu}}> Bijuu Mode (+2 AGI, +2 Hardness)</label>
+              <label><input type="checkbox" name="system.configuracoes.formaBijuu" {{checked system.configuracoes.formaBijuu}}> Bijuu Form (+3 Hardness)</label>
+              <label><input type="checkbox" name="system.configuracoes.predadorAquatico" {{checked system.configuracoes.predadorAquatico}}> Aquatic Predator (+ Hardness from VIG)</label>
+              <label><input type="checkbox" name="system.configuracoes.resiliencia" {{checked system.configuracoes.resiliencia}}> Resilience (+Hardness, -Movement, -Dodge)</label>
+              <label><input type="checkbox" name="system.configuracoes.resistenciaInsaciavel" {{checked system.configuracoes.resistenciaInsaciavel}}> Insatiable Endurance (+ Hardness from VIG)</label>
+              <label><input type="checkbox" name="system.configuracoes.rinnegan" {{checked system.configuracoes.rinnegan}}> Rinnegan (-10% Chakra)</label>
+              <label><input type="checkbox" name="system.configuracoes.sharinganEsquiva" {{checked system.configuracoes.sharinganEsquiva}}> Sharingan (Dodge = Read Movement)</label>
+              <label><input type="checkbox" name="system.configuracoes.shykakyu" {{checked system.configuracoes.shykakyu}}> Shykakyu (+1 Intimidation, +2 Init.)</label>
+            </div>
+          </div>
+          
+          <div style="border: 1px solid #b8b0a1; border-radius: 5px; background: rgba(255,255,255,0.3); padding: 10px;">
+            <h3 style="border-bottom: 1px solid #b8b0a1; font-size: 14px;">Extra Resource (Max. 1)</h3>
+            <div style="display: flex; gap: 15px; align-items: center;">
+              <select name="system.recursoExtra.ativo" style="padding: 3px; border-radius: 3px; border: 1px solid #b8b0a1; background: transparent;">
+                <option value="nenhum" {{#if recIsNenhum}}selected{{/if}}>None</option>
+                <option value="jashin" {{#if recIsJashin}}selected{{/if}}>Jashin Doll</option>
+                <option value="kikaichuu" {{#if recIsKikaichuu}}selected{{/if}}>Kikaichuu (Aburame)</option>
+                <option value="kamiArte" {{#if recIsKamiArte}}selected{{/if}}>Kami Points (Art)</option>
+                <option value="kamiEsp" {{#if recIsKamiEsp}}selected{{/if}}>Kami Points (Spirit)</option>
+                <option value="mangekyou" {{#if recIsMangekyou}}selected{{/if}}>Mangekyou Vision Points</option>
+                <option value="kujaku" {{#if recIsKujaku}}selected{{/if}}>Kujaku Health Points</option>
+                <option value="suika" {{#if recIsSuika}}selected{{/if}}>Suika Points (Hozuki)</option>
+              </select>
+              <label>Color (HEX):</label>
+              <input type="color" name="system.recursoExtra.cor" value="{{system.recursoExtra.cor}}" style="height: 25px; border: none; padding: 0; background: transparent; cursor: pointer;"/>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+</form>

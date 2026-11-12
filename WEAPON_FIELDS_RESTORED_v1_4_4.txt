@@ -1,0 +1,1 @@
+Restores equipment weapon configuration fields hidden by mismatched template flags (isEquipment/isEquipamento). Also restores elemental item feature fields (isElement/isElemento). Existing actor equipment, equip toggles, damage rolls, armor fields and English labels remain unchanged. No existing items are overwritten. Runtime Foundry test not performed.

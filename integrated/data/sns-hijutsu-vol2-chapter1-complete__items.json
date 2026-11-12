@@ -1,0 +1,283 @@
+[
+  {
+    "name": "Natural Element: Fuuton",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Shimura limited aptitude. Prerequisites: Spirit 1; Wind Release 1. All Fuuton effects ignore 2 hardness levels, except Jinchuuriki power effects. If an effect already ignores hardness, it ignores 2 additional hardness points (for example Sharpening increases from 1 to 3). The character cannot learn or use any other elemental power."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "shimura-natural-element-fuuton",
+        "clan": "Shimura",
+        "category": "Restricted and Limited Aptitudes",
+        "page": 8,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Kuchiyose: Baku",
+    "type": "poder",
+    "system": {
+      "descricao": "Shimura secret-technique option 1: Natural Element (Fuuton) and Kuchiyose (Baku). Under option 2, Kuchiyose Baku can instead be purchased as a common power. Only one Baku may be summoned per scene.\nBaku's key attributes: Strength, Perception, Intelligence, Spirit. Trained skills: Athletics, Concentration, Alertness, Tracking. No powers.\nAvailable techniques: Akumu no Kyūin; Amedrontar level 2 (Magen; difficulty 6 + Intelligence; against smaller creatures only); Kinobori.\nNatural attacks: trunk strike (crushing; long natural weapon) and claws (slashing).\nOther listed abilities: Attack in Motion, Improved Critical, Specialist, Insight, Fighter, Opportunist, Cleave, Use Heavy Armor, Aggressive Grab, Throw, Stunning Attack, Spinning Attack, Multi-Attack, Power Attack, Counterattack, Aggressive Takedown, Phalanx Instance, Empower [META], Pack Animal, Hard to Kill, Innate Skill, Expert, Greater Resistance. These are options for the summoned Baku, not automatically granted to the Shimura character."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "shimura-kuchiyose-baku",
+        "clan": "Shimura",
+        "category": "Clan Summoning Powers",
+        "page": 8,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Shimura option 1; common purchase possible under option 2",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Akumu no Kyūin (Nightmare Suction)",
+    "type": "elemento",
+    "system": {
+      "descricao": "Prerequisite: Kuchiyose 6 (Baku); usable only by a Baku of NC 12 or higher. Action: Standard. Area: cone 10 m + 1 m per Spirit or Intelligence level. Duration: Concentration. Chakra cost: half Spirit + 4 each turn.\nAll creatures in the area except the summoner must pass Strength or Escape against difficulty 8 + the summoning Spirit or be knocked down for 1 turn. Retest at the end of each Baku turn while maintained. Fuuton and Katon techniques cast along the suction direction have minimum damage level 2. Imaginary mist and similar effects in the area take damage equal to the summoned Spirit at the end of each Baku turn."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "shimura-akumu-no-ky-in-nightmare-suction",
+        "clan": "Shimura",
+        "category": "Techniques and Level Effects",
+        "page": 9,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Zekka Konzetsu no Jutsu",
+    "type": "elemento",
+    "system": {
+      "descricao": "Fuuinjutsu level 5 Shimura cursed-seal technique. Prerequisites: Fuuinjutsu 5; Occultism 10. Action: Complete. Range: Touch. Duration: Permanent until the applying Shimura dies. Chakra: 5.\nThe caster specifies the protected category of information when applying the seal to the tongue. Attempting to disclose protected information causes paralysis and inability to speak for 1 minute. It cannot be applied in combat; the recipient must consent. Removing the seal takes 1 hour by a character with Fuuinjutsu 8 or higher, followed by Occultism difficulty 30. Failure kills the seal's bearer.",
+      "nivel": 5,
+      "nivelPoder": 5
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "shimura-zekka-konzetsu-no-jutsu",
+        "clan": "Shimura",
+        "category": "Techniques and Level Effects",
+        "page": 9,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references",
+        "levelBasis": "Fuuinjutsu level"
+      }
+    }
+  },
+  {
+    "name": "Jigō Jubaku no In (Self-Cursing Seal)",
+    "type": "elemento",
+    "system": {
+      "descricao": "Fuuinjutsu level 7 Shimura cursed-seal technique. Prerequisites: Fuuinjutsu 7; Occultism 14. Action: Standard. Range: Touch. Duration: Sustained. Chakra: 7.\nSecretly place the seal during combat by winning contested Sleight of Hand versus target Alertness, then passing a Clear Defense check against the target's Defense. Activate as a free action during the scene to paralyze the target while sustained. If not immediately activated, the target senses it and may spend a Standard Action to Search against difficulty 9 + caster Sleight of Hand; success permits free-action removal. Chakra vision automatically succeeds on that search.\nOnce paralyzed, the victim can spend a Standard Action to make a Spirit check, difficulty 9 + twice the power level, reduced by 1 on each later turn. The Juuken technique Ichigekishin automatically escapes the condition.",
+      "nivel": 7,
+      "nivelPoder": 7
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "shimura-jig-jubaku-no-in-self-cursing-seal",
+        "clan": "Shimura",
+        "category": "Techniques and Level Effects",
+        "page": 10,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references",
+        "levelBasis": "Fuuinjutsu level"
+      }
+    }
+  },
+  {
+    "name": "Ura Shisō Fuuinjutsu",
+    "type": "elemento",
+    "system": {
+      "descricao": "Fuuinjutsu level 7 Shimura cursed-seal technique. Prerequisites: Fuuinjutsu 9; Occultism 18. Action: See text. Range: See text. Area: sphere radius/size described as 15 m sphere + 3 m per Spirit level. Duration: Permanent until triggered. Chakra: 20 to create.\nOne-hour ritual on oneself, a willing target, or a defenseless recipient. The seal triggers on the recipient's death. Observers may identify it with Occultism difficulty 25. After one full round the sphere implodes, sealing and killing those within it. A creature in range may attempt Agility or Readiness against difficulty 8 + twice the creator's power level to escape at the last instant; those unaware of the seal suffer -2. Affected creatures unable to move automatically fail. Sealed Doujutsu is destroyed. The book also permits sealing a Bijuu, killing it.",
+      "nivel": 7,
+      "nivelPoder": 7
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "shimura-ura-shis-fuuinjutsu",
+        "clan": "Shimura",
+        "category": "Techniques and Level Effects",
+        "page": 10,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references",
+        "levelBasis": "Fuuinjutsu level"
+      }
+    }
+  },
+  {
+    "name": "Izanagi",
+    "type": "aptidao",
+    "system": {
+      "descricao": "NPC ONLY. Prerequisites: Sandan Sharingan; Intelligence 14. This is a limited Uchiha aptitude, not a player-character option.\nUse as False Death (Sharingan Hypnosis, Basic Book p.187), except uses per scene equal half the higher Spirit or Intelligence level. Uses of ordinary False Death and Izanagi are tracked separately. Chakra cost: 10, paid on first use.\nWhen the technique ends, one eye becomes permanently blinded (-1). A Mangekyou user also loses an eye's exclusive ability and Susanoo; if already blind in one eye, the user becomes blind and loses all Sharingan techniques. The source describes implanted eyes (Medicine difficulty 30) and eye-transplant or GM-approved Hashirama-cell recovery exceptions."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "uchiha-izanami-izanagi-izanagi",
+        "clan": "Uchiha",
+        "category": "Restricted and Limited Aptitudes",
+        "page": 12,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "NPC only",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Izanami",
+    "type": "aptidao",
+    "system": {
+      "descricao": "NPC ONLY. Prerequisites: Sandan Sharingan; Intelligence 14. This is a limited Uchiha aptitude, not a player-character option.\nSpend a Standard Action and 10 chakra. The target checks Intelligence against difficulty 11 + user's Intelligence (including Deep Illusion). On failure, the caster must spend a second Standard Action on the next turn to complete the recurring illusion. The target is paralyzed while trapped, but life-threatening attacks cancel the illusion. The target receives another Intelligence check every 24 hours, with difficulty reduced by 1 each time. Escaping causes a change to the target's moral or ethical alignment, subject to GM approval.\nAfter the second Standard Action the caster permanently loses sight in one eye (-1). Mangekyou and pre-existing blindness consequences follow Izanagi; recovery follows eye-transplant or GM-approved Hashirama-cell rules."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "uchiha-izanami-izanagi-izanami",
+        "clan": "Uchiha",
+        "category": "Restricted and Limited Aptitudes",
+        "page": 13,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "NPC only",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Regeneration of Vigor",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Uzumaki limited aptitude (Healing Chakra). Prerequisites: Vigor 1; Spirit 3.\nAn adjacent ally (within 1 m) spends a Standard Action to bite the Uzumaki. The Uzumaki suffers 3 fixed damage and spends chakra equal to half their Spirit. At turn end, the ally recovers Vitality equal to Uzumaki Spirit and chakra equal to half that amount. The ally may maintain concentration across turns to repeat healing; further turns do not inflict fixed damage but cost the Uzumaki one-quarter Spirit in chakra.\nAn opponent may force a bite by grappling. The power can operate even with zero chakra, pushing chakra negative under Basic Book p.260. Bite marks remain permanently. Excessive use can be fatal."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "uzumaki-healing-chakra-regeneration-of-vigor",
+        "clan": "Uzumaki",
+        "category": "Restricted and Limited Aptitudes",
+        "page": 14,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Kujaku Myoho",
+    "type": "poder",
+    "system": {
+      "descricao": "Hoshigakure restricted power. Prerequisites: Expanded Chakra (Uzumaki Clan, Basic Book); Stamina 1. Purchased using generic Ninpou rules, including its damage standards.\nRange: 10 m + 2 m per Spirit level. Maximum size: 2 m per Spirit level along each dimension. All Kujaku Myoho effects deal +1 damage.\nOn first purchase gain 10 Health Points. Each use spends 1 Health Point in addition to normal chakra unless stated otherwise. Nine points recover after a full night's sleep; spending the tenth permanently reduces Stamina by 1 and Vitality by 3, then resets the Health Points to 10. One such reduction causes fatigue after combat; two or more in a day cause exhaustion. Recovery requires Iryou Ninjutsu 7+ and abstention for a GM-determined period.\nAllowed Ninpou effects by required level: Cannon (1); Create Weapon (2); Orb (2); Ray (2); Barrier (3); Arrows (3); Spear (3); Ricochet (3); Column (4); Energize (4); Destructive Breath (4); Current (5); Missile (5); Explosive Wave (5); Handcuff (6); Meteors (Katon, 9). The unique Flight effect is a separate Item."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "hoshigakure-kujaku-myoho",
+        "clan": "Hoshigakure",
+        "category": "Restricted Powers",
+        "page": 15,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Kujaku Myoho — Flight",
+    "type": "elemento",
+    "system": {
+      "descricao": "Unique Kujaku Myoho level 4 effect. Action: Standard. Range: Personal. Duration: Sustained. Chakra: 4 (plus the power's usual Health Point cost).\nForm chakra wings. Gain +10 m to normal movement speed, Flight skill equal to Spirit level, and the Winged condition. Other Flight skill rules still apply.\nEvolution at Flight level 7: the range becomes Touch; spending 4 additional chakra lets you grant the effect to a willing second target. You maintain the effect for both recipients.",
+      "nivel": 4,
+      "nivelPoder": 4
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "hoshigakure-kujaku-myoho-flight",
+        "clan": "Hoshigakure",
+        "category": "Techniques and Level Effects",
+        "page": 16,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Kujaku Myoho: Healing",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Hoshigakure restricted/limited aptitude. Prerequisites: Medical Ninja aptitude; Kujaku Myoho 5.\nSpend a Standard Action and maintain concentration to heal one ally. Each full round restores Vitality equal to Kujaku Myoho level + half Medicine (round up). Add +1 with Expert: Medicine and another +1 with Innate Expertise: Medicine. One round also removes all bleeding conditions. Cannot be used on oneself.\nCost: 2 Health Points and chakra equal to the Kujaku Myoho level used, paid on activation."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "hoshigakure-kujaku-myoho-healing",
+        "clan": "Hoshigakure",
+        "category": "Restricted and Limited Aptitudes",
+        "page": 16,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Kujaku Myoho: Saimin (Hypnotism)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Hoshigakure restricted/limited aptitude. Prerequisites: Intelligence 4; Kujaku Myoho 1.\nCreate a hypnotic chakra sphere. Functions as the Ecstasy effect (Basic Book p.235), except difficulty is 8 + Kujaku Myoho level + half Intelligence, and eye contact is unnecessary. One target at a time; release an existing target as a free action before choosing another. With Intelligence 10 against a henchman, replace charm with mind control of the henchman's actions. Deep Illusion benefits may apply (Basic Book p.74).\nCost: 1 Health Point and 3 chakra."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "hoshigakure-kujaku-myoho-saimin-hypnotism",
+        "clan": "Hoshigakure",
+        "category": "Restricted and Limited Aptitudes",
+        "page": 17,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Kujaku Myoho: Sacrifice",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Hoshigakure restricted/limited aptitude. Prerequisite: Kujaku Myoho 5.\nSpend 1 extra Health Point, in addition to the technique's other costs, to gain +1 base damage and +1 test difficulty for a Kujaku Myoho effect. Damage bonus becomes +2 at Kujaku Myoho level 8."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "hoshigakure-kujaku-myoho-sacrifice",
+        "clan": "Hoshigakure",
+        "category": "Restricted and Limited Aptitudes",
+        "page": 17,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  },
+  {
+    "name": "Kujaku Myoho: Gen’ei",
+    "type": "elemento",
+    "system": {
+      "descricao": "Hoshigakure restricted Kinjutsu. Prerequisite: Kujaku Myoho 10. Action: Free (see text). Range: Personal. Duration: Continuous (see text). Chakra: 0.\nOnly a dying character can use this technique, forgoing the Stamina check to awaken and drawing a blood seal containing their essence. If they die in the same scene, they return as a spirit two turns later. The spirit cannot be killed, affected by genjutsu, or touched without consent; it has the user's full chakra but loses 10 chakra per turn and disappears when chakra is exhausted or the scene ends. Chakra-draining effects still work."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter1-complete": {
+        "uid": "hoshigakure-kujaku-myoho-gen-ei",
+        "clan": "Hoshigakure",
+        "category": "Techniques and Level Effects",
+        "page": 17,
+        "source": "Book of Hijutsus Vol. 2 (2026), Chapter I",
+        "availability": "Clan restricted",
+        "review": "Manually edited against translated Chapter I; shared Basic Book rules remain cross-references"
+      }
+    }
+  }
+]

@@ -1,0 +1,1 @@
+v1.4 Armor: equip one armor; +Body Hardness added to derived defense; separate current/max absorption; Apply Incoming Damage button: hardness then armor pool then vitality. GM restore button. Special attack bypasses and armor penalties require manual ruling. Existing armor world items can use legacy flags; new system fields can be edited.

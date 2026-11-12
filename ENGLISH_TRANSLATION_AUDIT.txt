@@ -1,0 +1,8 @@
+English translation pass (system v1.4.2 base)
+
+Translated visible Portuguese labels in actor/item sheets, roll dialogs, chat roll output, and feature panels.
+Preserved Portuguese internal data keys (such as system.atributos, system.pericias, and system.descricao) to prevent breaking existing worlds.
+
+IMPORTANT: This ZIP contains the core Foundry system only. External modules, imported compendium records, existing world item names/descriptions, and user-entered Portuguese text are not automatically translated by replacing the system folder. A complete guarantee of every Portuguese word across all your installed modules and world content requires those files/world exports as well.
+
+Not tested in a live Foundry instance.

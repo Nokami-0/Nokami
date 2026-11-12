@@ -1,0 +1,13 @@
+Weapon Compendium v1.7.1
+
+Rebuild compendiums in System Settings as GM after backing up the world.
+
+Weapons & Equipment folders:
+- Basic Weapons (58)
+- Special Weapons (14)
+- Advanced Weapons & Tools (30)
+- Armor (7)
+
+The original weapon fields are retained in system.snsWeapon, and described in system.descricao. Armor fields retained in system.snsArmor. Drag and drop creates an item on compatible character sheets. This does not automatically enforce special weapon powers, attacks, or combat formulas.
+
+The importer rebuilds its own generated entries; edits to those entries are lost. Manual entries are retained. Not tested inside a running Foundry world.

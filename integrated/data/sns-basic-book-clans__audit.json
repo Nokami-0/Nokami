@@ -1,0 +1,68 @@
+[
+  {
+    "clan": "Aburame",
+    "printedPages": "142-149",
+    "explicitDeclarations": 4,
+    "nativeItems": 6
+  },
+  {
+    "clan": "Akimichi",
+    "printedPages": "150-154",
+    "explicitDeclarations": 3,
+    "nativeItems": 9
+  },
+  {
+    "clan": "Hatake",
+    "printedPages": "155-156",
+    "explicitDeclarations": 0,
+    "nativeItems": 2
+  },
+  {
+    "clan": "Hyuuga",
+    "printedPages": "157-162",
+    "explicitDeclarations": 3,
+    "nativeItems": 13
+  },
+  {
+    "clan": "Inuzuka",
+    "printedPages": "163-167",
+    "explicitDeclarations": 3,
+    "nativeItems": 11
+  },
+  {
+    "clan": "Nara",
+    "printedPages": "168-172",
+    "explicitDeclarations": 1,
+    "nativeItems": 7
+  },
+  {
+    "clan": "Sarutobi",
+    "printedPages": "173-173",
+    "explicitDeclarations": 0,
+    "nativeItems": 1
+  },
+  {
+    "clan": "Senju",
+    "printedPages": "174-179",
+    "explicitDeclarations": 0,
+    "nativeItems": 6
+  },
+  {
+    "clan": "Uchiha",
+    "printedPages": "180-192",
+    "explicitDeclarations": 5,
+    "nativeItems": 8
+  },
+  {
+    "clan": "Uzumaki",
+    "printedPages": "193-195",
+    "explicitDeclarations": 0,
+    "nativeItems": 1
+  },
+  {
+    "clan": "Yamanaka",
+    "printedPages": "196-200",
+    "explicitDeclarations": 1,
+    "nativeItems": 5
+  }
+]

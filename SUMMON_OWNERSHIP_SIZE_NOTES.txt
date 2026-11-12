@@ -1,0 +1,10 @@
+Kuchiyose v1.7.3
+- Doki (all three variants) restricted to Huge (3x3) and only Huge in dropdown.
+- Explicit fixedSize metadata supported per species; bee individual/giant bee/ordinary spider also fixed. Other species keep NC-dependent or selectable sizes until verified against rulebook.
+- Each summoned actor is a linked world Actor in Summons — <summoner player> folder, with OWNER access for the primary owning player and GM access by Foundry default.
+- Actor sheets are editable by that player and display base NC4 attribute budget guidance. Actual attribute point accounting is not enforced.
+- Token control is based on Actor ownership. GM-run summons cannot force selection on another player's browser.
+- Foundry folder permissions are not independent; folder visibility follows Actor document access.
+- Huge still requires NC14 per existing size table; summon with insufficient NC is rejected.
+- Unverified size restrictions for other species are NOT invented.
+- Untested in live Foundry.

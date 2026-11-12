@@ -1,0 +1,9 @@
+Shinobi no Sho Revamp v1.7.7 — Aptitude Rules Extraction
+
+119 individual aptitude entries retained from v1.7.6.
+102 entries have heading-bounded, same-column PDF text excerpts as descriptions.
+17 entries retain source references because a reliable heading match was not found.
+All 119 are marked mechanicsVerified=false: PDF text layout is complex, and extracted rules must be checked against the source pages.
+Prerequisites, bonuses, progression and free-choice eligibility are NOT automatically enforced.
+No invented purchase costs or free-choice eligibility. Existing aptitude categories, compendiums and all prior features retained.
+Use GM Settings > Rebuild Organized Compendiums to refresh entries (back up first).

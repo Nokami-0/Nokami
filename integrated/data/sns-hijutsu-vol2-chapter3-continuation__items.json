@@ -1,0 +1,1174 @@
+[
+  {
+    "name": "Strangle",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Strangle\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 97\n\nSOURCE RULES (machine-translated):\nPrerequisites: Mechanisms 12; Exclusive to puppet\n\nBenefit: Upon succeeding on a Grapple check, you can immediately begin strangling the\ntarget with your puppet while maintaining the maneuver.\n\n\n\nIn addition to being held captive, the target also suffers from suffocation.\nwith a resistance test of Difficulty 8 + Mechanisms and fixed damage of\n\nChoking is the same as the level of Mechanisms. The other rules of the grab and choking\nmaneuvers remain the same.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-strangle",
+        "group": "Kugutsu no Jutsu",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          97
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Kurohigi",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Kurohigi\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 97\n\nSOURCE RULES (machine-translated):\nYou become proficient in puppet control and can control one additional puppet for each level\nof this skill, as well as create larger puppets. This skill only needs to be purchased once,\ngaining the benefits of each level upon meeting the prerequisites. The rules for each level\nof this skill are cumulative; that is, a rule of...\n\n\nLower levels extend to higher levels.\n\nLEVEL 1\nPrerequisites: Kugutsu; Prestidigitation 6; Mechanisms 6\n\nBenefit: You are able to create and control medium-sized puppets.\n\nNormal: The puppeteer does not yet have in-depth knowledge of Kugutsu and can only\nmake and control small puppets.\n\nLEVEL 2\nPrerequisites: Kugutsu; Prestidigitation 10\nj\n\n\nBenefit: You can control two puppets at a time. When attacking with more than\none puppet, divide the damage of each by the number of standard actions\nused that deal (or attempt to deal) damage. Additionally, all your devices gain\n+1 weapon damage.\n\nLEVEL 3\nPrerequisites: Kugutsu; Prestidigitation 12; Mechanisms 12\n\nBenefit: You can control 3 puppets, but you can only act with 2 per round,\neither to attack or defend with devices. You are free to choose which puppets\nyou will use each round. However, even if you cannot use the third puppet, you\ncan still move it and Anticipate or Evade attacks with it. Furthermore, you will\nbe able to craft Large puppets, but you can only control one Large puppet at a\ntime; the others must be smaller. All your devices gain +1 weapon damage\n(Total +2).\n\n\nLEVEL 4\nPrerequisites: Kugutsu; Prestidigitation 14\n\nBenefit: At this level, you are now able to control up to 4 puppets, but you are\nlimited to acting with up to 3 per round, whether to attack or defend with\ndevices. You can still move and react with the fourth puppet in the same way\nas at level 2. All your devices gain +1 weapon damage (Total +3).\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-kurohigi",
+        "group": "Kugutsu no Jutsu",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          97
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Shirohigi",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Shirohigi\nHijutsu: Kugutsu no Jutsu\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 98:\nBenefit: You can control two puppets at a time. When attacking with more than\none puppet, divide the damage of each by the number of standard actions\nused that deal (or attempt to deal) damage. Additionally, all your devices gain\n+1 weapon damage.\n\nLEVEL 3\nPrerequisites: Kugutsu; Prestidigitation 12; Mechanisms 12\n\nBenefit: You can control 3 puppets, but you can only act with 2 per round,\neither to attack or defend with devices. You are free to choose which puppets\nyou will use each round. However, even if you cannot use the third puppet, you\ncan still move it and Anticipate or Evade attacks with it. Furthermore, you will\nbe able to craft Large puppets, but you can only control one Large puppet at a\ntime; the others must be smaller. All your devices gain +1 weapon damage\n(Total +2).\n\n\nLEVEL 4\nPrerequisites: Kugutsu; Prestidigitation 14\n\nBenefit: At this level, you are now able to control up to 4 puppets, but you are\nlimited to acting with up to 3 per round, whether to attack or defend with\ndevices. You can still move and react with the fourth puppet in the same way\nas at level 2. All your devices gain +1 weapon damage (Total +3).\n\n\nSHIROHIGE\nYou have reached a supreme level of skill and are able to control up to 10 puppets using a\n string on each finger.\n\nPrerequisites: Kurohigi; Mechanisms 16; Sleight of Hand 16;\nOccultism 16.\n\nBenefit: You can control up to 10 medium puppets at the same time, using the\nbenefits of Kurohigi's actions. You can summon these 10 puppets from a single\n scroll, paying the summoning cost of each one. Each of Shirohigi's puppets\nhas...\nEntitled to 3 skills at no cost.\n\nGroup Action: You can separate your 10 puppets into 2 equal groups, one for\nGroup Offensive Action and the other for Group Defensive Action, and it is\npossible to act with both groups in the same round. Acting with one or both\ngroups is a full action and requires that your puppets have no movement\nrestrictions.\n\nOffensive Action: You can move the puppets and attack a single target, dealing\nbase damage equal to your Mechanisms level. The target is considered flanked\nagainst this attack.\n\nDefensive Action: You can move the group closer to you or an ally, granting +1 accuracy to\ndefensive reactions (Dodge, Anticipate, and Block) until the end of the round. The ally loses\n this bonus if they move beyond the puppets' movement speed.\n\n\n\nAKAHIGE"
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-shirohigi",
+        "group": "Kugutsu no Jutsu",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          98
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "Akahigi",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Akahigi\nHijutsu: Kugutsu no Jutsu\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 98:\nBenefit: You can control two puppets at a time. When attacking with more than\none puppet, divide the damage of each by the number of standard actions\nused that deal (or attempt to deal) damage. Additionally, all your devices gain\n+1 weapon damage.\n\nLEVEL 3\nPrerequisites: Kugutsu; Prestidigitation 12; Mechanisms 12\n\nBenefit: You can control 3 puppets, but you can only act with 2 per round,\neither to attack or defend with devices. You are free to choose which puppets\nyou will use each round. However, even if you cannot use the third puppet, you\ncan still move it and Anticipate or Evade attacks with it. Furthermore, you will\nbe able to craft Large puppets, but you can only control one Large puppet at a\ntime; the others must be smaller. All your devices gain +1 weapon damage\n(Total +2).\n\n\nLEVEL 4\nPrerequisites: Kugutsu; Prestidigitation 14\n\nBenefit: At this level, you are now able to control up to 4 puppets, but you are\nlimited to acting with up to 3 per round, whether to attack or defend with\ndevices. You can still move and react with the fourth puppet in the same way\nas at level 2. All your devices gain +1 weapon damage (Total +3).\n\n\nSHIROHIGE\nYou have reached a supreme level of skill and are able to control up to 10 puppets using a\n string on each finger.\n\nPrerequisites: Kurohigi; Mechanisms 16; Sleight of Hand 16;\nOccultism 16.\n\nBenefit: You can control up to 10 medium puppets at the same time, using the\nbenefits of Kurohigi's actions. You can summon these 10 puppets from a single\n scroll, paying the summoning cost of each one. Each of Shirohigi's puppets\nhas...\nEntitled to 3 skills at no cost.\n\nGroup Action: You can separate your 10 puppets into 2 equal groups, one for\nGroup Offensive Action and the other for Group Defensive Action, and it is\npossible to act with both groups in the same round. Acting with one or both\ngroups is a full action and requires that your puppets have no movement\nrestrictions.\n\nOffensive Action: You can move the puppets and attack a single target, dealing\nbase damage equal to your Mechanisms level. The target is considered flanked\nagainst this attack.\n\nDefensive Action: You can move the group closer to you or an ally, granting +1 accuracy to\ndefensive reactions (Dodge, Anticipate, and Block) until the end of the round. The ally loses\n this bonus if they move beyond the puppets' movement speed.\n\n\n\nAKAHIGE"
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-akahigi",
+        "group": "Kugutsu no Jutsu",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          98
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "Flautist",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Flautist\nHijutsu: Mateki\nSource: Hijutsu Vol. 2, translated PDF page 106\n\nSOURCE RULES (machine-translated):\nPrerequisites: Intelligence 4; Fascinate\n\nBenefit: You are versed in the art of playing flutes, and in addition you can\nplay a very special type of instrument, the Demon Flute (Mateki).\n\n\nHardness and Absorption: The Demonic Flute has a Hardness of 20 and\nonly breaks when its hardness is reduced to 0. However, consider that the\npiper is always protecting the weapon, meaning it can only be attacked if the\nattacker specifies that it is the target and accepts a -3 penalty on the attack\nroll.\n\nFor other interactions, consider the Demonic Flute as a weapon wielded by\nthe user.\n\nKey Skill: All of your illusions (Fascinate, Mirage, and the exclusive\ntechniques) use the Art skill as their key ability instead of Intelligence.\n\n\nHand Seals: You don't need to perform hand seals while using the Demonic\nFlute, however both hands must be occupied wielding it. You cannot be\ntargeted by the Prevent Seals skill, however.\nYou still suffer the penalty in close combat. Despite this, you can optionally\nperform Concentration checks using the Art skill.\n\nSound Illusions: all illusions used with the Demon Flute\nThey then become based on the sound of your flute. You begin executing\nthe technique the moment you start playing the instrument, and it ends after\nthe target's resistance test (that is, after the target is captured by the genjutsu,\nit is no longer necessary to continue playing the flute).\n\nIn addition, their illusions will have a range of 10m + 2m per Art level.\n\nSomeone who is deaf is not affected by these illusions by their very nature.\n\nIf you lose your flute or it is destroyed, any shop in a large village will have\none for sale for 10 Ryo.\nOptionally, if you have the Create Weapon (2) effect, you can create a new\nflute, provided that the Ninpou or element is of solid material to create the\nflute.\n\nFascinate Sound: You can use the Fascinate skill as a sound illusion, which\ncan be repeated on the same target more than once.\nscene. The other rules of the aptitude, such as difficulty of endurance, are maintained.\n\n\nAdvanced Illusions\nPrerequisites: Art 9, Pied Piper, Deep Illusion\n\nBenefit: When using the Demonic Flute, the difficulty calculation is modified\nto 9 + the user's Art Level, including Illusion.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mateki-flautist",
+        "group": "Mateki",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          106
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Suffocating Futton (alternate entry)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Suffocating Futon\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 110\n\nSOURCE RULES (machine-translated):\nHis techniques generate a suffocating vapor that lingers in the air.\n\nPrerequisite: Futton 5\n\nBenefits: This skill has the same rules as the Fire Mastery (Basic Rulebook, p. 73), but\nit applies exclusively to the effects of your Futton power.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-suffocating-futon",
+        "group": "Mei Kekkei Genkai",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          110
+        ],
+        "verification": "potential duplicate of a second item; retained to avoid breaking prior imports"
+      }
+    }
+  },
+  {
+    "name": "Corrosive Yoton (alternate entry)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Corrosive Youton\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 110\n\nSOURCE RULES (machine-translated):\nPrerequisite: Youton 5\n\nBenefits: All Youton effects that are in contact with the enemy (Continuous\nDamage, Restraining, Lava Charge, Burning Wave) deal 2 fixed damage\nper turn while in contact.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-corrosive-youton",
+        "group": "Mei Kekkei Genkai",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          110
+        ],
+        "verification": "potential duplicate of a second item; retained to avoid breaking prior imports"
+      }
+    }
+  },
+  {
+    "name": "DUAL LINEAGE",
+    "type": "aptidao",
+    "system": {
+      "descricao": "DUAL LINEAGE\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 110\n\nSOURCE RULES (machine-translated):\nPrerequisite: Spirit 10; Futton or Youton 5\nBenefits: When you purchase this fitness program, you will receive the first one for free.\nLevel up the other restricted power of the Hijutsu that wasn't initially chosen, and the\nmissing basic elemental power.\n\nYou will be able to obtain and evolve the other restricted power normally.\n\nAdditionally, this ability allows you to use any effect of your first Futton power as if it\nwere Youton, and vice versa, as long as the effect is available to both, receiving all its\nproperties (damage bonus, hardness, range...), and using the higher power level\nbetween them as a parameter.\n\n\nThis benefit does not allow the use of exclusive effects as if it were from the other\nelement. For that, you must purchase and evolve the second restricted power\nseparately. Skill benefits, such as Mastery, are shared between the two restricted\npowers and do not need to be purchased normally for the 2nd power.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-dual-lineage",
+        "group": "Mei Kekkei Genkai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          110
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Guided Crystal",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Guided Crystal\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 125\n\nSOURCE RULES (machine-translated):\nAre you able to continuously produce crystals in the direction of a\ntarget.\n\nPrerequisites: Shouton 5\n\nBenefit: When an enemy avoids one of your ranged attacks with a Shouton effect, you\ncan reroll your attack roll each round, and your opponent also rerolls their defense. Doing\nso requires the technique to be executed and maintained through concentration, and costs\n2 chakra points per round.\n\n\n\nHowever, the technique's effectiveness decreases as the target gets used to the speed of\nthe attack. Therefore, for each new test performed, the opponent receives +1 to their\ndefensive accuracy.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-guided-crystal",
+        "group": "Shouton",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          125
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Regenerative Barrier",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Regenerative Barrier\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 124\n\nSOURCE RULES (machine-translated):\nYou are capable of creating barriers that persist on the battlefield.\n\nPrerequisite: Shouton 5.\n\nBenefit: In the round following the casting of a Shouton Barrier, if it lasts until the\nstart of your turn, you can spend a free action to renew its hardness. This effect can\nonly be applied once per barrier.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-regenerative-barrier",
+        "group": "Shouton",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          124
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Crystallization and Freezing",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Crystallization and Freezing\nHijutsu: Shouton\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 124:\nOptionally, you can use the Kajousatsu spheres defensively. As soon as you (or an\nally within range of the technique) are targeted by an attack, you can use a move\naction to perform a \"Defend with Technique\" action using your DC precision instead\nof LM. If successful, a sphere will intercept the attack and reduce the attack's damage\nby the Imaginary Hardness of the Kajousatsu sphere used. If the hardness is reduced\nto 0, the sphere disappears. The sphere's movement does not cause damage to\nanyone in the path of the interception, and even if it parries a CC attack, it can never\nend the defense occupying the same position as another person.\n\n\n\n\nEvolutions:\n\nÿ Kajÿsatsu Lv 6: You are able to create and move spheres in a quantity equal to ½\n    the level of the power used, and the maximum concentration duration increases\n     to 5 turns. They can never occupy the same space. If you create or move more\n    than one sphere to the space occupied by a creature of large size or larger, their\n   damage is not added together, but you receive an increase in base damage\n    equal to +1 per sphere.\n\nÿ Kajÿsatsu Lv 9: The maximum duration of the effect increases to 6 turns.\n    This technique now has a sustained duration, however any damage you cause\n     that is not due to this effect is reduced to zero. You can choose when during the\n    turn you will move the sphere(s), but you can only do this once per turn (and\n    only on your turn).\n\n        SHOUTON (CRYSTAL ELEMENT)\n\n                          Restricted Powers and Abilities\nShouton is an advanced bloodline formed through the simultaneous use of two\npreviously unknown elemental natures.\nAlthough one is presumably the Earth element. It allows the user to create and\ncontrol crystalline structures. When using the element, the user can create crystalline\nforms from any matter in a solid, liquid, or gaseous state, making only matter in a\nplasma state effective against the power.\n\n\nRestricted Skills: Guided Crystal, Regenerative Barrier, Crystallization and Freezing\n(requires Shouton 6; see Book of Secret Techniques, Yuki Clan, p. 18).\n\nRestricted Power: Shouton (Crystal Element).\n\n               LIMITED ABILITIES\n\nREGENERATIVE BARRIER\nYou are capable of creating barriers that persist on the battlefield.\n\nPrerequisite: Shouton 5.\n\nBenefit: In the round following the casting of a Shouton Barrier, if it lasts until the\nstart of your turn, you can spend a free action to renew its hardness. This effect can\nonly be applied once per barrier.\n\n\nCRYSTALLIZATION\nYou can cause more damage by hitting targets that already have some part of their\nbody crystallized.\n\nPrerequisites: Shouton 7; Freezing (aptitude)."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-crystallization-and-freezing",
+        "group": "Shouton",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          124
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "Master of Fans",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Master of Fans\nHijutsu: Tessenjutsu\nSource: Hijutsu Vol. 2, translated PDF page 132\n\nSOURCE RULES (machine-translated):\nPrerequisite: Dexterity 6; Wind Release 3\n\nBenefit: You receive the skills Martial Weapon Proficiency (Giant Fan), Expertise\n(Long Weapons), and Mastery: Wind Release. Even if you do not possess the\nnecessary prerequisites for these skills.\nCushioning a Fall: If you are carrying your fan, whenever you are about to suffer\nfall damage, you can use the fan to completely negate the damage. Doing so is a\nfree action and costs 1 chakra point.\n\nReflective Fan: [requires Fuuton 4] you gain the Catch skill\nObjects can be blocked with a Giant Fan. Additionally, you can block projectiles\nusing your DC precision instead of CC.\n\nFlying Fan: [Requires Wind Release 4] You automatically receive the \"Float\"\neffect (See Advanced Shinobi Guide p. 54) even without possessing Wind\nRelease 5.\n\nrazor's breeze\nPrerequisite: Spirit 10; Wind Release 5\n\nBenefit: You are able to use the Wind Blade 7 effect for Fuuton, even without\nhaving the required level. The base damage of each blade is equal to 3 (base\ndamage + element bonus) and you can create 1 blade per Spirit level divided by\ntwo (rounded down).\n\nThe chakra cost is half the Spirit level (rounded up). Other rules of the effect,\nsuch as range and size, are the same as the Fuuton power.\n\n\nIf the character purchases the Fuuton power at level 7, they will receive the Wind\nBlade effect at level 7, in addition to any other effect they can choose by right.\nThe Wind Blade will also automatically evolve at level 10, without needing to be\nchosen by the character.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "tessenjutsu-master-of-fans",
+        "group": "Tessenjutsu",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          132
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Razor Breeze",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Razor Breeze\nHijutsu: Tessenjutsu\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 132:\nMASTER OF FANS\nPrerequisite: Dexterity 6; Wind Release 3\n\nBenefit: You receive the skills Martial Weapon Proficiency (Giant Fan), Expertise\n(Long Weapons), and Mastery: Wind Release. Even if you do not possess the\nnecessary prerequisites for these skills.\nCushioning a Fall: If you are carrying your fan, whenever you are about to suffer\nfall damage, you can use the fan to completely negate the damage. Doing so is a\nfree action and costs 1 chakra point.\n\nReflective Fan: [requires Fuuton 4] you gain the Catch skill\nObjects can be blocked with a Giant Fan. Additionally, you can block projectiles\nusing your DC precision instead of CC.\n\nFlying Fan: [Requires Wind Release 4] You automatically receive the \"Float\"\neffect (See Advanced Shinobi Guide p. 54) even without possessing Wind\nRelease 5.\n\nrazor's breeze\nPrerequisite: Spirit 10; Wind Release 5\n\nBenefit: You are able to use the Wind Blade 7 effect for Fuuton, even without\nhaving the required level. The base damage of each blade is equal to 3 (base\ndamage + element bonus) and you can create 1 blade per Spirit level divided by\ntwo (rounded down).\n\nThe chakra cost is half the Spirit level (rounded up). Other rules of the effect,\nsuch as range and size, are the same as the Fuuton power.\n\n\nIf the character purchases the Fuuton power at level 7, they will receive the Wind\nBlade effect at level 7, in addition to any other effect they can choose by right.\nThe Wind Blade will also automatically evolve at level 10, without needing to be\nchosen by the character."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "tessenjutsu-razor-breeze",
+        "group": "Tessenjutsu",
+        "category": "Restricted Aptitudes & Abilities",
+        "sourcePages": [
+          132
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "List of Devices",
+    "type": "elemento",
+    "system": {
+      "descricao": "List of Devices\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 104\n\nSOURCE RULES (machine-translated):\nName                 Type\n\n        Armor                 Heavy           Adds 1 body hardness to the puppet. R\n         Storage                Heavy duty. Allows carrying 3/6/9 item compartments in sm\n               Trunk               Heavy              Used to leave enemies defenseles\n        Bombs*               Light/Standard: Light, explosive, or smoke bombs. Changes the\n        Steel Cable*               Standard                                  Gains +1m\n  Light/Standard Parchment Capsule                            jutsu scrolls or writings. Increases\n      Cutting Chakra               Standard                                              target\n       Iron Lady*                   Standard                     internal hardness than a chest\n                                                         -   Robust Device                                        cooldown. Heavy. Disassembles t\n     Body Division                 Standard Hidden Knives.\n     Chakra Shield                                                   Locking defense devic\n      Hidden Knives*              Standard                      Applies feint on the first atta\n   Light/Standard Cutting Water Jet                                               hardne\n      Kousen Double*             Standard                 puppets together, with more ac\n       Flamethrower             Light/Standard\n  Advanced Machinery            Heavy                    Grants +15m range or +1 dam\n   Armed Puppet**                             ---            weapons and other abilities in exchang\n      Elastic Member               Standard                                 slots. Defense device\n           Wall                 Heavy\n           Projectiles*            Light/Standard                             Gains area da\nDevices capable of causing poisoning.\n\n**Depending on the weapon used, it can cause poisoning.**\nDescription                                             Uses D. of Weapon\n\n                                                                                                             -               -Reduces reach to Short (5m+1m/space).\n                                                                                                                             -mall/medium/large puppets.\n                                                                                                             -               - ss or to elevate the user to higher levels.\n e smoke range as per the Standard slot.                                5              -\n                                                                                                             -        +2 m/Mechanical range with 2 slots. Stores\n                                                                                                                             -  uses with the Standard slot. Energized attack device. Restrains a             1/3\n                                                                                                             -        +2  t and deals fixed damage. Has greater\n                                                                                                             -               -   . Adds damage to a ranged attack device. Has a 2-round\n                                                                                                             -               - the puppet to escape grapples and restraints. Can be used with\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-list-of-devices",
+        "group": "Kugutsu no Jutsu",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          104
+        ],
+        "verification": "reference entry, not an independently purchasable technique"
+      }
+    }
+  },
+  {
+    "name": "Complete",
+    "type": "elemento",
+    "system": {
+      "descricao": "Complete\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 99\n\nSOURCE RULES (machine-translated):\nUpon achieving the prerequisites for the Complete section, your skill level will automatically\n\nevolve at no cost, and you will be able to enjoy the benefits of this section if you wish.\n\n\n\nPrerequisites: Kugutsu; Medical Ninja; Fuuinjutsu 9; Mechanisms 18; Medicine 18; Occultism\n18.\nj\n\n\n\nBenefit: You can transform an entire human body into a puppet, whether it's a corpse or\n\nyourself.\n\nCreating a Living Puppet (a receptacle for your own life energy) or a Dead Puppet (created\nfrom a corpse) requires a Surgery (Medicine test, difficulty 26) and a sealing process that\n\ntakes one week. Failing on 4 or more attempts results in the destruction of the body or the\ncharacter's death. The created puppets follow the same rules as Kugutsu puppet creation\n\n(actions, absorption, size, devices, etc.), with the exceptions described below.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-complete",
+        "group": "Kugutsu no Jutsu",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          99
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "LIVING PUPPET",
+    "type": "aptidao",
+    "system": {
+      "descricao": "LIVING PUPPET\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 100\n\nSOURCE RULES (machine-translated):\nYou can seal your heart and chakra into a receptacle that, when attached to a puppet, allows\n\nyou to control it as if it were your own character. The receptacle can only be attached to\nregular puppets; it cannot be used on human puppets.\n\n\n\nVessel: By sealing yourself and creating the Vessel, you cease to be human and become a\n\nliving, eternal object. The following attributes are replaced: Agility by your level in\nPrestidigitation (tests and movement); Strength and Stamina by your level in Mechanism\n\n(tests only). All other attributes, skills, chakra, powers, and aptitudes are maintained in the\nVessel, and your character progression continues normally.\n\n\n\n\nVitality: The Vessel has Vitality equal to 2x the Mechanism level and can only be directly\nattacked if the puppet to which it is attached reaches 0 absorption or if it is defenseless.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-living-puppet",
+        "group": "Kugutsu no Jutsu",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          100
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Summary of Actions",
+    "type": "elemento",
+    "system": {
+      "descricao": "Summary of Actions\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 102\n\nSOURCE RULES (machine-translated):\nTo remove the puppet: To remove the puppet is a free action.\n\nConnect wires: Partial Action Cost (sustained) and 1 chakra per\npuppet.\n\nPuppet control range: Medium (10m + 2m per Esp).\n\nPuppet's ranged attack: Short (5m + 1m per Esp).\n\nMovement: The player transfers their Movement Action so that the puppet can move.\nAttack: The PC transfers their Standard Action to the puppet so it can attack.\nShe utilizes the PC's DC precision for any attack.\n\nDefense: Puppets can defend themselves with Anticipate and Evade using the PC's\nprecision. They can also Defend with Technique if the device allows it.\n\n\n\nHardness and Absorption: Puppets have a body hardness of 1 and 5x the absorption\nmechanisms of the PJ.\n\nDamage: Puppets deal damage equal to Mechanisms/2 + Weapon Damage (varies\ndepending on the device used in the attack).\n\nManeuvers: Puppets can use combat maneuvers, except:\nCharge, Delay Initiative, Fight Defensively, Safe Step , and Draw\nArm.\n\nSkills: The PC spends their own power points to purchase skills for the puppets.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-summary-of-actions",
+        "group": "Kugutsu no Jutsu",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          102
+        ],
+        "verification": "reference entry, not an independently purchasable technique"
+      }
+    }
+  },
+  {
+    "name": "Initial Puppets (Examples)",
+    "type": "elemento",
+    "system": {
+      "descricao": "Initial Puppets (Examples)\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 102\n\nSOURCE RULES (machine-translated):\nNote: The numbers in parentheses represent the number of uses and the Weapon Damage\nof the device. Its uses are restored if it is in a Village.\n\n\n\nSee the next page for a summary of the features and operation of the devices.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-initial-puppets-examples",
+        "group": "Kugutsu no Jutsu",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          102
+        ],
+        "verification": "reference entry, not an independently purchasable technique"
+      }
+    }
+  },
+  {
+    "name": "Balanced Puppet",
+    "type": "elemento",
+    "system": {
+      "descricao": "Balanced Puppet\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 103\n\nSOURCE RULES (machine-translated):\nDevices\n                                                                                                  -     Light      Smoke Bombs (5 uses)\n   Standard          Hidden Knives (+2)              Water Jet (5 uses; +3)\n  Heavy            Body Division                                                -\nSize: Medium\nSkills: Specialist (Devices); Fighter\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-balanced-puppet",
+        "group": "Kugutsu no Jutsu",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          103
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Puppet Support",
+    "type": "elemento",
+    "system": {
+      "descricao": "Puppet Support\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 103\n\nSOURCE RULES (machine-translated):\nDevices\n                                                                                                  -     Light      Smoke Bombs (5 uses)\n   Standard          Chakra Shield                       Elastic Members (+2)\n  Heavy                         Trunk                                                 -\nSize: Medium\nSkills: Fighter; Blind Spot; Die Hard\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-puppet-support",
+        "group": "Kugutsu no Jutsu",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          103
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Exclusive Kuchiyose: Doki",
+    "type": "elemento",
+    "system": {
+      "descricao": "Exclusive Kuchiyose: Doki\nHijutsu: Mateki\nSource: Hijutsu Vol. 2, translated PDF page 107\n\nSOURCE RULES (machine-translated):\nCommon Power\n\n\n\n\n\nLow Intellect: Dokis always possess zero Intelligence and automatically fail\nany test of this attribute. For the same reason, they are unable to speak.\nHowever, their minds are always under the control of the Demonic Flute,\nneeding it to be controlled and unable to fall under Genjutsu or other mental\ntechniques/effects.\n\nSince they have no Intelligence value, their character sheets do not need to\nmeet the minimum Intelligence requirement for the Campaign Level, and the points\nj\n\n\n\nAny \"leftover\" resources that should be used to fill this value can be freely redistributed\namong other attributes.\n\nMelody Control: To use the \"Command Partner\" action, you must use the Demonic Flute\n(Mateki). If for any reason you cannot use it on your turn, the Dokis will remain immobile and\nonly...\n\nThey will be able to defend themselves.\n\nUsing \"Command Partner\" with the flute does not require...\n\nConduct a concentration test through close combat.\n\nStealth or Feint tests by the Dokis are performed using the Summoner's Art skill (which can\nbenefit from Expert: Art and Innate Skill: Art). Performing either of these two actions does not\nincur a damage penalty under the partner rule.\n\n\n\nMade for Combat: Despite being common Kuchiyoses, the Dokis' combat abilities only\nreceive a -1 penalty instead of the usual -3.\n\n\n\nTriple Summoning: The Dokis receive an increase in number\nmaximum.\n\nMaximum level: equals twice the power level; if you summon 3 creatures, the maximum is\nreduced by 1 level.\n\nTherefore, if you possess Kuchiyose 5, you can summon 1 creature of NL 10 or 3\ncreatures of NC 9.\n\nSize: Dokis are limited to the Huge size.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mateki-exclusive-kuchiyose-doki",
+        "group": "Mateki",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          107
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "(Final: Ninth Movement: Revolt of The World)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "(Final: Ninth Movement: Revolt of The World)\nHijutsu: Mateki\nSource: Hijutsu Vol. 2, translated PDF page 108\n\nSOURCE RULES (machine-translated):\nDEMONIC)\n\nÿ Rank B Ninjutsu\nÿ Prerequisite: Kuchiyose 5 (Dokis)\nAction : Partial\nÿ Target: 1 or more Doki in the scene\nÿ Duration: Continuous\nÿ Chakra Cost: 5\n\nThis technique needs to be performed by the user of Mateki, not the Dokis (summonings).\nj\n\n\n\nBy playing a melody on your demonic flute, you cause semi-material worms to sprout from\nthe mouths of all summoned Dokis.\n\nThey are Hungry Chakras, thirsting to feed on physical things. Each worm becomes a\nweapon for Doki, giving him an attack range of up to 6m with them.\n\n\n\nThe summoned Dokis must be at least Campaign Level 9 to receive the benefit of this\ntechnique.\n\nWhen Doki hits someone with one of the worms, it deals damage equal to its level in the\nKuchiyose: Doki power + ½ the value of the summoner's Art skill. It receives a +1 bonus if\nthe user possesses Expert: Art or Innate Skill: Art, limited to receiving this bonus only once.\n\n\n\nThis attack cannot be blocked; any attempt to do so results in an automatic failure. It also\npasses through barriers and other physical surfaces, such as trees and walls, and ignores\n\nhardness of any kind and armor absorption. However, you can never use these weapons to\nreduce the hardness or absorption of objects.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mateki-final-ninth-movement-revolt-of-the-world",
+        "group": "Mateki",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          108
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Lava Load",
+    "type": "elemento",
+    "system": {
+      "descricao": "Lava Load\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 111\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Range: Common Power\nÿ Target: Single\nÿ Damage: Common Power Damage\nÿ Duration: Continuous\n\nThe user throws 1 (one) ball of lava towards the target which, if it hits, immediately solidifies\non its body, generating extra weight. Each charge of lava adds 1 fully filled compartment on\n\nthe target.\n\n\n\nOn the target's turn, they can spend a partial action to break all the lava charges through a\n\nStrength or Escape check (Common Power Difficulty). They can also use their standard\naction to attack one charge at a time, breaking them.\n\n\nEvolutions:\nÿ Lava Charge Lv 7: Each charge stuck to the target now generates a -2m\n    penalty to movement (in addition to any penalty generated by exceeding\n    the Compartment Limit). Its effect also becomes capable of adding a\n   number of lava charges equal to the damage level of the attack roll +1.\n\n\n                 LEVEL 3 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-lava-load",
+        "group": "Mei Kekkei Genkai",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          111
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Energy Extraction",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Energy Extraction\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 115\n\nSOURCE RULES (machine-translated):\nYou are able to extract chakra from your target for your own benefit.\n\nPrerequisite: Spirit 6\n\nBenefit: You are able to absorb chakra directly from a source or a living\nbeing. However, for this to be possible, the victim must be in a helpless\nstate. Absorbing chakra is a standard action and lasts for concentration.\nYou absorb an amount of chakra per turn equal to ¼ of your Spirit.\n\n\nYou can only store extra chakra up to half your total chakra amount. If you\ndon't use the chakra you absorbed within 24 hours of absorbing it, it will be\nlost to the environment and you will not be able to use it.\n\n\nChakra below Zero: If the target already has zero points in their natural\nchakra reserve and suffers a forced drain, they will die if the drained chakra\nis equal to or greater than half of their natural reserve.\nThus, if your natural reserve has 40 chakra points, you will die if you have\n20 points drained below zero.\n\nJuinjutsu: If someone marked by Juinka is subjected to negative chakra,\nthe cursed seal will activate immediately, granting 20 chakra. This occurs\neven if the target does not possess the Juinka Ichi or Juinka Ni abilities.\nIf the target does not have control over the seal, this forced activation will\nmake them more sensitive to the controlling powers of the one who applied\nthe Juinjutsu.\n\nLevel 2 - Grab and Suck: Upon obtaining the Fighter skill and CC 15, you\ncan repurchase this skill to evolve it: You can use the Energy Extraction skill\nbenefit when using the grapple maneuver on a target or maintain physical\ncontact with them for one turn (while they are immobilized).\n\n\nEnhanced Drainage: [Requires Spirit 12] The chakra absorption rate\nincreases to 1/3 of your Spirit.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-energy-extraction",
+        "group": "Kakuran Tensai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          115
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Beam of Light",
+    "type": "elemento",
+    "system": {
+      "descricao": "Beam of Light\nHijutsu: Ranton\nSource: Hijutsu Vol. 2, translated PDF page 117\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Range: Standard power range\nÿ Area of Effect: Line ÿ\nDamage: Standard power\nrange ÿ Duration: Instantaneous\nj\n\n\n\nYou unleash a powerful, fast-moving beam of bright light from your arms, shooting it straight\n\nthrough your enemies. The beam's power is devastating, ignoring 2 points of hardness from\nbarriers or objects.\n\nIf the Beam of Light is blocked by a barrier and does not destroy it, part of the beam will still\n\npierce through it, causing Level 1 Damage to enemies in the path of the effect beyond the\nbarrier.\n\n\n                 LEVEL 6 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "ranton-beam-of-light",
+        "group": "Ranton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          117
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "STORM CLOUD",
+    "type": "elemento",
+    "system": {
+      "descricao": "STORM CLOUD\nHijutsu: Ranton\nSource: Hijutsu Vol. 2, translated PDF page 118\n\nSOURCE RULES (machine-translated):\nÿ Prerequisite: Lightning and Cloud ÿ\nAction: Standard ÿ\nRange: Standard range of the power\nÿ Target: The environment\nÿ Area of Effect: Circle with a diameter twice the standard size ÿ Damage: See text ÿ\nDuration: Concentration\n\n\nYou create a storm cloud, charged with powerful lightning, with the same properties as the\nCloud effect (See Basic Book, p. 100).\nHowever, once per turn, while maintaining concentration to keep the cloud active, you can\n\ndischarge one of the lightning bolts contained within the cloud.\ninto a creature.\n\nThis functions as a Lightning effect attack, of the Ranton element, with the same power level\nused for this effect, and can be used against any target within the Storm Cloud's area of\neffect.\nWhen used in this way, the base damage of the Lightning effect is halved.\n\n\n\nEvolutions:\n\nÿ Storm Cloud 8: The Storm Cloud can unleash a Lightning Bolt on an additional enemy for\n    every 3 power levels.\nÿ Stormy Cloud 10: The Stormy Cloud gains ++3 of\n    Hardness and fixed damage are doubled.\n\n                 LEVEL 7 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "ranton-storm-cloud",
+        "group": "Ranton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          118
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Laser Circus",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Laser Circus\nHijutsu: Ranton\nSource: Hijutsu Vol. 2, translated PDF page 118\n\nSOURCE RULES (machine-translated):\nÿ Action: Full ÿ Range:\nStandard range of the power ÿ Target:\nOne or More Creatures ÿ Damage: 2 per\nlaser ÿ Duration:\nInstantaneous\n\nYou emit multiple laser beams that travel at high speed towards the targets. The user can\nmanipulate the direction of the beams even after they have been fired, allowing for precise\naccuracy even in extreme cases, such as hostage situations or extremely dangerous targets.\n\n\nsmall.\n\nEach laser deals 2 base damage, and it's possible to create 1 laser per power level used.\nj\n\n\nIf your targets succeed in the Dodge or Anticipate maneuver, you can\nreroll the test, but you will deal half the base damage.\nThe target does not regroup defensively.\n\nIf you aim all the lasers at a single target, it must make a Readiness\ncheck, a common difficulty for the power, to avoid being feinted due to the\nlasers' sudden change of direction. Additionally, the projectiles ignore pre-\nexisting cover.\n\nEvolutions:\n\nÿ Laser Circus 9: You deal full damage when you reroll the tests.\n    attack.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "ranton-laser-circus",
+        "group": "Ranton",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          118
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Stroboscope Effect",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Stroboscope Effect\nHijutsu: Ranton\nSource: Hijutsu Vol. 2, translated PDF page 119\n\nSOURCE RULES (machine-translated):\nHis Ranton power attacks shine so brightly they almost blind his enemies.\n\n\nPrerequisite: Ranton 6.\n\nBenefit: Whenever you deal damage with a Ranton power effect, the\nvictim must make a Stamina test (Standard difficulty -2). If they fail, their\nvision will be impaired, and they will suffer Partial Camouflage against\ntheir enemies until the end of their next turn. This ability only applies to\nranged effects that require an attack roll against the target's defensive\naction. Therefore, it does not apply to attacks with the Energize effect.\nLevel 2: Once you reach Ranton 10, you can repurchase this skill to\nevolve it. The penalty to the victim's vision increases, becoming Total\nCamouflage.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "ranton-stroboscope-effect",
+        "group": "Ranton",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          119
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Mummify",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Mummify\nHijutsu: Rinbo: Hengoku\nSource: Hijutsu Vol. 2, translated PDF page 121\n\nSOURCE RULES (machine-translated):\nThe heat becomes so intense that it dehydrates and mummifies the bodies\nof those affected by its power.\n\nPrerequisite: Shakuton 5\n\nBenefit: Whenever dealing damage with an effect of the Shakuton power,\nthe victim must make a Stamina test (Standard difficulty -2). If they fail, they\ninflict structural damage to the opponent's tissues, granting them a level of\nj\n\n\nBleeding (effectively, 2 damage immediately when the victim's turn\nbegins). This ability only applies to effects that require a hit test against\nthe target's defensive action, including\nEnergize effect.\n\nIf the effect or attack has split or cumulative damage (such as the Arrows\nor Missile effects, or the Multi-Attack skill), the Bleed effect is applied only\nonce to the same target.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "rinbo-hengoku-mummify",
+        "group": "Rinbo: Hengoku",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          121
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Shakuton (Heat Element)",
+    "type": "poder",
+    "system": {
+      "descricao": "Shakuton (Heat Element)\nHijutsu: Shakuton\nSource: Hijutsu Vol. 2, translated PDF page 122\n\nSOURCE RULES (machine-translated):\nRestricted Power\n\nThe character has the right to purchase the restricted power Shakuton\n(Heat Element).\n\nThe player must purchase Shakuton as a standard version of elemental\nninjutsu powers. The Shakuton power follows the same rules as the\nNinpou power, with the following parameters:\n\nRange: Medium (10m + 2m per Spirit level). The character can only\nmanipulate or create their element up to the maximum range of their power.\n\nSize: Creations, manipulations, and areas of effect can have up to 1m in\ndiameter, length, width, or height per Spirit level.\n\n\nAdditional Damage: All Shakuton Effects receive +2 base damage.\n\n\n\n\n                                                  12\n21\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shakuton-shakuton-heat-element",
+        "group": "Shakuton",
+        "category": "Powers",
+        "sourcePages": [
+          122
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "CRYSTALLIZATION",
+    "type": "aptidao",
+    "system": {
+      "descricao": "CRYSTALLIZATION\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 124\n\nSOURCE RULES (machine-translated):\nYou can cause more damage by hitting targets that already have some part of their\nbody crystallized.\n\nPrerequisites: Shouton 7; Freezing (aptitude).\nj\n\n\nBenefit: When you hit an opponent who has suffered the effects of the Freezing (Shouton)\naptitude in the previous round, you can, as a Free Action, pay 4 chakra points to increase\nthe damage level of the technique that hit you by 1; the damage level can never exceed\n\"Level 4\". This aptitude can only affect Shouton Power techniques that require an Accuracy\ntest against the Target's Defense.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-crystallization",
+        "group": "Shouton",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          124
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Crystal Prison",
+    "type": "elemento",
+    "system": {
+      "descricao": "Crystal Prison\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 126\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Range: 1m\nÿ Target: Single\nÿ Duration: Concentration\n\nThis effect works the same way as the Water Prison Level 3 effect (see Basic Rulebook,\np. 112), except that the user does not need to remain in constant contact with the prison.\n\n\nEvolutions:\nÿ Crystal Prison Lv 9: Crystal Prison now has normal range and can hit a total number of\n     targets equal to 1 for every 2 power levels, or hit all henchmen within range.\n\n\n                 LEVEL 7 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-crystal-prison",
+        "group": "Shouton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          126
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Souma no Kou (Attack of The Twin Demons)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Souma no Kou (Attack of The Twin Demons)\nHijutsu: Souma no Jutsu\nSource: Hijutsu Vol. 2, translated PDF page 128\n\nSOURCE RULES (machine-translated):\nLEVEL 1\nPrerequisite: Vigor 2\n\nPurchase Limit: This skill can only be purchased during character creation,\nas it is a matter of birth.\n\nBenefits: You (Host) have had an identical twin brother (Parasite) since the\nday you were born, and because of this, you two have developed a way to\nfight together. One character will be the Host and the other will be the\nParasite, that is, the person who lives inside the brother's body.\n\n\nCharacter Sheet and Accuracy: The Parasite has character sheets identical\nto the host's, but with 2 fewer levels in all attributes, abilities, and skills\n(minimum level zero; this penalty does not count towards the accuracy\npenalty limit).\n\nVitality and Chakra: These are calculated using the standard character\nformulas. However, they use the Vigor and Spirit attributes, reduced by 2\nlevels for the Parasite.\n\nFusion: To merge is a movement action of one of the characters, while to\nseparate is a free action. When they are separated, the\nj\n\n\nIndividual records serve as parameters for each individual.\n\n\n\nWhen the twins are together, the Parasite cannot perform physical actions other than\nassisting the Host, but it can still perform mental or perceptual actions.\n\n\n\nWhen together, all damage received is suffered solely by the Host. If the Parasite's body\nis affected by any physical effect, such as poison, disease, or bleeding, the condition will\nbe mirrored in the Host.\n\n\n\nSeparate Combat: When separated, the Parasite begins to function according to the\nPartner rule (Core Book, page 269).\n\nJoint Combat: When united, both can fight together, using their combined physical\nstrength to perform powerful strikes such as a three-armed punch, for example.\n\n\n\nAttacking in this way is a striking maneuver from both Host and Parasite that deals lethal\ndamage equal to ½ the Host's Strength + ½ the Parasite's Strength, taking no Weapon\nDamage.\n\nYou are also considered to have the Iron Fist aptitude to fulfill aptitude and technique\nprerequisites. Any aptitude that can benefit unarmed attack can benefit Joint Combat.\n\n\nexcept Extra Damage.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "souma-no-jutsu-souma-no-kou-attack-of-the-twin-demons",
+        "group": "Souma no Jutsu",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          128
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Wind Capacity",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Wind Capacity\nHijutsu: Zetsu Seitai\nSource: Hijutsu Vol. 2, translated PDF page 133\n\nSOURCE RULES (machine-translated):\nPrerequisite: Spirit or Intelligence 12\n\nBenefit: As long as you are using a Giant Fan, you can use the meta-skills\n\"Potentiate\" and \"Powerful Technique\" as a Partial Action for Fuuton.\n\n\nSharpened Fan: If your Giant Fan is sharpened by the Sharpen effect, the\nGiant Fan's weapon damage increases from +4 to +5.\n\nMaximize: [Requires Spirit or Intelligence 15] You receive the Maximize\naptitude (See Basic Rulebook, p. 175), but for your Fuuton power.\n\nHowever, you will not be able to perform Potenciizar com Ação Parcial (Potentiate with Partial Action).\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "zetsu-seitai-wind-capacity",
+        "group": "Tessenjutsu",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          133
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Zetsu Anatomy",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Zetsu Anatomy\nHijutsu: Zetsu Seitai\nSource: Hijutsu Vol. 2, translated PDF page 134\n\nSOURCE RULES (machine-translated):\nZetsus are not like humans or animals; their existence is derived from...\n\nA cosmic entity combined with Hashirama's cells gives them distinct abilities.\n\n\n\nBenefit: You are immune to bleeding, from any source (since you have no blood), and you\ndon't need to eat or sleep.\n\n[Requires Disguise 10] You can mold your body at will, assuming the most useful form for\neach situation. The limit of body modifications is subject to the Narrator. In addition, you\nreceive +2 Accuracy to escape grapples and handcuffs (including the Handcuff effect).\n\n\n\n\n[Requires \"Use Weapon\"] You can shape your limbs to create natural weapons similar to\nthe non-special melee weapon you possess.\nHe has the aptitude to use it. Doing so does not cost chakra, but it does cost 1 Vitality.\n\n\n\nWhen you reach higher levels of Vigor, you can repurchase this skill to upgrade it.\n\n\n\nLevel 2 (Requires Stamina 8): You are a creature made of chakra and can devour bodies\nto gain even more chakra and eliminate evidence of death. Devouring a body requires 10\nminutes of constant concentration. When you devour a body, you gain the chakra it had\nremaining, and if the body doesn't have a defined chakra, you gain 10 chakra. It's possible\nto increase Zetsu's total chakra by up to 50% (so a Zetsu with 60 chakra can have up to 90\nchakra). Any chakra above the total is lost after 8 hours.\n\n\n\n\nAdditionally, you can use a partial action to heal your wounds with chakra; it's possible to\nrecover 1 Vitality for every 2 Chakra spent.\n\n\n\nLevel 3 (Requires Stamina 12): You are able to transmit your chakra to others with a\ntouch, freely passing chakra between targets that are not hostile to you. The chakra transfer\nrate is equal to half of Zetsu's Spirit per round, and this action must be maintained through\nconcentration.\n\n\n\n[Requires Clone Zetsu and Medicine 12] Only PdM: In addition, you are able to remove\npart of your body and fuse it to another person's body, effectively curing any disease and\nreplacing limbs and\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "zetsu-seitai-zetsu-anatomy",
+        "group": "Zetsu Seitai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          134
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Clone Zetsu",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Clone Zetsu\nHijutsu: Zetsu Seitai\nSource: Hijutsu Vol. 2, translated PDF page 135\n\nSOURCE RULES (machine-translated):\nZetsus are capable of splitting and forming new individuals, lacking the concept of \"original.\"\n\n\n\nPrerequisite: Clone (aptitude).\n\nBenefit: Zetsu Clones function exactly like Wood Clones and\n\nThey can evolve with other clone abilities (Clone Level 2; True Clone). Furthermore, they\nare perfect clones and fully capable of replacing the original. Once the \"main body\" dies,\nany of the clones can assume the role of the main PC (or NPC), however their...\n\n\nChakra and vitality don't increase instantly.\n\nReserve Clone: [requires Stamina 12] It is possible to keep a White Zetsu clone hidden in\na secret base or secure location, which will assume the role of \"Primary\" if all clones are\neliminated.\nTo do this, you need to permanently pay 3 Vitality and 5 Chakra (which will remain with the\nReserve Clone). These values are only recovered if the Reserve Clone takes over as the\nprimary clone or returns to the \"active\" list.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "zetsu-seitai-clone-zetsu",
+        "group": "Zetsu Seitai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          135
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Mokuton: Effects For Zetsu",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Mokuton: Effects For Zetsu\nHijutsu: Zetsu Seitai\nSource: Hijutsu Vol. 2, translated PDF page 135\n\nSOURCE RULES (machine-translated):\nZetsus possess the ability to purchase Mokuton power, which also has the following unique\neffects:\n\n                LEVEL 5 EFFECTS\nEphemeropterus\n\nÿ Prerequisite: Immerse (Earth Release or Wood Release)\nÿ Action: 1 minute + Concentration or Standard (See Text) ÿ Range:\n50m per Spirit level ÿ Duration: Concentration\nor Instantaneous (see text) ÿ Chakra Cost: 5 or 1 (See Text)\n\n\nTo use this effect, you must be under the benefit of the Immerse (Earth Release) effect,\nunderground, pay 5 chakra points, and need to concentrate initially for 1 minute. After that,\nas long as you maintain concentration, you are able to move at high speed underground,\nusing plants, their roots, and the earth as a conduit.\nj\n\n\nYou are able to move 50m per Spirit Level instantly every 6 seconds (1 round), at no\nadditional chakra cost.\n\nPerfect Immersion: Additionally, you can pass through any solid medium by immersing\nyourself in it and traveling. Doing so is a Standard Action and costs 1 chakra. This\nmovement does not leave you susceptible to Opportunistic Attacks.\n\n\n\n                 LEVEL 7 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "zetsu-seitai-mokuton-effects-for-zetsu",
+        "group": "Zetsu Seitai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          135
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Rain of Spores",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Rain of Spores\nHijutsu: Zetsu Seitai\nSource: Hijutsu Vol. 2, translated PDF page 136\n\nSOURCE RULES (machine-translated):\nÿ Prerequisite: Transmitter; Cloud; Seal Chakra (effects)\n    Mokuton); Zetsu Clone ÿ\nAction: Full ÿ Range:\nPersonal ÿ Area of\nEffect: Common Power Diameter ÿ Duration: Continuous\nÿ Chakra Cost: Power Level\n\n\nYou are able to disperse spores around you or from a Zetsu Clone; doing so is a cooldown\n\nmove against everyone in the area, who can then perform their defenses normally.\n\n\nAnyone who fails to defend is infected by the spores, which begin to drain chakra each\nturn and grow in the process. The chakra drained is equal to half the level of the power\nused.\nAfter draining chakra in the first turn, the spores grow large enough to be attacked and\nare destroyed if their hardness, which has a common power value, is reduced to zero.\n\n\n\nOnce 3 turns have passed, the spores will have grown enough to impede the target's\nmovements, rendering them Impeded. If 8 turns pass, the victims will be Defenseless. After\n10 turns, it is possible to use the spores as a starting point to create Zetsu Clones (according\n\nto the rules of the clone skill), and they will have all the chakra absorbed from the victim.\n\n\n\n\nWith a touch (usually a crowd control move), you can gather the chakra collected by the\nspores of the individual touched. Doing so is a standard action.\n\n\nThe Zetsu Spore cannot leave a person with negative chakra. If it drains chakra from a\ntarget while they are in Sage Mode –\nKuchiyose, is instantly turned to stone and dies.\n\nEvolutions:\n\nÿ Spore Rain Lv 10: The spores incapacitate targets after 1 turn, leave them defenseless\n     for 5 turns, and continue draining chakra from the person until they are killed by\n    negative chakra.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "zetsu-seitai-rain-of-spores",
+        "group": "Zetsu Seitai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          136
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "SHUKYOKU DAIKYUSETSU: MAKYO NO RAN",
+    "type": "elemento",
+    "system": {
+      "descricao": "SHUKYOKU DAIKYUSETSU: MAKYO NO RAN\nHijutsu: Mateki\nSource: Hijutsu Vol. 2, translated PDF page 108\n\nSOURCE RULES (machine-translated):\n(FINAL: NINTH MOVEMENT: REVOLT OF THE WORLD)\nDEMONIC)\n\nÿ Rank B Ninjutsu\nÿ Prerequisite: Kuchiyose 5 (Dokis)\nAction : Partial\nÿ Target: 1 or more Doki in the scene\nÿ Duration: Continuous\nÿ Chakra Cost: 5\n\nThis technique needs to be performed by the user of Mateki, not the Dokis (summonings).\nj\n\n\n\nBy playing a melody on your demonic flute, you cause semi-material worms to sprout from\nthe mouths of all summoned Dokis.\n\nThey are Hungry Chakras, thirsting to feed on physical things. Each worm becomes a\nweapon for Doki, giving him an attack range of up to 6m with them.\n\n\n\nThe summoned Dokis must be at least Campaign Level 9 to receive the benefit of this\ntechnique.\n\nWhen Doki hits someone with one of the worms, it deals damage equal to its level in the\nKuchiyose: Doki power + ½ the value of the summoner's Art skill. It receives a +1 bonus if\nthe user possesses Expert: Art or Innate Skill: Art, limited to receiving this bonus only once.\n\n\n\nThis attack cannot be blocked; any attempt to do so results in an automatic failure. It also\npasses through barriers and other physical surfaces, such as trees and walls, and ignores\n\nhardness of any kind and armor absorption. However, you can never use these weapons to\nreduce the hardness or absorption of objects.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mateki-shukyoku-daikyusetsu-makyo-no-ran",
+        "group": "Mateki",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          108
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "CORROSIVE YOTON",
+    "type": "aptidao",
+    "system": {
+      "descricao": "CORROSIVE YOTON\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 110\n\nSOURCE RULES (machine-translated):\nPrerequisite: Youton 5\n\nBenefits: All Youton effects that are in contact with the enemy (Continuous\nDamage, Restraining, Lava Charge, Burning Wave) deal 2 fixed damage\nper turn while in contact.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-corrosive-yoton",
+        "group": "Mei Kekkei Genkai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          110
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "SUFFOCATING FUTTON",
+    "type": "aptidao",
+    "system": {
+      "descricao": "SUFFOCATING FUTTON\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 110\n\nSOURCE RULES (machine-translated):\nHis techniques generate a suffocating vapor that lingers in the air.\n\nPrerequisite: Futton 5\n\nBenefits: This skill has the same rules as the Fire Mastery (Basic Rulebook, p. 73), but\nit applies exclusively to the effects of your Futton power.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-suffocating-futton",
+        "group": "Mei Kekkei Genkai",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          110
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "YOTON",
+    "type": "elemento",
+    "system": {
+      "descricao": "YOTON\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 110\n\nSOURCE RULES (machine-translated):\nRestricted Power\n\nYouton is an advanced chakra element, formed simultaneously by the Fire and Earth\nelements. The Youton of this Hijutsu has the appearance of an acidic mud, which can\nadopt various forms and can be used both offensively and defensively.\n\n\nRange: Long (15m + 3m per Spirit level). The character can only manipulate or create\ntheir element up to the maximum range of their power.\nj\n\n\n\nSize: Creations, manipulations, and areas of effect can have up to 2m in diameter, length,\n\nwidth, or height per Spirit level.\n\n\n\nAdditional Damage: Every Youton Effect causes 1 additional point of damage.\n\nAllowed Effects: Cannon(1), Continuous Damage(2), Orb(2), Restraining(2), Ray(2),\n\nArrows(3), Barrier(3), Spear(3), Ricochet(3), Column(4), Energize(4), Destructive Breath(4),\nCurrent(5), Explosive Wave(5), Missile(5), Tremor (Doton, 2), Disaster (9).\n\n\n\n\nElemental Interaction: Youton techniques are at a disadvantage against Suiton.\n\n\n\nEarth Release and Fire Release: The character receives 1 free level in Earth Release and\nFire Release, and can use the Cannon Effect for Earth Release and Fire Release using their\nFire Release level as a parameter. If they want more levels in these powers to achieve more\n\neffects, they need to evolve them separately.\n\nElement Restriction: The character cannot learn elements other than\nYouton, Doton, and Katon, unless they possess the Dual Bloodline aptitude.\n\n\n\nThe Youton power also possesses the following exclusive effects:\n\n\n                 LEVEL 2 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-yoton",
+        "group": "Mei Kekkei Genkai",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          110
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "BURNING WAVE",
+    "type": "elemento",
+    "system": {
+      "descricao": "BURNING WAVE\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 111\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Range: Common Power\nÿ Target: Single\nÿ Damage: Power Level Used\nÿ Duration: Continuous for 3 turns (See Text)\nj\n\n\nThe user projects a large amount of lava to cover the target's body, who is entitled to a\ndefense roll. If they fail, the target will suffer the effect's damage as base damage, and\nthen suffer the damage again as fixed damage, once per turn.\n\n\n\nEach turn, the target is entitled to a Stamina test (Standard Difficulty -2) to avoid taking\nfixed damage as a reaction. After 3 turns, the lava on the target's body solidifies, ceases\nto cause damage, and transforms into a Level 2 Lava Charge (or Level 7 if the effect is\nevolved), then following the rules of that effect.\n\n\nEvolutions:\n\nÿ Burning Wave Lv 6: The base damage of the effect becomes the normal damage of\n    power (the fixed damage is not altered).\n\n                 LEVEL 6 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-burning-wave",
+        "group": "Mei Kekkei Genkai",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          111
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "PETRIFICATION",
+    "type": "elemento",
+    "system": {
+      "descricao": "PETRIFICATION\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 112\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Range: Common Power\nÿ Target: Single\nÿ Damage: Common Power Damage\nÿ Duration: Continuous\n\nThe user unleashes a jet of lava at the target, which causes damage and then solidifies\nto trap them. After being hit by the effect, the target is entitled to a Stamina test (Standard\ndifficulty -2). If they fail, they are incapacitated.\nIn turn, the victim can destroy the petrified area (which has the power's common\nhardness) or break free through a Strength or Escape test (the power's common\nhardness). Whichever choice is made, a standard action is required. They can also break\nfree through another effect that doesn't require mobility of the feet. If the trapped victim is\ntargeted by an area attack, the petrification also suffers damage from this attack, reducing\nits hardness (but it does not protect the target).\n\n\nEvolutions:\n\nÿ Petrification Level 9: The effect now has a cone-shaped area, with the usual size of the\n    power.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-petrification",
+        "group": "Mei Kekkei Genkai",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          112
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "FUTTON",
+    "type": "elemento",
+    "system": {
+      "descricao": "FUTTON\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 112\n\nSOURCE RULES (machine-translated):\nRestricted Power\n\nFutton is an advanced chakra element, composed simultaneously of the Fire and Water\nelements. This Hijutsu's Futton allows one to increase the temperature of their chakra to\nthe boiling point, generating large quantities of extremely hot steam.\n\n\nRange: Medium (10m + 2m per Spirit level). The character can only use their power up\nto this maximum range.\n\nSize: Creations, manipulations, and areas of effect can have up to 2m in diameter, length,\nwidth, or height per Spirit level (rounded up).\n\n\nAdditional Damage: All Futton effects cause +2 additional damage.\nj\n\n\nIncreased Resistance Difficulty: All Futton effects receive +1.\n\nin the difficulty of resistance for target testing.\n\nAllowed Effects: Cannon(1), Orb(2), Fog (Suiton)(2), Ray(2), Continuous Damage (2),\nProject(2); Arrows(3), Ricochet(3), Column(4), Cloud(4), Destructive Breath(4), Missile(5),\nCurrent(5), Flammable(5), Explosive Wave(5), Blinding (5).\n\n\n\nKaton and Suiton: Receive 1 level of Katon and Suiton for free, and can use the Cannon\neffect using the Futton level as a parameter.\n\n\n\nElement Restriction: The character cannot learn elements other than Katon, Suiton, and\nFutton, unless they possess the Dual Bloodline aptitude.\n\n\n\nThe Futton power also possesses the following exclusive Effects:\n\n               LEVEL 2 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-futton",
+        "group": "Mei Kekkei Genkai",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          112
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "CONCENTRATED BREATH",
+    "type": "elemento",
+    "system": {
+      "descricao": "CONCENTRATED BREATH\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 113\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Range: Common Power\nÿ Target: Single\nÿ Damage: Common Power Damage\nÿ Duration: Instantaneous\nÿ Hand Seals: No\n\nThe user concentrates a small amount of vapor in their mouth and spits it towards the target\nas a thin, fast, and cutting jet. This effect\nHe receives no penalties for close combat and cannot be blocked.\n\n(unless it's a block performed with a special weapon that can block techniques).\n\n\n\nThis effect ignores 2 points of Hardness for objects and barriers, and 1 point of Hardness for\nthe body.\n\nEvolutions:\n\nÿ Concentrated Breath Lv 7: The effect ignores all hardness of the target (whether objects or\n    bodies) and before damage is applied (if the attack hits), immediately destroys ½ of the\n    absorption of anything targeted by this effect (Armor, Objects, Demonic Mirrors, Susano-\n     o, etc.). Additionally, you can use this effect for half the chakra cost, but it will lose all its\n     benefits and cannot receive damage bonuses from any source other than the elemental\n    bonus of Futton.\n\n\n\n               LEVEL 6 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-concentrated-breath",
+        "group": "Mei Kekkei Genkai",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          113
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "ACID FOG",
+    "type": "elemento",
+    "system": {
+      "descricao": "ACID FOG\nHijutsu: Mei Kekkei Genkai\nSource: Hijutsu Vol. 2, translated PDF page 113\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Reach: Personal\nÿ Area of Effect: Common Power Radius Sphere (See Text)\nÿ Damage: Common Power Damage\nÿ Duration: Instant or Concentration\n\nYou release a mist of acidic vapor from your mouth, capable of molding itself to the\nenvironment and uncontrollably destroying everyone in the area.\nj\n\n\nThis effect takes the form of a sphere around the user, ignoring any existing cover\nas it expands and molds itself to the environment as long as there is even the\nslightest opening for the gas to propagate (therefore, it cannot be defended against\nwith Barrier Level 3).\n\nEveryone within the area of effect must make a defensive move against the user's\ncooldown to avoid being hit by the gas and suffering damage from the technique.\n\nThose affected by the technique must make a Stamina roll (Common Difficulty of\nPower -2) to avoid being intoxicated by the mist. Those intoxicated must repeat the\nStamina roll at the end of each of their turns until they achieve 3 successes. Each\ntime they fail the roll, they take 2 damage to their Vitality, which cannot be reduced\nby Body Toughness.\nIt is not possible to suffer more than one intoxication at the same time from this.\neffect.\n\nIt is possible to maintain the technique by concentrating. In this case, the gas\nexpands by an additional 5m radius per concentrated turn, and you will be entitled\nto reroll the attack roll against everyone within the area at the start of your turn,\nwhen you expend the standard action to concentrate this technique. The damage\nfrom this effect is halved starting with the 2nd attack (1st turn of concentration), and\ndoes not stack with subsequent turns.\n\nThis effect can only be maintained by concentrating for a number of turns equal to\n½ of the user's Futton Power Level.\n\nEvolutions:\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "mei-kekkei-genkai-acid-fog",
+        "group": "Mei Kekkei Genkai",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          113
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "KAJOUSATSU (EXTREME STEAM ASSASSINATION)",
+    "type": "elemento",
+    "system": {
+      "descricao": "KAJOUSATSU (EXTREME STEAM ASSASSINATION)\nHijutsu: Shakuton\nSource: Hijutsu Vol. 2, translated PDF page 123\n\nSOURCE RULES (machine-translated):\nÿ Action: Complete\nÿ Area of Effect: See Text\nÿ Range: Common to the power\nÿ Damage: Common Power Damage\nÿ Duration: Concentration (See Text)\nÿ Chakra Cost: 1 per level of power used\n\nYou are able to create a 0.5m diameter sphere of pure heat, occupying 1 square\non the grid, somewhere visible within range; the spheres possess common\nImaginary Hardness of the power.\nThe sphere remains floating as long as the user maintains concentration. It is\n     possible to maintain concentration on this technique for a maximum of 4 turns.\n        If concentration ends, the sphere disappears immediately. It is not possible to\n    use technique abilities with this effect, with the exception of Mummify.\n\n\n    To attack with the sphere, you can either create it at an enemy's location or\n    move it after its creation. In either case, you make a DC roll against the target's\n     defense. If successful, the target is allowed to take a \"Step\" to leave the area;\n     otherwise, it takes normal damage from the power (this step is taken as a free\narately.\n     action and does not generate opportunistic attacks).\n\n\n    The sphere attack can only be blocked by a special weapon capable of blocking\n     techniques (such as Samehada) or a weapon powered by Suiton.\n\n\n    The sphere can only be moved starting on the second turn after it is created, at\n     the moment the standard action to maintain concentration is spent.\n    You can move it to another position of your choice within the range of its power.\n\n\n        If, at the moment the user's turn begins, someone is in the same location as\n     the sphere, that target will immediately take damage without the chance to\n     defend. If something moves, intentionally or unintentionally, to the sphere's\n     location, that target will also take damage in the same way (roll 2d8 to determine\n     the degree of damage).\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shakuton-kajousatsu-extreme-steam-assassination",
+        "group": "Shakuton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          123
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "CRYSTAL SPHERE",
+    "type": "elemento",
+    "system": {
+      "descricao": "CRYSTAL SPHERE\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 126\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Range: 50m per Track skill level\nÿ Target: a creature\nÿ Duration: Concentration\nÿ Chakra Cost: 2\n\nYou are able to observe from a distance any creature that possesses a known chakra\nsignature; to do so, you create a crystal sphere from any available matter in the\nenvironment and focus your chakra on it. You become unaware while using this effect.\n\n\n\n                 LEVEL 6 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-crystal-sphere",
+        "group": "Shouton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          126
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "PRISM",
+    "type": "elemento",
+    "system": {
+      "descricao": "PRISM\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 126\n\nSOURCE RULES (machine-translated):\nÿ Prerequisite: Level 6 Barrier; Regenerative Barrier (skill)\nÿ Action: Complete\nÿ Reach: Personal\nÿ Duration: Concentration\nÿ Chakra Cost: 7 + attacks (see text)\n\nYou encase yourself in a crystalline prism, which protects you from any harm. The prism\npossesses the properties of the Barrier effect, including the benefit of the Regenerative\nBarrier skill, which can be used up to two times on the same prism.\n\n\nOnce your turn, as a free action, you can also perform ranged attacks by focusing your\nchakra on the tip of the prism. Doing this\nIt works like the cannon effect.\n\n\n                 LEVEL 8 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-prism",
+        "group": "Shouton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          126
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "IMPROVE TECHNIQUE",
+    "type": "elemento",
+    "system": {
+      "descricao": "IMPROVE TECHNIQUE\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 126\n\nSOURCE RULES (machine-translated):\nÿ Action: Standard\nÿ Area of Effect: Circle of a standard power size\nÿ Duration: Sustained\nj\n\n\nBy creating five crystalline pillars, you define an area that has the property of increasing\nthe capabilities of the techniques used by you and your allies. Any technique used by\nyou and any creature that is Friendly or Helpful towards you receives the benefits of\nthe Powerful Technique skill and one of the enhancements from the Empower skill\n(chosen by the player).\n\n\nThe technique lasts as long as the five pillars remain intact, possessing the common\nhardness of power.\n\n                LEVEL 10 EFFECTS\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-improve-technique",
+        "group": "Shouton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          126
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "SUISHÿ BUNSHIN",
+    "type": "elemento",
+    "system": {
+      "descricao": "SUISHÿ BUNSHIN\nHijutsu: Shouton\nSource: Hijutsu Vol. 2, translated PDF page 127\n\nSOURCE RULES (machine-translated):\n- (CRYSTAL CLONE)\nÿ Ninjutsu /Kekkei Genkai\nÿ Prerequisite: Shouton 1; Clone (Aptitude)\nÿ Action: Standard\nÿ Duration: Continuous\nÿ Reach: Personal\nÿ Chakra Cost: 1 per Clone\n\nThis technique follows the rules of Clone abilities, and also has the following distinct\neffects:\n\nYou create a hexagonal crystalline mirror that remains suspended in the air. From this\nmirror, the clone is created.\n\nThe crystal clone is more resistant than other clones and possesses\nVitality equal to 1/5 of the user's Vitality, and is capable of fusing with\nj\n\n\nCrystals are used as a means of utilizing the Imerge effect of the Earth\nRelease power. Due to their reflective nature, only characters with Rinnegan\nand Byakugan can differentiate between a crystal clone and the user.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "shouton-suish-bunshin",
+        "group": "Shouton",
+        "category": "Techniques & Level Effects",
+        "sourcePages": [
+          127
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Black Lightning (Kuroi Kaminari)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Black Lightning (Kuroi Kaminari)\nHijutsu: Kuroi Kaminari\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 105:\n     KUROI KAMINARI (BLACK LIGHTNING)\n\n                          Special Aptitude Tensai\n\n\n\n\n\nThe Black Lightning technique, used by the 3rd Raikage and passed down to Darui of the\nHidden Cloud Village. Those who possess this technique are tattooed on some part of their\nbody with the kanji for \"Lightning\". The main characteristic is that their Raiton (Lightning\nRelease) takes on a black color.\n\nSpecial Skills represent your area of expertise, where you excel due to your genius. Choose\nand purchase up to 2 different special skills (level 2 skills do not count towards this limit).\n\n\n\nBLACK LIGHTNING\nPrerequisites: Raiton 5; Mastery of the Ray\n\nBenefit: By paying an additional +2 chakra cost when using a Raiton effect, the benefit of\nyour Lightning Mastery is amplified, and you achieve a critical hit with 2 fewer points on the\ndice roll.\n\n\n\nThus, if the critical period of the effect is 15-16, it becomes 13-14-15-16. This\nThis benefit cannot be combined with the Level 9 Lightning Blade and does not affect the...\n\nEnergize effect.\n\n        MATEKI (DEMONIC FLUTE)\n\n                    Power and Limited Abilities\n\n\n\n\n\nA small yet powerful tool, capable of great feats in the hands of a trained shinobi, possessing\nsound-based attacks and even the ability to summon beings as bodyguards, controlled by\nthe flute's melody."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kuroi-kaminari-black-lightning-kuroi-kaminari",
+        "group": "Kuroi Kaminari",
+        "category": "Aptitudes & Abilities",
+        "sourcePages": [
+          105
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "Projectiles (Puppet Device)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Projectiles (Puppet Device)\nHijutsu: Kugutsu no Jutsu\nSource: Hijutsu Vol. 2, PDF p. 97\n\nDevice: Light/Standard slot. Fires kunai, shuriken or senbon; weapon damage 1.\n\nMechanisms level 8 upgrade: Purchase a Standard-slot device that fires a torpedo into the air, raining projectiles over a circular area 1 m in diameter per Mechanisms level. Weapon damage 2.\n\nUses: 10 per slot. Projectiles may be poisoned.\n\nChakra cost: The source passage does not state a separate chakra cost for firing projectiles; apply applicable puppet control/device rules. Do not confuse the preceding Wall device chakra cost with Projectiles."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "kugutsu-no-jutsu-projectiles-puppet-device",
+        "group": "Kugutsu no Jutsu",
+        "category": "Puppet Devices",
+        "sourcePages": [
+          97
+        ],
+        "verification": "manually checked against PDF page 97"
+      }
+    }
+  },
+  {
+    "name": "Yagura’s Staff",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Yagura’s Staff\nHijutsu: Chapter III — Special Weapons\nSource: Hijutsu Vol. 2, translated PDF page 137\n\nSOURCE RULES (machine-translated):\nDamage     Reach         Critical    Compartments        Type\n     +3       2m        15-16     1 item/2 comp. Crushing\nYagura of the Mist's signature weapon. It consists of a Boujutsu staff with two\nhooks at the ends and a green flower.\n\nPrerequisite: Strength or Dexterity 10\n\nType: It is a special long-type weapon.\n\nWater Mirror: [requires Suiton or Sanbi Suiton 5] You are able to use the\nWater Mirror effect of Sanbi Suiton, even if you do not possess this effect. If\nyou already possess it, the effect is enhanced by the weapon and can be used\nwith a movement action instead of the standard action.\n\nReposition: Using the grappling hook, you are able to move your enemies on the battlefield.\nAs soon as you land a hit with Yagura's Staff, you can move your enemy 1 meter in any\n\ndirection. The enemy is entitled to a Stamina test, Difficulty 2 + your CC level, to avoid being\nmoved.\n\n\nWater Release Staff: While wielding Yagura's Staff, you can perform any\nWater Release or Three-Sided Water Release effect without needing hand seals.\nIf you use techniques in this way, they will receive +1 Base Damage, Hardness.\nand Difficulty of Testing.\nEnergizable Weapon: You can apply the Energize effect to Yagura's Staff.\n\n\nAccurate Weapon: The Accuracy skill applies to Yagura's Staff.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iii-special-weapons-yagura-s-staff",
+        "group": "Chapter III — Special Weapons",
+        "category": "Weapons",
+        "sourcePages": [
+          137
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Bashousen",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Bashousen\nHijutsu: Chapter III — Special Weapons\nSource: Hijutsu Vol. 2, translated PDF page 138\n\nSOURCE RULES (machine-translated):\nDamage     Reach         Critical    Compartments        Type\n      +0                  ---                   ---        1 item/1 tablet.                     -\nBashousen is a one-handed fan made of white feathers with red tips. One of the treasures\nof the Sage of Six Paths, it allows the user to access all five basic chakra natures.\n\n\n\nPrerequisite: Strength or Dexterity 10; Spirit 10 and Expanded Chakra or Spirit 16 and\nGreater Resistance: Spirit.\n\nType: It is a special weapon of the medium type. However, it is used with only\none hand.\n\n5 Elements: While wielding the Bashousen, you may utilize its Ninpou effects from any of\nits powers with any of the 5 basic elements (Earth, Wind, Fire, Lightning, and Water),\nprovided that the\nThe element must have this effect available. Doing so consumes the necessary action of\nthe effect itself.\n\nNo Hand Seals Required: While wielding this treasure, you do not need to perform hand\nseals to use its techniques; you only need to brandish the fan. Furthermore, you do not\nneed to make a Concentration check for Close Combat when using its techniques.\n\n\n\nChakra Consumption: While wielding this weapon, you temporarily lose 10% of your\nchakra (this penalty does not stack with other treasures). If someone without the\nprerequisites attempts to wield this weapon, their chakra will be reduced to zero and they\nwill faint.\n\nEmpower: You can use the Empower skill even if you haven't purchased it.\n\n\n\nBlocking Chakra: Bashousen can be used to block any technique, even area-of-effect\ntechniques, without worry, as it is indestructible.\n\nEnergizable Weapon: You can apply the Energize effect to Bashousen.\n\nAccurate Weapon: The Accuracy skill applies to the Bashousen.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iii-special-weapons-bashousen",
+        "group": "Chapter III — Special Weapons",
+        "category": "Weapons",
+        "sourcePages": [
+          138
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Koukinjou",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Koukinjou\nHijutsu: Chapter III — Special Weapons\nSource: Hijutsu Vol. 2, translated PDF page 138\n\nSOURCE RULES (machine-translated):\nDamage     Reach         Critical    Compartments        Type\n\n      +3        6m          15-16       2 items/1 comp. Crushing\nj\n\n\nKoukinjou is a golden rope that can be used both as a whip and as gloves when\ntied around the wrists. Any target struck by it has its \"Kotodama\" exposed, making\nit vulnerable to attack or sealing.\nthe person.\n\nPrerequisite: Strength or Dexterity 10; Spirit 10 and Expanded Chakra or Spirit\n16 and Greater Resistance: Spirit.\n\nType: It is a special weapon of the medium type. However, it is used with only\none hand.\n\nIron Fist: If you possess it, you can wrap this weapon around your fists and use\nthe Weapon Damage from the \"Iron Fist\" skill. You can also use any maneuver\nskill with Koukinjou as long as it's an arm maneuver.\n\n\nKotodama Exposed: Anyone hit by Koukinjou's Strike or whose unarmed attack\nis blocked by this weapon will have their Kotodama expelled from their mouth.\nThe Kotodama remains exposed until the end of the weapon user's next turn or\nuntil attacked. Kotodamas have a fixed Defense of 9, Hardness of 0, and\nAbsorption equal to 5 + 2 x the victim's Stamina.\nIf the Kotodama is \"destroyed,\" the target receives fixed damage equal to the\nAbsorption of your Kotodama.\n\nIt is only possible to expose a person's Kotodama once per scene.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iii-special-weapons-koukinjou",
+        "group": "Chapter III — Special Weapons",
+        "category": "Weapons",
+        "sourcePages": [
+          138
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Shichiseiken",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Shichiseiken\nHijutsu: Chapter III — Special Weapons\nSource: Hijutsu Vol. 2, translated PDF page 139\n\nSOURCE RULES (machine-translated):\nDamage     Reach         Critical    Compartments        Type\n     +3                ---         15-16      2 items/1 tablet.        Court\n\n\nShichiseiken is a rectangular silver sword that can be folded for concealment. Its\ndefining characteristic is its ability to curse its target through their Kotodama.\nOnce cursed, the person will either be unable to speak the word they have uttered\nmost often in their life or will be sealed within the Benihisago (another Sacred\nTreasure). This weapon was designed to be used alongside the Koukinjou and\nthe Benihisago itself.\n\nPrerequisite: Strength or Dexterity 10; Spirit 10 and Expanded Chakra or Spirit\n16 and Greater Resistance: Spirit.\nj\n\n\nType: It is a special weapon of the medium type. However, it is used with only\none hand.\n\nCursing Kotodama: If someone's Kotodama is struck by the Shichiseiken, the\nperson's name will be engraved on the sword, indicating that the person has been\ncursed. If they say the word they have used most in their life or a homophone\n(same pronunciation), they will be defenseless for one round, susceptible to sealing\nby the Binihisago.\n\nMechanically, it's impossible to know which word the person uses most often, so\nevery time the character speaks, roll 1d8 and if the result is 1 or 2 (25% chance),\nthey will suffer the condition imposed by the curse.\n\n\nFurthermore, if the character remains quiet for an entire round, the\nThe curse will also be activated.\n\nKnowing the conditions of the curse is an Occultism check with a difficulty of 23.\n\nSilver Fold: Shichiseiken can be folded and concealed, granting a +2 bonus to\nSleight of Hand to hide the weapon on the body.\nUnfolding or folding the weapon is a partial action that can be reduced to a free\naction with \"Quick Draw\".\n\nA person unaware of the existence of the Shichiseiken suffers a -2 penalty to their Defense\non the first attack with the sword immediately after it is unfolded. This penalty is only applied\nthe first time the weapon is unfolded in the combat scene.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iii-special-weapons-shichiseiken",
+        "group": "Chapter III — Special Weapons",
+        "category": "Weapons",
+        "sourcePages": [
+          139
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Benihisago",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Benihisago\nHijutsu: Chapter III — Special Weapons\nSource: Hijutsu Vol. 2, translated PDF page 140\n\nSOURCE RULES (machine-translated):\nDamage       Reach                                       Critical Compartments           Type\n      0      5m + Spirit               -       2 items/1 tablet.                -\n\n\nBenihisago is a clay pot with a red band and a lid, used for sealing, including Bijuu.\nIt is said that the seal is so powerful that not even the Edo Tensei Jutsu can\nremove the person from it.\n\n\nPrerequisite: Strength or Dexterity 10; Spirit 10 and Expanded Chakra or Spirit 16\nand Greater Resistance: Spirit.\n\nType: It is a special weapon of the medium type. However, it is used with only\none hand.\n\nSeal Target: If there is a target within 5m + Spirit that is Helpless, you can use a\nfull-round action to begin the sealing process, keeping the target helpless until\nyour next turn. The sealing process lasts until the end of your next turn.\nj\n\n\nWhen the target is forced to make a Strength or Escape Difficulty 9 + the user's\nSpirit test. If the helpless condition was caused by the Shichiseiken's effect, the\ntarget will automatically fail this test.\n\nOnly one target can be sealed at a time, however there is no limit to the number of\ntargets that can be sealed in Benihisago.\n\nDuring the round, you will have to maintain concentration on Benihisago; if you lose,\nthe technique is canceled and the seal fails.\n\nInside the Pot: Once sealed, the target cannot be released unless the seal is\nreversed (see below). The workings of the inside of the pot (such as the passage of\ntime, environment, target awareness, etc.) are defined by the Game Master\naccording to the campaign's needs.\n\nReversing the Seal: The wielder of the Benihisago can reverse the seal by\nremoving the jar's lid. Doing so is a full action, and you can remove as many and\nwhich sealed targets as are inside the jar.\n\n\nChakra Consumption: While wielding this weapon, you temporarily lose 10% of\nyour chakra (this penalty does not stack with other treasures). If someone without\nthe prerequisites attempts to wield this weapon, their chakra will be reduced to zero\nand they will faint.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iii-special-weapons-benihisago",
+        "group": "Chapter III — Special Weapons",
+        "category": "Weapons",
+        "sourcePages": [
+          140
+        ],
+        "verification": "source heading matched and isolated; review translation for layout artifacts"
+      }
+    }
+  },
+  {
+    "name": "Kohaku no Jouhei",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Kohaku no Jouhei\nHijutsu: Chapter III — Special Weapons\nSource: Hijutsu Vol. 2, translated PDF page 141\n\nSOURCE RULES (machine-translated):\nThe last of the Five Treasures of the Six Paths is not a weapon per se, but rather a\nlarge amber vase capable of sealing anyone away.\nbeing in the same environment and having the target's name spoken by the wielder\nof Kohaku no Jouhei.\n\nThis treasure is not a piece of equipment that can be used normally, so there is no\n\"Use Weapon\" option for it; it is merely a plot device for the narrator to use.\n\nCost: Use only an explicit cost in the rules above; otherwise consult the governing power/device rules. No unstated cost is assumed to be zero.\n\nGM NOTE: The source explicitly treats Kohaku no Jouhei as a narrative plot device, not a normally usable weapon, and states there is no Use Weapon option for it."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iii-special-weapons-kohaku-no-jouhei",
+        "group": "Chapter III — Special Weapons",
+        "category": "Weapons",
+        "sourcePages": [
+          141
+        ],
+        "verification": "plot device; not normally purchasable equipment"
+      }
+    }
+  },
+  {
+    "name": "Use Weapon: Sacred Treasures of the Six Paths",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Use Weapon: Sacred Treasures of the Six Paths\nHijutsu: Chapter III — Special Weapons\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 138:\nThe Sacred Treasures of the Six Paths consist of five shinobi tools that the Sage of Six\nPaths himself used. They are revered as divine objects of extreme power that only those\npossessing great chakra can use, as otherwise the treasures can lead the ordinary user to\ndeath. Among the few who were able to use them were the Kinkaku and Ginkaku brothers.\n\n\n\n\nUse Weapon: Treasures of the Sage of the Six Paths: To obtain\n\nProficiency with all the Treasures of the Sage of the Six Paths is achieved by purchasing\nthe \"Use Weapon: Treasures of\" skill only once.\n\"Wise in His Ways.\"\n\n                BASHOUSEN\n     Damage     Reach         Critical    Compartments        Type\n      +0                  ---                   ---        1 item/1 tablet.                     -\nBashousen is a one-handed fan made of white feathers with red tips. One of the treasures\nof the Sage of Six Paths, it allows the user to access all five basic chakra natures.\n\n\n\nPrerequisite: Strength or Dexterity 10; Spirit 10 and Expanded Chakra or Spirit 16 and\nGreater Resistance: Spirit.\n\nType: It is a special weapon of the medium type. However, it is used with only\none hand.\n\n5 Elements: While wielding the Bashousen, you may utilize its Ninpou effects from any of\nits powers with any of the 5 basic elements (Earth, Wind, Fire, Lightning, and Water),\nprovided that the\nThe element must have this effect available. Doing so consumes the necessary action of\nthe effect itself.\n\nNo Hand Seals Required: While wielding this treasure, you do not need to perform hand\nseals to use its techniques; you only need to brandish the fan. Furthermore, you do not\nneed to make a Concentration check for Close Combat when using its techniques.\n\n\n\nChakra Consumption: While wielding this weapon, you temporarily lose 10% of your\nchakra (this penalty does not stack with other treasures). If someone without the\nprerequisites attempts to wield this weapon, their chakra will be reduced to zero and they\nwill faint.\n\nEmpower: You can use the Empower skill even if you haven't purchased it.\n\n\n\nBlocking Chakra: Bashousen can be used to block any technique, even area-of-effect\ntechniques, without worry, as it is indestructible.\n\nEnergizable Weapon: You can apply the Energize effect to Bashousen.\n\nAccurate Weapon: The Accuracy skill applies to the Bashousen.\n\n                 KOUKINJOU\n     Damage     Reach         Critical    Compartments        Type\n\n      +3        6m          15-16       2 items/1 comp. Crushing"
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iii-special-weapons-use-weapon-sacred-treasures-of-the-six-paths",
+        "group": "Chapter III — Special Weapons",
+        "category": "Weapon Aptitudes",
+        "sourcePages": [
+          138
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "Kuchiyose: Rashoumon",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Kuchiyose: Rashoumon\nSource: Hijutsu Vol. 2, PDF pp. 141–143\n\nPrerequisite: Spirit or Intelligence 8.\nType: Ninjutsu / Summoning; common aptitude (does not follow the Kuchiyose power rules).\nAction: Movement.\nRange: 5 m + 1 m per Spirit or Intelligence level.\nArea: Wall width and height each 0.5 m per Spirit or Intelligence level.\nHardness: Spirit or Intelligence level.\nDuration: Continuous; gates remain until destroyed or scene end.\nChakra cost: Half the Spirit or Intelligence score used to define the technique.\n\nSummons a defensive wall between user and attacker; cannot block adjacent attacks because it requires space. Defense requires a Magic Level test with +2 accuracy; pay chakra before rolling. Damage beyond the wall hardness passes through when the gate is destroyed. Only one gate at a time at base level. Opening or closing the gate is a free action, but only once per round.\n\nLevel 2: Requires Spirit or Intelligence 12. +2 Hardness, up to 3 gates; summon all in one movement action. If summoning multiple gates, divide total Hardness among them. One gate can be summoned with a partial action.\n\nLevel 3: See PDF p. 143 for complete advancement; may summon up to 5 gates, dividing total Hardness among them."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iv-common-options-kuchiyose-rashoumon",
+        "group": "Chapter IV — Common Options",
+        "category": "Summoning Aptitudes",
+        "sourcePages": [
+          141
+        ],
+        "verification": "manually checked against PDF pp. 141–143"
+      }
+    }
+  },
+  {
+    "name": "Rashoumon — Level 1",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Rashoumon — Level 1\nHijutsu: Chapter IV — Common Options\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 141:\nWhen the target is forced to make a Strength or Escape Difficulty 9 + the user's\nSpirit test. If the helpless condition was caused by the Shichiseiken's effect, the\ntarget will automatically fail this test.\n\nOnly one target can be sealed at a time, however there is no limit to the number of\ntargets that can be sealed in Benihisago.\n\nDuring the round, you will have to maintain concentration on Benihisago; if you lose,\nthe technique is canceled and the seal fails.\n\nInside the Pot: Once sealed, the target cannot be released unless the seal is\nreversed (see below). The workings of the inside of the pot (such as the passage of\ntime, environment, target awareness, etc.) are defined by the Game Master\naccording to the campaign's needs.\n\nReversing the Seal: The wielder of the Benihisago can reverse the seal by\nremoving the jar's lid. Doing so is a full action, and you can remove as many and\nwhich sealed targets as are inside the jar.\n\n\nChakra Consumption: While wielding this weapon, you temporarily lose 10% of\nyour chakra (this penalty does not stack with other treasures). If someone without\nthe prerequisites attempts to wield this weapon, their chakra will be reduced to zero\nand they will faint.\n\n            KOHAKU NO JOUHEI\nThe last of the Five Treasures of the Six Paths is not a weapon per se, but rather a\nlarge amber vase capable of sealing anyone away.\nbeing in the same environment and having the target's name spoken by the wielder\nof Kohaku no Jouhei.\n\nThis treasure is not a piece of equipment that can be used normally, so there is no\n\"Use Weapon\" option for it; it is merely a plot device for the narrator to use.\n\n\n       CHAPTER IV - COMMON OPTIONS\n\n            KUCHIYOSE: RASHOUMON\n\n                      Common Aptitude\n\n\n\n\n\nThe southern gates of the ancient Japanese capital from the Nara period, and one\nof the ancient cities that would give rise to what we know today as Kyoto, are a\npowerful defensive invocation that appears as a large wall with the face of an oni,\nsupposedly impenetrable.\n\nÿ Prerequisite: Spirit or Intelligence 8\nÿ Ninjutsu / Summoning\n\nPDF page 142:\nÿ Action: Movement\nÿ Range: 5 + 1m per Spirit or Intelligence Level\nÿ Area of Effect: Wall with a width and height equal to ½ m per Level of\n     Spirit or Intelligence\nÿ Toughness: Level of Spirit or Intelligence\nÿ Duration: Continuous\nÿ Chakra Cost: ½ Spirit or Intelligence (whichever is used to define the\n    technique's parameters)\n\nThis ability does not follow the rules of the Kuchiyose power.\n\nYou summon the great Rashoumon gates in the form of a large wall to block\nenemy attacks.\n\nThere needs to be space between you and the enemy for the gates to be\nsummoned (therefore, it's not possible to use the barrier to defend against an\nattack from an adjacent enemy).\n\nUsing Kuchiyose: Rashoumon as a defense requires a Magic Level test with +2\naccuracy and a chakra cost paid before the test.\n\nWhen destroyed, those protected by the barrier will suffer the difference in\ndamage after the reduction for its hardness.\n\nAs long as they are not destroyed, the Rashoumon Gates remain on the\nbattlefield, only disappearing at the end of the scene (ideally at the end of the\ncombat). You cannot have more than one Rashoumon Gate summoned at the\nsame time, however you can summon a new one whenever you dispel the first\none or it is destroyed.\nBecause they are gates, the user can cause the oni's face to open, allowing\npeople or techniques to pass through without difficulty. Doing so is a free action,\nhowever, it is only possible to open and close the gates once in the same round\n(for example, opening at the beginning of the turn, attacking, and closing before\nthe end of the turn).\n\nLevel 2: When you reach Spirit or Intelligence 12, you can repurchase this\naptitude to evolve it. Your Rashoumon gates gain +2 Hardness. You can have up\nto 3 gates summoned at the same time instead of just 1. It is possible to summon\nall 3 gates simultaneously using the same movement action, creating a triangle\nformation that can only be escaped from above. However, when doing so, the\ntotal Hardness of each gate is divided by the number of gates summoned (for\nexample, if you summon 3 gates and the total Hardness is 15, each gate would\nhave 5 Hardness).\n\n\nAll those who can be imprisoned have the right to make a defense against their\nDC roll. Summoning only 1 gate can now be done with a partial action instead of\na move action.\n\nLevel 3: When you reach Spirit or Intelligence 18, you can purchase this skill\nagain to evolve it further. Your Rashoumon Gates gain +3 Hardness (not\nstackable with the Level version).\n2) You can have up to 5 gates summoned at the same time. Your gates will no\nlonger receive damage to their hardness. If damage is not enough to destroy the\ngate, all damage is ignored and the hardness remains. It is possible to use a\nmove action to summon up to 5 gates at the same time."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iv-common-options-rashoumon-level-1",
+        "group": "Chapter IV — Common Options",
+        "category": "Rashoumon Levels",
+        "sourcePages": [
+          141,
+          142
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "Rashoumon — Level 2",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Rashoumon — Level 2\nHijutsu: Chapter IV — Common Options\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 142:\nÿ Action: Movement\nÿ Range: 5 + 1m per Spirit or Intelligence Level\nÿ Area of Effect: Wall with a width and height equal to ½ m per Level of\n     Spirit or Intelligence\nÿ Toughness: Level of Spirit or Intelligence\nÿ Duration: Continuous\nÿ Chakra Cost: ½ Spirit or Intelligence (whichever is used to define the\n    technique's parameters)\n\nThis ability does not follow the rules of the Kuchiyose power.\n\nYou summon the great Rashoumon gates in the form of a large wall to block\nenemy attacks.\n\nThere needs to be space between you and the enemy for the gates to be\nsummoned (therefore, it's not possible to use the barrier to defend against an\nattack from an adjacent enemy).\n\nUsing Kuchiyose: Rashoumon as a defense requires a Magic Level test with +2\naccuracy and a chakra cost paid before the test.\n\nWhen destroyed, those protected by the barrier will suffer the difference in\ndamage after the reduction for its hardness.\n\nAs long as they are not destroyed, the Rashoumon Gates remain on the\nbattlefield, only disappearing at the end of the scene (ideally at the end of the\ncombat). You cannot have more than one Rashoumon Gate summoned at the\nsame time, however you can summon a new one whenever you dispel the first\none or it is destroyed.\nBecause they are gates, the user can cause the oni's face to open, allowing\npeople or techniques to pass through without difficulty. Doing so is a free action,\nhowever, it is only possible to open and close the gates once in the same round\n(for example, opening at the beginning of the turn, attacking, and closing before\nthe end of the turn).\n\nLevel 2: When you reach Spirit or Intelligence 12, you can repurchase this\naptitude to evolve it. Your Rashoumon gates gain +2 Hardness. You can have up\nto 3 gates summoned at the same time instead of just 1. It is possible to summon\nall 3 gates simultaneously using the same movement action, creating a triangle\nformation that can only be escaped from above. However, when doing so, the\ntotal Hardness of each gate is divided by the number of gates summoned (for\nexample, if you summon 3 gates and the total Hardness is 15, each gate would\nhave 5 Hardness).\n\n\nAll those who can be imprisoned have the right to make a defense against their\nDC roll. Summoning only 1 gate can now be done with a partial action instead of\na move action.\n\nLevel 3: When you reach Spirit or Intelligence 18, you can purchase this skill\nagain to evolve it further. Your Rashoumon Gates gain +3 Hardness (not\nstackable with the Level version).\n2) You can have up to 5 gates summoned at the same time. Your gates will no\nlonger receive damage to their hardness. If damage is not enough to destroy the\ngate, all damage is ignored and the hardness remains. It is possible to use a\nmove action to summon up to 5 gates at the same time."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iv-common-options-rashoumon-level-2",
+        "group": "Chapter IV — Common Options",
+        "category": "Rashoumon Levels",
+        "sourcePages": [
+          142
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  },
+  {
+    "name": "Rashoumon — Level 3",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Rashoumon — Level 3\nHijutsu: Chapter IV — Common Options\n\nExact rules could not be isolated from the translated PDF. The following is page context, not a verified description.\n\nPDF page 142:\nÿ Action: Movement\nÿ Range: 5 + 1m per Spirit or Intelligence Level\nÿ Area of Effect: Wall with a width and height equal to ½ m per Level of\n     Spirit or Intelligence\nÿ Toughness: Level of Spirit or Intelligence\nÿ Duration: Continuous\nÿ Chakra Cost: ½ Spirit or Intelligence (whichever is used to define the\n    technique's parameters)\n\nThis ability does not follow the rules of the Kuchiyose power.\n\nYou summon the great Rashoumon gates in the form of a large wall to block\nenemy attacks.\n\nThere needs to be space between you and the enemy for the gates to be\nsummoned (therefore, it's not possible to use the barrier to defend against an\nattack from an adjacent enemy).\n\nUsing Kuchiyose: Rashoumon as a defense requires a Magic Level test with +2\naccuracy and a chakra cost paid before the test.\n\nWhen destroyed, those protected by the barrier will suffer the difference in\ndamage after the reduction for its hardness.\n\nAs long as they are not destroyed, the Rashoumon Gates remain on the\nbattlefield, only disappearing at the end of the scene (ideally at the end of the\ncombat). You cannot have more than one Rashoumon Gate summoned at the\nsame time, however you can summon a new one whenever you dispel the first\none or it is destroyed.\nBecause they are gates, the user can cause the oni's face to open, allowing\npeople or techniques to pass through without difficulty. Doing so is a free action,\nhowever, it is only possible to open and close the gates once in the same round\n(for example, opening at the beginning of the turn, attacking, and closing before\nthe end of the turn).\n\nLevel 2: When you reach Spirit or Intelligence 12, you can repurchase this\naptitude to evolve it. Your Rashoumon gates gain +2 Hardness. You can have up\nto 3 gates summoned at the same time instead of just 1. It is possible to summon\nall 3 gates simultaneously using the same movement action, creating a triangle\nformation that can only be escaped from above. However, when doing so, the\ntotal Hardness of each gate is divided by the number of gates summoned (for\nexample, if you summon 3 gates and the total Hardness is 15, each gate would\nhave 5 Hardness).\n\n\nAll those who can be imprisoned have the right to make a defense against their\nDC roll. Summoning only 1 gate can now be done with a partial action instead of\na move action.\n\nLevel 3: When you reach Spirit or Intelligence 18, you can purchase this skill\nagain to evolve it further. Your Rashoumon Gates gain +3 Hardness (not\nstackable with the Level version).\n2) You can have up to 5 gates summoned at the same time. Your gates will no\nlonger receive damage to their hardness. If damage is not enough to destroy the\ngate, all damage is ignored and the hardness remains. It is possible to use a\nmove action to summon up to 5 gates at the same time.\n\nPDF page 143:\nAt the same time, in any arrangement the user desires. However, when\ndoing so, the total Hardness of each gate is divided by the number of\ngates summoned (for example, if you summon 5 gates and the total\nHardness is 20, each gate would have a Hardness of 4).\n\nAs in the previous level, all those who can be trapped have the right to\nmake a defense against their DC roll. Summoning only 1 gate can now be\ndone with a partial action instead of the full action.\nmovement.\n"
+    },
+    "flags": {
+      "sns-hijutsu-vol2-chapter3-continuation": {
+        "uid": "chapter-iv-common-options-rashoumon-level-3",
+        "group": "Chapter IV — Common Options",
+        "category": "Rashoumon Levels",
+        "sourcePages": [
+          142,
+          143
+        ],
+        "verification": "page context only; exact ability not isolated"
+      }
+    }
+  }
+]

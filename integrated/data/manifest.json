@@ -1,0 +1,67 @@
+[
+  {
+    "source": "sns-hijutsu-vol1-clans",
+    "file": "sns-hijutsu-vol1-clans__items.json",
+    "kind": "items"
+  },
+  {
+    "source": "sns-kuchiyose-actors",
+    "file": "sns-kuchiyose-actors__summons.json",
+    "kind": "summons"
+  },
+  {
+    "source": "sns-hijutsu-vol2-chapter3-continuation",
+    "file": "sns-hijutsu-vol2-chapter3-continuation__items.json",
+    "kind": "items"
+  },
+  {
+    "source": "sns-weapon-library",
+    "file": "sns-weapon-library__armor.json",
+    "kind": "armor"
+  },
+  {
+    "source": "sns-weapon-library",
+    "file": "sns-weapon-library__weapons.json",
+    "kind": "weapons"
+  },
+  {
+    "source": "sns-poisons-advanced-guide",
+    "file": "sns-poisons-advanced-guide__poisons.json",
+    "kind": "poisons"
+  },
+  {
+    "source": "sns-basic-book-hijutsu",
+    "file": "sns-basic-book-hijutsu__items.json",
+    "kind": "items"
+  },
+  {
+    "source": "shinobi-items-services",
+    "file": "shinobi-items-services__catalog.json",
+    "kind": "catalog"
+  },
+  {
+    "source": "sns-hijutsus-vol1-jinchuuriki",
+    "file": "sns-hijutsus-vol1-jinchuuriki__items.json",
+    "kind": "items"
+  },
+  {
+    "source": "sns-hijutsu-vol2-chapter1-complete",
+    "file": "sns-hijutsu-vol2-chapter1-complete__items.json",
+    "kind": "items"
+  },
+  {
+    "source": "sns-hijutsu-vol2-chapter2",
+    "file": "sns-hijutsu-vol2-chapter2__items.json",
+    "kind": "items"
+  },
+  {
+    "source": "sns-basic-book-clans",
+    "file": "sns-basic-book-clans__items.json",
+    "kind": "items"
+  },
+  {
+    "source": "sns-hijutsu-vol2-pasted-hijutsus",
+    "file": "sns-hijutsu-vol2-pasted-hijutsus__items.json",
+    "kind": "items"
+  }
+]

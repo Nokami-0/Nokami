@@ -1,0 +1,1 @@
+Added editable equipment Hardness and Absorption fields for weapons and armor. Defaults zero indicate unspecified, not a sourcebook ruling. These are separate from wearer defenses. No automatic durability damage implemented.

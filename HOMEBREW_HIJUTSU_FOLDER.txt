@@ -1,0 +1,3 @@
+Version 1.7.39
+On GM world load, creates Homebrew Hijutsu in the Items sidebar and inside the Hijutsu Powers compendium (world.sns-hijutsu). Existing folders and items are preserved. Also ensured after compendium rebuild. The new folder starts empty; this update does not import the PDF abilities.
+Install by replacing the existing shinobi-no-sho-revamp system folder and restarting Foundry.

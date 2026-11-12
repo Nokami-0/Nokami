@@ -1,0 +1,1 @@
+Removed categorized weapon lists and the broken weapon-row Handlebars partial from actor sheets. Inventory now shows one generic Equipment list for all embedded equipment, including weapons. Existing world Items sidebar folders and drag/drop weapon items remain available. No existing actor/world items are deleted. Foundry runtime not tested.

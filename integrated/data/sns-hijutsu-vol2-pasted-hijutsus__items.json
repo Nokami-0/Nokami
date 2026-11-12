@@ -1,0 +1,767 @@
+[
+  {
+    "name": "Poisonous Projectile",
+    "type": "elemento",
+    "system": {
+      "descricao": "Poisonous Projectile\nHijutsu: Satetsu / Poison\nSource: user-supplied translated excerpt, lines 8–19\nAction: Pattern\nDuration: Instantaneous\n\nSOURCE TEXT:\nPOISONOUS PROJECTILE\nÿ Available for: Satetsu\nÿ Prerequisite: Venefício 8\nAction : Pattern\nÿ Scope: common to power\nÿ Target: one or more creatures\nÿ Damage: 2 per projectile (see text)\nÿ Duration: Instantaneous\nYou dissolve doses of poison in your iron sand beforehand.\nWhen using the effect, you mold the sand into piercing or cutting projectiles to fire at\none or more targets, injecting them with poison upon impact. This effect follows the\nsame rules as Arrows Lv 3, with the following differences.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "poisonous-projectile",
+        "group": "Satetsu / Poison",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 8,
+        "sourceLineEnd": 19,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Juuinka — Overview",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Juuinka — Overview\nHijutsu: Juuinka (Cursed Seal)\nSource: user-supplied translated excerpt, lines 1–35\nAction: Pattern\nDuration: Instantaneous\n\nSOURCE TEXT:\nJUUINKA (CURSED SEAL)\nLimited Abilities\nThe character possesses the Cursed Seal, which represents both a blessing and a curse.\nThe Cursed Seal is a contamination: when activated, the seal replaces the bearer's chakra\nwith the chakra of the nature of the one who contaminated them, granting great abilities and\npowers. However, it also causes damage if used consecutively and excessively.\nLEVEL 5 EFFECTS\nPOISONOUS PROJECTILE\nÿ Available for: Satetsu\nÿ Prerequisite: Venefício 8\nAction : Pattern\nÿ Scope: common to power\nÿ Target: one or more creatures\nÿ Damage: 2 per projectile (see text)\nÿ Duration: Instantaneous\nYou dissolve doses of poison in your iron sand beforehand.\nWhen using the effect, you mold the sand into piercing or cutting projectiles to fire at\none or more targets, injecting them with poison upon impact. This effect follows the\nsame rules as Arrows Lv 3, with the following differences.\nThe Juuinka was created from the Senninka, being a smaller version of this secret seal.\nThe bearer of the Cursed Seal does not have the mental instability of the Senninka\nuser, but also does not have access to all the benefits of the power, only having the\nbonuses that are included in the Juuinka's abilities.\nRestricted Skills: Juuinka skills can be purchased without restriction during character\ncreation, like a Hijutsu. They can also be acquired during the campaign (even if your\ngroup isn't using the optional 2 Hijutsu rule), but only through the Juuin Jutsu, with a\nhigh risk of death for the character.\nIncompatibility: the benefits of Juuinka are incompatible with the Senninka and\nSenjutsu secret techniques.\n54\nMachine Translated by Google\nHIJUTSUS\nObtaining the Cursed Seal\nTo obtain the Cursed Seal, the character needs to be hit by the Juuin Jutsu technique\nand survive it.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "juuinka-overview",
+        "group": "Juuinka (Cursed Seal)",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 1,
+        "sourceLineEnd": 35,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Juuin Jutsu (Cursed Seal Technique)",
+    "type": "elemento",
+    "system": {
+      "descricao": "Juuin Jutsu (Cursed Seal Technique)\nHijutsu: Juuinka (Cursed Seal)\nSource: user-supplied translated excerpt, lines 36–69\nPrerequisite: Fuuinjutsu 10, Occultism 20, Medicine 20\nAction: Pattern\nChakra Cost: 10\nDuration: Permanent\n\nSOURCE TEXT:\nJUUIN JUTSU (CURSED SEAL TECHNIQUE)\nPrerequisites : Fuuinjutsu 10, Occultism 20, Medicine 20\nAction : Pattern\nÿ Range: Medium (50m).\nTarget : 1 creature\nÿ Duration: Permanent\nÿ Chakra Cost: 10\nTo develop the Juuinjutsu, it is necessary to have access to the cells of a Senninka\nkekkei genkai user.\nThe Juuin Jutsu is a technique that allows one to contaminate the target with the Cursed Seal\n(Juuinka) through a bite, which does not require accuracy tests. This technique can only be\nused on defenseless targets or those out of combat.\nAfter being hit by the technique, the target will receive the seal, which will appear\nrandomly on their body, between the chest and neck areas, and will be unconscious for\n4 hours, suffering severe pain while the body tries to adapt to the seal.\nDuring this time, every hour, the target must roll one die. At the end of the four hours, if the\nsum of the rolled results is 24 or more, the body will adapt to the Cursed Seal. Otherwise,\nthe target's body will reject the seal and they will die.\n55\nMachine Translated by Google\nThe Cursed Seal as a game tool\nHIJUTSUS\n• Strength +4 (does not stack with the base damage bonus below)\n• Base Damage +2 for an attack (including Energize)\nThe Juuin Jutsu death test is too difficult to be consistent with the anime/manga. However,\nthe Game Master can alter the test format, or even omit it altogether, if they wish to use the\nCursed Seal as a game tool within the campaign (such as linking a character to a potential\nvillain, for example). However, be careful: Juuinka is still a Hijutsu, and giving it to any\ncharacter will certainly make them much stronger.\nEven if they escape death, the target will still not have control over the Cursed Seal. To\ncontrol it, it is necessary to purchase the Juuinka skills.\nA character with the Cursed Seal will be under the influence of the one who granted the seal,\nalways obliging to their requests, unless that person is too weakened to exert such control,\nor is dead.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "juuin-jutsu-cursed-seal-technique",
+        "group": "Juuinka (Cursed Seal)",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 36,
+        "sourceLineEnd": 69,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Juuinka — Ichi (Stage One)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Juuinka — Ichi (Stage One)\nHijutsu: Juuinka (Cursed Seal)\nSource: user-supplied translated excerpt, lines 70–87\nPrerequisite: Spirit or Stamina 8; Having survived the Juuin Jutsu.\n\nSOURCE TEXT:\nJUUINKA - ICHI\nThis is the First Stage of the Cursed Seal. When activated, dark spots cover the user's body.\nThe higher the percentage of power used, the more covered the body becomes. The shapes\nof the spots vary from person to person.\nPrerequisite: Spirit or Stamina 8; Having survived the Juuin Jutsu.\nBenefits: You gain the ability to control the Cursed Seal.\nReleasing the Seal requires a partial action, costs 8 Vitality points, and has continuous\nduration. When you purchase this skill, you must choose two bonuses from the following list,\nwhich will be granted whenever you activate the seal (this choice cannot be changed\nafterward).\n• Attack Accuracy +1\n• Defense Accuracy +1\n• Technical Difficulties +1\n• Body Hardness +1\nWhen the seal is deactivated, the character becomes fatigued for 30 minutes.\nNormal: Without this ability, the bearer of the Cursed Seal cannot control it. The Seal\nactivates automatically whenever the character attempts to use their chakra, consuming\nVitality points, but without granting any benefit and leaving them exhausted for 30 minutes.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "juuinka-ichi-stage-one",
+        "group": "Juuinka (Cursed Seal)",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 70,
+        "sourceLineEnd": 87,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Juuinka — Ni (Stage Two)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Juuinka — Ni (Stage Two)\nHijutsu: Juuinka (Cursed Seal)\nSource: user-supplied translated excerpt, lines 88–125\nPrerequisite: Juuinka - Ichi; Spirit or Stamina 10; Passing the Black Mist Ritual.\n\nSOURCE TEXT:\nJUUINKA - NI\nThis is the Second Stage of the Cursed Seal. When activated, the user's appearance\nchanges again, this time even more noticeably. Their skin darkens, their eyes turn black with\nyellow irises, and their hair grows (sometimes also changing color). In the Heaven and Earth\nSeals, the character also receives limbs.\nextras.\nPrerequisite: Juuinka - Ichi; Spirit or Stamina 10; Passing the Black Mist Ritual.\nBlack Mist Ritual: You ingest a special pill and are then sealed in a closed coffin or chest\ncontaining a dark mist for one hour. During this time, the Seal's contamination rapidly spreads\nthroughout your body, bringing you to a near-death state. After the process, you will be able\nto purchase this...\n56\nMachine Translated by Google\nAptitude for acquiring and controlling the Second Stage of the Cursed Seal.\nHIJUTSUS\nSeal of the Earth: You gain a tail. The tail provides aerodynamics and increased balance,\nBenefits: You gain the ability to control the Second Stage of the Cursed Seal. Releasing the\nSeal requires a partial action and that the First Stage be released beforehand. It costs 4\nVitality points and has continuous duration.\nWhen you activate Stage Two, you receive all the benefits you chose from Stage One, plus\nthe following two benefits:\n• Accelerated\nÿ Chakra +20 (1 time per scene)\nOptionally, once you acquire the skill, you can exchange each of these two benefits for any\none from the First Stage list.\nThis exchange cannot be changed later.\nIf the Cursed Seal is from Heaven or Earth, you still receive additional benefits.\nSeal of Heaven: You receive monstrous wings with a similar shape.\nGiant hands, large enough to hold an adult.\nYou gain the Flight skill at level 2, allowing you to fly with your wings up to a height of 2m\nand receiving +3m to your movement and maximum jump height. Because the flight height\nis small, you are not considered winged when fighting with these wings.\nIf used to attack, the wings are considered medium-level natural slashing weapons, with\nweapon damage of 3. The wings can be used to block armed, unarmed, and projectile\nattacks, as long as they are not originated from or modified by powers.\ngranting +1 accuracy in Agility and dependent skills, and +3m to movement. If used to attack,\nthe tail is considered a heavy natural weapon of the crushing type, with weapon damage of\n5 (requires Strength 12 to use).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "juuinka-ni-stage-two",
+        "group": "Juuinka (Cursed Seal)",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 88,
+        "sourceLineEnd": 125,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Kami Ninpou",
+    "type": "poder",
+    "system": {
+      "descricao": "Kami Ninpou\nHijutsu: Kamijutsu (Paper)\nSource: user-supplied translated excerpt, lines 126–171\n\nSOURCE TEXT:\nKAMIJUTSU (SECRET PAPER TECHNIQUE)\nPower and Limited Abilities\nThe user can control thousands of sheets of paper at will, even shaping or coloring them.\nFor attack, they can harden the papers and fold them into arrows or shurikens. They can\nalso restrain opponents by covering them in their paper, which restricts their movements\nand suffocates them.\nRestricted Skills: Shikigami no Mai.\nRestricted Power: Kami Ninpou (Secret Art of Paper)\nKAMI NINPOU (SECRET ART OF PAPERS)\nRestricted Power\nKami Ninpou is an advanced skill that allows the user to utilize their chakra to manipulate\npaper, transforming it into a ninja weapon.\nThis power must be purchased as a version of the Ninpou power (see the Powers chapter in\nthe Basic Rulebook, p. 91), but with a reduced list of allowed effects and modified parameters\n(see below). Provided you do not have another restricted power/skill, you can purchase the\nHard Work skill along with Kami Ninpou (after\n57\nMachine Translated by Google\nHIJUTSUS\n(To purchase the restricted skill Shikigami no Mai, Hard Work must be\nreplaced, following the normal skill rules).\nKey Skill (Optional): Art. The parameters of the Kami Ninpou power,\nsuch as range, damage, and difficulty of saving throws, can optionally be\ncalculated based on the Art skill, instead of Spirit.\nRange: Medium (10m + 2m per Spirit or Art level). The character can\nonly manipulate or create their element up to the maximum range of their\npower.\nSize: Creations, manipulations, and areas of effect can have up to 1m in\ndiameter, length, width, or height per Spirit or Art level.\nAdditional Damage: All Kami Ninpou effects receive +1 base damage.\nAllowed Effects: Cannon; Create Weapon, Ray, Arrows, Destructive\nBreath, Column, Spear, Missile, Ricochet, Current.\nAllowed Effects - Shikigami no Mai: If you possess this skill, you will\ngain the following allowed effects: Shackle, Orb, Barrier, Water Prison\n(Suiton).\nElemental Interaction: Kami Ninpou techniques have an elemental\ndisadvantage against Katon.\nMaterial Restriction (interpretative): You need to have paper available\nin your items to use the effects of Kami Ninpou. However, this is only an\ninterpretative restriction, so that the use of the techniques is correctly\ndescribed in the scenes. If you possess the Shikigami no Mai skill, you\ncan use the techniques from papers made with your own body, no longer\nsuffering from the material restriction.\nThe Kami Ninpou power also possesses the following unique effects.\n58\nMachine Translated by Google\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "kami-ninpou",
+        "group": "Kamijutsu (Paper)",
+        "category": "Restricted Powers",
+        "sourceLineStart": 126,
+        "sourceLineEnd": 171,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Paper Angel",
+    "type": "elemento",
+    "system": {
+      "descricao": "Paper Angel\nHijutsu: Kamijutsu (Paper)\nSource: user-supplied translated excerpt, lines 172–204\nAction: see text\nChakra Cost: see text\nDuration: Sustained\n\nSOURCE TEXT:\nPAPER ANGEL\nÿ Prerequisite: Shikigami no Mai (aptitude)\nÿ Action: see text\nÿ Scope: Personal\nÿ Duration: Sustained\nÿ Chakra Cost: see text\nHIJUTSUS\nLEVEL 5 EFFECTS\nThis technique involves manipulating the paper parts of your body to create wings.\nTypically, the paper from the lower part of your body is used, \"destroying\" the legs, to\ncreate these wings.\nFlying: At the cost of 2 Kami Points and a partial action, you are able to create your\nwings, acquiring the Flying skill, with a level equal to your Spirit (or Art) value.\nQuick Flight: At the cost of 1 Kami Point, you are able to perform the running maneuver,\nreplacing the Athletics skill with Spirit (or Art).\nin your test.\nArrows: The user is able to use the Arrows Lv 3 effect (even if they don't possess it)\nwhenever they are using their wings, following all the parameters and rules of the effect.\nLEVEL 6 EFFECTS\nYou dissolve your body into paper and completely envelop the target's entire body. The\ntarget will be defenseless and suffer suffocation, taking fixed damage equal to the base\ndamage value of the power. This technique can only be used on a medium-sized or\nsmaller target that is a henchman or that is already defenseless or incapacitated.\nIn turn, the victim can attempt to escape the effect by using a standard action and a\nStrength check, with the power's usual difficulty.\nWith the exception of your head, your entire body is transformed into paper and used for\nthis technique; however, you receive the benefits of Angel Immunity (see Shikigami no\nMai level 2). If the victim is targeted by a fire/Katon or Suiton type attack or technique,\nyou will also suffer damage, at Grade 2, and the effect is immediately canceled.\nEvolutions:\n• Judgment Level 9: You can use the effect on more targets, one for every two levels of\nthe power; or you can use the effect on a single non-henchman target, even if it is\nnot defenseless.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "paper-angel",
+        "group": "Kamijutsu (Paper)",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 172,
+        "sourceLineEnd": 204,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Judgment",
+    "type": "elemento",
+    "system": {
+      "descricao": "Judgment\nHijutsu: Kamijutsu (Paper)\nSource: user-supplied translated excerpt, lines 190–220\nAction: Complete\nDuration: Concentration\n\nSOURCE TEXT:\nLEVEL 6 EFFECTS\nYou dissolve your body into paper and completely envelop the target's entire body. The\ntarget will be defenseless and suffer suffocation, taking fixed damage equal to the base\ndamage value of the power. This technique can only be used on a medium-sized or\nsmaller target that is a henchman or that is already defenseless or incapacitated.\nIn turn, the victim can attempt to escape the effect by using a standard action and a\nStrength check, with the power's usual difficulty.\nWith the exception of your head, your entire body is transformed into paper and used for\nthis technique; however, you receive the benefits of Angel Immunity (see Shikigami no\nMai level 2). If the victim is targeted by a fire/Katon or Suiton type attack or technique,\nyou will also suffer damage, at Grade 2, and the effect is immediately canceled.\nEvolutions:\n• Judgment Level 9: You can use the effect on more targets, one for every two levels of\nthe power; or you can use the effect on a single non-henchman target, even if it is\nnot defenseless.\nDIVINE MESSENGER\nLEVEL 10 EFFECTS\nÿ Prerequisite: Fuuinjutsu 8; Paper Angel; Shikigami no Mai level\nJUDGMENT\nÿ Prerequisite: Paper Angel; Shikigami no Mai level 2 (aptitude)\nAction : Complete\nÿ Scope: Common to power\nÿ Target: a creature\nÿ Injury: suffocation (see text)\nÿ Duration: Concentration\n2 (aptitude)\nÿ Action: see text\nÿ Scope: Common to power\nÿ Area of Effect: a circle three times the size of the power's usual range,\nuser's surroundings\nÿ Damage: 2 per Power level\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "judgment",
+        "group": "Kamijutsu (Paper)",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 190,
+        "sourceLineEnd": 220,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Divine Messenger",
+    "type": "elemento",
+    "system": {
+      "descricao": "Divine Messenger\nHijutsu: Kamijutsu (Paper)\nSource: user-supplied translated excerpt, lines 205–239\nAction: Complete\nDuration: Concentration\n\nSOURCE TEXT:\nDIVINE MESSENGER\nLEVEL 10 EFFECTS\nÿ Prerequisite: Fuuinjutsu 8; Paper Angel; Shikigami no Mai level\nJUDGMENT\nÿ Prerequisite: Paper Angel; Shikigami no Mai level 2 (aptitude)\nAction : Complete\nÿ Scope: Common to power\nÿ Target: a creature\nÿ Injury: suffocation (see text)\nÿ Duration: Concentration\n2 (aptitude)\nÿ Action: see text\nÿ Scope: Common to power\nÿ Area of Effect: a circle three times the size of the power's usual range,\nuser's surroundings\nÿ Damage: 2 per Power level\nÿ Duration: Instantaneous\n59\nMachine Translated by Google\nHIJUTSUS\nIt consists of transforming the environment into billions of pieces of paper and then using\nfuuinjutsu to create an explosive seal on each one. However, it is a technique performed in\nstages and considered a double-edged sword, since it also causes severe damage to the\nuser.\nFirst Stage: Using a Complete Action, the user manipulates the entire environment,\ntransforming it into billions of roles. It's a technique.\nThis technique requires concentration and costs 10 Kami Points. If the user is interrupted\nbefore the second stage is completed, the technique is undone.\nSecond Stage: Using another Full Action, the user is able to create an explosive seal on\neach of the papers. The technique becomes sustained and has a cost of 12 Kami Points.\nFinal Explosion: Using a Standard Action, the user is able to activate the technique's effect.\nThe pressure created by the explosions becomes so great that all those within its blast radius\nare considered defenseless , and the damage caused is considered a Mercy Blow. The user\nis also automatically caught in the explosion, suffering damage of Grade 3. The explosions\nignore any level of hardness.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "divine-messenger",
+        "group": "Kamijutsu (Paper)",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 205,
+        "sourceLineEnd": 239,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Shikigami no Mai",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Shikigami no Mai\nHijutsu: Kamijutsu (Paper)\nSource: user-supplied translated excerpt, lines 240–279\nPrerequisite: Kami Ninpou 4; Art or Spirit 9.\nDuration: The benefits of this ability are permanent, but you only receive them while you\n\nSOURCE TEXT:\nLIMITED ABILITIES\nSHIKIGAMI NO MAI (DANCE OF THE PAPER SPIRITS)\nYou are able to transform your entire body and clothes into thousands of sheets of paper.\nEach level of Shikigami no Mai must be purchased separately, as an evolution of skill.\nLEVEL 1\nPrerequisite: Kami Ninpou 4; Art or Spirit 9.\nBenefit: You can transform yourself entirely into countless sheets of paper and disappear as\nif it were an illusion technique, being able to circulate, control, and form countless objects\nwith your sheets at will.\nKami Points: You gain a new parameter called Kami Points (PK) that equals 3 times your\nSpirit (or, optionally, 3 times your Art skill). These points function like an inexact number of\npapers on your body.\nWhenever you take any type of damage, you can deduct it from your Kami Points instead of\nyour Vitality. Fire/Katon type damage is doubled. If your PK value reaches zero, all remaining\ndamage is deducted from your Vitality.\nDuration: The benefits of this ability are permanent, but you only receive them while you\nhave chakra or Kami Points. You can deactivate Shikigami no Mai voluntarily as a free action.\nDoing so will cause you to lose all Kami Points you currently have. Reactivating the effect\nrequires using Paper Revitalization (see below).\nEnhanced Kami Ninpou: You receive new permitted effects for the power: Shackle, Orb,\nBarrier, Water Prison (Suiton). Kami Ninpou will also receive a +1 damage bonus and a +1\ndifficulty level on effects (these bonuses are cumulative with the power's original bonuses).\nFurthermore, from an interpretive standpoint, you can use Kami Ninpou techniques based on\nthe papers made with your own body.\n60\nMachine Translated by Google\nHIJUTSUS\nRevitalization of Roles: You are able to use a standard action to recover your\nKami Points, converting your chakra for this purpose.\nEach 1 chakra point restores 3 PK.\nUntouchable: When immobilized by any physical restraint (such as ropes, cells,\nor the Grapple maneuver), you can use a standard action to transform into paper\nto escape immediately, without needing to make any tests, and then return to\nnormal.\nTime Constraint: The benefits of this skill are not affected by Accelerated Technique.\nIn these cases, concentration will be automatically canceled and you will be\nslowed until the end of your next turn.\nSafe Retreat: At the cost of 4 Kami Points and a free action, you can use your\nmove action to move away from a melee enemy without receiving an opportune\nattack.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "shikigami-no-mai",
+        "group": "Kamijutsu (Paper)",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 240,
+        "sourceLineEnd": 279,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Nintaijutsu",
+    "type": "poder",
+    "system": {
+      "descricao": "Nintaijutsu\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 280–327\nPrerequisite: Strength 2; Speedster and Attack in Motion (skills)\nChakra Cost: follows the same rules as the Ninpou power.\n\nSOURCE TEXT:\nNINTAIJUTSU\nPower and Limited Abilities\nPrerequisites: Strength 2; Speedster and Attack in Motion (skills)\nLEVEL 2\nPrerequisite: Kami Ninpou 6\nBenefit: Your control over the Shikigami no Mai expands, granting you new techniques.\nEnhanced Elemental Interaction: Your Kami Ninpou no longer has an elemental\ndisadvantage against Katon, and fire/Katon type damage is not doubled against you.\nSensor Papers: By transforming entirely into paper, you are able to spread out\nacross the environment, where all the papers function as \"eyes.\" Use this\ntechnique as the Sensor (Limited) skill, with the papers serving as your tracking\nmedium.\nAngel's Immunity: This technique must be activated on your turn with\nA standard action maintained by concentration. You can transform into paper\nimmediately before receiving any physical attack, becoming completely immune\nto its damage, with the exception of fire/Katon and Suiton type damage and\ntechniques. If you receive any of these types of damage...\nThe combination of Raiton (Lightning Release) and physical prowess gives rise\nto one of the fastest and most dangerous styles. This power unifies the lightning\nelement with physical combat to grant unique effects.\nEffects: In this power, the user utilizes Effects, which are chosen.\nFollowing the same rules as the Ninpou power (but only the effects included in\nthis power should be chosen, never the effects of Ninpou). If an Effect offers more\nthan one option for use, the user chooses which one will be applied.\nSkill Restrictions: Nintaijutsu is not affected by any technique skills. With the\nexception of Brute Force, no effects can be used with maneuver skills, and the\ndamage from effects is not affected by combat skills.\nChakra cost: follows the same rules as the Ninpou power.\nDamage from Effects: The damage caused by Effects is equal to the power level\nused + 1/2 of the Strength attribute (rounded up). This is the power's standard\ndamage. If the Effect has a specific damage value, use that instead of the\nstandard damage.\n61\nMachine Translated by Google\nHIJUTSUS\nResisting Effects: Some Effects cause harmful conditions that must be resisted by the\ntarget. The difficulty of saving throws against Effects is equal to 7 + the level of the power\nused + 1/2 of the Strength attribute.\n(rounded up).\nRange: Touch. This power is used in melee combat, with CC checks.\nTarget and Duration: All effects are single-target melee attacks with an instantaneous\nduration (except for Hell Stab, which follows the Lightning Blade rule).\nQuick Advance: Some effects require a quick advance to be executed. This means the\ncharacter needs to move at least 10m to attack the enemy. Then, if desired, they can\nfinish the movement by covering the remaining distance of their maximum movement.\nThe quick dash is a full action and follows the rules of the Move Attack skill. You cannot\nperform any turns or dodges during this dash. If you are in a fast position, you can use\nthe accelerated feint during the quick dash.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "nintaijutsu",
+        "group": "Nintaijutsu",
+        "category": "Restricted Powers",
+        "sourceLineStart": 280,
+        "sourceLineEnd": 327,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Brute Force",
+    "type": "elemento",
+    "system": {
+      "descricao": "Brute Force\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 328–337\nAction: Pattern\nChakra Cost: zero\n\nSOURCE TEXT:\nLEVEL 1 EFFECT\nBRUTE FORCE\nAction : Pattern\nÿ Chakra Cost: zero\nYou attack with brute force and speed, delivering rapid blows with the goal of destroying\nyour opponent in a single attack. When attacking with this effect, you receive the benefits\nof the Iron Fist skill (therefore, your attack does not use the power's normal damage!).\nThis effect can receive damage bonuses (such as Extra Damage) and can be used with\nmaneuver skills.\n62\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "brute-force",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 328,
+        "sourceLineEnd": 337,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Elbow",
+    "type": "elemento",
+    "system": {
+      "descricao": "Elbow\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 338–347\nAction: Pattern\n\nSOURCE TEXT:\nMachine Translated by Google\nELBOW\nAction : Pattern\nHIJUTSUS\nLEVEL 2 EFFECT\nWith an ultra-powerful elbow strike, you send your enemy flying.\nThis effect consists of an unarmed attack using brute force and without any\nmaneuverability. When the target is hit, they must succeed on a Stamina\ntest (standard difficulty +2) to avoid being thrown a distance of 5m + 1m by\nStrength (the enemy does not fall prone).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "elbow",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 338,
+        "sourceLineEnd": 347,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Lariat",
+    "type": "elemento",
+    "system": {
+      "descricao": "Lariat\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 348–356\nAction: Complete\n\nSOURCE TEXT:\nLARIAT\nAction : Complete\nLEVEL 4 EFFECT\nThis attack is performed after covering a certain distance, gaining momentum\nto deliver a powerful forearm strike.\nEvolutions:\n• Elbow Level 5: Even if the target succeeds on the Stamina test, they are\nstill pushed back half the distance of the effect.\nLEVEL 3 EFFECT\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "lariat",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 348,
+        "sourceLineEnd": 356,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Straight",
+    "type": "elemento",
+    "system": {
+      "descricao": "Straight\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 357–373\nAction: Complete\n\nSOURCE TEXT:\nSTRAIGHT\nAction : Complete\nAfter running at super speed, you attack with a straight punch against your\nopponent. You perform a quick dash and attack, dealing normal damage\nfrom the power. When the target is hit, they must succeed on a Stamina test\nto avoid being thrown a distance of 10m + 2m by Strength, remaining prone.\nEvolutions:\n• Straight Level 6: You receive +2 to Agility on the feint test.\naccelerated during its rapid advance.\nYou perform a quick dash and attack, dealing regular power damage with a\n+1 damage bonus. After the attack, you must continue running for at least\nanother 5 meters before stopping. If there is not enough movement, the\neffect cannot be used.\nEvolutions:\n• Lariat Lv 8: Your attack receives a +1 damage bonus for every 5m traveled\nbefore the attack, up to a maximum of +3 damage.\nLEVEL 5 EFFECT\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "straight",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 357,
+        "sourceLineEnd": 373,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Hell Stab",
+    "type": "elemento",
+    "system": {
+      "descricao": "Hell Stab\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 374–391\nAction: see text\n\nSOURCE TEXT:\nHELL STAB\nÿ Prerequisite: Lightning Armor (skill).\nÿ Action: see text\nYou concentrate a considerable amount of electrical chakra in just the\nfingertips of a single hand, and then execute a thrusting motion, allowing\nyou to pierce a target and overcome any defense it may possess.\nThe piercing power of the technique increases according to the number of fingers used, so\nconcentrating chakra in only a single finger makes the technique highly lethal.\n63\nMachine Translated by Google\nHIJUTSUS\nThis effect functions the same way as the Level 5 Lightning Blade, but uses\nStrength as the attribute in the damage calculation.\nEvolutions:\n• Hell Stab Lv 7: Functions the same way as the Lightning Blade\nNv 7.\n• Hell Stab Lv 9: Functions the same as Lightning Blade Lv 9. Additionally, you receive the\nbenefits of the Lightning Mastery skill for this effect for free.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "hell-stab",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 374,
+        "sourceLineEnd": 391,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Reverse Chop",
+    "type": "elemento",
+    "system": {
+      "descricao": "Reverse Chop\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 392–399\nAction: Pattern\n\nSOURCE TEXT:\nREVERSE CHOP\nAction : Pattern\nLEVEL 10 EFFECT\nAfter a jump, you hammer the target with a powerful downward strike, burying the target in\nthe ground. This effect follows the same rules as the Guillotine Drop. However, the power of\nthe strike, amplified by the jump, is much greater, ensuring that this effect never causes less\nthan Rank 3 damage.\nLEVEL 7 EFFECT\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "reverse-chop",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 392,
+        "sourceLineEnd": 399,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Guillotine Drop",
+    "type": "elemento",
+    "system": {
+      "descricao": "Guillotine Drop\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 400–406\nAction: Pattern\n\nSOURCE TEXT:\nGuillotine Drop\nAction : Pattern\nAfter a jump, you hammer the target with a downward kick using your heel.\nThis effect causes the power's normal damage, and the target must succeed\non a Stamina test to avoid being crushed against the ground, stunned, and\nprone for 1 turn.\nLEVEL 9 EFFECT\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "guillotine-drop",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 400,
+        "sourceLineEnd": 406,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Linger Bomb",
+    "type": "elemento",
+    "system": {
+      "descricao": "Linger Bomb\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 407–414\nAction: Pattern\n\nSOURCE TEXT:\nLINGER BOMB\nAction : Pattern\nYou grab your opponent and throw them to the ground with brutal force,\ncompletely annihilating them. Make a Grapple check against the target. If\nsuccessful, you immediately throw them down and deal normal damage from\nthe power, but with the full Strength attribute, without division. In return, this\neffect does not receive any type of damage bonus (even if it's a bonus from\na Strength increase, like Hachimon 1).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "linger-bomb",
+        "group": "Nintaijutsu",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 407,
+        "sourceLineEnd": 414,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Lightning Armor (Levels 1–3)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Lightning Armor (Levels 1–3)\nHijutsu: Nintaijutsu\nSource: user-supplied translated excerpt, lines 415–455\nPrerequisite: Nintaijutsu 5, Spirit 6\n\nSOURCE TEXT:\nLIMITED ABILITIES\nLIGHTNING GUN\nYou are covered in an electric armor that protects your body and stimulates\nyour nervous system, making you extremely fast. Each level of Lightning\nArmor must be purchased separately, as an evolution of the skill.\nLEVEL 1\nPrerequisites: Nintaijutsu 5, Spirit 6\nBenefit: Activating Lightning Armor costs 4 chakra points and a partial action. You gain 1\npoint of body hardness, receive +5 meters of movement, and become accelerated. The\nbenefits of this skill have a sustained duration and are cumulative with other movement\nbonuses (such as Speedster). While using this skill, all your melee attacks are considered to\nbe under the Energize effect by the Raiton element. The body hardness gained is also\nconsidered to have been increased.\n64\nMachine Translated by Google\nHIJUTSUS\nThe Raiton element applies, with the usual rules of elemental advantage and\ndisadvantage being applied.\nActive Defense: You can instantly increase your armor hardness to defend\nagainst an attack. This is a Defend with Technique maneuver in which, instead\nof using your LM in the defense test, you can use your CC level, including the\nbenefit of the Expert skill (if any).\nRinnegan\nLimited Abilities\nRinnegan is characterized by a ripple pattern that spreads across the eyeball,\nbeing \"the most powerful of the three doujutsus,\" a reputation it received when\ncompared to the Sharingan of the Uchiha and the Byakugan of the Hyuuga.\nActive Defense costs 2 chakra points and a move action. If successful, you\ngain extra body toughness equal to your Spirit level. This extra toughness\nremains until the end of the turn of the enemy that attacked you.\nLEVEL 2\nPrerequisites: Nintaijutsu 6, Spirit 9\nBenefit: For 6 chakra points, you gain 2 body hardness points, receive +10\nmeters of movement, and become accelerated. Additionally, your Nintaijutsu\neffects receive a +1 damage bonus, and the armor now has continuous duration.\nLEVEL 3\nPrerequisites: Nintaijutsu 8, Spirit 14\nBenefit: For 8 chakra points, you gain 3 points of body hardness, receive +15\nmeters of movement, and become accelerated. Additionally, your Nintaijutsu\neffects receive a +2 damage bonus, and using Active Defense becomes a free\naction.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "lightning-armor-levels-1-3",
+        "group": "Nintaijutsu",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 415,
+        "sourceLineEnd": 455,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Rinnegan",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Rinnegan\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 437–519\nPrerequisite: Nintaijutsu 6, Spirit 9\n\nSOURCE TEXT:\nRinnegan\nLimited Abilities\nRinnegan is characterized by a ripple pattern that spreads across the eyeball,\nbeing \"the most powerful of the three doujutsus,\" a reputation it received when\ncompared to the Sharingan of the Uchiha and the Byakugan of the Hyuuga.\nActive Defense costs 2 chakra points and a move action. If successful, you\ngain extra body toughness equal to your Spirit level. This extra toughness\nremains until the end of the turn of the enemy that attacked you.\nLEVEL 2\nPrerequisites: Nintaijutsu 6, Spirit 9\nBenefit: For 6 chakra points, you gain 2 body hardness points, receive +10\nmeters of movement, and become accelerated. Additionally, your Nintaijutsu\neffects receive a +1 damage bonus, and the armor now has continuous duration.\nLEVEL 3\nPrerequisites: Nintaijutsu 8, Spirit 14\nBenefit: For 8 chakra points, you gain 3 points of body hardness, receive +15\nmeters of movement, and become accelerated. Additionally, your Nintaijutsu\neffects receive a +2 damage bonus, and using Active Defense becomes a free\naction.\nHowever, instead of being a kekkei genkai tied to a clan, it is a rare ability. It is said that in\ntimes of chaos, someone who possesses the Rinnegan is sent from the heavens to become\na \"God of Creation\" who will calm the world or a \"God of Destruction\" who will reduce\neverything to nothing.\nRestricted Abilities: Rinnegan, Shuradÿ, Jigokudÿ, Ningendÿ, Gakidÿ,\nChikushÿdÿ, Tendÿ, Gedÿ.\nLIMITED ABILITIES\nRinnegan\nBenefit: You possess the Rinnegan, the powerful doujutsu that grants you the\nability to use any of the five basic Ninjutsu elements. The Rinnegan is\npermanently active, granting the following benefits.\nPermanent Doujutsu: Because it is always active, the Rinnegan reduces the\ncharacter's total chakra by 10%.\nChakra Vision: The character is able to distinguish chakra by color, allowing\nthem to identify when an opponent uses a jutsu, no matter how hidden it may\nbe. Chakra vision also allows them to identify...\n65\nMachine Translated by Google\nHIJUTSUS\nwhether a person is trapped in a genjutsu, or if some jutsu is affecting a specific area or\ncreature.\nMeasuring Power: Viewing a creature's chakra allows the user to gauge its approximate\nstrength, or in other words, its chakra level.\ncharacter.\nDistinguish Chakra: The character becomes able to differentiate each creature by its chakra\nsignature.\nNature Transformations: You can utilize the five basic Ninjutsu elements by purchasing only\nthe Ninpou power, which must be noted on your character sheet under the name Rinne\nNinpou. In the middle of a fight and before using the power in that turn, it is possible to change\nthe property of your chakra nature with a partial action.\nThe Rinnegan in Shinobi no Sho\nIn the SnS series, the Rinnegan was created based on Nagato's (Pain's) abilities.\nTherefore, it's considered that the character has possessed the Rinnegan since\nchildhood. The reason for possessing the Doujutsu can be decided by the Game\nMaster and the player, and could even be an eye transplant by an NPC (as in the\nanime).\nAccording to the anime, the original way to acquire the Rinnegan is by uniting the\nchakras of the descendants of Indra (the Uchiha Clan) and Asura (the Senju Clan),\nboth sons of Hagoromo, the first wielder of the Rinnegan in history and known as the\nSage of the Six Paths, into one person.\nAlthough it is possible to acquire the Rinnegan during the game through this method,\nit is strongly recommended that the Game Master forbid it.\nIt is also recommended that the Game Master exercise caution when allowing a player\nto possess the Rinnegan, even under the standard SnS rules.\n66\nMachine Translated by Google\nHIJUTSUS\nDoing this allows you to use any effect you've selected for the Rinne Ninpou power as if it\nwere another elemental power of your choice, receiving all of its properties (damage bonus,\nhardness, range...).\nYou can only use this ability for Rinne Ninpou effects that are also allowed within the element.\nFor example, you cannot use the Barrier effect of your Rinne Ninpou power by transforming\nit into Katon, as Barrier is not on the list of allowed effects for this element. Note that you do\nthis for the original Rinne Ninpou effects. This does not allow you to acquire element-exclusive\neffects.\nYou can change the element while maintaining a Rinne Ninpou effect of a different element\n(example: maintaining a Katon Energize effect using Rinne Ninpou and then switching to\nSuiton and using the Arrows effect). The same applies to effects with continuous or permanent\nduration, but not to concentration-based effects.\nYou can use your Rinne Ninpou level to fulfill elemental power prerequisites (such as Domain\nskills, including Domain Ninpou). If a combat skill or benefit affects Rinne Ninpou (such as\nMastery), the benefit will also apply to Nature Transformations. However, the reverse is not\ntrue.\nThe True Clone Shadow Clone can utilize Rinne Ninpo and its nature transformations.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "rinnegan",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 437,
+        "sourceLineEnd": 519,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Shurado (Asura Path)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Shurado (Asura Path)\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 520–539\nPrerequisite: Rinnegan; Occultism 12; Mechanisms 12\n\nSOURCE TEXT:\nSHURADÿ (ASURA PATH)\nPrerequisites: Rinnegan; Occultism 12; Mechanisms 12\nBenefit: You can alter your own body to conjure mechanized arms and various different\nmechanical weapons.\nAdditional Limbs: With a move action and 6 chakra points, you can create up to four\nadditional arms for the duration of the scene. While you have these arms, you cannot be\nflanked when defending with Block.\nWhen using the Multi-Attack skill, you can use the Grapple maneuver on all split attacks.\nAdditionally, you can attack a grappled enemy with your free arms, either by punching or\nusing the Human Arsenal (see below). This is a single attack, performed as a free action, and\ncan only be used against a target that is already grappled; it cannot be used with maneuvers\nor skills and has its base damage reduced by half.\nHuman Arsenal: [requires Rinne Ninpou level 6] You have an arsenal of weapons inside\nyour body, ranging from blades and saws to missiles and a chakra cannon.\nIn practice, you use your Rinne Ninpou power by replacing the Spirit attribute with the\nMechanisms skill in parameter calculations. The Human Arsenal techniques do not use hand\nseals and are not affected by the Prevent Seals aptitude. Furthermore, with the exception of\nthe chakra cannon (which can be simulated by effects like Destructive Breath or Missile, for\nexample), the Human Arsenal attacks are not affected by chakra-draining effects (such as\nthe Samehada special weapon).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "shurado-asura-path",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 520,
+        "sourceLineEnd": 539,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Jigokudo (Naraka Path)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Jigokudo (Naraka Path)\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 540–561\nPrerequisite: Rinnegan; Occultism 12; Spirit 12\n\nSOURCE TEXT:\nJIGOKUDÿ (NARAKA PATH)\nPrerequisites: Rinnegan; Occultism 12; Spirit 12\nBenefit: Grants the ability to summon and control the King of Hell.\nSummon: With a move action and the consumption of 6 chakra points, you are able to\nsummon the King of Hell, who possesses the\n67\nMachine Translated by Google\nHIJUTSUS\nabilities to interrogate their victims and even repair damaged bodies (see further on\nin Gedÿ).\nInterrogate: With a standard action, you touch a helpless victim and begin\ninterrogating them in the presence of the King of Hell. You can ask any question,\nwhich the victim can freely answer.\nAfter the answers are given, the King of Hell opens his mouth to release purple arms\nand forces the victim's life energy to appear in the form of an elongated tongue, which\nis then grabbed by the arms to begin the judgment.\nIf the person is lying or refuses to answer questions, they must make a Stamina test,\ndifficulty 9. Failing, the King of Hell will remove their tongue and consume it, killing\nthem. However, if they say the answer...\nIf the victim is truthful or succeeds on the test, they will be spared, though left in an\nexhausted condition. Even if the victim passes the test, you will know they were lying.\nHenchmen automatically fail this Stamina test.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "jigokudo-naraka-path",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 540,
+        "sourceLineEnd": 561,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Ningendo (Human Path)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Ningendo (Human Path)\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 562–577\nPrerequisite: Rinnegan; Occultism 14; Concentration 12\n\nSOURCE TEXT:\nNINGENDÿ (HUMAN PATH)\nPrerequisites: Rinnegan; Occultism 14; Concentration 12\nBenefit: You are able to read your target's mind simply by placing your hand on their\nhead or chest, extracting any information you desire. However, when using this\ntechnique, you inevitably pull the target's soul out of their body, causing...\nHis death.\nRestriction: This technique can only be used on defenseless targets.\nUsage: Using this technique is a full action and costs 7 chakra points.\nIts duration depends on concentration.\nOn the turn of use and each subsequent turn, the target makes a Spirit test, difficulty 9 + the\nuser's Concentration. For each failure, you learn a random recent fact about your victim. On\nthe fourth turn, the target makes an additional Stamina test, difficulty 9. If they fail, they die,\nand you gain access to specific information of your choice. Henchmen automatically fail all\nthe aforementioned tests.\nDamage: Each turn, the target will suffer fixed damage equal to the user's\nConcentration level.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "ningendo-human-path",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 562,
+        "sourceLineEnd": 577,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Gakido (Preta Path)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Gakido (Preta Path)\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 578–601\nPrerequisite: Rinnegan; Occultism 14; Spirit 14\n\nSOURCE TEXT:\nGAKIDÿ (PRETA PATH)\nPrerequisites: Rinnegan; Occultism 14; Spirit 14\nBenefit: Grants the ability to absorb all forms of chakra, including most ninjutsu. Using this\nability does not cost chakra, however you do not receive the chakra points that are absorbed.\nAbsorb Technique - Fÿjutsu Kyÿin: You create a luminous barrier around yourself\nthat allows you to absorb chakra in any direction.\nYou can absorb any amount of chakra directed at you in the form of an attack, as\nlong as the chakra cost of the absorbed technique does not exceed half of your Spirit.\nAbsorb Technique is a defensive technique used as a reaction, therefore it requires\na LM test against the opponent's attack test. Once absorbed, the technique is undone.\nAbsorb Chakra: You are able to absorb chakra directly from a source, that is, from\na living being. However, for this to be possible, the victim must be in a defenseless\nstate. Absorbing chakra is a standard action and lasts for the duration of your\nconcentration. You\n68\nMachine Translated by Google\nIt absorbs an amount of chakra per turn equal to half of its Spirit.\nHIJUTSUS\nWound Healing: When you absorb chakra through any use of this ability, you\ncan instantly heal any permanent wound you have (such as muscle and joint\ninjuries, but not lost limbs).\nAbsorbing Senjutsu Chakra: If you absorb chakra from techniques or targets\nunder the effect of Senjutsu, your body will instantly turn to stone if you do not\npossess this power.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "gakido-preta-path",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 578,
+        "sourceLineEnd": 601,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Chikushodo (Animal Path)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Chikushodo (Animal Path)\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 602–628\nPrerequisite: Rinnegan; Occultism 16; Rinne Ninpou 7\n\nSOURCE TEXT:\nCHIKUSHÿDÿ (ANIMAL WAY)\nPrerequisite: Rinnegan; Occultism 16; Rinne Ninpou 7\nBenefit: You receive the Kuchiyose power for free, with a level always equal\nto your Rinne Ninpou power, and you can use it to summon a wide variety of\ncreatures.\nAnimal Summoning: Unlike conventional summons, none of the summons\nmade using the Animal Path possess a high level of intelligence. They are\nsolely commanded by the user who summoned them and will obey them at any\ncost (fighting to the death if ordered). Animal summoning follows all the rules of\nthe Common Kuchiyose power, with the addition of the following exclusive rules.\nSpecial Creatures: The Animal Path's Kuchiyose power grants access to eight\ndifferent creatures: Drill-Beaked Bird, Chimera Dog, Chimera Chameleon,\nPanda, Bull, Crustacean, Centipede, and Rhinoceros. These creatures are all\nunique (i.e., you cannot summon two creatures of the same type at the same\ntime). The minimum size of all summons is enormous.\nNumerous Summoning: You can summon all 8 different creatures at the\nsame time, at the highest level your power allows.\nHowever, they are considered henchmen and fail any Combat Skill test against\nnon-henchmen.\nDrill-billed bird\nAn unusual bird that has an irregularity in its beak.\nKey Attributes: Agility and Perception.\nSkills: Acrobatics, Flight, Alertness, Tracking.\nPowers: None.\nSkills: Attack on the Move, Specialist, Reflexes, Intuition, Speedster, Expert,\nInnate Skill.\nTypes of Attacks: Claws (cutting) and Beak (piercing).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "chikushodo-animal-path",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 602,
+        "sourceLineEnd": 628,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Chimera Dog",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Chimera Dog\nHijutsu: Rinnegan — Animal Path\nSource: user-supplied translated excerpt, lines 629–651\n\nSOURCE TEXT:\nCHIMERA DOG\nAn invocation of a dog with multiple heads and two wings, which do not give it\nthe ability to fly. Its fur is brown in color.\nKey Attributes: Agility, Perception.\nSkills: Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking.\nPowers: None.\nSkills: Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Speedster,\nExpert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power\nAttack, Aggressive Takedown, Standing Up, Aggressive Disarm, Sweep.\n69\nMachine Translated by Google\nTypes of Attacks: Bite (piercing)\nHIJUTSUS\nTypes of Attacks: Bite (piercing)\nAnimal Division: Whenever the Chimera Dog's Vitality is reduced to zero, instead\nof dying or disappearing, it will split into two identical creatures, but of smaller size.\nTreat this as a re-summoning of the Chimera Dog, with no chakra or action cost, and\nreducing the size category by 1 level.\nThis process is repeated for the two new creatures summoned if their Vitality reaches\nzero, and so on. However, when there are 3 or more creatures, the numerous\nsummoning rule should be applied.\nA Chimera Dog cannot be divided below the medium category: if its Vitality reaches\nzero at this size, it will die (but any remaining Chimera Dogs will stay alive).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "chimera-dog",
+        "group": "Rinnegan — Animal Path",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 629,
+        "sourceLineEnd": 651,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Chameleon Chimera",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Chameleon Chimera\nHijutsu: Rinnegan — Animal Path\nSource: user-supplied translated excerpt, lines 652–685\n\nSOURCE TEXT:\nCHAMELEON CHIMERA\nA summoning of a chameleon with a snake's tail. It has four limbs, each ending in\nfour large claws. Its body is covered in scales and has bandages around the center\nof its...\nback.\nKey Attributes: Agility, Perception.\nSkills: Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking.\nPowers: None.\nSkills: Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Speedster, Expert,\nInnate Skill, Blind-Fight, Blind Spot, Sensor (continuous duration).\nTechniques: Camouflage\nCamouflage: The chameleon is able to alter its properties, assuming the hue of its\nsurroundings. When it does this, assume the chameleon possesses Total Camouflage.\nHowever, it is fully traceable using ocular techniques or chakra tracking. The\nchameleon needs to remain motionless for this camouflage to work.\nPANDA\nAn invocation that looks exactly like a panda bear, with a black band around its waist.\nMain Attributes: Strength, Stamina.\nSkills: Escape, Search, Readiness, Track.\nPowers: None.\nSkills: Expert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power Attack,\nAggressive Takedown, Standing Up, Sweep.\nTypes of Attacks: Claws (cutting) and Bite (piercing).\nBULL\nSimilar to a normal bull but on a larger scale, this creature has its entire body covered\nin brown fur and black horns.\nMain Attributes: Strength, Stamina.\nSkills: Escape, Search, Readiness, Track.\n70\nMachine Translated by Google\nPowers: None.\nSkills: Expert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power Attack,\nAggressive Takedown, Standing Up, Sweep.\nTypes of Attacks: Horns (piercing).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "chameleon-chimera",
+        "group": "Rinnegan — Animal Path",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 652,
+        "sourceLineEnd": 685,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Rhinoceros",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Rhinoceros\nHijutsu: Rinnegan — Animal Path\nSource: user-supplied translated excerpt, lines 686–692\n\nSOURCE TEXT:\nRHINOCERAN\nHIJUTSUS\nPowers: Water Release.\nSkills: Acuity, Attack in Motion, Intuition, Reflexes, Expertise, Innate Skill, Mastery, Enhanced\nResistance (Stamina), Diehard.\nTypes of Attacks: Body Slam (crushing); Acid (Destructive Breath effect Lv 3; damage\nequal to the creature's level + 1/2 Spirit).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "rhinoceros",
+        "group": "Rinnegan — Animal Path",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 686,
+        "sourceLineEnd": 692,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Centipede",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Centipede\nHijutsu: Rinnegan — Animal Path\nSource: user-supplied translated excerpt, lines 693–702\n\nSOURCE TEXT:\nCENTIPEDE\nSimilar to a normal rhinoceros, but larger in size, it has small wings on its back, which do not\ngive it the ability to...\nflight.\nMain Attributes: Strength, Stamina.\nSkills: Escape, Search, Readiness, Track.\nPowers: None.\nSkills: Expert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power Attack,\nAggressive Takedown, Standing Up, Sweep.\nTypes of Attacks: Horns (piercing).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "centipede",
+        "group": "Rinnegan — Animal Path",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 693,
+        "sourceLineEnd": 702,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Crustacean",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Crustacean\nHijutsu: Rinnegan — Animal Path\nSource: user-supplied translated excerpt, lines 703–715\n\nSOURCE TEXT:\nCRUSTACEAN\nSimilar to a normal crustacean, but larger in size. Around its mouth and the entire underside\nof its body is white, while the rest is reddish. It has eight legs and two large, crab-like pincers.\nMain Attributes: Spirit, Vigor.\nSkills: Athletics, Escape, Stealth, Search, Alertness.\nA giant, black centipede with an orange face and legs.\nKey Attributes: Strength, Agility, Perception.\nSkills: Acrobatics, Athletics, Stealth, Alertness.\nPowers: None.\nSkills: Attack on the Move, Specialist, Reflexes, Speedster, Expert, Innate Skill, Fighter,\nBlind Spot, Throw, Stunning Attack, Power Attack, Aggressive Takedown.\nTypes of Attacks: Bite (piercing).\nTechniques: Kinobori.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "crustacean",
+        "group": "Rinnegan — Animal Path",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 703,
+        "sourceLineEnd": 715,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Tendo (Deva Path)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Tendo (Deva Path)\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 716–801\nPrerequisite: Rinnegan; Occultism 16; Rinne Ninpou 8.\n\nSOURCE TEXT:\nTENDÿ (DEVA PATH)\nPrerequisites: Rinnegan; Occultism 16; Rinne Ninpou 8.\nBenefit: Allows the manipulation of attractive and repulsive forces on people and objects.\nRest Time: When using any technique of this skill, for every 5 chakra points consumed, you\nmust wait 1 turn before using any Deva Path technique again.\n71\nMachine Translated by Google\nHIJUTSUS\nLevitate: You use the forces of attraction and repulsion to levitate. For 1 chakra point, you\ncan levitate up to a height of 1 meter per Spirit level, as a movement action. Undoing\nlevitation is a free action. This technique does not allow you to move horizontally (only up or\ndown).\nAccelerate: When using the sprint maneuver (Athletics skill), you can spend 1 chakra point\nas a free action to use the repulsive force to increase your speed, making you practically\nglide across the ground. You become accelerated while moving in this way.\nRepel - Shinra Tensei: From their body, the user is able to repel forces, an ability that can\nbe used around them or directed in a straight line. Repel can be used in three ways: Reactive,\nDefensive, and Offensive.\nReactive Repel: You use Repel to protect yourself from basic attacks, such as melee or\nranged armed attacks and unarmed attacks. Used in this way, Repel is a defensive reaction\nthat requires a LM test, with no chakra cost. If successful, you create a gravitational field\naround you, 1m in diameter, that repels anything that tries to come into contact with it.\nDefensive Repel: Works like Reactive Repel, but uses a movement action and a variable\nchakra cost to strengthen the gravitational field and repel even high-level jutsu.\nThe Defensive Repelling field creates a counterforce of the same intensity as the attack,\nnullifying it. Because of this, the chakra consumption must be the same as that of the\ntechnique being defended against.\nYou can also use Defensive Repel to push away techniques that are already affecting your\nbody, such as the Ninpou Shackle effect or...\nEven the flames of Amaterasu from the Mangekyou Sharingan. Doing this doesn't require\ntests, but it maintains the other rules.\nOffensive Repel: You send a wave of repulsion in a straight line or around yourself to attack\nyour enemies, throwing them several meters away. To do this, you use the Missile or\nExplosive Wave effect of your Rinne Ninpou power, with the following modifications.\nThe effect will receive a +4 damage bonus, and its use is a Success.\nAutomatic because it is an invisible attack (the Damage Level must still be rolled). However,\nif the target knows the technique or is hit by it a second time, they will have the following\ndefensive options:\n• Using the Kinobori jutsu to anchor oneself to the ground and prevent being thrown. In this\ncase, it is necessary to spend 1 chakra point for every 1 point of base damage that would be\ncaused by the Repel technique (if less chakra is spent than necessary, the technique will be\nfully affected).\n• Through some other technique that can secure it to the ground to prevent it from being\nthrown.\n• A target with the Speedster aptitude can activate the Sprint (Athletics) maneuver on their\nturn. Hitting a target that has spent their turn in this way requires a DC check against Dodge.\nThis option is only valid against the Missile effect.\nA target in the accelerated condition or with the Thunder God aptitude will require a DC\ncheck against Dodge.\nYou can use Offensive Repel to dispel the effects of Cloud (Ninpou), Mist (Suiton), or any\nother similar effect, following the rules of imaginary hardness.\n72\nMachine Translated by Google\nHIJUTSUS\nAttract - Banshÿ Ten'in: You are able to attract objects and creatures towards your body.\nThe power of attraction of this force is immense and almost impossible to resist. The chakra\ncost of this technique varies according to the size of the target creature or object, as per the\nfollowing table:\nSize\nSmall\nAverage\nBig\nHuge\nHuge\nChakra Cost\n+1\n+3\n+5\n+7\n+9\nAttract Objects: Using your partial action, you can attract any object within a range equal to\n10m + 2m per Spirit level.\nIf you wish to attract more than one object in the same action, all targets must be close\ntogether, and the combined size category of all of them must be considered (for example: a\nsingle kunai is small, but a group of several can be considered medium). This technique\ndoes not require tests if the object is not in the possession of any creature.\nIf a person attempts to prevent the object's attraction, they must succeed\non a LM test against a difficulty of 9 + the user's DC if they wish to prevent\nit using a technique, or on a Strength test against a difficulty of 5 + the\nuser's DC if they wish to prevent it using their strength.\nAttract Creatures: Using your standard action, you can attract a creature within a range\nequal to 10m + 2m per Spirit level.\nThis technique is invisible and its use is an Automatic Success. However, if the target\nbecomes aware of the technique or is hit by it a second time, they will have the same\ndefensive options as the Offensive Repel.\nAn attracted creature will be defenseless until the end of the user's turn.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "tendo-deva-path",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 716,
+        "sourceLineEnd": 801,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Gedo (Outer Path)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Gedo (Outer Path)\nHijutsu: Rinnegan\nSource: user-supplied translated excerpt, lines 802–897\nPrerequisite: Rinnegan; Occultism 18; Spirit 18.\n\nSOURCE TEXT:\nGEDÿ (OUTER PATH)\nPrerequisites: Rinnegan; Occultism 18; Spirit 18.\nBenefit: Grants the ability to control life and death, and expands the capabilities of other\npaths.\nChakra Receiver: With a partial action and 1 chakra point, you can create a chakra receiver\nfrom your hand. It is a relatively pointed black rod, sharp enough to be used as a piercing\nweapon (simple weapon, light, weapon damage 2, critical 15-16, hardness 1 per Spirit level).\nThe rod functions as a receiver of high-frequency chakra signals, allowing the user to send\ntheir chakra to a person (living or dead) who has the rod embedded in their body.\nObstruct Chakra: With a standard action and the consumption of 8 chakra points, you can\nsend your chakra to a victim pierced by the chakra receiver, paralyzing them as long as\nthey have the receiver in their body. Using this technique does not require tests.\nPiercing a target with the chakra receiver requires a critical hit, but it's an automatic success\nif the victim is already pierced by another rod.\nWith a full action and a successful Stamina test (Difficulty 9 + Spirit), the victim can\nmomentarily recover from paralysis and remove the rod from their body. This test is not\nallowed if the victim has more than one rod piercing their body.\nFor an ally to remove the rod from the victim, they need to perform a standard action\nand it doesn't require any tests.\nReanimation: You can control up to 6 different corpses by placing various chakra receivers\nscattered throughout their bodies.\n73\nMachine Translated by Google\nHIJUTSUS\nThe reanimated corpses are literally brought back to life, being aesthetically\ncomparable to any living person. However, these bodies do not possess their\nown consciousness and function as an extension of the main user, speaking\nand acting as such.\nThe reanimated bodies possess the same character sheet they had in life, but\nwith a -3 penalty to accuracy on all tests and without access to their powers\nand abilities. Instead, you can copy one of the other six Path abilities (Shuradÿ,\nJigokudÿ, Ningendÿ, Gakidÿ, Chikushÿdÿ, and Tendÿ) to each body, along\nwith the power necessary to use the ability (such as Rinne Ninpou or\nKuchiyose). Thus, each body can use a Path ability as if it were the user itself.\nReanimated beings act on the user's original initiative. Actions and chakra\ncosts are consumed by the reanimated body itself, which should be considered\na new character (and not a Partner). Reanimated beings do not evolve their\ncharacter sheets: to obtain a better reanimated body, the player needs to\nreplace it with another corpse of a higher-level human. They also cannot be\nhealed or revived, and must be replaced when their Vitality reaches zero (the\nexception is the healing technique of the Greater Naraka Path; see below).\nWhile controlling the bodies, you must remain focused and still, leaving\nyourself defenseless. For this reason, it is recommended that the user stay\ndistant and hidden while using this technique. The maximum distance at which\nthe bodies can be controlled is 30 km.\nIf a ninja with sensory abilities is pierced by any of the chakra receivers, they\ncan trace the chakra transmission frequency back to the technique's user,\ndiscovering their hiding place.\nVisual Transmission: All bodies reanimated by the Outer Path and all\nsummons from the Naraka Path and the Animal Path possess the appearance\nof the Rinnegan in their eyes. Through this, they all share vision with each\nother and with the user.\nAs long as at least one person sees the origin of the attack, the user,\nsummons, and bodies are immune to surprise attacks, and cannot be flanked\nor feinted (with the exception of the super-accelerated feint).\nGreater Animal Path: You can use the reanimated body of the Animal Path\nto summon the other reanimated bodies.\nGreater Deva Path - Repel: You can use Offensive Repel as a full action,\ndoubling the chakra cost and doubling all its parameters (base damage,\nrange, area of effect...).\nGreater Deva Path - Attract - Chibaku Tensei: With a full action and the consumption of 10\nchakra points, you create a small, dark-colored gravity ball. Using your repelling ability, you\ncause this dark ball to be carried up to 75m in height. Then, activating your attraction field,\nthe dark ball begins to attract everything within a 100m range.\nThe technique requires concentration. Each turn, as objects, creatures, and\nstones are attracted to the ball, its size category increases by 1 level (starting\nsmall and going up to incredible).\nYou make no tests. Creatures within range that attempt to resist the pull must\nmake a defensive ability or technique check against a Difficulty of 11 + the\nuser's DC. They cannot defend using any of their basic reactions (Dodge,\nAnticipate, or Block). If the creature fails, it becomes helpless, trapped within\nthe sphere's rubble.\n74\nMachine Translated by Google\nHIJUTSUS\nWhile the technique has not yet reached its maximum size, the ball will\nhave zero hardness and 5 absorption points per Spirit level. When it reaches\nits incredible size, the attraction ends, transforming it into a large planetoid,\nand the technique then becomes sustained. The attracted creatures become\ntrapped inside the planetoid and begin to suffocate. The only way to free\nthemselves is by destroying the planetoid, in whole or in part, which will\nthen have zero hardness and 10 absorption points per Spirit level.\nWhen the absorption reaches zero, the technique is broken. All trapped creatures are\nreleased, and all attracted objects begin to fall from the sky, hitting everyone below within a\n100m radius. Creatures are entitled to an Agility or Alertness check (Difficulty 27) to escape\nthe falling boulders on their heads. Failing, they will suffer 40 fixed damage.\nbijuus. The statue is summoned with a full action and the consumption of\n10 chakra points, and remains in place through concentration; it possesses\nincredible size, zero hardness, and 200 absorption.\nAfter summoning the statue, the user causes it to begin sweeping the souls\nof everyone present within a 100m radius. This attack is an automatic hit\nthat causes instant death. However, using this technique weakens the user,\nleaving them defenseless .\nThe character remains capable of combat permanently until receiving\nmedical treatment. Using this technique while awaiting treatment is an\nautomatic failure and results in the character's death.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "gedo-outer-path",
+        "group": "Rinnegan",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 802,
+        "sourceLineEnd": 897,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Samurai",
+    "type": "poder",
+    "system": {
+      "descricao": "Samurai\nHijutsu: Samurai\nSource: user-supplied translated excerpt, lines 898–927\n\nSOURCE TEXT:\nSAMURAI\nLimited Abilities\nGreater Naraka Path: [requires Occultism 20; Spirit 20] With a full action,\nthe user can cause the King of Hell to release its tongue and latch onto one\nof the reanimated bodies. The body is pulled into its mouth, where it is\ninstantly healed. For every 1 chakra point, 3 Vitality points are recovered,\nwith the maximum equal to the Spirit value. You can keep the body inside\nthe King of Hell's mouth by concentrating to apply the healing each turn.\nPath of Life: [requires Occultism 20; Spirit 20] The user is able to restore\nlife to all those recently killed by them, or choose a single target and restore\nthem to life. However, to do so, they must give their own life in exchange. It\nis necessary to have at least 1 chakra point to use this technique, which is\na full action and requires no rolls.\nGedÿ Mazÿ - Demonic Statue: [requires Occultism 20; Spirit 20]\nA statue capable of sealing souls and even the power of the great.\nSamurai are a military force similar to ninjas, although not as widespread\nthroughout the world. Only the Land of Iron continues to have them.\nSamurai, with all other countries opting to maintain and train ninjas.\nManeuvering Restriction: Some abilities of this Hijutsu cannot be used\nwith maneuvering abilities. When this occurs, it will be in the ability's\ndescription.\nNinjutsu Restriction: Samurai followed a different path than Ninjas in the\nuse of chakra. You cannot purchase any common power or any Shinobi\nAptitude. You are also not entitled to use the basic Bunshin no Jutsu, Henge\nno Jutsu, and Shunshin no Jutsu jutsus.\nIf the Game Master and the setting allow, this restriction may optionally be\nremoved.\n75\nMachine Translated by Google\nHIJUTSUS\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "samurai",
+        "group": "Samurai",
+        "category": "Restricted Powers",
+        "sourceLineStart": 898,
+        "sourceLineEnd": 927,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Swordsman",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Swordsman\nHijutsu: Samurai\nSource: user-supplied translated excerpt, lines 928–938\n\nSOURCE TEXT:\nSWORDSMAN\nYou specialize in sword fighting.\nBenefit: While wielding a light or medium sword, you can use special\ncombat maneuvers with precision in that weapon without the -2 penalty\non the test (except for grappling, which requires free hands). Additionally,\nyou receive the benefits of the Aggressive Disarm skill.\nParry Blade: [Requires Dexterity 10]\nWhen you use the Block reaction against a slashing weapon, you can\ndeflect the enemy's blade without directly engaging it. This prevents your\nown sword from being damaged or destroyed by weapons that ignore\nhardness.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "swordsman",
+        "group": "Samurai",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 928,
+        "sourceLineEnd": 938,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Samurai Saber",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Samurai Saber\nHijutsu: Samurai\nSource: user-supplied translated excerpt, lines 939–979\nPrerequisite: Hand- to-Hand Combat 12\n\nSOURCE TEXT:\nSAMURAI SABER\nSamurai are masters of swordsmanship, able to use them both in their pure form and with\nchakra, extending and shaping the blades.\nPrerequisite: Hand- to-Hand Combat 12\nBenefit: You gain the Martial Weapon Proficiency skill for all sword\ntypes, except for heavy weapons. You still need to meet the Strength or\nDexterity requirements to use the weapons.\nSword Expert: All your CC checks using swords affected by this skill\nreceive the Expert skill bonus.\nChakra Blade:\n[Partial action / sustained duration / 3rd chakra]\nYou can imbue the blade of the swords you are wielding with chakra, as\na use of the Energize effect. Optionally, you\n76\nMachine Translated by Google\nHIJUTSUS\nYou can mold the chakra blade to have a different appearance (like the\nblade of an axe, for example).\nChakra Cut:\n[Standard action / instant duration]\nWhen using the Chakra Blade effect, you can swing the sword in the air to\nfire a chakra projectile at a target. Firing the projectile is a CC test, has a\nshort range (5m + 1m per Spirit), and deals damage equivalent to a normal\nattack by the character with the Chakra Blade. This technique costs half the\nSpirit chakra and cannot be used with Maneuvering Skills.\nIAIDO\nIaido is a specific style of kenjutsu (sword fighting) that focuses on smooth\nand controlled movements during combat.\nDrawing the sword from its sheath, striking or cutting an opponent, removing\nthe blood from the blade, and finally, sheathing the sword again. The linear\nmotion and force applied to drawing the sword from the sheath result in\nfaster and stronger cuts than those executed with the sword already drawn.\nPrerequisite: Dexterity 8; Swordsman; Quick Draw\nBenefit: You receive the Finesse skill benefit when using any light or\nmedium sword. Attacking with a katana (without Ambidexterity) grants you\na +1 damage bonus.\nQuick Slash: When you attack an enemy immediately after drawing your\nsword, you can use Dexterity to calculate damage instead of Strength; and\nyou can also perform a Feint as a free action.\nThis technique must be used with a single sword in hand and is incompatible\nwith dual weapons.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "samurai-saber",
+        "group": "Samurai",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 939,
+        "sourceLineEnd": 979,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Yojinbo",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Yojinbo\nHijutsu: Samurai\nSource: user-supplied translated excerpt, lines 980–1007\nPrerequisite: Dexterity 10; Swordsmanship; Quick Draw; Iaido; Attack in Motion.\n\nSOURCE TEXT:\nYOJINBO\nPrerequisites: Dexterity 10; Swordsmanship; Quick Draw; Iaido; Attack in Motion.\nBenefit: You advance against the enemy and deliver a swift blow with your\nsword.\nYou perform the Charge maneuver, draw your sword, and attack the enemy.\nYour attack receives a +0.5 damage increase. If the final total damage has\na decimal value, round it up. You do not receive the defense penalties for\nthe Charge maneuver when attacking with this ability, however you cannot\nuse other maneuvers.\nThis skill technique is incompatible with dual weapons and must be used\nwith a single sword in hand, which must be sheathed before the attack.\nThis skill cannot be used with Maneuvering Skills.\nISSEN\nHis Chakra Slash becomes more powerful when used with two swords.\nPrerequisites: Dexterity 12; Spirit 12; Samurai Saber; Ambidexterity\nBenefit: When using two swords during the Chakra Slash technique, you\ncan double the weapon damage in the attack's base damage calculation.\nHadan: [Full Action / Instant Duration]\nThis technique can only be used when an enemy 10 meters or more away\nattempts to approach, and you must announce the technique immediately\nafter the enemy informs you of their action. Perform an attack with the\nChakra Cut. If you are successful, the enemy's movement will be interrupted,\nlosing the ability to move, but\n77\nMachine Translated by Google\nHIJUTSUS\nmaintaining its default action (even if it attempted to attack using the Charge maneuver).\nThis skill cannot be used with Maneuvering Skills.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "yojinbo",
+        "group": "Samurai",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 980,
+        "sourceLineEnd": 1007,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Prevent Seals",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Prevent Seals\nHijutsu: Samurai\nSource: user-supplied translated excerpt, lines 1008–1029\nPrerequisite: Dexterity 12; Swordsmanship; Quick Draw; Iaido.\n\nSOURCE TEXT:\nPREVENT SEALS\nPrerequisites: Dexterity 12; Swordsmanship; Quick Draw; Iaido.\nBenefit: You are able to prevent your opponent from performing hand seals by attacking\nthem quickly, forcing a defensive action.\nThe techniques of this skill are incompatible with dual weapons and must be used with a\nsingle sword in hand, which must be kept in its sheath.\nWhen an enemy attempts to perform hand seals within your melee range, you may draw\nyour weapon and immediately attack them as a partial action. This attack does not deal\ndamage and is automatically dodged, but it prevents the hand seals from being performed.\nNo attack or defense roll is made, and any effects resulting from a successful dodge are not\nactivated.\nThe technique or power that the enemy would use is immediately interrupted, and they will\nnot be able to use powers and techniques dependent on hand seals during that turn, but\nthey do not lose their action and can redo it as they see fit.\nThis skill cannot be used in response to a defensive technique from an enemy that you\nyourself attacked.\nFollow Step: If your opponent has performed the Safe Step (see the Basic Rulebook, p.\n265) and attempts to attack you with a hand seal technique or power, you can spend a partial\naction to force them to receive a -3 accuracy penalty on their DC roll, as if they were still in\ntheir safe step.\neither engage in melee combat, or make a close combat check, at the enemy's choice (see\nConcentration skill in the Basic Rulebook, p. 40).\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "prevent-seals",
+        "group": "Samurai",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 1008,
+        "sourceLineEnd": 1029,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Iaigiri",
+    "type": "elemento",
+    "system": {
+      "descricao": "Iaigiri\nHijutsu: Samurai\nSource: user-supplied translated excerpt, lines 1030–1036\nPrerequisite: Dexterity 14; Swordsmanship; Quick Draw; Iaido.\n\nSOURCE TEXT:\nIAIGIRI\nThe ultimate form of Iaido, developed to finish off enemies.\nPrerequisites: Dexterity 14; Swordsmanship; Quick Draw; Iaido.\nBenefit: This maneuver can only be used as a Coup de Grace. You attack the target using\nIaido's Quick Cut and receive +1 to your damage score (total damage score of 5 for the\nCoup de Grace).\nThis skill cannot be used with Maneuvering Skills.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "iaigiri",
+        "group": "Samurai",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 1030,
+        "sourceLineEnd": 1036,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Samurai Armor",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Samurai Armor\nHijutsu: Samurai\nSource: user-supplied translated excerpt, lines 1037–1071\nPrerequisite: Strength 10 or Stamina 12\n\nSOURCE TEXT:\nSAMURAI ARMOR\nSamurai developed their heavy armor over the years to provide protection without restricting\nmovement.\nPrerequisite: Strength 10 or Stamina 12\nBenefit: You receive the benefits of the Heavy Armor Proficiency skill. Additionally, you\nbecome proficient in using the exclusive samurai battle armor.\nSamurai Battle Armor: It is a heavy, segmented armor that covers the shoulders, chest,\nstomach, and lower back;\nThe helmet covers the upper back, lower sides, and thighs. It also includes gauntlets, shin\nguards, and a helmet. High-ranking samurai often adorn their helmets with horns.\n78\nMachine Translated by Google\nType\nHeavy\nAbsorption Bonus, Body Hardness, Armor Penalty\n+20\nHIJUTSUS\nSamurai Battle Armor\nPrice\n600 Ryos – 3 comp.\n+2\nCompartments\n0 (-5)\nSamurai can carry up to four swords (two light and two medium), whose\nsheaths are mounted directly on their armor. You do not receive any armor or\nmovement penalty for carrying these swords.\nThe helmet has a mask with a built-in radio and functions as a respirator to\ncombat the poison regularly used by ninjas (+3 accuracy on saving throws).\nNot wearing the helmet does not alter the overall hardness or absorption of\nthe armor.\nIf armor absorption is reduced to zero, body hardness remains, but only to\nprotect against armed and unarmed attacks (common or with the Energize\neffect).\nSamurai Battle Armor has no usage penalties, however using it without this\nskill results in a -5 armor penalty.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "samurai-armor",
+        "group": "Samurai",
+        "category": "Equipment",
+        "sourceLineStart": 1037,
+        "sourceLineEnd": 1071,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Senninka",
+    "type": "poder",
+    "system": {
+      "descricao": "Senninka\nHijutsu: Senninka\nSource: user-supplied translated excerpt, lines 1072–1094\nAction: View text\nDuration: Continuous\n\nSOURCE TEXT:\nSENNINKA (HERMIT TRANSFORMATION)\nRestricted Power\nReach: Personal\nAction: View text\nType: Ninjutsu\nDuration: Continuous\nSubtype: Kekkei Genkai\nThis Kekkei Genkai is an instinctive ability that allows its user to absorb and\nutilize natural energy without any Senjutsu training.\nThis transformation is a multifaceted ability that allows the user to acquire various benefits,\nfrom creating various weapon-like appendages to absorbing the cells of other human beings,\nas well as a general increase in their physical capabilities.\nHomicidal Outburst: Due to the constant absorption of nature's energy, the\nwielder of Senninka possesses mental instability, sporadically feeling sudden\nand uncontrollable impulses to kill, even when not actively using their power.\nWhen you engage in combat, you don't stop or flee until all enemies are dead. When someone\nmistreats or injures someone very important to you (an ally or an animal), you also enter a\nfrenzy and will not stop fighting until the aggressor is dead. At the Game Master's discretion,\nother highly emotional situations may also trigger the homicidal frenzy.\nKiller's Cage: If you are a kind character who, deep down, doesn't like killing\npeople, you will tend to seek out an ally who can act as a \"cage\" and stop your\nmurderous instincts when necessary. This ally could be another PC or an\nNPC, whose relationship will be built during the campaign.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "senninka",
+        "group": "Senninka",
+        "category": "Restricted Powers",
+        "sourceLineStart": 1072,
+        "sourceLineEnd": 1094,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Senninka — General Benefits",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Senninka — General Benefits\nHijutsu: Senninka\nSource: user-supplied translated excerpt, lines 1095–1155\n\nSOURCE TEXT:\nGENERAL BENEFITS\nThis power is a distinct form of Senjutsu power and has its own rules. You\nshould not use this power in conjunction with Senjutsu or add any of its rules\nhere.\n79\nMachine Translated by Google\nHIJUTSUS\nLEVEL 1: FIRST STAGE\nWhen activated, dark spots cover the user's body. The higher the percentage of power used,\nthe more covered the body becomes. The shapes of the spots vary from person to person.\nThe First Stage can be used in several different percentages, depending on the power level,\nand each percentage has different bonuses.\nRelease: Using up to half the power level is a partial action.\nUnleashing power beyond this requires action. Power has continuous duration.\nCost: Activating this power costs 1 chakra point per level unlocked.\nReceiving one of the bonuses costs 1 additional chakra point per benefit received.\nPercentages per Level: Interpretively, each power level represents 25% of the Seal (i.e., the\nFirst Stage can be used at 100% at power level 4).\nLevel Bonus: You can spend 1 chakra point to receive one of the following bonuses. You\ncannot spend more than 1 point to receive the same bonus more than once, but you can\nspend more points to receive different bonuses at the same time, up to a limit of 1 bonus per\npower level (maximum of 4).\nChakra bonuses last for 1 scene, and other benefits last until the start of the next turn. Using\nany of these bonuses is a free action.\n80\nMachine Translated by Google\n• Strength +4 (does not stack with the base damage bonus below)\n• Base Damage +2 for an attack using the Senninka power (including\nEnergize)\n• Attack Accuracy +1 for CC or Senninka power technique\n• Defense Accuracy +1\n• Technique Difficulties +1 to Senninka Power\n• Body Hardness +1\nLEVEL 5: SECOND STAGE\nUpon reaching power level 5, you are able to use the Second Stage.\nHIJUTSUS\nYou gain the right to choose some Ninpou effects to use with this power. You receive the\nCannon effect at level 1 of the Power and can choose a new effect for each level, following\nthe same rules as Ninpou. However, the common damage of the effects is different, being\n2x the Power Level used.\nThe effects can also be used in the First Stage, through partial body transformations\n(provided you already have Level 5 in the power).\nWhen the Second Stage is activated, the user's appearance changes again, this time even\nmore noticeably. Their skin becomes darker, their eyes turn black with yellow irises, and\ntheir hair grows (sometimes also changing color).\nRelease: Activating the Second Stage is a partial action, but the First Stage must be fully\nunlocked beforehand.\nCost: Unlocking the Second Stage costs 2 chakra points after fully unlocking the First Stage.\nBenefits: When you unlock the Second Stage, you choose one of the original bonuses from\nthe First Stage to activate and maintain continuously (the cost of activating the bonus is\nalready included in unlocking the stage). In addition, you can continue to choose four more\nbonuses per turn, following the rules of the First Stage, with two more benefits added to the\nlist:\n• Accelerated\n• Chakra +3 per Power level (1 time per scene)\nEffects: You can modify your own body, being able to transform your hands and arms into\nweapons or energy cannons.\nUsing Senninka's effects doesn't require hand seals, but it still requires free arms, with the\nexception of the Cannon effect, which can also be used from any part of the chest.\nList of Allowed Effects: Cannon, Create Weapon, Orb, Ray, Arrows, Energize, Destructive\nBreath, and Missile; in addition to the following exclusive effects.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "senninka-general-benefits",
+        "group": "Senninka",
+        "category": "Abilities / Progression",
+        "sourceLineStart": 1095,
+        "sourceLineEnd": 1155,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Senninka — Exclusive Effects",
+    "type": "elemento",
+    "system": {
+      "descricao": "Senninka — Exclusive Effects\nHijutsu: Senninka\nSource: user-supplied translated excerpt, lines 1156–1186\nAction: Partial\nDuration: Continuous\n\nSOURCE TEXT:\nEXCLUSIVE EFFECTS\nLEVEL 3 EFFECTS\nCURRENT\nÿ Action: Partial\nÿ Scope: Personal\nÿ Duration: Continuous\nYou can extend your arm to a distance of 10m. This allows you to perform the Grapple\nmaneuver without its usual accuracy penalties (the maneuver tests are still done with CC\nand are not changed).\n81\nMachine Translated by Google\nCELLULAR TRANSFER\nÿ Action: 1 round\nHIJUTSUS\nLEVEL 6 EFFECTS\nÿ Range: Touch\nFrom your hand, you create an appendage resembling a thin stake and insert it into your\ntarget. Once in use, you can absorb that person's cells, healing yourself from any kind of\ninjury and restoring your Vitality.\nUsing this effect requires no rolls, but is only possible on targets that are out of\ncombat. You transfer all of the target's remaining Vitality to your body (even if\nit's negative), killing them.\nin the process.\nYou can also do the reverse and donate your Vitality to a person. However, this\nis only possible with targets that are compatible with Juuinka (see the power\nlater). You can transfer a maximum of 15 Vitality points and, at the end of the\nprocess, your body will be reduced in size, as if you had rejuvenated.\nReducing size causes no penalties and is reversed as soon as you manage to\ndrain the Vitality of a target. However, you will not be able to transfer cells to a\nperson until you revert your size, as the body will not have enough cells to keep\nyou alive.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "senninka-exclusive-effects",
+        "group": "Senninka",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 1156,
+        "sourceLineEnd": 1186,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Senninka — Current",
+    "type": "elemento",
+    "system": {
+      "descricao": "Senninka — Current\nHijutsu: Senninka\nSource: user-supplied translated excerpt, lines 1158–1166\nAction: Partial\nDuration: Continuous\n\nSOURCE TEXT:\nCURRENT\nÿ Action: Partial\nÿ Scope: Personal\nÿ Duration: Continuous\nYou can extend your arm to a distance of 10m. This allows you to perform the Grapple\nmaneuver without its usual accuracy penalties (the maneuver tests are still done with CC\nand are not changed).\n81\nMachine Translated by Google\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "senninka-current",
+        "group": "Senninka",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 1158,
+        "sourceLineEnd": 1166,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  },
+  {
+    "name": "Senninka — Cellular Transfer",
+    "type": "elemento",
+    "system": {
+      "descricao": "Senninka — Cellular Transfer\nHijutsu: Senninka\nSource: user-supplied translated excerpt, lines 1167–1186\nAction: 1 round\n\nSOURCE TEXT:\nCELLULAR TRANSFER\nÿ Action: 1 round\nHIJUTSUS\nLEVEL 6 EFFECTS\nÿ Range: Touch\nFrom your hand, you create an appendage resembling a thin stake and insert it into your\ntarget. Once in use, you can absorb that person's cells, healing yourself from any kind of\ninjury and restoring your Vitality.\nUsing this effect requires no rolls, but is only possible on targets that are out of\ncombat. You transfer all of the target's remaining Vitality to your body (even if\nit's negative), killing them.\nin the process.\nYou can also do the reverse and donate your Vitality to a person. However, this\nis only possible with targets that are compatible with Juuinka (see the power\nlater). You can transfer a maximum of 15 Vitality points and, at the end of the\nprocess, your body will be reduced in size, as if you had rejuvenated.\nReducing size causes no penalties and is reversed as soon as you manage to\ndrain the Vitality of a target. However, you will not be able to transfer cells to a\nperson until you revert your size, as the body will not have enough cells to keep\nyou alive.\n\nSOURCE NOTE: This is a faithful segment of the supplied machine-translated pasted text. Some original two-column passages are interleaved or split across sections; confirm ambiguous rules with the original PDF. Any absent cost is unspecified, not zero."
+    },
+    "flags": {
+      "sns-hijutsu-vol2-pasted-hijutsus": {
+        "uid": "senninka-cellular-transfer",
+        "group": "Senninka",
+        "category": "Techniques / Effects",
+        "sourceLineStart": 1167,
+        "sourceLineEnd": 1186,
+        "verification": "transcribed from supplied excerpt; some two-column passages interleaved"
+      }
+    }
+  }
+]

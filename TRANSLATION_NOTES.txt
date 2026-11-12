@@ -1,0 +1,5 @@
+English UI translation of Shinobi no Sho Revamp.
+Original system data field names and document type IDs remain in Portuguese for compatibility with existing actors and items.
+Character sheet and item sheet labels, many skill names, roll outcomes, and common chat labels have been translated.
+User-entered content, imported compendiums, and existing world data are not automatically translated.
+Runtime testing inside Foundry VTT has not been performed. Back up your worlds before replacing the system.

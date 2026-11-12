@@ -1,0 +1,3 @@
+User-confirmed formulas: melee = ceil(Strength/2) + Weapon Damage; ranged = ceil(Dexterity/2) + Weapon Damage; standard Ninpou/Elemental = ceil(Spirit/2) + Power Level Used.
+Existing weapon attack calculator retained. Powers and Elements now have a persisted numeric Power Level Used field and Damage button, separate from the Use button that deducts Chakra/Vitality.
+Effect-specific exceptions, defense, accuracy and damage degrees are not resolved by the new Ninpou button. Not live-tested in Foundry.

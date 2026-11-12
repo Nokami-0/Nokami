@@ -1,0 +1,657 @@
+[
+  {
+    "name": "Wind Demon",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Wind Demon\nClan: Fuuma\nSource: Book of Hijutsus Vol. 1 (4.1b), page 7\n\nWIND DEMON\nYou possess the talent and ambition of one of the most renowned clans.\nPrerequisite: Tensai (Secret Technique).\nBenefit: You must choose this skill as one of the two Special Skills you are entitled to\nthrough the Tensai secret technique.\nYou receive the benefits of the Weapon Proficiency (Fuuma Shuriken) and Expertise\n(Throwing Weapons) skills. Additionally, you can make the base damage of any fuuma\nshuriken attack equal to your Dexterity level (that is, the standard base damage calculation\nfor throwing weapons is not used, nor is weapon damage).\nYou will not receive the benefits of skills for which you have not yet met the normal\npurchase prerequisites, but you will receive them as soon as those prerequisites are met.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-4b126be6527010",
+        "clan": "Fuuma",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 7,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Aquatic Predator",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Aquatic Predator\nClan: Hoshigaki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 8\n\nBenefit: Your skin is thick and covered in hard scales. You also possess gills\nand a row of sharp teeth. In addition to being able to breathe underwater and\nmove within it at twice your speed, your special skin also grants you Body\nHardness 1 against all types of armed and unarmed attacks.\nWith Stamina 8, it increases to Body Hardness 2. And with Stamina 12, it\nincreases to Body Hardness 3.\nNATURAL ELEMENT: SUITON</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-de6d57a40b5ab2",
+        "clan": "Hoshigaki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 8,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Natural Element: Suiton",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Natural Element: Suiton\nClan: Hoshigaki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 8\n\nIts biological proximity to ocean predators made it especially skilled in the use\nof Suiton.\nPrerequisite: Aquatic Predator; Suiton 1.\nBenefit: Every Suiton effect receives +2 base damage as an elemental\nbonus (functioning the same way as the additional damage from Katon, for\nexample).\nWATER RESERVOIR</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-0fa845dad400bc",
+        "clan": "Hoshigaki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 8,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Water Reservoir",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Water Reservoir\nClan: Hoshigaki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 9\n\nPrerequisite: Suiton 5, Spirit 9, Water Mastery, Element\nNatural.\nBenefit: You are able to project water with extreme ease.\nWhen using the Water Mastery skill, you accumulate twice the possible water points. All other\nrules of Water Mastery remain in effect.\nSUITON: EFFECTS FOR HOSHIGAKI\nWhen you purchase the restricted abilities of the Hoshigaki clan, you gain access\nto new effects for Suiton (Water Release).\nLEVEL 10 EFFECTS</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-c4599e97432938",
+        "clan": "Hoshigaki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 9,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Shark Prison",
+    "type": "elemento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Shark Prison\nClan: Hoshigaki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 9\nEffect level: 10\n\nShark Prison\n• Prerequisites: Water Prison Lv 9; Wave Collision Lv 8; Natural Element:\nSuiton; Aquatic Predator; Water Reserve.\nAction : Complete\n• Area of Effect: Sphere twice the size of the normal power.\n• Duration: Sustained\nYou create a gigantic dome of water around yourself and capture everyone\nwithin its area of effect.\nUsing Shark Prison requires a DC roll against the enemies&#x27; Evade maneuver or another\ndefense that allows you to leave the area of effect. If there is no other defense or sufficient\nmovement, it is an Automatic Success.\nThe dome has zero hardness and absorption equal to 6 per level of power\nused. Captured victims will need to make Athletics tests to swim and attempt\nto escape the prison (Standard Difficulty) or Stamina tests to simply hold their\nbreath (Standard Difficulty -2). Failing will result in suffocation.\nWhenever a victim moves within the prison, you can immediately spend a\nmove action to move in the same direction as them and also move the entire\nwater dome along with you, thus preventing the target from escaping the\nprison.\nIf two or more targets move in different directions at the same time, you can\nonly choose one direction to pursue.\nKUCHIYOSE: SHARK</div>",
+      "nivel": 10,
+      "nivelPoder": 10
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-19cd9d4421377c",
+        "clan": "Hoshigaki",
+        "category": "Techniques & Effects — Level 10",
+        "page": 9,
+        "level": 10,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Kuchiyose: Shark",
+    "type": "poder",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Kuchiyose: Shark\nClan: Hoshigaki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 9\n\nLow Intelligence: Sharks always have zero Intelligence and automatically\nfail any Intelligence test. For the same reason, they are unable to speak.\nHowever, they can still be commanded, executing simple orders without any\ndifficulty (such as attacking, defending, or even delivering written messages).\nNumerous Summoning: You can summon up to 8 sharks at the same time,\nall at the highest level your power allows. However, they fail any Combat Skill\ntest (except for the School Attack) and are considered henchmen.\nSize: Sharks are limited to the Large size.\nKey Attributes: Strength, Agility, Perception.\nSkills: Athletics (Swimming), Alertness, Tracking.\nPowers: None.\nSkills: Attack in Motion, Specialist, Reflexes, Speedster, Expert, Innate Skill, Stunning\nAttack, Power Attack, Sensor (continuous duration).\nTechniques:\n• School Attack: After summoning a large number of 8 sharks, you can order them to attack</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-8f4a5649aaa4a8",
+        "clan": "Hoshigaki",
+        "category": "Restricted Powers",
+        "page": 9,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "School Attack (Shark Summoning)",
+    "type": "elemento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">School Attack (Shark Summoning)\nClan: Hoshigaki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 10\n\nthe same target in succession to disrupt its movements. You make a single CC check\nfor all creatures, using the highest accuracy among them.\nIf you are successful, the victim will receive the following limitations on their next\ndefense: they cannot use the Evade maneuver or any other defense that requires\nmovement; and they are caught off guard if they defend using Dodge or Anticipate. It is\npossible to defend using a technique, provided it can be used while submerged.\nThe Shoal Attack does not cause damage, requires a full action from all creatures, and\ndoes not count towards damage reduction under the Partners rule.\nTypes of Attacks: Bite (piercing), Body Slam (crushing).</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-eb780fac091744",
+        "clan": "Hoshigaki",
+        "category": "Techniques & Effects",
+        "page": 10,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Suika (Hydration)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Suika (Hydration)\nClan: Hozuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 10\n\nSUIKA\nYou are able to transform your entire body and your clothes into water.\nPrerequisite: Suiton 4; Spirit 9\nBenefit: You transform entirely into water and become nearly immune to physical attacks of\nany kind. The benefits of this ability\nThey have a permanent duration, but you only receive them as long as you possess chakra.\nSuika Points: You gain a new parameter called Suika Points (SP) which is equal to 3 times\nyour Stamina. Whenever you suffer any type of damage, you can deduct it from your Suika\nPoints instead of your Vitality. If your SP value reaches zero, all remaining damage is\ndeducted from your Vitality.\nFluid Immunity: You become immune to damage from Suiton-type techniques, but not to\nsecondary effects unrelated to water itself, such as being pushed. You are also immune to\nsuffocation damage in drowning situations.\nYou also only receive half the base damage from Katon techniques.\n(and fire-type damage, such as explosive tags), but receives double damage against Raiton\ntechniques (and electrical-type damage).\nFluid Escape: When immobilized by any physical restraint (such as ropes, cells, or the Grab\nmaneuver), you can use a standard action to transform into liquid to escape immediately,\nwithout needing to make any tests, and then return to normal.\nAdditionally, you receive the Immerse level 2 effect for your Suiton power for free.\nFluid Power: Suika Points can be used to replace the chakra cost of Suiton techniques,\npaying 1 PS for each chakra point that would be spent. Whenever the technique&#x27;s cost is fully\npaid with PS, the Suiton technique receives +2 damage. This damage bonus is incompatible\nwith the Water Mastery skill and the Energize effect.\nWater Gun: When using the Cannon effect for Suiton, you can fire small projectiles with the\ntip of your index finger, as if it were a firearm. Using the effect in this way does not require\nhand seals.\nHydrate: With a full night&#x27;s rest, you recover HP at a rate of 5 points +2 per level of Stamina.\nThe GM may reduce or even prevent HP recovery if you do not have access to drinking\nwater during the day.\nElemental Restriction: When you purchase this ability, you are unable to use any elemental\npower other than Suiton (Water Release).\nTime Constraint: The benefits of this skill are not affected by Accelerated Technique.\nSUITON: SUIKA EFFECTS\nWhen you purchase the Suika skill, you gain access to new effects for Suiton.\nLEVEL 5 EFFECTS\nWATER ARM</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-c57cceeb20c5e1",
+        "clan": "Hozuki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 10,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Water Arm",
+    "type": "elemento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Water Arm\nClan: Hozuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 12\nEffect level: 5\n\n• Prerequisite: Suika (aptitude)\n• Action: Partial\n• Scope: Personal\n• Damage: see text\n• Duration: Continuous\n• Chakra Cost: 1\nBy using this ability, you can make one of your arms larger and stronger. While using the\nwater arm, you can use Spirit instead of Strength for tests, test difficulties, and damage\ncalculation of melee attacks. You can also use Spirit to meet Strength prerequisites in skills,\npowers, and weapon use.\nIn addition, you become able to use the Finesse skill for any heavy weapon, including special\nweapons. This effect can be used with maneuvering skills.\nLEVEL 6 EFFECTS</div>",
+      "nivel": 5,
+      "nivelPoder": 5
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-c74a89484fa544",
+        "clan": "Hozuki",
+        "category": "Techniques & Effects — Level 5",
+        "page": 12,
+        "level": 5,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "To Swamp (Water Suffocation)",
+    "type": "elemento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">To Swamp (Water Suffocation)\nClan: Hozuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 12\nEffect level: 6\n\nTO SWAMP\n• Prerequisite: Suika (aptitude)\n• Action: Movement (see text)\n• Range: Touch (see text)\n• Damage: see text\n• Duration: Continuous\nAfter liquefying a part of your body, you manipulate the resulting water to surround the\ntarget&#x27;s head, preventing them from breathing.\nThis technique should be used on a grabbed target, as a movement action. You transform\npart of your body into water and envelop the target&#x27;s head with it, creating a bubble, which\nis then separated from your body (once the technique is completed, it is no longer necessary\nto have the target grabbed to maintain it).\nThe target will suffer suffocation, with fixed damage equal to the base damage value of the\npower.\nTo break free, the victim needs to cause any damage to the bubble formed on their head.\nThe bubble has absorption 1, common power hardness, and...\nstill retaining the same natural advantages and disadvantages of Suika fitness (see Fluid\nImmunity).\nAnother way to use this technique is as a prepared action after a successful unarmed block.\nAfter making contact with the target, you separate the body part, creating the bubble around\nits head.\nLEVEL 7 EFFECTS</div>",
+      "nivel": 6,
+      "nivelPoder": 6
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-2246b9b076278a",
+        "clan": "Hozuki",
+        "category": "Techniques & Effects — Level 6",
+        "page": 12,
+        "level": 6,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Water Monster",
+    "type": "elemento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Water Monster\nClan: Hozuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 13\nEffect level: 7\n\nWATER MONSTER\n• Prerequisites: Suika (aptitude); Water Arm (effect)\nAction : Pattern\n• Scope: Personal\n• Duration: Sustained\nYou can merge with a large amount of existing water to transform into a giant spherical\nmonster. Your size category changes to Huge , and all your melee attacks receive the\nbenefits of the Water Arm effect, with a +3 bonus to Spirit when replacing Strength\nchecks and damage calculations.\nLEVEL 8 EFFECTS\nOIL CLONE</div>",
+      "nivel": 7,
+      "nivelPoder": 7
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-f6813900d1a986",
+        "clan": "Hozuki",
+        "category": "Techniques & Effects — Level 7",
+        "page": 13,
+        "level": 7,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Oil Clone",
+    "type": "elemento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Oil Clone\nClan: Hozuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 13\nEffect level: 8\n\n• Prerequisites: Suika (aptitude); Clone (Mizu Bunshin; aptitude)\nAction : Pattern\n• Scope: Personal\n• Duration: Concentration\nThis is an infinite cyclical explosion technique, by which the user creates a clone\n(resembling a chibi version of themselves) made of water and oil. The clone&#x27;s exterior is\nmade of a thin layer of oil, while the interior is filled with water.\nGrowth: As the clone moves, the oil on the surface layer heats up rapidly, evaporating\nthe water inside and causing it to grow larger. As long as it moved in that round, in the\nfollowing round, at the start of its turn, the clone increases by 1 size category.\nHeating: At the start of the turn in which it reaches the Huge size, the internal temperature of the\nsteam reaches its limit and the clone explodes, releasing all the water vapor inside it at once.\nExplosion: The explosion is shaped like a sphere of the usual power size, and all those hit\nwill suffer normal damage +2. Because it is a water vapor explosion, the user does not suffer\ndamage, thanks to the Suika aptitude.\nCooling: After being released in the explosion, the vapor rises into the sky and cools,\ntransforming into hail, which falls on the clone and lowers its temperature, causing it to\nreturn to its original size and restart the cycle for a new explosion.\nThe oil clone follows the same rules as the Mizu Bunshin, but is extremely fast, being considered\naccelerated. It attacks only in melee combat using a large axe (weapon damage +5) that unfolds\nfrom its arm. If you have the Water Arm or Energize effect for Suiton, you can use Spirit in the\nmelee damage calculation.\nThe clone possesses Vitality equal to 3x its Spirit level, is immune to\ndamage from common armed and unarmed attacks (without the use of\nchakra or Hijutsu), and possesses the same natural advantages and\ndisadvantages as the Suika aptitude (see Fluid Immunity).\nControlling the clone requires concentration, and you cannot control other\ntypes of clones at the same time. However, the Oil Clone is not affected by\nthe damage reduction rule of the Command Partner rule.</div>",
+      "nivel": 8,
+      "nivelPoder": 8
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-8ff6f0aab83efc",
+        "clan": "Hozuki",
+        "category": "Techniques & Effects — Level 8",
+        "page": 13,
+        "level": 8,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Bone Craftsman",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Bone Craftsman\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 14\n\nBONE CRAFTSMAN\nYou are able to remove bones from your body and shape them as you see fit to create\nvarious weapons. Furthermore, your control over bone regeneration allows you to make any\nremoved bones grow back almost immediately, making you a human arsenal.\nBenefit: Creating a weapon requires removing bones from a limb, usually an arm. Doing so\nwill render the limb unusable until the start of your next turn, while the removed bones...\nThey rebuild.\nYou are proficient with all weapons created through this skill (meaning you don&#x27;t need to\npurchase the Weapon Proficiency skill), and only characters with this skill are proficient in\nusing bone weapons.\nAll bone weapons are considered Special Weapons (see page 82), with the following rules.\nCrafting: Only light, medium, long, or heavy weapons of the cutting or piercing type can be\ncrafted, and the Strength and Dexterity requirements must be met to use them. You are not\nable to create mechanically complex weapons or weapons dependent on chemicals.\nWeapons last for 1 scene.\nThe cost of creating the weapon depends on its category:\n• Light Weapons: partial action and 1 point of Vitality per weapon.\n• Medium Weapons: partial action and 2 Vitality points per weapon.\n• Long or Heavy Weapons: movement action and 4 Vitality points per weapon.\nThese costs are also used in the creation of Shikotsumyaku&#x27;s special weapons (such as fang-\nweapons and the Hana). The action cost to create the weapons is not affected by the Quick\nDraw skill.\nWeapon Quality: The weapons possess the same properties and damage as their standard\nversion (see Weapon Table in the Basic Rulebook, p. 137), but with +2 hardness and\nincreased weapon damage by +1.\nThey can also be used to block projectile-type techniques.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-4d4db858b2d80f",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 14,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Teshi Sendan (Finger Bullets)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Teshi Sendan (Finger Bullets)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 15\n\nTeshi Sendan: At the cost of 1 Vit point, projectiles are created from the finger bones and fired\nimmediately with a standard action (the fired bones regenerate instantly). This is a ranged attack\nwith a 20m range and base damage equal to the Dexterity level.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-344952fa6d04e6",
+        "clan": "Kaguya",
+        "category": "Exclusive Weapons & Equipment",
+        "page": 15,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Weapon-Fang (Bone Weapon)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Weapon-Fang (Bone Weapon)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 15\n\nWeapon-Fang: This is a special light weapon. You cause long, pointed bones to sprout from\nthe palms of your hands (one or both). These bones have the damage of any light weapon\nyou choose. Once created, the weapons-fang can be retracted with a free action.\nWhile wielding a weapon attached to your hand, you cannot create other weapons, but you\ncannot be targeted by the disarm maneuver, and your limb will not become unusable.\nShikotsumyaku Specialist: If you choose Shikotsumyaku for your Specialist skill, you\nreceive its benefit for all bone weapons.\nBONE ARMOR</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-02f5bda600625e",
+        "clan": "Kaguya",
+        "category": "Exclusive Weapons & Equipment",
+        "page": 15,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Bone Armor",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Bone Armor\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 15\n\nYou are covered with powerful bones.\nBenefit: This endoskeleton lines your structure beneath the skin and grants you Body\nHardness 1 against all types of damage.\nAdditionally, you gain the benefits of the Die Hard fitness level and become immune to\nfractures.\nWith Vigor 10, it increases to body hardness 2. And with Vigor 14, it increases to body\nhardness 3.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-08816197903088",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 15,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Karamatsu no Mai (Larch Dance)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Karamatsu no Mai (Larch Dance)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 15\n\nKaramatsu no Mai (Larch Dance)\nSeveral bones emerge from the body all at once, to absorb damage and also to counterattack\nenemies that physically attack.\nPrerequisite: Stamina 6, Bone Craftsman, Bone Armor\nBenefit: This skill grants you a new defensive technique. Using Karamatsu\nno Mai as a defensive action is a Defender with Technique maneuver in which,\ninstead of using your LM in the defense test, you can use your CC level,\nincluding the benefit of the Expert skill (if any).\nUsing Karamatsu no Mai is a partial action and costs chakra points equal to\n1/4 of your Stamina level. If successful, you instantly gain extra body hardness\npoints equal to your Stamina level, reinforcing your bone structure beneath\nthe skin and also causing bones to protrude from your body to absorb damage.\nThis extra hardness remains until the end of the turn of the enemy that\nattacked you and is cumulative with Bone Armor.\nAdditionally, enemies that have attacked the character unarmed will suffer\nfixed damage equal to 1 per level of Stamina. The damage is only suffered by\nthe attacker if you succeed on the CC test, and is still suffered even if the\nbody toughness is overcome by the attack.\nUsing this defense against an unarmed grab attempt grants you a +2 accuracy\ncheck. If you succeed, the enemy takes damage, and you are entitled to a roll\nto escape the maneuver as a reaction, following its normal rules. If you use\nthis technique against enemies who are already grappling you, it costs a\nstandard action, and the fixed damage is halved.\nYANAGI NO MAI (WOOD TREE DANCE)</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-ea2115e633737d",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 15,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Yanagi no Mai (Willow Dance)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Yanagi no Mai (Willow Dance)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 16\n\nYou attack with jumps, acrobatics, and somersaults, using claw-weapons and\nsecondary weapons grown from your elbows, knees, and shoulders, which\ncan be retracted at the end of the technique.\nPrerequisite: Acrobatics 6, Bone Craftsman\nBenefit: To use this technique, you must initially have your hands free or be\nwielding only weapons. Your melee attack gains the benefits of the Spinning\nAttack skill. If you attack with the Multiple Attack skill, all attacks are considered\nspinning attacks. This technique cannot be used with other dances or\nmaneuver skills.\nSpecial: Whenever you attack with a light bone weapon, whether it&#x27;s a regular\nattack, in this dance, or any other, you can use Dexterity instead of Strength\nwhen calculating damage.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-39b74a279ab6d7",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 16,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Tsubaki no Mai (Camellia Dance)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Tsubaki no Mai (Camellia Dance)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 16\n\nTSUBAKI NO MAI (DANCE OF THE CAMELLIA)\nCombining quick movements with an unpredictable combat rhythm, you use a\nlight bone weapon to strike your opponent in the most agile and lethal way\npossible.\nPrerequisites: Agility 8; Moving Attack; Multi-Attack; Bone Craftsman.\nBenefit: You must be wielding only light weapons to use this technique and\nyou must be 3 meters or more away from your target. You use the Multiple\nAttack skill to attack three times, increasing the speed of each attack: the\nsecond attack causes a -1 penalty to the target&#x27;s defense and the third attack\ncauses a -2 penalty to the accuracy (this -2 penalty is also applied to the\nProgressive Attack test).\nAll attacks must be made against the same target.\nYou also receive the benefits of the Quick Retreat and Cleave Lv 2 skills.\nAdditionally, whenever you kill an enemy, you will receive an extra movement\nof up to 5m to move to a new target before attacking with Cleave.\nThis technique cannot be used with other dances.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-105a2e8feab105",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 16,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Tessenka no Mai (Clematis Dance)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Tessenka no Mai (Clematis Dance)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 17\n\nTESSENKA NO MAI (DANCE OF THE CLEMATITE)\nThe Clematis Dance is divided into two parts. In the first, the user creates a dense whip made\nfrom the bones of the spine and uses it to restrain the enemy. In the second, they create a\nlarge spear in their free arm and pierce the immobilized target.\nPrerequisite: Stamina 12; Strength or Dexterity 10, Bone Craftsman, Ambidexterity.\nBenefit: You are able to create two special and unique heavy weapons: the Bone Vine and\nthe Bone Flower. These weapons can be wielded simultaneously, but are never used together\nin the same attack.\nTsuru (Bone Vine): The user can modify and remove their own spinal column and regenerate</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-269df671c27f98",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 17,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Tsuru (Bone Vine)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Tsuru (Bone Vine)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 17\n\na new one to replace it immediately, without incurring any penalties for the absence of bones.\nBetween the gaps in the bones, there is cartilage that allows for flexibility, making it possible\nto bend it as if it were a dense, sharp whip.\nThe Bone Vine is a heavy weapon with +4 weapon damage (including the Bone Craftsman\nbonus). It can attack targets up to 4 meters away and also perform the trip, disarm, or grapple\nmaneuvers without accuracy penalties. The Finesse skill applies to...\nthis weapon.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-c3de839e131ffd",
+        "clan": "Kaguya",
+        "category": "Exclusive Weapons & Equipment",
+        "page": 17,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Hana (Bone Flower)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Hana (Bone Flower)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 17\n\nHana (Bone Flower): The user utilizes chakra to make the bones of one arm grow\nastonishingly, creating a large spear capable of vibrating, increasing its piercing power. Hana\nis a heavy weapon-fang, with weapon damage of +6 (Bone Artisan bonus already included)\nand a melee reach of 2m.\nIf you are grappling a target using the Tsuru, you receive an extra melee attack against that\nsame target, exclusively for attacking using the Hana.\nThis dance cannot be used with maneuvering skills.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-79cd0ba5c1653f",
+        "clan": "Kaguya",
+        "category": "Exclusive Weapons & Equipment",
+        "page": 17,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Sawarabi no Mai (Fern Dance)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Sawarabi no Mai (Fern Dance)\nClan: Kaguya\nSource: Book of Hijutsus Vol. 1 (4.1b), page 17\n\nSAWARABI NO MAI (FERN DANCE)\nIn the last of the five dances of the Kaguya Clan, countless bone spears rise from underground,\nwhich can number in the thousands for the highest-level ninjas.\nPrerequisite: Vigor 16; Tessenka no Mai.\nBenefit: With a standard action, you create several spears around you that rise from the\nground to pierce enemies. This dance functions like the Ninpou Level 6 Spear effect (see the\nBasic Rulebook, p. 99), with the following parameters:\n• Size: Each spear is 1m in diameter, 3m high, and spreads out around the user in an area\nwith a diameter equal to their Stamina level.\n• Hardness: 2x the level of Vigor\n• Base Damage: 1 per Stamina level\nChakra cost: half of Stamina.\n• Test Difficulty: 9 + Vigor.\nYou can enter and move inside any spear, as when using the Immerse Lv 4 (Doton) effect. If\nyou have Stamina 18, the Spear effect is increased to Lv 9.\nThis technique cannot be used with other dances or maneuvering skills.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-48d56dc4bb8fdd",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 17,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Moon Blade",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Moon Blade\nClan: Yotsuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 18\n\nMOON BLADE\nYou possess the unparalleled swordsmanship skills of one of the clans with the highest\nloyalty among its members.\nPrerequisite: Tensai (Secret Technique).\nBenefit: You must choose this skill as one of the two Special Skills you are\nentitled to through the Tensai secret technique.\nYou receive the benefits of the Finesse and Lightning Mastery aptitudes.\nAdditionally, you receive the Weapon Proficiency aptitude for all types of\nmartial swords. You still need to meet the Strength and Dexterity requirements.\nto use medium and heavy weapons.\nYou will not receive the benefits of skills for which you have not yet met the\nnormal purchase prerequisites, but you will receive them as soon as those\nprerequisites are met.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-9aa5d17130fbcd",
+        "clan": "Yotsuki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 18,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Special Seals (One-Handed Seals)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Special Seals (One-Handed Seals)\nClan: Yuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 18\n\nPrerequisite: Dexterity 8\nBenefit: You are able to perform hand seals with one hand, allowing you\nto attack or hold objects with the other. You must have at least one hand\nfree to benefit from this ability.\nYou do not receive the -3 penalty to accuracy when using techniques in\nclose combat (nor do you need to make a concentration check).\nAdditionally, when using the common Strike maneuver, if your melee attack\nis blocked, dodged, or anticipated, you can perform a standard action\ntechnique as a move action. The technique performed must be an offensive\nranged attack, with a DC check, and have an instantaneous duration.\nNormal: You need to have both hands free to perform hand seals.</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-a7d76bbc1141b6",
+        "clan": "Yuki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 18,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Freezing",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Freezing\nClan: Yuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 19\n\nFREEZING\nYou can freeze enemies each time you hit with a Hyouton technique.\nPrerequisite: Hyouton 6.\nBenefit: Whenever damage is dealt with an effect of the Hyouton power, the victim\nmust make a Stamina test (Standard difficulty -2). If they fail, they are incapacitated\nuntil the end of their next turn.\nThis ability only applies to ranged effects that require a hit test against the target&#x27;s\ndefensive action. Therefore, it also does not apply to attacks with the Energize or\nCreate Weapon effects.\nHYOUTON (ICE ELEMENT)</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-f9e8084d4d4dbc",
+        "clan": "Yuki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 19,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Hyouton (Ice Release)",
+    "type": "poder",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Hyouton (Ice Release)\nClan: Yuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 19\n\nRestricted Power\nHyouton is an advanced bloodline formed through the simultaneous use of the Wind\nand Water elements to create ice. It allows the user to freely create and manipulate\nice by combining these elements. When the user releases their chakra, the area\naround them becomes so cold that it snows, and the ice produced is so resistant that\nit can withstand even fire-type attacks, melting only minimally.\nThe player must purchase Hyouton as a standard version of elemental ninjutsu\npowers. The Hyouton power follows the same rules as the Ninpou power (see the\nPowers chapter in the Basic Rulebook, page 91), and can utilize all of its effects\nwithout restriction. Hyouton has the same range and size as the Ninpou power.\nRange: Medium (10m + 2m per Spirit level). The character can only manipulate\nor create their element up to the maximum range of their power.\nSize: Creations, manipulations, and areas of effect can have up to 1m in\ndiameter, length, width, or height per Spirit level.\nAdditional Hardness: Every Hyouton creation has 2 additional hardness points.\nIncreased Resistance Difficulty: All Hyouton effects receive a +1 bonus to\nthe resistance difficulty for target tests.\nAllowed Effects: All Ninpou effects; Immerse (Doton);\nSpecial Permanent Duration: Hyouton element effects and creations that have a permanent\nduration melt away after 1 hour per level used.\nWind Release and Water Release: The character receives 1 free level in\nWind Release and Water Release, and can use the Cannon Effect for Wind\nRelease and Water Release using the level of Water Release as a parameter.\nIf you want more levels in these powers to achieve more effects, you need to\nevolve them separately.\nElement Restriction: The character cannot learn elements other than\nHyouton, Suiton, and Fuuton.\nThe Hyouton power also possesses the following unique effects.\nLEVEL 6 EFFECT\nDEMONIC MIRRORS</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-158f9489637918",
+        "clan": "Yuki",
+        "category": "Restricted Powers",
+        "page": 19,
+        "level": null,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Demonic Mirrors",
+    "type": "elemento",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Demonic Mirrors\nClan: Yuki\nSource: Book of Hijutsus Vol. 1 (4.1b), page 20\nEffect level: 6\n\n• Prerequisite: Attack in Motion (skill), Immerse (effect)\nAction : Pattern\n• Area of Effect: Hemisphere; diameter 1m per power level\n• Duration: Continuous\n• Chakra Cost: 3 per turn\nYou create 21 ice mirrors, each 5 cm thick, that form a dome around you and\ntrap nearby enemies in a special field.\nUsage: Using the Mirrors requires a DC roll against the enemies&#x27; Evade\nmaneuver or another defense that allows you to leave the area of effect. If\nthere is no other defense or sufficient movement, it is an Automatic Success.\nMovement: You can enter a nearby mirror with a free action. Moving from one mirror to any other\nis a movement action.\nProtection: While inside the mirrors, you are protected by them, which have\nzero hardness (no elemental bonus is applied) and absorption equal to 8 per\nlevel of power used. If all the mirror&#x27;s absorption is reduced to zero, you suffer\nthe excess damage.\nReflections: All mirrors reflect your image, making you undetectable to the\nnaked eye. Whenever you are targeted by a projectile or area attack that\ncannot hit all mirrors, the enemy must roll 1 die before their attack. If the result\nis 4 or less, it means the attack was directed at a reflection of you in one of the\nmirrors. Damage to the mirror is applied normally, but you do not suffer excess\ndamage if the mirror is broken.\nCharacters with Kagura Shingan or Chakra Vision will always be able to\ndistinguish you from your reflections and are not affected by this.\nrule.\nAttacking: You need to step out of the mirror to perform attacks or cast\ntechniques. When moving from one mirror to another, you are considered\naccelerated and can use the accelerated feint for ranged attacks with weapons,\nprojectiles, and also for the Cannon effect.\nDefending: When attacked, you can perform a Dodge or the Anticipate\nmaneuver to move to the nearest mirror as a reaction, or use the Evade\nmaneuver to move to any mirror of your choice.\nEscapes: There are gaps between the mirrors, allowing anyone to enter the\nspecial field. However, attempting to escape through one of these gaps (either\nindependently or with the help of an ally) opens a chance for a timely attack,\nwhich can be carried out with melee combat or at range with simple throwing\nweapons.\nor cannon effect.\nMirror Breaking: When absorption is reduced to zero, the number of mirrors\nbroken depends on the attacks made. If all attacks hit all mirrors, then all\nmirrors are destroyed at the same time. But if at least one attack did not hit all\nmirrors, only one mirror is broken. If an enemy passes through the space of a\ndestroyed mirror, they will not be at risk of an opportune attack. They will also\nnot be at risk if they are Super Accelerated (but only those in Accelerated\nmode are still at risk).\nRebuild: You can still use a move action to completely renew the absorption\nof all damaged mirrors or recreate any destroyed mirror.\nSingle Mirror: While the technique is active, you can create a single mirror at\nany point within the common range of the power, as a free action, which can\nbe used to move to that point using the benefits of this effect.\nEvolutions:\n• Demonic Mirrors Level 8: The mirrors now have a hardness of 2.\nMoving from one mirror to another becomes a partial action.\nYou can use the accelerated feint to attack with the Arrows effect.\nYou can also use Arrows in opportune attacks. The chakra cost increases\nto 4 per turn.</div>",
+      "nivel": 6,
+      "nivelPoder": 6
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-02b230531975f1",
+        "clan": "Yuki",
+        "category": "Techniques & Effects — Level 6",
+        "page": 20,
+        "level": 6,
+        "source": "Hijutsu Volume 1, English Translation 4.1b",
+        "sourceVerifiedHeading": true
+      }
+    }
+  },
+  {
+    "name": "Tensai (Basic Book reference)",
+    "type": "poder",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">The Fuuma clan lists Tensai as its Hijutsu. Full rules are in Basic Book p.241; not reprinted here.\nSource: Book of Hijutsus Vol. 1, p.7</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-02ac1e113342a0",
+        "clan": "Fuuma",
+        "category": "Restricted Powers",
+        "page": 7,
+        "source": "Hijutsu Volume 1",
+        "crossReferenceOnly": true
+      }
+    }
+  },
+  {
+    "name": "Expanded Chakra (Basic Book reference)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Restricted to Hoshigaki here; refer to Uzumaki clan in Basic Book p.193 for full mechanics.\nSource: Book of Hijutsus Vol. 1, p.8</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-fd338b7fd3e9ba",
+        "clan": "Hoshigaki",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 8,
+        "source": "Hijutsu Volume 1",
+        "crossReferenceOnly": true
+      }
+    }
+  },
+  {
+    "name": "Shark Summoning (exclusive)",
+    "type": "poder",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Exclusive summoning technique: Shark, using Kuchiyose as a common power. See the shark rules on pages 9–10.\nSource: Book of Hijutsus Vol. 1, p.8</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-751b8cb771c4c8",
+        "clan": "Hoshigaki",
+        "category": "Restricted Powers",
+        "page": 8,
+        "source": "Hijutsu Volume 1",
+        "crossReferenceOnly": true
+      }
+    }
+  },
+  {
+    "name": "Regeneration (Basic Book reference)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">Listed in the Kaguya skill set; see Uzumaki Clan, Basic Book p.193.\nSource: Book of Hijutsus Vol. 1, p.14</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-3ca07477f168b0",
+        "clan": "Kaguya",
+        "category": "Limited / Restricted Aptitudes",
+        "page": 14,
+        "source": "Hijutsu Volume 1",
+        "crossReferenceOnly": true
+      }
+    }
+  },
+  {
+    "name": "Tensai (Basic Book reference)",
+    "type": "poder",
+    "system": {
+      "descricao": "<div style=\"white-space:pre-wrap\">The Yotsuki clan lists Tensai as its Hijutsu. Full rules in Basic Book p.241.\nSource: Book of Hijutsus Vol. 1, p.18</div>",
+      "nivel": 0,
+      "nivelPoder": 0
+    },
+    "flags": {
+      "sns-hijutsu-vol1-clans": {
+        "uid": "vol1-83f14d9f21192e",
+        "clan": "Yotsuki",
+        "category": "Restricted Powers",
+        "page": 18,
+        "source": "Hijutsu Volume 1",
+        "crossReferenceOnly": true
+      }
+    }
+  }
+]

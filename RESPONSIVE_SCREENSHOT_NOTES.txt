@@ -1,0 +1,1 @@
+Screenshot-style English edition with responsive/resizable actor window. Keeps dark red and black styling. Width defaults to 90% of viewport (max 1200px); height 88% (max 900px). Navigation scrolls horizontally on narrow screens. Layout stacks only on small screens. Back up worlds before installing. Not tested in a live Foundry instance.

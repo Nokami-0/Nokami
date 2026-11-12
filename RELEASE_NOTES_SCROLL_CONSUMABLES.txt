@@ -1,0 +1,1 @@
+Added actor/item scrolling, equipment consumable fields and one-use decrement control, and 26 Basic Book condition entries. Condition effects are reference labels only; no automated condition penalties. Backup world first.

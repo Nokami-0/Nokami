@@ -1,0 +1,1479 @@
+[
+  {
+    "name": "Kikaichuu (Destructive Parasitic Insect)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The character has chakra-sucking insects living inside their body, which they use as weapons and support. Each level must be purchased separately, as an evolution of the skill. LEVEL 1\nPrerequisite: Handling Animals 1\nBenefit: The character will host a number of insects on their body depending on their level in Animal Handling. The insects will not be referred to individually, but rather in groups, and each group of 100 insects will be referred to as 1 kikaichuu. Quantity: The character will have 1 kikaichuu (group of 100 insects) inside their body for each level of Animal Handling. This number is in addition to any other type of insect that the The character possesses. Control: The kikaichuu will be under the character's direct control and knows no betrayal; it will not hesitate to obey any command and can never be commanded by another character or creature. The insects may pass some information to the character, within limits determined by the game master. When a character uses a kikaichuu to perform a jutsu (for example, the Mushi Bunshin no Jutsu), this kikaichuu cannot be used simultaneously for other purposes. Actions: The kikaichuu can only perform any type of action under the character's control. Any command given to the kikaichuu will be... obeyed automatically and will count towards the action limit of character: Release/Collapse: Make one or more kikaichuu enter or exit the The character's body is a free action. Attack: Attacking with 1 or more Kikaichuu is a standard action. Move: Moving one or more kikaichuu to any location is a partial action. The kikaichuu's movement is 15m per action. Lost Insects: If out of combat and not being used in any technique, the kikaichuu can remain a maximum of 100m away from the Aburame. Beyond this distance, it is considered lost and can no longer be used. When a kikaichuu is destroyed or lost, a new one will appear on the character's body within 2 days, through the accelerated reproduction of the remaining insects on the character's body. A kikaichuu left behind will disperse if it remains uncontrolled by the character for 3 days. Vitality and Resistance: Insects are fragile, dying from a single lethal attack, no matter how minimal. Single-target attacks destroy 1 kikaichu, and area attacks destroy all insects in the affected area. Non-lethal damage does not destroy insects. They are also immune to poisons (or any other type of intoxication) and Genjutsu. Attack: You can use up to half of the total number of insects you possess to perform an attack through a Ranged Combat test. This attack does not cause damage to the opponent, but it drains their chakra, in an amount equal to the number of kikaichuu used. You do not spend chakra to attack in this way, and the chakra drained from the victim is completely consumed by the insects. To perform diverse attacks and inflict damage on the opponent, the character must utilize the Kikai Ninpou power. The attack with Kikaichu cannot be defended against by Block (neither regular attacks nor the effects of Kikai Ninpou). The Kikaichuu alone neither suffers nor can perform opportune attacks, but it can be used by you to perform opportune attacks for your Aburame character. The Kikaichuu cannot be used in attacks or maneuvers other than those mentioned in this skill or the Kikai Ninpou. Maneuvers: The Kikaichu alone cannot perform maneuvers such as Sneak Attack or Opportunistic Attack, however it can be used by you when your Aburame character performs these maneuvers. Defense: Whenever your insects are targeted by an attack, you can use the Anticipate reaction to move them and avoid being hit. Chakra below Zero: If the target already has zero points in their natural chakra reserve and suffers a forced drain, they will die if the drained chakra is equal to or greater than half of their natural reserve. Thus, if your natural reserve has 40 chakra points, you will die if you have 20 points drained below zero. Kikaichuu Mastery: If you purchase the Kikaichuu Mastery skill, its benefits will apply to all insect types and also to the Kikai Ninpou power. LEVEL 2\nPrerequisite: Handling Animals 10\nBenefit: You gain greater control over your insects, receiving the following additional abilities. Notice Genjutsu: If the genjutsu effect allows, the Aburame can observe the behavior of insects to deduce that there is an illusion within themselves or in the environment. This allows them to perform the Notice Genjutsu test using the Handle Animals ski\n\nBasic Book 4.1.b, printed page 143. Classification: Restricted skills.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "707ba025e93044",
+        "clan": "Aburame",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 143,
+        "classification": "Restricted skills",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Sh•kaichuu (Crawling Parasitic Insect)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The character is able to manipulate insects that track creatures with chakra. Prerequisites: Handling Animals 6; Kikaichuu\nBenefit: The sh- kaichuu resemble larvae that are able to burrow into the earth and disperse throughout it, locating chakra signatures and then returning to the host to report their positions. same. Quantity: The character can store a group of 100 sh- kaichuu insects in their body per level of Animal Handling. This number is in addition to any other type of insect the character possesses. Usage: Releasing any number of insects from the body is a free action. Commanding them to begin the search is a standard action and costs no chakra. Each sh- kaichuu group used in the search covers an area with a 20m radius (i.e., using 3 groups covers an area with a 60m radius). At the beginning of the fifth turn, the insects finish the search and return to the Aburame, reporting the positions of each creature with a chakra signature found in the covered area. Performing other actions with the sh- kaichuu follows the same rules as the kikaichuu, with the exception that they cannot be used to attack an opponent.\n\nBasic Book 4.1.b, printed page 144. Classification: Restricted skills.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "b76308aaf9e0fb",
+        "clan": "Aburame",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 144,
+        "classification": "Restricted skills",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Kidaichuu (Parasitic Insect)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The character is able to manipulate insects that violently drain chakra and grow absurdly large as they feed. Prerequisites: Handling Animals 12; Kikaichuu.\nBenefit: In appearance, kidaichuu more closely resemble beetles, and their rules of use are the same as kikaichuu. However, kidaichuu consume their target's chakra much more violently, increasing in size as they feed on the enemy's energy. Because they are difficult to create, kidaichuu are kept in smaller quantities in the Aburame's body. Restriction: The character cannot possess both the Kidaichuu and Rinkaichuu abilities simultaneously. Quantity: The Aburame can only keep 1 kidaichuu insect on their body for every 3 completed levels of Animal Handling. This number is in addition to any other type of insect the character possesses. Usage: Kidaichuu cannot fly. To use them, you need to directly touch the target (CC test) to place the insects on its body. With a single touch, you can place all the available insects. Each kidaichuu aggressively consumes the victim's chakra, at a rate of 2 points, growing absurdly in size in a very short time. At the end of the turn, its size grows to medium and it attacks the enemy (this first attack does not drain chakra again). From then on, the kidaichuu are considered partner henchmen (see Command Partner, p. 269), with the following parameters: Attack: The insects attack with a bite, which has zero weapon damage. Each attack also drains 2 chakra points from the victim. Kidaichuu's CC tests use the Aburame's DC accuracy. If more than one kidaichuu attacks in the same turn, you must roll a single test for all attacks (the target also makes only one defense). Defense: Insects defend themselves with Dodge. The dodge reaction is calculated using the Aburame's LM level. Attributes: Strength and Agility have a value equal to the Animal Handling level -2. The other attributes have half of this. Skills: Out of combat, use attributes such as accuracy. In combat, insects automatically fail any test. Vitality: equals 2x the Animal Handling level. Chakra: Each insect possesses chakra in its body in an amount equal to that which was drained from its victims. Other parameters are calculated using the normal rules. The character does not consume chakra to attack with the kidaichuu, and the chakra drained from the victim is completely consumed by the insects. Below is an example character sheet for a kidaichuu at NC 12, assuming the Aburame has maximum Animal Handling, maximum DC and LM with a base value of 4, and the skills Mastery and Intuition. If the Aburame always has these precisions at maximum, to update the example sheet simply increase the attribute and precision levels by +1 for each NC.\n\nBasic Book 4.1.b, printed page 145. Classification: Restricted skills.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "e6f1ce1d1e7894",
+        "clan": "Aburame",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 145,
+        "classification": "Restricted skills",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Kikai Ninpou",
+    "type": "poder",
+    "system": {
+      "descricao": "Restricted Power The Aburame clan character has the right to purchase restricted power. Kikai Ninpou, which possesses the techniques of insect manipulation. This power only utilizes Kikaichuus, and cannot be used with other types of insects. The player must purchase Kikai Ninpou as a version of the generic Ninpou power, and must use its rules and the same standards for damage, range, and size of techniques.\nPrerequisite: Kikaichuu (aptitude) Key Skill: Handling Animals. The parameters of the Kikai Ninpou power, such as range, damage, and difficulty of resistance tests, are all calculated based on the Handling Animals skill, instead of the Spirit skill. Use of Insects: Kikai Ninpou techniques utilize 1 kikaichuu per power level. The insects used move to attack the target and then return to the user, all as a free action. Chakra Drainage: Kikai Ninpou techniques drain 1 chakra point per level of power used when in contact with targets. Only effects that cost chakra are capable of draining the target's chakra. If the effect has split attacks, the amount of chakra drained is divided equally. Effects that cause damage per turn also drain chakra per turn, but the drain is halved. Range: Medium (10m + 2m per Animal Handling level). The character can only manipulate or create their element up to the maximum range of their power. Size: Creations, manipulations, and areas of effect can have up to 1m in diameter, length, width, or height per Animal Handling level. Disperse Insects: If any of your creations with this power are attacked, you can spend a move action and make a Read Movement check as a defensive action. If successful, you disperse the insects seconds before they are attacked, preventing them from being destroyed. You can immediately return the insects to your body as a free action or leave them in the same location. Allowed Effects: Cannon, Orb, Ray, Barrier, Arrows, Ricochet, Column, Cloud, Destructive Breath, Missile. The Kikai Ninpou power also possesses the following unique effect.\n\nBasic Book 4.1.b, printed page 147. Classification: Restricted power.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "8612f2bc961b0c",
+        "clan": "Aburame",
+        "category": "Restricted Powers",
+        "printedPage": 147,
+        "classification": "Restricted power",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Rinkaichuu (Venomous Parasitic Insect)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The character is able to manipulate microscopic insects. extremely poisonous. Prerequisites: Handling Animals 12; Kikaichuu.\nBenefit: Rinkaichuu are insects of almost microscopic size capable of destroying the cells of their enemy, causing immense pain in the process. Because they are so small, each group of rinkaichuu contains thousands of insects. The Aburame clan's clothing prevents the rinkaichuu from leaving their bodies, and users of these insects typically wear gloves and full attire until combat, at which point they remove their clothing, revealing their purple skin covered in insects. Once they leave the host's body, the rinkaichuu will circumvent any clothing worn by the target until they reach their skin. KIDAICHUU NC 12 FORM (EXAMPLE) Attributes Des For Per Int Vig Esp Agi Combat Skills CC LM CD ESQ +9 Statistics Vitality: 24 Chakra: equal to drained chakra Displacement: 15 m; Attack - Bite: CC type; Base Damage 5; Drained Chakra 2 Quantity: The character can keep 1 group of rinkaichuu on their body for each level in Animal Handling. This number is in addition to any other type of insect the character possesses. When any amount of rinkaichuu is lost or transferred (see below), they begin to multiply rapidly, and you recover up to half of the total after 1 turn. Usage: Unlike kikaichuu, which are capable of flying towards the enemy, poisonous insects can only be transferred to a victim's body through direct physical contact between the host's skin and any part of the target's body. Normally the insects are concentrated on the Aburame's torso, but as soon as the fight begins, he can spread them throughout his body as a reaction. With quick contact, such as a touch, the Aburame can only transfer 1 single group of rinkaichuu between itself and the target (and vice versa). You can attack with Multiple Attack and transfer 1 rinkaichuu with each successful attack. If you manage to hold the enemy or maintain contact for an entire turn, you can transfer any number of insects. The transfer of the Aburame's rinkaichuu to the target is not voluntary. Whenever you are touched, the rinkaichuu will immediately transfer to the creature that touched you. Cellular Destruction: Upon reaching the victim, the rinkaichuu act like viruses, multiplying rapidly on the skin. The victim will suffer fixed damage per turn equal to 1 for each rinkaichuu that has infected them. Due to the great pain suffered, the victim must also pass a Stamina test (Difficulty 7 + Animal Handling) to avoid being stunned . For one turn, the insect is fatigued until treated. The test must be repeated whenever the target is contaminated by more insects. The fatigued condition is only cumulative with other conditions of different origins. If Vitality reaches zero, the damage from cellular destruction cannot be reduced below this level; however, the victim becomes paralyzed and will not be able to recover their Vitality until all the insects are removed from their body. Treatment: There are 2 ways to treat a victim infected by rinkaichuu. The first is for the Aburame owner of the insects to remove them himself, touching the victim for one turn. The second method involves clinically analyzing the victim and creating a remedy to combat the insects. Doing so requires Medicine and Occultism 14 (reduced to 12 if the character is from Konoha). Creating the remedy follows the same rules as the poison-making test (see Poisoning, p. 46). Once the remedy is made, it must be taken by the victim for three days until all the insects inside the body die. Natural Antibodies: The rinkaichuu help your body fight off illnesses caused by viruses and bacteria. You receive the benefits of the Enhanced Endurance (Vigor) fitness level in tests of these situations. Restriction: The character cannot possess both the Kidaichuu and Rinkaichuu abilities simultaneously.\n\nBasic Book 4.1.b, printed page 146. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "cf6b52db74e39c",
+        "clan": "Aburame",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 146,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 3 EFFECTS",
+    "type": "elemento",
+    "system": {
+      "descricao": "INTERFERENCE Action : Pattern Range: 1m Area of Effect: Circle with a diameter of 30m + 3m per level of Animal Handling, with the power's standard height. Duration: Sustained You scatter 1 swarm of insects throughout the area and cause them to emit chakra signals that can confuse sensor ninjas. Creatures attempting to use the Sensor ability (including ground-limited sensors) must make a Tracking check, with the power's standard difficulty. Failing will cause them to experience interference and sense multiple different chakra signatures at various points, unable to distinguish between them. TECHNIQUES Provided you possess the necessary requirements, you may freely perform the following techniques. MUSHI BUNSHIN (INSECT CLONE) Rank C Ninjutsu / Kekkei Genkai Prerequisites: Clone (aptitude); Kikaichuu Action : Pattern Scope: Personal Duration: Continuous\nChakra Cost: 1 per clone This technique follows the rules of Clone abilities, but also has the following distinct effects. Creating an insect clone requires at least 1 kikaichuu, but you can place up to half of your kikaichuu inside the clone. When attacking physically, or when targeted by an unarmed attack, the Mushi Bunshin drains chakra from the enemy through the number of insects inside it, in addition to dealing damage normally according to the Clone skill rules. The clone remains whole as long as it has kikaichuu in its body. Each physical attack destroys only one kikaichuu at a time. Techniques destroy all of them, regardless of the damage. Non-lethal damage cannot destroy kikaichuu. MUSHI KAME NO JUTSU (INSECT JAR) Ninjutsu /Kekkei Genkai Prerequisites: Kikaichuu; Kikai Ninpou 3 (Barrier) Action: Movement Scope: common to power The user makes the insects fly around them at high speed to protect them from attacks. If they are a higher-level ninja (with Barrier Level 6), they can create a completely protective dome, without openings. This technique follows the rules of the Barrier effect of the Ninpou power.\n\nBasic Book 4.1.b, printed page 148. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 3
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "fbf24322c8eb39",
+        "clan": "Aburame",
+        "category": "Level Techniques & Effects",
+        "printedPage": 148,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 3,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Corpulence",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The Akimichi clan possesses an enviable physique and physical resistance, which protects them from harm and also acts as a chakra reserve.\nBenefit: The character receives additional Vitality points, equal to 3x their Stamina. They also receive a +2 accuracy bonus on all Stamina tests. Additionally, the Akimichi can burn accumulated calories and transform them into chakra, paying 2 Vitality points for every 1 chakra point during the execution of a technique. Conversely, if you use any skill or power that grants you the Accelerated condition, you do not receive the benefits of the condition (see more in Hachimon Tonkou, p. 202).\n\nBasic Book 4.1.b, printed page 150. Classification: Limited skills.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "e62b85c107482c",
+        "clan": "Akimichi",
+        "category": "Limited Aptitudes & Abilities",
+        "printedPage": 150,
+        "classification": "Limited skills",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Resilience",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The Akimichi specialize in placing themselves at the front lines of battle, enduring enemy attacks to protect their allies.\nBenefit: The character receives 1 body toughness for every 4 full points of Vigor against all types of attacks (Vigor bonuses from size increases do not affect this ability). Conversely, they have a -5m movement reduction and receive a -3 accuracy penalty on Dodge, Agility, Acrobatics, and Stealth checks.\n\nBasic Book 4.1.b, printed page 151. Classification: Limited skills.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "4c6a81d4cfc512",
+        "clan": "Akimichi",
+        "category": "Limited Aptitudes & Abilities",
+        "printedPage": 151,
+        "classification": "Limited skills",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Baika Ninpou (Ninja Art of the Expansion)",
+    "type": "poder",
+    "system": {
+      "descricao": "Restricted Power The Akimichi clan character is entitled to purchase restricted power. Baika Ninpou, and will gain the following techniques according to the level of power.\nPrerequisite: Stamina 6; Body (Aptitude)\n\nBasic Book 4.1.b, printed page 151. Classification: Restricted power.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "434010dc75a38d",
+        "clan": "Akimichi",
+        "category": "Restricted Powers",
+        "printedPage": 151,
+        "classification": "Restricted power",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 1: BAIKA NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(EXPANSION TECHNIQUE) Ninjutsu / Hijutsu Akimichi Action: Movement Scope: Personal Duration: Continuous\nChakra Cost: see text The user can freely alter their size using this technique. A low-level ninja can increase the size of their abdominal area, making it large and plump, ideal for performing the Nikudan Sensha technique. However, ninjas who have mastered this technique are able to increase the size of their entire body proportionally, literally becoming giants. Starting at power level 4, the character's items and weapons increase in size along with their body (weapon damage remains unchanged). Baika Ninpou level 1: The character pays 1 chakra point and slightly increases their size, becoming plump. Doing this to perform the Nikudan Sensha technique requires only a partial action and has an instantaneous duration. Baika Ninpou level 4: the character pays 3 chakra points and increases the size of their entire body, rising to the Large category. Baika Ninpou level 5: the character pays 4 chakra points and greatly increases the size of their entire body, rising to the Huge category. Baika Ninpou level 6: the character pays 5 chakra points and greatly increases the size of their entire body, rising to the Immense category. This technique can be used with maneuvering skills. You cannot use the Clone skill while under the effect of this technique. See the Creature Size chapter (page 272) for bonuses and penalties.\n\nBasic Book 4.1.b, printed page 152. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "b4c937ac59bba0",
+        "clan": "Akimichi",
+        "category": "Level Techniques & Effects",
+        "printedPage": 152,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 1,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 2: NIKUDAN SENHA",
+    "type": "elemento",
+    "system": {
+      "descricao": "(HUMAN TANK) Taijutsu / Hijutsu Akimichi Prerequisites: Fighter (aptitude) Action : Complete Duration: Instantaneous\nChakra Cost: 1 A menacing taijutsu that transforms the user's large body into a destructive weapon. First, the user employs the Baika no Jutsu, paying its chakra cost, to become a human-sized ball, and then propels themselves forward using chakra to transform into a spherical rolling machine. The rotation is high enough to burn the palm of anyone who touches the user, who remains immune to sound effects while performing the technique. Nikudan Sensha functions as a charge action that deals damage equivalent to a regular Akimichi melee attack. The target is entitled to a Stamina check to avoid being knocked prone (difficulty 2 + character's CC). Nikudan Hari Sensha (Human Tank of Thorns) This is a variation of the Nikudan Sensha and follows all its rules. Before executing the jutsu, the user draws a chain of Kunai and wraps it around the body (partial action) to add a cutting element to the technique's damage. Optionally, the Akimichi can use 1 chakra point to make their hair grow and become sharp, reducing the technique's preparation time. Doing so requires only one free action.\n\nBasic Book 4.1.b, printed page 152. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 2
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "24627c5f2a37a6",
+        "clan": "Akimichi",
+        "category": "Level Techniques & Effects",
+        "printedPage": 152,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 2,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 3: BUNBUN BAIKA NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(PARTIAL EXPANSION TECHNIQUE) Ninjutsu / Hijutsu Akimichi Prerequisites: Fighter (aptitude) Action: Free Scope: Personal Duration: Instantaneous This is a practical application of the Baika no Jutsu, which allows one to extend one or both arms, or legs, and use the increased weight to amplify the power of physical attacks. Any part of the body can be augmented in this way, but Typically, the arms and legs are targeted. The speed of expansion is extremely sudden, making the attack difficult to avoid. This technique must be used before performing an attack, special maneuver, or maneuver skill, increasing your arm or leg to Large size to receive the benefits of size (2m reach and +1 Strength). Additionally, you receive +1 accuracy on overrun, push, grab, and trip rolls. The accuracy bonus from this technique does not stack with other maneuvers.\n\nBasic Book 4.1.b, printed page 153. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 3
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "abca21980a4b81",
+        "clan": "Akimichi",
+        "category": "Level Techniques & Effects",
+        "printedPage": 153,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 3,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 4: CHOUDAN BAKUGEKI",
+    "type": "elemento",
+    "system": {
+      "descricao": "(BUTTERFLY MISSILE BOMBARDMENT) Taijutsu / Hijutsu Akimichi Prerequisites : Strong build; Resilience (skills) Action : Pattern Range: Touch Duration: Instantaneous\nChakra Cost: 3 To use this technique, you need to be in Chou Mode (see page 154). You focus all your chakra into your fist and deliver a powerful punch to a single target, combining your strength for a devastating attack. This technique deals the normal damage of a melee attack with +3 base damage. You cannot use this technique with the Baika no Jutsu size increase. The benefits of this technique improve with increasing power level.\n\nBasic Book 4.1.b, printed page 153. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 4
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "6843fee0a55988",
+        "clan": "Akimichi",
+        "category": "Level Techniques & Effects",
+        "printedPage": 153,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 4,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Level 8: For each power level above this, the technique receives a +1 bonus to additional",
+    "type": "elemento",
+    "system": {
+      "descricao": "damage if used with the size increase (total of +4 at Level 8; +5 at Level 9, and so on).\n\nBasic Book 4.1.b, printed page 153. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 8
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "f4ef44d4b1fd79",
+        "clan": "Akimichi",
+        "category": "Level Techniques & Effects",
+        "printedPage": 153,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 8,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "CALORIE CONTROL",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Restricted Technique The Akimichi clan can store chakra in their bodies, transforming it into calories for later use when needed. The more calories burned, the greater the benefits received. However, burning a large amount of chakra can lead to significant energy consumption. Consuming a large amount of calories at once or exceeding the limit poses a significant health risk.\nPrerequisite: Stamina 14; Body type; Resilience (skills) Usage: Calorie burning has three levels of use: Level 1 (Green), Level 2 (Yellow), and Level 3 (Red). Even if the character does not meet the Stamina prerequisite, they can still use calorie burning by consuming the special colored pills of the Akimichi clan. Doing so, however, is detrimental to the body (see below). Action: Using any level of calorie burning is a partial action. However, due to physical strain, each level can only be used once per scene. Furthermore, if you use a higher level, you cannot use a lower level later (i.e., if you use level 2, you cannot use level 1 afterwards). Cost: Using calorie control costs Vitality points that depend on the level used. Benefits: You receive a certain amount of chakra and a Strength bonus. The chakra bonus is cumulative across levels, lasts for one scene, and cannot exceed your maximum reserve (any excess points will be lost). Duration: Calorie control has a sustained duration. However, using it via colored pills reduces the duration to continuous for 3 days. shifts. Penalties: If you used calorie control via the colored pills, at the end of the last turn of the duration you will suffer the penalties described in each level's description. Recovering Calories: To recover lost calories, a full week of a high-calorie diet is necessary. During this time, if you used level 3 of calorie burning, you lose the benefits of the Resilience fitness level (but retain the penalties). LEVEL 1 – GREEN Benefits: The character loses 3 points of Vitality, receives 6 chakra points and +2 Strength. Penalties: Fatigued for 1 round. LEVEL 2 – YELLOW Benefits: The character loses 5 points of Vitality, receives 10 chakra points and +4 Strength. Penalties: Exhausted for 2 turns. LEVEL 3 – RED Benefits: The character loses 7 Vitality points, receives 14 chakra points and +6 Strength. You enter Chou Mode. Chou Mode: The large amount of chakra released at once causes energy wings to sprout from your back. You no longer suffer the penalties of the Resilience skill. If you are not under the effect of the Baika no Jutsu's size increase, you can replace your Agility with double your level in the Baika Ninpou power for movement calculations and Feint tests. Penalties: Unconscious for 24 hours, unless you pass a Stamina test, difficulty 23, to be merely exhausted for the same amount of time.\n\nBasic Book 4.1.b, printed page 153. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "a1aab16d32bc1c",
+        "clan": "Akimichi",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 153,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "SILVER FANG",
+    "type": "aptidao",
+    "system": {
+      "descricao": "You possess the brilliance of a unique lineage.\nPrerequisite: Tensai (Secret Technique)\nBenefit: You must choose this skill as one of the two Special Skills you are entitled to through the Tensai secret technique. You receive the Weapon Proficiency skill for White Chakra Sword (see below). In addition, you receive one of the Elemental Mastery abilities (Water, Fire, Air, Earth, or Lightning) and Mastery for one of the five basic elemental powers, of your choice. If you possess the Versatility power, you can still choose one of your versatile powers to receive the benefits. However, the benefits are not extended to the other versatile power. You will not receive the benefits of skills for which you have not yet met the normal purchase prerequisites, but you will receive them as soon as those prerequisites are met.\n\nBasic Book 4.1.b, printed page 155. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "acff129b434010",
+        "clan": "Hatake",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 155,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "WHITE CHAKRA SWORD",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Reach Critic Compartments: 1 Type Damage +2 15-16 Court item/1 compartment. The White Chakra Sword is a special lightweight sword that appears to emit a white light in the air when moved. It is crafted and provided free of charge by the clan.\nPrerequisite: Dexterity 8. Usage: To use this sword without penalty, you need the Weapon Proficiency skill (see Combat Skills, p. 57) or Silver Fang. Enhanced Damage: Weapon damage increases to +3 when Dexterity reaches 10; and increases to +4 when Dexterity reaches 12. You do not receive this benefit if you use the sword with Ambidexterity. White Chakra: You can use the Spirit attribute instead of Strength to calculate the base damage of your attacks with this weapon. Fragility: This weapon has similar durability to a regular firearm, but can be damaged with use. Energizable Weapon: You can apply the Energize effect to this weapon. Accurate Weapon: The Accuracy skill applies to the White Chakra Sword.\n\nBasic Book 4.1.b, printed page 156. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "908d8d08eac4ac",
+        "clan": "Hatake",
+        "category": "Equipment & Weapons (Review)",
+        "printedPage": 156,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading",
+        "equipmentKind": "weapon_or_equipment"
+      }
+    }
+  },
+  {
+    "name": "Byakugan",
+    "type": "aptidao",
+    "system": {
+      "descricao": "This is the advanced bloodline of the Hyuuga clan, known throughout the world for its great perception and power. When the user is utilizing the Byakugan, the nerves around the eyes become more prominent under the skin, making any handsome face quite intimidating. Prerequisites: Perception 1\nBenefit: Activating the Byakugan requires a partial action and 1 chakra point. The doujutsu has a continuous duration for one scene and can be activated during defense. While the Byakugan is active, the character gains the following benefits. Super Vision: The user gains 360° X-ray vision, being able to see through any matter and any level of cover. The Hyuuga is not affected by penalties from partial or total camouflage (see page 272), as long as they are environmental camouflages (i.e., penalties of the type caused by mental illusions or blindness still remain). You also gain Chakra Vision and Vision Through the Chakra, as well as the ability to clearly see the chakra circulatory system of any person and identify possible anomalies. Thanks to this, while the Byakugan is active, the Hyuuga cannot suffer surprise attacks or be flanked. Furthermore, once per scene and as a free action, they can simulate 2 dice in any Perception, Search, Alertness, and Tracking check where they can use their vision, even under pressure. Range: The Byakugan extends the character's field of vision. The standard range is 10m + 2m per level in the Track skill. Extended Range: [requires Track 5] The user can double their standard range. First, you initiate concentration by performing hand seals. From the next turn onward, your standard range will be doubled as long as you maintain concentration. Chakra Vision: The character is able to distinguish chakra by color, allowing them to identify when an opponent uses a jutsu, no matter how hidden it may be. Chakra vision also allows them to identify if a person is trapped in a genjutsu, or if a jutsu is affecting a specific area or creature. Vision Through Chakra: The character sees through chakra, and their vision cannot be hidden or deceived by techniques. You are even able to see through chakra creations, such as the Mist (Suiton) effect. Measuring Power: Viewing a creature's chakra allows the user to gauge its approximate strength, or in other words, the approximate level of its character sheet. Distinguish Chakra: The character becomes able to differentiate each creature by its chakra signature. Emotion Analysis: The Byakugan's ability also extends to analyzing people's emotions through chakra fluctuations, heart rate, and breathing, being able to tell, for example, when a person is lying, whether they are happy or sad, whether they are friendly or hostile.\n\nBasic Book 4.1.b, printed page 157. Classification: Restricted abilities.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "25fe05d9042b96",
+        "clan": "Hyuuga",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 157,
+        "classification": "Restricted abilities",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Tenketsu Byakugan",
+    "type": "aptidao",
+    "system": {
+      "descricao": "This is the advanced bloodline of the Hyuuga clan, known throughout the world for its great perception and power. When the user is utilizing the Byakugan, the nerves around the eyes become more prominent under the skin, making any handsome face quite intimidating. Prerequisites: Perception 1\nBenefit: Activating the Byakugan requires a partial action and 1 chakra point. The doujutsu has a continuous duration for one scene and can be activated during defense. While the Byakugan is active, the character gains the following benefits. Super Vision: The user gains 360° X-ray vision, being able to see through any matter and any level of cover. The Hyuuga is not affected by penalties from partial or total camouflage (see page 272), as long as they are environmental camouflages (i.e., penalties of the type caused by mental illusions or blindness still remain). You also gain Chakra Vision and Vision Through the Chakra, as well as the ability to clearly see the chakra circulatory system of any person and identify possible anomalies. Thanks to this, while the Byakugan is active, the Hyuuga cannot suffer surprise attacks or be flanked. Furthermore, once per scene and as a free action, they can simulate 2 dice in any Perception, Search, Alertness, and Tracking check where they can use their vision, even under pressure. Range: The Byakugan extends the character's field of vision. The standard range is 10m + 2m per level in the Track skill. Extended Range: [requires Track 5] The user can double their standard range. First, you initiate concentration by performing hand seals. From the next turn onward, your standard range will be doubled as long as you maintain concentration. Chakra Vision: The character is able to distinguish chakra by color, allowing them to identify when an opponent uses a jutsu, no matter how hidden it may be. Chakra vision also allows them to identify if a person is trapped in a genjutsu, or if a jutsu is affecting a specific area or creature. Vision Through Chakra: The character sees through chakra, and their vision cannot be hidden or deceived by techniques. You are even able to see through chakra creations, such as the Mist (Suiton) effect. Measuring Power: Viewing a creature's chakra allows the user to gauge its approximate strength, or in other words, the approximate level of its character sheet. Distinguish Chakra: The character becomes able to differentiate each creature by its chakra signature. Emotion Analysis: The Byakugan's ability also extends to analyzing people's emotions through chakra fluctuations, heart rate, and breathing, being able to tell, for example, when a person is lying, whether they are happy or sad, whether they are friendly or hostile.\n\nBasic Book 4.1.b, printed page 157. Classification: Restricted abilities.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "63fa019c0cc30b",
+        "clan": "Hyuuga",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 157,
+        "classification": "Restricted abilities",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Juuken",
+    "type": "poder",
+    "system": {
+      "descricao": "Restricted Power The Hyuuga clan character is entitled to purchase restricted power. Juuken, and will gain the following techniques according to the power level. Prerequisites: Spirit 1; Byakugan; Acuity (Aptitudes).\n\nBasic Book 4.1.b, printed page 159. Classification: Restricted power.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "290659c2780d69",
+        "clan": "Hyuuga",
+        "category": "Restricted Powers",
+        "printedPage": 159,
+        "classification": "Restricted power",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "TENKETSU BYAKUGAN",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The Byakugan is capable of seeing the Tenketsu points, and with the meticulous chakra control innate to the Hyuuga clan, it is able to send chakra to these points on the human body, temporarily sealing them. Prerequisites: Byakugan; Search 7; Alertness 7; Track 7\nBenefit: By using the Byakugan ability, you receive the following additional benefits. Tenketsu Sealing: Whenever you hit your opponent with a basic Gentle Fist attack, they must make a Stamina test (Difficulty 7 + 2 x Gentle Fist Level). If they fail, one of their tenketsu points will be sealed, and they will lose 2 chakra points. If it is a multiple attack, the test must be made for each successful hit. The sealed chakra points are recovered after a night's rest. If the target defends against your Gentle Fist attack with an unarmed block, even if successful, the Tenketsu sealing test must still be performed. This rule does not apply if the target also possesses the Byakugan Tenketsu. The special techniques of the Juuken power, such as the Hakke Rokujuuyon Shou (64 Octagram Points), allow for sealing larger chakra points without requiring a Stamina test. Progressive Range: [requires Track 9] By remaining focused and motionless for 2 minutes (equivalent to 20 rounds), the character can change the range pattern of their sensor, which will then be 50m per Track level. The range will remain at this value only while the character remains motionless and focused. Doing so costs chakra equal to half the Track level.\n\nBasic Book 4.1.b, printed page 158. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "037bff46b725de",
+        "clan": "Hyuuga",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 158,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 1: JUUKEN",
+    "type": "elemento",
+    "system": {
+      "descricao": "(GENTLE FIST) Taijutsu / Fighting Stance; Kekkei Genkai; Chakra Control Action: Free Scope: Personal Duration: Continuous\nChakra Cost: 0 This is the Hyuuga clan's unique fighting stance, the Juuken. To use it, the user needs to have the Byakugan active, so they can see the opponent's internal chakra circulation and internal organs. Each attack performed in the Gentle Fist stance is considered a lethal unarmed attack, as the user concentrates chakra in their hands and sends it directly to the enemy's body upon impact, causing damage to their internal organs. Strikes in the Gentle Fist stance are always performed with the hands. They inflict lethal damage and require a different calculation, utilizing the Dexterity attribute.\n\nBasic Book 4.1.b, printed page 159. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "56019583b10b47",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 159,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 1,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Base Damage of Melee Attack - Gentle Fist",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Dexterity ÷ 2) + (1 Weapon Damage) Juuken's weapon damage automatically increases with power level: Juuken 4: 2 weapon damage Juuken 5: 3 weapon damage Juuken 6: 4 weapon damage (maximum) Damage bonuses and penalties are applied normally. The Gentle Fist technique ignores half of passive body hardness (like the Akimichi clan's Resilience), with a maximum of up to 2 points ignored. You can use maneuvering skills with the Juuken level 1 strikes, but not with the other techniques of this power (unless the technique itself says you can).\n\nBasic Book 4.1.b, printed page 159. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "e0de854ba67ddf",
+        "clan": "Hyuuga",
+        "category": "Techniques & Powers (Review)",
+        "printedPage": 159,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 2: J•KENP• ICHIGEKISHIN",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Gentle Fist Style: Body Explosion) Taijutsu /Kekkei Genkai; Chakra Control Action: Standard\n-  Range: 3m Duration: Instantaneous\n- \nChakra Cost: 2 The Hyuuga expels chakra from each tenketsu in their body, creating a chakra explosion that doesn't cause damage, but is strong enough to push away enemies in close combat, those grabbing the user, or even destroy bonds and prisons. The chakra explosion affects everyone within 3 meters of the user, who must make a DC test against the targets' defenses. This technique is made of pure chakra and is invisible to the naked eye: creatures that do not possess the ability to sense or see chakra are considered unprepared. Those who are hit must pass an Acrobatics test (Difficulty 13) to avoid falling to the ground. Creatures grappling the user are not entitled to defend against this technique, which will be an Automatic Success, unless they relinquish the grab maneuver as a reaction. Conversely, this technique does not affect creatures of enormous size or larger. This technique inflicts 2 base damage per power level to any type of restraints and restraints that are directly on the user's body. It also repels any immaterial element that is directly on the body, as long as the power or chakra cost is lower than the power level (example: respecting the level requirement, you can use this technique to repel Amaterasu or Kage Nui that are already on you, but you cannot use it against Kage Mane, as it acts on your shadow and not on your body!).\n\nBasic Book 4.1.b, printed page 160. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 2
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "d746c2bbd8bd2b",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 160,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 2,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 3: HAKKESHOU KAITEN",
+    "type": "elemento",
+    "system": {
+      "descricao": "(DIVINE ROTATION OF THE OCTAGRAM) Taijutsu /Kekkei Genkai; Chakra Control Action: Standard (or Partial; see text) Scope: Personal (see text) Duration: Instantaneous\nChakra Cost: see text In this jutsu, the user spins their own body while releasing precise amounts of chakra through all their pores, creating a hemisphere entirely made of rotating chakra. Using Kaiten requires free movement, therefore it cannot be used if the user is impaired or has any other restriction on body movement. Kaiten can be used both offensively and defensively, and requires a standard action. Offensive: Costs 2 chakra points. Kaiten hits everyone within 2m of the user and deals normal damage from a Juuken attack. Anyone hit must succeed on an Acrobatics or Stamina roll to avoid falling prone (difficulty 7 + 2x Power Level). Defensive: Costs 1 chakra per level of power used. Using Kaiten as a defensive action is a Defender with Technique maneuver in which, instead of using your LM in the defense test, you can use your CC level for unarmed attack. In defense, Kaiten can be used against melee or ranged attacks and techniques, functioning as a chakra barrier with a hardness equal to 3 + 2x the Power Level used. This hardness cannot be bypassed by any technique or weapon. If the hardness is exceeded by the attack's base damage, Kaiten is interrupted and you will suffer the excess damage. If there are enemy or allied creatures within range, they will suffer damage, the degree of which will be calculated by the result of the technique's defense test. If the creature hit is the enemy that attacked, it will not be entitled to defend. Otherwise, it may defend normally. If no one will be harmed in the defensive use of Kaiten, the user only needs a partial action. Increased range: at power level 6, Kaiten reaches everyone within 5m of the user.\n\nBasic Book 4.1.b, printed page 160. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 3
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "951b47a5148350",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 160,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 3,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 4: HAKKE SANJUUNI SHOU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(32 OCTAGRAM POINTS) Taijutsu /Kekkei Genkai; Chakra Control Prerequisites: Tenketsu Byakugan; Multiattack (aptitude) Action: Standard Range: Touch Duration: Instantaneous\nChakra Cost: 4 This is a smaller version of the great and famous Hakke Rokujuuyon Shou jutsu. This technique aims to attack the opponent with successive and rapid blows, delivering exactly 32 strikes and sealing the same number of tenketsus in their body. You perform 3 Juuken attacks using the Multiple Attack skill rule, with a +3 damage bonus (added before splitting the hits). Combat skills applicable to Multiple Attack (such as Improved Critical and Moving Attack) are also applicable to this technique. When a Critical Hit is achieved in one of the Multiple Attack strikes, subsequent strikes are considered Automatic Successes. For each successful strike, the victim loses 3 chakra points due to the sealing of the tenketsu (chakra points). If you manage to drain chakra in all 3 strikes, your opponent will have to pass a Stamina test (Difficulty 7 + 2x Gentle Fist Level) to avoid being stunned until the end of their next turn.\n\nBasic Book 4.1.b, printed page 161. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 4
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "dd22910edb7113",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 161,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 4,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 5: HAKKE KUUSHOU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(OCTOGRAM AIR PALM) Taijutsu /Kekkei Genkai; Chakra Control Action: Standard Range: 20m Duration: Instantaneous\nChakra Cost: 5 To perform this technique, the user precisely focuses on the enemy's vital points with the Byakugan and releases a high-speed burst of chakra from the palm of their hand, capable of striking enemies at close range as if it were a projected Gentle Fist body attack. When attacking with Hakke Kuushou, you use your Close Combat skill in your attack roll, being able to hit targets up to 20m away and dealing normal damage from a Juuken attack. Upon being hit, the opponent must succeed in an Acrobatics or Strength test (Difficulty 9 + 2x Juuken Level) to avoid being thrown 3 meters backward and falling to the ground.\n\nBasic Book 4.1.b, printed page 161. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 5
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "760c4faa852f99",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 161,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 5,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 6: HAKKE ROKUJUUYON SHOU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(64 OCTOGRAM POINTS) Taijutsu /Kekkei Genkai; Chakra Control Prerequisites: Tenketsu Byakugan; Multiattack (aptitude) Action: Standard Range: Touch Duration: Instantaneous\nChakra Cost: 6 This, alongside the Hakesshou Kaiten, is the most famous technique of the Hyuuga clan. It functions exactly like the smaller version, but the user unleashes a sequence of 64 strikes, sealing the same number of tenketsu points in the target's body. This technique has the following improvements compared to the smaller version: You perform 3 Juuken attacks using the Multiple Attack skill rule, with a +4 damage bonus (added before splitting the hits). When you score a Critical Hit on one of the Multi-Attack moves, subsequent hits are considered Automatic Hits. For each successful strike, the victim loses 4 chakra points due to the sealing of the tenketsu points. If you manage to drain chakra in all 3 strikes, your opponent will have to pass a Stamina test (Difficulty 7 + 2x Gentle Fist Level) to avoid being stunned until the end of their next turn and fatigued for the remainder of the turn. scene.\n\nBasic Book 4.1.b, printed page 161. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 6
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "fb102c2faad8c0",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 161,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 6,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 7: JUUHO SOUSHIKEN",
+    "type": "elemento",
+    "system": {
+      "descricao": "(TWIN LIONS' FIST) Taijutsu /Kekkei Genkai; Chakra Control\nPrerequisite: Multiple Attack (skill) Action: Movement (see text)\n-  Scope: Personal Duration: Sustained\nChakra Cost: 1⁄2 power level per turn It is a high-level, secret technique of the Juuken style. You concentrate chakra in both hands, which takes the form of lion heads, and attack the opponent, causing great damage. After using the technique, you become able to use the Multiple Attack skill as a special rule. You perform 2 to 3 attacks using this rule. From the aptitude, but with a new damage calculation: each individual hit of the Multiple Attack will cause base damage equal to the level of power used. You spend a standard action to deliver 2 hits and a full action for 3. It is not possible to use this technique with Tenketsu Sealing or other maneuver aptitudes. The other rules of Multiple Attack remain the same.\n\nBasic Book 4.1.b, printed page 162. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 7
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "3c1043f619d992",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 162,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 7,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 8: HAKKE HYAKUNIJUUHACHI SHOU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(128 OCTAGRAM POINTS) Taijutsu /Kekkei Genkai; Chakra Control Prerequisites: Tenketsu Byakugan; Multiattack (aptitude) Action: Standard\n-  Range: Touch Duration: Instantaneous\nChakra Cost: Power Level This is simply an expanded version of Rokujuuyon Shou. It functions exactly like the smaller versions, but the user unleashes a sequence of 128 strikes, sealing the same number of tenketsu points in the target's body. This technique has the following improvements compared to the smaller version: You perform 3 Juuken attacks using the Multiple Attack skill rule, with a +1 damage bonus per power level (added before splitting the strikes). When you score a Critical Hit on one of the Multiple Attack strikes, subsequent strikes are considered Automatic Successes. For each successful strike, the victim loses 5 chakra points due to the sealing of the tenketsu. Increase this amount of lost points by 1 for every 3 power levels above 8. If you manage to drain chakra in all 3 strikes, your opponent will have to pass a Stamina test (Difficulty 7 + 2x Gentle Fist Level) to avoid being stunned until the end of their next turn and fatigued for the remainder of the turn. scene.\n\nBasic Book 4.1.b, printed page 162. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 8
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "54fef4d6ed0d07",
+        "clan": "Hyuuga",
+        "category": "Level Techniques & Effects",
+        "printedPage": 162,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 8,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Animal Companion",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The character has a pet that assists him on missions and in combat.\nPrerequisite: Handling Animals 1\nBenefit: The user has a companion animal as a Partner (see Command Partner, p. 269), which can be a wolf or a dog. Regardless of the species chosen, the effects of this ability are the same. The companion animal will evolve alongside the Inuzuka, becoming their most powerful and trusted ally. Character Sheet and Specifications: The animal has a character sheet identical to the character's, but with 2 fewer levels in all attributes, abilities, and skills. (Minimum level zero; this penalty does not count towards the accuracy penalty limit). Skills not on the permitted list are considered at level zero (see below). The dog can also use the Shikakyu power, provided the technique allows it, and use the same abilities as the Inuzuka, as long as it's on the list. follow. Vitality and Chakra: These are calculated using the standard character formulas, but remember to reduce the Vigor and Spirit attributes by 2 levels. Allowed Skills: Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Speedster, Expert, Innate Skill, Fighter, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown, Standing Up, Aggressive Disarm, Sweep, Hakken no Jutsu. Allowed Skills: Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking. Size: The animal is initially Small in size. When the character reaches level 10 in Animal Handling, the animal companion grows to Medium size. Upon reaching level 14, it grows again, to Large size, and becomes capable of speaking human language. Its phrases and sentences are not perfect, since it is not human, but they are completely understandable. Pack: When your Animal Handling skill reaches levels 16 and 18, you have the option to acquire one more animal at each of those levels. These companions fail any Combat Skill test and are considered henchmen. Death of the Animal: If the animal dies, another one can be acquired. This new companion must be trained continuously (the The character must dedicate themselves fully to training for a number of days equal to 6 times the character's Animal Handling skill level. If you have a Pack, you can choose one of the dogs as your new main companion, and the newly trained animal will join the pack in its place.\n\nBasic Book 4.1.b, printed page 163. Classification: Restricted skills.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "9dd77a882dd2b9",
+        "clan": "Inuzuka",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 163,
+        "classification": "Restricted skills",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Hakken no Jutsu",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Restricted skills: Hakken no Jutsu. The book identifies this option in the Inuzuka clan section; see printed page 163 for its rules.\n\nBasic Book 4.1.b, printed page 163. Classification: Restricted skills.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "c229c349de9a02",
+        "clan": "Inuzuka",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 163,
+        "classification": "Restricted skills",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Restriction declaration only"
+      }
+    }
+  },
+  {
+    "name": "Shikakyu (Quadruped)",
+    "type": "poder",
+    "system": {
+      "descricao": "Restricted Power The Inuzuka clan character has the right to purchase restricted power. Shikakyu, and will gain the following techniques according to the power level.\n\nBasic Book 4.1.b, printed page 165. Classification: Restricted power.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "ca226de694fbcd",
+        "clan": "Inuzuka",
+        "category": "Restricted Powers",
+        "printedPage": 165,
+        "classification": "Restricted power",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "HAKKE NO JUTSU (DETECTION TECHNIQUE)",
+    "type": "elemento",
+    "system": {
+      "descricao": "The character can track any creature through a extremely keen sense of smell.\nPrerequisite: Track 1\nBenefit: By concentrating chakra in their nose, the Inuzuka are able to immensely increase their sense of smell. This special ability allows the user to detect approaching enemies and know the location of hidden adversaries. Activating or deactivating Hakken is a free action, requires 2 chakra points, and has continuous duration. Range: While the Hakken no Jutsu is active, the character extends the range of their sense of smell to 10m + 2m per level in the Track skill. Test: No test is required to detect odors within the range of the Hakken no Jutsu, unless there are hindering situations, such as wind, rain, or the presence of very strong smells beyond the one the character wishes to find. In these cases, a Perception test is required, with the difficulty determined by the Master. Warning against Surprise: The character is also entitled to a Tracking check to notice the opponent's presence when about to receive a surprise attack. This check is in addition to any other checks the character is entitled to, such as Readiness checks for the same purpose. Keen Sense of Smell: While Hakken is active, you still receive a -1 difficulty level penalty on Alertness, Track, and Search checks whenever the situation allows you to use your sense of smell.\n\nBasic Book 4.1.b, printed page 164. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "6e53faa1ed59f2",
+        "clan": "Inuzuka",
+        "category": "Techniques & Powers (Review)",
+        "printedPage": 164,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 1: SHIKAKYU NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Quadruped Technique) Ninjutsu Rank D / Hijutsu Prerequisites: Hakken no Jutsu (aptitude) Action: Partial Scope: Personal Duration: Continuous\nChakra Cost: 1 Using this technique, the user's appearance becomes more ferocious, and they begin to look more like a beast than a man. The user transforms into a predator who, with a single glance, completely terrifies their enemy. The character envelops their entire body in chakra and supports themselves on their hands and knees, as if they were a quadruped animal, assuming a fighting stance with instinct and quick movements. While under the effect of the technique, the user gains natural claw and bite weapons. They inflict lethal damage and have weapon damage dependent on the power level: Base Damage of a Melee Attack - Shikakyu (Strength ÷ 2) + (1 Weapon Damage) Shikakyu 4: 2 weapon damage Shikakyu 5: 3 weapon damage Shikakyu 6: 4 weapon damage (maximum) Damage bonuses and penalties are applied normally. The user will also receive +1 accuracy on Intimidation checks and +2 initiative. This technique can be used by the Animal Companion.\n\nBasic Book 4.1.b, printed page 165. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "5fe785c29024ad",
+        "clan": "Inuzuka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 165,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 1,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 2: JUUJIN BUNSHIN NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(BEAST-MAN CLONE TECHNIQUE) Ninjutsu Rank D / Hijutsu Prerequisites: Animal Companion (aptitude) Action: Movement Range: Touch Target : 1 companion dog Duration: Continuous\nChakra Cost: 2 The Juujin Bunshin no Jutsu allows the Inuzuka to transform their animal companion into a perfect copy of themselves. In performing this technique, the user sends their chakra to their animal companion and transforms it. The animal, for the duration of the technique, will be altered to match the user's original size category, transforming into an exact replica with the same attributes, combat abilities, and skills. The skills, abilities, and powers still follow the permission rules of the Animal Companion ability. Melee and thrown weapon attacks made by the clone have the same base damage as if made by the user, respecting the partner damage rule. The Vitality and Chakra are the same as in the animal's original profile, and it is still considered a Partner (see page 269). If the user has more than one animal companion, they can use this technique simultaneously on all of them, paying the chakra cost for each one. This clone possesses the same items as the character, however, explosives cannot be used. Special weapons are copied, but their special effects also cannot be used. Clones also cannot use or activate chakra-dependent items (such as explosive tags). The transformation can be canceled at the user's will, as a free action. If the animal becomes unconscious or loses more than half of its Vitality, the transformation is also canceled and cannot be performed again in that scene. If the Inuzuka is under the effect of the Shikakyu no Jutsu (Quadruped Technique), it is visually impossible to distinguish him from the animal clone.\n\nBasic Book 4.1.b, printed page 165. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 2
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "b3179bafe3b7e9",
+        "clan": "Inuzuka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 165,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 2,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 3: TSUUGA",
+    "type": "elemento",
+    "system": {
+      "descricao": "(PIERCING FANG) Taijutsu Rank D / Hijutsu Prerequisites: Fighter (aptitude) Action : Complete Duration: Instantaneous\nChakra Cost: 1 To properly execute this technique, the user must have their Shikakyu no Jutsu active and be at least 3 meters away from their target. In this jutsu, the user performs a high speed spinning motion around themselves, advancing towards the opponent. Tsuuga functions as a charge attack that deals damage equal to a claw attack from the Shikakyu technique. The target is entitled to a Stamina test to avoid being knocked prone (difficulty 2 + character's CC). If the animal companion is under the effect of the Juujin Bunshin, it can perform the Tsuuga simultaneously with the user, with each spending their actions, chakra costs, and rolling hit tests individually. The target also makes a defense against each attack, as usual. When attacking in this way, the technique is called Gatsuga (Double Piercing Fang). The dog and the Inuzuka inflict damage normally according to the Partners rule, however the Inuzuka will take double damage.\n\nBasic Book 4.1.b, printed page 166. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 3
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "202bbcf3449779",
+        "clan": "Inuzuka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 166,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 3,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 5: SOTOROU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(TWO-HEADED WOLF) Rank B Ninjutsu / Hijutsu Prerequisites : Disguises 8 Action: Movement (used by the Inuzuka) Range: Touch (requires touching the Animal Companion) Duration: Continuous\nChakra Cost: 3 per turn This technique is a variation of the basic Henge technique in which the user merges with their animal companion to transform into a single being: a gigantic two-headed wolf, drastically increasing their size and power. The Sotorou form must be treated as a single creature (including against mental attacks) and has the same character sheet as the user, but with its size category increased to Huge, receiving the natural bonuses and penalties of that size. In this form, all damage to Vitality and Chakra costs are removed from the Inuzuka. Whenever the Inuzuka performs a basic melee attack (Strike maneuver), or while grappling a target, they gain an extra melee attack against that same target. This extra attack deals half of their normal base damage and cannot be used for maneuvers or abilities.\n\nBasic Book 4.1.b, printed page 166. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 5
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "c4ec9fb5068965",
+        "clan": "Inuzuka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 166,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 5,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 6: GAROUGA",
+    "type": "elemento",
+    "system": {
+      "descricao": "(WOLF'S PREY) Taijutsu Rank B / Hijutsu Action : Complete Duration: Instantaneous\nChakra Cost: 2 This technique involves using Tsuuga within the Sotorou form. Thanks to the user's larger size, the attack gains greater destructive force and range. Garouga uses all the rules of Tsuuga, but with modifiers for the Huge size and a +6 damage bonus.\n\nBasic Book 4.1.b, printed page 167. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 6
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "2092c959983b45",
+        "clan": "Inuzuka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 167,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 6,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 7: SANTOROU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(THREE-HEADED WOLF) Rank A Ninjutsu / Hijutsu Prerequisites : Disguises 12; a clone or pack (see text) Action: Movement (used by the Inuzuka) Range: Touch (requires touching the Animal Companion and the Clone) Duration: Continuous\nChakra Cost: 4 per turn This technique shares the same principles as its predecessor, Sotorou; however, the user creates a Kage Bunshin before its execution, and by uniting themselves, their animal companion, and their clone, they transform into a giant three-headed wolf. If the user possesses more than one animal companion, it is possible to use it in place of the clone. The Santorou form must be treated as a single creature (including against mental attacks) and has the same character sheet as the user, but with its size category increased to Huge, receiving the natural bonuses and penalties of that size. In this form, all damage to Vitality and Chakra costs are removed from the Inuzuka. Whenever the Inuzuka performs a basic melee attack (Strike maneuver), or while grappling a target, they gain an extra melee attack against that same target. This extra attack deals half of their normal base damage and cannot be used for maneuvers or abilities.\n\nBasic Book 4.1.b, printed page 167. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 7
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "0e53ab58f273e0",
+        "clan": "Inuzuka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 167,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 7,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 8: OOIGA GATENGA",
+    "type": "elemento",
+    "system": {
+      "descricao": "(PURSUIT OF THE SPINNING PREY) Taijutsu Rank B / Hijutsu Action : Complete Duration: Instantaneous\nChakra Cost: 3 In Three-Headed Wolf form, the user spins vertically, transforming into a sphere of ferocious speed that charges at enemies. Ooiga Gatenga uses all the rules of Tsuuga, but with modifiers for its immense size and a damage bonus equal to the power level. Due to its immense size, Ooiga Gatenga is considered an area-of-effect attack with a 5m width.\n\nBasic Book 4.1.b, printed page 167. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 8
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "b4882b852b2803",
+        "clan": "Inuzuka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 167,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 8,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Kagejutsu (Shadow Technique)",
+    "type": "poder",
+    "system": {
+      "descricao": "Restricted Power The character from the Nara clan has the right to purchase restricted power. Kagejutsu, and will gain the following techniques according to the level of power.\n\nBasic Book 4.1.b, printed page 168. Classification: Restricted power.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "b0c061b0cda0d2",
+        "clan": "Nara",
+        "category": "Restricted Powers",
+        "printedPage": 168,
+        "classification": "Restricted power",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 1: KAGE SHIBARI NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Shadow Prison Technique) Ninjutsu /Hijutsu Action : Pattern Target: 1 or more living creatures (see text) Range: Short (5m + 2m per power level) Duration: Concentration (see text)\nChakra Cost: 1 per power level This technique allows the user to extend their shadow over any surface (even water) and to any extent they wish, within the limits of their range. Once their shadow comes into contact with the shadow of a target, they become connected and the target is instantly paralyzed. Usage: Using this technique is a DC test against the target's defense. If you succeed, the target is paralyzed for the duration of the technique. The user is also required to remain still and focused, or the technique is undone. Silent Technique: Kage Shibari no Jutsu is a silent technique. If the technique is used while camouflaged (p. 272), from behind cover, or as a sneak attack (p. 261), the target will receive a -3 penalty to the Dodge reaction and the Anticipate maneuver, and will not be entitled to other defenses. Slow Technique: Conversely, it is a slow technique and easily avoidable if the opponent notices it. Therefore, the user has a -3 accuracy penalty in Ranged Combat when using the Kage Shibari no Jutsu within the target's line of sight. Resistance Test: To escape the Kage Shibari no Jutsu, the victim must use a standard action on their turn and pass a Strength test (Difficulty 9 + Level of the Power used + 1/2 the user's Intelligence, rounded up). The resistance test rules for the Kage Shibari no Jutsu apply to all other techniques of this power. Range: Short. The range your shadow can travel when extended is equal to 5m + 2m per level in this power. This range increases by +1m per power level if the technique is used under the rising/setting sun or under the light of a glow bomb. Similarly, the range decreases by -1m per power level if used under midday sun. This technique cannot be used in completely dark locations. By extending their shadow, the user can also make it pass through the shadows of objects in the environment, using them to increase the range. For each object whose shadow was used, the character gains +1m to the final range of the Kage Shibari no Jutsu. Duration: Concentration. However, you can only maintain the technique for a number of your turns equal to 1 + 1 per power level (maximum of 6 turns). Furthermore, each time you reuse the technique in the same scene, whether successful or not, the number of turns is reduced by 1 (the minimum duration is 2 turns). At the end of its final turn, the technique loses its effect. This rule regarding duration and its limit should also be used and shared for the Kage Mane. Multiple Targets: The character can freely divide their shadow into multiple filaments in order to restrain more than one target, with a maximum of 1 target for every 2 power levels. In this case, you can only keep the targets restrained for the minimum duration (2 turns). If the technique is used against henchmen, double the duration. Target Reached, Downed, or Winged: if the target is grabbed, restrained or in another condition that limits or prevents movement: you cannot use Anticipate; you can use Dodge, which will have a fixed value equal to 9. The precision and range adjustments for the fallen and winged conditions do not affect this technique.\n\nBasic Book 4.1.b, printed page 168. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "e0a0191e267d6d",
+        "clan": "Nara",
+        "category": "Level Techniques & Effects",
+        "printedPage": 168,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 1,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 3: KAGE MANE NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Shadow Imitation Technique) Ninjutsu /Hijutsu Action : Pattern Target: 1 or more living creatures (see text) Range: Short (5m + 2m per power level) Duration: Concentration (see text)\nChakra Cost: 1 per power level Over time, members of the Nara clan managed to add a new element to the Kage Shibari no Jutsu: targets captured by the shadow were forced to mimic the user's body movements. After this feat, the name Kage Mane no Jutsu came to be used for the clan's signature technique. Usage: This technique follows the same rules as the Kage Shibari no Jutsu, with the following differences. Imitation of Movement: You can move normally while maintaining the technique. When you move, the victim is forced to also move in the same direction, distance, and speed as you. The technique will be undone if the movement takes you further away from the victim than you can reach. Gesture Mimicry: When forced to mimic the character's movements, the captured target will move their left hand if the character does so. They will walk backward or forward if the user does so. Similarly, if the character picks up an object, the opponent will also do so if the object is within their reach. The imitation is only perfectly executed if the victim is minimally humanoid (that is, bipedal, with two arms and two legs). Otherwise, the technique only forces the imitation of movement. Imitations (of any kind) do not consume the victim's actions. If used against a flying creature, it immediately falls from the sky, then mimics the creature's movement in whatever way possible. Prepared Shadow: [requires level 7] After using Kage Mane and missing, you can keep it prepared indefinitely and reuse it once at any time with a standard action without the A seal is required. When reusing, the chakra cost must be paid again, and the duration limit will begin counting from that point. If reused at the range of a melee attack (1m), the target will not be able to notice the jutsu (silent technique) and will receive a -3 penalty to the Dodge reaction, forfeiting other defenses. Guided Shadow: [requires level 8] You can use Kage Mane on an ally and weaken the connection so that they can move freely. Maintaining the technique in this way requires concentration. When your ally's shadow touches an enemy's shadow (if they are 1m apart), your Kage Mane reacts and you will have the option to release it to try to trap the opponent. At this point, you must pay the chakra cost again and use the jutsu with the benefits of Silent Technique. Only from this point does the duration limit begin to be counted. Perfect Shadow: [requires level 9] The Kage Mane now has a sustained duration.\n\nBasic Book 4.1.b, printed page 169. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 3
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "3f9da02fe622ca",
+        "clan": "Nara",
+        "category": "Level Techniques & Effects",
+        "printedPage": 169,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 3,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 4: KAGE MANE SHURIKEN NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(SHURIKEN IMITATION TECHNIQUE WITH SHADOWS) Ninjutsu /Hijutsu Action: Partial (preparation) Range: Short (5m + 2m per power level) Duration: Concentration (maximum of 2 turns)\nChakra Cost: 1 per power level To use this technique, the character needs a projectile weapon made of a special material that facilitates the conduction of chakra, such as the Aian Nakkuru. Usage: With a partial action (in addition to the action of drawing the weapon), the user prepares the Kage Mane no Jutsu technique and transfers it to a weapon through chakra. Then, with a standard action, they throw the weapon at the target, aiming at their shadow, to pierce the spot in the ground where it is located. If the target is unaware of the weapon's true intention, they will receive a 2 penalty to their Dodge and Anticipate maneuvers. Effect: If you are successful, the target will be paralyzed, suffering the effects of the Kage Shibari no Jutsu for the duration of the technique (Concentration, maximum of 2 turns). Free Shadow Imitation Technique: While the target is paralyzed by this technique, you can use the Shadow Imitation Technique on them as a free action, paying its chakra cost.\n\nBasic Book 4.1.b, printed page 170. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 4
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "fc84cab50f008c",
+        "clan": "Nara",
+        "category": "Level Techniques & Effects",
+        "printedPage": 170,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 4,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 5: KAGE KUBISHIBARI NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Shadow Strangulation Technique) Ninjutsu /Hijutsu Action: Movement Target: creature captured by Kage Mane or Kage Shibari Duration: the same as Kage Mane or Shibari (see text)\nChakra Cost: 1 per power level This technique allows the user to eliminate creatures captured by the Kage Mane. The user can choose one target for every 6 Spirit points, extend their shadow to their necks, and squeeze them to strangle them. Usage: Using your move action that turn, you transform your Kage Mane (or Kage Shibari) into Kage Kubishibari, maintaining the duration count and concentration. At the end of each of your turns, you inflict fixed suffocation damage to the victim equal to the Power Level used. +1/2 of Intelligence. The damage is caused even if the victim tries to hold their breath (see more about suffocation on page 278). Resisting: The target can use a standard action to earn a Strength check to break free from the technique. If successful, they will still be bound by the Kage Mane (or Kage Shibari) and will need to break free. If this technique and the Kage Mane are used at different levels, the difficulties of each check must be calculated according to their respective levels. After becoming completely free, the victim will be fatigued until the end of their next turn while they recover their breath.\n\nBasic Book 4.1.b, printed page 171. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 5
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "3bcf60abc86086",
+        "clan": "Nara",
+        "category": "Level Techniques & Effects",
+        "printedPage": 171,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 5,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 6: KAGEYOSE NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Shadow Collection Technique) Ninjutsu /Hijutsu Action: Movement Range: Short (5m + 2m per power level) Duration: Sustained or Concentration (Handcuffing)\nChakra Cost: 1 per power level The Nara clan member can materialize their shadow, dividing it into black filaments that can hold or grab small objects with complete dexterity. Usage: The character can create a maximum of 2 filaments for each level of power used. As a standard action, the user can gather all the created filaments into a single point, causing them to bring the objects they are carrying to that point. This is a very useful strategy if the filaments are holding kunai or explosive tags, for example. Throw Projectile: If you wish to catch a projectile with your shadow and throw it, the character uses their Ranged Combat accuracy for the test, as usual. Shadow Handcuffs: The user can also use Kageyose to restrain a target, wrapping them in shadow, following the rules of the Level 6 Handcuff Effect of the Ninpou power. You can restrain one target for every two shadow filaments. The difficulty of the test to break free is the same as the Kage Mane. The filaments have a hardness equal to the level of power used + 1/2 the user's Intelligence.\n\nBasic Book 4.1.b, printed page 171. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 6
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "d954e65b508274",
+        "clan": "Nara",
+        "category": "Level Techniques & Effects",
+        "printedPage": 171,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 6,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 6: KAGE NUI",
+    "type": "elemento",
+    "system": {
+      "descricao": "(SEWING OF SHADOWS) Ninjutsu /Hijutsu Action : Default (see text) Target: one or more creatures Duration: Instantaneous (see text)\nChakra Cost: 1 per power level Using this technique, the user utilizes their shadow to form sharp filaments, employing the principles of Kageyose, but launching the filaments at their targets in order to restrain and/or injure them. The shadow filaments are as sharp as a needle, hence the name of the technique. Usage: The number of filaments is the same as the Kageyose technique. Each needle causes 1 base damage and has the same range and usage rules as the Kage Mane technique, with the sole exception that Kage Nui is not a slow technique (therefore, the user does not receive a penalty if they use it within the target's line of sight). Stitching: If preferred, the user can also use the needles to secure targets after piercing them, literally stitching the enemy together and forcefully pulling the shadow filaments to immobilize them. To do this, you must execute the technique as a full action. If you succeed with a damage level of 3 or higher, the target will be incapacitated. For a sustained duration, using the Shadow Shackle rules of Kageyose. If you use the technique in this same way on the same target, with any degree of damage, you can paralyze them through concentration. Since the target is stitched together by the shadow needles, they will not be able to use the Escape skill to break free from the technique.\n\nBasic Book 4.1.b, printed page 172. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 6
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "a7ae507b5b20f1",
+        "clan": "Nara",
+        "category": "Level Techniques & Effects",
+        "printedPage": 172,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 6,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 8: KAGEZUKAMI NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(CAPTURE OF SHADOWS) Ninjutsu /Hijutsu Action : Pattern Target: one or more creatures Duration: Concentration\nChakra Cost: 1 per power level This technique is yet another variation of the Kage Mane. When the shadows are connected, instead of forcing the enemy to copy their movements, the Nara can remain still and focused while pulling and moving the target to any location of their choosing within the technique's range. The victim can act freely, but cannot move. The other rules of the Shadow Imitation Technique remain in effect. SARUTOBI CLAN The Sarutobi clan is an influential clan in Konoha. Many renowned ninjas who hold positions of high authority typically emerge from this clan. The Sarutobi are extremely loyal to the village and devoted to the Will of Fire. They possess great resilience and talent with Katon type techniques, rivaled only by the Uchiha clan in this regard. Another important hallmark of the clan is the summoning contract with the Ninja Monkeys. Secret Technique (Option 1): Restricted Summoning Technique: Monkeys (p. 224). Hijutsu (Option 2): Tensai (Genius; p. 241); Will of Fire. By choosing this option, you can still purchase Kuchiyose as a regular power.\n\nBasic Book 4.1.b, printed page 173. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 8
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "b0524ea212bdc1",
+        "clan": "Sarutobi",
+        "category": "Level Techniques & Effects",
+        "printedPage": 173,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 8,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "WILL OF FIRE",
+    "type": "aptidao",
+    "system": {
+      "descricao": "You are sustained by an unwavering will, making you as robust as men twice your size. Prerequisites: Tensai (Hijutsu), Stamina 6, Higher Resistance (Stamina), and True Clone Technique (Kage Bunshin).\nBenefit: You must choose this skill as one of the two Special Skills you are entitled to through the Tensai secret technique. You receive the Die Hard aptitude for free and do not suffer the effects of old age until much later than normal. Furthermore, you can create and use up to two true Kage Bunshin clones at the same time. These clones are more resilient than normal: they possess Vitality equal to 1/5 of the user's Vitality and receive the Diehard aptitude. You cannot create (nor have created) any Another clone appears during the scene, in addition to these two Kage Bunshins. SENJU CLAN The Senju clan was one of the clans responsible for founding the Hidden Leaf Village, along with their rival Uchiha clan. This clan was known for its strength and the fact that its members were extremely capable, earning it the name \"Clan of a Thousand Skills.\" Although in the anime the clan itself seems to have ceased to exist as a group, the Senju clan continues to influence Konoha's politics through its philosophy of the Will of Fire and the corresponding interpretation of the Hokage's role. The greatest icon of the Senju clan, Hashirama, was known for possessing great vitality and, above all, for his kekkei genkai, the manipulation of Mokuton (wood element). Hijutsu (Option 1): Mokuton; Maximize; Regeneration (Uzumaki Clan, p. 193); Senjutsu (see p. 239). Hijutsu (Option 2): Tensai (see page 241); Maximize.\n\nBasic Book 4.1.b, printed page 174. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "f542d9ef82c550",
+        "clan": "Senju",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 174,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "MAXIMIZE",
+    "type": "aptidao",
+    "system": {
+      "descricao": "You can enhance your elemental ninjutsu to the maximum extent that the element allows. Prerequisites: Spirit or Intelligence 15; Potential (aptitude) Benefits: When purchasing this skill, choose between Mokuton or Suiton powers. When using the Enhance meta-skill for the chosen element, you can apply all of its benefits at once. Special Aptitude: You can choose and purchase this aptitude as one of the two Special Aptitudes you are entitled to through the Tensai secret technique.\n\nBasic Book 4.1.b, printed page 175. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "f7697e1f1c49b2",
+        "clan": "Senju",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 175,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "MOKUTON (WOOD ELEMENT)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Mokuton is an advanced bloodline formed through the simultaneous use of the Earth and Water elements to create wood or entire trees. This ability can also be used to create other aspects of trees, such as seeds or even flowering plants. Mokuton techniques can be produced from anywhere, including the user's body, as the user's chakra is literally converted into a life source. The player must purchase Mokuton as a standard version of elemental ninjutsu powers. The Mokuton power follows the same rules as the Ninpou power (see Powers chapter, p. 84), and can utilize all of its Effects. Range: Medium (10m + 2m per Spirit level). The character can only manipulate or create their element up to the maximum range of their power. Size: Creations, manipulations, and areas of effect can have up to 1m in diameter, length, width, or height per Spirit level. Additional Damage: All Mokuton Effects receive +1 base damage. Increased Resistance Difficulty: All Mokuton effects receive a +1 bonus to the resistance difficulty for target tests. Allowed Effects: All Ninpou effects; Immerse (Doton). Water Release and Earth Release: The character receives 1 free level in Earth Release and Water Release, and can use the Cannon Effect for Earth Release and Water Release using the Wood Release level as a parameter. If you want more levels in these powers to achieve more effects, you need to evolve them separately. Element Restriction: The character cannot learn elements other than Mokuton, Suiton, and Doton. The Mokuton power also possesses the following unique effects.\n\nBasic Book 4.1.b, printed page 175. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "fe5a5dc3d60690",
+        "clan": "Senju",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 175,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 2 EFFECTS",
+    "type": "elemento",
+    "system": {
+      "descricao": "TRANSMITTER Prerequisites: Clone (Moku Bunshin) Action: Partial Range: Touch Target: a Moku Bunshin Duration: Continuous The character causes their clone to disintegrate into several seeds that can be used to track a target. To do this, one simply implants the seed in the target's clothing, for example, or makes them ingest it. Only the user of this technique can detect the seed's transmissions. This effect It follows the same rules as the Sensor skill, but only detects targets that are carrying the seed in some way.\n\nBasic Book 4.1.b, printed page 176. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 2
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "38dd1e34563b7d",
+        "clan": "Senju",
+        "category": "Level Techniques & Effects",
+        "printedPage": 176,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 2,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 6 EFFECTS",
+    "type": "elemento",
+    "system": {
+      "descricao": "SEAL CHAKRA\nPrerequisite: Lightning Bolt Action : Pattern Scope: Common to power Target: One or more creatures (see Ray text) Damage: 2 per power level Duration: Instantaneous or Concentration (see text) When using the Lightning effect, in addition to causing normal damage, the user can seal part of their victim's chakra, temporarily reducing it. When hit by the technique, the target will lose chakra points equal to half the level of the power used. Sealing Bijuu Chakra: The user can also use this effect to seal the bijuu chakra of a Jinchuuriki and reverse their transformation if it is out of control. This can only be done on a target with Jinchuuriki power at a lower level than the user's own Jinchuuriki power level, and only against an out-of control target that is in Bijuu Mode or lower. This technique should be used as a prepared action that will be executed as soon as a jinchuuriki within range becomes uncontrolled, or as soon as an uncontrolled jinchuuriki enters the range of the power. Ten wooden pillars emerge around the target and begin to suppress the bijuu's chakra while you maintain concentration. You do not perform an accuracy test. Instead, you make a Spirit test, Difficulty 7 + 2x the target's Jinchuuriki power level. If successful, all chakra is suppressed until the end of the round. If you fail, the bijuu chakra is still suppressed, but you must pay the chakra cost of this effect again. After this technique is completed, the target's Jinchuuriki power will be deactivated and they will be unconscious for 10 minutes. Evolutions: Seal Chakra Level 9: The user can seal the bijuu chakra of Jinchuurikis with power equal to or lower than their own level in this power; they also become capable of breaking bijuu control techniques through touch, using the rules of the basic Kai jutsu.\n\nBasic Book 4.1.b, printed page 176. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 6
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "762c3de9628e54",
+        "clan": "Senju",
+        "category": "Level Techniques & Effects",
+        "printedPage": 176,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 6,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 7 EFFECTS",
+    "type": "elemento",
+    "system": {
+      "descricao": "GOLEM Action : Pattern Scope: Personal Duration: Continuous (see text) You create a gigantic wooden monster to fight, which can have any appearance, from a large humanoid to a dragon. Character Sheet: The golem possesses the same attributes as you, but its Strength score is replaced by your Spirit level. It is immense in size (Strength and Stamina modifiers apply normally) and has zero hardness, but only half the Vitality. The golem's Combat Skills are at the same level as yours, including the benefits of Expertise, Mastery, Reflexes, Insight, and Finesse. All other skills are at level zero. The golem's melee attack deals standard power damage. Partner: The golem follows the rules of Command Partner (page 269), however it is directly controlled by you, so it is not necessary to give instructions. The golem does not possess a mind, therefore it cannot be the target of Genjutsu. Control: Controlling the golem requires concentration, and if you fail to maintain it, it will become immobile and should be treated as an inanimate object. Your concentration does not count towards the damage distribution rule for partners. You can only control one golem per scene. While controlled, the golem follows the same rules as a regular character (including standard actions, movement, opportune attacks, etc.). Additionally, you can use any Mokuton power technique you want through the golem, using its actions. However, the golem cannot use other techniques or abilities that the character possesses. With a move action and paying half the chakra cost of the effect, you can heal up to half of the golem's total Vitality. Senjutsu: You can apply the Senjutsu power bonuses to the Golem (page 239), with the exception of energy bonuses, and provided they do not stack with any size bonuses. Evolutions: Golem Lv 10: The golem is now colossal in size and its common physical attacks receive the Seal Chakra effect for free (at the level the user possesses). TECHNIQUES AIKAGI (MASTER KEY) Ninjutsu /Kekkei Genkai Prerequisites: Mokuton 1 (Free Creation rule) Action : Pattern Scope: Personal Duration: Instantaneous\nChakra Cost: 1 The user grows a small piece of wood from their index finger, which takes the shape of a key. By placing the key in the lock, the character finishes shaping it to have the perfect fit needed to unlock it. DAIJURIN NO JUTSU (Great Forest Technique) Ninjutsu /Kekkei Genkai Prerequisites: Mokuton 2 (Lightning) Action : Pattern Scope: Common to power Target: One or more creatures (see Lightning effect text) Duration: Instantaneous The character is able to conjure one or more wooden stakes towards the opponent to pierce them. The stakes are made from... The lightning bolt can shoot from the user's own arm, from the ground, or from a nearby tree (but always in a straight line to the target, without going around cover), and cause damage according to the rules of the Lightning Bolt effect. MOKU BUNSHIN (WOOD CLONE) Ninjutsu /Kekkei Genkai Prerequisites: Clone (aptitude); Mokuton 1 Action : Pattern Scope: Personal Duration: Continuous\nChakra Cost: 1 per clone This technique follows the rules of Clone abilities, but also has the following distinct effects. The wood clone is more resilient than other clones and possesses Vitality equal to 1/5 of the user's Vitality. It can communicate telepathically with the user and is capable of merging with trees and plants, as a free use of the Immerse Level 2 effect of the Doton power, without chakra cost. Only a character with an original (non-transplanted) Rinnegan can distinguish between a wooden clone and the user. [Requires True Clone] You can create and control 1 single wood clone that is capable of using basic jutsus, powers, and abilities, including the Mokuton power, but not any other restricted power or ability. You can also use the Immerse Lv 4 effect, if you have it for Mokuton, paying the normal chakra cost. The chakra costs are taken from the character's own chakra. MOKUJIN NO JUTSU (Wooden Golem Technique) Ninjutsu /Kekkei Genkai Prerequisites: Mokuton 7 (Golem) Action : Pattern Scope: Personal Duration: Continuous After performing the necessary hand seals, the user creates a massive, statue-like wooden creature. This humanoid creature, with a face resembling a Japanese demon, is usually created with a wooden dragon wrapped around its torso and used as a powerful battle avatar. When used by a great ninja, its power can be compared to that of a Bijuu or the Susanoo of the Uchiha clan.\n\nBasic Book 4.1.b, printed page 177. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 7
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "d8dfcf89707a50",
+        "clan": "Senju",
+        "category": "Level Techniques & Effects",
+        "printedPage": 177,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 7,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Natural Element: Katon",
+    "type": "aptidao",
+    "system": {
+      "descricao": "\"An Uchiha is only recognized as such when they are able to use the Katon: Goukakyuu \" no Jutsu.\"\nPrerequisite: Spirit 1\nBenefit: You are able to use the Destructive Breath 4 effect for Katon, even without possessing the power and even at Genin level (CL 4). The base damage of the effect is equal to the Spirit attribute +2 by the damage bonus of the Katon element. The chakra cost is half the Spirit level (rounded up). Other rules of the effect, such as range and size, are the same as the Katon power. If the character purchases the Katon power, they will receive the Destructive Breath effect at level 4, in addition to the other effect they can choose by right. Destructive Breath will also automatically evolve in Levels 7 and 10, without the need for the user to select them at those levels. In these cases, the effect will follow all the common rules of the power. This ability can be used by the True Clone and does not count towards the elemental affinity rule limit (page 89).\n\nBasic Book 4.1.b, printed page 180. Classification: Restricted abilities.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "948fe1e897d0d0",
+        "clan": "Uchiha",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 180,
+        "classification": "Restricted abilities",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Sharingan",
+    "type": "aptidao",
+    "system": {
+      "descricao": "This is a powerful doujutsu exclusive to the Uchiha clan. The Sharingan can manifest in the user during a major battle where their visual perception skills are highly needed. At this level, the Sharingan has an incomplete appearance, with a black comma at the edge of the red iris. The Sharingan grants the Uchiha an enhanced perception of movement, similar to slow-motion vision, allowing them to perfectly predict physical attacks or even ninjutsu.\nPrerequisite: Perception 3\nBenefit: Activating the Sharingan requires a partial action and 1 chakra point. The doujutsu has a continuous duration for one scene and can be activated during defense. While the Sharingan is active, the character gains the following benefits. Chakra Vision: The character is able to distinguish chakra by color, allowing them to identify when an opponent uses a jutsu, no matter how hidden it may be. Chakra vision also allows them to identify if a person is trapped in a genjutsu, or if a jutsu is affecting a specific area or creature. You are not able to see through chakra creations, such as the Mist Release (Suiton) effect, nor through cover or camouflage. Measuring Power: Viewing a creature's chakra allows the user to gauge its approximate strength, or in other words, the approximate level of its power level. character. Distinguish Chakra: The character becomes able to differentiate each creature by its chakra signature. Perceptive Dodge: The user can use the Read Movement skill to dodge, replacing the Dodge skill in calculating the attacker's hit difficulty. Thus, the attacker's Difficulty will be 9 + the Uchiha's LM accuracy. All the rules, benefits, and penalties for evasion still apply. This means the Uchiha can apply any dodge bonus to their defense using Accelerated Vision (such as from the Reflexes skill). Conversely, they cannot use accuracy bonuses in LM (such as from the Intuition skill).\n\nBasic Book 4.1.b, printed page 181. Classification: Restricted abilities.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "6d4df134aa2338",
+        "clan": "Uchiha",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 181,
+        "classification": "Restricted abilities",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Nidan Sharingan",
+    "type": "aptidao",
+    "system": {
+      "descricao": "This is a powerful doujutsu exclusive to the Uchiha clan. The Sharingan can manifest in the user during a major battle where their visual perception skills are highly needed. At this level, the Sharingan has an incomplete appearance, with a black comma at the edge of the red iris. The Sharingan grants the Uchiha an enhanced perception of movement, similar to slow-motion vision, allowing them to perfectly predict physical attacks or even ninjutsu.\nPrerequisite: Perception 3\nBenefit: Activating the Sharingan requires a partial action and 1 chakra point. The doujutsu has a continuous duration for one scene and can be activated during defense. While the Sharingan is active, the character gains the following benefits. Chakra Vision: The character is able to distinguish chakra by color, allowing them to identify when an opponent uses a jutsu, no matter how hidden it may be. Chakra vision also allows them to identify if a person is trapped in a genjutsu, or if a jutsu is affecting a specific area or creature. You are not able to see through chakra creations, such as the Mist Release (Suiton) effect, nor through cover or camouflage. Measuring Power: Viewing a creature's chakra allows the user to gauge its approximate strength, or in other words, the approximate level of its power level. character. Distinguish Chakra: The character becomes able to differentiate each creature by its chakra signature. Perceptive Dodge: The user can use the Read Movement skill to dodge, replacing the Dodge skill in calculating the attacker's hit difficulty. Thus, the attacker's Difficulty will be 9 + the Uchiha's LM accuracy. All the rules, benefits, and penalties for evasion still apply. This means the Uchiha can apply any dodge bonus to their defense using Accelerated Vision (such as from the Reflexes skill). Conversely, they cannot use accuracy bonuses in LM (such as from the Intuition skill).\n\nBasic Book 4.1.b, printed page 181. Classification: Restricted abilities.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "f62a81ec2202d6",
+        "clan": "Uchiha",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 181,
+        "classification": "Restricted abilities",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Sandan Sharingan",
+    "type": "aptidao",
+    "system": {
+      "descricao": "This is a powerful doujutsu exclusive to the Uchiha clan. The Sharingan can manifest in the user during a major battle where their visual perception skills are highly needed. At this level, the Sharingan has an incomplete appearance, with a black comma at the edge of the red iris. The Sharingan grants the Uchiha an enhanced perception of movement, similar to slow-motion vision, allowing them to perfectly predict physical attacks or even ninjutsu.\nPrerequisite: Perception 3\nBenefit: Activating the Sharingan requires a partial action and 1 chakra point. The doujutsu has a continuous duration for one scene and can be activated during defense. While the Sharingan is active, the character gains the following benefits. Chakra Vision: The character is able to distinguish chakra by color, allowing them to identify when an opponent uses a jutsu, no matter how hidden it may be. Chakra vision also allows them to identify if a person is trapped in a genjutsu, or if a jutsu is affecting a specific area or creature. You are not able to see through chakra creations, such as the Mist Release (Suiton) effect, nor through cover or camouflage. Measuring Power: Viewing a creature's chakra allows the user to gauge its approximate strength, or in other words, the approximate level of its power level. character. Distinguish Chakra: The character becomes able to differentiate each creature by its chakra signature. Perceptive Dodge: The user can use the Read Movement skill to dodge, replacing the Dodge skill in calculating the attacker's hit difficulty. Thus, the attacker's Difficulty will be 9 + the Uchiha's LM accuracy. All the rules, benefits, and penalties for evasion still apply. This means the Uchiha can apply any dodge bonus to their defense using Accelerated Vision (such as from the Reflexes skill). Conversely, they cannot use accuracy bonuses in LM (such as from the Intuition skill).\n\nBasic Book 4.1.b, printed page 181. Classification: Restricted abilities.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "d089ba6619d756",
+        "clan": "Uchiha",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 181,
+        "classification": "Restricted abilities",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "Mangekyou Sharingan.",
+    "type": "aptidao",
+    "system": {
+      "descricao": "This is a powerful doujutsu exclusive to the Uchiha clan. The Sharingan can manifest in the user during a major battle where their visual perception skills are highly needed. At this level, the Sharingan has an incomplete appearance, with a black comma at the edge of the red iris. The Sharingan grants the Uchiha an enhanced perception of movement, similar to slow-motion vision, allowing them to perfectly predict physical attacks or even ninjutsu.\nPrerequisite: Perception 3\nBenefit: Activating the Sharingan requires a partial action and 1 chakra point. The doujutsu has a continuous duration for one scene and can be activated during defense. While the Sharingan is active, the character gains the following benefits. Chakra Vision: The character is able to distinguish chakra by color, allowing them to identify when an opponent uses a jutsu, no matter how hidden it may be. Chakra vision also allows them to identify if a person is trapped in a genjutsu, or if a jutsu is affecting a specific area or creature. You are not able to see through chakra creations, such as the Mist Release (Suiton) effect, nor through cover or camouflage. Measuring Power: Viewing a creature's chakra allows the user to gauge its approximate strength, or in other words, the approximate level of its power level. character. Distinguish Chakra: The character becomes able to differentiate each creature by its chakra signature. Perceptive Dodge: The user can use the Read Movement skill to dodge, replacing the Dodge skill in calculating the attacker's hit difficulty. Thus, the attacker's Difficulty will be 9 + the Uchiha's LM accuracy. All the rules, benefits, and penalties for evasion still apply. This means the Uchiha can apply any dodge bonus to their defense using Accelerated Vision (such as from the Reflexes skill). Conversely, they cannot use accuracy bonuses in LM (such as from the Intuition skill).\n\nBasic Book 4.1.b, printed page 181. Classification: Restricted abilities.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "6c95f9e6f1892d",
+        "clan": "Uchiha",
+        "category": "Restricted Aptitudes & Abilities",
+        "printedPage": 181,
+        "classification": "Restricted abilities",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "NIDAN SHARINGAN",
+    "type": "aptidao",
+    "system": {
+      "descricao": "The Uchiha with the Nidan Sharingan already has better control over the abilities of their kekkei genkai. At this stage, the red iris displays two black commas.\nPrerequisite: Perception 6, Sharingan\nBenefit: By using the Sharingan aptitude, the Uchiha receives the following additional benefits. Accelerated Vision: The user receives the benefits of the Intuition skill for free, and a +2 bonus to Alertness against the Feint maneuver. Enhanced Focus: The Uchiha is able to react just as effectively to a target within their focus as to one at the edge of their vision, and cannot be flanked. Hypnotic Gaze: The Uchiha is able to use genjutsu on their target simply by maintaining eye contact, without the need for hand seals or any other gesture. The range of The hypnotic gaze has a range of 9 meters, and you don't need to make Concentration checks to use it in close combat. Fascinate: The Hypnotic Gaze allows you to use the Fascinate skill through eye contact, with +1 difficulty level, and you can repeat its use multiple times on the same target during the scene. The target will always have 1 turn of immunity after breaking free from the illusion. You still need to purchase the Fascinate skill normally to use it with these benefits. Eye-to-eye eye contact: The enemy is always considered to be in eye contact long enough to suffer the effects of the Hypnotic Gaze, unless they explicitly act in a way that avoids looking at your face. In this case, they will suffer the penalties of partial camouflage, unless they have the Fight Blindly skill at level 2. Resist Illusion: The Sharingan also provides protection against enemies attempting to use an ocular genjutsu on the character, granting a +2 bonus to their saving throw. Mimic Sharingan: The Uchiha gains access to the techniques of Mimic Sharingan.\n\nBasic Book 4.1.b, printed page 182. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "3437087aea6f38",
+        "clan": "Uchiha",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 182,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "SANDAN SHARINGAN",
+    "type": "aptidao",
+    "system": {
+      "descricao": "In its most mature stage, the Sharingan acquires a third comma and reaches its complete state. Clan members who achieve this level of mastery tend to become prominent in their community. Prerequisites: Perception 9; Nidan Sharingan\nBenefit: By using the Sharingan aptitude, the Uchiha receives the following additional benefits. Genjutsu Sharingan: The Uchiha gains access to the unique illusion techniques of Sharingan Hypnosis. Enhanced Accelerated Vision: The Uchiha becomes immune to accelerated feints (see accelerated condition, p. 205). They are also able to perform opportune attacks against accelerated enemies. Perfect Prediction: The Uchiha becomes capable of using all prediction maneuvers in opportune attack situations or when caught off guard. Furthermore, they can use Overcome Technique without any accuracy penalty. Reverse Illusion: With a standard action, the Uchiha is able to use Perception instead of Intelligence to detect an enemy illusion attack. If successful, the illusion will be returned to its caster. Through the Hypnotic Gaze, forcing the enemy to resist it while the Uchiha remains unaffected. It requires expending the same amount of chakra as the illusion used and being within 9 meters of the enemy. You can use this technique against any type of illusion that targets you exclusively, including Hijutsu, with the exception of Tsukuyomi. Mangekyou Sharingan The final stage of the Sharingan reveals its true form, reaching the highest state of sealing that exists within the eyes of the Uchiha. Each pair of eyes has a distinct shape design in its seal, perhaps indicating why the Susano'o technique has varied appearances and some Sharingans awaken unique abilities. This stage is known as Mangekyou Sharingan (literally, \"Kaleidoscopic Rotating Copy Eye\"). Prerequisites: Perception 16; Sandan Sharingan; a traumatic event.\nBenefit: The Uchiha gains the ability to use three special techniques at the cost of their own eyesight. You need to choose a pair of techniques for your eyes (one for the right and one for the left). (left), with Susanoo being the third, fixed technique that you will learn when you meet the requirements of the other two techniques. The pair of available techniques are: Tsukuyomi and Amaterasu Kagutsuchi and Amaterasu Kamui (Short and Long Range) All techniques of the Mangekyou Sharingan are considered to be power level 10 for difficulty purposes. You cannot use meta-skills or the Accelerated Technique skill with any Mangekyou Sharingan technique. Points of Sight: The Uchiha's eyes possess a number of points that determine their integrity. As these points deplete, their vision follows the same path, gradually fading into blindness as the seal on their eyes takes away their senses and sanity. The character has a total of 10 points of vision in their eyes. These points are for both eyes (not 10 points for each eye). The cost of vision for using the techniques (value specified for each one) is subtracted from this amount. Losing Vision: For every 3 vision points lost, you suffer the permanently obscured condition. This condition is cumulative up to three times (i.e., obscured 1 with 7 points; obscured 2 with 4; and obscured 3 with 1 vision point). Because they are permanent, vision loss penalties do not count towards the accuracy penalty limit (see Prejudicial Conditions, p. 275). They are also cumulative with any other condition of glare or vision impairment you may have. Lost vision points cannot be recovered in any way, except for the Sharingan's Rest rule. Similarly, the obscured condition cannot be cured, except for the Eternal Mangekyou Sharingan (see below). Forced Deactivation: When your Vision Points are reduced to zero for the first time, you feel excruciating pain in your eyes, which spreads throughout your body, leaving you stunned and unprepared for 1 turn. Your Sharingan is immediately deactivated, resulting in bleeding and the realization that you are going blind. You are unable to use it until you rest. Sharingan Rest: Suffering makes you understand the Sharingan's curse. When your Vision Points are reduced to zero for the first time, you gain the ability to partially recover the lost Vision Points. To do this, you must deactivate the Sharingan and refrain from using it for 24 hours. After this, your Vision Points are regenerated up to a maximum of 5. The obscured (-3) condition remains. Blindness: When your vision points are reduced to zero for the second time, you become blin\n\nBasic Book 4.1.b, printed page 182. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "d66246e703e1fc",
+        "clan": "Uchiha",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 182,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Mangekyou Sharingan for Gamers",
+    "type": "aptidao",
+    "system": {
+      "descricao": "Due to the appeal of the anime, it's very common for a player to want to create an Uchiha character, mainly with the goal of acquiring the Mangekyou Sharingan (MS) in the future. It is recommended that the Game Master address this... Do this very carefully. The Mangekyou Sharingan is a powerful ability. However, it's much more than that; it's an ability that involves intense drama within the story. Every Uchiha who awakens the MS must undergo extreme experiences that justify their right to possess it. The Master must not renounce this! If preferred, the Game Master can still discuss with their players the idea of simply not using the Mangekyou Sharingan in the campaign, without further worries. The Uchiha Clan is already powerful enough without it. TECHNIQUES Sharingan Mimicry Ninjutsu / Kekkei Genkai; Doujutsu Prerequisites: Nidan Sharingan Scope: Personal (see text)\nChakra Cost: zero (except for Nullify Technique) The Uchiha are able to copy, negate, and memorize techniques they observe by emulating them through their synchronized vision, copying hand gestures and chakra usage. Nullify Technique: You are able to use the Nullify Technique prediction maneuver (page 267) even if you do not possess an appropriate counter technique in your repertoire, copying the one used by your opponent instead, and paying the same chakra cost. Copy Technique: You are able to temporarily copy and learn a technique that has been nullified or analyzed with your Sharingan. Analyzing a technique during combat is a full action and does not require tests. When the technique is used, you must announce that you will study it, immediately spending your full action. This can be done during any character's turn. You can reuse the copied technique as many times as you want throughout the week, but you will only be able to copy a total of one technique for every 4 full Intelligence points (maximum of 5). If you reach the limit, to copy a new technique, you must forget any old one. The copied technique retains all the parameters that were used at the time of the copy: damage rule, chakra cost, action, duration, etc. These values cannot be modified by the character unless the technique's own rules allow it. Technique bonuses originating from restricted skills or powers cannot be copied. Memorize Technique: You memorize a technique that has been copied. The memorized technique is no longer counted towards the limit of copied techniques and is not forgotten after one week. It is only possible to memorize one technique at a time, but you can choose to memorize a new one whenever you want, forgetting the old one. Optionally, you can learn the technique permanently by paying 2 power points. The technique must be noted on the character sheet as an aptitude. Memorized techniques cannot be used as prerequisites for other techniques, powers, and aptitudes. For characters initially created at CL 8 or higher, the Game Master may allow them to begin the campaign with 1 memorized technique and any number of permanent techniques. Restrictions: Sharingan Mimicry allows you to copy the following types of techniques: a power effect (e.g., Destructive Breath), a shinobi skill (e.g., Clone), or a maneuver skill (e.g., Sweep). It also allows you to copy Level 1 of any common power (e.g., Rasengan 1 and Hachimon 1). If it is a technique of a skill with evolutions (e.g., Shunjutsu) or a Ninpou/Element effect, you copy it at the lowest possible level. You can only use Sharingan Mimicry for techniques that are not from a Secret Technique or Clan, that are within your character's Power Limit, and for which you meet all the prerequisites (such as another power or aptitude, Attribute level, Skill, or Combat Ability). It is possible to use Sharingan Mimicry for techniques of an elemental affinity that you do not possess, as long as it is one of the five basic elements (Earth Release, Wind Release, Fire Release, Lightning Release, and Water Release). New Element: You gain the right to a new elemental affinity, allowing you to choose, purchase, and evolve one more elemental ninjutsu power in addition to those you already possess. SHARINGAN HYPNOSIS Genjutsu / Kekkei Genkai; Doujutsu Prerequisites: Sandan Sharingan, Fascinate, Deep Illusion Range: 9m Target : 1 creature\nChakra Cost: 5 Hand Seals: No This technique is a mental illusion and has the same rules as the Magen power, but with a modified difficulty calculation (8 + Intelligence Level, including Deep Illusion). Using the\n\nBasic Book 4.1.b, printed page 184. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "25b6452b93f59a",
+        "clan": "Uchiha",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 184,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "(UNBREAKABLE SEALING CHAINS)",
+    "type": "aptidao",
+    "system": {
+      "descricao": "You are able to mold your chakra to create extremely durable chains that can be used for various purposes, such as direct combat or physically immobilizing your enemies – even a Bijuu.\nPrerequisite: Spirit 14 Action : Pattern Range: Medium (10m + 2m per Spirit level) Duration: Instantaneous or Concentration (see text)\nChakra Cost: 7 Hand Seals: No Attack: [Instant] The chains have blades at the ends and can be used to attack the opponent, causing damage equal to 1 per Spirit level. Capture: [Concentration; maximum of 5 turns] The user can use the chains to capture a target by wrapping it around them. This requires a DC test. If successful, the technique does not cause damage, but the...\n\nBasic Book 4.1.b, printed page 195. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "649a89aae6636f",
+        "clan": "Uzumaki",
+        "category": "Additional Abilities (Review)",
+        "printedPage": 195,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Shindenshin (Mind Transmission)",
+    "type": "poder",
+    "system": {
+      "descricao": "The Yamanaka clan character has the right to purchase restricted power. Shindenshin, and will gain the following techniques according to the level of power. Resisting Effects: Unless the technique states otherwise, resisting the effects of this power requires an Intelligence check, Difficulty 9 + Power Level + 1/2 the user's Intelligence (rounded up). Henchmen fail all Intelligence checks against this power.\n\nBasic Book 4.1.b, printed page 196. Classification: Restricted power.",
+      "nivel": 0
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "3c630ca5ab4a64",
+        "clan": "Yamanaka",
+        "category": "Restricted Powers",
+        "printedPage": 196,
+        "classification": "Restricted power",
+        "source": "Basic Book 4.1.b",
+        "level": null,
+        "extractionConfidence": "Matched source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 1: SHINTENSHIN NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(MIND SWITCHING TECHNIQUE) Ninjutsu Rank C / Hijutsu Action : Pattern Range: Short (5m + 1m per Intelligence level) Duration: 1 day per power level\nChakra Cost: Power Level Originally, this ninjutsu was created for espionage missions, rather than battle. With it, a ninja sends their mind as spiritual energy into the body of a target, overlaying their mind onto the target's mind and taking control of their body. The user completely transfers their consciousness to the target, gaining full control of their body for a certain period of time. While in control of another's body, the character is still able to communicate with the victim's mind, who remains conscious, although without any control over their body. Target: This technique should only be used on a target that is restrained, grabbed, stunned, defenseless , or surprised (unaware of a surprise attack). Using it on any target outside of these conditions is still possible, but very dangerous, as any minimal movement of the target is enough to miss the transmission of your mind to them. When you initiate the hand seals of the technique, the target is entitled to an Agility or Readiness test as a reaction, standard difficulty of this power -3 ( fascinated targets). They are also entitled to this test). If it is successful, the Shintenshin no Jutsu fails and your mind is lost until the next turn, leaving you unconscious. In espionage, it's common to use this technique on an animal, such as a falcon for aerial reconnaissance, or a cat to enter places without arousing suspicion. It's not possible to swap minds with a clone. Test: You do not perform tests to use this technique. Upon being hit, the victim's body will be under the user's complete control for 1 round. After that, on their 2nd turn under control, the victim will be entitled to an Intelligence test. If successful, they will regain control and expel the user. If they fail, they will remain under control for the duration of the technique. Unconscious targets only perform the resistance test when they awaken. Irrational animals and henchmen are not entitled to resistance tests against the control. Cancellation: Whenever the user performs an action contrary to the nature of the controlled victim (such as allowing themselves to be injured, attacking an ally, or mistreating a loved one), the victim will have the right to a new resistance test, this time with -2 difficulty levels (non-cumulative), as a reaction. If successful, the victim will regain control of their body for one second, leaving the user stunned. If, due to several such actions, the victim passes three resistance tests (consecutive or not), the technique is canceled. The technique also cancels itself automatically if the user attempts any suicidal action. The cancellation occurs immediately before the action begins. Action, preventing suicide from occurring. You can understand suicide as any action that could cause instant death, such as jumping off a cliff, allowing oneself to suffer a Mercy Blow, or reducing Vitality to zero points or less. Control: When the Yamanaka takes control of the body, any active technique of their own or the target's that is not of permanent duration is immediately canceled. The character will have access to all the physical and physiological capabilities of the controlled body, such as: Strength, Dexterity, Stamina, Vitality, Chakra, or even kekkei genkai (but will only have the benefits of those of permanent duration). The Yamanaka must follow the following rules for tests: Combat Skills (CC, DC, ESQ, and LM): tests use the accuracy of the controlled target. Strength, Dexterity, Stamina, Spirit, and their skills: tests use the accuracy of the controlled target. Perception and skills: Search, Alertness, and Track: these tests utilize the accuracy of the controlled target. Skills: Handling Animals and Disguises: the tests use the precision of Yamanaka. Intelligence and skills: the tests utilize the Yamanaka's precision. Social Tests: These utilize the accuracy of the Yamanaka test, but with bonuses or penalties based on the relationships between the controlled target and other people. Common Powers and Abilities: Yamanaka can only use powers, effects, and abilities that exist on both character sheets (his own and the controlled target's, at the lowest level between them). Restricted Powers and Abilities: The Yamanaka only receive permanent benefits, such as the passive Kagura Shingan. Any other parameter: use the levels an\n\nBasic Book 4.1.b, printed page 196. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "992270dd48db16",
+        "clan": "Yamanaka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 196,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 1,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 3: SHINDENSHIN NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(TECHNIQUE OF MENTAL TRANSMISSION) Ninjutsu /Hijutsu Action : Pattern Range: Medium (10m + 2m per Intelligence level) Duration: Concentration\nChakra Cost: Power Level This technique allows the user to communicate telepathically with other people. Benefits: Telepathic contact can be used to converse with the target, read or transmit memories to them, and can be performed with anyone the character knows or who is within their field of vision and within the range of the technique. Number of Targets: The user can communicate simultaneously with a number of targets equal to their power level. Resistance: A target who does not wish to receive mental communication is entitled to an Intelligence check to block it. Duration: This technique requires concentration to be maintained, and cannot last for more than one scene due to the mental strain involved. Communication Network: The character can still act as a means of communication between various people, allowing those targeted by power to communicate with each other through him. Upon reaching level 10 in this power, the user becomes able to use mechanisms that amplify mental waves, increasing the technique's capacity by 100 times (in number of targets and range). However, using This technique, when pushed to its limits, is dangerous to the character, who may suffer mental damage and cerebral hemorrhage. Mind Sensor: The Yamanaka can still use this technique as a tracking method, searching for people's consciousnesses. Activating the mind sensor is a partial action, costs 2 chakra points, and has a sustained duration. The sensor has a range of 10m + 2m per level in the Track skill. You become able to detect and differentiate all minds within the sensor's range.\n\nBasic Book 4.1.b, printed page 199. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 3
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "02decb4e117614",
+        "clan": "Yamanaka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 199,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 3,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 5: SHINTEN BUNSHIN NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(Multiple Mind Switching Technique) Ninjutsu /Hijutsu Action : Pattern Range: 10m Target : 2 bodies Duration: 10 minutes per level\nChakra Cost: 4 This technique allows the character to duplicate their consciousness and transfer it to two bodies simultaneously. The targets of the transfers must be inanimate bodies, corpses, or animals. of medium size or less, since divided consciousness is not strong enough to subdue a living human mind. Upon taking control of the new bodies, the user's own body becomes defenseless, applying the common rules of the Shintenshin no Jutsu to this technique. If the technique is used on corpses or inanimate bodies, the damage they suffered is still reflected in Yamanaka, and it is not possible to use any technique that the corpse possessed while alive. The controlled bodies have their own actions and are considered partners (see page 269), but only one of them, at your choice, will be subject to the damage reduction rule. Controlling Corpses: The ability to control corpses opens up many possibilities for using the Shinten Bunshin no Jutsu. Perhaps the player wants to have a collection of enemy corpses to use with this technique, or even create humanoid mechanical bodies and carry them using Fuuinjutsu. The Game Master should handle such situations with care and consistency, possibly requiring the player to have Medicine levels and the Medical Ninja skill to treat corpses, or Mechanism levels and the Engineer skill to create humanoids. Character sheets can be created as henchmen (see page 280), using the Medicine or Mechanism skill level as the character code, depending on the body type.\n\nBasic Book 4.1.b, printed page 199. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 5
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "f30ed5513fa5cf",
+        "clan": "Yamanaka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 199,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 5,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "LEVEL 6: SHINRANSHIN NO JUTSU",
+    "type": "elemento",
+    "system": {
+      "descricao": "(TECHNIQUE OF MENTAL DISORDER) Ninjutsu /Hijutsu Action : Pattern Range: Medium (10m + 2m per Intelligence level) Target: A creature Duration: Concentration\nChakra Cost: Power Level A ninjutsu technique where one sends their chakra into the target's nervous system, thus gaining complete control of their body. Usage: You do not perform tests. The victim is entitled to an immediate Intelligence test. If they fail, their body will become disconnected from their will and under the user's complete control. Controlling this technique follows the same rules as the Shintenshin no Jutsu, with the following differences: Intact Consciousness: You control the victim without transferring your consciousness to them, maintaining concentration. Therefore, all penalties you would suffer from having your mind outside your body (such as suffering damage during control or being defenseless) are nullified. Control: By maintaining concentration, you gain complete control over the victim's body, although they retain their consciousness and ability to speak. You can use the victim's own actions to move them, pick up objects and weapons, and attack, although you cannot make them perform more than common attacks (Strike, Shoot, and Throw Projectile) and basic defensive reactions. The controlled victim's actions are performed at the end of the Yamanaka's turn. All tests are made using the victim's precision. Cancellation: The rules that force the cancellation of this technique are the same as those of the Shintenshin no Jutsu. When the technique is canceled, the victim immediately recovers their actions consumed by Yamanaka during the control in that round. Number of Targets: Upon reaching power level 8, the number of targets for this technique increases to 3. Controlling 2 or more targets halves the damage they inflict.\n\nBasic Book 4.1.b, printed page 200. Classification: Section heading; restriction not independently confirmed.",
+      "nivel": 6
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "d60fdf33f71646",
+        "clan": "Yamanaka",
+        "category": "Level Techniques & Effects",
+        "printedPage": 200,
+        "classification": "Section heading; restriction not independently confirmed",
+        "source": "Basic Book 4.1.b",
+        "level": 6,
+        "extractionConfidence": "Source heading"
+      }
+    }
+  },
+  {
+    "name": "Sanshoku no Gan'yaku (Three Colored Pills)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "The Three Colored Pills are secret medicines used by the Akimichi clan. The set contains three pills:\n\nGreen Spinach Pill (Hōrengan) — allows Calorie Control at Level 1 (Green).\nYellow Curry Pill (Karēgan) — allows Calorie Control at Level 2 (Yellow).\nRed Pepper Pill (Tongarashigan) — allows Calorie Control at Level 3 (Red).\n\nAccess: All Akimichi have free access to these items. The pills occupy 1 equipment compartment.\n\nEffect: Each pill permits use of Calorie Control at the corresponding color level, even without meeting that level's Stamina prerequisite. See the Akimichi Calorie Control aptitude for its benefits, penalties, and risks.\n\nAction: Taking and swallowing a pill in combat is a partial action. Taking the Yellow pill temporarily negates the Green pill's fatigue; taking the Red pill temporarily negates the Yellow pill's fatigue.\n\nDanger: Combining colored pills with Soldier's Pills causes poisoning. The Red pill may be fatal without treatment or a successful Stamina test; see the Calorie Control rules.\n\nSource: Basic Book 4.1.b, printed pages 154–155 (Akimichi Clan).",
+      "nivel": 0,
+      "quantidade": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "basic-akimichi-sanshoku-no-ganyaku",
+        "clan": "Akimichi",
+        "category": "Clan Consumables",
+        "equipmentKind": "consumable",
+        "consumable": true,
+        "restricted": "Clan-associated secret medicine",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          154,
+          155
+        ]
+      }
+    }
+  },
+  {
+    "name": "Hōrengan (Green Spinach Pill)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Akimichi clan secret medicine; one of the Sanshoku no Gan’yaku (Three Colored Pills). Consuming this pill allows use of Calorie Control at level 1 (Green), even without meeting the normal Stamina prerequisite. Taking and swallowing the pill during combat is a partial action. Apply the specific Calorie Control level benefits, fatigue, and risks from the Akimichi clan rules; do not treat this as a harmless healing potion. The pills occupy one equipment compartment as a set. Source: Basic Book 4.1.b, printed pages 154–155.",
+      "nivel": 0,
+      "quantidade": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "akimichi-pill-green",
+        "clan": "Akimichi",
+        "category": "Clan Consumables",
+        "equipmentKind": "consumable",
+        "consumable": true,
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          154,
+          155
+        ],
+        "level": 1
+      }
+    }
+  },
+  {
+    "name": "Karēgan (Yellow Curry Pill)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Akimichi clan secret medicine; one of the Sanshoku no Gan’yaku (Three Colored Pills). Consuming this pill allows use of Calorie Control at level 2 (Yellow), even without meeting the normal Stamina prerequisite. Taking and swallowing the pill during combat is a partial action. Apply the specific Calorie Control level benefits, fatigue, and risks from the Akimichi clan rules; do not treat this as a harmless healing potion. The pills occupy one equipment compartment as a set. Source: Basic Book 4.1.b, printed pages 154–155.",
+      "nivel": 0,
+      "quantidade": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "akimichi-pill-yellow",
+        "clan": "Akimichi",
+        "category": "Clan Consumables",
+        "equipmentKind": "consumable",
+        "consumable": true,
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          154,
+          155
+        ],
+        "level": 2
+      }
+    }
+  },
+  {
+    "name": "Tongarashigan (Red Pepper Pill)",
+    "type": "equipamento",
+    "system": {
+      "descricao": "Akimichi clan secret medicine; one of the Sanshoku no Gan’yaku (Three Colored Pills). Consuming this pill allows use of Calorie Control at level 3 (Red), even without meeting the normal Stamina prerequisite. Taking and swallowing the pill during combat is a partial action. Apply the specific Calorie Control level benefits, fatigue, and risks from the Akimichi clan rules; do not treat this as a harmless healing potion. The pills occupy one equipment compartment as a set. Source: Basic Book 4.1.b, printed pages 154–155.",
+      "nivel": 0,
+      "quantidade": 1
+    },
+    "flags": {
+      "sns-basic-book-clans": {
+        "uid": "akimichi-pill-red",
+        "clan": "Akimichi",
+        "category": "Clan Consumables",
+        "equipmentKind": "consumable",
+        "consumable": true,
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          154,
+          155
+        ],
+        "level": 3
+      }
+    }
+  }
+]

@@ -1,0 +1,19 @@
+Shinobi no Sho Revamp — Kuchiyose patch 1.6.4
+
+Changes:
+- Corrected chakra deduction to system.energias.chakra.value (the actual Revamp data model).
+- Summons are positioned beside the summoner's token with footprint collision checks.
+- Size selector offers six core creature sizes: Tiny, Small, Medium, Large, Huge, Immense, subject to NC/species restrictions.
+- Summoned actor stores NC and size/reach, and its prototype and spawned token use the selected size.
+- Added Doki (Club), Doki (Claws), Doki (Armless) as separate dropdown choices and supplied token artwork.
+- Doki (Claws) uses Tekko-kagi: Advanced Shinobi Guide pp. 69–72, +3/+1, critical 15–16, Slashing/Piercing.
+- Doki (Club) uses Club; Doki (Armless) uses Unarmed Strike.
+- Existing Doki variants share the Doki blood contract.
+
+Limitations:
+- Size modifiers are stored on the summon profile, not fully integrated with all roll formulas.
+- The source profile for Doki does not provide complete stats or club weapon numerical data.
+- NC 4+ attribute point distribution, half-Vitality creature formula and combat/Command Partner automation still need system-level implementation.
+- GM required for spawning and chakra deduction; player control is inherited where actor ownership is configured.
+- Already-created summon actors/tokens are not retroactively updated.
+- Not tested in a live Foundry world.

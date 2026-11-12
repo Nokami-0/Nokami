@@ -1,0 +1,1 @@
+English interface, original character sheet layout retained. Responsive reflow changes removed. Windows remain manually resizable. The dark theme in screenshots may depend on Foundry theme or external styling and is not included in the supplied source files.

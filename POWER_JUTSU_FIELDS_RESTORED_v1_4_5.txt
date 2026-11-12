@@ -1,0 +1,1 @@
+v1.4.5: Restores Power/Jutsu Details tab, level, prerequisites, effects, and legacy cost alongside separate Chakra/Vitality costs. Keeps existing internal item types and keys. No character/item migration or overwriting. Foundry runtime not tested.

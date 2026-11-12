@@ -1,0 +1,1 @@
+Updated emoji and navigation/section icons to monochrome Foundry Font Awesome icons inspired by the supplied screenshots. Original layout, responsive behavior, translations and mechanics are retained. Icons use the Font Awesome font bundled with Foundry. Appearance has not been verified inside Foundry.

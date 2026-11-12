@@ -1,0 +1,1 @@
+v1.4.1: Added Status Effects Open/Edit button to actor sheet Defenses & Conditions, a scrollable 26-condition selector, active-condition chips with click-to-remove, and status synchronization via Actor.toggleStatusEffect. Retains all existing armor automation and features. Requires Foundry v12/13. Not live tested.

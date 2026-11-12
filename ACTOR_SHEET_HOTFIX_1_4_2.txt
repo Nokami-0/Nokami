@@ -1,0 +1,1 @@
+Actor sheet hotfix 1.4.2: use Array.from for Foundry ActiveEffect collections before flatMap; avoid reliance on foundry.utils.escapeHTML in status dialog and armor damage chat output. Preserves armor and status features. Back up your world and replace the system folder. Not runtime-tested in Foundry.

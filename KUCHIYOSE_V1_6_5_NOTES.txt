@@ -1,0 +1,9 @@
+KUCHIYOSE v1.6.5
+- Six visible size choices: Tiny, Small, Medium, Large, Huge, Gargantuan.
+- Gargantuan uses the Immense size tier (+5 Strength/Vigor, 4m reach) from the supplied table.
+- Size options not permitted at the selected NC/species are disabled.
+- Player-owned summoner actors grant the same players Owner access to newly created summon actors; linked tokens can be selected and moved.
+- Species skills and aptitude options are recorded separately on summon actor; aptitude options are NOT free automatically acquired aptitudes.
+- Natural attack equipment items show melee type, damage type, and the summon damage formula.
+- Actual creature skills and size modifiers are NOT fully hooked into the system's roll formulas; NC 4+ attribute allocation remains manual.
+- Requires GM to initiate summon creation; no live Foundry test performed.

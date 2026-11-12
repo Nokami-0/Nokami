@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Cannon",
+    "type": "elemento",
+    "effectLevel": 1,
+    "sourcePage": 95,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Cannon. Source: Shinobi no Sho Basic Book 4.1b, PDF page 95. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Ray",
+    "type": "elemento",
+    "effectLevel": 2,
+    "sourcePage": 96,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Ray. Source: Shinobi no Sho Basic Book 4.1b, PDF page 96. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Create Weapon",
+    "type": "elemento",
+    "effectLevel": 2,
+    "sourcePage": 96,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Create Weapon. Source: Shinobi no Sho Basic Book 4.1b, PDF page 96. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Restrictive",
+    "type": "elemento",
+    "effectLevel": 3,
+    "sourcePage": 97,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Restrictive. Source: Shinobi no Sho Basic Book 4.1b, PDF page 97. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Barrier",
+    "type": "elemento",
+    "effectLevel": 3,
+    "sourcePage": 97,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Barrier. Source: Shinobi no Sho Basic Book 4.1b, PDF page 97. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Arrows",
+    "type": "elemento",
+    "effectLevel": 3,
+    "sourcePage": 98,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Arrows. Source: Shinobi no Sho Basic Book 4.1b, PDF page 98. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Column",
+    "type": "elemento",
+    "effectLevel": 4,
+    "sourcePage": 99,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Column. Source: Shinobi no Sho Basic Book 4.1b, PDF page 99. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Spear",
+    "type": "elemento",
+    "effectLevel": 4,
+    "sourcePage": 99,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Spear. Source: Shinobi no Sho Basic Book 4.1b, PDF page 99. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Ricochet",
+    "type": "elemento",
+    "effectLevel": 4,
+    "sourcePage": 99,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Ricochet. Source: Shinobi no Sho Basic Book 4.1b, PDF page 99. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Energize",
+    "type": "elemento",
+    "effectLevel": 4,
+    "sourcePage": 100,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Energize. Source: Shinobi no Sho Basic Book 4.1b, PDF page 100. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Cloud",
+    "type": "elemento",
+    "effectLevel": 4,
+    "sourcePage": 100,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Cloud. Source: Shinobi no Sho Basic Book 4.1b, PDF page 100. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Destructive Breath",
+    "type": "elemento",
+    "effectLevel": 5,
+    "sourcePage": 101,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Destructive Breath. Source: Shinobi no Sho Basic Book 4.1b, PDF page 101. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Missile",
+    "type": "elemento",
+    "effectLevel": 5,
+    "sourcePage": 101,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Missile. Source: Shinobi no Sho Basic Book 4.1b, PDF page 101. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Current",
+    "type": "elemento",
+    "effectLevel": 5,
+    "sourcePage": 101,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Current. Source: Shinobi no Sho Basic Book 4.1b, PDF page 101. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Handcuffs",
+    "type": "elemento",
+    "effectLevel": 6,
+    "sourcePage": 102,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Handcuffs. Source: Shinobi no Sho Basic Book 4.1b, PDF page 102. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  },
+  {
+    "name": "Explosive Wave",
+    "type": "elemento",
+    "effectLevel": 6,
+    "sourcePage": 102,
+    "sourceBook": "Shinobi no Sho Basic Book 4.1b (English), PDF page",
+    "description": "General Ninpou power effect reference: Explosive Wave. Source: Shinobi no Sho Basic Book 4.1b, PDF page 102. The effect is presented in the general Powers section rather than a clan or Hijutsu chapter. Check the source for exact prerequisites, permitted elements, chakra costs, actions, damage, evolutions and level; this reference item does not automate them."
+  }
+]

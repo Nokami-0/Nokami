@@ -1,0 +1,9 @@
+Aptitude compendium categories v1.7.5
+
+Rebuild Organized Compendiums as GM to create folders in the Aptitudes pack:
+Basic Book / Shinobi, General, Technique, Maneuver, Combat Aptitudes, Free Choice Options
+Advanced Book / same six categories.
+
+IMPORTANT: This update creates category folders with rulebook reference entries, NOT a complete transcription of every aptitude. The current system ZIP contains no standalone aptitude catalog. Existing clan/Hijutsu compendiums remain separate. The Basic Book's English translation calls aptitudes 'Skills' (p. 56-58); the Advanced Guide lists revised Kuchiyose aptitudes (p. 46-47). Each reference entry is clearly marked. Do not treat reference entries as purchased abilities.
+
+Live Foundry behavior not tested.

@@ -1,0 +1,11 @@
+Shinobi no Sho v1.7.2: weapon stats, classification, costs and consumable poisons
+
+Rebuild Organized Compendiums as GM after backing up your world.
+- Weapons retain original source sections (Basic, Special, Advanced Extras) and group by class (Simple, Martial, Natural, Firearms, Ammunition, Explosives, etc.).
+- Source damage modifiers, damage types, attack/range, critical, slots, and Ryo prices populate existing equipment sheet fields.
+- 14 special entries remain separate. Some have variable damage or special abilities; descriptions and source notes are retained. Those abilities are not automatically resolved in combat.
+- Poison entries have a dedicated Consumable Poisons > Category 0–6/Special hierarchy, quantity, price per dose, transmission, and difficulty data.
+- General items and services source catalog is now included with original prices.
+- Null source prices remain unknown, not zero; source fields are not invented.
+- Poisons are flagged consumable and have dose quantities; using a poison is not automatically deducted by a universal item-use action because the base system does not provide one. Adjust quantity on the sheet after use.
+- The importer is not live-tested in Foundry. Rebuilding replaces generated compendium entries, not custom items.
