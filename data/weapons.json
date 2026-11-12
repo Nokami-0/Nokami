@@ -3520,7 +3520,7 @@
   {
     "name": "Egg Spear",
     "type": "attack",
-    "img": "systems/sonic-tag-team-heroes/assets/tokens/egg-pawn-elite.png",
+    "img": "systems/sonic-tag-team-heroes/assets/egg-spear.svg",
     "system": {
       "skill": "melee",
       "damage": 6,
@@ -3538,7 +3538,8 @@
         "weaponKey": "16163632e2b1f1b72e47",
         "weaponCategory": "Equipment",
         "resaleValue": 100,
-        "valuation": "Homebrew estimated value"
+        "valuation": "Homebrew estimated value",
+        "artVersion": "egg-spear-1"
       }
     }
   },
