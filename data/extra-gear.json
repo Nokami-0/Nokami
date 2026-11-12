@@ -21,5 +21,28 @@
         "homebrew": true
       }
     }
+  },
+  {
+    "name": "Egg Spiked Shield",
+    "type": "gear",
+    "img": "systems/sonic-tag-team-heroes/assets/egg-spiked-shield.svg",
+    "system": {
+      "description": "Reusable physical shield. Grants DR 1 while equipped and functional; only the strongest equipped armor DR applies. Use the existing Spiked Shield Bash attack (Melee, damage 5, reach 1 square) for an Action to strike one adjacent target. Requires this shield to be usable; GM verifies the shield is equipped. No automatic contact damage, free retaliation or free attack when blocking.",
+      "source": "Community homebrew — untested; uses existing Egg Pawn Spiked Shield Bash profile",
+      "damageReduction": 1,
+      "slots": 1,
+      "equipped": false,
+      "removable": true,
+      "gearKind": "physical-shield",
+      "quantity": 1,
+      "price": 200,
+      "notes": "Homebrew price: 200 Mobiums. Do not equip alongside another physical shield. Does not stack DR with armor or grant an additional Dodge bonus. Import Spiked Shield Bash separately from Weapons & Prices; that attack adds no additional gear-slot cost."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "egg-spiked-shield-1",
+        "homebrew": true
+      }
+    }
   }
 ]
