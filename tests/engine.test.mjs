@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {pool,tally,advantageFixed,advantageOpposed,attackDamage,tagDamage,blastResult,ringSpill,applyDamage,skillCost,validateCreation,movement,zoneRank,qteThreshold} from '../module/engine.js';
-test('Attribute/rank pools add one mastery d6 per rank, preserving zero skill and helpers',()=>{assert.deepEqual(pool(4,2),{hit:6,trick:0,total:6});assert.deepEqual(pool(2,4),{hit:6,trick:0,total:6});assert.deepEqual(pool(3,0),{hit:3,trick:0,total:3});assert.equal(pool(4,2,{upgrade:5}).trick,4);assert.equal(pool(4,2,{downgrade:3}).trick,0);});
+test('Attribute/rank pools add one mastery d6 per rank, preserving zero skill and helpers',()=>{assert.deepEqual(pool(4,2),{hit:4,trick:2,total:6});assert.deepEqual(pool(2,4),{hit:6,trick:2,total:8});assert.deepEqual(pool(3,0),{hit:3,trick:0,total:3});assert.equal(pool(4,2,{upgrade:5}).trick,4);assert.equal(pool(4,2,{downgrade:3}).trick,0);});
 test('book skill example, Tricks and Slips independently survive success/failure',()=>{let r=tally([3,5],[6,7],{difficulty:2});assert.equal(r.hits,3);assert.equal(r.tricks,1);r=tally([5,5],[0,1],{difficulty:2});assert.equal(r.success,true);assert.equal(r.tricks,1);assert.equal(r.slips,1);});
 test('Critical Tricks add exactly one hit, Critical Slips do not remove hits',()=>{const r=tally([1,1],[9,1],{difficulty:3});assert.equal(r.hits,2);assert.equal(r.criticalTricks,1);assert.equal(r.criticalSlips,1);assert.equal(r.success,false);assert.equal(tally([5,5,5]).hits,4);assert.equal(tally([],[7,7]).hits,3);});
 test('multiple results use disjoint groups, and cross die types count together',()=>{const r=tally([5,5,5,5,5,5,1],[1,0,0]);assert.equal(r.criticalTricks,2);assert.equal(r.tricks,0);assert.equal(r.slips,1);assert.equal(r.criticalSlips,1);});
@@ -21,10 +21,10 @@ test('movement, QTE rows threshold, zone ranks',()=>{assert.deepEqual([1,2,3,4,5
 test('a failed NPC breath save inflicts a crit even without weapon damage',()=>{const state={hp:20,crits:0,threshold:1,pc:false};const first=applyDamage(state,0,{critical:true});assert.equal(first.crits,1);assert.equal(first.hp,20);assert.equal(first.stunned,true);const second=applyDamage(first,0,{critical:true});assert.equal(second.hp,10);});
 
 test('mastery ranks 0 through 4 add exactly one d6 each',()=>{
- for(let rank=0;rank<=4;rank++){const standard=pool(4,0),mastered=pool(4,rank);assert.equal(mastered.hit-standard.hit,rank);assert.equal(mastered.trick,standard.trick);assert.equal(mastered.total-standard.total,rank);}
+ for(let rank=0;rank<=4;rank++){const standard=pool(4,rank,{masteryRanks:0}),mastered=pool(4,rank);assert.equal(mastered.hit-standard.hit,rank);assert.equal(mastered.trick,standard.trick);assert.equal(mastered.total-standard.total,rank);}
 });
-test('explicit upgrades spare mastery d6 and Advantage overflow adds base d6',()=>{
+test('helpers cannot upgrade mastery d6 and Advantage overflow is not mastery',()=>{
  assert.deepEqual(pool(4,2,{upgrade:99}),{hit:2,trick:4,total:6});
  assert.deepEqual(pool(4,2,{downgrade:99}),{hit:6,trick:0,total:6});
- assert.deepEqual(pool(4,5,{masteryRanks:2}),{hit:9,trick:0,total:9});
+ assert.deepEqual(pool(4,5,{masteryRanks:2}),{hit:3,trick:4,total:7});
 });
