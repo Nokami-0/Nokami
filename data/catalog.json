@@ -325,7 +325,7 @@
   {
     "name": "Cool Sunglasses",
     "type": "gear",
-    "img": "systems/sonic-tag-team-heroes/assets/ring.svg",
+    "img": "systems/sonic-tag-team-heroes/assets/sunglasses.svg",
     "system": {
       "description": "Increase the selected attribute by 1, maximum 6. Not susceptible to tampering.",
       "source": "STTH 1.5.0, p. 40",
@@ -335,6 +335,11 @@
       "price": 600,
       "ringPrice": 60,
       "gearKind": "upgrade-charisma"
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "sunglasses-1"
+      }
     }
   },
   {
