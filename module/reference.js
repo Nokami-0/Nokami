@@ -41,6 +41,13 @@ export async function buildUploadedLibrary(){return buildFactionLibrary('token-a
 async function buildFactionLibrary(file,label,key,packName=file){
  if(!game.user.isGM)return;
  const rows=await(await fetch(`systems/${ID}/data/${file}.json`)).json();
+ if(file==='gun'){
+  const diablon=await(await fetch(`systems/${ID}/data/diablon.json`)).json();
+  const existingRow=rows.find(r=>r.flags?.[ID]?.gunKey==='Diablon'||r.name==='Diablon');
+  if(existingRow){existingRow.img=diablon.img;existingRow.prototypeToken??={};existingRow.prototypeToken.texture??={};existingRow.prototypeToken.texture.src=diablon.img;existingRow.flags??={};existingRow.flags[ID]??={};existingRow.flags[ID].communityRosterVersion=diablon.flags[ID].communityRosterVersion;}
+  else rows.push(diablon);
+ }
+
  let pack=game.packs.get(`world.stth-${packName}`);
  if(!pack)pack=await CompendiumCollection.createCompendium({name:`stth-${packName}`,label:`STTH — ${label}`,type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const locked=pack.locked;if(locked)await pack.configure({locked:false});
