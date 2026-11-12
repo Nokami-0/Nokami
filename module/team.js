@@ -17,7 +17,7 @@ export async function tagTeam(actor,item){owned(actor);const choices=actorChoice
  const attacks=partner.items.filter(i=>i.type==='attack'&&!i.system.disabled&&(!i.system.slots||i.system.equipped)).sort((a,b)=>itemDamage(partner,b)-itemDamage(partner,a));if(!attacks.length)throw Error('Partner needs an attack.');
  await attack(partner,attacks[0],{spend:false});if(support.success)await attack(partner,attacks[0],{spend:false});return;
  }
- const ar=await dice(pool(actor.system.derived.attributes[SKILLS[sk]],actor.system.derived.ranks[sk]+d.overflow));const br=await dice(pool(partner.system.derived.attributes[SKILLS[pk]],partner.system.derived.ranks[pk]));const dr=await dice(d,{defense:true});
+ const ar=await dice(pool(actor.system.derived.attributes[SKILLS[sk]],actor.system.derived.ranks[sk]+d.overflow,{masteryRanks:actor.system.derived.ranks[sk]}));const br=await dice(pool(partner.system.derived.attributes[SKILLS[pk]],partner.system.derived.ranks[pk]));const dr=await dice(d,{defense:true});
  let baseA=highest(actor),baseB=highest(partner,pk);if(cost===15){baseA=Math.max(1,baseA+item.system.damage)+num(o.bonus);}
  let dmg=tagDamage(cost,ar.hits,br.hits,dr.hits,baseA,baseB,{spentHits:num(o.spent)});
  if(cost===5&&actor.system.heroType==='speed'&&ar.hits>dr.hits)dmg.damage+=2*ar.criticalTricks;
