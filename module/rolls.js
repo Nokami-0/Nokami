@@ -30,7 +30,7 @@ export async function rollSkill(actor,skill,{difficulty=1,advantage=0,upgrade=0,
  const pp=pool(a,r+adjusted.overflow,{upgrade,downgrade,masteryRanks:r});
  if(dazzled&&!Math.min(a,r))adjusted.difficulty++;
  const result=await dice(pp,{difficulty:adjusted.difficulty,mode});
- await card(actor,`${skill} check`,renderResult(result)+`<p>Pool ${pp.hit}d6 + ${pp.trick}d10 (attribute d6 + 1d6 per effective skill rank; only explicit Trick Die effects create d10s, whose face 10 reads as 0). Difficulty ${adjusted.difficulty}: <b>${result.success?'Success':'Failure'}</b>.</p><p>Player chooses Tricks; opponent chooses Slips. Effects do not cancel each other.</p>`,{rolls:result.rolls,data:{kind:'check',actor:actor.uuid,skill,result:{...result,rolls:undefined}}});
+ await card(actor,`${skill} check`,renderResult(result)+`<p>Pool ${pp.hit}d6 + ${pp.trick}d10 (includes +1 mastery d6 per effective skill rank; d10 face 10 reads as 0). Difficulty ${adjusted.difficulty}: <b>${result.success?'Success':'Failure'}</b>.</p><p>Player chooses Tricks; opponent chooses Slips. Effects do not cancel each other.</p>`,{rolls:result.rolls,data:{kind:'check',actor:actor.uuid,skill,result:{...result,rolls:undefined}}});
  if(dazzled)for(const e of actor.effects.filter(e=>e.statuses.has('dazzled')))await e.delete();
  return result;
 }
