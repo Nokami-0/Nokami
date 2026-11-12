@@ -1,3 +1,4 @@
+import {armorReduction,reduceArmorDamage} from './armor.js';
 import {applyDamage,clamp,skillCost,SKILLS} from './engine.js';
 import {owned,prompt,field,select,card,num,spendPhase,dice} from './rolls.js';
 import {conditionStacks} from './actor.js';
@@ -8,14 +9,16 @@ export async function condition(actor,id,stacks=1){owned(actor);const max=['stun
  const data={name:CONDITIONS[id],img:`systems/${ID}/assets/${id}.svg`,statuses:[id],flags:{[ID]:{stacks:Math.min(max,stacks),round:game.combat?.round??0,turn:game.combat?.turn??0}}};
  if(existing)await existing.update({[`flags.${ID}.stacks`]:Math.min(max,stacks)});else await actor.createEmbeddedDocuments('ActiveEffect',[data]);
 }
-export async function damage(actor,amount,{critical=false,shield=true}={}){owned(actor);const s=actor.system;if(s.hpNotApplicable)throw Error('This part has HP N/A. Target its damageable core or configured boss form; apply statuses separately.');
+export async function damage(actor,amount,{critical=false,shield=true,bypassArmor=false}={}){owned(actor);const s=actor.system;if(s.hpNotApplicable)throw Error('This part has HP N/A. Target its damageable core or configured boss form; apply statuses separately.');
  const state={hp:s.hp.value,rings:s.rings||0,crits:s.crits,pc:actor.type==='character',threshold:s.critThreshold||0};
- const r=applyDamage(state,amount,{critical,shield:shield&&Boolean(s.shield)});
+ const armor=reduceArmorDamage(amount,armorReduction(actor.items),{bypass:bypassArmor,shield:shield&&Boolean(s.shield)});
+ const r=applyDamage(state,armor.damage,{critical:critical&&(armor.incoming===0||armor.damage>0),shield:shield&&Boolean(s.shield)});
+ r.armorPrevented=armor.prevented;
  const update={'system.hp.value':r.hp,'system.crits':r.crits};if(actor.type==='character')update['system.rings']=r.rings;if(r.shieldBroken)update['system.shield']='';
  await actor.update(update);if(r.stunned)await condition(actor,'stunned',Math.max(1,conditionStacks(actor,'stunned')));if(r.ko)await condition(actor,'ko');
- await card(actor,'Damage resolved',`<p>${r.damage} damage. HP ${r.hp}. ${r.shieldBroken?'Shield broke and absorbed the hit.':''}${r.spilled?` ${r.spilled} Rings are recoverable for one round; GM places them on accessible adjacent squares.`:''}${r.stunned?' Stunned.':''}${r.ko?' KO.':''}</p><p>Spilled Rings are not automatically placed or collected. Energy/fire shield exceptions must be chosen before applying damage.</p>`);return r;
+ await card(actor,'Damage resolved',`<p>${r.damage} damage. ${r.armorPrevented?`Armor prevented ${r.armorPrevented} damage. `:''}HP ${r.hp}. ${r.shieldBroken?'Shield broke and absorbed the hit.':''}${r.spilled?` ${r.spilled} Rings are recoverable for one round; GM places them on accessible adjacent squares.`:''}${r.stunned?' Stunned.':''}${r.ko?' KO.':''}</p><p>Spilled Rings are not automatically placed or collected. Energy/fire shield exceptions must be chosen before applying damage.</p>`);return r;
 }
-export async function damageDialog(actor){const o=await prompt('Apply damage',field('damage','Damage',0)+select('critical','Inflict a critical hit?',{no:'No',yes:'Yes'},'no')+select('shield','Use active shield?',{yes:'Yes — negate this hit and break shield',no:'No — bypass shield / exempt damage'},'yes'));if(o)await damage(actor,num(o.damage),{critical:o.critical==='yes',shield:o.shield==='yes'});}
+export async function damageDialog(actor){const o=await prompt('Apply damage',field('damage','Damage',0)+select('armor','Apply armor damage reduction?',{yes:'Yes',no:'No — bypass armor'},'yes')+select('critical','Inflict a critical hit?',{no:'No',yes:'Yes'},'no')+select('shield','Use active shield?',{yes:'Yes — negate this hit and break shield',no:'No — bypass shield / exempt damage'},'yes'));if(o)await damage(actor,num(o.damage),{critical:o.critical==='yes',shield:o.shield==='yes',bypassArmor:o.armor==='no'});}
 export async function healRings(actor){owned(actor);const o=await prompt('Spend Rings',field('rings','Rings to spend (up to 5 per Interact)',Math.min(5,actor.system.rings))+select('resource','Recover',{hp:'HP',tp:'TP'},'hp'));if(!o)return;
  const count=clamp(num(o.rings),0,5),s=actor.system;if(count>s.rings)throw Error('Not enough Rings.');if(o.resource==='tp'&&s.underwater)throw Error('Rings cannot restore TP while underwater.');const max=o.resource==='hp'?s.derived.hpMax:s.derived.tpMax;const restored=Math.min(count,max-s[o.resource].value);if(restored<=0)return;
  if(!conditionStacks(actor,'ko'))await spendPhase(actor,'interact');await actor.update({'system.rings':s.rings-restored,[`system.${o.resource}.value`]:s[o.resource].value+restored});if(o.resource==='hp'&&s.hp.value>0&&!(s.underwater&&s.tp.value===0))await condition(actor,'ko',0);
