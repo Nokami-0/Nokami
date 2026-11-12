@@ -44,5 +44,32 @@
         "homebrew": true
       }
     }
+  },
+  {
+    "name": "Terminal Velocity Spear",
+    "type": "attack",
+    "img": "systems/sonic-tag-team-heroes/assets/terminal-velocity-spear.svg",
+    "system": {
+      "skill": "melee",
+      "damage": 6,
+      "damageMode": "fixed",
+      "range": 2,
+      "slots": 1,
+      "source": "Community homebrew — untested; Terminal Velocity armored background Pawn from Sonic Colors / Ultimate",
+      "equipped": false,
+      "removable": true,
+      "description": "Action; one target within 2 squares. Requires equipped, functioning spear. Uses normal Melee versus defense. Range 2 is a homebrew reach adaptation. No free charge, reaction strike, extra hit or automatic knockback.",
+      "gearKind": "terminal-velocity-spear",
+      "price": 200,
+      "notes": "Homebrew estimated price: 200 Mobiums. Removable weapon; equip to attack. Same profile as the Terminal Velocity Pawn spear."
+    },
+    "flags": {
+      "sonic-tag-team-heroes": {
+        "artVersion": "terminal-velocity-spear-1",
+        "weaponKey": "community-terminal-velocity-spear",
+        "weaponCategory": "Equipment",
+        "homebrew": true
+      }
+    }
   }
 ]
