@@ -47,7 +47,7 @@
     {
       "name": "Terminal Velocity Spear",
       "type": "attack",
-      "img": "systems/sonic-tag-team-heroes/assets/tokens/terminal-velocity-pawn.svg",
+      "img": "systems/sonic-tag-team-heroes/assets/terminal-velocity-spear.svg",
       "system": {
         "skill": "melee",
         "damage": 6,
@@ -59,6 +59,14 @@
         "removable": true,
         "description": "Action; one target within 2 squares. Requires equipped, functioning spear. Uses normal Melee versus defense. Range 2 is a homebrew reach adaptation. No free charge, reaction strike, extra hit or automatic knockback.",
         "gearKind": "terminal-velocity-spear"
+      },
+      "flags": {
+        "sonic-tag-team-heroes": {
+          "artVersion": "terminal-velocity-spear-1",
+          "weaponKey": "community-terminal-velocity-spear",
+          "weaponCategory": "Equipment",
+          "homebrew": true
+        }
       }
     },
     {
