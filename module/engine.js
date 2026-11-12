@@ -6,11 +6,12 @@ export const clamp=(n,min,max)=>Math.min(max,Math.max(min,Number(n)||0));
 export const int=n=>Math.max(0,Math.trunc(Number(n)||0));
 export const movement=s=>s<=0?0:s<3?2:s<4?4:s<6?8:16;
 export function pool(attribute,ranks,{upgrade=0,downgrade=0,masteryRanks=ranks}={}){
- attribute=int(attribute);ranks=int(ranks);const total=Math.max(attribute,ranks);
- // Standard upgrades/downgrades modify the original pool, not mastery dice.
- const trick=clamp(Math.min(attribute,ranks)+int(upgrade)-int(downgrade),0,total);
- const mastery=int(masteryRanks);
- return {hit:total-trick+mastery,trick,total:total+mastery};
+ attribute=int(attribute);ranks=int(ranks);
+ const mastery=int(masteryRanks),overflow=Math.max(0,ranks-mastery);
+ const base=attribute+overflow,total=base+mastery;
+ // Ranks add d6s only. Explicit Trick Die effects affect the base dice.
+ const trick=clamp(int(upgrade)-int(downgrade),0,base);
+ return {hit:total-trick,trick,total};
 }
 export function advantageFixed(difficulty,advantage=0){
  const d=int(difficulty),a=Math.trunc(Number(advantage)||0);
