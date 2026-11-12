@@ -1,8 +1,8 @@
 {
-  "id": "sonic-tag-team-heroes",
-  "title": "Sonic Tag-Team Heroes",
-  "description": "Native Foundry V14 rebuild of the unofficial STTH 1.5.0 conversion. Original game by McShmoodle.",
-  "version": "2.0.55",
+  "id": "original-stth",
+  "title": "Original STTH",
+  "description": "Original STTH 1.5.0 rules for Foundry V14. Original game by McShmoodle. Separate original-rules edition without custom mastery dice, armor DR, Block or Parry.",
+  "version": "1.0.0",
   "compatibility": {
     "minimum": "14",
     "maximum": "14",
@@ -52,7 +52,7 @@
       "path": "lang/en.json"
     }
   ],
-  "url": "https://github.com/Nokami-0/Nokami",
-  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/system.json",
-  "download": "https://github.com/Nokami-0/Nokami/archive/refs/heads/main.zip"
+  "url": "https://github.com/Nokami-0/Nokami/tree/original-stth",
+  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/original-stth/system.json",
+  "download": "https://github.com/Nokami-0/Nokami/archive/refs/heads/original-stth.zip"
 }

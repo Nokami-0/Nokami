@@ -1,5 +1,5 @@
 import {dice,card} from './rolls.js';import {conditionStacks} from './actor.js';import {damage,condition} from './resources.js';
-const ID='sonic-tag-team-heroes';
+const ID='original-stth';
 export class STTHCombat extends foundry.documents.Combat {
  async rollInitiative(ids,{updateTurn=true,messageOptions={}}={}){
  ids=typeof ids==='string'?[ids]:ids;const updates=[];

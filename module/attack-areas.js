@@ -1,7 +1,7 @@
 import {owned,prompt,field,select} from './rolls.js';
 import {areaDefaults,buildAttackShape} from './attack-shapes.js';
 export {attackShapeLabel} from './attack-shapes.js';
-const ID='sonic-tag-team-heroes';
+const ID='original-stth';
 export async function placeAttackTemplate(actor,item){
  owned(actor);
  if(!canvas?.scene||typeof canvas.regions?.placeRegion!=='function')throw Error('Open a scene with Foundry V14 Regions enabled.');

@@ -1,32 +1,41 @@
-# Sonic Tag-Team Heroes for Foundry VTT 14 — 2.0.12
+# Original STTH
 
-Unofficial adaptation of STTH 1.5.0. Original game by McShmoodle.
+A separate Foundry VTT V14 edition using the original **Sonic Tag-Team Heroes 1.5.0** rules by **McShmoodle**. This is an unofficial community adaptation, not a release by the original author.
 
-## Install or update
+This edition lives on the `original-stth` branch. The customized system remains on `main`, and Shinobi no Sho remains on its own branch.
 
-In Foundry Setup → Game Systems → Install System, paste:
+## Install
+
+Foundry Setup → Game Systems → Install System → Manifest URL:
 
 ```text
-https://raw.githubusercontent.com/Nokami-0/Nokami/main/system.json
+https://raw.githubusercontent.com/Nokami-0/Nokami/original-stth/system.json
 ```
 
-Existing installs can use Check for Update. Launch the world as GM and let the library finish building. If needed, use Configure Settings → Sonic Tag-Team Heroes → STTH Library → Build / Repair Library.
+The system ID is `original-stth` and its displayed name is **Original STTH**, so it can be installed alongside the customized `sonic-tag-team-heroes` system. Create a new world using Original STTH. Do not change an existing world's system ID to switch editions; keep the existing world as-is and transfer reviewed character/item exports to a new world if needed.
 
-## Enemies and uploaded artwork
+Manual download: https://github.com/Nokami-0/Nokami/archive/refs/heads/original-stth.zip
 
-- **STTH — Uploaded Enemies & Vehicles:** all 250 uploaded token variants, each with playable stats and abilities. 87 inherit recovered authored profiles; 163 use new, explicitly marked homebrew encounter profiles.
-- **STTH — Eggman Empire:** 277 profiles, including the recovered roster and new homebrew enemies and vehicles.
-- **STTH — G.U.N.:** 30 profiles.
-- **STTH — Henchmen:** the original 11 entries.
+Extract the archive and rename its top folder to `original-stth` under Foundry user data `Data/systems/`. `system.json` must be directly inside that folder. Restart Foundry.
 
-These collections overlap: uploaded variants reuse appropriate faction stats. Drag a compendium entry into Actors, then onto a scene. Previously imported world Actors are preserved; import a fresh copy to use updated art and stats. An older NPC Token Art compendium may remain in existing worlds; use Uploaded Enemies & Vehicles for the playable versions.
+## Original mechanics
 
-Ships, transports and other crewed vehicle profiles require an assigned pilot Actor UUID. Large ships and bases use provisional encounter abstractions rather than full-scale simulations. Homebrew profiles are untested starting values, not official STTH statistics. Special traits that need GM handling say so in their descriptions.
+- Dice pool: take the larger of attribute or skill rank as the total number of dice; upgrade the smaller number to d10 Trick Dice (book p11). No additional mastery d6s. Power 4 / Melee 2 rolls **2d6 + 2d10**.
+- Standard defense uses Dodge (book p25). Custom Power Block, Speed Parry, Parry TP rewards and next-attack penalties are absent.
+- Protective/Defensive Gear grants **+1 Dodge** (book p95), not damage reduction. Vehicle Light Armor grants +5 HP; Heavy Armor grants +10 HP and −1 Speed, not DR (book p109). Existing vehicle upgrade descriptions require GM application to the vehicle profile.
+- Original damage, Rings, Crits, HP/TP, advancement, Signature Attacks, Tag-Team Attacks and Team Blast resolution remain.
+- Artificial universal magazine capacities and custom weapon prices are excluded. Explicit limited-ammunition rules can still be configured when a printed profile calls for them.
 
-Includes character, NPC, vehicle and item sheets, combat helpers, resources and equipment catalogs. Rulebook PDFs are not included; use your own STTH 1.5.0 copy.
+## Library and interface
 
-## Credits and validation
+The default library contains 94 existing item/reference entries identified as STTH 1.5.0 sources, plus the existing book-derived vehicle and Henchman profiles. Community enemy/weapon rosters, extra gear and boss-form conversions are excluded. Artwork assets remain available for users' own tokens. This is the original-rules edition of the current conversion; it is not a claim that every page or NPC in the book has been fully automated.
 
-Original game by McShmoodle. Sonic characters belong to SEGA. Token artwork supplied by the user; original artists retain their rights.
+Readability changes, separate Gear organization, square measurement, optional visual effects and attack-area previews remain as interface tools; they do not replace the book's rules. The GM adjudicates range/cover, special conditions, area eligibility and printed exceptions where automation is incomplete.
 
-Automated tests cover rules, derived stats, artwork paths and repeat compendium imports. Live Foundry VTT 14 testing remains pending. See AUDIT.md for limitations in the base system.
+## Validation
+
+63 automated engine, integration, sheet and equipment tests passed before publishing, including a regression proving legacy DR and Block options do not reduce incoming damage. All shipped JavaScript modules pass syntax checks. Manifest/import/template paths and local data JSON were checked. A live Foundry session was not available for runtime validation.
+
+## Credit
+
+Original game: **McShmoodle**. Rulebook: **Sonic Tag-Team Heroes v1.5.0**. Sonic and associated characters belong to their respective rights holders. This branch is an unofficial fan conversion; no authorship or ownership of the original game or supplied art is claimed.

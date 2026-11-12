@@ -1,4 +1,3 @@
-import {defend} from './defenses.js';
 import {placeAttackTemplate,attackShapeLabel} from './attack-areas.js';
 import {vehicleAction} from './vehicles.js';
 import {loadoutWizard} from './loadouts.js';
@@ -10,7 +9,7 @@ import {conditionStacks,itemDamage} from './actor.js';
 
 const {HandlebarsApplicationMixin}=foundry.applications.api;
 const {ActorSheetV2,ItemSheetV2}=foundry.applications.sheets;
-const ROOT='systems/sonic-tag-team-heroes';
+const ROOT='systems/original-stth';
 
 // V14 document forms: no legacy ActorSheet, jQuery, or activateListeners.
 export class HeroSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
@@ -57,27 +56,18 @@ export class HeroSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   if(['gear','attack','vehicleUpgrade'].includes(data.type))data.system.equipped=false;
   const [created]=await this.actor.createEmbeddedDocuments('Item',[data]);return created;
  }
- async _prepareContext(options){const c=await super._prepareContext(options);c.actor=this.actor;c.hasForms=!!this.actor.flags?.['sonic-tag-team-heroes']?.forms;c.formLabel=this.actor.flags?.['sonic-tag-team-heroes']?.form==='flight'?'Flight Mode':'Combat Mode';const s=this.actor.system;c.system=s;c.vehicle=this.actor.type==='vehicle';c.character=this.actor.type==='character';c.npc=this.actor.type==='npc';c.technique=c.character&&s.heroType==='technique';c.types={speed:'Speed',power:'Power',fly:'Fly',technique:'Technique'};c.archetypes={genius:'Genius',figurehead:'Figurehead',generalist:'Generalist'};
+ async _prepareContext(options){const c=await super._prepareContext(options);c.actor=this.actor;const s=this.actor.system;c.system=s;c.vehicle=this.actor.type==='vehicle';c.character=this.actor.type==='character';c.npc=this.actor.type==='npc';c.technique=c.character&&s.heroType==='technique';c.types={speed:'Speed',power:'Power',fly:'Fly',technique:'Technique'};c.archetypes={genius:'Genius',figurehead:'Figurehead',generalist:'Generalist'};
  c.attributes=Object.entries(ATTRIBUTES).map(([key,label])=>({key,label,value:s.attributes?.[key],effective:s.derived.attributes?.[key],skills:Object.entries(SKILLS).filter(([,attribute])=>attribute===key).map(([skill])=>({key:skill,ranks:s.skills?.[skill],effective:s.derived.ranks?.[skill]}))}));
  c.skills=Object.entries(SKILLS).map(([key,attribute])=>({key,attribute,ranks:s.skills?.[key],effective:s.derived.ranks?.[key]}));
  c.skillChoices=Object.fromEntries(Object.keys(SKILLS).map(k=>[k,k]));c.itemGroups=['attack','talent','gear','consumable','tagTeam','special','vehicleWeapon','vehicleUpgrade','reference'].map(type=>({type,label:{attack:'Signature Attacks',talent:'Talents',gear:'Gear',consumable:'Items & Consumables',tagTeam:'Tag-Team Attacks',special:'Special',vehicleWeapon:'Vehicle Weapons',vehicleUpgrade:'Vehicle Upgrades',reference:'Rule References'}[type],items:this.actor.items.filter(i=>i.type===type).map(i=>({id:i.id,name:i.name,type:i.type,system:i.system,img:i.img,damage:i.type==='attack'?itemDamage(this.actor,i):i.system.damage,shapeLabel:attackShapeLabel(i),templatable:['attack','vehicleWeapon'].includes(i.type),rollable:['attack','tagTeam','vehicleWeapon'].includes(i.type),gear:['gear','vehicleUpgrade'].includes(i.type)||(i.type==='attack'&&i.system.slots>0),consumable:i.type==='consumable'}))})).filter(g=>g.items.length||!c.vehicle&&['attack','talent','gear','consumable','tagTeam','special'].includes(g.type)||c.vehicle&&['vehicleWeapon','vehicleUpgrade'].includes(g.type));
  // Keep weapon documents as attacks so their Roll, ammo and area actions still work.
- const isWeapon=i=>i.type==='vehicleWeapon'||i.type==='attack'&&(Number(i.system.slots)>0||!!this.actor.items.get(i.id)?.flags?.['sonic-tag-team-heroes']?.weaponKey);
+ const isWeapon=i=>i.type==='vehicleWeapon'||i.type==='attack'&&(Number(i.system.slots)>0||!!this.actor.items.get(i.id)?.flags?.['original-stth']?.weaponKey);
  c.gearGroups=c.itemGroups.map(g=>({...g,label:g.type==='attack'?'Weapons':g.label,items:g.items.filter(i=>['gear','consumable','vehicleUpgrade'].includes(i.type)||isWeapon(i))})).filter(g=>g.items.length||['gear','consumable'].includes(g.type));
  c.abilityGroups=c.itemGroups.map(g=>({...g,items:g.items.filter(i=>!['gear','consumable','vehicleUpgrade'].includes(i.type)&&!isWeapon(i))})).filter(g=>g.items.length||['attack','talent'].includes(g.type));
  c.conditions=Object.entries(CONDITIONS).map(([id,label])=>({id,label,stacks:conditionStacks(this.actor,id)}));return c;}
  async action(action,button){const a=this.actor,s=a.system;const item=a.items.get(button.closest('[data-item-id]')?.dataset.itemId);
  if(['edit','delete','roll','equip','use','recharge','template'].includes(action)&&!item)throw Error('This item is no longer on the actor. Reopen the sheet.');
  if(a.type==='vehicle'&&['loadout','skill','rings','rest','adventure','advance','create','blast','qte','zone','breath','surface','session','special','end','resetQte'].includes(action))throw Error('Use these character actions on the pilot’s sheet.');
- if(action==='transform'){
-  owned(a);const flags=a.flags?.['sonic-tag-team-heroes'];if(!flags?.forms)throw Error('This actor has no alternate form.');
-  if(s.phases.interact)throw Error('Interact phase already spent.');
-  const next=flags.form==='flight'?'combat':'flight';await spendPhase(a,'interact');
-  await a.update({'flags.sonic-tag-team-heroes.form':next,'system.attributes.speed':next==='flight'?5:3,'system.profileMovement':next==='flight'?6:3,img:flags.forms[next],'prototypeToken.texture.src':flags.forms[next]});
-  for(const token of a.getActiveTokens?.()||[])await token.document.update({'texture.src':flags.forms[next]});
-  return;
- }
- if(action==='block'||action==='parry')return defend(a,action);
  if(action==='template')return placeAttackTemplate(a,item);
  if(action==='vehicleAction')return vehicleAction(a);if(action==='loadout')return loadoutWizard(a);if(action==='rules')return openRules();if(action==='skill')return rollSkill(a,button.dataset.skill);if(action==='dodge')return rollDodge(a);if(action==='edit')return item.sheet.render({force:true});if(action==='delete'){owned(a);if(await foundry.applications.api.DialogV2.confirm({rejectClose:false,window:{title:'Delete item?'},content:`<p>Delete ${esc(item.name)} from this actor?</p>`}))return item.delete();return;}
  if(action==='roll')return item.type==='tagTeam'?tagTeam(a,item):attack(a,item);if(action==='equip')return equip(a,item);if(action==='use')return useItem(a,item);

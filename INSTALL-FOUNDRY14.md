@@ -1,3 +1,5 @@
-# Installation
+# Original STTH — Foundry V14 installation
 
-See README.md for manifest installation, updating and compendium locations. See MANUAL-INSTALL.txt for manual folder placement. Requires Foundry VTT 14.
+Follow the manifest or manual installation instructions in README.md. System ID: `original-stth`. Manifest: https://raw.githubusercontent.com/Nokami-0/Nokami/original-stth/system.json
+
+Native V14 sheets are retained. Live runtime testing remains pending.

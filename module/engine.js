@@ -1,16 +1,14 @@
-// STTH rules plus the user's additive skill-mastery house rule. No Foundry globals.
+// Original STTH 1.5.0 dice and resolution rules. No Foundry globals.
 export const ATTRIBUTES={speed:'Speed',power:'Power',dexterity:'Dexterity',intellect:'Intellect',charisma:'Charisma'};
 export const SKILLS={spin:'speed',acrobat:'speed',run:'speed',melee:'power',move:'power',climb:'power',ranged:'dexterity',sneak:'dexterity',ride:'dexterity',perceive:'intellect',tech:'intellect',knowledge:'intellect',persuade:'charisma',deceive:'charisma',resolve:'charisma'};
 export const ROWS={spin:0,melee:0,ranged:0,perceive:0,persuade:0,acrobat:1,move:1,sneak:1,tech:1,deceive:1,run:2,climb:2,ride:2,knowledge:2,resolve:2};
 export const clamp=(n,min,max)=>Math.min(max,Math.max(min,Number(n)||0));
 export const int=n=>Math.max(0,Math.trunc(Number(n)||0));
 export const movement=s=>s<=0?0:s<3?2:s<4?4:s<6?8:16;
-export function pool(attribute,ranks,{upgrade=0,downgrade=0,masteryRanks=ranks}={}){
+export function pool(attribute,ranks,{upgrade=0,downgrade=0}={}){
  attribute=int(attribute);ranks=int(ranks);const total=Math.max(attribute,ranks);
- // Standard upgrades/downgrades modify the original pool, not mastery dice.
  const trick=clamp(Math.min(attribute,ranks)+int(upgrade)-int(downgrade),0,total);
- const mastery=int(masteryRanks);
- return {hit:total-trick+mastery,trick,total:total+mastery};
+ return {hit:total-trick,trick,total};
 }
 export function advantageFixed(difficulty,advantage=0){
  const d=int(difficulty),a=Math.trunc(Number(advantage)||0);

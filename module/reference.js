@@ -1,11 +1,11 @@
 const {CompendiumCollection}=foundry.documents.collections;
 const {Actor,Item,Folder}=foundry.documents;
 import {esc} from './rolls.js';
-const ID='sonic-tag-team-heroes';let rules;
+const ID='original-stth';let rules;
 const {ApplicationV2,HandlebarsApplicationMixin}=foundry.applications.api;
 export class RulesReference extends HandlebarsApplicationMixin(ApplicationV2){
  static DEFAULT_OPTIONS={id:'stth-rules',classes:['stth','stth-reference'],position:{width:940,height:780},window:{title:'STTH — Quick Reference',resizable:true}};
- static PARTS={body:{template:'systems/sonic-tag-team-heroes/templates/reference.hbs'}};
+ static PARTS={body:{template:'systems/original-stth/templates/reference.hbs'}};
  async _prepareContext(options){const c=await super._prepareContext(options);rules??=await(await fetch(`systems/${ID}/data/rules.json`)).json();return {...c,query:this._query||''};}
  _onRender(context,options){super._onRender(context,options);const input=this.element.querySelector('.stth-search');input.addEventListener('input',event=>{this._query=event.target.value;this.renderResults();});this.renderResults();}
  renderResults(){const matches=rules.filter(p=>!this._query||p.text.toLowerCase().includes(this._query.toLowerCase()));this.element.querySelector('.count').textContent=`${matches.length} sections. Showing first 20; refine your search.`;this.element.querySelector('.results').innerHTML=matches.slice(0,20).map(p=>`<article><h3>Section ${p.page}</h3><pre>${esc(p.text)}</pre></article>`).join('');}
@@ -14,103 +14,23 @@ let referenceApp;
 export function openRules(){referenceApp??=new RulesReference();return referenceApp.render({force:true});}
 export class LibraryManager extends HandlebarsApplicationMixin(ApplicationV2){
  static DEFAULT_OPTIONS={id:'stth-library-manager',classes:['stth'],position:{width:520,height:300},window:{title:'STTH Library'},actions:{build:LibraryManager.build}};
- static PARTS={body:{template:'systems/sonic-tag-team-heroes/templates/library.hbs'}};
+ static PARTS={body:{template:'systems/original-stth/templates/library.hbs'}};
  static async build(event,target){target.disabled=true;try{await buildLibrary();ui.notifications.info('STTH library is ready.');}catch(error){console.error(error);ui.notifications.error(error.message);}finally{target.disabled=false;}}
 }
 export async function buildLibrary(){if(!game.user.isGM)return;
- const catalog=await (await fetch(`systems/${ID}/data/catalog.json`)).json();catalog.push(...await(await fetch(`systems/${ID}/data/extra-gear.json`)).json());let pack=game.packs.get('world.stth-library');if(!pack)pack=await CompendiumCollection.createCompendium({name:'stth-library',label:'STTH — Abilities & Equipment',type:'Item',package:'world',ownership:{PLAYER:'OBSERVER'}});
+ const catalog=await (await fetch(`systems/${ID}/data/catalog.json`)).json();let pack=game.packs.get('world.original-stth-library');if(!pack)pack=await CompendiumCollection.createCompendium({name:'original-stth-library',label:'STTH — Abilities & Equipment',type:'Item',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const locked=pack.locked;if(locked)await pack.configure({locked:false});
  try{const docs=await pack.getDocuments();const folders=new Map();let count=0;
  for(const raw of catalog){const key=`core:${raw.type}:${raw.name}`;const existing=docs.find(d=>d.getFlag(ID,'catalogKey')===key);if(existing){const art=raw.flags?.[ID]?.artVersion;if(art&&existing.getFlag(ID,'artVersion')!==art)await existing.update({img:raw.img,[`flags.${ID}.artVersion`]:art});continue;}let folder=folders.get(raw.type)||pack.folders.find(f=>f.name===raw.type)?.id;if(!folder){const f=await Folder.create({name:raw.type,type:'Item',sorting:'a'},{pack:pack.collection});folder=f.id;}folders.set(raw.type,folder);await Item.create({...raw,folder,flags:{...raw.flags,[ID]:{...raw.flags?.[ID],catalogKey:key}}},{pack:pack.collection});count++;}
  ui.notifications.info(`STTH library ready: ${count} new items.`);
  }finally{if(locked)await pack.configure({locked:true});}
- let ap=game.packs.get('world.stth-vehicles');if(!ap)ap=await CompendiumCollection.createCompendium({name:'stth-vehicles',label:'STTH — Vehicles',type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
+ let ap=game.packs.get('world.original-stth-vehicles');if(!ap)ap=await CompendiumCollection.createCompendium({name:'original-stth-vehicles',label:'STTH — Vehicles',type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const wasLocked=ap.locked;if(wasLocked)await ap.configure({locked:false});try{const docs=await ap.getDocuments();const rows=await(await fetch(`systems/${ID}/data/actors.json`)).json();for(const row of rows)if(!docs.some(d=>d.getFlag(ID,'catalogKey')===row.name))await Actor.create({...row,img:`systems/${ID}/assets/vehicle.svg`,flags:{[ID]:{catalogKey:row.name}}},{pack:ap.collection});}finally{if(wasLocked)await ap.configure({locked:true});}
- let np=game.packs.get('world.stth-npcs');if(!np)np=await CompendiumCollection.createCompendium({name:'stth-npcs',label:'STTH — Henchmen',type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
+ let np=game.packs.get('world.original-stth-npcs');if(!np)np=await CompendiumCollection.createCompendium({name:'original-stth-npcs',label:'STTH — Henchmen',type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
  const nl=np.locked;if(nl)await np.configure({locked:false});try{const docs=await np.getDocuments();const rows=await(await fetch(`systems/${ID}/data/npcs.json`)).json();for(const row of rows)if(!docs.some(d=>d.getFlag(ID,'catalogKey')===row.name))await Actor.create({...row,flags:{[ID]:{catalogKey:row.name}}},{pack:np.collection});}finally{if(nl)await np.configure({locked:true});}
 
- await buildEggmanLibrary();await buildGunLibrary();await buildUploadedLibrary();await buildMechLibrary();await buildWeaponLibrary();
+
 
 }
 
 
-export async function buildEggmanLibrary(){return buildFactionLibrary('eggman-empire','Eggman Empire','eggmanKey');}
-export async function buildGunLibrary(){return buildFactionLibrary('gun','G.U.N.','gunKey');}
-export async function buildMechLibrary(){return buildFactionLibrary('eggman-mechs','Eggman Mechs — Vehicles','mechKey');}
-export async function buildUploadedLibrary(){return buildFactionLibrary('token-art','Uploaded Enemies & Vehicles','tokenArtKey','uploaded-enemies');}
-async function buildFactionLibrary(file,label,key,packName=file){
- if(!game.user.isGM)return;
- const rows=await(await fetch(`systems/${ID}/data/${file}.json`)).json();
- if(file==='token-art'){
-  const replacement=await(await fetch(`systems/${ID}/data/terminal-velocity-pawn.json`)).json();
-  const index=rows.findIndex(r=>r.flags?.[ID]?.tokenArtKey===replacement.flags[ID].tokenArtKey);
-  if(index>=0)rows[index]=replacement;else rows.push(replacement);
- }
-
- if(file==='gun'){
-  const diablon=await(await fetch(`systems/${ID}/data/diablon.json`)).json();
-  const existingRow=rows.find(r=>r.flags?.[ID]?.gunKey==='Diablon'||r.name==='Diablon');
-  if(existingRow){existingRow.img=diablon.img;existingRow.prototypeToken??={};existingRow.prototypeToken.texture??={};existingRow.prototypeToken.texture.src=diablon.img;existingRow.flags??={};existingRow.flags[ID]??={};existingRow.flags[ID].communityRosterVersion=diablon.flags[ID].communityRosterVersion;}
-  else rows.push(diablon);
- }
-
- let pack=game.packs.get(`world.stth-${packName}`);
- if(!pack)pack=await CompendiumCollection.createCompendium({name:`stth-${packName}`,label:`STTH — ${label}`,type:'Actor',package:'world',ownership:{PLAYER:'OBSERVER'}});
- const locked=pack.locked;if(locked)await pack.configure({locked:false});
- try{
-  const docs=await pack.getDocuments();const folders=new Map();
-  for(const row of rows){
-   const existing=docs.find(d=>d.getFlag(ID,key)===(row.flags?.[ID]?.[key]??row.name));
-   if(existing){
-    // Explicit revision rebuilds only the renamed Terminal Velocity Pawn template.
-    if(row.flags?.[ID]?.profileRevision==='terminal-velocity-1'&&existing.getFlag(ID,'profileRevision')!==row.flags[ID].profileRevision){
-     await existing.update({name:row.name,system:row.system,prototypeToken:row.prototypeToken,img:row.img,flags:row.flags});
-     if(existing.items.size)await existing.deleteEmbeddedDocuments('Item',existing.items.map(i=>i.id));
-     await existing.createEmbeddedDocuments('Item',row.items);
-    }
-
-    for(const item of row.items||[]){const match=existing.items?.find(i=>i.name===item.name);if(match)await syncAmmo(match,item);if(match&&item.flags?.[ID]?.artVersion&&match.getFlag(ID,'artVersion')!==item.flags[ID].artVersion)await match.update({img:item.img,[`flags.${ID}.artVersion`]:item.flags[ID].artVersion});}
-    // Upgrade the Giga Trooper compendium template; preserve imported world actors.
-    if(row.flags?.[ID]?.vehicleConversionVersion && existing.type!==row.type){
-     await existing.update({type:row.type,system:row.system,prototypeToken:row.prototypeToken,img:row.img,flags:row.flags});
-     if(existing.items.size)await existing.deleteEmbeddedDocuments('Item',existing.items.map(i=>i.id));
-     await existing.createEmbeddedDocuments('Item',row.items);
-     const folder=pack.folders.find(f=>f.name==='Vehicles')||await Folder.create({name:'Vehicles',type:'Actor',sorting:'a'},{pack:pack.collection});
-     await existing.update({folder:folder.id});
-    }
-
-    // Add newly supplied signature weapons without replacing customized compendium data.
-    for(const item of row.items||[]){
-     const addition=item.flags?.[ID]?.rosterAddition;
-     if(addition&&!existing.items.some(i=>i.flags?.[ID]?.rosterAddition===addition||i.name===item.name))await existing.createEmbeddedDocuments('Item',[item]);
-    }
-
-    if(row.flags?.[ID]?.communityRosterVersion && (existing.img!==row.img || existing.prototypeToken?.texture?.src!==row.prototypeToken?.texture?.src || existing.getFlag(ID,'communityRosterVersion')!==row.flags[ID].communityRosterVersion))await existing.update({img:row.img,'prototypeToken.texture.src':row.prototypeToken?.texture?.src||row.img,[`flags.${ID}.communityRosterVersion`]:row.flags[ID].communityRosterVersion});
-    continue;
-   }
-   const tier=row.type==='vehicle'?'Vehicles':row.system.npcTier;let folder=folders.get(tier)||pack.folders.find(f=>f.name===tier)?.id;
-   if(!folder){const f=await Folder.create({name:tier,type:'Actor',sorting:'a'},{pack:pack.collection});folder=f.id;}
-   folders.set(tier,folder);await Actor.create({...row,folder},{pack:pack.collection});
-  }
- }finally{if(locked)await pack.configure({locked:true});}
-}
-
-
-export async function buildWeaponLibrary(){
- if(!game.user.isGM)return;
- const rows=await(await fetch(`systems/${ID}/data/weapons.json`)).json();
- let pack=game.packs.get('world.stth-weapons');
- if(!pack)pack=await CompendiumCollection.createCompendium({name:'stth-weapons',label:'STTH — Weapons & Prices',type:'Item',package:'world',ownership:{PLAYER:'OBSERVER'}});
- const locked=pack.locked;if(locked)await pack.configure({locked:false});
- try{const docs=await pack.getDocuments();const keys=new Set(docs.map(d=>d.getFlag(ID,'weaponKey')));const folders=new Map();
- for(const row of rows){const flags=row.flags[ID];if(keys.has(flags.weaponKey)){const existing=docs.find(d=>d.getFlag(ID,'weaponKey')===flags.weaponKey);if(existing){await syncAmmo(existing,row);if(flags.artVersion&&existing.getFlag(ID,'artVersion')!==flags.artVersion)await existing.update({img:row.img,[`flags.${ID}.artVersion`]:flags.artVersion});}continue;}
- let folder=folders.get(flags.weaponCategory)||pack.folders.find(f=>f.name===flags.weaponCategory)?.id;
- if(!folder){folder=(await Folder.create({name:flags.weaponCategory,type:'Item',sorting:'a'},{pack:pack.collection})).id;folders.set(flags.weaponCategory,folder);}
- await Item.create({...row,folder},{pack:pack.collection});keys.add(flags.weaponKey);
- }}finally{if(locked)await pack.configure({locked:true});}
-}
-
-async function syncAmmo(existing,row){
- const version=row.flags?.[ID]?.ammoVersion;if(!version||existing.flags?.[ID]?.ammoVersion===version)return;
- await existing.update({'system.ammoLimited':true,'system.ammoMax':row.system.ammoMax,'system.quantity':existing.system.ammoLimited?Math.min(existing.system.quantity,row.system.ammoMax):row.system.quantity,[`flags.${ID}.ammoVersion`]:version});
-}

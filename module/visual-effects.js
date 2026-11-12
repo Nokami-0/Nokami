@@ -1,4 +1,4 @@
-const ID='sonic-tag-team-heroes';
+const ID='original-stth';
 export function sourceToken(actor){
  if(actor?.token?.object)return actor.token.object;
  const controlled=globalThis.canvas?.tokens?.controlled?.find(t=>t.actor?.uuid===actor?.uuid);

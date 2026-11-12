@@ -33,8 +33,8 @@ test('status stacks reduce Dodge, Restrained stops movement',()=>{const a=hero()
 test('Aqua shield and Sneakers apply their actual skill benefits',()=>{const a=hero();a.system.shield='aqua';a.system.sneakersRounds=3;a.prepareDerivedData();assert.equal(a.system.derived.ranks.spin,3);assert.equal(a.system.derived.movement,10);assert.equal(a.system.derived.immuneSuffocating,true);});
 test('negative NPC HP adjustment and squad bonuses preserve source HP',()=>{const a=hero('npc');a.system.attributes.power=2;a.system.hpBonus=-10;a.system.squadSize=3;a.system.squadSkills='melee';a.prepareDerivedData();assert.equal(a.system.derived.hpMax,15);assert.equal(a.system.derived.ranks.melee,2);});
 test('loadout builder validates Type perks and maximum damage',async()=>{const {buildLoadout}=await import('../module/loadouts.js');assert.equal(buildLoadout({type:'speed',skill:'spin',power:3,dexterity:3,mods:['spinDash','speedAccuracy']}).damage,1);assert.throws(()=>buildLoadout({type:'power',skill:'spin',power:3,dexterity:3,mods:['spinDash']}));assert.throws(()=>buildLoadout({type:'fly',skill:'ranged',power:3,dexterity:3,mods:['recharge','shorter','removableDamage']}));});
-test('catalog entries, local manifest and V14 compatibility are consistent',()=>{const root=new URL('../',import.meta.url);const m=JSON.parse(fs.readFileSync(new URL('system.json',root)));assert.equal(m.compatibility.minimum,'14');assert.equal(m.compatibility.maximum,'14');assert.equal(m.compatibility.verified,'14');assert.equal(m.version,'2.0.37');assert.equal(m.manifest,'https://raw.githubusercontent.com/Nokami-0/Nokami/main/system.json');assert.equal(m.download,'https://github.com/Nokami-0/Nokami/archive/refs/heads/main.zip');for(const i of JSON.parse(fs.readFileSync(new URL('data/catalog.json',root))))assert.ok(CONFIG.Item.dataModels[i.type],i.name);assert.equal(JSON.parse(fs.readFileSync(new URL('data/rules.json',root))).length,3);});
-test('every module import, template and manifest asset exists',()=>{const root=new URL('../',import.meta.url);const m=JSON.parse(fs.readFileSync(new URL('system.json',root)));for(const file of [...m.esmodules,...m.styles,...m.languages.map(l=>l.path)])assert.ok(fs.existsSync(new URL(file,root)));for(const file of fs.readdirSync(new URL('module/',root))){const source=fs.readFileSync(new URL('module/'+file,root),'utf8');for(const match of source.matchAll(/from\s+['"]([^'"]+)['"]/g))if(match[1].startsWith('.'))assert.ok(fs.existsSync(new URL(match[1],new URL('module/'+file,root))),match[1]);}for(const Class of [HeroSheet,GearSheet])for(const part of Object.values(Class.PARTS))assert.ok(fs.existsSync(new URL(part.template.replace('systems/sonic-tag-team-heroes/',''),root)));});
+test('catalog entries, local manifest and V14 compatibility are consistent',()=>{const root=new URL('../',import.meta.url);const m=JSON.parse(fs.readFileSync(new URL('system.json',root)));assert.equal(m.compatibility.minimum,'14');assert.equal(m.compatibility.maximum,'14');assert.equal(m.compatibility.verified,'14');assert.equal(m.version,'1.0.0');assert.equal(m.id,'original-stth');assert.equal(m.title,'Original STTH');assert.equal(m.manifest,'https://raw.githubusercontent.com/Nokami-0/Nokami/original-stth/system.json');assert.equal(m.download,'https://github.com/Nokami-0/Nokami/archive/refs/heads/original-stth.zip');for(const i of JSON.parse(fs.readFileSync(new URL('data/catalog.json',root))))assert.ok(CONFIG.Item.dataModels[i.type],i.name);assert.equal(JSON.parse(fs.readFileSync(new URL('data/rules.json',root))).length,3);});
+test('every module import, template and manifest asset exists',()=>{const root=new URL('../',import.meta.url);const m=JSON.parse(fs.readFileSync(new URL('system.json',root)));for(const file of [...m.esmodules,...m.styles,...m.languages.map(l=>l.path)])assert.ok(fs.existsSync(new URL(file,root)));for(const file of fs.readdirSync(new URL('module/',root))){const source=fs.readFileSync(new URL('module/'+file,root),'utf8');for(const match of source.matchAll(/from\s+['"]([^'"]+)['"]/g))if(match[1].startsWith('.'))assert.ok(fs.existsSync(new URL(match[1],new URL('module/'+file,root))),match[1]);}for(const Class of [HeroSheet,GearSheet])for(const part of Object.values(Class.PARTS))assert.ok(fs.existsSync(new URL(part.template.replace('systems/original-stth/',''),root)));});
 
 test('item bonuses and Sneakers cannot exceed four effective skill ranks (PDF p36)',()=>{const a=hero();a.system.skills.spin=3;a.system.sneakersRounds=3;a.system.shield='aqua';a.prepareDerivedData();assert.equal(a.system.derived.ranks.spin,4);});
 test('cancel Exchange Action without changing spent phases',async()=>{const a=hero();a.prepareDerivedData();let writes=0;a.update=async()=>writes++;await new HeroSheet({document:a}).action('exchange',{closest:()=>null});assert.equal(writes,0);});
@@ -52,154 +52,25 @@ test('night rest and adventure recovery respect maximum resources',async()=>{con
 test('damaged equipped gear can be removed rather than trapping its gear slots',async()=>{const {equip}=await import('../module/resources.js');const a=hero();let changes;await equip(a,{system:{equipped:true,broken:true},update:async u=>changes=u});assert.deepEqual(changes,{'system.equipped':false});});
 test('built Spin and Melee loadouts scale when Power changes',async()=>{const {buildLoadout}=await import('../module/loadouts.js');const {itemDamage}=await import('../module/actor.js');const a=hero();a.system.attributes.power=3;a.prepareDerivedData();const item={system:buildLoadout({type:'power',skill:'melee',power:3,dexterity:1,mods:[]})};assert.equal(itemDamage(a,item),5);a.system.attributes.power=4;a.prepareDerivedData();assert.equal(itemDamage(a,item),6);});
 
-const empire=JSON.parse(fs.readFileSync(new URL('../data/eggman-empire.json',import.meta.url)));
-function profile(row){const a=hero(row.type);a.name=row.name;a.system={...a.system,...structuredClone(row.system),attributes:{...a.system.attributes,...row.system.attributes},skills:{...a.system.skills,...row.system.skills}};a.items.push(...structuredClone(row.items));a.prepareDerivedData();return a;}
-test('all Empire profiles have distinct keys, valid attacks and intended HP/Dodge/Init/Move',()=>{assert.equal(empire.length,277);assert.equal(new Set(empire.map(r=>r.name)).size,277);for(const row of empire){const a=profile(row);assert.equal(a.system.hp.max,row.system.hp.max,row.name+' HP');assert.equal(a.system.derived.dodge,row.type==='vehicle'?row.system.dodge:row.system.profileDodge,row.name+' Dodge');assert.equal(a.system.derived.initiative,row.type==='vehicle'?0:row.system.profileInitiative,row.name+' Init');assert.equal(a.system.derived.movement,row.type==='vehicle'?row.system.movement:row.system.profileMovement,row.name+' Move');for(const item of row.items)if(item.type==='attack')assert.ok(a.system.skills[item.system.skill]!==undefined,item.name);}});
-test('book exceptions override ordinary derived stats: Egg Hammer and Dr Eggman',()=>{const hammer=profile(empire.find(r=>r.name==='Egg Hammer'));assert.equal(hammer.system.derived.dodge,2);assert.equal(hammer.system.hp.max,30);const eggman=profile(empire.find(r=>r.name==='Dr. Eggman'));assert.equal(eggman.system.derived.dodge,3);assert.equal(eggman.system.derived.initiative,3);assert.equal(eggman.system.hp.max,50);});
-test('Orbinaut loses Dodge when its ammunition is depleted',()=>{const a=profile(empire.find(r=>r.name==='Orbinaut'));const shot=a.items.find(i=>i.system.subtype==='orbinaut');shot.system.quantity=2;a.prepareDerivedData();assert.equal(a.system.derived.dodge,2);shot.system.quantity=0;a.prepareDerivedData();assert.equal(a.system.derived.dodge,0);});
-test('Klagen field has zero base damage and multipart N/A parts reject HP damage',async()=>{const {itemDamage}=await import('../module/actor.js');const {damage}=await import('../module/resources.js');const a=profile(empire.find(r=>r.name==='Klagen'));assert.equal(itemDamage(a,a.items[0]),0);for(const row of empire.filter(r=>r.system.hpNotApplicable))await assert.rejects(()=>damage(profile(row),10),/HP N\/A/);});
-test('boss machines inherit a selected pilot while keeping printed combat skill ranks',()=>{const pilot=hero();pilot.system.attributes.dexterity=5;pilot.system.attributes.intellect=6;pilot.system.skills.ranged=3;pilot.prepareDerivedData();game.actors={get:()=>pilot};const a=profile(empire.find(r=>r.name==='Egg Dragoon'));a.system.pilot='Actor.pilot';a.prepareDerivedData();assert.equal(a.system.derived.attributes.dexterity,7);assert.equal(a.system.derived.attributes.intellect,6);assert.equal(a.system.derived.ranks.ranged,3);assert.equal(a.system.derived.ranks.melee,4);delete game.actors;});
-test('Empire library import creates tier folders and does not duplicate actors when run twice',async()=>{const {buildEggmanLibrary}=await import('../module/reference.js');const priorFetch=globalThis.fetch;const priorActor=foundry.documents.Actor.create;const priorFolder=foundry.documents.Folder.create;const priorCreate=foundry.documents.collections.CompendiumCollection.createCompendium;let pack;const docs=[];game.packs={get:()=>pack};globalThis.fetch=async()=>({json:async()=>empire});foundry.documents.collections.CompendiumCollection.createCompendium=async()=>pack={locked:false,folders:[],collection:'world.stth-eggman-empire',getDocuments:async()=>[...docs]};foundry.documents.Folder.create=async data=>{const f={id:'folder'+pack.folders.length,...data};pack.folders.push(f);return f;};foundry.documents.Actor.create=async data=>{docs.push({...data,getFlag:(scope,key)=>data.flags[scope][key]});};try{await buildEggmanLibrary();await buildEggmanLibrary();assert.equal(docs.length,277);assert.deepEqual(pack.folders.map(f=>f.name).sort(),['Boss','Elite','Final Boss','Henchman','Sub-Boss','Vehicles']);}finally{globalThis.fetch=priorFetch;foundry.documents.Actor.create=priorActor;foundry.documents.Folder.create=priorFolder;foundry.documents.collections.CompendiumCollection.createCompendium=priorCreate;delete game.packs;}});
-test('limited ammunition and TP-cost attacks cannot be used without their resources',async()=>{const {attack}=await import('../module/rolls.js');const a=hero();a.prepareDerivedData();const old=foundry.applications.api.DialogV2.input;game.user.targets=new Set();foundry.applications.api.DialogV2.input=async()=>({defense:0,advantage:0,upgrade:0,downgrade:0,spent:0,squares:1});try{await assert.rejects(()=>attack(a,{name:'Empty',type:'attack',system:{ammoLimited:true,quantity:0}}),/ammunition/);a.system.tp.value=4;await assert.rejects(()=>attack(a,{name:'Plasma',type:'attack',system:{skill:'ranged',tpCost:15}}),/15 TP/);}finally{foundry.applications.api.DialogV2.input=old;}});
-test('successful NPC attack pays TP, spends ammunition and posts its result',async()=>{const {attack}=await import('../module/rolls.js');const a=hero('npc');a.prepareDerivedData();a.system.tp.value=15;const priorInput=foundry.applications.api.DialogV2.input,priorGet=game.settings.get,priorEvaluate=foundry.dice.Roll.prototype.evaluate;const C=foundry.documents.ChatMessage;const prior=[C.getSpeaker,C.applyRollMode,C.create];let result,updated;foundry.applications.api.DialogV2.input=async()=>({defense:0,advantage:0,upgrade:0,downgrade:0,spent:0,squares:1});foundry.dice.Roll.prototype.evaluate=async function(){this.dice=[{results:[{result:6}]}];return this;};game.settings.get=()=> 'publicroll';game.user.targets=new Set();C.getSpeaker=()=>({});C.applyRollMode=()=>{};C.create=async message=>{result=message;return message;};const item={name:'Test attack',type:'attack',system:{skill:'melee',damageMode:'fixed',damage:6,tpCost:5,ammoLimited:true,quantity:2,slots:0,description:'',effect:''},update:async changes=>updated=changes};try{await attack(a,item);assert.equal(a.lastUpdate['system.tp.value'],10);assert.equal(updated['system.quantity'],1);assert.match(result.content,/5 TP spent/);assert.equal(result.flags['sonic-tag-team-heroes'].damage,6);}finally{foundry.applications.api.DialogV2.input=priorInput;game.settings.get=priorGet;foundry.dice.Roll.prototype.evaluate=priorEvaluate;[C.getSpeaker,C.applyRollMode,C.create]=prior;}});
 
-const gun=JSON.parse(fs.readFileSync(new URL('../data/gun.json',import.meta.url)));
-test('GUN roster contains 39 distinct profiles with valid attacks and matching NPC resources',()=>{assert.equal(gun.length,39);assert.equal(new Set(gun.map(r=>r.name)).size,39);for(const row of gun){assert.equal(row.flags['sonic-tag-team-heroes'].gunKey,row.name);if(row.type==='npc'){const a=profile(row);assert.equal(a.system.hp.max,row.system.hp.max,row.name);assert.equal(a.system.derived.dodge,row.system.profileDodge,row.name);assert.equal(a.system.derived.initiative,row.system.profileInitiative,row.name);assert.equal(a.system.derived.movement,row.system.profileMovement,row.name);for(const item of row.items)if(item.type==='attack')assert.ok(a.system.skills[item.system.skill]!==undefined,item.name);}else assert.equal(row.type,'vehicle');}});
-test('human GUN personnel do not gain robot suffocation immunity',()=>{for(const row of gun.filter(r=>r.system.species==='Human')){assert.equal(profile(row).system.derived.immuneSuffocating,false,row.name);assert.ok(row.items.every(i=>i.system.modifierTarget!=='suffocating'));}});
-test('GUN flight, limited rockets and pilot references are configured explicitly',()=>{const beetle=profile(gun.find(r=>r.name==='Gun Beetle'));assert.equal(beetle.system.derived.canFly,true);const rocket=gun.find(r=>r.name==='Rocket Beetle').items.find(i=>i.type==='attack');assert.equal(rocket.system.quantity,4);assert.equal(rocket.system.ammoLimited,true);for(const row of gun.filter(r=>r.system.usesPilot)){assert.equal(row.system.pilotLabel,'G.U.N. Pilot / Driver');assert.ok(!row.system.bio.includes('Dr. Eggman'));}});
-test('GUN compendium import is independent, includes vehicles and avoids duplicates',async()=>{const {buildGunLibrary}=await import('../module/reference.js');const priorFetch=globalThis.fetch,priorActor=foundry.documents.Actor.create,priorFolder=foundry.documents.Folder.create,priorCreate=foundry.documents.collections.CompendiumCollection.createCompendium;let pack,config;const docs=[];game.packs={get:key=>key==='world.stth-gun'?pack:undefined};globalThis.fetch=async url=>{assert.match(url,/data\/gun\.json/);return{json:async()=>gun};};foundry.documents.collections.CompendiumCollection.createCompendium=async options=>{config=options;return pack={locked:false,folders:[],collection:'world.stth-gun',getDocuments:async()=>[...docs]};};foundry.documents.Folder.create=async data=>{const f={id:'gunfolder'+pack.folders.length,...data};pack.folders.push(f);return f;};foundry.documents.Actor.create=async data=>docs.push({...data,getFlag:(scope,key)=>data.flags[scope][key]});try{await buildGunLibrary();await buildGunLibrary();assert.equal(config.label,'STTH — G.U.N.');assert.equal(docs.length,39);assert.ok(pack.folders.some(f=>f.name==='Vehicles'));}finally{globalThis.fetch=priorFetch;foundry.documents.Actor.create=priorActor;foundry.documents.Folder.create=priorFolder;foundry.documents.collections.CompendiumCollection.createCompendium=priorCreate;delete game.packs;}});
-
-test('community roster art exists, preserves printed profiles, and uses explicit homebrew sources',()=>{
- const custom=empire.filter(r=>(r.system.profileSource??r.system.bio).includes('homebrew'));
- assert.equal(custom.length,243);
- for(const r of empire.filter(r=>r.flags['sonic-tag-team-heroes'].communityRosterVersion)){
-  assert.ok(fs.existsSync(new URL('../'+r.img.replace('systems/sonic-tag-team-heroes/',''),import.meta.url)),r.name);
-  assert.equal(r.prototypeToken.texture.src,r.img);
- }
- const moto=empire.find(r=>r.name==='Moto Bug');assert.equal(moto.system.profileMovement,4);assert.equal(moto.system.attributes.dexterity,1);
- assert.equal(empire.find(r=>r.name==='Eggrobo').system.hp.value,15);
- const forms=empire.find(r=>r.name==='E-2000').flags['sonic-tag-team-heroes'].forms;assert.ok(forms.combat&&forms.flight);assert.ok(fs.existsSync(new URL('../'+forms.flight.replace('systems/sonic-tag-team-heroes/',''),import.meta.url)));
+test('Original edition excludes custom defenses and DR controls',()=>{
+ const t=fs.readFileSync(new URL('../templates/actor.hbs',import.meta.url),'utf8');
+ assert.ok(!t.includes('data-stth="block"'));assert.ok(!t.includes('data-stth="parry"'));assert.ok(!t.includes('Armor DR'));
+ const m=JSON.parse(fs.readFileSync(new URL('../system.json',import.meta.url)));assert.equal(m.id,'original-stth');assert.match(m.manifest,/original-stth/);
 });
-
-
-test('Empire repair refreshes previously imported token art without changing stats or items',async()=>{
- const {buildEggmanLibrary}=await import('../module/reference.js');
- const priorFetch=globalThis.fetch,priorPacks=game.packs;
- const row=empire.find(r=>r.name==='Flapper — Laser');
- const updates=[];const existing={img:'old-generic-flapper.png',prototypeToken:{texture:{src:'old-generic-flapper.png'}},getFlag:(scope,key)=>key==='eggmanKey'?row.name:existing.artVersion,update:async patch=>{updates.push(patch);existing.artVersion=patch['flags.sonic-tag-team-heroes.communityRosterVersion'];existing.img=patch.img;existing.prototypeToken.texture.src=patch['prototypeToken.texture.src'];}};
- game.packs={get:()=>({locked:false,getDocuments:async()=>[existing]})};
- globalThis.fetch=async()=>({json:async()=>[row]});
- try{await buildEggmanLibrary();await buildEggmanLibrary();assert.equal(updates.length,1);assert.deepEqual(Object.keys(updates[0]).sort(),['img','prototypeToken.texture.src','flags.sonic-tag-team-heroes.communityRosterVersion'].sort());assert.equal(updates[0].img,row.img);assert.equal(updates[0]['prototypeToken.texture.src'],row.prototypeToken.texture.src);}finally{globalThis.fetch=priorFetch;game.packs=priorPacks;}
+test('Original library only ships printed equipment; protective gear uses Dodge',()=>{
+ const rows=JSON.parse(fs.readFileSync(new URL('../data/catalog.json',import.meta.url)));
+ assert.ok(rows.length>80);assert.ok(rows.every(r=>r.system.source.startsWith('STTH 1.5.0')));
+ const gear=rows.find(r=>r.name==='Defensive Gear');assert.equal(gear.system.modifier,'dodge');assert.equal(gear.system.modifierValue,1);assert.equal(gear.system.damageReduction,undefined);
+ const heavy=rows.find(r=>r.name==='Heavy Armor');assert.match(heavy.system.description,/10 HP/);assert.equal(heavy.system.damageReduction,undefined);
 });
-
-const uploads=JSON.parse(fs.readFileSync(new URL('../data/token-art.json',import.meta.url)));
-test('all 250 uploaded variants have artwork, valid attacks and stable HP',()=>{
- assert.equal(uploads.length,250);
- assert.equal(new Set(uploads.map(r=>r.flags['sonic-tag-team-heroes'].tokenArtKey)).size,250);
- for(const row of uploads){
-  assert.ok(!row.name.includes('[Token Art]'),row.name);
-  assert.ok(!row.system.bio.includes('configure stats'),row.name);
-  const actor=profile(row);assert.equal(actor.system.hp.max,row.system.hp.max,row.name);
-  assert.ok(row.items.length>0,row.name);
-  assert.ok(row.items.every(i=>['attack','vehicleWeapon','talent','gear','special'].includes(i.type)),row.name);
-  for(const image of [row.img,row.prototypeToken.texture.src,...row.items.map(i=>i.img).filter(Boolean)])assert.ok(fs.existsSync(new URL('../'+image.replace('systems/sonic-tag-team-heroes/',''),import.meta.url)),image);
-  for(const i of row.items.filter(i=>['attack','vehicleWeapon'].includes(i.type))){assert.ok(i.system.damage>=0,row.name);assert.ok(i.system.range>=0,row.name);assert.ok(Object.keys(CharacterData.defineSchema().skills.fields).includes(i.system.skill),row.name);}
- }
+test('Custom DR properties and Block option cannot reduce damage in Original edition',async()=>{
+ const {damage}=await import('../module/resources.js');const a=hero();a.system.attributes.power=4;a.prepareDerivedData();a.system.hp.value=25;a.items.push({type:'gear',system:{equipped:true,damageReduction:99}});
+ const C=foundry.documents.ChatMessage,prior=[C.getSpeaker,C.applyRollMode,C.create],priorGet=game.settings.get;
+ C.getSpeaker=()=>({});C.applyRollMode=()=>{};C.create=async m=>m;game.settings.get=()=> 'publicroll';
+ try{await damage(a,8,{block:true});assert.equal(a.lastUpdate['system.hp.value'],17);}finally{[C.getSpeaker,C.applyRollMode,C.create]=prior;game.settings.get=priorGet;}
 });
-test('playable uploaded compendium imports 250 actors without duplication',async()=>{
- const {buildUploadedLibrary}=await import('../module/reference.js');
- const priorFetch=globalThis.fetch,priorPacks=game.packs,priorActor=foundry.documents.Actor.create,priorFolder=foundry.documents.Folder.create,priorCreate=foundry.documents.collections.CompendiumCollection.createCompendium;
- let pack;const docs=[];
- game.packs={get:key=>key==='world.stth-uploaded-enemies'?pack:undefined};
- globalThis.fetch=async()=>({json:async()=>uploads});
- foundry.documents.collections.CompendiumCollection.createCompendium=async options=>{assert.equal(options.label,'STTH — Uploaded Enemies & Vehicles');return pack={locked:false,folders:[],collection:'world.stth-uploaded-enemies',getDocuments:async()=>[...docs]};};
- foundry.documents.Folder.create=async data=>{const folder={id:'upload'+pack.folders.length,...data};pack.folders.push(folder);return folder;};
- foundry.documents.Actor.create=async data=>docs.push({...data,getFlag:(scope,key)=>data.flags[scope][key]});
- try{await buildUploadedLibrary();await buildUploadedLibrary();assert.equal(docs.length,250);assert.ok(pack.folders.some(f=>f.name==='Vehicles'));}
- finally{globalThis.fetch=priorFetch;game.packs=priorPacks;foundry.documents.Actor.create=priorActor;foundry.documents.Folder.create=priorFolder;foundry.documents.collections.CompendiumCollection.createCompendium=priorCreate;}
-});
-
-test('GUN Tank uses a vehicle sheet, uploaded art, and priced vehicle weapons',()=>{
- const tank=gun.find(r=>r.name==='G.U.N. Tank');assert.equal(tank.type,'vehicle');assert.equal(tank.system.hp.max,60);assert.equal(tank.system.pilot,'');
- assert.ok(fs.existsSync(new URL('../assets/tokens/gun-tank.png',import.meta.url)));
- assert.equal(tank.prototypeToken.texture.src,tank.img);
- assert.deepEqual(tank.items.map(i=>i.type),['vehicleWeapon','vehicleWeapon']);
- assert.deepEqual(tank.items.map(i=>i.system.damage),[10,4]);
- const prices=JSON.parse(fs.readFileSync(new URL('../data/weapons.json',import.meta.url)));
- for(const item of tank.items)assert.equal(prices.find(w=>w.name===item.name).system.price,item.system.price);
-});
-
-test('GUN Police Car is an unarmed vehicle with supplied token and room for four',()=>{
- const car=gun.find(r=>r.name==='G.U.N. Police Car');assert.equal(car.type,'vehicle');assert.equal(car.system.passengers,4);assert.equal(car.system.hp.max,25);assert.equal(car.system.pilot,'');assert.equal(car.prototypeToken.texture.src,car.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-police-car.png',import.meta.url)));assert.ok(car.items.every(i=>i.type!=='vehicleWeapon'));assert.ok(car.items.some(i=>i.name==='Emergency Lights & Siren'));
-});
-
-test('Mad Convoy is a cargo vehicle with supplied art and a normal ram profile',()=>{
- const truck=gun.find(r=>r.name==='G.U.N. Mad Convoy');assert.equal(truck.type,'vehicle');assert.equal(truck.system.hp.max,60);assert.equal(truck.system.passengers,2);assert.equal(truck.system.speed+truck.system.power,8);assert.equal(truck.prototypeToken.texture.src,truck.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-mad-convoy.png',import.meta.url)));assert.ok(truck.items.every(i=>i.type!=='vehicleWeapon'));
-});
-
-test('Big Foot vehicle retains weapons, flight notes and uploaded art',()=>{
- const mech=gun.find(r=>r.name==='F-6t Big Foot — Vehicle');assert.equal(mech.type,'vehicle');assert.equal(mech.system.hp.max,65);assert.equal(mech.system.pilot,'');assert.equal(mech.items.filter(i=>i.type==='vehicleWeapon').length,3);assert.ok(mech.items.some(i=>i.name==='Can Fly'));assert.equal(mech.prototypeToken.texture.src,mech.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-bigfoot.png',import.meta.url)));
-});
-
-test('B3 Bigfoot has both laser cannon and homing missiles',()=>{
- const r=gun.find(x=>x.name==='B3 Bigfoot — Vehicle');assert.equal(r.type,'vehicle');assert.equal(r.system.hp.max,65);assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-b3-bigfoot.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Homing Missile Salvo'&&i.system.damage===8&&i.system.recharge===3&&i.system.advantage===1));const laser=r.items.find(i=>i.name==='B3 Laser Cannon');assert.equal(laser.type,'vehicleWeapon');assert.equal(laser.system.damage,10);assert.equal(laser.system.range,8);assert.equal(laser.system.recharge,1);
-});
-
-test('Flying Dog vehicle keeps flight, guns and homing missiles',()=>{
- const r=gun.find(x=>x.name==='R-1/A Flying Dog — Vehicle');assert.equal(r.type,'vehicle');assert.equal(r.system.hp.max,70);assert.equal(r.system.movement,8);assert.equal(r.system.pilot,'');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-flying-dog.png',import.meta.url)));assert.equal(r.items.filter(i=>i.type==='vehicleWeapon').length,3);assert.ok(r.items.some(i=>i.name==='Flying Dog Laser Cannon'&&i.system.damage===10&&i.system.recharge===1));assert.ok(r.items.some(i=>i.name==='Can Fly'));assert.ok(r.items.some(i=>i.name==='Homing Missile Salvo'&&i.system.recharge===3));
-});
-
-test('Giga Trooper is a pilot-operated vehicle with supplied token',()=>{
- const r=gun.find(x=>x.name==='G.U.N. Giga Trooper');assert.equal(r.type,'vehicle');assert.equal(r.system.pilot,'');assert.equal(profile(r).system.hp.max,45);assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-giga-trooper.png',import.meta.url)));assert.equal(r.items.filter(i=>i.type==='vehicleWeapon').length,2);
-});
-
-test('GUN Helicopter vehicle has uploaded art and visible flight trait',()=>{
- const r=gun.find(x=>x.name==='G.U.N. Helicopter');assert.equal(r.type,'vehicle');assert.equal(r.system.hp.max,30);assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-helicopter.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Can Fly'));
-});
-
-test('GUN Helicopter carries the art-inspired nose cannon and rocket pods',()=>{
- const r=gun.find(x=>x.name==='G.U.N. Helicopter');const ws=r.items.filter(i=>i.type==='vehicleWeapon');assert.equal(ws.length,2);assert.deepEqual(ws.map(i=>i.system.damage),[6,8]);assert.deepEqual(ws.map(i=>i.system.recharge),[0,3]);assert.ok(ws.every(i=>i.flags['sonic-tag-team-heroes'].rosterAddition));assert.ok(!r.system.bio.includes('Unarmed transport'));
-});
-
-test('Blue Eagle vehicle has flight, supplied art and missile weapon',()=>{
- const r=gun.find(x=>x.name==='Blue Eagle — Vehicle');assert.equal(r.type,'vehicle');assert.equal(r.system.hp.max,25);assert.equal(r.system.pilot,'');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-blue-eagle.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Missile Pass'&&i.type==='vehicleWeapon'&&i.system.recharge===3));assert.ok(r.items.some(i=>i.name==='Can Fly'));
-});
-
-test('Gun Beetle uses supplied token art and retains Pod Gun',()=>{
- const r=gun.find(x=>x.name==='Gun Beetle');assert.equal(r.type,'npc');assert.equal(profile(r).system.hp.max,5);assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-beetle.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Pod Gun'&&i.system.damage===5&&i.system.range===5));
-});
-
-test('Rocket Beetle has supplied missile variant art and keeps its limited rockets',()=>{
- const r=gun.find(x=>x.name==='Rocket Beetle');assert.equal(r.type,'npc');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-rocket-beetle.png',import.meta.url)));const rocket=r.items.find(i=>i.name==='Tracking Rocket');assert.equal(rocket.system.quantity,4);assert.equal(rocket.system.ammoLimited,true);assert.equal(rocket.system.recharge,3);
-});
-
-test('Bomb Beetle uses supplied art and preserves bomb-drop rules',()=>{
- const r=gun.find(x=>x.name==='Bomb Beetle');assert.equal(r.type,'npc');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-bomb-beetle.png',import.meta.url)));const bomb=r.items.find(i=>i.name==='Bomb Drop');assert.equal(bomb.system.damage,7);assert.equal(bomb.system.aoe,'3x3');assert.equal(bomb.system.recharge,3);
-});
-
-test('all GUN ranged attacks have ammunition capacities',()=>{
- for(const actor of gun)for(const item of actor.items.filter(i=>['attack','vehicleWeapon'].includes(i.type)&&i.system.skill==='ranged')){assert.equal(item.system.ammoLimited,true,item.name);assert.ok(item.system.ammoMax>0,item.name);assert.equal(item.system.quantity,item.system.ammoMax,item.name);}
-});
-test('vehicle weapons reject empty ammunition before asking for a pilot',async()=>{
- const {vehicleAttack}=await import('../module/rolls.js');await assert.rejects(()=>vehicleAttack(hero('vehicle'),{system:{ammoLimited:true,quantity:0}}),/out of ammunition/);
-});
-
-test('Rhino Jet uses supplied Rhino artwork and retains its ram',()=>{
- const r=gun.find(x=>x.name==='Rhino Jet');assert.equal(r.type,'npc');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-rhino.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Charging Ram'&&i.system.damage===6));
-});
-
-test('Rhino Cannon has supplied art and limited cannon ammunition',()=>{
- const r=gun.find(x=>x.name==='Rhino Cannon');assert.equal(r.type,'npc');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-rhino-cannon.png',import.meta.url)));const cannon=r.items.find(i=>i.name==='Cannon');assert.equal(cannon.system.ammoLimited,true);assert.equal(cannon.system.quantity,20);assert.equal(cannon.system.damage,7);
-});
-
-test('Rhino Spike has supplied token and retains spiked-roof trait',()=>{
- const r=gun.find(x=>x.name==='Rhino Spike');assert.equal(r.type,'npc');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-rhino-spike.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Spiked Ram'&&i.system.damage===6));assert.ok(r.items.some(i=>i.name==='Spiked Roof'));
-});
-
-test('Rubber Rhino is distinct from metal and spike variants with matching art and HP',()=>{
- const r=gun.find(x=>x.name==='Rhino Rubber');assert.equal(r.type,'npc');assert.equal(profile(r).system.hp.max,20);assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-rhino-rubber.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Rubber Bumper'));assert.ok(gun.some(x=>x.name==='Rhino Metal'));assert.ok(gun.some(x=>x.name==='Rhino Spike'));
-});
-
-test('Gold Beetle uses supplied art and stays an unarmed fleeting target',()=>{
- const r=gun.find(x=>x.name==='Gold Beetle');assert.equal(r.type,'npc');assert.equal(r.prototypeToken.texture.src,r.img);assert.ok(fs.existsSync(new URL('../assets/tokens/gun-gold-beetle.png',import.meta.url)));assert.ok(r.items.some(i=>i.name==='Fleeting Target'));assert.ok(!r.items.some(i=>i.type==='attack'));
+test('Original NPCs have no artificial universal ammunition capacities',()=>{
+ const rows=JSON.parse(fs.readFileSync(new URL('../data/npcs.json',import.meta.url)));
+ for(const r of rows)for(const i of r.items||[])assert.ok(!i.flags?.['original-stth']?.ammoVersion,i.name);
 });

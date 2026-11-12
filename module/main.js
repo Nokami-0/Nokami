@@ -1,7 +1,5 @@
-import {imposeParryDisadvantage} from './parry-penalty.js';
 import {placeAttackTemplate} from './attack-areas.js';
 import {emitVisualEffect} from './visual-effects.js';
-import {transformBiolizard,installBiolizardTransformation} from './biolizard.js';
 import {CharacterData,VehicleData,ItemData} from './models.js';
 import {STTHActor} from './actor.js';
 import {HeroSheet,GearSheet} from './sheets.js';
@@ -10,7 +8,7 @@ import {RulesReference,LibraryManager,openRules,buildLibrary} from './reference.
 import {rollSkill,opposed,owned,prompt,select} from './rolls.js';
 import {damage,CONDITIONS} from './resources.js';
 import {installEquipmentValidation} from './validation.js';
-const ID='sonic-tag-team-heroes';
+const ID='original-stth';
 const {Actor,Item,ChatMessage,Macro}=foundry.documents;
 const {DocumentSheetConfig}=foundry.applications.apps;
 Hooks.once('init',()=>{
@@ -27,27 +25,18 @@ Hooks.once('init',()=>{
  game.settings.registerMenu(ID,'rules',{name:'STTH Rulebook',label:'Search Rules',icon:'fas fa-book',type:RulesReference,restricted:false});
  game.settings.registerMenu(ID,'library',{name:'STTH Library',label:'Build / Repair Library',icon:'fas fa-book-open',type:LibraryManager,restricted:true});
  game.settings.register(ID,'visualEffects',{name:'Optional attack animations',hint:'Play configured item animations when Sequencer is enabled. Other modules may also use STTH attack hooks.',scope:'world',config:true,type:Boolean,default:true});
- game.stth={placeAttackTemplate,emitVisualEffect,rollSkill,opposed,openRules,buildLibrary,damage,transformBiolizard};
- console.info('STTH V14 2.0.12 initialized: native ApplicationV2 sheets and dialogs.');
+ game.stth={placeAttackTemplate,emitVisualEffect,rollSkill,opposed,openRules,buildLibrary,damage};
+ console.info('Original STTH 1.0.0 initialized: STTH rulebook 1.5.0 mechanics.');
 });
 Hooks.once('ready',async()=>{
  installCombatHooks();installEquipmentValidation();
  if(game.user.isGM&&(!game.users.activeGM||game.users.activeGM.id===game.user.id)){
-  try{await buildLibrary();await installBiolizardTransformation();}
+  try{await buildLibrary();}
   catch(error){console.error('STTH library initialization failed',error);ui.notifications.error('STTH library initialization failed; use Build / Repair Library in system settings.');}
  }
 });
 // V14 passes an HTMLElement through renderChatMessageHTML, never a jQuery wrapper.
 Hooks.on('renderChatMessageHTML',(message,html)=>{
- for(const button of html.querySelectorAll('[data-stth-chat="parryPenalty"]'))button.addEventListener('click',async()=>{
-  if(button.disabled)return;button.disabled=true;
-  try{
-   const data=message.flags[ID];if(data?.kind!=='parry'||!data.success)return;
-   const attacker=await fromUuid(data.attacker);owned(attacker);
-   const applied=await imposeParryDisadvantage(attacker,message.id);
-   ui.notifications.info(applied?'Next-attack Disadvantage applied.':'This parry penalty was already applied.');
-  }catch(error){ui.notifications.error(error.message);}finally{button.disabled=false;}
- });
  for(const button of html.querySelectorAll('[data-stth-chat="damage"]'))button.addEventListener('click',async()=>{
   if(button.disabled)return;button.disabled=true;
   try{
