@@ -346,13 +346,24 @@
   </header>
 
   <!-- === NAVEGAÇÃO === -->
-  <nav class="sns-nav sheet-tabs tabs" data-group="primary">
+  <nav class="sns-nav sheet-tabs tabs" data-group="primary" {{#if isSummon}}aria-label="Summon actor tabs"{{/if}}>
+{{#if isSummon}}
+ <a class="item" data-tab="principal"><i class="fas fa-chart-bar" aria-hidden="true"></i> Stats</a>
+ <a class="item" data-tab="inventario"><i class="fas fa-fist-raised" aria-hidden="true"></i> Attacks</a>
+ <a class="item" data-tab="poderes"><i class="fas fa-scroll" aria-hidden="true"></i> Techniques</a>
+ <a class="item" data-tab="summon-aptitudes"><i class="fas fa-star" aria-hidden="true"></i> Aptitudes</a>
+ <a class="item" data-tab="databook"><i class="fas fa-dragon" aria-hidden="true"></i> Summoning Details</a>
+ <a class="item" data-tab="configuracoes"><i class="fas fa-cog" aria-hidden="true"></i> Settings</a>
+{{else}}
+
     <a class="item" data-tab="principal"><i class="fas fa-user" aria-hidden="true"></i> <span class="jp">基本</span> MAIN</a>
     <a class="item" data-tab="inventario"><i class="fas fa-toolbox" aria-hidden="true"></i> <span class="jp">道具</span> INVENTORY</a>
     <a class="item" data-tab="poderes"><i class="fas fa-scroll" aria-hidden="true"></i> <span class="jp">術</span> POWERS</a>
     <a class="item" data-tab="databook"><i class="fas fa-book" aria-hidden="true"></i> <span class="jp">書物</span> DATABOOK</a>
     <a class="item" data-tab="configuracoes"><i class="fas fa-cog" aria-hidden="true"></i> <span class="jp">設定</span> SETTINGS</a>
-  </nav>
+  
+{{/if}}
+</nav>
 
   <!-- === CORPO DA FICHA === -->
   <section class="sheet-body">
@@ -673,7 +684,7 @@
     </div>
 
     <!-- ABA PODERES -->
-    <div class="tab poderes" data-group="primary" data-tab="poderes">
+    <div class="tab poderes" data-group="primary" data-tab="poderes">{{#if isSummon}}<p>Species technique options: {{summonProfile.techniques}}. Add purchased techniques below; source references do not grant abilities automatically.</p>{{/if}}
       <button type="button" class="sns-ability-browser-open" style="margin:8px 0;width:auto"><i class="fas fa-book-open"></i> Browse Clan &amp; Hijutsu Compendiums</button>
       
       <!-- NOVA SECÇÃO: ELEMENTOS -->
@@ -709,6 +720,7 @@
         </table>
       </div>
 
+{{#unless isSummon}}
       <div style="display: flex; gap: 15px;">
         <div class="sns-box" style="flex: 1;">
           <h3><i class="far fa-star" aria-hidden="true"></i> FREE APTITUDES <a class="item-create" data-type="aptidao" data-gratuita="true" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px;">+ Add</a></h3>
@@ -741,10 +753,65 @@
           </table>
         </div>
       </div>
+{{/unless}}
     </div> <!-- FIM DA ABA PODERES -->
 
+{{#if isSummon}}<div class="tab" data-group="primary" data-tab="summon-aptitudes">
+<p>Purchased and free aptitudes are separate from the species options below. Options must be purchased and meet prerequisites before use.</p>
+      <div style="display: flex; gap: 15px;">
+        <div class="sns-box" style="flex: 1;">
+          <h3><i class="far fa-star" aria-hidden="true"></i> FREE APTITUDES <a class="item-create" data-type="aptidao" data-gratuita="true" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px;">+ Add</a></h3>
+          <table class="sns-table" style="text-align: center;">
+            <thead><tr><th style="text-align: left;">NAME</th><th>TYPE</th><th>COST</th><th>ACTIONS</th></tr></thead>
+            <tbody>
+              {{#each aptidoesGratuitas as |item|}}
+              <tr class="item-row" data-item-id="{{item.id}}">
+                <td style="font-weight: bold; cursor: pointer; text-align: left;" class="item-to-chat"><img src="{{item.img}}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"/>{{item.name}}</td>
+                <td>{{item.system.tipo}}</td><td style="font-weight: bold;">{{item.system.custoChakra}} Chakra / {{item.system.custoVitalidade}} Vitality</td>
+                <td><a class="item-use" title="Use ability and pay Chakra/Vitality" style="cursor:pointer; margin-right:7px; font-weight:bold;">Use</a> {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" style="cursor: pointer; margin-right: 10px;"><i class="fas fa-edit" aria-label="Edit"></i></a><a class="item-delete" style="cursor: pointer;"><i class="fas fa-trash" aria-label="Delete"></i></a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <div class="sns-box" style="flex: 1;">
+          <h3><i class="fas fa-star" aria-hidden="true"></i> APTITUDES (Purchased) <a class="item-create" data-type="aptidao" data-gratuita="false" style="cursor: pointer; font-size: 12px; background: rgba(0,0,0,0.1); padding: 2px 5px; border-radius: 3px;">+ Add</a></h3>
+          <table class="sns-table" style="text-align: center;">
+            <thead><tr><th style="text-align: left;">NAME</th><th>TYPE</th><th>COST</th><th>ACTIONS</th></tr></thead>
+            <tbody>
+              {{#each aptidoes as |item|}}
+              <tr class="item-row" data-item-id="{{item.id}}">
+                <td style="font-weight: bold; cursor: pointer; text-align: left;" class="item-to-chat"><img src="{{item.img}}" style="width: 24px; height: 24px; vertical-align: middle; margin-right: 8px;"/>{{item.name}}</td>
+                <td>{{item.system.tipo}}</td><td style="font-weight: bold;">{{item.system.custoChakra}} Chakra / {{item.system.custoVitalidade}} Vitality</td>
+                <td><a class="item-use" title="Use ability and pay Chakra/Vitality" style="cursor:pointer; margin-right:7px; font-weight:bold;">Use</a> {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" style="cursor: pointer; margin-right: 10px;"><i class="fas fa-edit" aria-label="Edit"></i></a><a class="item-delete" style="cursor: pointer;"><i class="fas fa-trash" aria-label="Delete"></i></a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+<section class="sns-box"><h3>Allowed Species Aptitude Options — Not Granted</h3><table class="sns-table"><tbody>{{#each summonAllowedItems as |item|}}<tr class="item-row" data-item-id="{{item.id}}"><td class="item-to-chat" style="cursor:pointer"><img src="{{item.img}}" alt="" style="width:24px;height:24px;vertical-align:middle"> {{item.name}}</td><td><a class="item-edit" title="Edit reference" style="cursor:pointer"><i class="fas fa-edit"></i></a> <a class="item-delete" title="Remove reference" style="cursor:pointer"><i class="fas fa-trash"></i></a></td></tr>{{/each}}</tbody></table></section>
+</div>{{/if}}
     <!-- ABA DATABOOK -->
     <div class="tab databook" data-group="primary" data-tab="databook">
+{{#if isSummon}}<section class="sns-box sns-summon-details">
+ <h3>Summoning Details — {{summonProfile.species}}</h3>
+ <dl><dt>Entry</dt><dd>{{#if summonIsTemplate}}Compendium species template{{else}}Summoned creature{{/if}}</dd>
+ <dt>NC</dt><dd>{{summonNC}}</dd><dt>Summoner</dt><dd>{{summonOwnerName}}</dd>
+ <dt>Source / Page</dt><dd>{{summonProfile.source}} / {{summonProfile.page}}</dd>
+ <dt>Size</dt><dd>{{summonProfile.size.label}} · {{summonProfile.size.tokenSquares}} squares · Reach {{summonProfile.size.reachMeters}} m</dd>
+ <dt>Primary attributes</dt><dd>{{summonProfile.primaryAttributes}}</dd>
+ <dt>Species skills</dt><dd>{{summonSkillsText}}</dd>
+ <dt>Power points</dt><dd>{{summonProfile.powerPoints}} — source allocation required</dd>
+ <dt>Technique / power options</dt><dd>{{summonProfile.techniques}}</dd></dl>
+ <p>{{summonProfile.skillRules}}</p><p>{{summonProfile.aptitudeRules}}</p>
+ <p>Use the summoner's Summon Creature control for chakra, contract and scene limits. Importing or dragging a template does not spend chakra. Allocate attributes and energies at the chosen NC before combat.</p>
+ <label>Summon profile notes<textarea name="flags.shinobi-no-sho-revamp.summonProfile.notes" rows="5">{{summonProfile.notes}}</textarea></label>
+ </section>
+ <section class="sns-box"><h3>Species Profile & Summoning Rules</h3><table class="sns-table"><tbody>{{#each summonReferenceItems as |item|}}<tr class="item-row" data-item-id="{{item.id}}"><td class="item-to-chat" style="cursor:pointer"><img src="{{item.img}}" alt="" style="width:24px;height:24px;vertical-align:middle"> {{item.name}}</td><td><a class="item-edit" title="Edit reference" style="cursor:pointer"><i class="fas fa-edit"></i></a> <a class="item-delete" title="Remove reference" style="cursor:pointer"><i class="fas fa-trash"></i></a></td></tr>{{/each}}</tbody></table></section>
+ <section class="sns-box"><h3>Species Skill References</h3><table class="sns-table"><tbody>{{#each summonSkillItems as |item|}}<tr class="item-row" data-item-id="{{item.id}}"><td class="item-to-chat" style="cursor:pointer"><img src="{{item.img}}" alt="" style="width:24px;height:24px;vertical-align:middle"> {{item.name}}</td><td><a class="item-edit" title="Edit reference" style="cursor:pointer"><i class="fas fa-edit"></i></a> <a class="item-delete" title="Remove reference" style="cursor:pointer"><i class="fas fa-trash"></i></a></td></tr>{{/each}}</tbody></table></section>
+{{/if}}
       <div style="display: flex; flex-direction: column; gap: 15px; height: 100%;">
         <div class="sns-box" style="flex: 1; display: flex; flex-direction: column; min-height: 250px;">
           <h3><i class="fas fa-book-open" aria-hidden="true"></i> BIOGRAPHY & HISTORY</h3>
