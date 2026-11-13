@@ -1,0 +1,187 @@
+[
+  {
+    "name": "Bunshin No Jutsu",
+    "type": "poder",
+    "system": {
+      "descricao": "BUNSHIN NO JUTSU\n(DUPLICATION TECHNIQUE)\n\n• Ninjutsu Rank E\n• Action: Movement or Standard (see text)\n• Scope: Personal\n• Duration: Sustained\n• Chakra Cost: 1 or 4 (see text)\n\nCreates one or two illusory clones of the character. Regardless of the number of clones\ncreated, the user will always spend 1 chakra point to execute the technique.\n\n\nClones are merely images; that is, they serve only to confuse the enemy. They cannot\nuse jutsus or maneuvers, nor can they cause damage to the opponent. When the clones\nare touched by any creature or object, the effect of the jutsu ends. Clones possess all\ncombat actions, but they do not have initiative and act on the same turn as the user.\nYou can use the Bunshin no Jutsu to feint your opponent, making them move around the\nbattlefield to confuse the enemy or feigning attacks. Doing so increases the technique's\nduration to a standard action and the chakra cost to 4. You make a Sleight of Hand roll\nagainst the enemy's Readiness. If successful, the opponent is feinted.\n\nCounter your next melee attack or projectile throw. If used in this way, the clones cannot\nperform other actions and disappear shortly after the user's attack.",
+      "tipo": "Ninjutsu",
+      "custoChakra": 1,
+      "custoVitalidade": 0,
+      "custo": "Variable — see rules"
+    },
+    "flags": {
+      "shinobi-no-sho-revamp": {
+        "basicJutsu": true,
+        "technique": true,
+        "freePower": true,
+        "costMode": "bunshin"
+      },
+      "sns-basic-jutsu": {
+        "category": "Basic Jutsu",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          123,
+          124
+        ]
+      }
+    }
+  },
+  {
+    "name": "Henge No Jutsu",
+    "type": "poder",
+    "system": {
+      "descricao": "HENGE NO JUTSU\n(TRANSFORMATION TECHNIQUE)\n\n• Ninjutsu Rank E\n• Action: Movement\n• Scope: Personal\n• Duration: Sustained\n• Chakra Cost: 1\n\nIt allows the user to transform into another person, changing their appearance. This jutsu\ncan also be used to transform into an animal or object of the same size category as the\nuser.\n\nThe character does not make a test to use the Henge no Jutsu. However, anyone who\ninteracts with them while they are transformed will be entitled to a Perception test, with\na Difficulty equal to 7 + the user's Disguise skill level. If successful, the person will notice\nsome minor flaw in the transformation and will know that it is someone using the Henge.\n\n\n\nHenge can be used to camouflage small details on a character, such as scars, skin\nblemishes, hair shape and color...\nHowever, it is immediately canceled when it conflicts with the use of any technique.",
+      "tipo": "Ninjutsu",
+      "custoChakra": 1,
+      "custoVitalidade": 0,
+      "custo": "1 Chakra"
+    },
+    "flags": {
+      "shinobi-no-sho-revamp": {
+        "basicJutsu": true,
+        "technique": true,
+        "freePower": true,
+        "costMode": "fixed"
+      },
+      "sns-basic-jutsu": {
+        "category": "Basic Jutsu",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          124
+        ]
+      }
+    }
+  },
+  {
+    "name": "Kai (Release)",
+    "type": "poder",
+    "system": {
+      "descricao": "KAI\n- (RELEASE)\n\n• Ninjutsu Rank D\nAction : Standard\n• Range: Touch\n• Duration: Instantaneous\n• Chakra Cost: Equal to the cost of the canceled Genjutsu\nHand Seals: No\n\nThis jutsu allows the user to free another person or themselves from a Genjutsu. In this\ntechnique, the user makes a Spirit or Intelligence test against the resistance difficulty of the\nGenjutsu to be canceled (without the reductions from successive Notice Genjutsu tests). The\nchakra cost of the Kai technique is the same as the chakra cost of the Genjutsu to be canceled.\n\n\n\nUsing this technique on yourself requires no test or chakra cost, but you must have\npreviously succeeded in the genjutsu detection test (see Magen, p. 233). You can use\nKai even if the genjutsu has left you paralyzed, defenseless , or with your actions under\ncontrol or restriction.\n\n\nThe user can use the Kai technique to cancel their own jutsu, without needing to perform a\ntest or incur any chakra cost.",
+      "tipo": "Ninjutsu",
+      "custoChakra": 0,
+      "custoVitalidade": 0,
+      "custo": "Variable — see rules"
+    },
+    "flags": {
+      "shinobi-no-sho-revamp": {
+        "basicJutsu": true,
+        "technique": true,
+        "freePower": true,
+        "costMode": "kai"
+      },
+      "sns-basic-jutsu": {
+        "category": "Basic Jutsu",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          124
+        ]
+      }
+    }
+  },
+  {
+    "name": "Kawarimi No Jutsu",
+    "type": "poder",
+    "system": {
+      "descricao": "KAWARIMI NO JUTSU\n(BODY REPLACEMENT TECHNIQUE)\n\n• Ninjutsu Rank E / Shunjutsu\n• Action: Movement\n• Scope: Personal\n• Duration: Instantaneous\n• Chakra Cost: 1\nHand seals: Optional.\nThis jutsu allows the user to quickly switch places with an object of approximately the\nsame size that is in the surrounding area or that they are carrying. The character can\nalso use handfuls of leaves, earth, stones, or sand if they don't have an object nearby at\nthe time of the substitution. Performing this at the moment of the opponent's attack\ncreates an optical illusion that makes them think the attack was successful. At that\nmoment, the user can take advantage of the opponent's distraction to attack them more\neffectively or flee the battlefield.\n\n\n\nOnce per scene, the user can announce the use of Kawarimi as a defensive action,\nconsuming 1 chakra point, and completely avoiding the opponent's attack without any\ntest being required (neither by the attacker nor the defender). After doing so, the\nopponent strikes the substitute body, while the user moves quickly in any direction,\nmaximizing their movement. The movement performed by Kawarimi does not generate\nan opportune attack.\n\n\nYou can use Kawarimi against projectiles and regular attacks. You can also use it against\nprojectile-type techniques (such as the Cannon and Arrow effects) or melee techniques\n(such as the Lightning Blade effect and the Rasengan).\n\n\nIt is not possible to use Kawarimi if you are caught off guard, feinted , or have movement\nrestrictions (such as being grabbed or impeded, for example). It is also not possible to\nuse it against area attacks.\n\nIf the Kawarimi is successful, the user gains the right to a resisted Stealth check against\nthe opponent's Readiness to hide somewhere within their movement range (which is\nhalved by the Stealth rules). Doing so requires a standard action, in addition to\ncamouflage or cover to hide. See more in the Stealth skill, p. 41.",
+      "tipo": "Ninjutsu",
+      "custoChakra": 1,
+      "custoVitalidade": 0,
+      "custo": "1 Chakra"
+    },
+    "flags": {
+      "shinobi-no-sho-revamp": {
+        "basicJutsu": true,
+        "technique": true,
+        "freePower": true,
+        "costMode": "fixed"
+      },
+      "sns-basic-jutsu": {
+        "category": "Basic Jutsu",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          124,
+          125
+        ]
+      }
+    }
+  },
+  {
+    "name": "Kinobori",
+    "type": "poder",
+    "system": {
+      "descricao": "KINOBORI\n(TREE CLIMBING TECHNIQUE)\n\n• Ninjutsu Rank E / Chakra Control\n• Action: Free\n• Scope: Personal\n• Duration: Continuous\n• Chakra Cost: 1\nHand Seals: No\n\nBy concentrating chakra in their feet, the user is able to cling to any type of surface,\nallowing them to walk on walls, climb trees by running up their trunks, or walk on the\nceiling upside down. The user consumes 1 chakra point, and the effects of Kinobori last\nfor the entire scene.\n\n\nThe user does not need to perform tests to walk on walls or ceilings, unless some\nsituation throws them off balance or causes them to lose concentration, in which case\nan Athletics test is required to grab onto something or an Acrobatics test to regain\nbalance, depending on the situation.",
+      "tipo": "Ninjutsu",
+      "custoChakra": 1,
+      "custoVitalidade": 0,
+      "custo": "1 Chakra"
+    },
+    "flags": {
+      "shinobi-no-sho-revamp": {
+        "basicJutsu": true,
+        "technique": true,
+        "freePower": true,
+        "costMode": "fixed"
+      },
+      "sns-basic-jutsu": {
+        "category": "Basic Jutsu",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          125
+        ]
+      }
+    }
+  },
+  {
+    "name": "Shunshin No Jutsu",
+    "type": "poder",
+    "system": {
+      "descricao": "SHUNSHIN NO JUTSU\n(Instantaneous Movement Technique)\n\n• Ninjutsu Rank D / Shunjutsu\n• Action: Movement\n• Scope: Personal\n• Duration: Instantaneous\n• Chakra Cost: 1\n\nThe ninja's Instantaneous Movement Technique consists of super-fast movement that is\nalmost impossible to follow with the naked eye. To an ordinary person, it appears as if\nthe user...\nas if he were teleporting. In reality, the character is charging his body with chakra and\nmoving at high speed.\n\nIn this technique, the user consumes 1 chakra point and can move up to their maximum\nmovement capacity. As a scene effect, leaves, smoke clouds, sand, or any other device can\nbe used by the character to enhance the jutsu. It is merely a show technique and does not\nprovide any advantage in combat, as any ninja can follow the user's movements.",
+      "tipo": "Ninjutsu",
+      "custoChakra": 1,
+      "custoVitalidade": 0,
+      "custo": "1 Chakra"
+    },
+    "flags": {
+      "shinobi-no-sho-revamp": {
+        "basicJutsu": true,
+        "technique": true,
+        "freePower": true,
+        "costMode": "fixed"
+      },
+      "sns-basic-jutsu": {
+        "category": "Basic Jutsu",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          125,
+          126
+        ]
+      }
+    }
+  },
+  {
+    "name": "Tadayou",
+    "type": "poder",
+    "system": {
+      "descricao": "TADAYOU\n- (WALKING ON WATER)\n\n• D Rank Ninjutsu / Chakra Control\n• Action: Free\n• Scope: Personal\n• Duration: Continuous\n• Chakra Cost: 1\nHand Seals: No\n\nThis technique allows the user to walk on water or any non-flammable or acidic liquid. Tests\nfor this technique are performed using the Spirit attribute, but are only necessary if a\nsituation throws the user off balance or out of concentration.",
+      "tipo": "Ninjutsu",
+      "custoChakra": 1,
+      "custoVitalidade": 0,
+      "custo": "1 Chakra"
+    },
+    "flags": {
+      "shinobi-no-sho-revamp": {
+        "basicJutsu": true,
+        "technique": true,
+        "freePower": true,
+        "costMode": "fixed"
+      },
+      "sns-basic-jutsu": {
+        "category": "Basic Jutsu",
+        "source": "Basic Book 4.1.b",
+        "sourcePages": [
+          126
+        ]
+      }
+    }
+  }
+]

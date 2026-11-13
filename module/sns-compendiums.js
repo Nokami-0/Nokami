@@ -11,6 +11,7 @@ import { ensureSkyEquipment } from "./sky-equipment.js";
  */
 const SNSC='shinobi-no-sho-revamp';
 const SNS_FILES=[
+ ['sns-basic-jutsu__items.json','Basic Book — Basic Jutsu','basicJutsu'],
  ['sns-aptitude-individual__items.json','Basic & Advanced Individual Aptitudes','aptitude'],
  ['sns-aptitude-reference__items.json','Basic & Advanced Aptitude Reference','aptitude'],
  ['sns-basic-book-clans__items.json','Basic Book Clans','clan'],
@@ -32,20 +33,21 @@ function metaFor(raw,file,scope){
  const flags=Object.values(raw.flags||{}).find(x=>x&&typeof x==='object'&&(x.clan||x.hijutsu||x.group||x.groupType||x.category))||{};
  const clan=clean(flags.clan),hijutsu=clean(flags.hijutsu),group=clean(flags.group);
  const declaredType=String(flags.groupType||'').toLowerCase();
- const conflict=!!(clan&&(hijutsu||declaredType==='hijutsu'));
- let family=scope==='clan'?'Clan':scope==='hijutsu'?'Hijutsu':scope==='poison'?'Poison':scope==='equipment'?'Equipment':(clan?'Clan':hijutsu||declaredType==='hijutsu'?'Hijutsu':'Review');
+ const kekkei=clean(flags.kekkeiGenkai||flags.kekkei_genkai||(/kekkei genkai/i.test(flags.groupType||'')||/kekkei genkai/i.test(group)?group:'')),kinjutsu=clean(flags.kinjutsu||(/kinjutsu/i.test(flags.groupType||'')?group:''));
+ const conflict=false;
+ let family=clan?'Clan':kekkei?'Kekkei Genkai':kinjutsu?'Kinjutsu':scope==='basicJutsu'?'Basic Jutsu':scope==='clan'?'Clan':scope==='hijutsu'?'Hijutsu':scope==='poison'?'Poison':scope==='equipment'?'Equipment':(clan?'Clan':hijutsu||declaredType==='hijutsu'?'Hijutsu':'Review');
  if(conflict)family='Review';
- let owner=family==='Clan'?(clan||group||'Unassigned Clan — Review'):family==='Hijutsu'?(hijutsu||group||'Unassigned Hijutsu — Review'):family==='Review'?'Conflicting or Unknown Association — Review':'';
+ let owner=family==='Basic Jutsu'?'Basic Jutsu':family==='Kekkei Genkai'?kekkei:family==='Kinjutsu'?kinjutsu:family==='Clan'?(clan||group||'Unassigned Clan — Review'):family==='Hijutsu'?(hijutsu||group||'Unassigned Hijutsu — Review'):family==='Review'?'Conflicting or Unknown Association — Review':'';
  // A combined label is ambiguous; do not split or arbitrarily pick one.
  if(family==='Clan'||family==='Hijutsu'){
-  if(/\s+\/\s+|\s+\+\s+|\s+and\s+/i.test(owner))owner='Ambiguous Association — Review';
+  // Preserve the full source association, including shared restrictions.
  }
  const cat=String(flags.category||raw.category||'').toLowerCase();
  const type=String(raw.type||'').toLowerCase();
  const kind=/\bskill|perícia|pericia/.test(cat)?'Skills':type==='aptidao'||/aptitude|abilit/.test(cat)?'Aptitudes':/technique|jutsu|effect|mode/.test(cat)||type==='elemento'?'Techniques':type==='poder'||/power/.test(cat)?'Powers':'Other Abilities';
  const explicit=flags.level??raw.system?.nivel??raw.system?.nivelPoder;
  const level=explicit!==undefined&&explicit!==null&&String(explicit).trim()!==''&&Number.isInteger(Number(explicit))&&Number(explicit)>0?Number(explicit):null;
- return {family,owner,kind,level,category:raw.category};
+ return {family,owner,kind,level,category:raw.category,associations:{clan,hijutsu,kekkeiGenkai:kekkei,kinjutsu,group},restriction:clean(flags.classification||flags.groupType)};
 }
 function packFor(meta){
  if(meta.family==='Poison')return 'poisons';
@@ -55,6 +57,8 @@ function packFor(meta){
  return 'techniques';
 }
 function folderPath(meta,pack){
+ if(meta.family==='Basic Jutsu')return ['Basic Jutsu'];
+ if(['Kekkei Genkai','Kinjutsu'].includes(meta.family))return [meta.family,meta.owner,meta.kind];
  if(pack==='aptitudes')return meta.aptitudePath||['Unclassified Aptitudes'];
  if(pack==='poisons')return ['Consumable Poisons',`Category ${meta.category===undefined?'Unspecified':meta.category}`];
  if(pack==='equipment')return meta.equipmentPath||[meta.equipmentFolder||'Other Equipment'];
@@ -146,7 +150,7 @@ function normalize(raw,source,file,index,scope){
  if(scope==='generalEffect'){system.descricao=String(raw.description||'');system.nivelPoder=raw.effectLevel??null;system.snsGeneralEffect={sourcePage:raw.sourcePage,sourceBook:raw.sourceBook,restriction:'General Ninpou / Basic Elements; check availability for each effect',referenceOnly:true};}
  if(scope==='aptitude'){system.descricao=String(raw.description||raw.details||'Source reference; see the cited rulebook pages.');system.snsAptitude={book:raw.book,category:raw.aptitudeCategory,sourcePage:raw.sourcePage,freeChoice:raw.freeChoice??null,referenceOnly:!!raw.referenceOnly,mechanicsVerified:!!raw.mechanicsVerified,rulesExtractionMethod:raw.rulesExtractionMethod||null,sourceDocument:raw.sourceDocument||null};}
  const icon=group==='poisons'?'icons/svg/poison.svg':group==='equipment'?'icons/svg/sword.svg':meta.kind==='Aptitudes'?'icons/svg/upgrade.svg':'icons/svg/book.svg';
- return {name,type,system,img:raw.img||icon,flags:{[SNSC]:{compendiumUid:`${file}:${index}`,source,category:group,hierarchy:meta,sourceFlags:raw.flags||{},generatedBy:'sns-compendiums'}}};
+ return {name,type,system,img:raw.img||icon,flags:{[SNSC]:{...(raw.flags?.[SNSC]||{}),compendiumUid:`${file}:${index}`,source,category:group,hierarchy:meta,sourceFlags:raw.flags||{},generatedBy:'sns-compendiums'}}};
 }
 async function folderFor(pack,path,cache){
  let parent=null;
@@ -352,4 +356,5 @@ Hooks.once('ready', async () => {
   ui.notifications.error('Could not create Homebrew compendium items. See the console.');
  }
 });
+
 

@@ -101,7 +101,7 @@ export class ShinobiActorSheet extends ActorSheet {
     context.armorAbsorptionMax=Math.max(0,num(context.equippedArmor?.system?.absorption));
     context.armorHardnessBonus=Math.max(0,num(context.equippedArmor?.system?.bodyHardnessBonus,num(context.equippedArmor?.getFlag?.('sns-weapon-library','bodyHardnessBonus'))));
     context.weaponGroups=['Simple','Martial','Natural','Special','Ammunition','Explosive'];
-    context.equipamentos=[];context.poderes=[];context.aptidoes=[];context.aptidoesGratuitas=[];context.elementos=[];
+    context.tecnicas=[];context.equipamentos=[];context.poderes=[];context.aptidoes=[];context.aptidoesGratuitas=[];context.elementos=[];
     let used=0,added=0,removed=0,value=0;
     for(const item of items){
       const reference=context.isSummon?summonReferenceKind(item):null;
@@ -113,10 +113,11 @@ export class ShinobiActorSheet extends ActorSheet {
         used+=occupied;if(modifier>=0)added+=modifier;else removed+=-modifier;
         const price=Math.max(0,num(sys.valorRyo,num(sys.preco,num(sys.price))));value+=qty*price;
         context.equipamentos.push({id:item.id,name:item.name,img:item.img,system:{...sys,quantidade:qty,peso:cost,valorRyo:price,equipped:Boolean(sys.equipped)},slotsUsed:occupied});
-      }else if(item.type==='poder')context.poderes.push(item);
+      }else if(item.type==='poder'){if(item.getFlag('shinobi-no-sho-revamp','basicJutsu'))context.tecnicas.push(item);else context.poderes.push(item);}
       else if(item.type==='elemento')context.elementos.push(item);
       else if(item.type==='aptidao')(item.system?.gratuita?context.aptidoesGratuitas:context.aptidoes).push(item);
     }
+    context.preexistingTechniques=items.filter(i=>!i.getFlag('shinobi-no-sho-revamp','basicJutsu')&&i.getFlag('shinobi-no-sho-revamp','hierarchy')?.kind==='Techniques').map(i=>({id:i.id,name:i.name,img:i.img,system:i.system,association:i.getFlag('shinobi-no-sho-revamp','hierarchy')?.owner}));
     context.inventoryValueRyo=value;
     context.compartimentosBase=baseCompartimentos;context.slotsAdded=added;context.slotsRemoved=removed;
     context.compartimentosUsados=used;context.compartimentosMaximos=Math.max(0,baseCompartimentos+added-removed);
@@ -184,6 +185,7 @@ export class ShinobiActorSheet extends ActorSheet {
 
   activateListeners(html) {
     super.activateListeners(html);
+    html.find(".sns-technique-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor,true); });
     html.find(".sns-ability-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor); });
     html.find(".sns-status-open").on("click", event => {
       event.preventDefault();
@@ -353,7 +355,12 @@ export class ShinobiActorSheet extends ActorSheet {
       const row = $(ev.currentTarget).closest('.item-row');
       const item = this.actor.items.get(row.data('itemId'));
       if (!item) return;
-      const chakraCost = Number(item.system.custoChakra ?? 0);
+      let chakraCost = Number(item.system.custoChakra ?? 0);
+      const mode=item.getFlag('shinobi-no-sho-revamp','costMode');
+      if(mode==='kai'||mode==='bunshin'){
+        const selected=await new Promise(resolve=>new Dialog({title:item.name,content:mode==='kai'?'<p>Self-release requires prior successful genjutsu detection. Self-release and canceling your own jutsu cost 0. Releasing another person requires a Spirit or Intelligence test against the original resistance difficulty.</p><label>Use</label><select name="mode"><option value="self">Self-release / cancel own jutsu (0)</option><option value="other">Release another person</option></select><label>Canceled genjutsu chakra cost</label><input name="cost" type="number" min="0" step="1" value="0">':'<label>Use</label><select name="cost"><option value="1">Illusory clones (1 Chakra)</option><option value="4">Feint (4 Chakra)</option></select>',buttons:{use:{label:'Use',callback:h=>resolve(mode==='kai'&&h.find('[name="mode"]').val()==='self'?0:Number(h.find('[name="cost"]').val()))},cancel:{label:'Cancel',callback:()=>resolve(null)}},close:()=>resolve(null)}).render(true));
+        if(selected===null)return;chakraCost=selected;
+      }
       const vitalityCost = Number(item.system.custoVitalidade ?? 0);
       if (![chakraCost, vitalityCost].every(n => Number.isSafeInteger(n) && n >= 0)) {
         return ui.notifications.error('Costs must be non-negative whole numbers.');
@@ -448,3 +455,4 @@ export class ShinobiActorSheet extends ActorSheet {
     }).render(true);
   }
 }
+

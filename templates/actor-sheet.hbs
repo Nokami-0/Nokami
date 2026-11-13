@@ -359,6 +359,7 @@
     <a class="item" data-tab="principal"><i class="fas fa-user" aria-hidden="true"></i> <span class="jp">基本</span> MAIN</a>
     <a class="item" data-tab="inventario"><i class="fas fa-toolbox" aria-hidden="true"></i> <span class="jp">道具</span> INVENTORY</a>
     <a class="item" data-tab="poderes"><i class="fas fa-scroll" aria-hidden="true"></i> <span class="jp">術</span> POWERS</a>
+    <a class="item" data-tab="tecnicas"><i class="fas fa-book-open"></i> TECHNIQUES &amp; BASIC JUTSU</a>
     <a class="item" data-tab="databook"><i class="fas fa-book" aria-hidden="true"></i> <span class="jp">書物</span> DATABOOK</a>
     <a class="item" data-tab="configuracoes"><i class="fas fa-cog" aria-hidden="true"></i> <span class="jp">設定</span> SETTINGS</a>
   
@@ -795,6 +796,10 @@
 <section class="sns-box"><h3>Allowed Species Aptitude Options — Not Granted</h3><table class="sns-table"><tbody>{{#each summonAllowedItems as |item|}}<tr class="item-row" data-item-id="{{item.id}}"><td class="item-to-chat" style="cursor:pointer"><img src="{{item.img}}" alt="" style="width:24px;height:24px;vertical-align:middle"> {{item.name}}</td><td><a class="item-edit" title="Edit reference" style="cursor:pointer"><i class="fas fa-edit"></i></a> <a class="item-delete" title="Remove reference" style="cursor:pointer"><i class="fas fa-trash"></i></a></td></tr>{{/each}}</tbody></table></section>
 </div>{{/if}}
     <!-- ABA DATABOOK -->
+    <div class="tab tecnicas" data-group="primary" data-tab="tecnicas">
+      <button type="button" class="sns-technique-browser-open">Browse Preexisting Techniques &amp; Basic Jutsu</button>
+      <p>Basic jutsu are free character abilities. Restricted techniques retain their source group and prerequisites. Add entries from the browser after rebuilding organized compendiums.</p>
+<div class="sns-box"><h3>Basic Jutsu</h3><table class="sns-table"><thead><tr><th>Name</th><th>Source group</th><th>Cost</th><th>Actions</th></tr></thead><tbody>{{#each tecnicas as |item|}}<tr class="item-row" data-item-id="{{item.id}}"><td class="item-to-chat">{{item.name}}</td><td>{{item.association}}</td><td>{{item.system.custo}}</td><td><a class="item-use">Use</a> · <a class="item-edit">Edit / Rules</a> · <a class="item-delete">Delete</a></td></tr>{{/each}}</tbody></table></div><div class="sns-box"><h3>Preexisting Techniques — Source Associations Preserved</h3><table class="sns-table"><thead><tr><th>Name</th><th>Source group</th><th>Cost</th><th>Actions</th></tr></thead><tbody>{{#each preexistingTechniques as |item|}}<tr class="item-row" data-item-id="{{item.id}}"><td class="item-to-chat">{{item.name}}</td><td>{{item.association}}</td><td>{{item.system.custo}}</td><td><a class="item-use">Use</a> · <a class="item-edit">Edit / Rules</a> · <a class="item-delete">Delete</a></td></tr>{{/each}}</tbody></table></div></div>
     <div class="tab databook" data-group="primary" data-tab="databook">
 {{#if isSummon}}<section class="sns-box sns-summon-details">
  <h3>Summoning Details — {{summonProfile.species}}</h3>
@@ -912,4 +917,5 @@
 
   </section>
 </form>
+
 
