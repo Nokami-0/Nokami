@@ -51,3 +51,15 @@ Use **Summon Creature** on the summoner sheet for the existing chakra, blood-con
 Rebuilding adds missing generated entries only. Existing templates, including GM edits, and manually added compendium entries are preserved. Building creates compendium documents only, not world actors or scene tokens. The compendium's original lock state is restored after a build or error.
 
 Five automated tests pass for the 29 templates, artwork paths, spider attacks, Doki and source-fixed sizes, duplicate prevention, edit preservation, GM permissions and lock restoration. Updated modules pass JavaScript syntax checks. Live Foundry validation remains pending.
+
+## Doki equipment and unarmed options (1.7.44)
+
+- Doki (Club): equipped Club (+2 Weapon Damage) and a separate natural Unarmed Strike.
+- Doki (Claws): equipped **Tekko-Kagi — Pair**, quantity **2**, and a separate natural Unarmed Strike. Base Weapon Damage +3; the source's paired +4 option requires Ambidexterity and can be applied with the existing +1 weapon modifier after checking prerequisites. Carrying the pair does not automatically grant an aptitude, extra attack or additional actions.
+- Doki (Armless): natural Unarmed Strike.
+
+The shared factory supplies these entries to both compendium templates and newly summoned Doki. On GM startup or a Kuchiyose compendium rebuild, a one-time loadout migration updates generated Doki weapon entries and adds missing unarmed attacks in existing templates and generated world summons. It preserves actor attributes, HP and unrelated custom equipment.
+
+Summon equipment damage now honors the existing summon attack formula **max(3, Strength − 3) + Weapon Damage + Modifier**, rather than silently using the ordinary character weapon formula. Summons below NC 4 cannot use these entries to deal attack damage.
+
+Eight compendium and equipment regression tests pass; changed modules pass syntax checks. Live Foundry validation remains pending.
