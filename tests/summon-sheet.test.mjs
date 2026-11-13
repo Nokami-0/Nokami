@@ -12,10 +12,10 @@ function context(a){
  if(c.isSummon){c.summonTechniqueItems=[{id:'innate',name:'Innate: Species Ability'}];c.summonAllowedItems=[{id:'allowed',name:'Allowed Aptitude Option'}];c.summonReferenceItems=[{id:'reference',name:'Species Rules'}];c.summonSkillItems=[{id:'skill',name:'Species Skill'}];}
  return c;
 }
-test('ordinary actors keep their original five primary tabs',()=>{
+test('ordinary actors keep their primary tabs including basic jutsu',()=>{
  const {document}=parseHTML(render(context(actor())));
  const nav=[...document.querySelectorAll('.sns-nav [data-tab]')];
- assert.deepEqual(nav.map(n=>n.dataset.tab),['principal','inventario','poderes','databook','configuracoes']);
+ assert.deepEqual(nav.map(n=>n.dataset.tab),['principal','inventario','poderes','tecnicas','databook','configuracoes']);
  assert.ok(!document.querySelector('[data-tab="summon-aptitudes"]'));
 });
 test('summon sheets render all five requested tabs plus Settings with matching panels',()=>{
@@ -50,3 +50,4 @@ test('innate abilities appear in Techniques as readable cards, without a purchas
  const {document}=parseHTML(render(context(actor({summonProfile:{species:'Doki'}}))));
  const row=document.querySelector('[data-item-id="innate"]');assert.ok(row);assert.equal(row.closest('.tab[data-group="primary"]').dataset.tab,'poderes');assert.ok(row.querySelector('.item-to-chat'));assert.ok(row.querySelector('.item-edit'));assert.ok(!row.querySelector('.item-use'));
 });
+

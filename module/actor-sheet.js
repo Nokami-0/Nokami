@@ -7,7 +7,9 @@ import { fireBombLauncher, isBombLauncher } from "./bomb-launcher.js";
 import { openSnsAbilityBrowser } from "./sns-ability-browser.js";
 import { SNS_CONDITIONS } from "./sns-conditions.js";
 import { rollShinobiTest } from "./dice.js";
-export class ShinobiActorSheet extends ActorSheet {
+const BaseActorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
+const RichTextEditor = foundry.applications?.ux?.TextEditor ?? globalThis.TextEditor;
+export class ShinobiActorSheet extends BaseActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["shinobi", "sheet", "actor"], 
@@ -24,7 +26,8 @@ export class ShinobiActorSheet extends ActorSheet {
 
   async getData(options) {
     const context = await super.getData(options);
-    context.system = foundry.utils.deepClone(context.actor.system || {});
+    const systemData = this.actor.system;
+    context.system = foundry.utils.deepClone(systemData?.toObject ? systemData.toObject(false) : (systemData || {}));
     Object.assign(context,summonSheetContext(this.actor,game.actors));
     const conf = context.system.configuracoes || {};
 
@@ -126,9 +129,9 @@ export class ShinobiActorSheet extends ActorSheet {
     context.excessSlots=Math.max(0,used-3);context.encumbranceMovementPenalty=context.excessSlots*3;context.encumbranceAccuracyPenalty=context.excessSlots;
 
     if (context.system.databook) {
-      context.biografiaHTML = await TextEditor.enrichHTML(context.system.databook.biografia || "", { async: true });
-      context.curiosidadesHTML = await TextEditor.enrichHTML(context.system.databook.curiosidades || "", { async: true });
-      context.relacoesHTML = await TextEditor.enrichHTML(context.system.databook.relacoesTexto || "", { async: true });
+      context.biografiaHTML = await RichTextEditor.enrichHTML(context.system.databook.biografia || "", { async: true });
+      context.curiosidadesHTML = await RichTextEditor.enrichHTML(context.system.databook.curiosidades || "", { async: true });
+      context.relacoesHTML = await RichTextEditor.enrichHTML(context.system.databook.relacoesTexto || "", { async: true });
     }
 
     const nc = context.isSummon ? Number(context.system.cabecalho?.nc ?? 0) : context.system.cabecalho?.nc || 4;
@@ -455,4 +458,5 @@ export class ShinobiActorSheet extends ActorSheet {
     }).render(true);
   }
 }
+
 

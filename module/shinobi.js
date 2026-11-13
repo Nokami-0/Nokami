@@ -303,10 +303,14 @@ Hooks.once("init", () => {
 
   CONFIG.Combat.initiative = { formula: SHINOBI_CONFIG.initiativeFormula, decimals: 2 };
 
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet(SHINOBI_CONFIG.systemId, ShinobiActorSheet, { makeDefault: true });
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet(SHINOBI_CONFIG.systemId, ShinobiItemSheet, { makeDefault: true });
+  const actors = foundry.documents?.collections?.Actors ?? globalThis.Actors;
+  const items = foundry.documents?.collections?.Items ?? globalThis.Items;
+  const actorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
+  const itemSheet = foundry.appv1?.sheets?.ItemSheet ?? globalThis.ItemSheet;
+  actors.unregisterSheet("core", actorSheet);
+  actors.registerSheet(SHINOBI_CONFIG.systemId, ShinobiActorSheet, { makeDefault: true });
+  items.unregisterSheet("core", itemSheet);
+  items.registerSheet(SHINOBI_CONFIG.systemId, ShinobiItemSheet, { makeDefault: true });
 });
 Hooks.once("ready", async () => {
   if (!game.user.isGM) return;
@@ -315,4 +319,5 @@ Hooks.once("ready", async () => {
     await ensureWeaponLibrary();
   } catch (error) { console.error("Shinobi no Sho: weapon folder creation failed", error); ui.notifications.error("Weapon folders could not be created; check the console."); }
 });
+
 

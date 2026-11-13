@@ -1,4 +1,5 @@
-export class ShinobiItemSheet extends ItemSheet {
+const BaseItemSheet = foundry.appv1?.sheets?.ItemSheet ?? globalThis.ItemSheet;
+export class ShinobiItemSheet extends BaseItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["shinobi", "sheet", "item"], width: 520, height: 480,
