@@ -1,3 +1,4 @@
+import {dokiEquipment} from './doki-equipment.js';
 const SYS='shinobi-no-sho-revamp', ROOT=`systems/${SYS}/integrated`;
 let SPECIES=[];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -55,8 +56,8 @@ function sizeDetails(size){
 }
 
 function attacks(p){
- if(p.dokiWeapon==='club')return [['Club','Bludgeoning']];
- if(p.dokiWeapon==='claws')return [['Tekko-kagi','Slashing/Piercing']];
+ if(p.dokiWeapon==='club')return [['Club','Bludgeoning'],['Unarmed Strike','Bludgeoning']];
+ if(p.dokiWeapon==='claws')return [['Tekko-Kagi — Pair','Slashing/Piercing'],['Unarmed Strike','Bludgeoning']];
  if(p.dokiWeapon==='unarmed')return [['Unarmed Strike','Bludgeoning']];
  const n=p.name.toLowerCase();if(n.includes('spider'))return [['Bite','Piercing'],['Body Strike','Bludgeoning']];if(n.includes('snake'))return [['Bite','Piercing'],['Tail Strike','Bludgeoning']];if(n.includes('eagle'))return [['Claws','Slashing'],['Beak','Piercing']];if(n.includes('dog'))return [['Bite','Piercing']];if(n.includes('slug'))return [['Body Slam','Bludgeoning']];if(n.includes('monkey'))return [['Punch','Bludgeoning'],['Kick','Bludgeoning']];if(n.includes('bee'))return [['Sting','Piercing']];if(n.includes('toad')||n.includes('frog'))return [['Club','Bludgeoning'],['Spear','Piercing'],['Sword','Slashing']];return []}
 function list(){return [...SPECIES,...game.actors.filter(a=>a.getFlag(SYS,'customSpecies')).map(a=>a.getFlag(SYS,'customSpecies'))]}
@@ -81,13 +82,13 @@ async function actorFor(p,nc,owner,mode,sizeId){
 }
 
 function summonItems(p,nc,skills){
- return [...attacks(p).map(([name,type])=>({name:`${name} (${type})`,type:'equipamento',system:{
+ return [...(p.dokiWeapon?dokiEquipment(p,nc):attacks(p).map(([name,type])=>({name:`${name} (${type})`,type:'equipamento',system:{
    descricao:p.dokiWeapon==='claws'?'Tekko-kagi (Advanced Shinobi Guide, pp. 69–72): +3/+1 damage, 15–16 critical, Slashing/Piercing.':`Summon attack. Base melee damage = max(3, Strength − 3); NC below 4 cannot deal attack damage.`,
    weaponCategory:p.dokiWeapon==='claws'?'martial':(p.dokiWeapon==='club'?'simple':'none'),
    damageType:type.toLowerCase().includes('slashing')?'slashing':type.toLowerCase().includes('piercing')?'piercing':'bludgeoning',
    weaponBonus:p.dokiWeapon==='claws'?3:0,criticalRange:p.dokiWeapon==='claws'?'15-16':'15-16',
    attackType:'melee',equipped:true
-  },flags:{[SYS]:{summonAttack:true,attackType:'melee',damageType:type,noDamage:nc<4,baseDamageFormula:'max(3, Strength - 3)'}}})),...String(p.aptitudes||'').split(',').map(x=>x.trim()).filter(Boolean).map(name=>({name:`Allowed Aptitude: ${name}`,type:'aptidao',system:{descricao:'Species aptitude OPTION, not automatically granted. Purchase according to NC power points and prerequisites before using.'},flags:{[SYS]:{summonAllowedAptitude:true}}})),...skills.map(s=>({name:`Skill: ${s}`,type:'aptidao',system:{descricao:`Species Skill (not an aptitude purchase). Use the corresponding attribute as skill accuracy; skills not listed for this species are level zero.`},flags:{[SYS]:{speciesSkill:true,skillKey:skmap[s.toLowerCase()]||null}}}))];
+  },flags:{[SYS]:{summonAttack:true,attackType:'melee',damageType:type,noDamage:nc<4,baseDamageFormula:'max(3, Strength - 3)'}}}))),...String(p.aptitudes||'').split(',').map(x=>x.trim()).filter(Boolean).map(name=>({name:`Allowed Aptitude: ${name}`,type:'aptidao',system:{descricao:'Species aptitude OPTION, not automatically granted. Purchase according to NC power points and prerequisites before using.'},flags:{[SYS]:{summonAllowedAptitude:true}}})),...skills.map(s=>({name:`Skill: ${s}`,type:'aptidao',system:{descricao:`Species Skill (not an aptitude purchase). Use the corresponding attribute as skill accuracy; skills not listed for this species are level zero.`},flags:{[SYS]:{speciesSkill:true,skillKey:skmap[s.toLowerCase()]||null}}}))];
 }
 export async function loadKuchiyoseSpecies(){
  if(SPECIES.length)return SPECIES;
@@ -119,7 +120,7 @@ export function buildKuchiyoseTemplate(p){
  ].filter(Boolean).join('\n\n');
  const items=summonItems(p,nc,skills);
  items.unshift({name:'Species Profile & Summoning Rules',type:'aptidao',img,system:{descricao:text},flags:{[SYS]:{summonReference:true}}});
- return {name:p.name,type:'personagem',img,system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:false,disposition:1},items,flags:{[SYS]:{kuchiyoseCompendiumKey:p.name,kuchiyoseTemplateVersion:1,summonTemplate:true,kuchiyoseSpecies:p,summonProfile:profile}}};
+ return {name:p.name,type:'personagem',img,system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:false,disposition:1},items,flags:{[SYS]:{kuchiyoseCompendiumKey:p.name,kuchiyoseTemplateVersion:1,...(p.dokiWeapon?{dokiLoadoutVersion:1}:{}),summonTemplate:true,kuchiyoseSpecies:p,summonProfile:profile}}};
 }
 
 function freePosition(t,scene,squares=1,spawned=[]){
