@@ -118,3 +118,21 @@ Sources: Basic Book4.1b pp.91–114 and Advanced Shinobi Guide pp.48–56 (PDF49
 This is the **Ninpou power and its five basic elemental powers**, not a reclassification of other power systems. Restricted Hijutsu, clan/Kekkei Genkai elements, Bijuu-only variants, and Kinjutsu-exclusive effects are not imported. A common effect shared with a restricted power remains available in its printed common-power list. The optional non-elemental Mist card requires GM permission and cannot evolve. No clan or Hijutsu catalogs are searched by name to infer eligibility.
 
 All 29 automated checks pass, including nine new catalog, compendium and browser checks and the existing summon regressions. Live Foundry runtime testing remains pending.
+
+
+
+## Fuuinjutsu and Iryou Ninjutsu tabs (1.7.48)
+
+The common-power browser now has four tabs: **Non-Elemental Ninpou**, **Elemental Ninpou**, **Fuuinjutsu**, and **Iryou Ninjutsu**. Open **System Settings → Ninpou, Fuuinjutsu & Iryou Ninjutsu → Browse Common Powers**, or use the browser button in the existing Ninpou compendium. Existing worlds may retain the old compendium title; the pack identity remains world.sns-ninpou.
+
+Fuuinjutsu contains **Power Rules**, **Seals**, and **Advanced Seals** folders and a matching Section filter. The 11 sealing cards cover prerequisites, scroll/storage rules, Storage Seal, Larger Storage Seal, advanced tag preparation, Misshi, Bakudan, Gensou no In, Ninjutsu no Wana, Chakra no Souin, and Kekkai no In. The six actual advanced seals retain levels3–8 and their individual actions, costs and requirements. Epic Seals are outside these common lists; Shiki Fuujin and other secret/Epic Seal entries are not added here.
+
+Iryou Ninjutsu contains five cards: Medical Power, General Healing, Chakra no Mesu (Chakra Scalpel), In’yu Shoumetsu (Secret Recovery from Injuries), and Shousen no Jutsu (Mystic Palm). These include the Medical Ninja/Spirit6 prerequisites, healing and self-healing formulas, treatment rules, specialized aptitude prerequisites, scalpel hit tracking, defensive healing exclusions/daily limit, and Mystic Palm's offensive resistance tests.
+
+The source is Basic Book4.1b pp.114–121; page117 was visually/OCR checked because its extracted text omitted the advanced seals. These additions do not grant clan, Hijutsu, Kinjutsu, or restricted regeneration powers. Common Storage Seal's ability to hold an eligible restricted-element technique does not let an unqualified character cast it; Ninjutsu Trap cannot store restricted powers.
+
+There are now **151 total common-power entries**, including the previous 135 Ninpou entries and 16 new sealing/medical cards. The same GM startup/rebuild process fills missing entries without duplicating or overwriting edits to current entries. The character-sheet **Browse Powers & Abilities** control also lists Fuuinjutsu and Iryou Ninjutsu separately, with their sections and minimum levels. Imported sealing/medical cards use the native Power item type and retain stable source identities for duplicate prevention.
+
+Cards document their rules; configure selected levels and resource costs before use. Sealing/unsealing, prepared tags, trap rolls, healing, hit counters, daily limits and ongoing effects are resolved manually. These tabs do not add automatic healing, sealing or resource consumption. The existing source budgets and prerequisites still apply.
+
+All 37 automated checks pass. Validation covers all four rendered browser tabs, tab switching, clearing stale filters, reading/dragging cards, sealing/medical source distinctions and restrictions, source-specific formulas/costs, and existing Ninpou/summon regressions. Live Foundry runtime testing remains pending.

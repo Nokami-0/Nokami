@@ -1,7 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {parseHTML} from 'linkedom';
 const SYS='shinobi-no-sho-revamp';
 const catalog=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-common-ninpou__items.json',import.meta.url)));
-const hooks={};globalThis.Hooks={once:(name,cb)=>hooks[name]=cb,on(){}};globalThis.FormApplication=class{};globalThis.fetch=async()=>({ok:true,json:async()=>structuredClone(catalog)});
+const support=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-sealing-medical__items.json',import.meta.url)));
+const hooks={};globalThis.Hooks={once:(name,cb)=>hooks[name]=cb,on(){}};globalThis.FormApplication=class{};globalThis.fetch=async url=>({ok:true,json:async()=>structuredClone(url.includes('sns-sealing-medical')?support:catalog)});
 const {validateNinpouCatalog,ninpouFolderPath,ninpouItem,buildNinpouCompendium,filterNinpouEntries,ninpouBrowserMarkup,openNinpouBrowser}=await import('../module/ninpou-compendium.js');
 const entry=id=>catalog.find(r=>r.id===id);
 test('all 135 source-checked entries have explicit common eligibility and separated categories',()=>{
@@ -42,7 +43,7 @@ function setup(){
  return {packs,pack,docs,folders,manual};
 }
 test('build creates all entries once, preserves manual edits/items, and restores lock',async()=>{
- const {pack,docs,manual}=setup();const first=await buildNinpouCompendium();assert.equal(first.added,135);assert.equal(pack.locked,true);assert.equal(docs.length,136);
+ const {pack,docs,manual}=setup();const first=await buildNinpouCompendium();assert.equal(first.added,151);assert.equal(pack.locked,true);assert.equal(docs.length,152);
  docs[1].name='GM renamed';const again=await buildNinpouCompendium();assert.equal(again.added,0);assert.equal(again.updated,0);assert.equal(docs[1].name,'GM renamed');assert.ok(docs.includes(manual));assert.equal(pack.locked,true);
 });
 test('only old generated placeholders are retired; manually created and restricted entries remain',async()=>{
@@ -54,9 +55,16 @@ test('GM permission and failures are enforced without leaving packs unlocked',as
  const {packs,pack}=setup();game.user.isGM=false;await assert.rejects(buildNinpouCompendium(),/Only a GM/);game.user.isGM=true;
  packs.set(pack.collection,pack);pack.getDocuments=async()=>{throw Error('Read failure')};await assert.rejects(buildNinpouCompendium(),/Read failure/);assert.equal(pack.locked,true);
 });
-test('browser has exactly two category tabs and its filters cannot mix elemental with non-elemental',()=>{
- const {document}=parseHTML(ninpouBrowserMarkup());assert.deepEqual([...document.querySelectorAll('[data-ninpou-tab]')].map(e=>e.textContent),['Non-Elemental Ninpou','Elemental Ninpou']);
+test('browser has all four category tabs and its filters cannot mix elemental with non-elemental',()=>{
+ const {document}=parseHTML(ninpouBrowserMarkup());assert.deepEqual([...document.querySelectorAll('[data-ninpou-tab]')].map(e=>e.textContent),['Non-Elemental Ninpou','Elemental Ninpou','Fuuinjutsu','Iryou Ninjutsu']);
  const entries=catalog.map((r,i)=>({_id:String(i),...ninpouItem(r)}));assert.equal(filterNinpouEntries(entries).length,23);
  const wind=filterNinpouEntries(entries,{category:'elemental',element:'fuuton'});assert.equal(wind.length,25);assert.ok(wind.every(r=>r.flags[SYS].hierarchy.element==='fuuton'));
  assert.equal(filterNinpouEntries(entries,{category:'elemental',element:'fuuton',level:'6',query:'sharpen'}).length,1);
+});
+
+test('upgrading an existing 135-entry Ninpou pack adds only the 16 sealing/medical cards',async()=>{
+ const {packs,pack,docs}=setup();packs.set(pack.collection,pack);
+ for(const row of catalog){const data=ninpouItem(row);await Item.create(data);}
+ docs[1].name='Existing edited Cannon';
+ const report=await buildNinpouCompendium();assert.equal(report.added,16);assert.equal(report.updated,0);assert.equal(report.total,151);assert.equal(docs.length,152);assert.equal(docs[1].name,'Existing edited Cannon');assert.equal(pack.locked,true);
 });

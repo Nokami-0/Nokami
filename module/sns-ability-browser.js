@@ -8,11 +8,11 @@ export async function openSnsAbilityBrowser(actor){
  for(const pack of packs){
   const index=await pack.getIndex({fields:[`flags.${SYS}.hierarchy`,`flags.${SYS}.compendiumUid`]});
   for(const row of index){const meta=row.flags?.[SYS]?.hierarchy;
-   if(meta&&['Clan','Clans','Hijutsu','Common Ninpou'].includes(meta.family))entries.push({pack,id:row._id,name:row.name,meta:{...meta,family:meta.family==='Clan'?'Clans':meta.family}});
+   if(meta&&['Clan','Clans','Hijutsu','Common Ninpou','Fuuinjutsu','Iryou Ninjutsu'].includes(meta.family))entries.push({pack,id:row._id,name:row.name,meta:{...meta,family:meta.family==='Clan'?'Clans':meta.family}});
   }
  }
  if(!entries.length){ui.notifications.warn('No organized ability entries found. Rebuild the compendiums.');return;}
- const families=['Common Ninpou','Clans','Hijutsu'];
+ const families=['Common Ninpou','Fuuinjutsu','Iryou Ninjutsu','Clans','Hijutsu'];
  const content=`<form class="sns-ability-browser"><p>Browse by source association. Adding an ability does not waive its prerequisites or purchase cost.</p>
  <div class="form-group"><label>Source</label><select name="family">${families.map(f=>`<option>${f}</option>`).join('')}</select></div>
  <div class="form-group"><label>Power / Association</label><select name="owner"></select></div>
@@ -38,4 +38,5 @@ export async function openSnsAbilityBrowser(actor){
   el('family').on('change',rebuildOwners);el('owner').on('change',rebuildFilters);el('kind').on('change',draw);el('level').on('change',draw);el('query').on('input',draw);rebuildOwners();
  },default:'close',width:680});dlg.render(true);
 }
+
 
