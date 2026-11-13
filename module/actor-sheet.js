@@ -1,3 +1,4 @@
+import {summonEquipmentBase} from './doki-equipment.js';
 import { setEquipmentState } from './equipment-state.js';
 import { fireSkyKunaiLauncher, isSkyKunaiLauncher } from "./sky-equipment.js";
 import { fireBombLauncher, isBombLauncher } from "./bomb-launcher.js";
@@ -246,10 +247,12 @@ export class ShinobiActorSheet extends ActorSheet {
       if (isBombLauncher(item)) return fireBombLauncher(this.actor, item);
       if (isSkyKunaiLauncher(item)) return fireSkyKunaiLauncher(this.actor, item);
       if (item.system.weaponCategory === 'none') return ui.notifications.warn('Set a weapon category on this equipment first.');
+      const summonAttack=!!item.getFlag('shinobi-no-sho-revamp','summonAttack');
+      if(summonAttack&&(item.getFlag('shinobi-no-sho-revamp','noDamage')||Number(this.actor.system.cabecalho?.nc)<4))return ui.notifications.warn('Summons below NC 4 cannot deal attack damage.');
       const ranged=item.system.attackType === 'ranged';
       const attribute=Number((ranged?this.actor.system.atributos?.des:this.actor.system.atributos?.for)?.valor ?? 0);
       const dda=Number(item.system.weaponDamage ?? 0), modifier=Number(item.system.weaponBonus ?? 0);
-      const base=Math.max(0,Math.ceil(attribute/2)+dda+modifier);
+      const base=summonAttack?summonEquipmentBase(attribute,item):Math.max(0,Math.ceil(attribute/2)+dda+modifier);
       const options=[1,2,3,4].map(n=>`<option value="${n}">Damage degree ${n}</option>`).join('');
       const degree=await new Promise(resolve=>new Dialog({
         title:`${item.name}: weapon damage`,
@@ -259,7 +262,7 @@ export class ShinobiActorSheet extends ActorSheet {
       }).render(true));
       if (degree===null || ![1,2,3,4].includes(degree)) return;
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
-        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ceil(${ranged?'Dexterity':'Strength'} ${attribute} / 2) + Weapon Damage ${dda} + Modifier ${modifier} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
+        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + Weapon Damage ${dda} + Modifier ${modifier} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
     // Bind native buttons directly: clicks on either the label or nested icon
     // resolve the same embedded item without depending on row traversal.
