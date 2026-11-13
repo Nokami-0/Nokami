@@ -1,3 +1,4 @@
+import {summonSheetContext,summonReferenceKind} from './summon-sheet.js';
 import {summonEquipmentBase} from './doki-equipment.js';
 import { setEquipmentState } from './equipment-state.js';
 import { fireSkyKunaiLauncher, isSkyKunaiLauncher } from "./sky-equipment.js";
@@ -23,6 +24,7 @@ export class ShinobiActorSheet extends ActorSheet {
   async getData(options) {
     const context = await super.getData(options);
     context.system = foundry.utils.deepClone(context.actor.system || {});
+    Object.assign(context,summonSheetContext(this.actor,game.actors));
     const conf = context.system.configuracoes || {};
 
     const nomesPericias = {
@@ -101,6 +103,8 @@ export class ShinobiActorSheet extends ActorSheet {
     context.equipamentos=[];context.poderes=[];context.aptidoes=[];context.aptidoesGratuitas=[];context.elementos=[];
     let used=0,added=0,removed=0,value=0;
     for(const item of items){
+      const reference=context.isSummon?summonReferenceKind(item):null;
+      if(reference){context[reference].push(item);continue;}
       if(item.type==='equipamento'){
         const sys=item.system||{},qty=Math.max(0,num(sys.quantidade,1)),perSlot=Math.max(1,num(sys.unitsPerSlot,1));
         const cost=Math.max(0,num(sys.peso,num(sys.snsEquipment?.slots,num(sys.snsWeapon?.slots))));
