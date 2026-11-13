@@ -1,15 +1,15 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 const SYS='shinobi-no-sho-revamp';
 const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-kuchiyose-actors__summons.json',import.meta.url),'utf8'));
-globalThis.Hooks={once(){},on(){}};
+globalThis.Hooks={once(){},on(){}};globalThis.CONFIG={Actor:{sheetClasses:{personagem:{}}}};
 globalThis.FormApplication=class {static get defaultOptions(){return{}}};
 globalThis.foundry={utils:{mergeObject:(a,b)=>({...a,...b})}};
 globalThis.fetch=async()=>({ok:true,json:async()=>structuredClone(rows)});
 const {buildKuchiyoseTemplate,loadKuchiyoseSpecies}=await import('../module/kuchiyose-engine.js');
 const {buildKuchiyoseCompendium}=await import('../module/kuchiyose-compendium.js');
 test('all 29 species produce sourced editable Actor templates with valid artwork',async()=>{
- assert.equal((await loadKuchiyoseSpecies()).length,29);
- for(const row of rows){
+ assert.equal((await loadKuchiyoseSpecies()).length,30);
+ for(const row of rows.filter(r=>!r.specialSummon)){
   const data=buildKuchiyoseTemplate(row);
   assert.equal(data.name,row.name);assert.equal(data.type,'personagem');assert.equal(data.flags[SYS].summonTemplate,true);
   assert.equal(data.flags[SYS].summonProfile.attributeAllocationRequired,true);
@@ -31,8 +31,8 @@ test('compendium builds all species once, restores lock and preserves edited ent
  globalThis.CompendiumCollection={createCompendium:async options=>{assert.equal(options.type,'Actor');return pack={collection:'world.sns-kuchiyose',locked:true,folders,configure:async o=>{pack.locked=o.locked},getDocuments:async()=>docs};}};
  globalThis.Folder={create:async(data,options)=>{assert.equal(options.pack,pack.collection);const folder={id:'folder'+folders.length,...data};folders.push(folder);return folder;}};
  globalThis.Actor={create:async(data,options)=>{if(!options?.pack)worldCreates++;docs.push({...data,getFlag:(_id,key)=>data.flags[SYS]?.[key]});}};
- const first=await buildKuchiyoseCompendium();assert.equal(first.added,29);assert.equal(pack.locked,true);assert.equal(worldCreates,0);
- docs[0].name='GM custom edit';const second=await buildKuchiyoseCompendium();assert.equal(second.added,0);assert.equal(second.existing,29);assert.equal(docs[0].name,'GM custom edit');assert.equal(docs.length,29);assert.ok(folders.some(f=>f.name==='Animal Path (Rinnegan)'));
+ const first=await buildKuchiyoseCompendium();assert.equal(first.added,30);assert.equal(pack.locked,true);assert.equal(worldCreates,0);
+ docs[0].name='GM custom edit';const second=await buildKuchiyoseCompendium();assert.equal(second.added,0);assert.equal(second.existing,30);assert.equal(docs[0].name,'GM custom edit');assert.equal(docs.length,30);assert.ok(folders.some(f=>f.name==='Animal Path (Rinnegan)'));
 });
 test('non-GMs cannot build compendium',()=>{
  game.user.isGM=false;assert.throws(()=>buildKuchiyoseCompendium(),/Only the GM/);game.user.isGM=true;
@@ -68,4 +68,5 @@ test('summon damage uses Strength minus three and NC-below-four attacks are nond
  assert.equal(summonEquipmentBase(1,club[1]),3);
  assert.ok(dokiEquipment(rows.find(r=>r.dokiWeapon==='claws'),3).every(i=>i.flags[SYS].noDamage));
 });
+
 

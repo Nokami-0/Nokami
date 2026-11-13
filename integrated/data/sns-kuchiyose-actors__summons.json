@@ -1305,5 +1305,16 @@
     ],
     "attacks_description": "Unarmed Strike (Bludgeoning)",
     "techniques": "Tadayou; Kinobori; Mateki — Demonic Flute Control; Makyo no Ran (summoner)"
+  },
+  {
+    "name": "Rashoumon (Rashomon)",
+    "group": "Special Summoning — Common Aptitudes",
+    "specialSummon": "rashoumon",
+    "source": "Book of Hijutsu Volume 2 — Common Options",
+    "page": "141–143",
+    "skills": "",
+    "aptitudes": "",
+    "techniques": "Kuchiyose: Rashoumon",
+    "notes": "Uses its own aptitude rules, not creature Kuchiyose. Purchased levels 1/2/3 require Spirit or Intelligence 8/12/18; active gate caps 1/3/5. Wall width and height each half the chosen attribute in metres."
   }
 ]

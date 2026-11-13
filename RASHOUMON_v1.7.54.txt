@@ -1,0 +1,35 @@
+Kuchiyose: Rashoumon — v1.7.54
+
+As GM, rebuild the Kuchiyose compendium after updating and restarting.
+On a summoner's sheet: Kuchiyose > Summon Creature > Rashoumon (Rashomon).
+Click Summon to open the gate controls. Own the purchased Rashoumon aptitude;
+attributes alone do not grant its higher levels.
+
+Purchased level 1: Spirit or Intelligence 8; maximum 1 active gate.
+Purchased level 2: Spirit or Intelligence 12; maximum 3 active gates; +2 Hardness.
+Purchased level 3: Spirit or Intelligence 18; maximum 5 active gates; +3 Hardness
+instead of the level-2 bonus. Insufficient damage does not degrade these gates.
+
+Choose Spirit or Intelligence for all parameters. Width and height are each
+half that attribute in metres; range is 5 m plus that attribute. Casting costs
+half the attribute, rounded up to a whole chakra point. Divide total Hardness
+across gates cast together. One gate at levels 2–3 uses a Partial Action;
+otherwise use a Movement Action.
+
+Active-gate limits include existing gate tokens on all scenes. Remove tokens
+when dismissed, destroyed or the scene ends to free those slots. Wall placement
+uses the scene scale: width is measured on the map, physical height appears on
+the gate sheet. One-square token depth is a visual marker, not a rule for wall
+thickness. You may reposition/rotate the markers into a legal arrangement.
+
+The gate sheet tracks remaining Hardness independently for each unlinked token.
+Defense (Magic Level +2), damage passing through destroyed gates, confinement
+checks, opening/closing once per round, scene-end dismissal, and obstruction by
+walls require manual resolution. Gates do not automatically create Foundry Walls
+or block attacks/movement. No creature NC, blood contract or ordinary creature
+summoning scene usage is consumed by this separate common aptitude.
+
+Source: bundled Hijutsu Volume 2 entries, PDF pages 141–143.
+Automated checks cover prerequisites, gate caps, dimensions, cost, placement,
+rollback, gate-sheet rendering, and existing creature summoning regressions.
+Live Foundry testing remains.
