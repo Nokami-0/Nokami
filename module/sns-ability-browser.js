@@ -8,19 +8,19 @@ export async function openSnsAbilityBrowser(actor){
  for(const pack of packs){
   const index=await pack.getIndex({fields:[`flags.${SYS}.hierarchy`,`flags.${SYS}.compendiumUid`]});
   for(const row of index){const meta=row.flags?.[SYS]?.hierarchy;
-   if(meta&&['Clans','Hijutsu'].includes(meta.family))entries.push({pack,id:row._id,name:row.name,meta});
+   if(meta&&['Clan','Clans','Hijutsu','Common Ninpou'].includes(meta.family))entries.push({pack,id:row._id,name:row.name,meta:{...meta,family:meta.family==='Clan'?'Clans':meta.family}});
   }
  }
- if(!entries.length){ui.notifications.warn('No clan or Hijutsu entries found. Rebuild the compendiums.');return;}
- const families=['Clans','Hijutsu'];
+ if(!entries.length){ui.notifications.warn('No organized ability entries found. Rebuild the compendiums.');return;}
+ const families=['Common Ninpou','Clans','Hijutsu'];
  const content=`<form class="sns-ability-browser"><p>Browse by source association. Adding an ability does not waive its prerequisites or purchase cost.</p>
  <div class="form-group"><label>Source</label><select name="family">${families.map(f=>`<option>${f}</option>`).join('')}</select></div>
- <div class="form-group"><label>Clan / Hijutsu</label><select name="owner"></select></div>
+ <div class="form-group"><label>Power / Association</label><select name="owner"></select></div>
  <div class="form-group"><label>Ability type</label><select name="kind"><option value="">All types</option></select></div>
  <div class="form-group"><label>Level</label><select name="level"><option value="">All levels</option></select></div>
  <div class="form-group"><label>Search</label><input name="query" type="search" placeholder="Filter by name"></div>
  <div class="sns-ability-results" style="max-height:380px;overflow:auto;border:1px solid #777;padding:5px"></div></form>`;
- const dlg=new Dialog({title:`Clan & Hijutsu Abilities — ${actor.name}`,content,buttons:{close:{label:'Close'}},render:html=>{
+ const dlg=new Dialog({title:`Powers & Abilities — ${actor.name}`,content,buttons:{close:{label:'Close'}},render:html=>{
   const el=n=>html.find(`[name="${n}"]`);
   const selected=()=>entries.filter(x=>x.meta.family===el('family').val()&&x.meta.owner===el('owner').val());
   const rebuildOwners=()=>{const names=[...new Set(entries.filter(x=>x.meta.family===el('family').val()).map(x=>x.meta.owner))].sort();el('owner').html(names.map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join(''));rebuildFilters();};
@@ -38,3 +38,4 @@ export async function openSnsAbilityBrowser(actor){
   el('family').on('change',rebuildOwners);el('owner').on('change',rebuildFilters);el('kind').on('change',draw);el('level').on('change',draw);el('query').on('input',draw);rebuildOwners();
  },default:'close',width:680});dlg.render(true);
 }
+

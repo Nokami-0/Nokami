@@ -1,3 +1,4 @@
+import {buildNinpouCompendium} from './ninpou-compendium.js';
 import { ensureHomebrewHijutsu } from './homebrew-hijutsu.js';
 import { ensureSnowArmor } from "./snow-armor.js";
 import { ensureHitokugutsu } from "./hitokugutsu.js";
@@ -10,7 +11,6 @@ import { ensureSkyEquipment } from "./sky-equipment.js";
  */
 const SNSC='shinobi-no-sho-revamp';
 const SNS_FILES=[
- ['sns-general-ninpou-effects__items.json','Basic Book — General Ninpou Effects','generalEffect'],
  ['sns-aptitude-individual__items.json','Basic & Advanced Individual Aptitudes','aptitude'],
  ['sns-aptitude-reference__items.json','Basic & Advanced Aptitude Reference','aptitude'],
  ['sns-basic-book-clans__items.json','Basic Book Clans','clan'],
@@ -194,6 +194,7 @@ async function buildSNSCompendiums(){
    }
   }catch(e){report.errors.push(`${file}: ${e.message}`);}
  }
+ const ninpou=await buildNinpouCompendium();report.categories.ninpou=ninpou.total;
  await ensureHomebrewHijutsu();
  for(const pack of Object.values(packs))await pack.configure({locked:true});
  console.info('Shinobi compendium repair report',report);
@@ -351,3 +352,4 @@ Hooks.once('ready', async () => {
   ui.notifications.error('Could not create Homebrew compendium items. See the console.');
  }
 });
+

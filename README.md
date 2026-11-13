@@ -102,3 +102,19 @@ Salamander now uses the revised **Book of Hijutsu Vol.2** profile: two-round poi
 **Scope:** attribute distribution remains editable and must follow the selected NC (12 points at NC 4,+6 per NC). Actions, prerequisites, variable chakra costs, special targeting, summoner-only techniques, common-power DC penalties, size modifiers, Partner restrictions and complex effects such as Spider Rain/slug division are described on the cards and resolved manually; they are not automatic combat macros. Importing/dragging a template does not cast the summoning. Doki Feint uses summoner Art per its card. Animal Path's mixed-species eight-creature summon remains a manual procedure. No live Foundry runtime was available for testing.
 
 Validation: 20 automated tests cover all 29 species, complete generated attack/ability entries, source rule distinctions, quantity/NC limits, summon damage, actual derived-data calculations, migration preservation/idempotence, compendium permissions/locking, and rendered tab/card placement. JavaScript syntax checks pass.
+
+
+
+## Common and elemental Ninpou compendium (1.7.47)
+
+A new **Ninpou — Common & Elemental** Item compendium is built on GM startup. Its browser has two tabs: **Non-Elemental Ninpou** and **Elemental Ninpou**. The native compendium uses the same two top-level folders; elemental entries are further grouped into Earth/Doton, Wind/Fuuton, Fire/Katon, Lightning/Raiton and Water/Suiton, then by minimum effect level. Power rule cards have their own folders.
+
+Open **System Settings → Ninpou — Common & Elemental → Browse Ninpou**, or the compendium's **Browse Ninpou Tabs** button where supported. The character-sheet ability browser now includes **Common Ninpou**, with element/association, type, level and search filters. Read a card or drag it onto a sheet; configure the selected level and chakra cost before casting. The cards provide source rules, not automatic effect resolution or automatic power purchases.
+
+There are **135 entries**: 23 non-elemental, 26 Doton, 25 Fuuton, 14 Katon, 17 Raiton and 30 Suiton. These represent six power-rule cards, 39 distinct effect definitions copied only into permitted power lists, and the explicitly marked optional Ninpou Mist rule. Effects are not all automatically learned. Ordinary prerequisites remain, including Spirit8 for Lightning Blade, Energize for Sharpen, and Giant Fan proficiency/Mastery for Float. Sharingan is not required for access to Lightning Blade.
+
+Sources: Basic Book4.1b pp.91–114 and Advanced Shinobi Guide pp.48–56 (PDF49–57). Advanced revisions supersede their Basic Book versions. The old 16-placeholder general-effects import is retired and replaced by sourced descriptions, corrected levels and per-element availability. Only the old generated placeholder compendium entries are removed; manual entries and unrelated compendiums remain. Normal rebuilds include the new pack. Stable IDs prevent duplicates and retain edits on repeat builds; pack lock state is restored after errors.
+
+This is the **Ninpou power and its five basic elemental powers**, not a reclassification of other power systems. Restricted Hijutsu, clan/Kekkei Genkai elements, Bijuu-only variants, and Kinjutsu-exclusive effects are not imported. A common effect shared with a restricted power remains available in its printed common-power list. The optional non-elemental Mist card requires GM permission and cannot evolve. No clan or Hijutsu catalogs are searched by name to infer eligibility.
+
+All 29 automated checks pass, including nine new catalog, compendium and browser checks and the existing summon regressions. Live Foundry runtime testing remains pending.
