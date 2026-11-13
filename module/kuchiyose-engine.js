@@ -1,4 +1,5 @@
 import {dokiEquipment} from './doki-equipment.js';
+import {skillKey,summonNCCap,summonQuantityLegal,SUMMON_REVISION} from './summon-rules.js';
 const SYS='shinobi-no-sho-revamp', ROOT=`systems/${SYS}/integrated`;
 let SPECIES=[];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -24,7 +25,7 @@ function speciesSize(p,nc){
  const locked=fixedSize(p);
  if(locked)return locked;
  const name=String(p.name||'').toLowerCase();
- if(/bee swarm/.test(name))return nc>=12?'large':'medium';
+ if(/bee swarm/.test(name))return nc>=14?'huge':nc>=12?'large':'medium';
  return 'medium';
 }
 function fixedSize(p){
@@ -42,8 +43,11 @@ function sizeLegal(p,size,nc){
  if(fixed&&size!==fixed)return false;
  const s=sizeById(size);
  if(nc<s.minNC)return false;
+ if(size==='tiny'&&nc<14&&p.contract!=='Bees')return false;
  const name=String(p.name||'').toLowerCase();
- if(/bee swarm/.test(name)&&size!==(nc>=12?'large':'medium'))return false;
+ if(size==='small'&&nc>8)return false;
+ if(/salamander/.test(name)&&!['tiny','small','medium','large','huge'].includes(size))return false;
+ if(/bee swarm/.test(name)&&!['medium',...(nc>=12?['large']:[]),...(nc>=14?['huge']:[])].includes(size))return false;
  return true;
 }
 function sizeDetails(size){
@@ -56,6 +60,7 @@ function sizeDetails(size){
 }
 
 function attacks(p){
+ if(Array.isArray(p.attackList))return p.attackList.map(a=>[a.name,a.damageType]);
  if(p.dokiWeapon==='club')return [['Club','Bludgeoning'],['Unarmed Strike','Bludgeoning']];
  if(p.dokiWeapon==='claws')return [['Tekko-Kagi — Pair','Slashing/Piercing'],['Unarmed Strike','Bludgeoning']];
  if(p.dokiWeapon==='unarmed')return [['Unarmed Strike','Bludgeoning']];
@@ -73,22 +78,30 @@ async function actorFor(p,nc,owner,mode,sizeId){
  const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
  const skills=String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
  const size=sizeById(sizeId||speciesSize(p,nc));
- const profile={size:sizeDetails(size),species:p.name,nc,ownerId:owner.id,source:p.source,page:p.page,primaryAttributes:p.key_attributes,skills,aptitudes:p.aptitudes||'',techniques:p.techniques||p.powers||'',attacks:attacks(p),attackTypes:attacks(p).map(a=>({name:a[0],damageType:a[1],attackType:'melee',nonDamaging:nc<4})),skillRules:'Listed species skills use associated attributes; all other skills are 0.',aptitudeRules:'Species aptitude list contains purchase options, not automatic grants.',powerPoints:Math.floor(nc/2),commonPenalty:mode==='common'?-3:0,attributeAllocationRequired:nc>=4,attributePointBudget:nc>=4?12:null,attributePointsSpent:0,notes:p.notes||''};
- const actor=await Actor.create({system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},name:`${p.name} (NC ${nc})`,type:'personagem',img,folder:folder.id,ownership:summonOwnership,prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:true,disposition:1},flags:{[SYS]:{summonProfile:profile}}});
- if(nc<4)await actor.update({'system.energias.vitalidade.max':1,'system.energias.vitalidade.value':1});
+ const profile=profileFor(p,nc,size,{ownerId:owner.id,commonPenalty:mode==='common'?p.commonPenalty??-3:0});
+ const actor=await Actor.create({system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},name:`${p.name} (NC ${nc})`,type:'personagem',img,folder:folder.id,ownership:summonOwnership,prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:true,disposition:1},flags:{[SYS]:{summonProfile:profile,kuchiyoseSpecies:p,summonRulesRevision:SUMMON_REVISION}}});
+ if(nc<4)await actor.update({'system.energias.vitalidade.value':actor.system.energias.vitalidade.max});
  const items=summonItems(p,nc,skills);
  if(items.length)await actor.createEmbeddedDocuments('Item',items);
  return actor;
 }
 
+function profileFor(p,nc,size,extra={}){
+ return {size:sizeDetails(size),species:p.name,nc,source:p.source,page:p.page,primaryAttributes:p.key_attributes,
+ skills:String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean),aptitudes:p.aptitudes||'',techniques:p.techniques||'',powerOptions:p.powerOptions||'None',
+ attacks:attacks(p),powerPoints:Math.floor(nc/2),intelligenceZero:!!p.intelligenceZero,oneVitality:!!p.oneVitality,henchman:!!p.henchman,
+ attributeAllocationRequired:nc>=4,attributePointBudget:nc>=4?12+6*(nc-4):0,attributePointsSpent:0,
+ skillRules:'Species skills use their linked attribute as accuracy; other skills are zero. Listed specialties restrict use (e.g. Athletics: swimming only). Vitality is half normal. NC below 4: all accuracy zero, no damaging attacks.',
+ aptitudeRules:'Choose three free aptitudes from allowed options, respecting prerequisites. Further aptitudes require purchase. Only one allowed power; power points floor(NC/2). Summoner techniques are not creature powers.',
+ notes:p.notes||'',sourceNotes:p.notes||'',...extra};
+}
 function summonItems(p,nc,skills){
- return [...(p.dokiWeapon?dokiEquipment(p,nc):attacks(p).map(([name,type])=>({name:`${name} (${type})`,type:'equipamento',system:{
-   descricao:p.dokiWeapon==='claws'?'Tekko-kagi (Advanced Shinobi Guide, pp. 69–72): +3/+1 damage, 15–16 critical, Slashing/Piercing.':`Summon attack. Base melee damage = max(3, Strength − 3); NC below 4 cannot deal attack damage.`,
-   weaponCategory:p.dokiWeapon==='claws'?'martial':(p.dokiWeapon==='club'?'simple':'none'),
-   damageType:type.toLowerCase().includes('slashing')?'slashing':type.toLowerCase().includes('piercing')?'piercing':'bludgeoning',
-   weaponBonus:p.dokiWeapon==='claws'?3:0,criticalRange:p.dokiWeapon==='claws'?'15-16':'15-16',
-   attackType:'melee',equipped:true
-  },flags:{[SYS]:{summonAttack:true,attackType:'melee',damageType:type,noDamage:nc<4,baseDamageFormula:'max(3, Strength - 3)'}}}))),...String(p.aptitudes||'').split(',').map(x=>x.trim()).filter(Boolean).map(name=>({name:`Allowed Aptitude: ${name}`,type:'aptidao',system:{descricao:'Species aptitude OPTION, not automatically granted. Purchase according to NC power points and prerequisites before using.'},flags:{[SYS]:{summonAllowedAptitude:true}}})),...skills.map(s=>({name:`Skill: ${s}`,type:'aptidao',system:{descricao:`Species Skill (not an aptitude purchase). Use the corresponding attribute as skill accuracy; skills not listed for this species are level zero.`},flags:{[SYS]:{speciesSkill:true,skillKey:skmap[s.toLowerCase()]||null}}}))];
+ const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
+ const flag=(key,extra={})=>({[SYS]:{summonContentKey:key,...extra}});
+ const weapons=p.dokiWeapon?dokiEquipment(p,nc):(p.attackList||attacks(p).map(([name,damageType])=>({name,damageType,category:'natural'}))).map(a=>({name:`${a.name} (${a.damageType})`,type:'equipamento',img,system:{descricao:'Species attack. Base melee damage = max(3, Strength − 3), +1 only for a martial weapon. Ignore ordinary Weapon Damage. NC below 4 cannot deal attack damage.',weaponCategory:a.category||'natural',weaponDamage:0,damageType:a.damageType.toLowerCase().includes('slashing')?'slashing':a.damageType.toLowerCase().includes('piercing')?'piercing':'bludgeoning',attackType:'melee',equipped:true,quantidade:1},flags:flag('attack:'+`${a.name} (${a.damageType})`,{summonAttack:true,noDamage:nc<4,baseDamageFormula:'max(3, Strength - 3) + (martial ? 1 : 0)'})}));
+ return [...weapons,...String(p.aptitudes||'').split(',').map(x=>x.trim()).filter(Boolean).map(name=>({name:`Allowed Aptitude: ${name}`,type:'aptidao',img,system:{descricao:'Species aptitude OPTION. Choose three free with prerequisites; others require purchase. This reference is not itself an active aptitude.'},flags:flag('aptitude:'+name,{summonAllowedAptitude:true})})),...skills.map(name=>({name:`Skill: ${name}`,type:'aptidao',img,system:{descricao:'Innate species skill: use its linked attribute for accuracy, not purchased skill points. Respect any specialty in parentheses; unlisted skills are zero.'},flags:flag('skill:'+skillKey(name),{speciesSkill:true,skillKey:skillKey(name)})})),
+ ...(p.innateAbilities||[]).map(a=>({name:(a.summonerOnly?'Summoner Technique: ':'Innate: ')+a.name,type:'aptidao',img,system:{descricao:[a.summonerOnly?'Performed by the summoner; not a creature grant.':'Species ability; enforce prerequisites before use.',a.prerequisites?'Requirements: '+a.prerequisites:'',a.rules,'Source: '+p.source+', p. '+p.page,'Resolve actions, variable costs, targets and ongoing effects manually from this card.'].filter(Boolean).join('\n\n')},flags:flag('ability:'+a.name,{summonTechnique:true,summonerOnly:!!a.summonerOnly})})),
+ {name:'Power Choice: '+(p.powerOptions||'None'),type:'aptidao',img,system:{descricao:'OPTION, not a free grant. '+(p.powerOptions||'None')+'. One power maximum, floor(NC/2) power points. Standard summon elemental effects: Cannon, Orb, Arrows, Column, Destructive Breath, Lightning Bolt, Missile, Ricochet, subject to species restrictions. Species effects listed as innate do not require buying the full power.'},flags:flag('power-options',{summonTechnique:true})}];
 }
 export async function loadKuchiyoseSpecies(){
  if(SPECIES.length)return SPECIES;
@@ -102,7 +115,7 @@ export function buildKuchiyoseTemplate(p){
  const nc=Math.max(4,Number.isFinite(size.minNC)?size.minNC:4);
  const skills=String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
  const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
- const profile={size:sizeDetails(size),species:p.name,nc,source:p.source,page:p.page,primaryAttributes:p.key_attributes,skills,aptitudes:p.aptitudes||'',techniques:p.techniques||p.powers||'',attacks:attacks(p),powerPoints:Math.floor(nc/2),attributeAllocationRequired:true,attributePointBudget:nc===4?12:null,attributePointsSpent:0,skillRules:'Listed species skills use associated attributes; unlisted skills are zero.',aptitudeRules:'Listed aptitudes are purchase options, not automatic grants.',notes:p.notes||'',template:true};
+ const profile=profileFor(p,nc,size,{template:true});
  const text=[
   'Kuchiyose species template — allocate attributes and energies at the chosen NC before combat.',
   'Use the summoner sheet Summon Creature button to apply chakra costs, contract restrictions and scene usage. Dragging this template onto a scene does not spend chakra.',
@@ -110,8 +123,9 @@ export function buildKuchiyoseTemplate(p){
   'Group: '+(p.group||'Other Kuchiyose'),
   'Primary attributes: '+(p.key_attributes||'See source'),
   'Species skills: '+(p.skills||'See source'),
-  'Allowed aptitude OPTIONS (not free grants): '+(p.aptitudes||'See source'),
-  'Powers / techniques: '+(p.techniques||p.powers||'See source'),
+  'Allowed aptitude OPTIONS (choose three free, respecting prerequisites): '+(p.aptitudes||'See source'),
+  'Allowed power choice: '+(p.powerOptions||'None'),
+  'Innate / conditional / summoner techniques: '+(p.techniques||'None'),
   'Listed attacks: '+(p.attacks_description||attacks(p).map(a=>a.join(' — ')).join('; ')||'See source; no attack invented'),
   'Prerequisite: '+(p.prerequisite||'Follow species and summoning source rules'),
   'Size: '+size.label+'; template NC '+nc+' is the existing size engine minimum, not a printed fixed NPC level.',
@@ -119,8 +133,8 @@ export function buildKuchiyoseTemplate(p){
   p.notes||'',p.stats_status||''
  ].filter(Boolean).join('\n\n');
  const items=summonItems(p,nc,skills);
- items.unshift({name:'Species Profile & Summoning Rules',type:'aptidao',img,system:{descricao:text},flags:{[SYS]:{summonReference:true}}});
- return {name:p.name,type:'personagem',img,system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:false,disposition:1},items,flags:{[SYS]:{kuchiyoseCompendiumKey:p.name,kuchiyoseTemplateVersion:1,...(p.dokiWeapon?{dokiLoadoutVersion:1}:{}),summonTemplate:true,kuchiyoseSpecies:p,summonProfile:profile}}};
+ items.unshift({name:'Species Profile & Summoning Rules',type:'aptidao',img,system:{descricao:text},flags:{[SYS]:{summonReference:true,summonContentKey:'profile'}}});
+ return {name:p.name,type:'personagem',img,system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:false,disposition:1},items,flags:{[SYS]:{kuchiyoseCompendiumKey:p.name,kuchiyoseTemplateVersion:2,summonRulesRevision:SUMMON_REVISION,...(p.dokiWeapon?{dokiLoadoutVersion:2}:{}),summonTemplate:true,kuchiyoseSpecies:p,summonProfile:profile}}};
 }
 
 function freePosition(t,scene,squares=1,spawned=[]){
@@ -144,12 +158,14 @@ async function summon(owner,p,level,qty,mode,nc,sizeId){
  const token=canvas.tokens.controlled.find(t=>t.actor?.id===owner.id);if(!token)return ui.notifications.warn('Select the summoner token on the canvas.');
  const scene=canvas.scene;if(!scene)return ui.notifications.warn('Open a scene first.');
  const known=num(owner.getFlag(SYS,'kuchiyoseLevel'));if(!known||level<1||level>known)return ui.notifications.warn(`Set Kuchiyose level; power used must be 1–${known}.`);
- const dog=/ninken|dog/i.test(p.name),slug=/slug|katsuyu/i.test(p.name);
- if(qty===8&&!dog)return ui.notifications.warn('Eight helpers only applies to Ninken.');if(qty>2&&qty!==8)return ui.notifications.warn('Maximum two normal summons.');if(slug&&qty!==1)return ui.notifications.warn('Slugs are limited to one summon.');
- const cap=Math.max(0,2*level-(qty===2?2:0));if(nc>cap||nc<0)return ui.notifications.warn(`NC must be 0–${cap}.`);
+ if(!summonQuantityLegal(p,qty))return ui.notifications.warn(`Quantity for ${p.name}: 1–${p.maximumQuantity||2}.`);
+ if(p.name==='Giant Bee'&&level<8)return ui.notifications.warn('Giant Bee requires Bee Kuchiyose 8.');
+ const cap=summonNCCap(p,level,qty);if(!Number.isInteger(nc)||!Number.isInteger(level)||nc>cap||nc<0)return ui.notifications.warn(`NC must be 0–${cap}.`);
  const size=sizeById(sizeId||speciesSize(p,nc));if(!sizeLegal(p,size.id,nc))return ui.notifications.warn(`Size ${size.label} is not allowed for ${p.name} at NC ${nc}.`);
- const pact=owner.getFlag(SYS,'summonContract');if(pact&&pact!==p.name&&!(pact.startsWith('Doki (')&&p.name.startsWith('Doki (')))return ui.notifications.warn(`Only one blood contract: ${pact}.`);
- const used=owner.getFlag(SYS,'summonSceneUsage')||{};const count=used.scene===scene.id?num(used.count):0;const limit=mode==='hijutsu'?2:1;if(count>=limit)return ui.notifications.warn(`Summoning limit for this scene reached (${limit}).`);
+ const pact=owner.getFlag(SYS,'summonContract');const pactFamily=SPECIES.find(s=>s.name===pact)?.contract||pact;if(pact&&pactFamily!==(p.contract||p.name))return ui.notifications.warn(`Only one blood contract: ${pact}.`);
+ const used=owner.getFlag(SYS,'summonSceneUsage')||{};const count=used.scene===scene.id?num(used.count):0;const limit=p.singlePerScene?1:2;if(count>=limit)return ui.notifications.warn(`Summoning limit for this scene reached (${limit}).`);
+ if(count&&mode==='hijutsu'&&used.restricted!==false)return ui.notifications.warn('The extra scene use must be Common Power, with its common-power penalties.');
+ if(count&&mode==='common'&&(used.common===true||used.restricted===false))return ui.notifications.warn('Common Power summoning already used this scene.');
  const cost=level*2,available=num(owner.system?.energias?.chakra?.value);if(available<cost)return ui.notifications.warn(`Need ${cost} chakra; have ${available}.`);
  if(!await Dialog.confirm({title:'Kuchiyose',content:`<p>Summon ${qty} × ${esc(p.name)} (NC ${nc}), spending ${cost} chakra and one standard action?</p>`}))return;
  const spawned=[];let paid=false;
@@ -157,7 +173,7 @@ async function summon(owner,p,level,qty,mode,nc,sizeId){
   await owner.update({'system.energias.chakra.value':available-cost});paid=true;
   for(let i=0;i<qty;i++){
    const actor=await actorFor(p,nc,owner,mode,size.id);
-   if(qty===8)await actor.update({'system.energias.vitalidade.max':1,'system.energias.vitalidade.value':1});
+   if(p.oneVitality)await actor.update({'system.energias.vitalidade.max':1,'system.energias.vitalidade.value':1});
    const pos=freePosition(token,scene,size.grid,spawned);
    if(!pos)throw new Error('No available map space for summon size.');
    const td=await actor.getTokenDocument({...pos,width:size.grid,height:size.grid,actorLink:true,flags:{[SYS]:{summonedBy:owner.id,summonScene:scene.id}}});
@@ -168,12 +184,12 @@ async function summon(owner,p,level,qty,mode,nc,sizeId){
    }
 
   }
-  if(!pact)await owner.setFlag(SYS,'summonContract',p.name);await owner.setFlag(SYS,'summonSceneUsage',{scene:scene.id,count:count+1});
+  if(!pact)await owner.setFlag(SYS,'summonContract',p.contract||p.name);await owner.setFlag(SYS,'summonSceneUsage',{scene:scene.id,count:count+1,restricted:(used.scene===scene.id&&!!used.restricted)||mode==='hijutsu',common:(used.scene===scene.id&&!!used.common)||mode==='common'});
   ui.notifications.info(`Summoned ${qty} ${p.name}; ${cost} chakra spent. Open the linked Actor sheet to allocate attributes.`);
  }catch(err){console.error('Kuchiyose error',err);if(spawned.length)await scene.deleteEmbeddedDocuments('Token',spawned.map(t=>t.id));if(paid)await owner.update({'system.energias.chakra.value':available});ui.notifications.error('Summoning failed; chakra refunded. Check console.');}
 }
 function dialog(owner){const opts=list().map((p,i)=>`<option value="${i}">${esc(p.name)} (${esc(p.group)})</option>`).join('');
- new Dialog({title:'Kuchiyose — Summon Creature',content:`<form><div class="form-group"><label>Creature</label><select name="species">${opts}</select></div><div class="form-group"><label>Power level used</label><input type="number" name="level" min="1" value="${num(owner.getFlag(SYS,'kuchiyoseLevel'))||1}"></div><div class="form-group"><label>Quantity</label><select name="qty"><option value="1">1</option><option value="2">2</option><option value="8">8 Ninken helpers</option></select></div><div class="form-group"><label>NC</label><input type="number" name="nc" min="0" value="4"></div><div class="form-group"><label>Creature size (fixed by species / NC)</label><select name="size"></select></div><p class="sns-size-info"></p><div class="form-group"><label>Kuchiyose type</label><select name="mode"><option value="hijutsu">Restricted Hijutsu</option><option value="common">Common Power (−3)</option></select></div><p class="sns-qty-help">Quantity starts at 1 each time. NC cap updates when quantity or level changes.</p><p>A GM must allocate NC 4+ attributes and energies using the character creation table.</p></form>`,buttons:{cast:{label:'Summon',callback:async html=>{const get=k=>html.find(`[name="${k}"]`).val();const p=list()[Number(get('species'))];if(p)await summon(owner,p,num(get('level')),num(get('qty')),get('mode'),num(get('nc')),get('size'));}}},render:html=>{const update=()=>{const profile=list()[Number(html.find('[name=species]').val())];const lv=Math.max(1,Number(html.find('[name=level]').val())||1),qty=Number(html.find('[name=qty]').val())||1;const cap=Math.max(0,2*lv-(qty===2?2:0));const field=html.find('[name=nc]');field.attr('max',cap);if(Number(field.val())>cap)field.val(cap);const suggested=speciesSize(profile||{name:''},Number(field.val()));const previous=html.find('[name=size]').val();const selected=previous&&sizeLegal(profile||{name:''},previous,Number(field.val()))?previous:suggested;
+ new Dialog({title:'Kuchiyose — Summon Creature',content:`<form><div class="form-group"><label>Creature</label><select name="species">${opts}</select></div><div class="form-group"><label>Power level used</label><input type="number" name="level" min="1" value="${num(owner.getFlag(SYS,'kuchiyoseLevel'))||1}"></div><div class="form-group"><label>Quantity</label><select name="qty"><option value="1">1</option><option value="2">2</option><option value="3">3 (Doki)</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8 (numerous species)</option></select></div><div class="form-group"><label>NC</label><input type="number" name="nc" min="0" value="4"></div><div class="form-group"><label>Creature size (fixed by species / NC)</label><select name="size"></select></div><p class="sns-size-info"></p><div class="form-group"><label>Kuchiyose type</label><select name="mode"><option value="hijutsu">Restricted Hijutsu</option><option value="common">Common Power (−3)</option></select></div><p class="sns-qty-help">Quantity starts at 1 each time. NC cap updates when quantity or level changes.</p><p>A GM must allocate NC 4+ attributes and energies using the character creation table.</p></form>`,buttons:{cast:{label:'Summon',callback:async html=>{const get=k=>html.find(`[name="${k}"]`).val();const p=list()[Number(get('species'))];if(p)await summon(owner,p,num(get('level')),num(get('qty')),get('mode'),num(get('nc')),get('size'));}}},render:html=>{const update=()=>{const profile=list()[Number(html.find('[name=species]').val())];const lv=Math.max(1,Number(html.find('[name=level]').val())||1),qty=Number(html.find('[name=qty]').val())||1;const cap=summonNCCap(profile||{},lv,qty);const field=html.find('[name=nc]');field.attr('max',cap);if(Number(field.val())>cap)field.val(cap);const suggested=speciesSize(profile||{name:''},Number(field.val()));const previous=html.find('[name=size]').val();const selected=previous&&sizeLegal(profile||{name:''},previous,Number(field.val()))?previous:suggested;
  const six=['tiny','small','medium','large','huge','gargantuan'];
  const available=SNS_SIZE_TABLE.filter(z=>six.includes(z.id));
  const legal=available.filter(z=>sizeLegal(profile||{name:''},z.id,Number(field.val())));
@@ -196,7 +212,8 @@ Hooks.on('renderActorSheet',(app,html)=>{
  if(!profile||!actor.testUserPermission(game.user,'OWNER'))return;
  const root=html instanceof jQuery?html:$(html);
  if(root.find('.sns-summon-allocation').length)return;
- const block=$(`<section class="sns-summon-allocation" style="padding:8px;margin:6px;border:1px solid #887a59"><strong>Summoned Creature — ${esc(profile.species)}</strong><p>NC ${profile.nc}; size ${esc(profile.size.label)}; base attribute allocation: ${profile.attributePointBudget??'not applicable'} points at NC 4 (check advancement rules for higher NC). Edit attributes normally on this Actor sheet. Size modifiers are listed in the summon profile and are not automatically added to the base attributes.</p></section>`);
+ const block=$(`<section class="sns-summon-allocation" style="padding:8px;margin:6px;border:1px solid #887a59"><strong>Summoned Creature — ${esc(profile.species)}</strong><p>NC ${actor.system.cabecalho.nc}; size ${esc(profile.size.label)}; attribute allocation: ${Number(actor.system.cabecalho.nc)>=4?12+6*(Number(actor.system.cabecalho.nc)-4):0} points (12 at NC4, +6 per NC). Edit attributes normally on this Actor sheet. Size modifiers are listed in the summon profile and are not automatically added to the base attributes.</p></section>`);
  const stats=root.find('.tab[data-tab="status"]').first();(stats.length?stats:root.find('.sheet-body').first()).prepend(block);
 });
 Hooks.on('updateActor',async(actor)=>{if(!game.user.isGM||!actor.getFlag(SYS,'summonProfile')||num(actor.system?.energias?.vitalidade?.value)>0)return;for(const scene of game.scenes){const tokens=scene.tokens.filter(t=>t.actorId===actor.id&&t.getFlag(SYS,'summonedBy'));if(tokens.length)await scene.deleteEmbeddedDocuments('Token',tokens.map(t=>t.id))}});
+

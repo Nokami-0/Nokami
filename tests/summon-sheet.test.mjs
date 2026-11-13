@@ -9,7 +9,7 @@ const render=Handlebars.compile(fs.readFileSync(new URL('../templates/actor-shee
 const actor=(flags={})=>({name:'Doki',system:{cabecalho:{nc:14}},getFlag:(_s,key)=>flags[key]});
 function context(a){
  const c={actor:a,system:{configuracoes:{},cabecalho:{nc:14}},evolucao:{},erros:{},editable:true,...summonSheetContext(a,new Map([['owner',{name:'Summoner Name'}]])),equipamentos:[{id:'club',name:'Club',system:{equipped:true,weaponCategory:'simple'}}],poderes:[{id:'jutsu',name:'Technique'}],elementos:[],aptidoes:[{id:'purchased',name:'Purchased Aptitude',system:{}}],aptidoesGratuitas:[{id:'free',name:'Free Aptitude',system:{}}]};
- if(c.isSummon){c.summonAllowedItems=[{id:'allowed',name:'Allowed Aptitude Option'}];c.summonReferenceItems=[{id:'reference',name:'Species Rules'}];c.summonSkillItems=[{id:'skill',name:'Species Skill'}];}
+ if(c.isSummon){c.summonTechniqueItems=[{id:'innate',name:'Innate: Species Ability'}];c.summonAllowedItems=[{id:'allowed',name:'Allowed Aptitude Option'}];c.summonReferenceItems=[{id:'reference',name:'Species Rules'}];c.summonSkillItems=[{id:'skill',name:'Species Skill'}];}
  return c;
 }
 test('ordinary actors keep their original five primary tabs',()=>{
@@ -43,4 +43,10 @@ test('summon metadata uses live NC, handles missing owners, and escapes source n
  assert.equal(summonReferenceKind({flags:{[SYS]:{speciesSkill:true}}}),'summonSkillItems');
  assert.equal(summonReferenceKind({flags:{[SYS]:{summonReference:true}}}),'summonReferenceItems');
  assert.equal(summonReferenceKind({flags:{}}),null);
+});
+
+
+test('innate abilities appear in Techniques as readable cards, without a purchase or use button',()=>{
+ const {document}=parseHTML(render(context(actor({summonProfile:{species:'Doki'}}))));
+ const row=document.querySelector('[data-item-id="innate"]');assert.ok(row);assert.equal(row.closest('.tab[data-group="primary"]').dataset.tab,'poderes');assert.ok(row.querySelector('.item-to-chat'));assert.ok(row.querySelector('.item-edit'));assert.ok(!row.querySelector('.item-use'));
 });

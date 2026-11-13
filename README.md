@@ -82,3 +82,23 @@ This is a sheet-layout change, not automatic attribute allocation. Existing acto
 Twelve automated tests pass: the existing eight summon/Doki tests plus four rendered-Handlebars/DOM tests checking ordinary versus summon navigation, matching tab panels, unique item placement and action controls, escaped metadata and missing summoner handling. Changed modules pass JavaScript syntax checks. Live Foundry runtime validation remains pending.
 
 For local test execution, install the development dependencies with `npm install`, then run `npm test`. These development packages are not needed by Foundry.
+
+
+
+## Complete summon species information (1.7.46)
+
+All 29 catalog species now have species skill lists, primary attributes, physical attack entries, allowed aptitude lists, a power-choice reference, and individually readable innate/conditional/summoner ability cards under **Techniques**. Source rules were checked against Basic Book 4.1b pp.224–232, the Advanced Shinobi Guide revised Monkey pp.10–12, Book of Hijutsu Vol.1 pp.9 and 69–71, Book of Hijutsu Vol.2 pp.8–9,35–37,81–85,106–108, and the supplied Kamizuru supplement pp.3–4.
+
+The earlier 1.7.44 damage description above is superseded: summon melee base damage is **max(3, Strength−3), plus1 only for a martial weapon**. Ordinary weapon DDA and weapon modifiers do not add to summon damage. Doki keep the Club or paired Tekko-Kagi as requested, with an unarmed attack on all three variants. The ordinary character weapon calculation is unchanged.
+
+Summon Stats now derive half normal Vitality; listed species skills use full linked attribute accuracy, unlisted skills are zero, and Flight is available. Common-power Combat Skill penalties apply automatically (Doki−1, other species−3). Intelligence0 species have zero Intelligence; Ninken have1 Vitality. Below NC 4 attributes/accuracy are zero and attacks cannot deal damage. Turtle shell Hardness is included; Doki Stealth uses the linked summoner's Art when the summoner is available.
+
+Quantity controls support up to eight Ninken/sharks/ordinary spiders, three Doki (trio maximumNC2×level−1), normal pairs (maximumNC2×level−2), and one-only species. The Giant Bee requires Kuchiyose8, bee swarms may become Huge at NC 14, and the ordinary Tiny/Small NC limits are enforced with the bee Tiny exception. The extra restricted-power scene use must use Common Power; species limited to one summon per scene retain that limit.
+
+The GM startup/rebuild migration adds or refreshes generated species references/attacks in the summon compendium and existing generated world summons. It preserves actor names, attributes, current energies and unrelated custom items; outdated generated skill/aptitude option references are reconciled once. Innate ability cards and allowed aptitude references do not spend power points or count as purchased aptitudes. Choose three actual free aptitudes with prerequisites using the existing free-aptitude controls; do not treat the full allowed list as granted. Bought powers/elements use their configured level for the summon budget.
+
+Salamander now uses the revised **Book of Hijutsu Vol.2** profile: two-round poison cooldown, revised venom/escape rules and the NC20 categoryVII exception. Its incompatible older standalone supplement rules are not combined with the revised profile. Basic and revised Monkey entries retain their respective staff variants.
+
+**Scope:** attribute distribution remains editable and must follow the selected NC (12 points at NC 4,+6 per NC). Actions, prerequisites, variable chakra costs, special targeting, summoner-only techniques, common-power DC penalties, size modifiers, Partner restrictions and complex effects such as Spider Rain/slug division are described on the cards and resolved manually; they are not automatic combat macros. Importing/dragging a template does not cast the summoning. Doki Feint uses summoner Art per its card. Animal Path's mixed-species eight-creature summon remains a manual procedure. No live Foundry runtime was available for testing.
+
+Validation: 20 automated tests cover all 29 species, complete generated attack/ability entries, source rule distinctions, quantity/NC limits, summon damage, actual derived-data calculations, migration preservation/idempotence, compendium permissions/locking, and rendered tab/card placement. JavaScript syntax checks pass.

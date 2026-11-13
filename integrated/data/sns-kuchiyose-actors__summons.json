@@ -6,33 +6,84 @@
     "page": "227",
     "key_attributes": "Agility, Perception",
     "skills": "Acrobatics, Athletics, Flight, Alertness, Tracking",
-    "powers": "Wing Flap; aerial combat",
-    "notes": "Does not speak human language.",
+    "powers": "None",
+    "notes": "Does not speak human language. Aggressive Takedown does not require Fighter and ignores its usual maneuver accuracy penalty.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "eagle.png",
     "aptitudes": "Attack in Motion, Specialist, Reflexes, Intuition, Speedster, Expert, Innate Skill, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown",
     "techniques": "Wing Flap",
-    "attacks_description": "Claws (Slashing); Beak (Piercing)"
+    "attacks_description": "Claws (Slashing); Beak (Piercing)",
+    "attackList": [
+      {
+        "name": "Claws",
+        "damageType": "Slashing",
+        "category": "natural"
+      },
+      {
+        "name": "Beak",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "innateAbilities": [
+      {
+        "name": "Wing Flap",
+        "rules": "Standard action; area diameter 2m per Strength. No damage. Disperse gases using Strength as base damage. Other creatures resist being knocked prone using a Kinobori reaction or opposed Acrobatics/Strength against the eagle’s Strength.",
+        "prerequisites": ""
+      }
+    ],
+    "maximumQuantity": 2,
+    "contract": "Eagle",
+    "commonPenalty": -3
   },
   {
     "name": "Ninken (Ninja Dog)",
     "group": "Basic Kuchiyose",
     "source": "Basic Book 4.1b",
-    "page": "227–228",
+    "page": "227–228, 230–231",
     "key_attributes": "Agility, Perception",
     "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking",
-    "powers": "Tracking, teamwork; can walk on water",
-    "notes": "Up to eight dogs may be summoned under numerous summoning rules; special henchmen have 1 Vitality.",
-    "prerequisite": "",
+    "powers": "None",
+    "notes": "Up to eight dogs may be summoned under numerous summoning rules; special henchmen have 1 Vitality. Sensor is continuous smell-based with Perception1 prerequisite.",
+    "prerequisite": "Hatake clan",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "ninken-ninja-dog.png",
     "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Speedster, Expert, Innate Skill, Fighter, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown, Standing Up, Aggressive Disarm, Sweep, Sensor",
-    "techniques": "Tadayou; Doton: Tsuiga no Jutsu",
+    "techniques": "Tadayou; Doton: Tsuiga no Jutsu (summoner)",
     "attacks_description": "Bite (Piercing)",
-    "fixedSize": "medium"
+    "fixedSize": "medium",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Ninken",
+    "maximumQuantity": 8,
+    "henchman": true,
+    "oneVitality": true,
+    "innateAbilities": [
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Doton: Tsuiga no Jutsu",
+        "rules": "Standard action, 10chakra; range as ordinary Doton. Summoner technique: mark the opponent with the summoner’s blood, usually after a degree-3 melee wound, and mark a prepared scroll. Eight dogs track underground by scent and seize the marked opponent. Target must be on the ground; no attack roll. Readiness or Agility against the normal Doton difficulty; failure means grappled and flat-footed for 2 turns, then the dogs return. Follow Basic Book pp.230–231 for the summoner’s activation requirements.",
+        "prerequisites": "Kuchiyose6 (Ninken); Immerse4 (Doton)",
+        "summonerOnly": true
+      }
+    ],
+    "commonPenalty": -3
   },
   {
     "name": "Giant Snake",
@@ -41,32 +92,112 @@
     "page": "228",
     "key_attributes": "Strength, Agility, Perception",
     "skills": "Acrobatics, Athletics, Stealth, Alertness, Tracking",
-    "powers": "Physical combat; size-dependent capabilities",
-    "notes": "",
+    "powers": "None",
+    "notes": "Sensor is continuous, smell-based, with Perception1 prerequisite.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "giant-snake.png",
     "aptitudes": "Attack in Motion, Specialist, Reflexes, Intuition, Speedster, Expert, Innate Skill, Fighter, Blind Spot, Throw, Stunning Attack, Power Attack, Aggressive Takedown, Sensor",
-    "techniques": "Kawarimi no Jutsu; Kinobori; Immerse (Doton); Frighten Lv 2",
-    "attacks_description": "Bite (Piercing); Tail Strike (Bludgeoning)"
+    "techniques": "Kinobori; Kawarimi no Jutsu; Immerse; Frighten Lv 2",
+    "attacks_description": "Bite (Piercing); Tail Strike (Bludgeoning)",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      },
+      {
+        "name": "Tail Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "innateAbilities": [
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Kawarimi no Jutsu",
+        "rules": "Use the ordinary substitution technique and its normal limits.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Immerse",
+        "rules": "Doton Immerse effect; retain its normal action and chakra rules.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Frighten Lv 2",
+        "rules": "Magen effect; DC 6 + Intelligence; only against creatures smaller than the snake.",
+        "prerequisites": ""
+      }
+    ],
+    "maximumQuantity": 2,
+    "contract": "Giant Snake",
+    "commonPenalty": -3
   },
   {
     "name": "Slug (Katsuyu species)",
     "group": "Basic Kuchiyose",
     "source": "Basic Book 4.1b",
-    "page": "228–229",
+    "page": "228–229, 231–232",
     "key_attributes": "Intelligence, Spirit, Vigor",
     "skills": "Natural Sciences, Concentration, Escape, Stealth, Medicine, Alertness",
-    "powers": "Medical Ninjutsu, splitting, acid",
-    "notes": "Healing requires slug and summoner to spend their actions and chakra separately.",
+    "powers": "Iryou Ninjutsu — general healing only",
+    "notes": "Only one slug per scene. For Iryou healing both slug and summoner pay their actions and chakra; add the healing results. Byakugou and Senjutsu access belong to the summoner’s restricted power, not free creature grants.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "slug-katsuyu-species.png",
     "aptitudes": "Acuity, Attack on the Move, Intuition, Reflexes, Medical Ninja, Expert, Innate Skill, Blind-Fight, Mastery, Enhanced Endurance (Stamina), Diehard",
-    "techniques": "Tadayou; Kinobori; Katsuyu Daibunretsu; Byakugou no In; Acid",
-    "attacks_description": "Body Slam (Bludgeoning)"
+    "techniques": "Tadayou; Kinobori; Acid; Katsuyu Daibunretsu; Byakugou no In (summoner)",
+    "attacks_description": "Body Slam (Bludgeoning)",
+    "attackList": [
+      {
+        "name": "Body Slam",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Iryou Ninjutsu — general healing only",
+    "verifiedRevision": 2,
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Acid",
+        "rules": "Destructive Breath Lv 4, based on Spirit; Medium or larger.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Katsuyu Daibunretsu",
+        "rules": "Move action, 6 chakra; Large or larger. Split into mini-slugs of the same NC. Maximum quantity NC, +10 if Huge, +20 if Gargantuan; divide Vitality, at least 1 each, and share chakra/consciousness. Mini-slugs have no standard action and cannot cast Iryou, but can relay the summoner’s healing. Reunion costs a partial action plus movement to a single point and sums surviving Vitality. Can escape restraints or substitute against a physical attack without consuming the summoner’s Kawarimi limit.",
+        "prerequisites": "Kuchiyose 6 (Slug); Large or larger"
+      },
+      {
+        "name": "Byakugou no In",
+        "rules": "Summoner technique, not a free slug power: Kuchiyose 6 (Slug), Iryou 8, Fuuinjutsu 5. Reserve 15 maximum chakra permanently; standard release doubles the reduced maximum as temporary medical-only chakra. Heal 3 Vitality per extra chakra, or automatically 2 per extra chakra when hit. Full rest day to recharge. Distance healing through mini-slugs leaves the summoner defenseless.",
+        "prerequisites": "",
+        "summonerOnly": true
+      }
+    ],
+    "contract": "Slug (Katsuyu species)",
+    "commonPenalty": -3,
+    "singlePerScene": true
   },
   {
     "name": "Toad / Frog",
@@ -74,16 +205,50 @@
     "source": "Basic Book 4.1b",
     "page": "229",
     "key_attributes": "Strength, Agility, Spirit",
-    "skills": "",
-    "powers": "Toad oil and martial combat",
+    "skills": "Acrobatics, Athletics, Escape, Alertness",
+    "powers": "Choose one: Fuuton, Suiton, or Katon",
     "notes": "Species template; determine specific techniques at chosen NC.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "toad-frog.png",
     "aptitudes": "Attack on the Move, Specialist, Warrior, Insight, Reflexes, Speedster, Mastery, Expert, Innate Skill, Weapon Proficiency",
     "techniques": "Tadayou; Toad Oil",
-    "attacks_description": "Club; Spear; Sword"
+    "attacks_description": "Club (Bludgeoning); Spear (Piercing); Sword (Slashing)",
+    "attackList": [
+      {
+        "name": "Club",
+        "damageType": "Bludgeoning",
+        "category": "simple"
+      },
+      {
+        "name": "Spear",
+        "damageType": "Piercing",
+        "category": "simple"
+      },
+      {
+        "name": "Sword",
+        "damageType": "Slashing",
+        "category": "martial"
+      }
+    ],
+    "powerOptions": "Choose one: Fuuton, Suiton, or Katon",
+    "verifiedRevision": 2,
+    "innateAbilities": [
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Toad Oil",
+        "rules": "Suiton toads of Medium size or larger can use the Flammable Lv 5 effect; this does not grant Suiton for free.",
+        "prerequisites": "Suiton; Medium or larger"
+      }
+    ],
+    "maximumQuantity": 2,
+    "contract": "Toad / Frog",
+    "commonPenalty": -3
   },
   {
     "name": "Monkey (Enma species)",
@@ -91,61 +256,199 @@
     "source": "Basic Book 4.1b",
     "page": "229–230",
     "key_attributes": "Strength, Agility, Vigor",
-    "skills": "",
-    "powers": "Martial arts; Henge: Kongounyoi",
-    "notes": "Advanced Guide has revised Monkey profile and staff rules.",
-    "prerequisite": "",
+    "skills": "Acrobatics, Athletics, Disguise, Alertness",
+    "powers": "None",
+    "notes": "Sarutobi-exclusive. Original Basic Book profile and staff rules; use Monkey — Revised for the Advanced Guide alternative.",
+    "prerequisite": "Sarutobi clan",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "monkey-enma-species.png",
     "aptitudes": "Attack on the Move, Specialist, Reflexes, Speedster, Expert, Innate Skill, Fighter, Blind Fight, Blind Spot, Throw, Stunning Attack, Multiple Attack, Power Attack, Aggressive Takedown, Standing, Aggressive Disarm, Grappling Punch, Reverse Kick, Flying Kick",
-    "techniques": "Transformation Technique; Henge: Kongounyoi",
-    "attacks_description": "Punch; Kick",
-    "fixedSize": "large"
+    "techniques": "Henge no Jutsu; Henge: Kongounyoi — Adamantine Staff",
+    "attacks_description": "Punch (Bludgeoning); Kick (Bludgeoning)",
+    "fixedSize": "large",
+    "attackList": [
+      {
+        "name": "Punch",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      },
+      {
+        "name": "Kick",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "innateAbilities": [
+      {
+        "name": "Henge no Jutsu",
+        "rules": "Ordinary transformation technique. The Advanced Shinobi Guide revised Monkey entry supplies the current Adamantine Staff rules.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Henge: Kongounyoi — Adamantine Staff",
+        "rules": "Basic Book version: standard action, 10chakra paid by monkey; sustained. NC12+, Medium+. Special long two-handed staff, DDA+5, Weapon Proficiency required, no Energize. Hardness35; excess damage hurts monkey. Extend with monkey move action+1chakra to5m; retract free. Refine with move action+2chakra to DDA+2, permits Finesse/Dexterity, revert free. Cage uses summoner actions/precision, monkey pays6chakra; Barrier6, HardnessNC+4. Hidden Attack after a successful enemy Block/Dodge/Anticipate costs monkey move+standard and follows Partner rules. See the separate revised Monkey entry for Advanced Guide upgrades.",
+        "prerequisites": "Kuchiyose 6 (Monkey); monkey NC 12+"
+      }
+    ],
+    "maximumQuantity": 2,
+    "contract": "Monkeys",
+    "commonPenalty": -3
   },
   {
     "name": "Monkey — Revised",
     "group": "Advanced revision",
     "source": "Advanced Shinobi Guide (2026)",
-    "page": "11–12",
-    "key_attributes": "Strength, Agility, Perception, Stamina",
-    "skills": "Acrobatics, Athletics, Disguise, Stealth",
-    "powers": "Henge: Kongounyoi, Tadayou, Kinobori",
-    "notes": "Use this revision rather than Basic Book Monkey where Advanced Guide revisions apply.",
-    "prerequisite": "",
+    "page": "10–12 (PDF 11–13)",
+    "key_attributes": "Strength, Agility, Perception, Vigor",
+    "skills": "Acrobatics, Athletics, Disguise, Stealth, Alertness",
+    "powers": "None",
+    "notes": "Advanced Shinobi Guide revised profile; may use any weapon. Iron Fist counts as using a martial weapon for the summon damage bonus. This does not automatically grant Iron Fist or Weapon Proficiency.",
+    "prerequisite": "Sarutobi clan",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "monkey-revised.png",
-    "fixedSize": "large"
+    "fixedSize": "large",
+    "attackList": [
+      {
+        "name": "Punch",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      },
+      {
+        "name": "Kick",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "innateAbilities": [
+      {
+        "name": "Henge no Jutsu",
+        "rules": "Ordinary transformation technique.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Henge: Kongounyoi — Adamantine Staff",
+        "rules": "Standard action, or free immediately after summoning; monkey pays 10 chakra and sustains transformation. Requires monkey NC 12+, Medium+. Wielder uses ordinary special-weapon rules: DDA +5 (+6 at monkey NC 16+), 6m reach, two-handed long weapon, critical 15–16, one slot, Weapon Proficiency required; cannot Energize. Transformed monkey has Hardness 35; excess damage hurts it. Extend: monkey move action +1 chakra to 10m; retract free. Refine: move +2 chakra, DDA becomes +2 and allows Finesse/Dexterity; revert free. Cage: summoner pays actions and uses precision; monkey pays 6 chakra, Barrier 6 with Hardness monkey NC+4. Hidden attack after a successful enemy Block/Dodge/Anticipate costs monkey move+standard and follows Partner damage rules. Hijutsu upgrades: proficiency waived; extension free for one immediate attack to 10m+Vigor then retracts; refined DDA +3 (+4 at NC16); Cage may use monkey actions/precision; hidden attack only standard, exempt from Partner penalty but damage capped at unmodified Strength−3.",
+        "prerequisites": "Kuchiyose 6 (Monkey); monkey NC 12+"
+      }
+    ],
+    "attacks_description": "Punch (Bludgeoning); Kick (Bludgeoning)",
+    "maximumQuantity": 2,
+    "contract": "Monkeys",
+    "commonPenalty": -3,
+    "techniques": "Henge no Jutsu; Tadayou; Kinobori; Henge: Kongounyoi — Adamantine Staff",
+    "aptitudes": "Attack in Motion, Defensive Combat, Improved Critical, Standing Up, Specialist, Warrior, Intuition, Fighter, Blind-Fight, Mobility, Opportunist, Blind Spot, Iron Fist, Reflexes, Quick Retreat, Rolling, Quick Draw, Cleave, Weapon Proficiency, Heavy Armor Proficiency, Speedster, Expert, Innate Skill, Grabbing Objects, Throw, Stunning Attack, Spinning Attack, Multiple Attack, Power Attack, Weapon Block, Aggressive Tackle, Double Kick, Spinning Kick, Reverse Kick, Counterattack, Aggressive Takedown, Aggressive Disarm, Atemi Strike, Karate Strike, Sweep, Grappling Punch, Hook Punch, Flying Kick, Greater Resistance, Specialist Helper, Aggressive Grab, Zui Quan Style, Immobilization, Phalanx Stance, Steal, Perfect Henge, Pack Animal, Agile Stealth"
   },
   {
     "name": "Shark",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "9",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "Shark summoning",
-    "notes": "Consult associated Hoshigaki restrictions and details.",
-    "prerequisite": "",
+    "key_attributes": "Strength, Agility, Perception",
+    "skills": "Athletics (Swimming), Alertness, Tracking",
+    "powers": "None",
+    "notes": "Intelligence 0, automatic failure on Intelligence checks, no speech. Up to eight at the maximum NC; henchmen automatically fail combat checks except School Attack. Sensor is continuous. Eight-shark School Attack is the explicit combat exception.",
+    "prerequisite": "Hoshigaki clan",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "shark.png",
-    "fixedSize": "large"
+    "fixedSize": "large",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      },
+      {
+        "name": "Body Slam",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "maximumQuantity": 8,
+    "henchman": true,
+    "intelligenceZero": true,
+    "innateAbilities": [
+      {
+        "name": "School Attack",
+        "rules": "All eight sharks spend a full action for one Melee Combat check using the highest accuracy. No damage. On success the target’s next defense cannot use Evade or another movement defense; Dodge/Anticipate leaves it flat-footed. Underwater technique defenses remain possible. Does not trigger Partner damage penalty.",
+        "prerequisites": "Eight sharks"
+      }
+    ],
+    "attacks_description": "Bite (Piercing); Body Slam (Bludgeoning)",
+    "aptitudes": "Attack in Motion, Specialist, Reflexes, Speedster, Expert, Innate Skill, Stunning Attack, Power Attack, Sensor",
+    "contract": "Shark",
+    "commonPenalty": -3,
+    "techniques": "School Attack"
   },
   {
     "name": "Baku",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
     "page": "8–9",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "Baku summoning",
-    "notes": "",
-    "prerequisite": "",
+    "key_attributes": "Strength, Perception, Intelligence, Spirit",
+    "skills": "Athletics, Concentration, Alertness, Tracking",
+    "powers": "None",
+    "notes": "Shimura clan summon. Only one Baku per scene. Trunk Strike is a long natural weapon.",
+    "prerequisite": "Shimura clan",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
-    "token_file": "baku.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "baku.png",
+    "attackList": [
+      {
+        "name": "Trunk Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      },
+      {
+        "name": "Claws",
+        "damageType": "Slashing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Frighten Lv 2",
+        "rules": "Magen effect, DC 6 + Intelligence, smaller creatures only.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Akumu no Kyuuin — Nightmare Suction",
+        "rules": "Standard action, concentration. Cone 10m + 1m per Spirit or Intelligence; chakra ½ Spirit +4 each turn. Baku NC12+. Creatures except summoner test Strength/Escape against DC8+ Baku Spirit or are knocked down for one turn; repeat at the end of each Baku turn. Fuuton/Katon directed along suction have minimum damage degree 2. At each Baku turn end, gases and similar effects take damage equal to Baku Spirit.",
+        "prerequisites": "Kuchiyose 6 (Baku); Baku NC12+"
+      }
+    ],
+    "attacks_description": "Trunk Strike (Bludgeoning); Claws (Slashing)",
+    "aptitudes": "Attack in Motion, Improved Critical, Specialist, Intuition, Fighter, Opportunist, Cleave, Heavy Armor Proficiency, Aggressive Grab, Throw, Stunning Attack, Spinning Attack, Multiple Attack, Power Attack, Counterattack, Aggressive Takedown, Phalanx Stance, Empower, Pack Animal, Diehard, Innate Skill, Expert, Greater Resistance",
+    "contract": "Baku",
+    "commonPenalty": -3,
+    "techniques": "Kinobori; Frighten Lv 2; Akumu no Kyuuin — Nightmare Suction",
+    "singlePerScene": true
   },
   {
     "name": "Spider (ordinary)",
@@ -154,12 +457,46 @@
     "page": "35–36",
     "key_attributes": "Dexterity, Agility, Perception",
     "skills": "Athletics (Climbing), Stealth, Search, Alertness, Tracking",
-    "powers": "Kumo Ninpou: Cannon; optionally Restraining and Shackling",
-    "notes": "Ordinary spiders have Intelligence 0, cannot speak; up to eight summoned; Medium maximum size.",
+    "powers": "Kumo Ninpou — Restraint and Shackle only",
+    "notes": "Intelligence0, no speech, up to 8 at maximumNC; henchmen automatically fail checks under their numerous-summoning rules. Fixed Medium. Kinobori costs no chakra. Web Cannon is a free species effect; Restraint/Shackle require buying the limited Kumo Ninpou power.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
-    "token_file": "spider-ordinary.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "spider-ordinary.png",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      },
+      {
+        "name": "Body Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Kumo Ninpou — Restraint and Shackle only",
+    "verifiedRevision": 2,
+    "contract": "Spiders",
+    "maximumQuantity": 8,
+    "intelligenceZero": true,
+    "henchman": true,
+    "innateAbilities": [
+      {
+        "name": "Kinobori — Free Climbing",
+        "rules": "Use Kinobori without spending chakra.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Web Cannon",
+        "rules": "Free access to the Kumo Ninpou Cannon effect at the creature’s NC power limit; expel webs without hand seals. This is not a purchase of the complete power.",
+        "prerequisites": ""
+      }
+    ],
+    "attacks_description": "Bite (Piercing); Body Strike (Bludgeoning)",
+    "commonPenalty": -3,
+    "techniques": "Kinobori — Free Climbing; Web Cannon",
+    "aptitudes": "Acuity, Attack in Motion, Defensive Combat, Improved Critical, Standing Up, Specialist, Intuition, Blind-Fight, Mastery, Mobility, Opportunist, Blind Spot, Reflexes, Quick Retreat, Cleave, Speedster, Stunning Attack, Power Attack, Empower, Expert, Innate Skill, Greater Resistance (Vigor), Specialist Helper, Slender Body, Risk Dodge, Aggressive Grab, Immobilization, Master of Creation, Pack Animal, Agile Stealth"
   },
   {
     "name": "Kyodaigumo (Giant Spider)",
@@ -168,190 +505,518 @@
     "page": "36–37",
     "key_attributes": "Dexterity, Agility, Perception",
     "skills": "Athletics (Climbing), Stealth, Search, Alertness, Tracking",
-    "powers": "Spider Rain; Deathbed; Kumo Ninpou",
+    "powers": "Kumo Ninpou — Restraint and Shackle only",
     "notes": "Normal intelligence and speech; can reach Immense size. Spider Rain: four groups of ten spiders; each group 1 Vitality, accuracy as Kyodaigumo without size modifier, damage NC−3, target flanked. Deathbed: final attack triggers highest-level Shackle on nearest enemy, then Kyodaigumo returns rather than dying.",
     "prerequisite": "Kuchiyose 6 (Spiders)",
     "status": "named special",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "kyodaigumo-giant-spider.png",
-    "fixedSize": "huge"
+    "fixedSize": "huge",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      },
+      {
+        "name": "Body Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Kumo Ninpou — Restraint and Shackle only",
+    "verifiedRevision": 2,
+    "contract": "Spiders",
+    "maximumQuantity": 2,
+    "intelligenceZero": false,
+    "henchman": false,
+    "innateAbilities": [
+      {
+        "name": "Kinobori — Free Climbing",
+        "rules": "Use Kinobori without spending chakra.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Web Cannon",
+        "rules": "Free access to the Kumo Ninpou Cannon effect at the creature’s NC power limit; expel webs without hand seals. This is not a purchase of the complete power.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Spider Rain",
+        "rules": "Kyodaigumo standard action and summoner move action to cut the egg sac (ranged weapon allowed within range). Creates four groups of ten small dog-sized spiders. Each group acts as one creature, 1 Vitality, mother’s accuracy without size adjustment, base damage NC−3; targets are flanked against them. Groups cannot use powers or aptitudes. Their attacks follow Partner damage rules; creating the rain does not.",
+        "prerequisites": "Kuchiyose 6 (Spiders)"
+      },
+      {
+        "name": "Deathbed",
+        "rules": "On Kyodaigumo’s final attack in the scene, she bursts into webs and applies the highest available Shackle to the nearest enemy for continuous duration, then returns home rather than dying.",
+        "prerequisites": ""
+      }
+    ],
+    "attacks_description": "Bite (Piercing); Body Strike (Bludgeoning)",
+    "commonPenalty": -3,
+    "techniques": "Kinobori — Free Climbing; Web Cannon; Spider Rain; Deathbed",
+    "aptitudes": "Acuity, Attack in Motion, Defensive Combat, Improved Critical, Standing Up, Specialist, Intuition, Blind-Fight, Mastery, Mobility, Opportunist, Blind Spot, Reflexes, Quick Retreat, Cleave, Speedster, Stunning Attack, Power Attack, Empower, Expert, Innate Skill, Greater Resistance (Vigor), Specialist Helper, Slender Body, Risk Dodge, Aggressive Grab, Immobilization, Master of Creation, Pack Animal, Agile Stealth"
   },
   {
     "name": "Weasel",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
     "page": "81–82",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
+    "key_attributes": "Agility, Spirit, Dexterity",
+    "skills": "Acrobatics, Athletics, Stealth, Alertness",
+    "powers": "Fuuton",
     "notes": "Special summoning entry; consult source for unique effects and restrictions.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
-    "token_file": "weasel.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "weasel.png",
+    "attackList": [
+      {
+        "name": "Scythe",
+        "damageType": "Slashing",
+        "category": "martial"
+      }
+    ],
+    "powerOptions": "Fuuton",
+    "verifiedRevision": 2,
+    "fixedSize": "medium",
+    "innateAbilities": [
+      {
+        "name": "Kirikiri Mai — Decapitating Dance",
+        "rules": "Summoner technique: full action combines a summon with an instantaneous ranged Fuuton effect of matching power tier that normally requires at most a standard action. Weasel NC12+, Medium. Summoner pays summoning cost; weasel pays effect cost. Effect gains all three Empower bonuses and +0.5 damage degree. Weasel stops at the endpoint and enters combat. Once per scene even if two weasels are summoned.",
+        "prerequisites": "Kuchiyose 6 (Weasel); Fuuton 6; Empower",
+        "summonerOnly": true
+      }
+    ],
+    "attacks_description": "Scythe (Slashing)",
+    "aptitudes": "Acuity, Attack in Motion, Defensive Combat, Improved Critical, Standing Up, Specialist, Warrior, Mastery (Fuuton), Mobility, Opportunist, Blind Spot, Reflexes, Quick Retreat, Rolling, Cleave, Weapon Proficiency (Scythe), Speedster, Wind Control, Empower, Accelerated Technique, Efficient Technique, Elevated Technique, Powerful Technique, Expert, Innate Skill",
+    "maximumQuantity": 2,
+    "contract": "Weasel",
+    "commonPenalty": -3,
+    "techniques": "Kirikiri Mai — Decapitating Dance (summoner)"
   },
   {
     "name": "Seafood",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
-    "page": "83",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Special summoning entry; consult source for unique effects and restrictions.",
+    "page": "82–83 (PDF 83–84)",
+    "key_attributes": "Intelligence, Spirit, Vigor",
+    "skills": "Stealth, Alertness, Search",
+    "powers": "None",
+    "notes": "Clam/shellfish summon. One per scene. Hozuki may buy it only as a common power; a character without another clan/hijutsu may choose it as restricted summoning.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
-    "token_file": "seafood.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "seafood.png",
+    "attackList": [
+      {
+        "name": "Body Slam",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Magen: Kijou no Roukaku",
+        "rules": "Standard, sustained, 5 chakra, range1m. Clam NC10+ with Mirage. Produces Mist Lv5 using the clam’s chakra; may apply Mirage as a free action throughout the vapor without normal range/size limits. Kai cannot dispel this Mirage while mist persists. Clam and summoner are immune to this mist.",
+        "prerequisites": "Kuchiyose 5 (Clam); Mirage aptitude; clam NC10+"
+      }
+    ],
+    "attacks_description": "Body Slam (Bludgeoning)",
+    "aptitudes": "Defensive Combat, Specialist, Intuition, Blind-Fight, Cleave, Stunning Attack, Spinning Attack, Power Attack, Counterattack, Deep Illusion, Empower, Accelerated Technique, Diehard, Innate Skill, Expert, Greater Resistance (Vigor), Fascinate, Mirage, Sensor",
+    "contract": "Seafood",
+    "commonPenalty": -3,
+    "techniques": "Magen: Kijou no Roukaku",
+    "singlePerScene": true
   },
   {
     "name": "Salamander",
     "group": "Additional Kuchiyose",
-    "source": "Kuchiyose: Salamander supplement (plus Hijutsu Vol. 2)",
-    "page": "1–2",
-    "key_attributes": "Intelligence, Strength, Dexterity (Skill)",
-    "skills": "Stealth, Alertness, Athletics, Acrobatics; Acuity, Standing, Mastery, Expert, Innate Skill, Greater Endurance (Vigor), Fighting Blind",
-    "powers": "Dokugiri; Immerse (Doton); Swallowing; tail strike (crushing)",
-    "notes": "Dokugiri: standard-action ninjutsu, 5 chakra, standard cone, instant; venom reservoir 1 compartment per size category; poisoning up to IV above Medium and up to V with Kuchiyose 10 and Elite Chemist; expel poison, then 5-round cooldown. Swallowing: full action while immersed, successful Stealth then grapple sneak attack against smaller creature directly above; swallowed victim has weakened attack and defense; automatic failure on Stamina tests to resist internal venom each round. Escape via contested CC/Strength or Escape against 4 + attacker critical control points. Bladed/piercing weapons can damage salamander on escape. Replaces Immerse False Decapitation.",
+    "source": "Book of Hijutsu Vol. 2",
+    "page": "83–85 (PDF 84–86)",
+    "key_attributes": "Strength, Agility, Intelligence, Vigor",
+    "skills": "Acrobatics, Athletics, Stealth, Alertness",
+    "powers": "None",
+    "notes": "One per scene, maximum Huge. Uses the Book of Hijutsu Vol.2 revised profile. The older standalone Salamander supplement has incompatible poison categories, five-round cooldown, and escape rules; these variants are not combined.",
     "prerequisite": "One salamander per scene; maximum Huge size. Dokugiri requires Kuchiyose 6.",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "salamander.png",
-    "fixedSize": "huge"
+    "fixedSize": "huge",
+    "attackList": [
+      {
+        "name": "Tail Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Immerse",
+        "rules": "Doton Immerse Lv2 at the highest level allowed by NC; normal costs/actions apply.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Dokugiri — Poisonous Fog",
+        "rules": "Standard action, 5 chakra, instantaneous; cone1m per Intelligence. NC12+. One venom compartment per size above Medium; summoner’s Poisoncraft determines venom parameters. Select poisons when summoned. Expelling consumes one compartment and requires a two-round wait before reuse. Swallowed victims automatically fail Vigor resistance and do not consume the compartment. Kuchiyose10 as Hijutsu and NC20 unlock categoryVII Black Salamander Poison.",
+        "prerequisites": "Kuchiyose 6 (Salamander); summoner Poisoncraft10; salamander NC12+"
+      },
+      {
+        "name": "Swallowing",
+        "rules": "Full action from underground after successful Stealth; grapple a creature at least one size smaller immediately above. Victim is stunned and cannot be targeted from outside. At start of each victim turn, standard action Strength opposed by salamander Strength or Escape DC9+ salamander Strength. Failure deals fixed damage equal to summoner Poisoncraft. Successful Strength escape with a slashing/piercing weapon damages the salamander using the same roll’s degree. Replaces Immerse False Decapitation.",
+        "prerequisites": "Immerse; salamander NC12+"
+      }
+    ],
+    "attacks_description": "Tail Strike (Bludgeoning)",
+    "aptitudes": "Acuity, Attack in Motion, Defensive Combat, Improved Critical, Standing Up, Specialist, Blind-Fight, Mobility, Opportunist, Blind Spot, Reflexes, Quick Retreat, Rolling, Cleave, Speedster, Innate Skill, Expert, Greater Resistance (Vigor)",
+    "contract": "Salamander",
+    "commonPenalty": -3,
+    "techniques": "Immerse; Dokugiri — Poisonous Fog; Swallowing",
+    "singlePerScene": true
   },
   {
     "name": "Turtle",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
-    "page": "86",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
+    "page": "85 (PDF 86)",
+    "key_attributes": "Strength, Perception, Intelligence, Vigor",
+    "skills": "Athletics (Swimming), Natural Sciences, Culture, Occultism, Search",
+    "powers": "None",
     "notes": "Special summoning entry; consult source for unique effects and restrictions.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
-    "token_file": "turtle.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "turtle.png",
+    "attackList": [
+      {
+        "name": "Shell Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      },
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "innateAbilities": [
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Stone Skin",
+        "rules": "Doton effect at the highest level allowed by the creature’s NC; common Hardness equals Spirit. Does not stack with Protective Shell.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Protective Shell",
+        "rules": "Body Hardness1; Hardness2 at NC12; Hardness3 at NC16. Does not stack with Stone Skin.",
+        "prerequisites": ""
+      }
+    ],
+    "attacks_description": "Shell Strike (Bludgeoning); Bite (Piercing)",
+    "aptitudes": "Improved Critical, Defensive Combat, Specialist, Intuition, Fighter, Cleave, Stunning Attack, Spinning Attack, Power Attack, Weapon Block, Counterattack, Aggressive Takedown, Aggressive Disarm, Diehard, Expert, Innate Skill, Greater Resistance",
+    "maximumQuantity": 2,
+    "contract": "Turtle",
+    "commonPenalty": -3,
+    "techniques": "Tadayou; Kinobori; Stone Skin; Protective Shell"
   },
   {
     "name": "Drill-Beaked Bird",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "69–70",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Agility, Perception",
+    "skills": "Acrobatics, Flight, Alertness, Tracking",
+    "powers": "None",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "drill-beaked-bird.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Claws",
+        "damageType": "Slashing",
+        "category": "natural"
+      },
+      {
+        "name": "Beak",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [],
+    "attacks_description": "Claws (Slashing); Beak (Piercing)",
+    "aptitudes": "Attack in Motion, Specialist, Reflexes, Intuition, Speedster, Expert, Innate Skill",
+    "commonPenalty": -3,
+    "techniques": "None"
   },
   {
     "name": "Chimera Dog",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "69–70",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Agility, Perception",
+    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking",
+    "powers": "None",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "chimera-dog.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Animal Division",
+        "rules": "At zero Vitality split into two identical creatures one size smaller, without action or chakra cost. Repeat for each, down to Medium. At Medium, zero Vitality defeats that creature. With three or more apply numerous summoning rules. Wings do not grant flight.",
+        "prerequisites": ""
+      }
+    ],
+    "attacks_description": "Bite (Piercing)",
+    "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Speedster, Expert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown, Standing Up, Aggressive Disarm, Sweep",
+    "commonPenalty": -3,
+    "techniques": "Animal Division"
   },
   {
     "name": "Chimera Chameleon",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "70",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Agility, Perception",
+    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking",
+    "powers": "None",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "chimera-chameleon.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Camouflage",
+        "rules": "Total camouflage while motionless; ocular techniques and chakra tracking can still detect it.",
+        "prerequisites": ""
+      }
+    ],
+    "attacks_description": "Bite (Piercing)",
+    "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Speedster, Expert, Innate Skill, Blind-Fight, Blind Spot, Sensor",
+    "commonPenalty": -3,
+    "techniques": "Camouflage"
   },
   {
     "name": "Panda",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "70",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Strength, Vigor",
+    "skills": "Escape, Search, Alertness, Tracking",
+    "powers": "None",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "panda.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Claws",
+        "damageType": "Slashing",
+        "category": "natural"
+      },
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [],
+    "attacks_description": "Claws (Slashing); Bite (Piercing)",
+    "aptitudes": "Expert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown, Standing Up, Sweep",
+    "commonPenalty": -3,
+    "techniques": "None"
   },
   {
     "name": "Bull",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "70–71",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Strength, Vigor",
+    "skills": "Escape, Search, Alertness, Tracking",
+    "powers": "None",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "bull.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Horns",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [],
+    "attacks_description": "Horns (Piercing)",
+    "aptitudes": "Expert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown, Standing Up, Sweep",
+    "commonPenalty": -3,
+    "techniques": "None"
   },
   {
     "name": "Crustacean",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "71",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Spirit, Vigor",
+    "skills": "Athletics, Escape, Stealth, Search, Alertness",
+    "powers": "Suiton",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "crustacean.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Body Slam",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Suiton",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Acid",
+        "rules": "Destructive Breath Lv3; base damage creature level + ½ Spirit. Resolve normal effect actions and cost separately.",
+        "prerequisites": ""
+      }
+    ],
+    "attacks_description": "Body Slam (Bludgeoning)",
+    "aptitudes": "Acuity, Attack in Motion, Intuition, Reflexes, Expert, Innate Skill, Mastery, Greater Resistance (Vigor), Diehard",
+    "commonPenalty": -3,
+    "techniques": "Acid"
   },
   {
     "name": "Centipede",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "71",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Strength, Agility, Perception",
+    "skills": "Acrobatics, Athletics, Stealth, Alertness",
+    "powers": "None",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "centipede.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Bite",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      }
+    ],
+    "attacks_description": "Bite (Piercing)",
+    "aptitudes": "Attack in Motion, Specialist, Reflexes, Speedster, Expert, Innate Skill, Fighter, Blind Spot, Throw, Stunning Attack, Power Attack, Aggressive Takedown",
+    "commonPenalty": -3,
+    "techniques": "Kinobori"
   },
   {
     "name": "Rhinoceros",
     "group": "Animal Path (Rinnegan)",
     "source": "Hijutsu Volume 1 4.1b",
     "page": "71",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Unique Animal Path creature; minimum size Enormous; follows Animal Path control rules.",
-    "prerequisite": "Rinnegan; Occultism 16; Rinne Ninpou 7",
+    "key_attributes": "Strength, Vigor",
+    "skills": "Escape, Search, Alertness, Tracking",
+    "powers": "None",
+    "notes": "Animal Path: unique creature, no duplicate of the same species. May summon all eight different species at maximum NC. With numerous summoning they are henchmen and automatically fail Combat Skill checks against non-henchmen. Common Kuchiyose rules apply. Minimum Gargantuan (Immense). Low intelligence, commands only; do not assign the ordinary speaking-animal behavior.",
+    "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "rhinoceros.png",
-    "fixedSize": "gargantuan"
+    "fixedSize": "gargantuan",
+    "attackList": [
+      {
+        "name": "Horns",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Animal Path",
+    "maximumQuantity": 1,
+    "innateAbilities": [],
+    "attacks_description": "Horns (Piercing)",
+    "aptitudes": "Expert, Innate Skill, Fighter, Blind-Fight, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown, Standing Up, Sweep",
+    "commonPenalty": -3,
+    "techniques": "None"
   },
   {
     "name": "Bee (Individual)",
@@ -359,13 +1024,35 @@
     "source": "Kamizuru Clan Revised (155AMU)",
     "page": "3–4",
     "key_attributes": "Agility, Dexterity, Spirit",
-    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Readiness, Tracking, Poison, Flight; Acuity, Attack in Motion, Specialist, Intuition, Reflex, Mobility, Opportunist, Quick Retreat, Fighter, Chemist",
-    "powers": "Hachiton; Venomous Stingers; Sting (piercing)",
-    "notes": "Individual bee: Tiny; cannot pass combat checks except for self-defense. Bee Kuchiyose requires Spirit or Intelligence 6. Venom generated naturally; extraction requires Beekeeper. Venom resistance and types use the summon Poison skill; switching venom takes about 24 hours.",
+    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking, Poisoncraft, Flight",
+    "powers": "Hachiton",
+    "notes": "Tiny. Automatically fails combat checks except self-defense; use a swarm for combat. Summoner requires Spirit or Intelligence6. Natural venom, Poisoncraft parameters, Beekeeper required for extraction.",
     "prerequisite": "Spirit or Intelligence 6; Bee Kuchiyose 1",
     "status": "species",
-    "stats_status": "NC-generated suggested stats, not fixed official values.",
-    "token_file": "bee-individual.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "bee-individual.png",
+    "attackList": [
+      {
+        "name": "Sting",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Hachiton",
+    "verifiedRevision": 2,
+    "contract": "Bees",
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Venomous Stingers",
+        "rules": "Natural venom needs no purchased materials. Summon Poisoncraft determines resistance and available poisons. Switching venom takes about24hours; extraction requires the summoner’s Beekeeper aptitude.",
+        "prerequisites": ""
+      }
+    ],
+    "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Mobility, Opportunist, Quick Retreat, Fighter, Chemist",
+    "attacks_description": "Sting (Piercing)",
+    "commonPenalty": -3,
+    "techniques": "Venomous Stingers"
   },
   {
     "name": "Bee Swarm (50 Bees)",
@@ -373,13 +1060,40 @@
     "source": "Kamizuru Clan Revised (155AMU)",
     "page": "3–4",
     "key_attributes": "Agility, Dexterity, Spirit",
-    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Readiness, Tracking, Poison, Flight; Acuity, Attack in Motion, Specialist, Intuition, Reflex, Mobility, Opportunist, Quick Retreat, Fighter, Chemist",
-    "powers": "Hachiton; Venomous Stingers; Thousand Bee Stings; Sting (piercing)",
+    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking, Poisoncraft, Flight",
+    "powers": "Hachiton",
     "notes": "One combat-capable swarm has up to 50 bees and Medium size. At NC 12 can become Large; at NC 14 Huge. Up to two swarms (reduce maximum NC by 2). Thousand Bee Stings: full action, chakra cost swarm NC +3; initial damage equals swarm NC; make additional hit tests per 4 Kuchiyose levels, +2 damage per success. Venom resistance/type uses summon Poison skill; changing venom takes 24 hours. Bee Clones level 3 doubles swarm members and raises NC by 1; level 6 raises NC by 2.",
     "prerequisite": "Spirit or Intelligence 6; Bee Kuchiyose 1",
     "status": "species",
-    "stats_status": "NC-generated suggested stats, not fixed official values.",
-    "token_file": "bee-swarm.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "bee-swarm.png",
+    "attackList": [
+      {
+        "name": "Sting",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Hachiton",
+    "verifiedRevision": 2,
+    "contract": "Bees",
+    "maximumQuantity": 2,
+    "innateAbilities": [
+      {
+        "name": "Venomous Stingers",
+        "rules": "Natural venom needs no purchased materials. Summon Poisoncraft determines resistance and available poisons. Switching venom takes about24hours; extraction requires the summoner’s Beekeeper aptitude.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Thousand Bee Stings",
+        "rules": "Full action; chakra cost swarm NC+3. Single target in a straight line, initial base damage swarm NC. After the first success make another hit test for every4Kuchiyose levels; +2damage per additional success, using the first attack’s damage degree.",
+        "prerequisites": "Bee swarm"
+      }
+    ],
+    "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Mobility, Opportunist, Quick Retreat, Fighter, Chemist",
+    "attacks_description": "Sting (Piercing)",
+    "commonPenalty": -3,
+    "techniques": "Venomous Stingers; Thousand Bee Stings"
   },
   {
     "name": "Giant Bee",
@@ -387,60 +1101,209 @@
     "source": "Kamizuru Clan Revised (155AMU)",
     "page": "3–4",
     "key_attributes": "Agility, Dexterity, Spirit",
-    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Readiness, Tracking, Poison, Flight; Acuity, Attack in Motion, Specialist, Intuition, Reflex, Mobility, Opportunist, Quick Retreat, Fighter, Chemist",
-    "powers": "Hachiton; Venomous Stingers; Sting (piercing); Thousand Bee Stings (check swarm-specific applicability with GM)",
-    "notes": "At Bee Kuchiyose 8, summon a single Huge giant bee without requiring a swarm. Venomous Stingers produce natural poison; Beekeeper needed to extract doses. Poison skill determines venom difficulty and accessible types. Summoning follows bee-specific rules.",
-    "prerequisite": "Spirit or Intelligence 6; Bee Kuchiyose 8",
+    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking, Poisoncraft, Flight",
+    "powers": "Hachiton",
+    "notes": "Single Huge bee; effective without a swarm. Thousand Bee Stings is written for swarms and is not granted to a lone giant bee.",
+    "prerequisite": "Bee Kuchiyose8",
     "status": "species",
-    "stats_status": "NC-generated suggested stats, not fixed official values.",
-    "token_file": "giant-bee.png"
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "giant-bee.png",
+    "attackList": [
+      {
+        "name": "Sting",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Hachiton",
+    "verifiedRevision": 2,
+    "contract": "Bees",
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Venomous Stingers",
+        "rules": "Natural venom needs no purchased materials. Summon Poisoncraft determines resistance and available poisons. Switching venom takes about24hours; extraction requires the summoner’s Beekeeper aptitude.",
+        "prerequisites": ""
+      }
+    ],
+    "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Mobility, Opportunist, Quick Retreat, Fighter, Chemist",
+    "attacks_description": "Sting (Piercing)",
+    "commonPenalty": -3,
+    "techniques": "Venomous Stingers"
   },
   {
     "name": "Doki (Club)",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
-    "page": "107–108",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Doki variant. Club; other Doki special effects must be configured using Hijutsu Volume 2. Fixed Huge size.",
+    "page": "106–108 (PDF 107–109)",
+    "key_attributes": "Strength, Dexterity, Agility, Perception",
+    "skills": "Acrobatics, Athletics, Escape, Alertness, Search",
+    "powers": "None",
+    "notes": "Doki always have Intelligence0 and cannot speak; points freed from minimum Intelligence may be redistributed. Mateki control and Art-based skill exceptions are mandatory; club/claws variants retain an unarmed option.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "doki-club.png",
     "dokiWeapon": "club",
-    "fixedSize": "huge"
+    "fixedSize": "huge",
+    "attackList": [
+      {
+        "name": "Club",
+        "damageType": "Bludgeoning",
+        "category": "simple"
+      },
+      {
+        "name": "Unarmed Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Doki",
+    "maximumQuantity": 3,
+    "intelligenceZero": true,
+    "commonPenalty": -1,
+    "aptitudes": "Stunning Attack, Attack in Motion, Spinning Attack, Power Attack, Counterattack, Aggressive Takedown, Aggressive Disarm, Specialist, Agile Stealth, Warrior, Fighter, Innate Skill, Expert, Blind Spot, Reflexes, Greater Resistance, Weapon Proficiency, Speedster",
+    "innateAbilities": [
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Mateki — Demonic Flute Control",
+        "rules": "Command Partner requires the summoner’s Demonic Flute. Without flute playing on their turn, Doki remain immobile and only defend. Flute control does not require a Concentration check for melee. Immune to genjutsu and other mental control. Stealth and Feint use summoner Art (including Expert/Innate Art); no Partner damage penalty. Common Kuchiyose penalty−1. Up to3Doki; for3, maximumNC=2×power−1. Cannot qualify for Senjutsu.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Makyo no Ran",
+        "rules": "Summoner technique: partial action, 5chakra, continuous, requires Mateki, Kuchiyose5Doki and DokiNC9+. Creates semi-material chakra worms, reach6m, on summoned Doki. Base damage Kuchiyose level +½summoner Art, +1 once if Expert/Innate Art. Cannot be blocked; pass through barriers/physical surfaces; ignore Hardness and armor Absorption but cannot reduce objects’ Hardness/Absorption.",
+        "prerequisites": "Kuchiyose5(Doki); Mateki; DokiNC9+",
+        "summonerOnly": true
+      }
+    ],
+    "attacks_description": "Club (Bludgeoning); Unarmed Strike (Bludgeoning)",
+    "techniques": "Tadayou; Kinobori; Mateki — Demonic Flute Control; Makyo no Ran (summoner)"
   },
   {
     "name": "Doki (Claws)",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
-    "page": "107–108",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Doki variant. Tekko-kagi from Advanced Shinobi Guide; other Doki special effects must be configured using Hijutsu Volume 2. Fixed Huge size.",
+    "page": "106–108 (PDF 107–109)",
+    "key_attributes": "Strength, Dexterity, Agility, Perception",
+    "skills": "Acrobatics, Athletics, Escape, Alertness, Search",
+    "powers": "None",
+    "notes": "Doki always have Intelligence0 and cannot speak; points freed from minimum Intelligence may be redistributed. Mateki control and Art-based skill exceptions are mandatory; club/claws variants retain an unarmed option.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "doki-claws.png",
     "dokiWeapon": "claws",
-    "fixedSize": "huge"
+    "fixedSize": "huge",
+    "attackList": [
+      {
+        "name": "Tekko-Kagi — Pair",
+        "damageType": "Slashing/Piercing",
+        "category": "martial"
+      },
+      {
+        "name": "Unarmed Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Doki",
+    "maximumQuantity": 3,
+    "intelligenceZero": true,
+    "commonPenalty": -1,
+    "aptitudes": "Stunning Attack, Attack in Motion, Spinning Attack, Power Attack, Counterattack, Aggressive Takedown, Aggressive Disarm, Specialist, Agile Stealth, Warrior, Fighter, Innate Skill, Expert, Blind Spot, Reflexes, Greater Resistance, Weapon Proficiency, Speedster",
+    "innateAbilities": [
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Mateki — Demonic Flute Control",
+        "rules": "Command Partner requires the summoner’s Demonic Flute. Without flute playing on their turn, Doki remain immobile and only defend. Flute control does not require a Concentration check for melee. Immune to genjutsu and other mental control. Stealth and Feint use summoner Art (including Expert/Innate Art); no Partner damage penalty. Common Kuchiyose penalty−1. Up to3Doki; for3, maximumNC=2×power−1. Cannot qualify for Senjutsu.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Makyo no Ran",
+        "rules": "Summoner technique: partial action, 5chakra, continuous, requires Mateki, Kuchiyose5Doki and DokiNC9+. Creates semi-material chakra worms, reach6m, on summoned Doki. Base damage Kuchiyose level +½summoner Art, +1 once if Expert/Innate Art. Cannot be blocked; pass through barriers/physical surfaces; ignore Hardness and armor Absorption but cannot reduce objects’ Hardness/Absorption.",
+        "prerequisites": "Kuchiyose5(Doki); Mateki; DokiNC9+",
+        "summonerOnly": true
+      }
+    ],
+    "attacks_description": "Tekko-Kagi — Pair (Slashing/Piercing); Unarmed Strike (Bludgeoning)",
+    "techniques": "Tadayou; Kinobori; Mateki — Demonic Flute Control; Makyo no Ran (summoner)"
   },
   {
     "name": "Doki (Armless)",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
-    "page": "107–108",
-    "key_attributes": "",
-    "skills": "",
-    "powers": "",
-    "notes": "Doki variant. Unarmed strikes; other Doki special effects must be configured using Hijutsu Volume 2. Fixed Huge size.",
+    "page": "106–108 (PDF 107–109)",
+    "key_attributes": "Strength, Dexterity, Agility, Perception",
+    "skills": "Acrobatics, Athletics, Escape, Alertness, Search",
+    "powers": "None",
+    "notes": "Doki always have Intelligence0 and cannot speak; points freed from minimum Intelligence may be redistributed. Mateki control and Art-based skill exceptions are mandatory; club/claws variants retain an unarmed option.",
     "prerequisite": "",
     "status": "species",
-    "stats_status": "Build at selected NC; no fixed numerical stat block supplied in this profile.",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
     "token_file": "doki-armless.png",
     "dokiWeapon": "unarmed",
-    "fixedSize": "huge"
+    "fixedSize": "huge",
+    "attackList": [
+      {
+        "name": "Unarmed Strike",
+        "damageType": "Bludgeoning",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "None",
+    "verifiedRevision": 2,
+    "contract": "Doki",
+    "maximumQuantity": 3,
+    "intelligenceZero": true,
+    "commonPenalty": -1,
+    "aptitudes": "Stunning Attack, Attack in Motion, Spinning Attack, Power Attack, Counterattack, Aggressive Takedown, Aggressive Disarm, Specialist, Agile Stealth, Warrior, Fighter, Innate Skill, Expert, Blind Spot, Reflexes, Greater Resistance, Weapon Proficiency, Speedster",
+    "innateAbilities": [
+      {
+        "name": "Tadayou",
+        "rules": "Walk on water using the ordinary Tadayou rules. Retain the normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Kinobori",
+        "rules": "Cling to surfaces using the ordinary Kinobori rules. Species access does not remove normal chakra costs.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Mateki — Demonic Flute Control",
+        "rules": "Command Partner requires the summoner’s Demonic Flute. Without flute playing on their turn, Doki remain immobile and only defend. Flute control does not require a Concentration check for melee. Immune to genjutsu and other mental control. Stealth and Feint use summoner Art (including Expert/Innate Art); no Partner damage penalty. Common Kuchiyose penalty−1. Up to3Doki; for3, maximumNC=2×power−1. Cannot qualify for Senjutsu.",
+        "prerequisites": ""
+      },
+      {
+        "name": "Makyo no Ran",
+        "rules": "Summoner technique: partial action, 5chakra, continuous, requires Mateki, Kuchiyose5Doki and DokiNC9+. Creates semi-material chakra worms, reach6m, on summoned Doki. Base damage Kuchiyose level +½summoner Art, +1 once if Expert/Innate Art. Cannot be blocked; pass through barriers/physical surfaces; ignore Hardness and armor Absorption but cannot reduce objects’ Hardness/Absorption.",
+        "prerequisites": "Kuchiyose5(Doki); Mateki; DokiNC9+",
+        "summonerOnly": true
+      }
+    ],
+    "attacks_description": "Unarmed Strike (Bludgeoning)",
+    "techniques": "Tadayou; Kinobori; Mateki — Demonic Flute Control; Makyo no Ran (summoner)"
   }
 ]

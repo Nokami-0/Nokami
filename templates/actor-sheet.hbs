@@ -684,7 +684,8 @@
     </div>
 
     <!-- ABA PODERES -->
-    <div class="tab poderes" data-group="primary" data-tab="poderes">{{#if isSummon}}<p>Species technique options: {{summonProfile.techniques}}. Add purchased techniques below; source references do not grant abilities automatically.</p>{{/if}}
+    <div class="tab poderes" data-group="primary" data-tab="poderes">{{#if isSummon}}<p>Allowed power choice: {{summonProfile.powerOptions}}. Choose at most one power using the NC power-point budget. Innate abilities below still require their listed prerequisites; summoner techniques are performed by the summoner.</p>{{/if}}
+      {{#if isSummon}}<section class="sns-box"><h3>Species Abilities &amp; Conditional Techniques</h3><p>Click a name for actions, chakra costs, prerequisites and special rules. Resolve these effects manually.</p><table class="sns-table"><tbody>{{#each summonTechniqueItems as |item|}}<tr class="item-row" data-item-id="{{item.id}}"><td class="item-to-chat" style="cursor:pointer">{{item.name}}</td><td><a class="item-edit" title="Read or edit ability"><i class="fas fa-edit"></i></a></td></tr>{{/each}}</tbody></table></section>{{/if}}
       <button type="button" class="sns-ability-browser-open" style="margin:8px 0;width:auto"><i class="fas fa-book-open"></i> Browse Clan &amp; Hijutsu Compendiums</button>
       
       <!-- NOVA SECÇÃO: ELEMENTOS -->
@@ -805,7 +806,7 @@
  <dt>Species skills</dt><dd>{{summonSkillsText}}</dd>
  <dt>Power points</dt><dd>{{summonProfile.powerPoints}} — source allocation required</dd>
  <dt>Technique / power options</dt><dd>{{summonProfile.techniques}}</dd></dl>
- <p>{{summonProfile.skillRules}}</p><p>{{summonProfile.aptitudeRules}}</p>
+ <p>{{summonProfile.skillRules}}</p><p>{{summonProfile.sourceNotes}}</p><p>Common-power precision and technique DC penalty: {{summonProfile.commonPenalty}} (DC penalty is applied manually). Size modifiers and Partner command/action restrictions must be resolved using the source rules.</p><p>{{summonProfile.aptitudeRules}}</p>
  <p>Use the summoner's Summon Creature control for chakra, contract and scene limits. Importing or dragging a template does not spend chakra. Allocate attributes and energies at the chosen NC before combat.</p>
  <label>Summon profile notes<textarea name="flags.shinobi-no-sho-revamp.summonProfile.notes" rows="5">{{summonProfile.notes}}</textarea></label>
  </section>

@@ -1,4 +1,5 @@
 import {summonSheetContext,summonReferenceKind} from './summon-sheet.js';
+import {summonRollRestriction} from './summon-rules.js';
 import {summonEquipmentBase} from './doki-equipment.js';
 import { setEquipmentState } from './equipment-state.js';
 import { fireSkyKunaiLauncher, isSkyKunaiLauncher } from "./sky-equipment.js";
@@ -28,7 +29,7 @@ export class ShinobiActorSheet extends ActorSheet {
     const conf = context.system.configuracoes || {};
 
     const nomesPericias = {
-      acrobacia: { nome: "Acrobatics", sigla: "AGI" }, arte: { nome: "Art", sigla: "INT" }, atletismo: { nome: "Athletics", sigla: "STR" },
+      voo: { nome: "Flight", sigla: "AGI" }, acrobacia: { nome: "Acrobatics", sigla: "AGI" }, arte: { nome: "Art", sigla: "INT" }, atletismo: { nome: "Athletics", sigla: "STR" },
       ciencias: { nome: "Natural Sciences", sigla: "INT" }, concentracao: { nome: "Concentration", sigla: "INT" }, cultura: { nome: "Culture", sigla: "INT" },
       disfarce: { nome: "Disguise", sigla: "PER" }, escapar: { nome: "Escape", sigla: "DEX" }, furtividade: { nome: "Stealth", sigla: "AGI" },
       lidarAnimais: { nome: "*Animal Handling", sigla: "PER" }, mecanismo: { nome: "*Mechanics", sigla: "INT" }, medicina: { nome: "*Medicine", sigla: "INT" },
@@ -39,7 +40,7 @@ export class ShinobiActorSheet extends ActorSheet {
     context.listaPericias = [];
     for (let key in nomesPericias) {
       if (context.system.pericias && context.system.pericias[key]) {
-        let isLocked = (key === "veneficio" && !conf.quimico);
+        let isLocked = (key === "veneficio" && !conf.quimico && !context.summonProfile?.skills?.includes("Poisoncraft"));
         context.listaPericias.push({ chave: key, nomeAmigavel: nomesPericias[key].nome, siglaAttr: nomesPericias[key].sigla, dados: context.system.pericias[key], isLocked: isLocked, showMechanismsRules: key === "mecanismo" });
       }
     }
@@ -129,14 +130,15 @@ export class ShinobiActorSheet extends ActorSheet {
       context.relacoesHTML = await TextEditor.enrichHTML(context.system.databook.relacoesTexto || "", { async: true });
     }
 
-    const nc = context.system.cabecalho?.nc || 4;
+    const nc = context.isSummon ? Number(context.system.cabecalho?.nc ?? 0) : context.system.cabecalho?.nc || 4;
     let niveisExtras = Math.max(0, nc - 4);
     
-    let ptsAtributosTotais = 12 + (niveisExtras * 6);
+    let ptsAtributosTotais = context.isSummon && nc < 4 ? 0 : 12 + (niveisExtras * 6);
     let ptsPericiasTotais = 8 + (niveisExtras * 4);
     let ptsPoderesTotais;
     
-    if (conf.regraQuatroPontos) { ptsPoderesTotais = 8 + (niveisExtras * 4); if (nc >= 20) ptsPoderesTotais += 4; }
+    if(context.isSummon)ptsPoderesTotais=Math.floor(nc/2);
+    else if (conf.regraQuatroPontos) { ptsPoderesTotais = 8 + (niveisExtras * 4); if (nc >= 20) ptsPoderesTotais += 4; }
     else if (conf.regraTresPontos) { ptsPoderesTotais = 6 + (niveisExtras * 3); if (nc >= 20) ptsPoderesTotais += 3; } 
     else { ptsPoderesTotais = 4 + (niveisExtras * 2); }
     
@@ -150,6 +152,7 @@ export class ShinobiActorSheet extends ActorSheet {
     Object.values(context.system.periciasSociais || {}).forEach(ps => gastosPericias += (Number(ps?.pontos) || 0));
     
     let gastosPoderesEAptidoes = context.poderes.length + (context.aptidoes.length * 2);
+    if(context.isSummon){ptsPericiasTotais=0;gastosPericias=0;gastosPoderesEAptidoes=context.poderes.reduce((sum,i)=>sum+(Number(i.system.nivelUsado)||0),0)+context.elementos.reduce((sum,i)=>sum+(Number(i.system.nivel)||0),0)+context.aptidoes.length*2;}
 
     context.evolucao = {
       ncAtual: nc, atributos: ptsAtributosTotais - gastosAtributos, pericias: ptsPericiasTotais - gastosPericias,
@@ -252,7 +255,7 @@ export class ShinobiActorSheet extends ActorSheet {
       if (isSkyKunaiLauncher(item)) return fireSkyKunaiLauncher(this.actor, item);
       if (item.system.weaponCategory === 'none') return ui.notifications.warn('Set a weapon category on this equipment first.');
       const summonAttack=!!item.getFlag('shinobi-no-sho-revamp','summonAttack');
-      if(summonAttack&&(item.getFlag('shinobi-no-sho-revamp','noDamage')||Number(this.actor.system.cabecalho?.nc)<4))return ui.notifications.warn('Summons below NC 4 cannot deal attack damage.');
+      if(summonAttack&&Number(this.actor.system.cabecalho?.nc)<4)return ui.notifications.warn('Summons below NC 4 cannot deal attack damage.');
       const ranged=item.system.attackType === 'ranged';
       const attribute=Number((ranged?this.actor.system.atributos?.des:this.actor.system.atributos?.for)?.valor ?? 0);
       const dda=Number(item.system.weaponDamage ?? 0), modifier=Number(item.system.weaponBonus ?? 0);
@@ -266,7 +269,7 @@ export class ShinobiActorSheet extends ActorSheet {
       }).render(true));
       if (degree===null || ![1,2,3,4].includes(degree)) return;
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
-        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + Weapon Damage ${dda} + Modifier ${modifier} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
+        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier)} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
     // Bind native buttons directly: clicks on either the label or nested icon
     // resolve the same embedded item without depending on row traversal.
@@ -424,6 +427,8 @@ export class ShinobiActorSheet extends ActorSheet {
 
   async _onRoll(event) {
     event.preventDefault(); const elemento = event.currentTarget; const nomeTeste = elemento.dataset.nome; const precisao = parseInt(elemento.dataset.precisao) || 0;
+    const restriction=summonRollRestriction(this.actor.getFlag('shinobi-no-sho-revamp','summonProfile'),Number(this.actor.system.cabecalho?.nc),nomeTeste);
+    if(restriction)return ui.notifications.warn(restriction);
     const template = `<form><div class="form-group" style="margin-bottom: 10px;"><label>Extra Modifier (+ or -):</label><input type="number" id="modificador" name="modificador" value="0" autofocus /></div><div class="form-group" style="margin-bottom: 10px;"><label>Current Condition:</label><select id="condicao" name="condicao"><option value="0">None</option><option value="2">Advantage (+2)</option><option value="-2">Disadvantage (-2)</option><option value="-4">Severe Condition (-4)</option></select></div></form>`;
     new Dialog({
       title: `Teste de ${nomeTeste}`, content: template,

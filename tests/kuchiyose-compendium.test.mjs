@@ -64,7 +64,8 @@ test('Doki migration updates only generated weapons, adds unarmed once, preserve
 test('summon damage uses Strength minus three and NC-below-four attacks are nondamaging',async()=>{
  const {dokiEquipment,summonEquipmentBase}=await import('../module/doki-equipment.js');
  const club=dokiEquipment(rows.find(r=>r.dokiWeapon==='club'),14);
- assert.equal(summonEquipmentBase(8,club[0]),7);assert.equal(summonEquipmentBase(8,club[1]),5);
+ assert.equal(summonEquipmentBase(8,club[0]),5);assert.equal(summonEquipmentBase(8,club[1]),5);
  assert.equal(summonEquipmentBase(1,club[1]),3);
  assert.ok(dokiEquipment(rows.find(r=>r.dokiWeapon==='claws'),3).every(i=>i.flags[SYS].noDamage));
 });
+

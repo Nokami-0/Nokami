@@ -1,4 +1,5 @@
 import { SHINOBI_CONFIG } from "./config.js";
+import {summonStats} from './summon-rules.js';
 class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     const fields = foundry.data.fields;
@@ -91,7 +92,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
         disfarce: criarPericia("per"), escapar: criarPericia("des"), furtividade: criarPericia("agi"),
         lidarAnimais: criarPericia("per"), mecanismo: criarPericia("int"), medicina: criarPericia("int"),
         ocultismo: criarPericia("int"), prestidigitacao: criarPericia("des"), procurar: criarPericia("per"),
-        prontidao: criarPericia("per"), rastrear: criarPericia("per"), veneficio: criarPericia("int")
+        prontidao: criarPericia("per"), rastrear: criarPericia("per"), veneficio: criarPericia("int"), voo: criarPericia("agi")
       }),
       combate: new fields.SchemaField({
         corporal: criarCombate("for"), distancia: criarCombate("des"),
@@ -129,7 +130,10 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    const nc = this.cabecalho.nc || 1;
+    const summonProfile=this.parent?.getFlag?.('shinobi-no-sho-revamp','summonProfile');
+    const nc = summonProfile ? Number(this.cabecalho.nc ?? 0) : this.cabecalho.nc || 1;
+    if(summonProfile&&nc<4)for(const attr of Object.values(this.atributos))attr.valor=0;
+    if(summonProfile?.intelligenceZero)this.atributos.int.valor=0;
     const conf = this.configuracoes || {};
     
     // Atributos base e efetivos (para cálculos, como o bônus do Modo Bijuu)
@@ -235,6 +239,18 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
       Object.defineProperty(calc, "grau4", { value: Math.ceil(totalBase * (4 + extraGrau)), configurable: true });
     }
 
+    if(summonProfile){
+      const derived=summonStats(summonProfile,nc,attrsFinal,this.energias.vitalidade.max,this.pericias,Object.fromEntries(Object.entries(this.combate).map(([key,v])=>[key,v.total])));
+      this.energias.vitalidade.max=derived.vitality;
+      for(const [key,total] of Object.entries(derived.skills))Object.defineProperty(this.pericias[key],'total',{value:total,configurable:true});
+      for(const [key,total] of Object.entries(derived.combat))Object.defineProperty(this.combate[key],'total',{value:total,configurable:true});
+      if(nc<4){for(const attr of Object.values(this.atributos))attr.precisao=0;for(const attr of Object.values(this.sociais))attr.precisao=0;for(const skill of Object.values(this.periciasSociais))Object.defineProperty(skill,'total',{value:0,configurable:true});}
+      for(const skill of Object.values(this.periciasSociais))Object.defineProperty(skill,'total',{value:0,configurable:true});
+      const summoner=globalThis.game?.actors?.get?.(summonProfile.ownerId);
+      if(summonProfile.species?.startsWith('Doki (')&&summoner&&nc>=4)Object.defineProperty(this.pericias.furtividade,'total',{value:Number(summoner.system?.pericias?.arte?.total)||0,configurable:true});
+      if(summonProfile.species==='Turtle')Object.defineProperty(this.defesas,'durezaTotal',{value:Math.max(this.defesas.durezaTotal,nc>=16?3:nc>=12?2:1),configurable:true});
+    }
+
     // Iniciativa
     let iniBonusExtra = (conf.diligente ? 3 : 0) + (conf.acelerado ? 2 : 0) + (conf.shykakyu ? 2 : 0);
     const iniPericia = this.pericias[this.energias.iniciativa.pericia] ? this.pericias[this.energias.iniciativa.pericia].total : 0;
@@ -299,3 +315,4 @@ Hooks.once("ready", async () => {
     await ensureWeaponLibrary();
   } catch (error) { console.error("Shinobi no Sho: weapon folder creation failed", error); ui.notifications.error("Weapon folders could not be created; check the console."); }
 });
+
