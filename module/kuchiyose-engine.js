@@ -75,16 +75,53 @@ async function actorFor(p,nc,owner,mode,sizeId){
  const profile={size:sizeDetails(size),species:p.name,nc,ownerId:owner.id,source:p.source,page:p.page,primaryAttributes:p.key_attributes,skills,aptitudes:p.aptitudes||'',techniques:p.techniques||p.powers||'',attacks:attacks(p),attackTypes:attacks(p).map(a=>({name:a[0],damageType:a[1],attackType:'melee',nonDamaging:nc<4})),skillRules:'Listed species skills use associated attributes; all other skills are 0.',aptitudeRules:'Species aptitude list contains purchase options, not automatic grants.',powerPoints:Math.floor(nc/2),commonPenalty:mode==='common'?-3:0,attributeAllocationRequired:nc>=4,attributePointBudget:nc>=4?12:null,attributePointsSpent:0,notes:p.notes||''};
  const actor=await Actor.create({system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},name:`${p.name} (NC ${nc})`,type:'personagem',img,folder:folder.id,ownership:summonOwnership,prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:true,disposition:1},flags:{[SYS]:{summonProfile:profile}}});
  if(nc<4)await actor.update({'system.energias.vitalidade.max':1,'system.energias.vitalidade.value':1});
- const items=[...attacks(p).map(([name,type])=>({name:`${name} (${type})`,type:'equipamento',system:{
+ const items=summonItems(p,nc,skills);
+ if(items.length)await actor.createEmbeddedDocuments('Item',items);
+ return actor;
+}
+
+function summonItems(p,nc,skills){
+ return [...attacks(p).map(([name,type])=>({name:`${name} (${type})`,type:'equipamento',system:{
    descricao:p.dokiWeapon==='claws'?'Tekko-kagi (Advanced Shinobi Guide, pp. 69–72): +3/+1 damage, 15–16 critical, Slashing/Piercing.':`Summon attack. Base melee damage = max(3, Strength − 3); NC below 4 cannot deal attack damage.`,
    weaponCategory:p.dokiWeapon==='claws'?'martial':(p.dokiWeapon==='club'?'simple':'none'),
    damageType:type.toLowerCase().includes('slashing')?'slashing':type.toLowerCase().includes('piercing')?'piercing':'bludgeoning',
    weaponBonus:p.dokiWeapon==='claws'?3:0,criticalRange:p.dokiWeapon==='claws'?'15-16':'15-16',
    attackType:'melee',equipped:true
   },flags:{[SYS]:{summonAttack:true,attackType:'melee',damageType:type,noDamage:nc<4,baseDamageFormula:'max(3, Strength - 3)'}}})),...String(p.aptitudes||'').split(',').map(x=>x.trim()).filter(Boolean).map(name=>({name:`Allowed Aptitude: ${name}`,type:'aptidao',system:{descricao:'Species aptitude OPTION, not automatically granted. Purchase according to NC power points and prerequisites before using.'},flags:{[SYS]:{summonAllowedAptitude:true}}})),...skills.map(s=>({name:`Skill: ${s}`,type:'aptidao',system:{descricao:`Species Skill (not an aptitude purchase). Use the corresponding attribute as skill accuracy; skills not listed for this species are level zero.`},flags:{[SYS]:{speciesSkill:true,skillKey:skmap[s.toLowerCase()]||null}}}))];
- if(items.length)await actor.createEmbeddedDocuments('Item',items);
- return actor;
 }
+export async function loadKuchiyoseSpecies(){
+ if(SPECIES.length)return SPECIES;
+ const response=await fetch(`${ROOT}/data/sns-kuchiyose-actors__summons.json`);
+ if(!response.ok)throw Error('Could not load Kuchiyose species: '+response.status);
+ const rows=await response.json();if(!Array.isArray(rows))throw Error('Invalid Kuchiyose catalog.');
+ SPECIES=rows;return SPECIES;
+}
+export function buildKuchiyoseTemplate(p){
+ const locked=fixedSize(p),size=sizeById(locked||speciesSize(p,4));
+ const nc=Math.max(4,Number.isFinite(size.minNC)?size.minNC:4);
+ const skills=String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
+ const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
+ const profile={size:sizeDetails(size),species:p.name,nc,source:p.source,page:p.page,primaryAttributes:p.key_attributes,skills,aptitudes:p.aptitudes||'',techniques:p.techniques||p.powers||'',attacks:attacks(p),powerPoints:Math.floor(nc/2),attributeAllocationRequired:true,attributePointBudget:nc===4?12:null,attributePointsSpent:0,skillRules:'Listed species skills use associated attributes; unlisted skills are zero.',aptitudeRules:'Listed aptitudes are purchase options, not automatic grants.',notes:p.notes||'',template:true};
+ const text=[
+  'Kuchiyose species template — allocate attributes and energies at the chosen NC before combat.',
+  'Use the summoner sheet Summon Creature button to apply chakra costs, contract restrictions and scene usage. Dragging this template onto a scene does not spend chakra.',
+  'Source: '+(p.source||'Catalog')+'; page '+(p.page||'not specified'),
+  'Group: '+(p.group||'Other Kuchiyose'),
+  'Primary attributes: '+(p.key_attributes||'See source'),
+  'Species skills: '+(p.skills||'See source'),
+  'Allowed aptitude OPTIONS (not free grants): '+(p.aptitudes||'See source'),
+  'Powers / techniques: '+(p.techniques||p.powers||'See source'),
+  'Listed attacks: '+(p.attacks_description||attacks(p).map(a=>a.join(' — ')).join('; ')||'See source; no attack invented'),
+  'Prerequisite: '+(p.prerequisite||'Follow species and summoning source rules'),
+  'Size: '+size.label+'; template NC '+nc+' is the existing size engine minimum, not a printed fixed NPC level.',
+  'NC 4: 12 attribute points. Higher NC: allocate according to the source progression. Vitality is half normal; power points are floor(NC/2). Check source exceptions.',
+  p.notes||'',p.stats_status||''
+ ].filter(Boolean).join('\n\n');
+ const items=summonItems(p,nc,skills);
+ items.unshift({name:'Species Profile & Summoning Rules',type:'aptidao',img,system:{descricao:text},flags:{[SYS]:{summonReference:true}}});
+ return {name:p.name,type:'personagem',img,system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:false,disposition:1},items,flags:{[SYS]:{kuchiyoseCompendiumKey:p.name,kuchiyoseTemplateVersion:1,summonTemplate:true,kuchiyoseSpecies:p,summonProfile:profile}}};
+}
+
 function freePosition(t,scene,squares=1,spawned=[]){
  const g=scene.grid.size||100,w=squares*g,h=squares*g;
  const tx=t.document.x,ty=t.document.y,tw=t.document.width*g,th=t.document.height*g;
@@ -148,11 +185,11 @@ function dialog(owner){const opts=list().map((p,i)=>`<option value="${i}">${esc(
  html.find('.sns-qty-help').text(`Quantity: ${qty} • Maximum NC: ${cap} • Chakra cost: ${2*lv} (current: ${num(owner.system?.energias?.chakra?.value)}). Quantity resets to 1 when this dialog reopens.`);};html.find('[name=qty], [name=level], [name=species], [name=nc]').on('change input',update);html.find('[name=qty]').val('1');update();}}).render(true);
 }
 function createCustom(owner){if(!game.user.isGM)return ui.notifications.warn('GM required.');new Dialog({title:'Create Custom Summon',content:'<form><label>Name <input name="name"></label><label>Image path <input name="img"></label><label>Skills (comma-separated) <input name="skills"></label></form>',buttons:{create:{label:'Create',callback:async html=>{const get=k=>String(html.find(`[name="${k}"]`).val()||'').trim();if(!get('name'))return ui.notifications.warn('Name required.');const p={name:get('name'),image:get('img'),skills:get('skills'),group:'Custom',source:'User-defined',key_attributes:'',notes:'Custom profile; assign aptitudes, attacks, and statistics manually.'};const a=await actorFor(p,4,owner,'hijutsu');await a.setFlag(SYS,'customSpecies',p);a.sheet.render(true);}}}}).render(true)}
-Hooks.once('ready',async()=>{try{const r=await fetch(`${ROOT}/data/sns-kuchiyose-actors__summons.json`);if(!r.ok)throw Error(r.status);SPECIES=await r.json()}catch(e){console.error(e);ui.notifications.warn('Could not load Kuchiyose species.')}});
+Hooks.once('ready',async()=>{try{await loadKuchiyoseSpecies()}catch(e){console.error(e);ui.notifications.warn('Could not load Kuchiyose species.')}});
 Hooks.on('renderActorSheet',(app,html)=>{if(app.actor.type!=='personagem'||!app.isEditable)return;const root=html instanceof jQuery?html:$(html);if(root.find('.sns-kuchiyose-engine').length)return;
- const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div></section>`);
+ const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-open-kuchiyose">Summon Compendium</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div></section>`);
  const target=root.find('.sheet-body').first();(target.length?target:root.find('form').first()).prepend(panel);
- panel.find('.sns-klevel').on('change',e=>app.actor.setFlag(SYS,'kuchiyoseLevel',num(e.target.value)));panel.find('.sns-cast').on('click',()=>dialog(app.actor));panel.find('.sns-custom').on('click',()=>createCustom(app.actor));panel.find('.sns-reset-scene').on('click',async()=>{if(!game.user.isGM)return ui.notifications.warn('GM only.');const yes=await Dialog.confirm({title:'Reset Kuchiyose Uses',content:'Reset this character’s Kuchiyose uses for the current scene? Use only when beginning a new scene.'});if(yes){await app.actor.setFlag(SYS,'summonSceneUsage',{scene:canvas.scene?.id||'',count:0});ui.notifications.info('Kuchiyose uses reset for this scene.');}});});
+ panel.find('.sns-klevel').on('change',e=>app.actor.setFlag(SYS,'kuchiyoseLevel',num(e.target.value)));panel.find('.sns-cast').on('click',()=>dialog(app.actor));panel.find('.sns-open-kuchiyose').on('click',()=>{const pack=game.packs.get('world.sns-kuchiyose');if(pack)pack.render(true);else ui.notifications.warn('Ask the GM to build the Kuchiyose compendium in System Settings.');});panel.find('.sns-custom').on('click',()=>createCustom(app.actor));panel.find('.sns-reset-scene').on('click',async()=>{if(!game.user.isGM)return ui.notifications.warn('GM only.');const yes=await Dialog.confirm({title:'Reset Kuchiyose Uses',content:'Reset this character’s Kuchiyose uses for the current scene? Use only when beginning a new scene.'});if(yes){await app.actor.setFlag(SYS,'summonSceneUsage',{scene:canvas.scene?.id||'',count:0});ui.notifications.info('Kuchiyose uses reset for this scene.');}});});
 Hooks.on('renderActorSheet',(app,html)=>{
  const actor=app.actor,profile=actor.getFlag(SYS,'summonProfile');
  if(!profile||!actor.testUserPermission(game.user,'OWNER'))return;
