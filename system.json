@@ -1,8 +1,8 @@
 {
   "id": "shinobi-no-sho-revamp",
   "title": "Shinobi no Sho - Revamp (English)",
-  "description": "Shinobi no Sho system for Foundry VTT — English interface translation; integrated catalogs, item icons and summon tokens",
-  "version": "1.7.41",
+  "description": "Nokami-0's English edition of Shinobi no Sho Revamp. Updates and downloads are served from Nokami-0/Nokami, branch shinobi-no-sho. Original system by Nela Trex/NelaTrex.",
+  "version": "1.7.42",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
