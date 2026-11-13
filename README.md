@@ -63,3 +63,22 @@ The shared factory supplies these entries to both compendium templates and newly
 Summon equipment damage now honors the existing summon attack formula **max(3, Strength − 3) + Weapon Damage + Modifier**, rather than silently using the ordinary character weapon formula. Summons below NC 4 cannot use these entries to deal attack damage.
 
 Eight compendium and equipment regression tests pass; changed modules pass syntax checks. Live Foundry validation remains pending.
+
+## Summon actor tabs (1.7.45)
+
+Actors marked with a summon profile or summon-template flag now use these primary tabs:
+
+- **Stats**: existing attributes, combat stats, skill controls and allocation notice.
+- **Attacks**: existing weapon/natural-attack and inventory controls, including Doki club, paired Tekko-Kagi and unarmed entries.
+- **Techniques**: powers, elements and source technique options; adding a technique does not bypass purchase rules.
+- **Aptitudes**: free and purchased aptitudes, with a separate list of allowed species aptitude options.
+- **Summoning Details**: source/page, current NC, summoner, size/reach, primary attributes, species skills, power-point reference, source rules and editable profile notes.
+- **Settings** remains available for existing sheet configuration.
+
+Ordinary character sheets keep their current five-tab layout. The primary tab IDs and existing Foundry tab controllers are retained. Summon sheets no longer show the summoner's casting controls; summon from the owner character's sheet. Reference-only species skills, allowed aptitude options and species-rule notes are grouped separately and do not count as purchased aptitude entries.
+
+This is a sheet-layout change, not automatic attribute allocation. Existing actors and items are retained; reopening a summon sheet after updating shows the new layout without reimporting or resummoning.
+
+Twelve automated tests pass: the existing eight summon/Doki tests plus four rendered-Handlebars/DOM tests checking ordinary versus summon navigation, matching tab panels, unique item placement and action controls, escaped metadata and missing summoner handling. Changed modules pass JavaScript syntax checks. Live Foundry runtime validation remains pending.
+
+For local test execution, install the development dependencies with `npm install`, then run `npm test`. These development packages are not needed by Foundry.
