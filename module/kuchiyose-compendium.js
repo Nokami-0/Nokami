@@ -1,3 +1,4 @@
+import {syncDokiLoadout} from './doki-equipment.js';
 import {loadKuchiyoseSpecies,buildKuchiyoseTemplate} from './kuchiyose-engine.js';
 const SYS='shinobi-no-sho-revamp';
 const PACK='world.sns-kuchiyose';
@@ -17,7 +18,7 @@ async function build(){
   const docs=await pack.getDocuments(),keys=new Set(docs.map(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')).filter(Boolean));
   const folders=new Map(pack.folders.map(f=>[f.name,f.id]));
   for(const species of rows){
-   if(keys.has(species.name)){existing++;continue;}
+   if(keys.has(species.name)){const actor=docs.find(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')===species.name);await syncDokiLoadout(actor,species);existing++;continue;}
    const group=species.group||'Other Kuchiyose';
    let folder=folders.get(group);
    if(!folder){const f=await Folder.create({name:group,type:'Actor',sorting:'a'},{pack:pack.collection});folder=f.id;folders.set(group,folder);}
@@ -25,6 +26,11 @@ async function build(){
    keys.add(species.name);added++;
   }
  }finally{if(locked)await pack.configure({locked:true});}
+ // Update existing generated world summons too, without replacing attributes or HP.
+ for(const actor of game.actors||[]){
+  const species=rows.find(p=>p.dokiWeapon&&p.name===actor.getFlag(SYS,'summonProfile')?.species);
+  if(species&&actor.isOwner)await syncDokiLoadout(actor,species);
+ }
  return {added,existing,total:rows.length,pack:pack.collection};
 }
 class KuchiyoseCompendiumMenu extends FormApplication{
