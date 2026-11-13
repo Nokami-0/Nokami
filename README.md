@@ -37,3 +37,17 @@ This English edition uses only these package distribution URLs:
 The upstream author's name is retained as attribution, not as an update destination. The system ID remains `shinobi-no-sho-revamp` for compatibility with existing worlds. Gameplay files and catalogs are unchanged by this metadata release.
 
 An older installed package can retain its old manifest URL. Updating the hosted English manifest cannot redirect an installed package that is still checking the upstream author's manifest. Reinstall the English package once using the manifest above (preserving worlds), or close Foundry and replace the installed system folder with this branch's download. Then use Foundry's normal Update button for later English releases. Do not switch the installed package's manifest back to the upstream URL.
+
+## Kuchiyose Summons Compendium (1.7.43)
+
+The GM's first world startup builds **Shinobi no Sho — Kuchiyose Summons**, an Actor compendium containing all **29 species and variants currently in the system's source catalog**. Groups include Basic Kuchiyose, additional and revised species, Spider Kuchiyose, Animal Path, Kamizuru bees, and three Doki variants.
+
+Open it from Compendium Packs or the **Summon Compendium** button in the character sheet's Kuchiyose panel. A GM can also use **System Settings → Kuchiyose Summons Compendium → Build / Repair Kuchiyose Compendium**, or run `await game.snsKuchiyose.buildCompendium()`.
+
+Entries contain artwork, size, source/page, species skills, allowed aptitude options, available attack entries, powers/techniques and source notes. They are editable NC-based species templates, not fully allocated named NPC stat blocks: allocate attributes and energies at the chosen NC before combat. Fixed-size species use a template NC high enough for the existing engine's size limits. Aptitude lists are purchase options, not free grants. Source-specific details absent from the existing catalog still require checking the source book; no new attacks or fixed stat blocks are invented.
+
+Use **Summon Creature** on the summoner sheet for the existing chakra, blood-contract, quantity, NC and scene rules. Importing a template or dragging it onto a scene is a manual operation and does not deduct chakra or count a summoning use.
+
+Rebuilding adds missing generated entries only. Existing templates, including GM edits, and manually added compendium entries are preserved. Building creates compendium documents only, not world actors or scene tokens. The compendium's original lock state is restored after a build or error.
+
+Five automated tests pass for the 29 templates, artwork paths, spider attacks, Doki and source-fixed sizes, duplicate prevention, edit preservation, GM permissions and lock restoration. Updated modules pass JavaScript syntax checks. Live Foundry validation remains pending.
