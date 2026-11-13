@@ -1,3 +1,4 @@
+import {repairSummonSheet} from './summon-repair.js';
 import {syncDokiLoadout} from './doki-equipment.js';
 import {syncSummonSpecies} from './summon-rules.js';
 import {loadKuchiyoseSpecies,buildKuchiyoseTemplate} from './kuchiyose-engine.js';
@@ -19,7 +20,7 @@ async function build(){
   const docs=await pack.getDocuments(),keys=new Set(docs.map(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')).filter(Boolean));
   const folders=new Map(pack.folders.map(f=>[f.name,f.id]));
   for(const species of rows){
-   if(keys.has(species.name)){const actor=docs.find(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')===species.name);await syncDokiLoadout(actor,species);await syncSummonSpecies(actor,species,buildKuchiyoseTemplate);existing++;continue;}
+   if(keys.has(species.name)){const actor=docs.find(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')===species.name);await repairSummonSheet(actor,CONFIG.Actor.sheetClasses?.personagem);await syncDokiLoadout(actor,species);await syncSummonSpecies(actor,species,buildKuchiyoseTemplate);existing++;continue;}
    const group=species.group||'Other Kuchiyose';
    let folder=folders.get(group);
    if(!folder){const f=await Folder.create({name:group,type:'Actor',sorting:'a'},{pack:pack.collection});folder=f.id;folders.set(group,folder);}
@@ -51,4 +52,5 @@ Hooks.once('ready',async()=>{
  if(!game.user.isGM||game.users.activeGM&&game.users.activeGM.id!==game.user.id)return;
  try{await buildKuchiyoseCompendium();}catch(error){console.error('Kuchiyose compendium',error);ui.notifications.warn('Could not build Kuchiyose compendium; retry in System Settings.');}
 });
+
 

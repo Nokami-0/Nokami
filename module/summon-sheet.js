@@ -1,6 +1,7 @@
+import {normalizeSummonProfile} from './summon-rules.js';
 const SYS='shinobi-no-sho-revamp';
 export function summonSheetContext(actor,actors){
- const profile=actor.getFlag?.(SYS,'summonProfile');
+ const profile=normalizeSummonProfile(actor.getFlag?.(SYS,'summonProfile'));
  const isSummon=Boolean(profile||actor.getFlag?.(SYS,'summonTemplate'));
  if(!isSummon)return {isSummon:false};
  const owner=profile?.ownerId?actors?.get?.(profile.ownerId):null;
@@ -14,4 +15,5 @@ export function summonReferenceKind(item){
  if(flags.summonAllowedAptitude)return 'summonAllowedItems';
  return null;
 }
+
 

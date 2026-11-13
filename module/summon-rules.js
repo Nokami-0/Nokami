@@ -1,11 +1,20 @@
 const SYS='shinobi-no-sho-revamp';
 export const SUMMON_REVISION=2;
+// Legacy imports used comma-separated skills and sometimes omitted size metadata.
+export function normalizeSummonProfile(value){
+ if(!value||typeof value!=='object'||Array.isArray(value))return null;
+ const skills=Array.isArray(value.skills)?value.skills:String(value.skills??'').split(',');
+ const size=value.size&&typeof value.size==='object'?value.size:{label:typeof value.size==='string'?value.size:'Unspecified'};
+ return {...value,species:String(value.species??''),skills:skills.map(s=>String(s).trim()).filter(Boolean),size:{...size,label:String(size.label??'Unspecified')}};
+}
+
 export const SUMMON_SKILLS={acrobatics:'acrobacia',athletics:'atletismo',escape:'escapar',stealth:'furtividade',search:'procurar',alertness:'prontidao',readiness:'prontidao',tracking:'rastrear',medicine:'medicina','natural sciences':'ciencias',concentration:'concentracao',disguise:'disfarce',culture:'cultura',occultism:'ocultismo',poisoncraft:'veneficio',poison:'veneficio',flight:'voo'};
 export const skillKey=name=>SUMMON_SKILLS[String(name).replace(/\s*\(.*\)/,'').trim().toLowerCase()]||null;
 export function summonNCCap(species,level,quantity){return Math.max(0,2*level-(species.henchman?0:species.contract==='Doki'&&quantity===3?1:quantity===2?2:0));}
 export function summonQuantityLegal(species,quantity){return Number.isInteger(quantity)&&quantity>=1&&quantity<=(species.maximumQuantity||2);}
 export function summonStats(profile,nc,attrs,normalVitality,skills,combat){
- const keys=new Set((profile.skills||[]).map(skillKey).filter(Boolean));
+ profile=normalizeSummonProfile(profile)||{skills:[]};
+ const keys=new Set(profile.skills.map(skillKey).filter(Boolean));
  const active=nc>=4,zeroInt=profile.intelligenceZero;
  const attribute=key=>!active||zeroInt&&key==='int'?0:Number(attrs[key])||0;
  const result={vitality:profile.oneVitality?1:Math.ceil(normalVitality/2),skills:{},combat:{}};
@@ -43,3 +52,4 @@ export async function syncSummonSpecies(actor,species,templateFactory){
  await actor.setFlag(SYS,'summonRulesRevision',SUMMON_REVISION);
  return true;
 }
+

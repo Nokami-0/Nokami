@@ -1,5 +1,5 @@
 import { SHINOBI_CONFIG } from "./config.js";
-import {summonStats} from './summon-rules.js';
+import {summonStats,normalizeSummonProfile} from './summon-rules.js';
 class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     const fields = foundry.data.fields;
@@ -130,7 +130,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
   }
 
   prepareDerivedData() {
-    const summonProfile=this.parent?.getFlag?.('shinobi-no-sho-revamp','summonProfile');
+    const summonProfile=normalizeSummonProfile(this.parent?.getFlag?.('shinobi-no-sho-revamp','summonProfile'));
     const nc = summonProfile ? Number(this.cabecalho.nc ?? 0) : this.cabecalho.nc || 1;
     if(summonProfile&&nc<4)for(const attr of Object.values(this.atributos))attr.valor=0;
     if(summonProfile?.intelligenceZero)this.atributos.int.valor=0;

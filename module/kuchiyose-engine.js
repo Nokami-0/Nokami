@@ -1,5 +1,5 @@
 import {dokiEquipment} from './doki-equipment.js';
-import {skillKey,summonNCCap,summonQuantityLegal,SUMMON_REVISION} from './summon-rules.js';
+import {normalizeSummonProfile,skillKey,summonNCCap,summonQuantityLegal,SUMMON_REVISION} from './summon-rules.js';
 const SYS='shinobi-no-sho-revamp', ROOT=`systems/${SYS}/integrated`;
 let SPECIES=[];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -208,12 +208,13 @@ Hooks.on('renderActorSheet',(app,html)=>{if(app.actor.type!=='personagem'||!app.
  const target=root.find('.sheet-body').first();(target.length?target:root.find('form').first()).prepend(panel);
  panel.find('.sns-klevel').on('change',e=>app.actor.setFlag(SYS,'kuchiyoseLevel',num(e.target.value)));panel.find('.sns-cast').on('click',()=>dialog(app.actor));panel.find('.sns-open-kuchiyose').on('click',()=>{const pack=game.packs.get('world.sns-kuchiyose');if(pack)pack.render(true);else ui.notifications.warn('Ask the GM to build the Kuchiyose compendium in System Settings.');});panel.find('.sns-custom').on('click',()=>createCustom(app.actor));panel.find('.sns-reset-scene').on('click',async()=>{if(!game.user.isGM)return ui.notifications.warn('GM only.');const yes=await Dialog.confirm({title:'Reset Kuchiyose Uses',content:'Reset this character’s Kuchiyose uses for the current scene? Use only when beginning a new scene.'});if(yes){await app.actor.setFlag(SYS,'summonSceneUsage',{scene:canvas.scene?.id||'',count:0});ui.notifications.info('Kuchiyose uses reset for this scene.');}});});
 Hooks.on('renderActorSheet',(app,html)=>{
- const actor=app.actor,profile=actor.getFlag(SYS,'summonProfile');
+ const actor=app.actor,profile=normalizeSummonProfile(actor.getFlag(SYS,'summonProfile'));
  if(!profile||!actor.testUserPermission(game.user,'OWNER'))return;
  const root=html instanceof jQuery?html:$(html);
  if(root.find('.sns-summon-allocation').length)return;
  const block=$(`<section class="sns-summon-allocation" style="padding:8px;margin:6px;border:1px solid #887a59"><strong>Summoned Creature — ${esc(profile.species)}</strong><p>NC ${actor.system.cabecalho.nc}; size ${esc(profile.size.label)}; attribute allocation: ${Number(actor.system.cabecalho.nc)>=4?12+6*(Number(actor.system.cabecalho.nc)-4):0} points (12 at NC4, +6 per NC). Edit attributes normally on this Actor sheet. Size modifiers are listed in the summon profile and are not automatically added to the base attributes.</p></section>`);
  const stats=root.find('.tab[data-tab="status"]').first();(stats.length?stats:root.find('.sheet-body').first()).prepend(block);
 });
-Hooks.on('updateActor',async(actor)=>{if(!game.user.isGM||!actor.getFlag(SYS,'summonProfile')||num(actor.system?.energias?.vitalidade?.value)>0)return;for(const scene of game.scenes){const tokens=scene.tokens.filter(t=>t.actorId===actor.id&&t.getFlag(SYS,'summonedBy'));if(tokens.length)await scene.deleteEmbeddedDocuments('Token',tokens.map(t=>t.id))}});
+Hooks.on('updateActor',async(actor,changes)=>{const vitalityChanged=Object.hasOwn(changes||{},'system.energias.vitalidade.value')||changes?.system?.energias?.vitalidade?.value!==undefined;if(!vitalityChanged)return;if(!game.user.isGM||!actor.getFlag(SYS,'summonProfile')||num(actor.system?.energias?.vitalidade?.value)>0)return;for(const scene of game.scenes){const tokens=scene.tokens.filter(t=>t.actorId===actor.id&&t.getFlag(SYS,'summonedBy'));if(tokens.length)await scene.deleteEmbeddedDocuments('Token',tokens.map(t=>t.id))}});
+
 

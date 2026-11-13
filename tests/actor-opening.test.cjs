@@ -7,7 +7,8 @@ function runtime(source, actor, legacy=false){
  const c={foundry:{utils:{deepClone},appv1:{sheets:{ActorSheet:Base}},applications:{ux:{TextEditor:{enrichHTML:async s=>s}}}},game:{actors:new Map()},SNS_CONDITIONS:[],console};
  if(legacy){c.ActorSheet=Base;c.TextEditor=c.foundry.applications.ux.TextEditor;delete c.foundry.appv1;delete c.foundry.applications;}
  vm.createContext(c);
- vm.runInContext(fs.readFileSync(root+'/module/summon-sheet.js','utf8').replace(/export /g,''),c);
+ vm.runInContext('(function(){'+fs.readFileSync(root+'/module/summon-rules.js','utf8').replace(/export /g,'')+';this.normalizeSummonProfile=normalizeSummonProfile;}).call(this)',c);
+ vm.runInContext(fs.readFileSync(root+'/module/summon-sheet.js','utf8').replace(/^import .*;$/gm,'').replace(/export /g,''),c);
  vm.runInContext(source.replace(/^import .*;?$/gm,'').replace('export class ShinobiActorSheet','class ShinobiActorSheet')+'\nthis.Sheet=ShinobiActorSheet;',c);
  return new c.Sheet();
 }
