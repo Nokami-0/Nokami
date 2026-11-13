@@ -1,0 +1,28 @@
+Creature size corrections — v1.7.55
+
+Display labels: Minuscule, Tiny, Little, Small, Medium, Large, Huge, Immense,
+Colossal, Incredible. Duplicate machine-translated labels are disambiguated.
+Stable internal IDs are retained so existing world data continues to load.
+
+Basic Book source: corrected uploaded English PDF, pp. 227 and 271–272.
+The normal Kuchiyose minimum-size row is Little (translated as Kid), the third
+tier in the full table, requiring NC 14. It is not either smaller Tiny row.
+Normal options: Little (NC14+), Small (NC8 maximum), Medium, Large (NC12+),
+Huge (NC14+), Immense (NC16+). Explicit species-fixed exceptions remain, such
+as individual bees. Unknown IDs and invalid NC/size combinations are rejected.
+
+A Size Reference button in the Kuchiyose panel shows the full table, modifiers,
+height/length ranges, weights and source notes. The size selector and summon
+sheet show distinct labels and reference dimensions. Token footprints are map
+markers; they are not the same thing as the height/length reference ranges.
+
+GM startup and the Kuchiyose compendium repair synchronize known size metadata
+on generated compendium actors, world summons and unlinked token actors.
+Custom footprint sizes, attributes, HP and unrelated notes are preserved.
+Size modifiers are still reference values for normal manual allocation; this
+release does not add them again to existing attributes or double-count them.
+Rashoumon retains its separate attribute-based wall dimensions.
+
+Validation: 53 automated checks passed, including size thresholds, reference
+rows, preservation of existing statistics, actor/summon sheet rendering and
+Rashoumon casting. Live Foundry validation remains.

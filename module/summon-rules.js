@@ -1,3 +1,4 @@
+import {correctedSizeDetails} from './sizes.js';
 const SYS='shinobi-no-sho-revamp';
 export const SUMMON_REVISION=2;
 // Legacy imports used comma-separated skills and sometimes omitted size metadata.
@@ -5,7 +6,7 @@ export function normalizeSummonProfile(value){
  if(!value||typeof value!=='object'||Array.isArray(value))return null;
  const skills=Array.isArray(value.skills)?value.skills:String(value.skills??'').split(',');
  const size=value.size&&typeof value.size==='object'?value.size:{label:typeof value.size==='string'?value.size:'Unspecified'};
- return {...value,species:String(value.species??''),skills:skills.map(s=>String(s).trim()).filter(Boolean),size:{...size,label:String(size.label??'Unspecified')}};
+ return {...value,species:String(value.species??''),skills:skills.map(s=>String(s).trim()).filter(Boolean),size:correctedSizeDetails({...size,label:String(size.label??'Unspecified')})};
 }
 
 export const SUMMON_SKILLS={acrobatics:'acrobacia',athletics:'atletismo',escape:'escapar',stealth:'furtividade',search:'procurar',alertness:'prontidao',readiness:'prontidao',tracking:'rastrear',medicine:'medicina','natural sciences':'ciencias',concentration:'concentracao',disguise:'disfarce',culture:'cultura',occultism:'ocultismo',poisoncraft:'veneficio',poison:'veneficio',flight:'voo'};
@@ -52,4 +53,5 @@ export async function syncSummonSpecies(actor,species,templateFactory){
  await actor.setFlag(SYS,'summonRulesRevision',SUMMON_REVISION);
  return true;
 }
+
 

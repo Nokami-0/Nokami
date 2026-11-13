@@ -1,3 +1,4 @@
+import {SNS_SIZE_TABLE,NORMAL_SUMMON_SIZES,openSnsSizeReference,sizeById,canonicalSizeId,isSummonSizeLegal} from './sizes.js';
 import {openRashoumonDialog,rashoumonTemplate} from './rashoumon.js';
 import {dokiEquipment} from './doki-equipment.js';
 import {normalizeSummonProfile,skillKey,summonNCCap,summonQuantityLegal,SUMMON_REVISION} from './summon-rules.js';
@@ -7,21 +8,6 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const num=v=>Math.max(0,Number(v)||0);
 const skmap={'acrobatics':'acrobacia','athletics':'atletismo','escape':'escapar','stealth':'furtividade','search':'procurar','alertness':'prontidao','tracking':'rastrear','medicine':'medicina','natural sciences':'ciencias','concentration':'concentracao','disguise':'disfarce'};
 
-// Size table, translated from the user's page 271 screenshot. Duplicate translated
-// names are disambiguated by rank; 1 grid square represents the 1m baseline.
-const SNS_SIZE_TABLE=[
- {id:'minute',label:'Tiny (smallest)',str:-7,vig:-7,attack:2,reach:1,stealth:5,intimidate:-2,move:-12,grid:0.5,minNC:0},
- {id:'tiny',label:'Tiny',str:-5,vig:-5,attack:1,reach:1,stealth:3,intimidate:-2,move:-9,grid:0.5,minNC:0},
- {id:'child',label:'Kid',str:-3,vig:-3,attack:1,reach:1,stealth:2,intimidate:-1,move:-6,grid:0.5,minNC:0},
- {id:'small',label:'Small',str:-1,vig:-1,attack:0,reach:1,stealth:1,intimidate:-1,move:-3,grid:1,minNC:0},
- {id:'medium',label:'Average / Medium',str:0,vig:0,attack:0,reach:1,stealth:0,intimidate:0,move:0,grid:1,minNC:0},
- {id:'large',label:'Big / Large',str:1,vig:1,attack:0,reach:2,stealth:-1,intimidate:1,move:3,grid:2,minNC:12},
- {id:'huge',label:'Huge',str:3,vig:3,attack:0,reach:3,stealth:-2,intimidate:1,move:6,grid:3,minNC:14},
- {id:'gargantuan',label:'Gargantuan (Immense tier)',str:5,vig:5,attack:0,reach:4,stealth:-3,intimidate:2,move:9,grid:4,minNC:16},
- {id:'colossal',label:'Colossal',str:7,vig:7,attack:0,reach:5,stealth:-5,intimidate:2,move:12,grid:5,minNC:Infinity},
- {id:'incredible',label:'Incredible',str:9,vig:9,attack:0,reach:6,stealth:-7,intimidate:3,move:15,grid:6,minNC:Infinity}
-];
-function sizeById(id){if(id==='immense')id='gargantuan';return SNS_SIZE_TABLE.find(s=>s.id===id)||SNS_SIZE_TABLE[4]}
 function speciesSize(p,nc){
  const locked=fixedSize(p);
  if(locked)return locked;
@@ -31,7 +17,7 @@ function speciesSize(p,nc){
 }
 function fixedSize(p){
  // Catalog fixedSize is authoritative for named summons, including Animal Path.
- if(p.fixedSize)return p.fixedSize;
+ if(p.fixedSize)return canonicalSizeId(p.fixedSize);
  const n=String(p.name||'').toLowerCase();
  if(/doki/.test(n))return 'huge';
  if(/bee \(individual\)/.test(n))return 'tiny';
@@ -39,20 +25,9 @@ function fixedSize(p){
  if(/ordinary spider|spider \(ordinary\)/.test(n))return 'medium';
  return null;
 }
-function sizeLegal(p,size,nc){
- const fixed=fixedSize(p);
- if(fixed&&size!==fixed)return false;
- const s=sizeById(size);
- if(nc<s.minNC)return false;
- if(size==='tiny'&&nc<14&&p.contract!=='Bees')return false;
- const name=String(p.name||'').toLowerCase();
- if(size==='small'&&nc>8)return false;
- if(/salamander/.test(name)&&!['tiny','small','medium','large','huge'].includes(size))return false;
- if(/bee swarm/.test(name)&&!['medium',...(nc>=12?['large']:[]),...(nc>=14?['huge']:[])].includes(size))return false;
- return true;
-}
+function sizeLegal(p,size,nc){return isSummonSizeLegal(p,size,nc,fixedSize(p));}
 function sizeDetails(size){
- return {id:size.id,label:size.label,strengthModifier:size.str,vigorModifier:size.vig,
+ return {id:size.id,label:size.label,heightReference:size.height,weightReference:size.weight,strengthModifier:size.str,vigorModifier:size.vig,
  attackVsMedium:size.attack,reachMeters:size.reach,stealthModifier:size.stealth,
  intimidateModifier:size.intimidate,movementMeters:size.move,tokenSquares:size.grid,
  attackNote:'Attack adjustment applies only when target uses Dodge, Block or Anticipate. Recalculate for other size differences.',
@@ -193,7 +168,7 @@ async function summon(owner,p,level,qty,mode,nc,sizeId){
 }
 function dialog(owner){const opts=list().map((p,i)=>`<option value="${i}">${esc(p.name)} (${esc(p.group)})</option>`).join('');
  new Dialog({title:'Kuchiyose — Summon Creature',content:`<form><div class="form-group"><label>Creature</label><select name="species">${opts}</select></div><div class="form-group"><label>Power level used</label><input type="number" name="level" min="1" value="${num(owner.getFlag(SYS,'kuchiyoseLevel'))||1}"></div><div class="form-group"><label>Quantity</label><select name="qty"><option value="1">1</option><option value="2">2</option><option value="3">3 (Doki)</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8 (numerous species)</option></select></div><div class="form-group"><label>NC</label><input type="number" name="nc" min="0" value="4"></div><div class="form-group"><label>Creature size (fixed by species / NC)</label><select name="size"></select></div><p class="sns-size-info"></p><div class="form-group"><label>Kuchiyose type</label><select name="mode"><option value="hijutsu">Restricted Hijutsu</option><option value="common">Common Power (−3)</option></select></div><p class="sns-qty-help">Quantity starts at 1 each time. NC cap updates when quantity or level changes.</p><p>A GM must allocate NC 4+ attributes and energies using the character creation table.</p></form>`,buttons:{cast:{label:'Summon',callback:async html=>{const get=k=>html.find(`[name="${k}"]`).val();const p=list()[Number(get('species'))];if(p)await summon(owner,p,num(get('level')),num(get('qty')),get('mode'),num(get('nc')),get('size'));}}},render:html=>{const update=()=>{const profile=list()[Number(html.find('[name=species]').val())];const special=profile?.specialSummon==='rashoumon';html.find('[name=level], [name=qty], [name=nc], [name=size], [name=mode]').prop('disabled',special);if(special){html.find('.sns-size-info').text('Rashoumon: defensive gates. Click Summon to select Spirit/Intelligence and a legal gate quantity. Size and hardness follow the purchased aptitude.');html.find('.sns-qty-help').text('Requires purchased Rashoumon: level 1 / attribute 8 → 1 gate; level 2 / 12 → 3; level 3 / 18 → 5. Uses separate rules, not creature NC or blood contracts.');return;}const lv=Math.max(1,Number(html.find('[name=level]').val())||1),qty=Number(html.find('[name=qty]').val())||1;const cap=summonNCCap(profile||{},lv,qty);const field=html.find('[name=nc]');field.attr('max',cap);if(Number(field.val())>cap)field.val(cap);const suggested=speciesSize(profile||{name:''},Number(field.val()));const previous=html.find('[name=size]').val();const selected=previous&&sizeLegal(profile||{name:''},previous,Number(field.val()))?previous:suggested;
- const six=['tiny','small','medium','large','huge','gargantuan'];
+ const six=fixedSize(profile||{})?[fixedSize(profile||{})]:NORMAL_SUMMON_SIZES;
  const available=SNS_SIZE_TABLE.filter(z=>six.includes(z.id));
  const legal=available.filter(z=>sizeLegal(profile||{name:''},z.id,Number(field.val())));
  const effective=legal.some(z=>z.id===selected)?selected:(legal.some(z=>z.id===suggested)?suggested:legal[0]?.id||'');
@@ -201,15 +176,15 @@ function dialog(owner){const opts=list().map((p,i)=>`<option value="${i}">${esc(
  html.find('[name=size]').html(available.map(z=>`<option value="${z.id}" ${sizeLegal(profile||{name:''},z.id,Number(field.val()))?'':'disabled'}>${esc(z.label)}${sizeLegal(profile||{name:''},z.id,Number(field.val()))?'':' (NC/species restricted)'}</option>`).join('')).val(effective);
  const detail=sizeById(effective||suggested);
  if(!legal.length)html.find('.sns-size-info').text(`No legal size at NC ${field.val()}; increase the power level / NC.`);
- html.find('.sns-size-info').text(`Selected size: ${detail.label}; token ${detail.grid}×${detail.grid} squares; Strength/Vigor ${detail.str>=0?'+':''}${detail.str}; reach ${detail.reach}m; Stealth ${detail.stealth}; Intimidate ${detail.intimidate}; movement ${detail.move>=0?'+':''}${detail.move}m.`);
+ else html.find('.sns-size-info').text(`Selected size: ${detail.label} (height/length ${detail.height}, weight ${detail.weight}); token ${detail.grid}×${detail.grid} squares; Strength/Vigor ${detail.str>=0?'+':''}${detail.str}; reach ${detail.reach}m; Stealth ${detail.stealth}; Intimidate ${detail.intimidate}; movement ${detail.move>=0?'+':''}${detail.move}m.`);
  html.find('.sns-qty-help').text(`Quantity: ${qty} • Maximum NC: ${cap} • Chakra cost: ${2*lv} (current: ${num(owner.system?.energias?.chakra?.value)}). Quantity resets to 1 when this dialog reopens.`);};html.find('[name=qty], [name=level], [name=species], [name=nc]').on('change input',update);html.find('[name=qty]').val('1');update();}}).render(true);
 }
 function createCustom(owner){if(!game.user.isGM)return ui.notifications.warn('GM required.');new Dialog({title:'Create Custom Summon',content:'<form><label>Name <input name="name"></label><label>Image path <input name="img"></label><label>Skills (comma-separated) <input name="skills"></label></form>',buttons:{create:{label:'Create',callback:async html=>{const get=k=>String(html.find(`[name="${k}"]`).val()||'').trim();if(!get('name'))return ui.notifications.warn('Name required.');const p={name:get('name'),image:get('img'),skills:get('skills'),group:'Custom',source:'User-defined',key_attributes:'',notes:'Custom profile; assign aptitudes, attacks, and statistics manually.'};const a=await actorFor(p,4,owner,'hijutsu');await a.setFlag(SYS,'customSpecies',p);a.sheet.render(true);}}}}).render(true)}
 Hooks.once('ready',async()=>{try{await loadKuchiyoseSpecies()}catch(e){console.error(e);ui.notifications.warn('Could not load Kuchiyose species.')}});
 Hooks.on('renderActorSheet',(app,html)=>{if(app.actor.flags?.[SYS]?.rashoumonGate||app.actor.type!=='personagem'||!app.isEditable||app.actor.getFlag(SYS,'summonProfile')||app.actor.getFlag(SYS,'summonTemplate'))return;const root=html instanceof jQuery?html:$(html);if(root.find('.sns-kuchiyose-engine').length)return;
- const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-open-kuchiyose">Summon Compendium</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div></section>`);
+ const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-open-kuchiyose">Summon Compendium</button><button type="button" class="sns-size-reference">Size Reference</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div></section>`);
  const target=root.find('.sheet-body').first();(target.length?target:root.find('form').first()).prepend(panel);
- panel.find('.sns-klevel').on('change',e=>app.actor.setFlag(SYS,'kuchiyoseLevel',num(e.target.value)));panel.find('.sns-cast').on('click',()=>dialog(app.actor));panel.find('.sns-open-kuchiyose').on('click',()=>{const pack=game.packs.get('world.sns-kuchiyose');if(pack)pack.render(true);else ui.notifications.warn('Ask the GM to build the Kuchiyose compendium in System Settings.');});panel.find('.sns-custom').on('click',()=>createCustom(app.actor));panel.find('.sns-reset-scene').on('click',async()=>{if(!game.user.isGM)return ui.notifications.warn('GM only.');const yes=await Dialog.confirm({title:'Reset Kuchiyose Uses',content:'Reset this character’s Kuchiyose uses for the current scene? Use only when beginning a new scene.'});if(yes){await app.actor.setFlag(SYS,'summonSceneUsage',{scene:canvas.scene?.id||'',count:0});ui.notifications.info('Kuchiyose uses reset for this scene.');}});});
+ panel.find('.sns-size-reference').on('click',()=>openSnsSizeReference());panel.find('.sns-klevel').on('change',e=>app.actor.setFlag(SYS,'kuchiyoseLevel',num(e.target.value)));panel.find('.sns-cast').on('click',()=>dialog(app.actor));panel.find('.sns-open-kuchiyose').on('click',()=>{const pack=game.packs.get('world.sns-kuchiyose');if(pack)pack.render(true);else ui.notifications.warn('Ask the GM to build the Kuchiyose compendium in System Settings.');});panel.find('.sns-custom').on('click',()=>createCustom(app.actor));panel.find('.sns-reset-scene').on('click',async()=>{if(!game.user.isGM)return ui.notifications.warn('GM only.');const yes=await Dialog.confirm({title:'Reset Kuchiyose Uses',content:'Reset this character’s Kuchiyose uses for the current scene? Use only when beginning a new scene.'});if(yes){await app.actor.setFlag(SYS,'summonSceneUsage',{scene:canvas.scene?.id||'',count:0});ui.notifications.info('Kuchiyose uses reset for this scene.');}});});
 Hooks.on('renderActorSheet',(app,html)=>{
  const actor=app.actor,profile=normalizeSummonProfile(actor.getFlag(SYS,'summonProfile'));
  if(!profile||!actor.testUserPermission(game.user,'OWNER'))return;
@@ -219,6 +194,7 @@ Hooks.on('renderActorSheet',(app,html)=>{
  const stats=root.find('.tab[data-tab="status"]').first();(stats.length?stats:root.find('.sheet-body').first()).prepend(block);
 });
 Hooks.on('updateActor',async(actor,changes)=>{const vitalityChanged=Object.hasOwn(changes||{},'system.energias.vitalidade.value')||changes?.system?.energias?.vitalidade?.value!==undefined;if(!vitalityChanged)return;if(!game.user.isGM||!actor.getFlag(SYS,'summonProfile')||num(actor.system?.energias?.vitalidade?.value)>0)return;for(const scene of game.scenes){const tokens=scene.tokens.filter(t=>t.actorId===actor.id&&t.getFlag(SYS,'summonedBy'));if(tokens.length)await scene.deleteEmbeddedDocuments('Token',tokens.map(t=>t.id))}});
+
 
 
 
