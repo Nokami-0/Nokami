@@ -1,4 +1,4 @@
-const isArmor = item => Boolean(item.system?.isArmor || item.system?.snsArmor || item.getFlag?.('sns-weapon-library', 'armor'));
+const isArmor = item => Boolean(item.system?.isArmor || item.system?.snsArmor || item?.flags?.['sns-weapon-library']?.armor);
 export async function setEquipmentState(actor, itemId, equipped) {
   if (!actor?.isOwner) throw new Error('You must own this actor to change equipment.');
   const item = actor.items.get(itemId);

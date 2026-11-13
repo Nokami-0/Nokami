@@ -23,3 +23,13 @@ for(const [label,summon,synthetic]of [['character',false,false],['summon',true,f
 test('legacy v12 globals remain supported',async()=>{const a=actor();const sheet=runtime(current,a,true);await sheet.getData({});});
 
 test('regression: cloning a live data model throws before the fix',async()=>{const old=current.replace('systemData?.toObject ? systemData.toObject(false) : (systemData || {})','systemData || {}');await assert.rejects(runtime(old,actor()).getData({}),/Cannot clone advanced object/);});
+function equippedItem(armor=false){return {id:'equipment',name:armor?'Legacy Armor':'Bite',type:'equipamento',system:{equipped:true},flags:armor?{'sns-weapon-library':{armor:true,bodyHardnessBonus:2}}:{},getFlag(scope,key){if(scope==='sns-weapon-library')throw Error('Flag scope "sns-weapon-library" is not valid or not currently active');return this.flags?.[scope]?.[key]}};}
+for(const [name,summon,token]of [['character',false,false],['summon',true,false],['token',true,true]])test(name+' with equipped species weapons opens when legacy flag scope is inactive',async()=>{
+ const a=actor(summon,token);a.items=[equippedItem()];const c=await runtime(current,a).getData({});assert.equal(c.equippedArmor,null);assert.equal(c.equipamentos.length,1);
+});
+test('legacy armor metadata is retained without calling inactive-scope getFlag',async()=>{const a=actor(true);a.items=[equippedItem(true)];const c=await runtime(current,a).getData({});assert.equal(c.equippedArmor.id,'equipment');assert.equal(c.armorHardnessBonus,2);});
+test('regression reproduces the screenshot error before the flag lookup fix',async()=>{const old=current.replace("i?.flags?.['sns-weapon-library']?.armor","i.getFlag('sns-weapon-library','armor')");const a=actor(true);a.items=[equippedItem()];await assert.rejects(runtime(old,a).getData({}),/Flag scope "sns-weapon-library" is not valid/);});
+test('equipping a species weapon and legacy armor never reads an inactive flag scope',async()=>{
+ const source=fs.readFileSync(root+'/module/equipment-state.js','utf8').replace('export async function','async function');const c={};vm.createContext(c);vm.runInContext(source+';this.setEquipmentState=setEquipmentState;',c);
+ for(const armor of [false,true]){const i=equippedItem(armor);const items=[i];items.get=id=>items.find(x=>x.id===id);const a={isOwner:true,items,updateEmbeddedDocuments:async()=>{}};assert.equal(await c.setEquipmentState(a,i.id,true),true);}
+});

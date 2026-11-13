@@ -97,12 +97,12 @@ export class ShinobiActorSheet extends BaseActorSheet {
 
     // Calculate inventory safely even for legacy items with missing fields.
     const num=(v,d=0)=>v===undefined||v===null||v===''||!Number.isFinite(Number(v))?d:Number(v);
-    const armor=i=>Boolean(i.system?.isArmor||i.system?.snsArmor||i.getFlag?.('sns-weapon-library','armor'));
+    const armor=i=>Boolean(i.system?.isArmor||i.system?.snsArmor||i?.flags?.['sns-weapon-library']?.armor);
     const items=Array.from(this.actor.items || []);
     context.equippedArmor=items.find(i=>i.type==='equipamento'&&i.system?.equipped&&armor(i))||null;
     context.armorAbsorptionRemaining=Math.max(0,num(context.equippedArmor?.system?.absorptionRemaining,num(context.equippedArmor?.system?.absorption)));
     context.armorAbsorptionMax=Math.max(0,num(context.equippedArmor?.system?.absorption));
-    context.armorHardnessBonus=Math.max(0,num(context.equippedArmor?.system?.bodyHardnessBonus,num(context.equippedArmor?.getFlag?.('sns-weapon-library','bodyHardnessBonus'))));
+    context.armorHardnessBonus=Math.max(0,num(context.equippedArmor?.system?.bodyHardnessBonus,num(context.equippedArmor?.flags?.['sns-weapon-library']?.bodyHardnessBonus)));
     context.weaponGroups=['Simple','Martial','Natural','Special','Ammunition','Explosive'];
     context.tecnicas=[];context.equipamentos=[];context.poderes=[];context.aptidoes=[];context.aptidoesGratuitas=[];context.elementos=[];
     let used=0,added=0,removed=0,value=0;
@@ -297,7 +297,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
     }
     html.find('.sns-armor-damage').click(async ev => {
       ev.preventDefault();
-      const armor=this.actor.items.find(i=>i.type==="equipamento" && i.system.equipped && (i.system.isArmor || i.getFlag("sns-weapon-library","armor")));
+      const armor=this.actor.items.find(i=>i.type==="equipamento" && i.system.equipped && (i.system.isArmor || i?.flags?.['sns-weapon-library']?.armor));
       const response=await new Promise(resolve=>new Dialog({title:"Take Damage",content:'<form><label>Incoming damage</label><input type="number" name="damage" min="0" step="1" value="0"/><label>Damage resource</label><select name="damageResource"><option value="vitalidade">Vitality</option><option value="chakra">Chakra</option></select><p>Hardness reduces damage first; equipped armor uses its remaining Absorption pool; character Absorption then reduces the remainder before the selected resource. For effects that bypass defenses, use the checkboxes below.</p><label><input type="checkbox" name="bypassHardness"/> Bypass Hardness</label><label><input type="checkbox" name="bypassAbsorption"/> Bypass Absorption</label></form>',buttons:{apply:{label:"Take Damage",callback:html=>resolve({damage:Number(html.find('[name=damage]').val()),damageResource:html.find('[name=damageResource]').val(),bypassHardness:html.find('[name=bypassHardness]').is(':checked'),bypassAbsorption:html.find('[name=bypassAbsorption]').is(':checked')})},cancel:{label:"Cancel",callback:()=>resolve(null)}},default:"apply",close:()=>resolve(null)}).render(true));
       if(!response)return;
       const {damage,damageResource,bypassHardness,bypassAbsorption}=response;
@@ -322,7 +322,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
     });
     html.find('.sns-armor-repair').click(async ev=>{
       ev.preventDefault();
-      const armor=this.actor.items.find(i=>i.type==="equipamento" && i.system.equipped && (i.system.isArmor || i.getFlag("sns-weapon-library","armor")));
+      const armor=this.actor.items.find(i=>i.type==="equipamento" && i.system.equipped && (i.system.isArmor || i?.flags?.['sns-weapon-library']?.armor));
       if(!armor)return ui.notifications.warn("Equip armor first.");
       if(!game.user.isGM)return ui.notifications.warn("Only the GM can restore armor absorption.");
       await this.actor.updateEmbeddedDocuments("Item",[{_id:armor.id,"system.absorptionRemaining":Math.max(0,Number(armor.system.absorption)||0)}]);

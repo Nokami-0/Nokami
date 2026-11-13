@@ -177,8 +177,8 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     if (conf.resiliencia) durezaExtra += Math.floor(vigFinal / 4);
     
     // Only the first equipped armor contributes; this prevents armor stacking.
-    const equippedArmor = this.parent?.items?.find(i => i.type === "equipamento" && i.system.equipped && (i.system.isArmor || i.getFlag("sns-weapon-library", "armor")));
-    const armorHardness = Math.max(0, Number(equippedArmor?.system.bodyHardnessBonus ?? equippedArmor?.getFlag("sns-weapon-library", "bodyHardnessBonus") ?? 0));
+    const equippedArmor = this.parent?.items?.find(i => i.type === "equipamento" && i.system.equipped && (i.system.isArmor || i?.flags?.['sns-weapon-library']?.armor));
+    const armorHardness = Math.max(0, Number(equippedArmor?.system.bodyHardnessBonus ?? equippedArmor?.flags?.['sns-weapon-library']?.bodyHardnessBonus ?? 0));
     durezaExtra += armorHardness;
     // Explicitly enabled defensive powers add their Hardness to the wearer.
     const powerHardness = [...(this.parent?.items ?? [])].filter(i => i.type === "poder" && i.system.hardnessActive).reduce((total,i) => total + Math.max(0,Number(i.system.hardness)||0),0);
