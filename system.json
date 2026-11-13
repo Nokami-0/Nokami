@@ -2,7 +2,7 @@
   "id": "shinobi-no-sho-revamp",
   "title": "Shinobi no Sho - Revamp (English)",
   "description": "Nokami-0's English edition of Shinobi no Sho Revamp. Updates and downloads are served from Nokami-0/Nokami, branch shinobi-no-sho. Original system by Nela Trex/NelaTrex.",
-  "version": "1.7.42",
+  "version": "1.7.43",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -17,7 +17,8 @@
     "module/sns-conditions.js",
     "module/unified-catalog.js",
     "module/kuchiyose-engine.js",
-    "module/sns-compendiums.js"
+    "module/sns-compendiums.js",
+    "module/kuchiyose-compendium.js"
   ],
   "template": "template.json",
   "url": "https://github.com/Nokami-0/Nokami/tree/shinobi-no-sho",
