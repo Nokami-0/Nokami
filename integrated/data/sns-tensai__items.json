@@ -1,0 +1,549 @@
+[
+  {
+    "id": "overview",
+    "name": "Tensai (Genius) — Overview",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Tensai is the Genius Hijutsu framework, rather than a separate list of elemental effects. Choose its restricted power route: Versatility or Hibon Ninpou. Limited aptitudes: Fast Learning, Natural Talent and Advanced Technique. Choose and purchase at most 2 different Special Aptitudes; their level-2 upgrades do not use additional slots. The framework does not waive individual prerequisites or clan restrictions.",
+    "sourcePages": [
+      241,
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "See rules",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility",
+    "name": "Versatility — Two Powers",
+    "level": 0,
+    "kind": "Versatility",
+    "description": "Choose 2 different powers from Ninpou, Suiton, Katon, Doton, Fuuton, Raiton or Fuuinjutsu. No other powers can be chosen. At Versatility 1, gain the level-1 effects of both chosen powers. At each later level, assign that level’s effect choice to one of the two powers, selecting an effect of that level or lower. You cannot assign more than 2 consecutive level choices to the same power. Follow normal effect-selection prerequisites.",
+    "sourcePages": [
+      242
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "See rules",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "casting",
+    "name": "Versatility — Casting and Benefits",
+    "level": 0,
+    "kind": "Versatility",
+    "description": "When a chosen power uses its power level as a parameter, use your Versatility level. Example: at Versatility 6, a learned level-4 Destructive Breath may be cast at power level 6 for 6 Chakra under normal Ninpou rules. General benefits purchased for Versatility, such as Mastery, apply to both chosen powers. This does not automatically spread benefits that explicitly apply only to one chosen power.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "See rules",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatile-prereqs",
+    "name": "Versatility — Prerequisites, Affinity and Clones",
+    "level": 0,
+    "kind": "Versatility",
+    "description": "Versatility level qualifies as the level of its chosen powers for purchasing abilities that require them. Example: Versatility 5 with Suiton can qualify for Water Mastery’s Suiton 5 requirement. Versatility does not use normal elemental-affinity slots. True Clones may use versatile powers, but do not receive Tensai Special Aptitude benefits. For powers that unlock techniques instead of buying effects, such as Fuuinjutsu, treat their techniques as effect choices at the levels assigned to that power.",
+    "sourcePages": [
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "See rules",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "hibon",
+    "name": "Hibon Ninpou (Unique Ninja Art)",
+    "level": 0,
+    "kind": "Power Route",
+    "description": "Alternative restricted power to Versatility. Create a unique art, using normal Ninpou parameters. Choose 2 different bonuses: +1 elemental damage to every effect; +2 Hardness to creations; or +1 resistance DC. Only the additional-damage bonus may instead be chosen twice. Available effects are common Ninpou effects plus the exclusive effects of one selected basic element. Hibon remains its own unique element: it does not satisfy basic-element aptitude prerequisites or gain their benefits. Combining Hibon with Tensai prevents purchasing Versatility.",
+    "sourcePages": [
+      212
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "See rules",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "fast-learning",
+    "name": "Fast Learning (Quick Learner)",
+    "level": 5,
+    "kind": "Limited Aptitude",
+    "description": "Purchase Versatility again with 2 new, different powers. General Versatility benefits are retained for the new powers. This aptitude may be purchased more than once.",
+    "sourcePages": [
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Versatility 5",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "natural-talent",
+    "name": "Natural Talent",
+    "level": 0,
+    "kind": "Limited Aptitude",
+    "description": "Choose a possible non-element-exclusive effect for one of your versatile powers or Hibon Ninpou. Gain that effect and its evolutions as the power reaches the required levels. This extra effect does not count against the versatile-power effect-choice limit.",
+    "sourcePages": [
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Intelligence or Spirit 6",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "advanced-technique",
+    "name": "Advanced Technique",
+    "level": 0,
+    "kind": "Limited Aptitude",
+    "description": "Gain 2 technical aptitudes of your choice. You must meet the individual prerequisites of both. Refer to the Technical Aptitudes rules on page 72.",
+    "sourcePages": [
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "All requirements of the selected aptitudes",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "special-limit",
+    "name": "Special Aptitude Limit",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Choose and purchase up to 2 different Tensai Special Aptitudes. Upgrading either selected aptitude to its level-2 version does not consume another slot. Listed options: Capacity, Perfect Control, Battle Instinct, God of Thunder, Silver Fang (Hatake), Will of Fire (Sarutobi), and Maximize (Senju). Clan references below retain their original clan association and individual requirements.",
+    "sourcePages": [
+      241,
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "See rules",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "capacity",
+    "name": "Capacity (Potential) — Level 1",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "Gain +1 base damage for common Ninpou and basic-element effects, including those used through Versatility or Hibon. Stacks with other bonuses, but does not affect element-exclusive effects.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Spirit 8",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "capacity-2",
+    "name": "Capacity (Potential) — Level 2",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "Repurchase Capacity at Spirit 12. You may activate meta-aptitudes as a Partial Action. You still cannot combine 2 meta-aptitudes at once or use them with Full Action techniques. This upgrade does not consume another Special Aptitude slot.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Capacity level 1; Spirit 12",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "perfect-control",
+    "name": "Perfect Control — Level 1",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "You may substitute Intelligence for Spirit when determining a power or aptitude’s damage, size, range, difficulty and any other Spirit-based parameter, including Spirit-based chakra costs. If you use this benefit, replace all Spirit-based parameters together; do not mix attributes selectively. This substitution does not alter prerequisites.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Intelligence 8",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "perfect-control-2",
+    "name": "Perfect Control — Level 2",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "Repurchase Perfect Control at Intelligence 12. Add your Intelligence value to total ordinary Chakra. This upgrade does not consume another Special Aptitude slot.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Perfect Control level 1; Intelligence 12",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "battle-instinct",
+    "name": "Battle Instinct — Level 1",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "Choose a Combat Skill and increase its base value by 1. This benefit is unavailable if any of the four Combat Skills has a base of 5, either before or after applying the extra point.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Dexterity or Agility 8",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "battle-instinct-2",
+    "name": "Battle Instinct — Level 2",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "Repurchase Battle Instinct at Dexterity or Agility 12. The maximum accuracy penalty suffered on a single test is reduced to −2. See the accuracy-penalty rules on page 251. This upgrade does not consume another Special Aptitude slot.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Battle Instinct level 1; Dexterity or Agility 12",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "thunder-god",
+    "name": "God of Thunder — Level 1",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "Gain access to Hiraishin, subject to that technique’s own rules. This is one of the 2 possible Special Aptitude selections.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Fuuinjutsu 8; Intelligence 14",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "thunder-god-2",
+    "name": "God of Thunder — Level 2",
+    "level": 0,
+    "kind": "Special Aptitude",
+    "description": "Repurchase God of Thunder at Intelligence 18 to access Hiraishin: Dorai. This upgrade does not consume another Special Aptitude slot.",
+    "sourcePages": [
+      244
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "God of Thunder level 1; Intelligence 18",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "silver-fang",
+    "name": "Silver Fang — Hatake Reference",
+    "level": 0,
+    "kind": "Clan Reference",
+    "description": "Counts as one Tensai Special Aptitude selection. Gain proficiency with the White Chakra Sword, one basic Elemental Mastery aptitude, and Mastery for one of the five basic elemental powers. Normal prerequisites still apply; unavailable benefits begin when those requirements are met. If selecting a versatile power, benefits apply to that one power, not its partner. Retains its Hatake-clan source association.",
+    "sourcePages": [
+      155
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Tensai; clan/source eligibility and normal aptitude prerequisites",
+    "restrictedTo": "Tensai",
+    "clan": "Hatake"
+  },
+  {
+    "id": "will-of-fire",
+    "name": "Will of Fire — Sarutobi Reference",
+    "level": 0,
+    "kind": "Clan Reference",
+    "description": "Counts as one Tensai Special Aptitude selection. Gain Diehard and delayed aging. May maintain up to 2 True Clones together; each has one-fifth of your Vitality and Diehard. You cannot create other clones that scene in addition to those two. Retains its Sarutobi-clan source association.",
+    "sourcePages": [
+      174
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Tensai; Vigor 6; Greater Resistance (Vigor); True Clone; clan/source eligibility",
+    "restrictedTo": "Tensai",
+    "clan": "Sarutobi"
+  },
+  {
+    "id": "maximize",
+    "name": "Maximize — Senju Reference",
+    "level": 0,
+    "kind": "Clan Reference",
+    "description": "Choose Mokuton or Suiton. When using the Enhance meta-aptitude for the chosen power, apply all its benefits together. May be selected as one of Tensai’s 2 Special Aptitudes. Retains its Senju-clan source association.",
+    "sourcePages": [
+      175
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Spirit or Intelligence 15; Capacity/Potential aptitude; clan/source eligibility",
+    "restrictedTo": "Tensai",
+    "clan": "Senju"
+  },
+  {
+    "id": "hiraishin-seals",
+    "name": "Hiraishin — Jutsu-Shiki Seals",
+    "level": 0,
+    "kind": "Technique",
+    "description": "Requires God of Thunder. Place a seal by touching a target and spending a Partial Action and 1 Chakra. Touching an unwilling enemy requires a Standard Action unarmed Melee Combat touch attack against their defense. A seal needs at least 10 × 10 cm of space. There is no limit on seal count. Seals on advanced seal strips are permanent; other surfaces last until scene end. Destroying the marked surface can destroy the seal. Nullifying one requires Fuuinjutsu 8, a Partial Action and 1 Chakra.",
+    "sourcePages": [
+      245
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "God of Thunder",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "hiraishin-travel",
+    "name": "Hiraishin — Teleportation and Passenger Costs",
+    "level": 0,
+    "kind": "Technique",
+    "description": "Teleport with yourself to a previously marked jutsu-shiki using a Partial or Movement Action and 2 Chakra. You may do so while grappled, restrained or wearing heavy armor. You can take people or objects you are touching; unwilling contact requires a Melee Combat test. You cannot send an object alone. Add passenger/object costs by size: Small +1, Medium +3, Large +5, Huge +7, Immense +9, Colossal +11. Apply the source table to what is transported; other sizes are not specified. Discuss Hiraishin availability with the GM before play.",
+    "sourcePages": [
+      245,
+      246
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "God of Thunder; an existing destination seal",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "scatter-kunai",
+    "name": "Hiraishin — Scatter Kunai",
+    "level": 0,
+    "kind": "Technique",
+    "description": "With Quick Draw, spend a Partial Action to scatter up to 8 pre-marked kunai over an area 16 m in diameter. The special kunai provide room for an advanced seal strip, while otherwise using normal kunai characteristics and compartment rules. An attached explosive or Energize can damage the seal.",
+    "sourcePages": [
+      246
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "God of Thunder; Quick Draw; prepared sealed kunai",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "vanish",
+    "name": "Hiraishin — Vanish",
+    "level": 0,
+    "kind": "Technique",
+    "description": "Announce Vanish with Dodge or Anticipate and pay normal Hiraishin cost. On a successful noncritical enemy attack, force the attacker to reroll and keep the worse result, even if the second roll is critical. Cannot use this benefit after an Anticipate critical failure. A successful defense permits teleportation to an existing seal using a Partial or Movement Action; you may still move if the enemy’s first attack already missed. Also grants immunity to Feint, except against a Super Accelerated enemy, who is treated as Accelerated and can still feint you.",
+    "sourcePages": [
+      246
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "God of Thunder; legal Hiraishin destination and defense",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "escape-seal",
+    "name": "Hiraishin — Escape Seals",
+    "level": 0,
+    "kind": "Technique",
+    "description": "Designate up to 2 seals in safe places known to the GM. Teleporting to either designated escape seal is a Full Action.",
+    "sourcePages": [
+      246
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "God of Thunder; designated safe seals",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "second-step",
+    "name": "Hiraishin: Ni no Dan — Second Step",
+    "level": 0,
+    "kind": "Technique",
+    "description": "Thrown marked kunai: use a Partial Action to Feint with Ranged Combat against the target’s defense. On success, teleport as part of the maneuver, then use a Standard Action for a melee attack or touch technique that automatically hits; camouflage miss chances still apply. Against an enemy already marked by your seal, teleportation lets you attack them as automatically feinted, without the feint test.",
+    "sourcePages": [
+      246,
+      247
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "God of Thunder; Intelligence 16; Quick Draw; Blind Spot",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "reappear",
+    "name": "Hiraishin — Reappear",
+    "level": 0,
+    "kind": "Technique",
+    "description": "When using Vanish, draw a marked kunai as a reaction and immediately teleport back to the opponent as another reaction, reappearing behind them. You may use your Standard Action to attack with a melee attack or touch technique, treating the opponent as already marked under Second Step. This movement does not count against the movement-limit rule.",
+    "sourcePages": [
+      247
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Hiraishin: Ni no Dan; Vanish; marked kunai",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "dorai",
+    "name": "Hiraishin: Dorai — Guided Thunder",
+    "level": 0,
+    "kind": "Technique",
+    "description": "Use a Full Action to create a dimensional barrier that teleports a ranged attack to a jutsu-shiki at least 200 m away. Against a technique, pay its chakra cost. Against an object, use the Hiraishin transport-cost table. No test is normally required: defense is an automatic success, except against a critical hit. The source provides no automatic defense against that critical-hit exception.",
+    "sourcePages": [
+      247
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Intelligence 18; God of Thunder level 2",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-1",
+    "name": "Versatility Level 1 — Effect Choice",
+    "level": 1,
+    "kind": "Level Choice",
+    "description": "Both chosen powers receive their level-1 effects. Example: Cannon for Katon and Cannon for Suiton. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 1",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-2",
+    "name": "Versatility Level 2 — Effect Choice",
+    "level": 2,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Suiton — Fog level 2. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 2",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-3",
+    "name": "Versatility Level 3 — Effect Choice",
+    "level": 3,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Katon — Arrows level 3. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 3",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-4",
+    "name": "Versatility Level 4 — Effect Choice",
+    "level": 4,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Katon — Destructive Breath level 4. This is the second consecutive Katon selection, so the next must be Suiton. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 4",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-5",
+    "name": "Versatility Level 5 — Effect Choice",
+    "level": 5,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Suiton — Fog level 5. Fast Learning becomes eligible if purchased. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 5",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-6",
+    "name": "Versatility Level 6 — Effect Choice",
+    "level": 6,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Suiton — Wave Collision level 6. This is the second consecutive Suiton selection, so the next must be Katon. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 6",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-7",
+    "name": "Versatility Level 7 — Effect Choice",
+    "level": 7,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Katon — Destructive Breath level 7. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 7",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-8",
+    "name": "Versatility Level 8 — Effect Choice",
+    "level": 8,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Suiton — Wave Collision level 8. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 8",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-9",
+    "name": "Versatility Level 9 — Effect Choice",
+    "level": 9,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Katon — Arrows level 6; choosing an effect below your current level is allowed. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 9",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  },
+  {
+    "id": "versatility-level-10",
+    "name": "Versatility Level 10 — Effect Choice",
+    "level": 10,
+    "kind": "Level Choice",
+    "description": "Choose one power. Example: Suiton — Wave Collision level 10. These are the book’s example choices, not automatic grants. Use your own two legal chosen powers and follow the maximum-two-consecutive rule.",
+    "sourcePages": [
+      242,
+      243
+    ],
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "prerequisites": "Purchased Versatility 10",
+    "restrictedTo": "Tensai",
+    "clan": ""
+  }
+]

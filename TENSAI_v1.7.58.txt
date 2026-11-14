@@ -1,0 +1,31 @@
+TENSAI (GENIUS) — v1.7.58
+
+Adds the Tensai tab to ordinary character sheets alongside Magen and Senjutsu.
+Update and restart the world; no compendium rebuild is required.
+
+38 source-backed reference cards cover Versatility and Hibon Ninpou routes,
+Versatility choices at levels 1–10, three limited aptitudes, eight special-aptitude
+base/upgrade entries, three clan references, and eight Hiraishin technique sections.
+
+Versatility progression preserves both level-1 effects, the allowed seven-power
+list, two different chosen powers, and no more than two consecutive effect-choice
+levels assigned to the same power. Hibon Ninpou is an alternative to Versatility.
+Special Aptitude level-2 upgrades are distinguished from Versatility levels and
+do not use more of the maximum two Special Aptitude slots.
+
+Clan references remain Hatake (Silver Fang, p.155), Sarutobi (Will of Fire, p.174),
+and Senju (Maximize, p.175). Their underlying clan compendium entries are not moved
+or recategorized. Individual eligibility and prerequisites still apply.
+
+Source: Basic Book 4.1.b, pp.241–247, with Hibon Ninpou p.212 and the cited clan
+pages. Teleportation transport sizes use the corrected Medium/Large/Immense names.
+
+The tab shows owned Versatility/Hibon power entries, category and level filters,
+search and expandable rules. This is a reference: purchases, effect choices,
+special slots, seals, costs and Hiraishin movement remain manual. Reading a card
+does not grant abilities. Failed rule loads show an error without blocking the
+rest of the sheet; reopening retries the load.
+
+Validation: 41 checks passed for catalog coverage, progression, clan references,
+rendering, filters, source costs and Magen/Senjutsu/actor/summon regressions.
+Live Foundry testing remains.

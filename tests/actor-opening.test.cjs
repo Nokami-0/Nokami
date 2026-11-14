@@ -4,9 +4,10 @@ const root=__dirname+'/..';
 function runtime(source, actor, legacy=false){
  class Base {constructor(){this.actor=actor;}async getData(){return {actor};}activateListeners(){}}
  const deepClone=v=>{if(Object.getPrototypeOf(v)!==Object.prototype)throw Error('Cannot clone advanced object');return structuredClone(v)};
- const c={foundry:{utils:{deepClone},appv1:{sheets:{ActorSheet:Base}},applications:{ux:{TextEditor:{enrichHTML:async s=>s}}}},game:{actors:new Map()},SNS_CONDITIONS:[],fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(root+'/integrated/data/'+(url.includes('sns-senjutsu')?'sns-senjutsu__items.json':'sns-magen__items.json'),'utf8'))}),console};
+ const c={foundry:{utils:{deepClone},appv1:{sheets:{ActorSheet:Base}},applications:{ux:{TextEditor:{enrichHTML:async s=>s}}}},game:{actors:new Map()},SNS_CONDITIONS:[],fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(root+'/integrated/data/'+(url.includes('sns-tensai')?'sns-tensai__items.json':url.includes('sns-senjutsu')?'sns-senjutsu__items.json':'sns-magen__items.json'),'utf8'))}),console};
  if(legacy){c.ActorSheet=Base;c.TextEditor=c.foundry.applications.ux.TextEditor;delete c.foundry.appv1;delete c.foundry.applications;}
  vm.createContext(c);
+ vm.runInContext('(function(){'+fs.readFileSync(root+'/module/tensai.js','utf8').replace(/export /g,'')+';this.tensaiSheetContext=tensaiSheetContext;this.activateTensaiTab=activateTensaiTab;}).call(this)',c);
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/senjutsu.js','utf8').replace(/export /g,'')+';this.senjutsuSheetContext=senjutsuSheetContext;this.activateSenjutsuTab=activateSenjutsuTab;}).call(this)',c);
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/magen.js','utf8').replace(/export /g,'')+';this.magenSheetContext=magenSheetContext;this.activateMagenTab=activateMagenTab;}).call(this)',c);
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/sizes.js','utf8').replace(/export /g,'')+';this.correctedSizeDetails=correctedSizeDetails;}).call(this)',c);
