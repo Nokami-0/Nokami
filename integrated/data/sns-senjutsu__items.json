@@ -1,0 +1,477 @@
+[
+  {
+    "id": "prerequisites",
+    "name": "Senjutsu (Sage Technique) — Purchase Prerequisites",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Restricted supplementary power. Requires Vigor 14 and one qualifying route: (1) Kuchiyose 8, restricted Toad or Snake summoning, plus Greater Resistance (Vigor); or (2) Mokuton 8 plus Greater Resistance (Vigor) or Regeneration. The GM may optionally allow another summon route, such as Monkeys. Slugs do not grant access. Senjutsu may coexist with Kuchiyose or Mokuton without the optional two-Hijutsu rule. Viewing these references does not purchase or grant any ability.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239
+    ],
+    "cost": "See rules",
+    "action": "See rules",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "entry",
+    "name": "Entering Sage Mode",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Remain concentrating and motionless to absorb natural energy. Taking damage or being forced to defend interrupts concentration and requires restarting. At the end of the second concentration round, receive 1 Senjutsu Chakra point per Senjutsu power level and activate Sage Mode. Timing note: the source header lists an action of 3 turns, while its entry text activates at the end of the second concentration round; confirm exact turn accounting with the GM. The Two Lives technique has its own entry timing.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239
+    ],
+    "cost": "See rules",
+    "action": "Concentration; see timing note",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "duration",
+    "name": "Senjutsu Chakra and Duration",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Sage Mode continues while at least 1 Senjutsu Chakra point remains. The pool equals your Senjutsu power level. Normal re-entry requires spending the entire pool and repeating the entry process. The special combat recharge methods below provide their own exceptions. Senjutsu Chakra is a separate resource from ordinary Chakra; bonuses explicitly restore ordinary Chakra or Vitality.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "See rules",
+    "action": "See rules",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "bonus-rules",
+    "name": "Using Senjutsu Bonuses",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Each listed bonus costs 1 Senjutsu Chakra and uses a Free Action. You cannot spend extra points to apply the same bonus repeatedly, but may spend points on different bonuses together. Ordinary Chakra and Vitality benefits last for the scene and are usable once each per scene. Other benefits last until the start of your next turn. Strength +4 cannot stack with the Base Damage +2 option.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra per chosen bonus",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "sensor",
+    "name": "Chakra Sensor",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "While Sage Mode is active, gain the Sensor aptitude for free with continuous duration. It can distinguish chakra signatures. This benefit is tied to Sage Mode, not a permanent purchased Sensor grant.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "No separate point cost",
+    "action": "Continuous in Sage Mode",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "strength",
+    "name": "Strength +4",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain +4 Strength. Does not stack with the Base Damage +2 bonus. Lasts until the start of your next turn. Cannot stack this same Senjutsu bonus with itself.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "damage",
+    "name": "Base Damage +2",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain +2 base damage for an attack, including Energize. Does not stack with the Strength +4 bonus. Lasts until the start of your next turn. Cannot stack this same Senjutsu bonus with itself.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "attack",
+    "name": "Attack Accuracy +1",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain +1 attack accuracy. Lasts until the start of your next turn. Cannot stack this same Senjutsu bonus with itself.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "defense",
+    "name": "Defense Accuracy +1",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain +1 defense accuracy. Lasts until the start of your next turn. Cannot stack this same Senjutsu bonus with itself.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "accelerated",
+    "name": "Accelerated",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain the Accelerated benefit listed by Senjutsu; use its condition/rule entry. Lasts until the start of your next turn. Cannot stack this same Senjutsu bonus with itself.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "dc",
+    "name": "Technique Difficulty +1",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Increase technique difficulty by +1. Lasts until the start of your next turn. Cannot stack this same Senjutsu bonus with itself.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "hardness",
+    "name": "Body Hardness +1",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain +1 body Hardness. Lasts until the start of your next turn. Cannot stack this same Senjutsu bonus with itself.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "chakra",
+    "name": "Ordinary Chakra +20",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain +20 ordinary Chakra, once per scene. This is an energy bonus lasting for the scene; it does not refill Senjutsu Chakra.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "vitality",
+    "name": "Vitality +30",
+    "level": 1,
+    "kind": "Benefit",
+    "description": "Gain +30 Vitality, once per scene. This is an energy bonus lasting for the scene. It cannot be used while maintaining Senpou: Ryousei no Jutsu (Two Lives).",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240,
+      241
+    ],
+    "cost": "1 Senjutsu Chakra",
+    "action": "Free",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "clones",
+    "name": "Natural-Energy Recharge — True Clones",
+    "level": 1,
+    "kind": "Recharge",
+    "description": "Requires the True Clone aptitude (Kage Bunshin). Up to 2 clones may remain concentrating in a quiet, safe place, absorbing natural energy. Dispelling a prepared clone transfers the energy to you, fully recharging Senjutsu Chakra and immediately entering Sage Mode if needed. The Command Partner damage reduction does not apply to these clones. Obtain and use True Clone under its own rules; this reference grants no clones.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "Clone technique’s normal cost",
+    "action": "See True Clone and dispelling rules",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "experiments",
+    "name": "Natural-Energy Recharge — Body Experiments",
+    "level": 1,
+    "kind": "Recharge",
+    "description": "A separate advanced route: experiments on your own body, such as adding cells from a Senninka user, allow passive absorption. Requires Iryou Ninjutsu 10, Medicine 20 and Occultism 20. Once the procedure is available and approved under the source rules, recharge all Senjutsu Chakra every 3 turns as a Free Action. Low Senjutsu level alone does not satisfy these additional prerequisites.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "See rules",
+    "action": "Free, every 3 turns",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "reverse",
+    "name": "Gyaku Kuchiyose — Reverse Summoning",
+    "level": 1,
+    "kind": "Technique",
+    "description": "With Toad/Snake access to Senjutsu, use reverse summoning to visit Mount Myoboku or Ryuchi Cave. This travel cannot be used during combat. You may prepare appropriate Fuuinjutsu scrolls, or ask an elder toad/snake to prepare them if you lack Fuuinjutsu. Using a reverse-summoning scroll to bring a clone to you is a Standard Action and costs 1 ordinary Chakra per clone.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "1 ordinary Chakra per clone brought by scroll",
+    "action": "Standard for a clone scroll; no combat travel",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "stone",
+    "name": "Natural Energy and Chakra Draining",
+    "level": 1,
+    "kind": "Rules",
+    "description": "A creature that drains your chakra while you are in Sage Mode through the Kuchiyose route is immediately petrified and dies, unless it also possesses Senjutsu or Senninka. This rule applies to the source’s Kuchiyose form of Sage Mode; do not automatically extend it to other routes.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      241
+    ],
+    "cost": "See rules",
+    "action": "See rules",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "two-lives",
+    "name": "Senpou: Ryousei no Jutsu — Two Lives",
+    "level": 6,
+    "kind": "Technique",
+    "description": "Prerequisites: Senjutsu 6 and restricted Kuchiyose 8 (Toads or Snakes). Summon up to 2 Little creatures (the source’s small third size tier) of NC 14 or greater onto your body, usually the shoulders, respecting normal summon limits. During the initial 3 turns, concentrate but you may move freely; afterward the summons attach, supply natural energy and activate Sage Mode. The technique is continuous for you and sustained by the summons, recharging all Senjutsu Chakra every 3 turns. Its cost equals the summoning cost. You cannot take the Vitality bonus through this method.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240,
+      241
+    ],
+    "cost": "Normal summoning cost",
+    "action": "Standard activation; initial entry takes 3 turns",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "symbiosis",
+    "name": "Two Lives — Symbiosis and Defending the Summons",
+    "level": 6,
+    "kind": "Rules",
+    "description": "Requires the Two Lives technique and its prerequisites. You and the attached creatures count as one being for movement, but retain separate consciousness and actions. The creatures move with you, including forced movement. They may cast their own jutsu under Command Partner and restricted Kuchiyose rules. You cannot summon other creatures while maintaining Two Lives. The summons do not make defensive actions; they rely on your defense. General damage is deducted from your Vitality. Directly targeting a summon with a projectile, melee attack or touch technique suffers −3 accuracy and damages that summon instead. If either attached creature reaches 0 Vitality, the technique and Sage Mode end.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      241
+    ],
+    "cost": "See rules",
+    "action": "See rules",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "perfect",
+    "name": "Perfect Sage Appearance",
+    "level": 8,
+    "kind": "Milestone",
+    "description": "At Senjutsu 7 or lower, incomplete natural-energy balance causes animal-like features on the Kuchiyose route. At level 8, Sage Mode becomes physically perfected: animal-like pupils and characteristic pigmentation remain, without the earlier deformities. Mokuton access retains human pupil shape and its characteristic eye/forehead marks. This appearance milestone adds no unlisted combat bonus.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239
+    ],
+    "cost": "See rules",
+    "action": "See rules",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "mokuton8",
+    "name": "Natural-Energy Recharge — Mokuton Route",
+    "level": 8,
+    "kind": "Recharge",
+    "description": "Requires both Senjutsu 8 and Mokuton 8. Fully recharge Senjutsu Chakra every 3 turns using a Standard Action. Level 8 Senjutsu without Mokuton 8 does not grant this recharge.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "See rules",
+    "action": "Standard, every 3 turns",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "mokuton10",
+    "name": "Mokuton Recharge — Free Action Upgrade",
+    "level": 10,
+    "kind": "Recharge",
+    "description": "Requires both Senjutsu 10 and Mokuton 10. The Mokuton route can fully recharge Senjutsu Chakra every 3 turns using a Free Action instead of a Standard Action.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      240
+    ],
+    "cost": "See rules",
+    "action": "Free, every 3 turns",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-1",
+    "name": "Senjutsu Level 1 — Chakra Capacity",
+    "level": 1,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 1. No additional named technique is automatically granted at this level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-2",
+    "name": "Senjutsu Level 2 — Chakra Capacity",
+    "level": 2,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 2. No additional named technique is automatically granted at this level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-3",
+    "name": "Senjutsu Level 3 — Chakra Capacity",
+    "level": 3,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 3. No additional named technique is automatically granted at this level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-4",
+    "name": "Senjutsu Level 4 — Chakra Capacity",
+    "level": 4,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 4. No additional named technique is automatically granted at this level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-5",
+    "name": "Senjutsu Level 5 — Chakra Capacity",
+    "level": 5,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 5. No additional named technique is automatically granted at this level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-6",
+    "name": "Senjutsu Level 6 — Chakra Capacity",
+    "level": 6,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 6. Two Lives becomes eligible if you also meet Kuchiyose and species prerequisites.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-7",
+    "name": "Senjutsu Level 7 — Chakra Capacity",
+    "level": 7,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 7. No additional named technique is automatically granted at this level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-8",
+    "name": "Senjutsu Level 8 — Chakra Capacity",
+    "level": 8,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 8. Perfect appearance and the Mokuton recharge route become eligible; Mokuton 8 is still required for that recharge.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-9",
+    "name": "Senjutsu Level 9 — Chakra Capacity",
+    "level": 9,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 9. No additional named technique is automatically granted at this level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  },
+  {
+    "id": "capacity-10",
+    "name": "Senjutsu Level 10 — Chakra Capacity",
+    "level": 10,
+    "kind": "Milestone",
+    "description": "On a successful entry into Sage Mode, your Senjutsu Chakra pool is 10. The free-action Mokuton recharge upgrade requires Mokuton 10 as well.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      239,
+      240
+    ],
+    "cost": "Entry restores the Senjutsu pool",
+    "action": "See Sage Mode entry",
+    "restrictedTo": "Senjutsu"
+  }
+]

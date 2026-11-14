@@ -1,0 +1,30 @@
+SENJUTSU (SAGE TECHNIQUE) — v1.7.57
+
+Adds a dedicated Senjutsu tab to ordinary character sheets, alongside Magen.
+Update and restart the world; no compendium rebuild is required.
+
+33 source-backed reference cards cover purchase prerequisites, the Kuchiyose
+and Mokuton routes, Sage Mode entry/duration, separate Senjutsu Chakra,
+Sensor, all nine spendable bonuses, four combat recharge methods, reverse
+summoning, chakra-draining petrification, Two Lives and its symbiosis rules,
+perfected appearance, and ten per-level chakra-capacity milestones.
+
+Filters select exact level, category or text. The tab shows the owned Senjutsu
+power level and its corresponding chakra capacity when that power is detected.
+Vigor eligibility is shown separately from the required qualifying route.
+No prerequisite, power, aptitude, clone or bonus is granted by viewing a card.
+
+Source: Basic Book 4.1.b, printed pages 239–241. The conflicting source entry
+header (3 turns) and body text (end of second concentration round) are noted
+for GM confirmation. Two Lives has its own explicit 3-turn entry process.
+Optional summon routes require GM permission; Slugs do not grant access.
+
+This is a readable reference tab, matching the Magen implementation. Activation,
+Senjutsu Chakra spending, once-per-scene benefits, turns, concentration,
+clones, recharge and condition application remain manual. Magen and creature
+summoning sheets are preserved. A missing rules asset is reported in the tab
+without preventing the rest of the actor sheet from opening.
+
+Validation: 33 checks passed for source coverage, levels, prerequisites, filters,
+rendering, failed-load recovery and actor/summon/Magen regressions.
+Live Foundry testing remains.
