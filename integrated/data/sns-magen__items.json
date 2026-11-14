@@ -1,0 +1,680 @@
+[
+  {
+    "id": "power-rules",
+    "name": "Magen (Demonic Illusion) — Power Rules",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Restricted Power. Prerequisites: Intelligence 6; Fascinate, Mirage and Deep Illusion aptitudes. Choose only Magen effects, using the effect-selection rules of Ninpou; this does not grant Ninpou effects. Magen can create visual, auditory and sensory illusions. The character must possess the power and learn the relevant effect; this tab is a rules reference, not a free grant.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      233
+    ],
+    "chakraCost": 0,
+    "action": "See effect",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "types",
+    "name": "Illusion Types and Duration",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Phantom: an external illusion affecting how others perceive the user; duration varies by effect. Compulsion: a mental illusion changing the victim’s actions; continuous until escaped. Affliction (also translated Distress): a brief mental shock; its condition normally lasts 2 turns. Specific effect text takes precedence.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      233,
+      234
+    ],
+    "chakraCost": 0,
+    "action": "Reference",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "resolution",
+    "name": "Cost, Resistance and Touch Use",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Normally a Standard Action. Chakra cost equals the EFFECT level used, not the Magen power level; exceptions such as False Speed state their own cost. No accuracy roll is normally required. Mental illusions allow an Intelligence resistance test: DC = 9 + Magen POWER level + half the user’s Intelligence (rounded up). Deep Illusion is already included; do not add it again. Henchmen suffer +3 DC. For touch use, first make a Melee Combat attack against the target’s defense; on success use resistance DC = 8 + 2 × Magen power level.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      233,
+      234
+    ],
+    "chakraCost": 0,
+    "action": "Reference",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "range",
+    "name": "Range, Size and Multiple Targets",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Short range: 5 m + 1 m per Intelligence. Know the target’s exact location. Mental illusion dimensions may be up to 1 m per Intelligence. Once the victim succumbs, maintaining range is unnecessary. Multiple targets share the same action and chakra cost, but reduce resistance DC by 1 + number of targets: −3 for two, −4 for three, etc. Effect-specific exceptions may remove this penalty.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      234
+    ],
+    "chakraCost": 0,
+    "action": "Reference",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "detect",
+    "name": "Notice and Assess Genjutsu",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Notice Genjutsu: from the second turn affected, once before acting, the victim may react with an Intelligence test at the normal resistance DC −1; each subsequent attempt receives another −1 DC. Success identifies the illusion; it does not automatically cancel it. Applies to Phantom and Compulsion. Assess another victim: after their first affected turn, spend a Movement Action for a Perception test at normal resistance DC −2, then another −1 per later attempt. Possessing Magen and that same effect makes this assessment an automatic success.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      235
+    ],
+    "chakraCost": 0,
+    "action": "Reference",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "cancel",
+    "name": "Cancel, Repeat and Overlap Rules",
+    "level": 0,
+    "kind": "Rules",
+    "description": "Cancel a genjutsu with Kai or sufficient damage: at least twice the genjutsu’s chakra cost. Damage cancellation applies only to Compulsion. A victim who has detected the illusion may use self-Kai or spend a Standard Action to injure themselves; stunned/paralyzed victims cannot self-injure. Chakra vision automatically identifies Phantom illusions, but gives no advantage against mental Compulsion/Affliction. A successful effect cannot normally deceive the same target again that scene unless its text permits. Compulsions and afflictions do not stack on one victim: the newer illusion replaces the previous one.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      235
+    ],
+    "chakraCost": 0,
+    "action": "Reference",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "ecstasy",
+    "name": "Ecstasy",
+    "level": 1,
+    "kind": "Compulsion",
+    "description": "Capture the target in an illusion of your choosing, leaving them fascinated. This can be repeated against the same target in the same scene, but after escaping this effect or Fascinate they have 1 turn of immunity.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      235
+    ],
+    "chakraCost": 1,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "frighten",
+    "name": "Frighten",
+    "level": 2,
+    "kind": "Affliction",
+    "description": "Instill fear using a nightmare, grotesque scene or seemingly unbeatable monster. The translated base paragraph conflicts with the listed upgrades. Confirm the base fear condition with the GM; the higher-level conditions are specified below.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      235
+    ],
+    "chakraCost": 2,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "frighten-5",
+    "name": "Frighten — Level 5",
+    "level": 5,
+    "kind": "Affliction",
+    "description": "Instill fear using a nightmare, grotesque scene or seemingly unbeatable monster. The translated base paragraph conflicts with the listed upgrades. Confirm the base fear condition with the GM; the higher-level conditions are specified below.\n\nLevel 5 upgrade: The victim becomes Frightened.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      235
+    ],
+    "chakraCost": 5,
+    "action": "Standard",
+    "baseEffect": "frighten",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "frighten-8",
+    "name": "Frighten — Level 8",
+    "level": 8,
+    "kind": "Affliction",
+    "description": "Instill fear using a nightmare, grotesque scene or seemingly unbeatable monster. The translated base paragraph conflicts with the listed upgrades. Confirm the base fear condition with the GM; the higher-level conditions are specified below.\n\nLevel 8 upgrade: The victim becomes Terrified.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      235
+    ],
+    "chakraCost": 8,
+    "action": "Standard",
+    "baseEffect": "frighten",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "confuse",
+    "name": "Confuse",
+    "level": 2,
+    "kind": "Compulsion",
+    "description": "Create hallucinations or random illusions that change each round. The victim becomes Confused.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 2,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "fatigue",
+    "name": "Fatigue",
+    "level": 2,
+    "kind": "Affliction",
+    "description": "Make the target believe they are tired, ill or short of breath. They become Fatigued. Repeated base applications do not stack into Exhausted or Unconscious.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 2,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "fatigue-5",
+    "name": "Fatigue — Level 5",
+    "level": 5,
+    "kind": "Affliction",
+    "description": "Make the target believe they are tired, ill or short of breath. They become Fatigued. Repeated base applications do not stack into Exhausted or Unconscious.\n\nLevel 5 upgrade: The victim becomes Exhausted.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 5,
+    "action": "Standard",
+    "baseEffect": "fatigue",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "hold",
+    "name": "Hold",
+    "level": 2,
+    "kind": "Compulsion",
+    "description": "The target believes an animal, monster or person is holding them. Apply the Grappled condition. Targets with the Fighter aptitude are immune to the base version.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 2,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "hold-6",
+    "name": "Hold — Level 6",
+    "level": 6,
+    "kind": "Compulsion",
+    "description": "The target believes an animal, monster or person is holding them. Apply the Grappled condition. Targets with the Fighter aptitude are immune to the base version.\n\nLevel 6 upgrade: Fighter no longer provides immunity.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 6,
+    "action": "Standard",
+    "baseEffect": "hold",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "hold-10",
+    "name": "Hold — Level 10",
+    "level": 10,
+    "kind": "Compulsion",
+    "description": "The target believes an animal, monster or person is holding them. Apply the Grappled condition. Targets with the Fighter aptitude are immune to the base version.\n\nLevel 10 upgrade: The imagined captor is much larger or stronger; the victim becomes Defenseless. Fighter no longer provides immunity.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 10,
+    "action": "Standard",
+    "baseEffect": "hold",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "sleep",
+    "name": "Sleep",
+    "level": 3,
+    "kind": "Compulsion",
+    "description": "The victim is Fatigued for 5 turns, then falls Unconscious at the end of the fifth turn. They remain unconscious while the illusion persists. The translated source’s “days/shifts” refers to turns here.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 3,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "sleep-6",
+    "name": "Sleep — Level 6",
+    "level": 6,
+    "kind": "Compulsion",
+    "description": "The victim is Fatigued for 5 turns, then falls Unconscious at the end of the fifth turn. They remain unconscious while the illusion persists. The translated source’s “days/shifts” refers to turns here.\n\nLevel 6 upgrade: The delay before unconsciousness decreases to 4 turns.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 6,
+    "action": "Standard",
+    "baseEffect": "sleep",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "sleep-9",
+    "name": "Sleep — Level 9",
+    "level": 9,
+    "kind": "Compulsion",
+    "description": "The victim is Fatigued for 5 turns, then falls Unconscious at the end of the fifth turn. They remain unconscious while the illusion persists. The translated source’s “days/shifts” refers to turns here.\n\nLevel 9 upgrade: The delay before unconsciousness decreases to 3 turns.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 9,
+    "action": "Standard",
+    "baseEffect": "sleep",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "nullify-sense",
+    "name": "Nullify Sense",
+    "level": 3,
+    "kind": "Compulsion",
+    "description": "Impair one sense. Hearing: −2 on auditory Search and Readiness tests. Smell: cannot smell anything. Vision: partial-camouflage penalties. A sensory aptitude relying on the affected sense is also impaired.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 3,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "nullify-sense-6",
+    "name": "Nullify Sense — Level 6",
+    "level": 6,
+    "kind": "Compulsion",
+    "description": "Impair one sense. Hearing: −2 on auditory Search and Readiness tests. Smell: cannot smell anything. Vision: partial-camouflage penalties. A sensory aptitude relying on the affected sense is also impaired.\n\nLevel 6 upgrade: Vision: total-camouflage penalties. Hearing: Deaf.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 6,
+    "action": "Standard",
+    "baseEffect": "nullify-sense",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "nullify-sense-9",
+    "name": "Nullify Sense — Level 9",
+    "level": 9,
+    "kind": "Compulsion",
+    "description": "Impair one sense. Hearing: −2 on auditory Search and Readiness tests. Smell: cannot smell anything. Vision: partial-camouflage penalties. A sensory aptitude relying on the affected sense is also impaired.\n\nLevel 9 upgrade: Vision: Blind. You may instead nullify a known special sense, such as chakra sensing; you must know which special sense you are targeting.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236
+    ],
+    "chakraCost": 9,
+    "action": "Standard",
+    "baseEffect": "nullify-sense",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "unbalance",
+    "name": "Unbalance",
+    "level": 3,
+    "kind": "Affliction",
+    "description": "Create the impression of strong shifting winds, an earthquake, sudden movement or illness. The victim falls Prone and cannot get up until the end of their next turn.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      236,
+      237
+    ],
+    "chakraCost": 3,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "unbalance-6",
+    "name": "Unbalance — Level 6",
+    "level": 6,
+    "kind": "Affliction",
+    "description": "Create the impression of strong shifting winds, an earthquake, sudden movement or illness. The victim falls Prone and cannot get up until the end of their next turn.\n\nLevel 6 upgrade: The victim cannot get up for their next 2 turns.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 6,
+    "action": "Standard",
+    "baseEffect": "unbalance",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "disorient",
+    "name": "Disorient",
+    "level": 3,
+    "kind": "Compulsion",
+    "description": "The victim loses their sense of direction, automatically fails Tracking tests and walks in circles without reaching the destination. Sensor ninjas are affected but gain +2 accuracy to identify the genjutsu.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 3,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "disorient-6",
+    "name": "Disorient — Level 6",
+    "level": 6,
+    "kind": "Compulsion",
+    "description": "The victim loses their sense of direction, automatically fails Tracking tests and walks in circles without reaching the destination. Sensor ninjas are affected but gain +2 accuracy to identify the genjutsu.\n\nLevel 6 upgrade: Multiple targets do not reduce the resistance DC.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 6,
+    "action": "Standard",
+    "baseEffect": "disorient",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "disorient-9",
+    "name": "Disorient — Level 9",
+    "level": 9,
+    "kind": "Affliction",
+    "description": "The victim loses their sense of direction, automatically fails Tracking tests and walks in circles without reaching the destination. Sensor ninjas are affected but gain +2 accuracy to identify the genjutsu.\n\nLevel 9 upgrade: You may use this effect as an Affliction.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 9,
+    "action": "Standard",
+    "baseEffect": "disorient",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "false-speed",
+    "name": "False Speed",
+    "level": 3,
+    "kind": "Phantom",
+    "description": "Make yourself appear faster, confusing enemies before you attack. Use as a Feint: Standard Action, or Movement Action with Blind Spot. Pay 2 chakra per use. Each attacked enemy makes a Notice Genjutsu check; on failure they are feinted against that melee or ranged attack. Lasts until the end of your turn.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 2,
+    "action": "Feint: Standard; Movement with Blind Spot",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "relief",
+    "name": "Relief",
+    "level": 4,
+    "kind": "Affliction",
+    "description": "The victim sees a desired event, such as reinforcements or an ally killing you. This false relief leaves them Caught Off Guard for the effect’s duration. An attack reveals the deception immediately, but does not end its penalties.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 4,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "relief-7",
+    "name": "Relief — Level 7",
+    "level": 7,
+    "kind": "Affliction",
+    "description": "The victim sees a desired event, such as reinforcements or an ally killing you. This false relief leaves them Caught Off Guard for the effect’s duration. An attack reveals the deception immediately, but does not end its penalties.\n\nLevel 7 upgrade: The effect lasts 3 turns.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 7,
+    "action": "Standard",
+    "baseEffect": "relief",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "relief-10",
+    "name": "Relief — Level 10",
+    "level": 10,
+    "kind": "Affliction",
+    "description": "The victim sees a desired event, such as reinforcements or an ally killing you. This false relief leaves them Caught Off Guard for the effect’s duration. An attack reveals the deception immediately, but does not end its penalties.\n\nLevel 10 upgrade: The effect cannot be resisted.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 10,
+    "action": "Standard",
+    "baseEffect": "relief",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "false-position",
+    "name": "False Position",
+    "level": 4,
+    "kind": "Phantom",
+    "description": "Make enemies believe you are somewhere else. When an enemy attacks, they make a Notice Genjutsu check. On failure, you gain partial-camouflage benefits against them for the rest of the scene while sustaining the effect. Whenever that enemy gets through the camouflage and hits you, they receive a new detection test; success makes them immune to this effect for the remainder of the scene.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 4,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "false-position-7",
+    "name": "False Position — Level 7",
+    "level": 7,
+    "kind": "Phantom",
+    "description": "Make enemies believe you are somewhere else. When an enemy attacks, they make a Notice Genjutsu check. On failure, you gain partial-camouflage benefits against them for the rest of the scene while sustaining the effect. Whenever that enemy gets through the camouflage and hits you, they receive a new detection test; success makes them immune to this effect for the remainder of the scene.\n\nLevel 7 upgrade: Camouflage becomes Total.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 7,
+    "action": "Standard",
+    "baseEffect": "false-position",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "false-position-10",
+    "name": "False Position — Level 10",
+    "level": 10,
+    "kind": "Phantom",
+    "description": "Make enemies believe you are somewhere else. When an enemy attacks, they make a Notice Genjutsu check. On failure, you gain partial-camouflage benefits against them for the rest of the scene while sustaining the effect. Whenever that enemy gets through the camouflage and hits you, they receive a new detection test; success makes them immune to this effect for the remainder of the scene.\n\nLevel 10 upgrade: Gain Total camouflage; when the enemy misses, you may force their attack in a direction of your choice.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      237
+    ],
+    "chakraCost": 10,
+    "action": "Standard",
+    "baseEffect": "false-position",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "petrify",
+    "name": "Petrify",
+    "level": 4,
+    "kind": "Compulsion",
+    "description": "Make the victim believe their body is petrifying or malfunctioning. They become Slow, then enter the condition translated as “incapacitated” from the beginning of their second affected turn. Confirm that condition’s English terminology with the GM.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 4,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "petrify-7",
+    "name": "Petrify — Level 7",
+    "level": 7,
+    "kind": "Compulsion",
+    "description": "Make the victim believe their body is petrifying or malfunctioning. They become Slow, then enter the condition translated as “incapacitated” from the beginning of their second affected turn. Confirm that condition’s English terminology with the GM.\n\nLevel 7 upgrade: The source’s “incapacitated” condition applies immediately when the effect takes hold.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 7,
+    "action": "Standard",
+    "baseEffect": "petrify",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "petrify-10",
+    "name": "Petrify — Level 10",
+    "level": 10,
+    "kind": "Compulsion",
+    "description": "Make the victim believe their body is petrifying or malfunctioning. They become Slow, then enter the condition translated as “incapacitated” from the beginning of their second affected turn. Confirm that condition’s English terminology with the GM.\n\nLevel 10 upgrade: The victim becomes Paralyzed.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 10,
+    "action": "Standard",
+    "baseEffect": "petrify",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "sicken",
+    "name": "Sicken",
+    "level": 5,
+    "kind": "Compulsion",
+    "description": "Make the target believe they have an illness of your choosing, such as headache, flu or nausea. They suffer the condition translated as Dizzy while the illusion lasts.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 5,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "sicken-8",
+    "name": "Sicken — Level 8",
+    "level": 8,
+    "kind": "Compulsion",
+    "description": "Make the target believe they have an illness of your choosing, such as headache, flu or nausea. They suffer the condition translated as Dizzy while the illusion lasts.\n\nLevel 8 upgrade: The victim is also Fatigued.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 8,
+    "action": "Standard",
+    "baseEffect": "sicken",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "sicken-10",
+    "name": "Sicken — Level 10",
+    "level": 10,
+    "kind": "Compulsion",
+    "description": "Make the target believe they have an illness of your choosing, such as headache, flu or nausea. They suffer the condition translated as Dizzy while the illusion lasts.\n\nLevel 10 upgrade: The victim is also Exhausted.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 10,
+    "action": "Standard",
+    "baseEffect": "sicken",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "stun",
+    "name": "Stun",
+    "level": 5,
+    "kind": "Affliction",
+    "description": "Confuse the target’s senses, leaving them Stunned until the end of their next turn. This effect may be repeated against the same target in the same scene.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 5,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "stun-8",
+    "name": "Stun — Level 8",
+    "level": 8,
+    "kind": "Affliction",
+    "description": "Confuse the target’s senses, leaving them Stunned until the end of their next turn. This effect may be repeated against the same target in the same scene.\n\nLevel 8 upgrade: The victim is also Caught Off Guard for the effect’s duration.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 8,
+    "action": "Standard",
+    "baseEffect": "stun",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "paralyze",
+    "name": "Paralyze",
+    "level": 5,
+    "kind": "Compulsion",
+    "description": "Make the victim believe their limbs are bound. They cannot perform movement-dependent actions, apart from speaking, and are Defenseless. Attempting a coup de grâce immediately breaks the illusion, allowing a normal defense.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 5,
+    "action": "Standard",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "paralyze-9",
+    "name": "Paralyze — Level 9",
+    "level": 9,
+    "kind": "Compulsion",
+    "description": "Make the victim believe their limbs are bound. They cannot perform movement-dependent actions, apart from speaking, and are Defenseless. Attempting a coup de grâce immediately breaks the illusion, allowing a normal defense.\n\nLevel 9 upgrade: Attempting a coup de grâce no longer breaks the illusion.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 9,
+    "action": "Standard",
+    "baseEffect": "paralyze",
+    "restrictedTo": "Magen"
+  },
+  {
+    "id": "fluid-illusion",
+    "name": "Fluid Illusion [Meta]",
+    "level": 6,
+    "kind": "Limited Aptitude",
+    "description": "Prerequisites: Intelligence 12; Magen 6. You may use the target’s Intelligence instead of your own to calculate the resistance DC. Your Intelligence must be at least twice your Magen power level. Example: Intelligence 12 and Magen 6 normally give DC 21; against Intelligence 16, Fluid Illusion gives DC 23. This is a separately purchased limited aptitude, not a level-6 effect or automatic grant.",
+    "sourceBook": "Shinobi no Sho Basic Book 4.1.b",
+    "sourcePages": [
+      238
+    ],
+    "chakraCost": 0,
+    "action": "Meta aptitude",
+    "baseEffect": null,
+    "restrictedTo": "Magen"
+  }
+]

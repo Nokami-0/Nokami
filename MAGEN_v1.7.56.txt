@@ -1,0 +1,30 @@
+MAGEN (DEMONIC ILLUSION) — v1.7.56
+
+A dedicated MAGEN tab appears on ordinary character sheets after updating and
+restarting the world. No compendium rebuild is required to load this reference.
+
+Includes 16 base effects, 22 evolutions spanning levels 1–10, six core-rules
+cards and the separately purchased Fluid Illusion limited aptitude. Filter by
+level, illusion type or text. Click a card heading to expand its full rules.
+Magen remains a restricted Hijutsu, separate from common Ninpou.
+
+The tab displays an owned Magen power's level, Intelligence, normal resistance
+DC, touch resistance DC and range when it can identify that purchased power.
+The effect cards show effect-level chakra costs and action exceptions such as
+False Speed's 2 Chakra cost. Deep Illusion is already included in the DC.
+Viewing a card does not buy an effect or grant its prerequisites.
+Manage purchased powers on the existing Powers tab.
+
+Reference source: Basic Book 4.1.b, printed pages 233–238. English effect names
+are cleaned and two ambiguous translated condition descriptions are explicitly
+marked for GM confirmation. Levels 6–10 contain evolutions rather than invented
+new base effects. Resistance, detection, Kai, durations and conditions remain
+manual; this update adds reference presentation rather than combat automation.
+
+If the rules asset cannot load, its error appears in the Magen panel and the
+rest of the actor sheet remains available. Reopening retries the load.
+Filters do not submit or modify actor data. Summon sheet tabs are preserved.
+
+Validation: 25 automated checks passed: catalog coverage, restrictions, exact
+level/type filtering, cost exceptions, DCs, escaped rendering, failure recovery,
+filter controls and actor/summon opening regressions. Live Foundry testing remains.
