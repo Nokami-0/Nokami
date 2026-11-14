@@ -15,7 +15,7 @@ function context(a){
 test('ordinary actors keep their primary tabs including basic jutsu',()=>{
  const {document}=parseHTML(render(context(actor())));
  const nav=[...document.querySelectorAll('.sns-nav [data-tab]')];
- assert.deepEqual(nav.map(n=>n.dataset.tab),['principal','inventario','poderes','tensai','senjutsu','magen','tecnicas','databook','configuracoes']);
+ assert.deepEqual(nav.map(n=>n.dataset.tab),['principal','inventario','poderes','puppets','tensai','senjutsu','magen','tecnicas','databook','configuracoes']);
  assert.ok(!document.querySelector('[data-tab="summon-aptitudes"]'));
 });
 test('summon sheets render all five requested tabs plus Settings with matching panels',()=>{

@@ -1,0 +1,46 @@
+Puppets — Initial Types — v1.7.60
+
+Adds a separate PUPPETS character-sheet tab and a Puppets shortcut in the
+Kuchiyose panel. The GM’s startup builds a separate Actor compendium:
+Puppets — Initial Puppet Types. System Settings provides a manual build menu.
+Existing generated templates are not duplicated or overwritten on repeat builds.
+
+Source: Book of Hijutsu Vol. 2, printed pp. 101–102 (PDF pp. 102–103), with
+construction, control and device rules from printed pp. 86–96.
+
+Three Medium examples, each with 1 Light, 2 Standard and 1 Heavy slot:
+Offensive: Light Flamethrower; Standard Water Jet and Flamethrower;
+Heavy Advanced Machinery. Specialist (Devices), Blind Spot references.
+Balanced: Light Smoke Bombs; Standard Hidden Knives and Water Jet;
+Heavy Body Division. Specialist (Devices), Fighter references.
+Support: Light Smoke Bombs; Standard Chakra Shield and Elastic Limb;
+Heavy Chest (Mechanics 10 prerequisite). Fighter, Blind Spot, Diehard references.
+
+On the Puppets tab, Create Actor makes an owned copy associated with that
+character as controller. Owned puppets can be opened or dragged onto the canvas
+directly from that tab. It creates no animal contract, spends no chakra or Ryo,
+and grants no aptitudes. Actual aptitude purchases still use the controller’s
+power points. Actor creation requires Foundry’s actor-create permission.
+
+Each custom puppet sheet has Overview, Devices and Puppet Rules tabs.
+It reads controller Mechanics, Spirit, Ranged Combat, Dodge and Anticipate.
+Body Hardness: 1. Medium Absorption: 5 × Mechanics, not creature Vitality.
+Damage reference: ceil(Mechanics / 2 + Weapon Damage). Limited device charges
+are tracked independently; repair and village-resupply controls require user
+confirmation that their source requirements were completed.
+
+First controller assignment initializes Absorption. Subsequent edits do not
+provide an automatic repair. Drag an actor to the canvas for its selectable,
+unlinked token. Token character-HP bars are hidden to avoid confusing them with
+puppet Absorption. Use the custom sheet for Absorption and device charges.
+
+Thread connection costs, Kurohigi quantity/action limits, device-specific chakra,
+actions, effects, aptitude modifiers and damage application remain manual.
+The sheet’s attack/defense rolls use the controller’s current base precision.
+The two legacy Initial Puppet reference cards now contain the actual three
+loadouts; rebuilding organized item compendiums updates those old cards.
+
+Validation: 55 automated checks passed, including exact loadouts, device slots,
+controller-based values, charge depletion, compendium idempotence/locking,
+creation ownership, custom-sheet rendering, controller assignment and existing
+actor/summon/Magen/Senjutsu/Tensai regressions. Live Foundry testing remains.

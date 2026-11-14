@@ -359,6 +359,7 @@
     <a class="item" data-tab="principal"><i class="fas fa-user" aria-hidden="true"></i> <span class="jp">基本</span> MAIN</a>
     <a class="item" data-tab="inventario"><i class="fas fa-toolbox" aria-hidden="true"></i> <span class="jp">道具</span> INVENTORY</a>
     <a class="item" data-tab="poderes"><i class="fas fa-scroll" aria-hidden="true"></i> <span class="jp">術</span> POWERS</a>
+    <a class="item" data-tab="puppets"><i class="fas fa-user-cog"></i> PUPPETS</a>
     <a class="item" data-tab="tensai"><i class="fas fa-brain"></i> TENSAI</a>
     <a class="item" data-tab="senjutsu"><i class="fas fa-leaf"></i> SENJUTSU</a>
     <a class="item" data-tab="magen"><i class="fas fa-eye"></i> MAGEN</a>
@@ -838,6 +839,11 @@
       {{#each tensaiGroups}}<section class="sns-tensai-group"><h3>Versatility Level {{level}}</h3>{{#each entries}}<details class="sns-tensai-entry sns-box" data-tensai-level="{{level}}" data-tensai-kind="{{kind}}" data-tensai-rule="{{id}}" style="margin:8px 0;padding:8px"><summary style="cursor:pointer;font-weight:bold">{{name}} — {{kind}}</summary><p><strong>Prerequisites:</strong> {{prerequisites}}</p><p style="white-space:pre-line">{{description}}</p><small>Basic Book, pp. {{pageText}}</small></details>{{/each}}</section>{{/each}}
       <p>Effect choices, special-aptitude slots, power purchases, chakra costs, seals and Hiraishin movement are resolved manually. Refer to the original clan sections for clan-specific eligibility.</p>
     </section></div>
+
+    <div class="tab" data-group="primary" data-tab="puppets"><section class="sns-puppets-panel"><h2>PUPPETS — INITIAL TYPES</h2><p>Separate Kugutsu actors from the book’s Initial Puppet examples: Offensive, Balanced and Support. Each has a Medium frame, 1 Light / 2 Standard / 1 Heavy slot, and its listed device loadout. Source: Hijutsu Vol. 2, printed pp. 101–102.</p>{{#if puppetError}}<p role="alert">{{puppetError}} Reopen the sheet to retry.</p>{{/if}}<button type="button" class="sns-puppets-pack">Open Puppet Actor Compendium</button>
+{{#if puppetOwned}}<section class="sns-box"><h3>Your Puppet Actors — Drag onto the Canvas</h3>{{#each puppetOwned}}<div class="sns-puppet-owned" draggable="true" data-puppet-actor="{{id}}" style="padding:6px;border-bottom:1px solid #999">{{name}} <button type="button" class="sns-puppet-open" data-puppet-actor="{{id}}">Open Sheet</button></div>{{/each}}</section>{{/if}}
+{{#each puppetTypes}}<section class="sns-box" style="padding:10px;margin:10px 0"><h3>{{name}}</h3><p><strong>Devices:</strong> {{deviceText}}</p><p><strong>Example aptitudes:</strong> {{aptitudeText}}</p><button type="button" class="sns-puppet-create" data-puppet-type="{{id}}">Create {{name}} Actor</button></section>{{/each}}
+<p>Creating an actor prepares an owned copy in the Puppets actor folder and links it to this character as controller. It does not buy the puppet, spend Chakra or grant its example aptitudes. Players need Foundry’s actor-creation permission; ask the GM if creation is denied.</p><p>Puppet Absorption = 5 × Mechanics (−5 Small / +5 Large); Body Hardness 1. Device damage = ceil(Mechanics / 2 + Weapon Damage). The custom puppet sheet reads controller precision, tracks Absorption and device uses, and includes repair/resupply controls. Control, action and device prerequisites still apply.</p></section></div>
 
     <div class="tab databook" data-group="primary" data-tab="databook">
 {{#if isSummon}}<section class="sns-box sns-summon-details">

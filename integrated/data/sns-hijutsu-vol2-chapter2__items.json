@@ -2080,7 +2080,7 @@
     "name": "Initial Puppets (Examples)",
     "type": "elemento",
     "system": {
-      "descricao": "Initial Puppets (Examples)\n\nHijutsu: Kugutsu no Jutsu  |  Type: Techniques & Level Effects  |  Source: Hijutsu Vol. 2, PDF p. 102\n\nRules from the translated book\n\nNote: The numbers in parentheses represent the number of uses and the Weapon Damage\nof the device. Its uses are restored if it is in a Village.\nSee the next page for a summary of the features and operation of the devices.\n\nHeading matched automatically; confirm where the next ability begins.",
+      "descricao": "Initial Puppets (Examples)\nKugutsu no Jutsu — Book of Hijutsu Vol. 2, printed pp. 101–102 (translated PDF pp. 102–103).\n\nAll three examples are Medium: 1 Light, 2 Standard and 1 Heavy device slot.\n\nOffensive Puppet:\nLight — Flamethrower (5 uses; Weapon Damage +3).\nStandard — Cutting Water Jet (5 uses; +3).\nStandard — Flamethrower (5 uses; +3).\nHeavy — Advanced Machinery.\nExample aptitudes: Specialist (Devices), Blind Spot.\n\nBalanced Puppet:\nLight — Smoke Bombs (5 uses).\nStandard — Hidden Knives (+2).\nStandard — Cutting Water Jet (5 uses; +3).\nHeavy — Body Division.\nExample aptitudes: Specialist (Devices), Fighter.\n\nSupport Puppet:\nLight — Smoke Bombs (5 uses).\nStandard — Chakra Shield.\nStandard — Elastic Limb (+2).\nHeavy — Chest (requires Mechanics 10).\nExample aptitudes: Fighter, Blind Spot, Diehard.\n\nNumbers in parentheses are uses and Weapon Damage. Limited uses refill in a village. Use the device rules for actions, prerequisites, areas, poison and chakra.\n\nActor templates: open the PUPPETS tab or Puppets — Initial Puppet Types actor compendium. Create a controller-owned copy, then drag the actor to a scene. Puppet sheets track Absorption and device uses and read their controller's precision. Creation is setup, not an animal Kuchiyose cast or a free purchase of aptitudes.",
       "nivel": 0,
       "nivelPoder": 0
     },
@@ -2092,12 +2092,13 @@
         "category": "Techniques & Level Effects",
         "page": 102,
         "source": "Book of Hijutsus Vol. 2",
-        "verification": "SOURCE PASSAGE EXTRACTED; individual rules and completeness not manually verified",
+        "verification": "Initial Puppet loadouts checked against PDF page 103 (printed 102); dedicated actor templates included separately.",
         "classification": "",
         "sourceMatch": "heading-assisted; check source page",
         "sourcePage": 102,
         "descriptionMatch": "heading matched; boundaries inferred, review recommended",
-        "descriptionPage": 102
+        "descriptionPage": 102,
+        "initialPuppetActorPack": "world.sns-puppets"
       }
     }
   },

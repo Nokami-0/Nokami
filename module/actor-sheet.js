@@ -1,3 +1,4 @@
+import {puppetTabContext,activatePuppetTab} from './puppets.js';
 import {tensaiSheetContext,activateTensaiTab} from './tensai.js';
 import {senjutsuSheetContext,activateSenjutsuTab} from './senjutsu.js';
 import {magenSheetContext,activateMagenTab} from './magen.js';
@@ -32,7 +33,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
     const systemData = this.actor.system;
     context.system = foundry.utils.deepClone(systemData?.toObject ? systemData.toObject(false) : (systemData || {}));
     Object.assign(context,summonSheetContext(this.actor,game.actors));
-    if(!context.isSummon){Object.assign(context,await magenSheetContext(this.actor));Object.assign(context,await senjutsuSheetContext(this.actor));Object.assign(context,await tensaiSheetContext(this.actor));}
+    if(!context.isSummon){Object.assign(context,await magenSheetContext(this.actor));Object.assign(context,await senjutsuSheetContext(this.actor));Object.assign(context,await tensaiSheetContext(this.actor));Object.assign(context,await puppetTabContext(this.actor));}
     const conf = context.system.configuracoes || {};
 
     const nomesPericias = {
@@ -195,6 +196,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
     activateMagenTab(html);
     activateSenjutsuTab(html);
     activateTensaiTab(html);
+    activatePuppetTab(html,this.actor);
     html.find(".sns-technique-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor,true); });
     html.find(".sns-ability-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor); });
     html.find(".sns-status-open").on("click", event => {
@@ -465,6 +467,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
     }).render(true);
   }
 }
+
 
 
 

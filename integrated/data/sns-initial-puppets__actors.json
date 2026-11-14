@@ -1,0 +1,177 @@
+[
+  {
+    "size": "medium",
+    "sourceBook": "Book of Hijutsu Volume 2",
+    "sourcePages": [
+      101,
+      102
+    ],
+    "slots": {
+      "Light": 1,
+      "Standard": 2,
+      "Heavy": 1
+    },
+    "skeletonCost": 600,
+    "id": "offensive",
+    "name": "Offensive Puppet",
+    "aptitudes": [
+      "Specialist (Devices)",
+      "Blind Spot"
+    ],
+    "devices": [
+      {
+        "id": "flame-light",
+        "name": "Flamethrower",
+        "slot": "Light",
+        "weaponDamage": 3,
+        "maxUses": 5,
+        "minimumMechanics": 0,
+        "rules": "Ranged fire cannon. This Light-slot version does not receive the Standard-slot cone upgrade."
+      },
+      {
+        "id": "water",
+        "name": "Cutting Water Jet",
+        "slot": "Standard",
+        "weaponDamage": 3,
+        "maxUses": 5,
+        "minimumMechanics": 0,
+        "rules": "Ranged slashing/piercing water jet. At Mechanics 8 ignores 2 Hardness. At Mechanics 10 may form a line 1m per Mechanics. Five uses per slot."
+      },
+      {
+        "id": "flame-standard",
+        "name": "Flamethrower",
+        "slot": "Standard",
+        "weaponDamage": 3,
+        "maxUses": 5,
+        "minimumMechanics": 0,
+        "rules": "Ranged fire cannon. At Mechanics 8 may attack a cone 1m per Mechanics. Five uses per slot."
+      },
+      {
+        "id": "machinery",
+        "name": "Advanced Machinery",
+        "slot": "Heavy",
+        "weaponDamage": 0,
+        "maxUses": null,
+        "minimumMechanics": 0,
+        "rules": "Spend a Movement Action and 2 Chakra to add +1 base damage to a device OR +15m to a ranged device until round end. Both different bonuses may be chosen together, paying separately."
+      }
+    ]
+  },
+  {
+    "size": "medium",
+    "sourceBook": "Book of Hijutsu Volume 2",
+    "sourcePages": [
+      101,
+      102
+    ],
+    "slots": {
+      "Light": 1,
+      "Standard": 2,
+      "Heavy": 1
+    },
+    "skeletonCost": 600,
+    "id": "balanced",
+    "name": "Balanced Puppet",
+    "aptitudes": [
+      "Specialist (Devices)",
+      "Fighter"
+    ],
+    "devices": [
+      {
+        "id": "smoke",
+        "name": "Smoke Bombs",
+        "slot": "Light",
+        "weaponDamage": 0,
+        "maxUses": 5,
+        "minimumMechanics": 0,
+        "rules": "Launch smoke bombs. Follow normal smoke-bomb and inhalation-poison rules. Five uses per installed slot."
+      },
+      {
+        "id": "knives",
+        "name": "Hidden Knives",
+        "slot": "Standard",
+        "weaponDamage": 2,
+        "maxUses": null,
+        "minimumMechanics": 0,
+        "rules": "Melee or ranged attack; may carry poison. The first attack against a victim requires Readiness vs DC 9 + Mechanics or the victim is feinted. Extended-reach upgrade requires two Standard slots and is not installed on this example."
+      },
+      {
+        "id": "water",
+        "name": "Cutting Water Jet",
+        "slot": "Standard",
+        "weaponDamage": 3,
+        "maxUses": 5,
+        "minimumMechanics": 0,
+        "rules": "Ranged slashing/piercing water jet. At Mechanics 8 ignores 2 Hardness. At Mechanics 10 may form a line 1m per Mechanics. Five uses per slot."
+      },
+      {
+        "id": "division",
+        "name": "Body Division",
+        "slot": "Heavy",
+        "weaponDamage": 0,
+        "maxUses": null,
+        "minimumMechanics": 0,
+        "rules": "As a Free Action, separate head and limbs to escape restraints/grapples without a check. Until reassembled at turn end, cannot defend or attack except with Hidden Knives."
+      }
+    ]
+  },
+  {
+    "size": "medium",
+    "sourceBook": "Book of Hijutsu Volume 2",
+    "sourcePages": [
+      101,
+      102
+    ],
+    "slots": {
+      "Light": 1,
+      "Standard": 2,
+      "Heavy": 1
+    },
+    "skeletonCost": 600,
+    "id": "support",
+    "name": "Support Puppet",
+    "aptitudes": [
+      "Fighter",
+      "Blind Spot",
+      "Diehard"
+    ],
+    "devices": [
+      {
+        "id": "smoke",
+        "name": "Smoke Bombs",
+        "slot": "Light",
+        "weaponDamage": 0,
+        "maxUses": 5,
+        "minimumMechanics": 0,
+        "rules": "Launch smoke bombs. Follow normal smoke-bomb and inhalation-poison rules. Five uses per installed slot."
+      },
+      {
+        "id": "shield",
+        "name": "Chakra Shield",
+        "slot": "Standard",
+        "weaponDamage": 0,
+        "maxUses": null,
+        "minimumMechanics": 0,
+        "rules": "2m circular shield, Hardness equal to Mechanics. Defend with Technique to protect the puppet, controller or an ally; cannot stop area attacks. Excess damage reduces puppet Absorption. Spend the puppet’s Movement Action and 2 Chakra to move adjacent to an ally and defend them."
+      },
+      {
+        "id": "elastic",
+        "name": "Elastic Limb",
+        "slot": "Standard",
+        "weaponDamage": 2,
+        "maxUses": null,
+        "minimumMechanics": 0,
+        "rules": "Extend limbs for melee attacks at range. May rotate as a reaction and use Ranged Combat to block projectiles. The two-Standard-slot special-maneuver upgrade is not installed in this example."
+      },
+      {
+        "id": "chest",
+        "name": "Chest",
+        "slot": "Heavy",
+        "weaponDamage": 0,
+        "maxUses": null,
+        "minimumMechanics": 10,
+        "rules": "Requires Mechanics 10. Open with a Standard Action, close with a Free Action. An ally or another puppet must Throw or Push a victim inside. Maintaining imprisonment takes a Standard Action at the start of the puppet’s turn. Escape: Strength vs DC 9 + Mechanics, or destroy the puppet. Medium Chest holds one Medium creature. Detailed confinement, knife openings and the Mechanics-16 controller-occupancy rules remain manual."
+      }
+    ]
+  }
+]
