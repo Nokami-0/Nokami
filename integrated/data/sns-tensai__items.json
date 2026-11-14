@@ -75,7 +75,7 @@
     "id": "fast-learning",
     "name": "Fast Learning (Quick Learner)",
     "level": 5,
-    "kind": "Limited Aptitude",
+    "kind": "Restricted Aptitude",
     "description": "Purchase Versatility again with 2 new, different powers. General Versatility benefits are retained for the new powers. This aptitude may be purchased more than once.",
     "sourcePages": [
       243
@@ -89,7 +89,7 @@
     "id": "natural-talent",
     "name": "Natural Talent",
     "level": 0,
-    "kind": "Limited Aptitude",
+    "kind": "Restricted Aptitude",
     "description": "Choose a possible non-element-exclusive effect for one of your versatile powers or Hibon Ninpou. Gain that effect and its evolutions as the power reaches the required levels. This extra effect does not count against the versatile-power effect-choice limit.",
     "sourcePages": [
       243
@@ -103,7 +103,7 @@
     "id": "advanced-technique",
     "name": "Advanced Technique",
     "level": 0,
-    "kind": "Limited Aptitude",
+    "kind": "Restricted Aptitude",
     "description": "Gain 2 technical aptitudes of your choice. You must meet the individual prerequisites of both. Refer to the Technical Aptitudes rules on page 72.",
     "sourcePages": [
       243
