@@ -281,6 +281,24 @@ export class ShinobiActorSheet extends BaseActorSheet {
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
         content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier)} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
+    // Capture equipment interactions before sheet/tab click handlers can intercept them.
+    // Native delegation also handles clicks on nested icons.
+    const equipmentRoot=html[0]??html;
+    equipmentRoot.addEventListener('click',async event=>{
+      const edit=event.target.closest?.('.item-edit');
+      const equip=event.target.closest?.('.weapon-equip');
+      if(!edit&&!equip)return;
+      const row=(edit||equip).closest('[data-item-id]');
+      const item=this.actor.items.get((edit||equip).dataset.itemId||row?.dataset.itemId);
+      if(!item)return ui.notifications.error('Equipment item not found.');
+      event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
+      if(edit){item.sheet.render(true);return;}
+      if(equip.disabled)return;
+      equip.disabled=true;
+      try{await setEquipmentState(this.actor,item.id);this.render(false);}
+      catch(error){console.error('Equipment toggle failed',error);ui.notifications.error(error.message);}
+      finally{equip.disabled=false;}
+    },true);
     // Bind native buttons directly: clicks on either the label or nested icon
     // resolve the same embedded item without depending on row traversal.
     const root = html[0] ?? html;
