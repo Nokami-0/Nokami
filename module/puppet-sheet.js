@@ -1,3 +1,4 @@
+import {placeSnsWeaponArea} from './sns-weapon-area.js';
 import { ShinobiActorSheet } from './actor-sheet.js';
 import {puppetStatistics,puppetAptitudes,puppetCurrentAbsorption,promptCustomPuppet,puppetSlotSummary,puppetDeviceDamage,spendPuppetDeviceUse,registerPuppetMenu,buildPuppetCompendium} from './puppets.js';
 import {rollShinobiTest} from './dice.js';
@@ -73,6 +74,11 @@ export class PuppetActorSheet extends ShinobiActorSheet{
   });
   html.find('.puppet-size-select').on('change',async event=>{event.preventDefault();const size=event.currentTarget.value;try{const profile=this.actor.flags?.[SYS]?.puppetProfile||{};if(!profile.custom)throw Error('Only custom puppets can change size here.');const sizes={small:{Light:1,Standard:1,Heavy:1},medium:{Light:1,Standard:2,Heavy:1},large:{Light:1,Standard:3,Heavy:1}};const c=controller();const stats=puppetStatistics(c,size);await this.actor.update({[`flags.${SYS}.puppetProfile.size`]:size,[`flags.${SYS}.puppetProfile.slots`]:sizes[size],[`flags.${SYS}.puppetProfile.materialsCost`]:{small:300,medium:600,large:900}[size],[`flags.${SYS}.puppetProfile.absorptionRemaining`]:c?stats.absorptionMax:0,[`flags.${SYS}.puppetProfile.absorptionMaxSnapshot`]:stats.absorptionMax,'prototypeToken.width':size==='large'?2:1,'prototypeToken.height':size==='large'?2:1});}catch(e){ui.notifications.error(e.message);}});
   html.find('.puppet-create-custom').on('click',async event=>{event.preventDefault();try{await promptCustomPuppet(controller());}catch(e){ui.notifications.error(e.message);}});
+  html.find('.puppet-weapon-area').on('click',async event=>{
+    event.preventDefault();event.stopPropagation();
+    const item=this.actor.items.get(event.currentTarget.dataset.itemId);
+    try{const c=ready();if(!item)throw Error('Device not found.');await placeSnsWeaponArea(this.actor,item,this.actor,c);}catch(e){console.error(e);ui.notifications.error(e.message);}
+  });
   html.find('.puppet-open-device').on('click',event=>{event.preventDefault();this.actor.items.get(event.currentTarget.dataset.itemId)?.sheet?.render(true);});
   html.find('.puppet-use-charge').on('click',async event=>{event.preventDefault();const b=event.currentTarget;b.disabled=true;try{const c=ready(),d=this.actor.items.get(b.dataset.itemId)?.flags?.[SYS]?.puppetDevice;if(puppetStatistics(c).mechanics<(d?.minimumMechanics||0))throw Error('The controller does not meet this device’s Mechanics prerequisite.');await spendPuppetDeviceUse(this.actor,b.dataset.itemId);}catch(e){ui.notifications.error(e.message);}finally{b.disabled=false;}});
   html.find('.puppet-repair').on('click',async event=>{event.preventDefault();try{const c=controller();if(!c)throw Error('Assign a controller first.');const yes=await Dialog.confirm({title:'Repair Puppet',content:'<p>Repair requires a Tool Kit and 4 hours. Restore all Absorption after those requirements are completed?</p>'});if(yes){const max=puppetStatistics(c,this.actor.flags[SYS].puppetProfile.size).absorptionMax;await this.actor.update({[`flags.${SYS}.puppetProfile.absorptionRemaining`]:max,[`flags.${SYS}.puppetProfile.absorptionMaxSnapshot`]:max});}}catch(e){ui.notifications.error(e.message);}});
