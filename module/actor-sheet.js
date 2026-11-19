@@ -363,18 +363,25 @@ export class ShinobiActorSheet extends BaseActorSheet {
       if(!item||!canvas?.scene)return ui.notifications.warn('Open a scene and select an ability.');
       const token=this.actor.getActiveTokens().find(t=>t.scene?.id===canvas.scene.id);
       if(!token)return ui.notifications.warn('Place this actor token on the scene first.');
+      const allowed=item.getFlag('shinobi-no-sho-revamp','allowedAreaShapes');
+      const choices=['cone','circle','ray','rect'].filter(t=>!Array.isArray(allowed)||allowed.includes(t));
+      if(!choices.length)return ui.notifications.warn('This ability has no allowed area shapes configured.');
+      const labels={cone:'Cone',circle:'Circle / Burst',ray:'Line / Ray',rect:'Rectangle'};
+      const options=choices.map(t=>'<option value="'+t+'">'+labels[t]+'</option>').join('');
       const answer=await new Promise(resolve=>new Dialog({
-        title:'Area: '+item.name,
-        content:'<p>Choose only a shape allowed by the ability rules. Visual only; no automatic damage or Chakra cost.</p><label>Shape</label><select name="shape"><option value="cone">Cone</option><option value="circle">Circle</option><option value="ray">Line</option><option value="rect">Rectangle</option></select><label>Distance (scene units)</label><input name="distance" type="number" min="0.1" value="5"><label>Direction (degrees)</label><input name="direction" type="number" value="0"><label>Cone angle</label><input name="angle" type="number" min="1" max="360" value="90"><label>Line width</label><input name="width" type="number" min="0.1" value="1">',
-        buttons:{place:{label:'Place',callback:h=>resolve({t:h.find('[name=shape]').val(),distance:Number(h.find('[name=distance]').val()),direction:Number(h.find('[name=direction]').val()),angle:Number(h.find('[name=angle]').val()),width:Number(h.find('[name=width]').val())})},cancel:{label:'Cancel',callback:()=>resolve(null)}},default:'place',close:()=>resolve(null)
+        title:'Area: '+foundry.utils.escapeHTML(item.name),
+        content:'<p>Choose a shape permitted by this Ninpou, technique or device. The template is visual only; it does not deal damage or spend Chakra.</p><label>Shape</label><select name="shape">'+options+'</select><label>Distance (scene units)</label><input name="distance" type="number" min="0.1" step="any" value="5"><label>Direction (degrees)</label><input name="direction" type="number" value="0"><label>Cone angle</label><input name="angle" type="number" min="1" max="360" value="90"><label>Line width</label><input name="width" type="number" min="0.1" value="1"><label>Remove template</label><select name="cleanup"><option value="after-use">After ability is used (cast)</option><option value="next-area">When placing another area for this actor</option><option value="manual">Manually with Erase</option></select>',
+        buttons:{place:{label:'Place',callback:h=>resolve({t:h.find('[name=shape]').val(),distance:Number(h.find('[name=distance]').val()),direction:Number(h.find('[name=direction]').val()),angle:Number(h.find('[name=angle]').val()),width:Number(h.find('[name=width]').val()),cleanup:h.find('[name=cleanup]').val()})},cancel:{label:'Cancel',callback:()=>resolve(null)}},default:'place',close:()=>resolve(null)
       }).render(true));
       if(!answer)return;
-      if(!['cone','circle','ray','rect'].includes(answer.t)||![answer.distance,answer.direction,answer.angle,answer.width].every(Number.isFinite)||answer.distance<=0||answer.width<=0||answer.angle>360)return ui.notifications.error('Invalid area dimensions.');
-      const p=token.center;
+      if(!choices.includes(answer.t)||![answer.distance,answer.direction,answer.angle,answer.width].every(Number.isFinite)||answer.distance<=0||answer.width<=0||answer.angle<1||answer.angle>360)return ui.notifications.error('Invalid area dimensions.');
       try{
-        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...answer,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900',flags:{'shinobi-no-sho-revamp':{areaActor:this.actor.id,areaItem:item.id}}}]);
-        ui.notifications.info('Area placed. Move or delete it using Foundry template controls.');
-      }catch(e){console.error(e);ui.notifications.error('Cannot place area: check scene permissions.');}
+        const prior=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='next-area'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+        if(prior.length)await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',prior.map(d=>d.id));
+        const p=token.center;
+        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{t:answer.t,distance:answer.distance,direction:answer.direction,angle:answer.angle,width:answer.width,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900',flags:{'shinobi-no-sho-revamp':{areaActor:this.actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
+        ui.notifications.info(answer.cleanup==='after-use'?'Area placed. It will disappear when this ability is used.':'Area placed. Use Erase to remove it at any time.');
+      }catch(e){console.error(e);ui.notifications.error('Cannot place or remove area: check scene permissions.');}
     });
     html.find('.sns-area-clear').on('click',async ev=>{
       ev.preventDefault();
@@ -413,6 +420,11 @@ export class ShinobiActorSheet extends BaseActorSheet {
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
           content: `<strong>${foundry.utils.escapeHTML(item.name)}</strong> used. Spent ${chakraCost} Chakra and ${vitalityCost} Vitality.`
         });
+        // Remove only this ability's one-use visual areas after a successful cast.
+        if(canvas?.scene){
+          const spentAreas=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&d.getFlag('shinobi-no-sho-revamp','areaItem')===item.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='after-use'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+          if(spentAreas.length)try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',spentAreas.map(d=>d.id));}catch(error){console.warn('Area cleanup requires template deletion permission',error);ui.notifications.warn('Ability used; erase its area manually if permissions prevent automatic removal.');}
+        }
       } catch (error) {
         console.error('Shinobi no Sho resource deduction failed:', error);
         ui.notifications.error('Could not deduct resources.');
