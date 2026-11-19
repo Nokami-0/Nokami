@@ -8,6 +8,9 @@ export function puppetStatistics(controller,size='medium'){
  const n=v=>Number(v)||0,s=controller?.system||{},mechanics=n(s.pericias?.mecanismo?.total),spirit=n(s.atributos?.esp?.valor);
  return {mechanics,spirit,hardness:1,absorptionMax:Math.max(0,5*mechanics+(size==='small'?-5:size==='large'?5:0)),attack:n(s.combate?.distancia?.total),dodge:n(s.combate?.esquiva?.total),anticipate:n(s.combate?.lerMovimentos?.total),controlRange:10+2*spirit,attackRange:5+spirit};
 }
+export const puppetConstruction={small:{cost:300,carry:'1 compartment',light:1,standard:1,heavy:1,absorptionAdjustment:-5},medium:{cost:600,carry:'3 compartments',light:1,standard:2,heavy:1,absorptionAdjustment:0},large:{cost:900,carry:'Scroll only',light:1,standard:3,heavy:1,absorptionAdjustment:5}};
+export const puppetSlotCosts={Light:10,Standard:20,Heavy:30};
+export function puppetSlotSummary(profile,devices=[]){const size=puppetConstruction[profile.size]||puppetConstruction.medium;const capacity={Light:size.light,Standard:size.standard,Heavy:size.heavy,...profile.slots};const used={Light:0,Standard:0,Heavy:0};for(const d of devices){const slot=d.flags?.[SYS]?.puppetDevice?.slot;if(slot in used)used[slot]++;}const heavyNames=devices.filter(d=>d.flags?.[SYS]?.puppetDevice?.slot==='Heavy').map(d=>d.name);return {capacity,used,valid:Object.keys(used).every(k=>used[k]<=Number(capacity[k]||0))&&new Set(heavyNames).size===heavyNames.length,carry:size.carry,skeletonCost:size.cost,slotCosts:puppetSlotCosts};}
 export const puppetDeviceDamage=(mechanics,weaponDamage)=>Math.ceil(Number(mechanics)/2+Number(weaponDamage));
 export function buildInitialPuppet(row,controller=null){
  const stats=puppetStatistics(controller,row.size),cost=row.skeletonCost+row.devices.reduce((n,d)=>n+({Light:10,Standard:20,Heavy:30}[d.slot]||0),0);
