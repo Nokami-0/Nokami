@@ -1,4 +1,4 @@
-import {puppetStatistics,puppetDeviceDamage,spendPuppetDeviceUse,registerPuppetMenu,buildPuppetCompendium} from './puppets.js';
+import {puppetStatistics,puppetSlotSummary,puppetDeviceDamage,spendPuppetDeviceUse,registerPuppetMenu,buildPuppetCompendium} from './puppets.js';
 import {rollShinobiTest} from './dice.js';
 const SYS='shinobi-no-sho-revamp';const Base=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -7,7 +7,7 @@ export class PuppetActorSheet extends Base{
  get template(){return `systems/${SYS}/templates/puppet-sheet.hbs`;}
  async getData(options){
   const context=await super.getData(options),profile=this.actor.flags?.[SYS]?.puppetProfile||{},controller=game.actors.get(profile.controllerId),stats=puppetStatistics(controller,profile.size),remaining=Number(profile.absorptionRemaining)||0;
-  return {...context,puppet:profile,controllerName:controller?.name||'Not assigned',hasController:!!controller,stats,remaining,disabled:!!controller&&remaining<=0,aptitudesText:(profile.exampleAptitudes||[]).join(', '),puppetImage:this.actor.img,controllers:[...game.actors].filter(a=>a.isOwner&&!a.flags?.[SYS]?.puppetProfile&&!a.flags?.[SYS]?.summonProfile).map(a=>({id:a.id,name:a.name,selected:a.id===profile.controllerId})),devices:[...this.actor.items].filter(i=>i.flags?.[SYS]?.puppetDevice).map(i=>{const d=i.flags[SYS].puppetDevice;return {id:i.id,name:i.name,...d,description:i.system.descricao,baseDamage:puppetDeviceDamage(stats.mechanics,d.weaponDamage),canAttack:d.weaponDamage>0,limited:d.maxUses!==null,remainingUses:d.remainingUses??d.maxUses,locked:stats.mechanics<(d.minimumMechanics||0)};})};
+  return {...context,puppet:profile,controllerName:controller?.name||'Not assigned',hasController:!!controller,stats,remaining,disabled:!!controller&&remaining<=0,aptitudesText:(profile.exampleAptitudes||[]).join(', '),puppetImage:this.actor.img,construction:puppetSlotSummary(profile,[...this.actor.items]),controllers:[...game.actors].filter(a=>a.isOwner&&!a.flags?.[SYS]?.puppetProfile&&!a.flags?.[SYS]?.summonProfile).map(a=>({id:a.id,name:a.name,selected:a.id===profile.controllerId})),devices:[...this.actor.items].filter(i=>i.flags?.[SYS]?.puppetDevice).map(i=>{const d=i.flags[SYS].puppetDevice;return {id:i.id,name:i.name,...d,description:i.system.descricao,baseDamage:puppetDeviceDamage(stats.mechanics,d.weaponDamage),canAttack:d.weaponDamage>0,limited:d.maxUses!==null,remainingUses:d.remainingUses??d.maxUses,locked:stats.mechanics<(d.minimumMechanics||0)};})};
  }
  async _updateObject(event,data){
   const key=`flags.${SYS}.puppetProfile.`,old=this.actor.flags?.[SYS]?.puppetProfile||{},id=data[key+'controllerId']??old.controllerId,controller=game.actors.get(id);
