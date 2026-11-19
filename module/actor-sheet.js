@@ -254,8 +254,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
       }
     });
 
-    html.find('.item-edit').click(ev => { const li = $(ev.currentTarget).parents(".item-row"); const item = this.actor.items.get(li.data("itemId")); item.sheet.render(true); });
-    html.find('.item-delete').click(ev => { const li = $(ev.currentTarget).parents(".item-row"); const item = this.actor.items.get(li.data("itemId")); item.delete(); });
+    // Item edit/delete are handled by delegated native listeners below.
+
     
     html.find('.weapon-attack').click(async ev => {
       ev.preventDefault();
@@ -281,43 +281,29 @@ export class ShinobiActorSheet extends BaseActorSheet {
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
         content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier)} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
-    // Capture equipment interactions before sheet/tab click handlers can intercept them.
-    // Native delegation also handles clicks on nested icons.
-    const equipmentRoot=html[0]??html;
-    equipmentRoot.addEventListener('click',async event=>{
-      const edit=event.target.closest?.('.item-edit');
-      const equip=event.target.closest?.('.weapon-equip');
-      if(!edit&&!equip)return;
-      const row=(edit||equip).closest('[data-item-id]');
-      const item=this.actor.items.get((edit||equip).dataset.itemId||row?.dataset.itemId);
-      if(!item)return ui.notifications.error('Equipment item not found.');
+    // One delegated handler for every embedded item, including icons inside buttons.
+    // Avoid duplicate click handlers that previously toggled equipment twice.
+    const itemRoot=html[0]??html;
+    itemRoot.addEventListener('click',async event=>{
+      const control=event.target.closest?.('.item-edit,.item-delete,.weapon-equip');
+      if(!control||!itemRoot.contains(control))return;
       event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
-      if(edit){item.sheet.render(true);return;}
-      if(equip.disabled)return;
-      equip.disabled=true;
-      try{await setEquipmentState(this.actor,item.id);this.render(false);}
-      catch(error){console.error('Equipment toggle failed',error);ui.notifications.error(error.message);}
-      finally{equip.disabled=false;}
+      const id=control.dataset.itemId||control.closest('[data-item-id]')?.dataset.itemId;
+      const item=this.actor.items.get(id);
+      if(!item)return ui.notifications.error('Item not found; reopen the sheet and try again.');
+      try{
+        if(control.matches('.item-edit')){item.sheet?.render(true);return;}
+        if(control.matches('.item-delete')){
+          if(await Dialog.confirm({title:'Delete Item',content:'Delete '+foundry.utils.escapeHTML(item.name)+'?'}))await item.delete();
+          return;
+        }
+        if(control.disabled)return;
+        control.disabled=true;
+        await setEquipmentState(this.actor,item.id);
+        this.render(false);
+      }catch(error){console.error('Shinobi item control',error);ui.notifications.error('Item action failed: '+error.message);}
+      finally{if(control.isConnected)control.disabled=false;}
     },true);
-    // Bind native buttons directly: clicks on either the label or nested icon
-    // resolve the same embedded item without depending on row traversal.
-    const root = html[0] ?? html;
-    for (const button of root.querySelectorAll('.weapon-equip')) {
-      button.addEventListener('click', async event => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (button.disabled) return;
-        button.disabled = true;
-        try {
-          const itemId = button.dataset.itemId ?? button.closest('[data-item-id]')?.dataset.itemId;
-          await setEquipmentState(this.actor, itemId);
-          this.render(false);
-        } catch (error) {
-          console.error('Shinobi no Sho: equip failed', error);
-          ui.notifications.error(`Could not equip item: ${error.message}`);
-        } finally { button.disabled = false; }
-      });
-    }
     html.find('.sns-armor-damage').click(async ev => {
       ev.preventDefault();
       const armor=this.actor.items.find(i=>i.type==="equipamento" && i.system.equipped && (i.system.isArmor || i?.flags?.['sns-weapon-library']?.armor));
