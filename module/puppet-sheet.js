@@ -1,8 +1,9 @@
+import { ShinobiActorSheet } from './actor-sheet.js';
 import {puppetStatistics,puppetAptitudes,puppetCurrentAbsorption,promptCustomPuppet,puppetSlotSummary,puppetDeviceDamage,spendPuppetDeviceUse,registerPuppetMenu,buildPuppetCompendium} from './puppets.js';
 import {rollShinobiTest} from './dice.js';
 const SYS='shinobi-no-sho-revamp';const Base=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export class PuppetActorSheet extends Base{
+export class PuppetActorSheet extends ShinobiActorSheet{
  static get defaultOptions(){return foundry.utils.mergeObject(super.defaultOptions,{width:1050,height:820,resizable:true,classes:['shinobi','sheet','actor','puppet'],tabs:[{navSelector:".sheet-tabs[data-group='primary']",contentSelector:'.sheet-body',initial:'overview'}]});}
  get template(){return `systems/${SYS}/templates/puppet-sheet.hbs`;}
  async getData(options){
@@ -22,6 +23,8 @@ export class PuppetActorSheet extends Base{
   super.activateListeners(html);if(!this.actor.isOwner)return;
   const controller=()=>game.actors.get(this.actor.flags?.[SYS]?.puppetProfile?.controllerId);
   const ready=()=>{const c=controller();if(!c)throw Error('Assign a puppeteer first.');if(puppetCurrentAbsorption(this.actor.flags[SYS].puppetProfile,c).remaining<=0)throw Error('The puppet is unusable at 0 Absorption; repair it first.');return c;};
+  html.find('.puppet-open-controller').on('click',event=>{event.preventDefault();controller()?.sheet?.render(true);});
+  html.find('.puppet-open-item').on('click',event=>{event.preventDefault();this.actor.items.get(event.currentTarget.dataset.itemId)?.sheet?.render(true);});
   html.find('.puppet-roll').on('click',async event=>{event.preventDefault();try{const c=ready(),s=puppetStatistics(c),type=event.currentTarget.dataset.roll;const precision=type==='dodge'?s.dodge:type==='anticipate'?s.anticipate:s.attack;const roll=await rollShinobiTest(precision);await roll.toMessage({speaker:ChatMessage.getSpeaker({actor:this.actor}),flavor:`${esc(this.actor.name)} — ${esc(type)} (controller ${esc(c.name)}). Apply aptitude, device and condition modifiers manually.`});}catch(e){ui.notifications.error(e.message);}});
   // Device attacks use the controller's Ranged Combat and report damage without applying it.
   html.find('.puppet-device-attack').on('click',async event=>{event.preventDefault();const b=event.currentTarget;b.disabled=true;try{
