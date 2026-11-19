@@ -1,4 +1,4 @@
-import {puppetStatistics,puppetSlotSummary,puppetDeviceDamage,spendPuppetDeviceUse,registerPuppetMenu,buildPuppetCompendium} from './puppets.js';
+import {puppetStatistics,promptCustomPuppet,puppetSlotSummary,puppetDeviceDamage,spendPuppetDeviceUse,registerPuppetMenu,buildPuppetCompendium} from './puppets.js';
 import {rollShinobiTest} from './dice.js';
 const SYS='shinobi-no-sho-revamp';const Base=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -33,6 +33,7 @@ export class PuppetActorSheet extends Base{
    const damage=puppetDeviceDamage(stats.mechanics,d.weaponDamage);
    await roll.toMessage({speaker:ChatMessage.getSpeaker({actor:this.actor}),flavor:`${esc(this.actor.name)} — ${esc(item.name)} attack (controller: ${esc(c.name)}). Base damage: ${damage} = ceil(Mechanics / 2 + Weapon Damage). Apply defenses, device effects and modifiers normally. Charges are spent separately.`});
   }catch(e){ui.notifications.error(e.message);}finally{b.disabled=false;}});
+  html.find('.puppet-create-custom').on('click',async event=>{event.preventDefault();try{await promptCustomPuppet(controller());}catch(e){ui.notifications.error(e.message);}});
   html.find('.puppet-open-device').on('click',event=>{event.preventDefault();this.actor.items.get(event.currentTarget.dataset.itemId)?.sheet?.render(true);});
   html.find('.puppet-use-charge').on('click',async event=>{event.preventDefault();const b=event.currentTarget;b.disabled=true;try{const c=ready(),d=this.actor.items.get(b.dataset.itemId)?.flags?.[SYS]?.puppetDevice;if(puppetStatistics(c).mechanics<(d?.minimumMechanics||0))throw Error('The controller does not meet this device’s Mechanics prerequisite.');await spendPuppetDeviceUse(this.actor,b.dataset.itemId);}catch(e){ui.notifications.error(e.message);}finally{b.disabled=false;}});
   html.find('.puppet-repair').on('click',async event=>{event.preventDefault();try{const c=controller();if(!c)throw Error('Assign a controller first.');const yes=await Dialog.confirm({title:'Repair Puppet',content:'<p>Repair requires a Tool Kit and 4 hours. Restore all Absorption after those requirements are completed?</p>'});if(yes)await this.actor.update({[`flags.${SYS}.puppetProfile.absorptionRemaining`]:puppetStatistics(c).absorptionMax});}catch(e){ui.notifications.error(e.message);}});
