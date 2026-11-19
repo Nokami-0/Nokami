@@ -192,6 +192,30 @@ export class ShinobiActorSheet extends BaseActorSheet {
 
   activateListeners(html) {
     super.activateListeners(html);
+    // One delegated handler for every embedded item, including icons inside buttons.
+    // Avoid duplicate click handlers that previously toggled equipment twice.
+    const itemRoot=html[0]??html;
+    itemRoot.addEventListener('click',async event=>{
+      const control=event.target.closest?.('.item-edit,.item-delete,.weapon-equip');
+      if(!control||!itemRoot.contains(control))return;
+      event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
+      const id=control.dataset.itemId||control.closest('[data-item-id]')?.dataset.itemId;
+      const item=this.actor.items.get(id);
+      if(!item)return ui.notifications.error('Item not found; reopen the sheet and try again.');
+      try{
+        if(control.matches('.item-edit')){item.sheet?.render(true);return;}
+        if(control.matches('.item-delete')){
+          if(await Dialog.confirm({title:'Delete Item',content:'Delete '+foundry.utils.escapeHTML(item.name)+'?'}))await item.delete();
+          return;
+        }
+        if(control.disabled)return;
+        control.disabled=true;
+        await setEquipmentState(this.actor,item.id);
+        this.render(false);
+      }catch(error){console.error('Shinobi item control',error);ui.notifications.error('Item action failed: '+error.message);}
+      finally{if(control.isConnected)control.disabled=false;}
+    },true);
+
     activatePuppetTab(html,this.actor);
     html.find(".sns-technique-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor,true); });
     html.find(".sns-ability-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor); });
@@ -281,29 +305,6 @@ export class ShinobiActorSheet extends BaseActorSheet {
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
         content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier)} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
-    // One delegated handler for every embedded item, including icons inside buttons.
-    // Avoid duplicate click handlers that previously toggled equipment twice.
-    const itemRoot=html[0]??html;
-    itemRoot.addEventListener('click',async event=>{
-      const control=event.target.closest?.('.item-edit,.item-delete,.weapon-equip');
-      if(!control||!itemRoot.contains(control))return;
-      event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
-      const id=control.dataset.itemId||control.closest('[data-item-id]')?.dataset.itemId;
-      const item=this.actor.items.get(id);
-      if(!item)return ui.notifications.error('Item not found; reopen the sheet and try again.');
-      try{
-        if(control.matches('.item-edit')){item.sheet?.render(true);return;}
-        if(control.matches('.item-delete')){
-          if(await Dialog.confirm({title:'Delete Item',content:'Delete '+foundry.utils.escapeHTML(item.name)+'?'}))await item.delete();
-          return;
-        }
-        if(control.disabled)return;
-        control.disabled=true;
-        await setEquipmentState(this.actor,item.id);
-        this.render(false);
-      }catch(error){console.error('Shinobi item control',error);ui.notifications.error('Item action failed: '+error.message);}
-      finally{if(control.isConnected)control.disabled=false;}
-    },true);
     html.find('.sns-armor-damage').click(async ev => {
       ev.preventDefault();
       const armor=this.actor.items.find(i=>i.type==="equipamento" && i.system.equipped && (i.system.isArmor || i?.flags?.['sns-weapon-library']?.armor));
