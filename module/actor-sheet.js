@@ -192,31 +192,48 @@ export class ShinobiActorSheet extends BaseActorSheet {
 
   activateListeners(html) {
     super.activateListeners(html);
-    // One delegated handler for every embedded item, including icons inside buttons.
-    // Avoid duplicate click handlers that previously toggled equipment twice.
+    // Register core item actions first, before optional sheet modules.
+    // Capture-phase delegation works for nested icons and dynamically re-rendered rows.
     const itemRoot=html[0]??html;
     itemRoot.addEventListener('click',async event=>{
-      const control=event.target.closest?.('.item-edit,.item-delete,.weapon-equip');
+      const control=event.target.closest?.('.item-create,.item-edit,.item-delete,.weapon-equip');
       if(!control||!itemRoot.contains(control))return;
-      event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();
-      const id=control.dataset.itemId||control.closest('[data-item-id]')?.dataset.itemId;
-      const item=this.actor.items.get(id);
-      if(!item)return ui.notifications.error('Item not found; reopen the sheet and try again.');
+      event.preventDefault();
+      event.stopPropagation();
+      event.stopImmediatePropagation();
+      if(!this.actor.isOwner)return ui.notifications.warn('You need Owner permission to edit this actor.');
+      if(control.dataset.snsBusy==='1')return;
+      control.dataset.snsBusy='1';
       try{
-        if(control.matches('.item-edit')){item.sheet?.render(true);return;}
-        if(control.matches('.item-delete')){
-          if(await Dialog.confirm({title:'Delete Item',content:'Delete '+foundry.utils.escapeHTML(item.name)+'?'}))await item.delete();
+        if(control.matches('.item-create')){
+          const type=control.dataset.type;
+          if(!['equipamento','poder','elemento','aptidao','tecnica'].includes(type))throw Error('Unknown item type: '+type);
+          const names={equipamento:'New Equipment',poder:'New Power',elemento:'New Element',aptidao:'New Aptitude',tecnica:'New Technique'};
+          const data={name:names[type],type};
+          if(type==='aptidao'&&control.dataset.gratuita==='true')data.system={gratuita:true};
+          const created=await this.actor.createEmbeddedDocuments('Item',[data]);
+          if(!created?.length)throw Error('Foundry did not create the item.');
+          created[0].sheet?.render(true);
           return;
         }
-        if(control.disabled)return;
-        control.disabled=true;
+        const id=control.dataset.itemId||control.closest('[data-item-id]')?.dataset.itemId;
+        const item=this.actor.items.get(id);
+        if(!item)throw Error('Item not found. Reopen the sheet and try again.');
+        if(control.matches('.item-edit')){item.sheet?.render(true);return;}
+        if(control.matches('.item-delete')){
+          const confirmed=await Dialog.confirm({title:'Delete Item',content:'Delete '+foundry.utils.escapeHTML(item.name)+'?'});
+          if(confirmed)await item.delete();
+          return;
+        }
         await setEquipmentState(this.actor,item.id);
         this.render(false);
-      }catch(error){console.error('Shinobi item control',error);ui.notifications.error('Item action failed: '+error.message);}
-      finally{if(control.isConnected)control.disabled=false;}
+      }catch(error){
+        console.error('Shinobi no Sho item action failed',error);
+        ui.notifications.error('Item action failed: '+(error?.message||error));
+      }finally{delete control.dataset.snsBusy;}
     },true);
-
-    activatePuppetTab(html,this.actor);
+    // A broken optional tab must not disable basic inventory actions.
+    try{activatePuppetTab(html,this.actor);}catch(error){console.error('Puppet tab initialization failed',error);}
     html.find(".sns-technique-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor,true); });
     html.find(".sns-ability-browser-open").on("click", event => { event.preventDefault(); openSnsAbilityBrowser(this.actor); });
     html.find(".sns-status-open").on("click", event => {
@@ -256,27 +273,6 @@ export class ShinobiActorSheet extends BaseActorSheet {
     });
 
     html.find('.rollable').click(this._onRoll.bind(this));
-
-    html.find('.item-create').click(async ev => {
-      ev.preventDefault();
-      const tipoItem = ev.currentTarget.dataset.type;
-      const isGratuita = ev.currentTarget.dataset.gratuita === "true";
-      let nomeItem = "New Item";
-      if (tipoItem === "equipamento") nomeItem = "New Equipment";
-      if (tipoItem === "poder") nomeItem = "New Power";
-      if (tipoItem === "elemento") nomeItem = "New Element";
-      if (tipoItem === "aptidao") nomeItem = isGratuita ? "New Free Aptitude" : "New Aptitude";
-      const itemData = { name: nomeItem, type: tipoItem };
-      if (tipoItem === "aptidao" && isGratuita) { itemData.system = { gratuita: true }; }
-      try {
-        const [created] = await this.actor.createEmbeddedDocuments("Item", [itemData]);
-        if (created) created.sheet.render(true);
-        else ui.notifications.error("The item could not be created.");
-      } catch (error) {
-        console.error("Shinobi no Sho: create item failed", error);
-        ui.notifications.error(`Unable to add ${nomeItem}. See browser console (F12).`);
-      }
-    });
 
     // Item edit/delete are handled by delegated native listeners below.
 
