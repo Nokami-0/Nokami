@@ -4,8 +4,8 @@ import {rollShinobiTest} from './dice.js';
 const SYS='shinobi-no-sho-revamp';const Base=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export class PuppetActorSheet extends ShinobiActorSheet{
- static get defaultOptions(){return foundry.utils.mergeObject(super.defaultOptions,{width:1050,height:820,resizable:true,classes:['shinobi','sheet','actor','puppet'],tabs:[{navSelector:".sheet-tabs[data-group='primary']",contentSelector:'.sheet-body',initial:'overview'}]});}
- get template(){return `systems/${SYS}/templates/puppet-sheet.hbs`;}
+ static get defaultOptions(){return foundry.utils.mergeObject(super.defaultOptions,{classes:['shinobi','sheet','actor','puppet']});}
+ get template(){return `systems/${SYS}/templates/puppet-character-sheet.hbs`;}
  async getData(options){
   const context=await super.getData(options),profile=this.actor.flags?.[SYS]?.puppetProfile||{},controller=game.actors.get(profile.controllerId),stats=puppetStatistics(controller,profile.size),remaining=puppetCurrentAbsorption(profile,controller).remaining;
   stats.hardness+=([...this.actor.items].some(i=>i.flags?.[SYS]?.puppetDevice?.slot==='Heavy'&&/^armor$/i.test(i.name))?(stats.mechanics>=14?2:1):0);
