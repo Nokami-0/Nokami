@@ -1,3 +1,4 @@
+import {placeSnsWeaponArea} from './sns-weapon-area.js';
 import {previewSnsArea} from './sns-area-preview.js';
 import {puppetTabContext,activatePuppetTab} from './puppets.js';
 import {summonSheetContext,summonReferenceKind} from './summon-sheet.js';
@@ -358,6 +359,12 @@ export class ShinobiActorSheet extends BaseActorSheet {
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),content:`<p><strong>${foundry.utils.escapeHTML(this.actor.name)}</strong> uses 1 × <strong>${foundry.utils.escapeHTML(item.name)}</strong> (${qty - 1} remaining).</p>`});
     });
 
+    html.find('.sns-weapon-area').on('click',async ev=>{
+      ev.preventDefault();ev.stopPropagation();
+      const item=this.actor.items.get(ev.currentTarget.dataset.itemId);
+      if(!item)return ui.notifications.error('Weapon item not found.');
+      try{await placeSnsWeaponArea(this.actor,item);}catch(e){console.error(e);ui.notifications.error(e.message);}
+    });
     html.find('.sns-area-place').on('click',async ev=>{
       ev.preventDefault();
       const row=ev.currentTarget.closest('[data-item-id]'),item=this.actor.items.get(row?.dataset.itemId);
