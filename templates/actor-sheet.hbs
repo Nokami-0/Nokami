@@ -663,7 +663,7 @@
               <td>{{item.system.quantidade}}</td>
               <td title="Total occupied slots for this stack">{{item.slotsUsed}}</td><td title="Value per unit: {{item.system.valorRyo}} Ryo">{{item.system.valorRyo}}</td>
               <td>
-                <a class="weapon-attack" title="Calculate weapon damage" style="cursor:pointer;margin-right:8px"><i class="fas fa-dice-d20"></i></a>
+                <button type="button" class="sns-weapon-area" data-item-id="{{item.id}}" title="Place weapon area">Area</button> <a class="weapon-attack" title="Calculate weapon damage" style="cursor:pointer;margin-right:8px"><i class="fas fa-dice-d20"></i></a>
                 <button type="button" class="weapon-equip" data-item-id="{{item.id}}" aria-pressed="{{#if item.system.equipped}}true{{else}}false{{/if}}" title="{{#if item.system.equipped}}Unequip{{else}}Equip{{/if}} {{item.name}}" style="width:auto;display:inline-flex;align-items:center;gap:4px;margin-right:6px;padding:2px 5px;font-size:11px;line-height:16px">{{#if item.system.equipped}}<i class="fas fa-check-circle"></i> Unequip{{else}}<i class="far fa-circle"></i> Equip{{/if}}</button>
                 {{#if item.system.consumable}}<a class="sns-consume-item" title="Use one item"><i class="fas fa-flask"></i></a>{{/if}} <a class="item-edit" title="Edit" style="cursor:pointer;margin-right:10px"><i class="fas fa-edit"></i></a>
                 <a class="item-delete" title="Delete" style="cursor:pointer"><i class="fas fa-trash"></i></a>
