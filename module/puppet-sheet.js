@@ -21,7 +21,10 @@ export class PuppetActorSheet extends ShinobiActorSheet{
   data[key+'absorptionMaxSnapshot']=max;return super._updateObject(event,data);
  }
  activateListeners(html){
-  super.activateListeners(html);if(!this.actor.isOwner)return;
+  // Puppets have their own controls; the full character sheet binds unrelated
+  // Vitality/Chakra and item actions and can fail on the dedicated puppet layout.
+  Base.prototype.activateListeners.call(this,html);
+  if(!this.actor.isOwner)return;
   const controller=()=>game.actors.get(this.actor.flags?.[SYS]?.puppetProfile?.controllerId);
   const ready=()=>{const c=controller();if(!c)throw Error('Assign a puppeteer first.');if(puppetCurrentAbsorption(this.actor.flags[SYS].puppetProfile,c).remaining<=0)throw Error('The puppet is unusable at 0 Absorption; repair it first.');return c;};
   html.find('.puppet-open-controller').on('click',event=>{event.preventDefault();controller()?.sheet?.render(true);});
@@ -79,7 +82,12 @@ export class PuppetActorSheet extends ShinobiActorSheet{
     const item=this.actor.items.get(event.currentTarget.dataset.itemId);
     try{const c=ready();if(!item)throw Error('Device not found.');await placeSnsWeaponArea(this.actor,item,this.actor,c);}catch(e){console.error(e);ui.notifications.error(e.message);}
   });
-  html.find('.puppet-open-device').on('click',event=>{event.preventDefault();this.actor.items.get(event.currentTarget.dataset.itemId)?.sheet?.render(true);});
+  html.find('.puppet-open-device').on('click',event=>{
+    event.preventDefault();event.stopPropagation();
+    const item=this.actor.items.get(event.currentTarget.dataset.itemId);
+    if(!item)return ui.notifications.error('Device not found.');
+    item.sheet.render(true);
+  });
   html.find('.puppet-use-charge').on('click',async event=>{event.preventDefault();const b=event.currentTarget;b.disabled=true;try{const c=ready(),d=this.actor.items.get(b.dataset.itemId)?.flags?.[SYS]?.puppetDevice;if(puppetStatistics(c).mechanics<(d?.minimumMechanics||0))throw Error('The controller does not meet this device’s Mechanics prerequisite.');await spendPuppetDeviceUse(this.actor,b.dataset.itemId);}catch(e){ui.notifications.error(e.message);}finally{b.disabled=false;}});
   html.find('.puppet-repair').on('click',async event=>{event.preventDefault();try{const c=controller();if(!c)throw Error('Assign a controller first.');const yes=await Dialog.confirm({title:'Repair Puppet',content:'<p>Repair requires a Tool Kit and 4 hours. Restore all Absorption after those requirements are completed?</p>'});if(yes){const max=puppetStatistics(c,this.actor.flags[SYS].puppetProfile.size).absorptionMax;await this.actor.update({[`flags.${SYS}.puppetProfile.absorptionRemaining`]:max,[`flags.${SYS}.puppetProfile.absorptionMaxSnapshot`]:max});}}catch(e){ui.notifications.error(e.message);}});
   html.find('.puppet-refill').on('click',async event=>{event.preventDefault();const yes=await Dialog.confirm({title:'Refill Puppet Devices',content:'<p>Limited device uses are replenished in a village. Have you completed that resupply?</p>'});if(!yes)return;const updates=[...this.actor.items].filter(i=>i.flags?.[SYS]?.puppetDevice?.maxUses!=null).map(i=>({_id:i.id,[`flags.${SYS}.puppetDevice.remainingUses`]:i.flags[SYS].puppetDevice.maxUses}));if(updates.length)await this.actor.updateEmbeddedDocuments('Item',updates);});
