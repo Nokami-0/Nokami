@@ -1,3 +1,4 @@
+import {previewSnsArea} from './sns-area-preview.js';
 import {puppetTabContext,activatePuppetTab} from './puppets.js';
 import {summonSheetContext,summonReferenceKind} from './summon-sheet.js';
 import {summonRollRestriction} from './summon-rules.js';
@@ -379,7 +380,9 @@ export class ShinobiActorSheet extends BaseActorSheet {
         const prior=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='next-area'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
         if(prior.length)await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',prior.map(d=>d.id));
         const p=token.center;
-        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{t:answer.t,distance:answer.distance,direction:answer.direction,angle:answer.angle,width:answer.width,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900',flags:{'shinobi-no-sho-revamp':{areaActor:this.actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
+        const positioned=await previewSnsArea({t:answer.t,distance:answer.distance,direction:answer.direction,angle:answer.angle,width:answer.width,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900'});
+        if(!positioned)return;
+        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...positioned,user:game.user.id,flags:{'shinobi-no-sho-revamp':{areaActor:this.actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
         ui.notifications.info(answer.cleanup==='after-use'?'Area placed. It will disappear when this ability is used.':'Area placed. Use Erase to remove it at any time.');
       }catch(e){console.error(e);ui.notifications.error('Cannot place or remove area: check scene permissions.');}
     });
