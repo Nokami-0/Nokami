@@ -4,7 +4,7 @@ import {rollShinobiTest} from './dice.js';
 const SYS='shinobi-no-sho-revamp';const Base=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export class PuppetActorSheet extends ShinobiActorSheet{
- static get defaultOptions(){return foundry.utils.mergeObject(super.defaultOptions,{classes:['shinobi','sheet','actor','puppet']});}
+ static get defaultOptions(){return foundry.utils.mergeObject(super.defaultOptions,{classes:['shinobi','sheet','actor','puppet'],tabs:[{navSelector:".sheet-tabs[data-group='primary']",contentSelector:'.sheet-body',initial:'overview'}]});}
  get template(){return `systems/${SYS}/templates/puppet-character-sheet.hbs`;}
  async getData(options){
   const context=await super.getData(options),profile=this.actor.flags?.[SYS]?.puppetProfile||{},controller=game.actors.get(profile.controllerId),stats=puppetStatistics(controller,profile.size),remaining=puppetCurrentAbsorption(profile,controller).remaining;
