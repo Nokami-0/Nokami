@@ -931,6 +931,12 @@
 .shinobi.sheet.actor.puppet input[name*="chakra"],
 .shinobi.sheet.actor.puppet input[name*="Chakra"]{display:none!important}
 .shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-owner-note{font-weight:600;padding:8px;border-left:3px solid #8c7150}
+/* Remove inherited character resource widgets, not just their input controls. */
+.shinobi.sheet.actor.puppet .tab[data-tab="principal"] :is(.resource,.resource-box,.resource-group,.stat-box,.field-group):has(input[name*="energias.vitalidade"]),
+.shinobi.sheet.actor.puppet .tab[data-tab="principal"] :is(.resource,.resource-box,.resource-group,.stat-box,.field-group):has(input[name*="energias.chakra"]){display:none!important}
+.shinobi.sheet.actor.puppet .tab[data-tab="principal"] input[name*="energias.vitalidade"],
+.shinobi.sheet.actor.puppet .tab[data-tab="principal"] input[name*="energias.chakra"]{display:none!important}
+
 </style>
 
 <style>
@@ -955,7 +961,7 @@
 <div class="puppet-stat"><strong>Hardness</strong><span>{{stats.hardness}}</span><small>Base 1; Armor device may increase it</small></div>
 </div>
 <label>Linked Puppeteer <select name="flags.shinobi-no-sho-revamp.puppetProfile.controllerId"><option value="">Unassigned</option>{{#each controllers}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
-<h3>Control and Chakra Threads (Puppeteer Resource)</h3><p class="puppet-owner-note">This puppet has no Chakra pool. All connection and device Chakra costs are paid from the linked puppeteer’s sheet.</p>
+<h3>Control and Chakra Threads (Puppeteer Resource)</h3><p class="puppet-owner-note">This puppet has neither Vitality nor Chakra. Damage reduces Absorption (after applicable Hardness); connection and device Chakra costs belong to the linked puppeteer.</p>
 <div class="puppet-grid">
 <div class="puppet-stat"><strong>Mechanics</strong><span>{{stats.mechanics}}</span></div>
 <div class="puppet-stat"><strong>Spirit</strong><span>{{stats.spirit}}</span></div>
