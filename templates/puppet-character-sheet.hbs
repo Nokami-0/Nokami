@@ -924,7 +924,72 @@
       </div>
     </div>
 
-  <div class="tab" data-group="primary" data-tab="puppet-character"><div class="puppet-panel" style="padding:16px"><h2>Puppet Construction & Control</h2><p><strong>Controller:</strong> {{controllerName}} <button type="button" class="puppet-open-controller">Open Controller</button></p><label>Linked puppeteer <select name="flags.shinobi-no-sho-revamp.puppetProfile.controllerId"><option value="">Unassigned</option>{{#each controllers}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label><p><strong>Size:</strong> {{puppet.size}} · <strong>Mechanics:</strong> {{stats.mechanics}} · <strong>Hardness:</strong> {{stats.hardness}}</p><p><strong>Absorption:</strong> <input type="number" name="flags.shinobi-no-sho-revamp.puppetProfile.absorptionRemaining" value="{{remaining}}" min="0" max="{{stats.absorptionMax}}" style="width:85px"/> / {{stats.absorptionMax}} <button type="button" class="puppet-repair">Repair (4 hours + Tool Kit)</button></p><p><strong>Attack:</strong> {{stats.attack}} · <strong>Dodge:</strong> {{stats.dodge}} · <strong>Anticipate:</strong> {{stats.anticipate}}</p><div class="puppet-actions"><button type="button" class="puppet-roll" data-roll="attack">Attack / Block (maneuver reference)</button><button type="button" class="puppet-roll" data-roll="dodge">Evade</button><button type="button" class="puppet-roll" data-roll="anticipate">Anticipate</button></div><h3>Devices</h3>{{#each devices}}<p><strong>{{name}}</strong> ({{slot}}) <button type="button" class="puppet-open-device" data-item-id="{{id}}">Open</button>{{#if canAttack}} <button type="button" class="puppet-device-attack" data-item-id="{{id}}">Attack · Damage {{baseDamage}}</button>{{/if}}{{#if limited}} Uses {{remainingUses}}/{{maxUses}} <button type="button" class="puppet-use-charge" data-item-id="{{id}}">Spend use</button>{{/if}}</p>{{/each}}<button type="button" class="puppet-refill">Village Resupply</button><p>Regular character-sheet combat and inventory controls are available in their original tabs. Puppet restrictions still apply: no Charge, Delay Initiative, Fight Defensively, Safe Step or Draw Arm. Ordinary character Vitality is not puppet Absorption.</p></div></div>
+  <div class="tab" data-group="primary" data-tab="puppet-character">
+<style>
+.shinobi.sheet.actor.puppet .puppet-rule-panel{padding:14px;color:#332b22;font-size:14px;line-height:1.45}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-stat{padding:10px;border:1px solid #a18a6e;border-radius:5px;background:#f4ebda}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-stat strong{display:block;font-size:12px}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-stat span{font-size:20px;font-weight:bold}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-actions{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-actions button{flex:1;min-width:125px}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-device-row{padding:10px;border:1px solid #a18a6e;border-radius:5px;margin:8px 0;background:#f4ebda}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-device-row button{width:auto}
+.shinobi.sheet.actor.puppet .puppet-rule-panel h3{border-bottom:1px solid #a18a6e;padding-bottom:4px}
+</style>
+<div class="puppet-rule-panel">
+<h2>Kugutsu — Puppet Profile</h2>
+<p>Based on <em>Book of Hijutsu Vol. 2</em>, pp. 86–94. Puppets are controlled weapons, not independent shinobi: they use their controller's combat checks and actions.</p>
+<div class="puppet-grid">
+<div class="puppet-stat"><strong>Controller</strong><span>{{controllerName}}</span><button type="button" class="puppet-open-controller">Open Controller</button></div>
+<div class="puppet-stat"><strong>Size</strong><span>{{puppet.size}}</span></div>
+<div class="puppet-stat"><strong>Absorption</strong><span>{{remaining}} / {{stats.absorptionMax}}</span><input aria-label="Current Absorption" type="number" name="flags.shinobi-no-sho-revamp.puppetProfile.absorptionRemaining" value="{{remaining}}" min="0" max="{{stats.absorptionMax}}"/><button type="button" class="puppet-repair">Repair: Tool Kit + 4 hours</button></div>
+<div class="puppet-stat"><strong>Hardness</strong><span>{{stats.hardness}}</span><small>Base 1; Armor device may increase it</small></div>
+</div>
+<label>Linked Puppeteer <select name="flags.shinobi-no-sho-revamp.puppetProfile.controllerId"><option value="">Unassigned</option>{{#each controllers}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
+<h3>Control and Chakra Threads</h3>
+<div class="puppet-grid">
+<div class="puppet-stat"><strong>Mechanics</strong><span>{{stats.mechanics}}</span></div>
+<div class="puppet-stat"><strong>Spirit</strong><span>{{stats.spirit}}</span></div>
+<div class="puppet-stat"><strong>Control Range</strong><span>{{stats.controlRange}} m</span></div>
+<div class="puppet-stat"><strong>Ranged Attack Range</strong><span>{{stats.attackRange}} m</span></div>
+<div class="puppet-stat"><strong>Movement</strong><span>{{puppetMovement}} m</span></div>
+<div class="puppet-stat"><strong>Chakra Threads</strong><span>1 Chakra</span><small>Per puppet; partial action to connect</small></div>
+</div>
+<p>Control consumes the puppeteer's own actions. Attacking requires their Standard Action; moving uses their Movement Action. Drawing or storing puppets is a Free Action. A puppet at 0 Absorption cannot act.</p>
+<h3>Combat (Controller's Statistics)</h3>
+<div class="puppet-grid">
+<div class="puppet-stat"><strong>Distance Combat (DC)</strong><span>{{stats.attack}}</span></div>
+<div class="puppet-stat"><strong>Dodge</strong><span>{{stats.dodge}}</span></div>
+<div class="puppet-stat"><strong>Anticipate</strong><span>{{stats.anticipate}}</span></div>
+<div class="puppet-stat"><strong>Damage Formula</strong><span>⌈Mechanics / 2 + WD⌉</span></div>
+</div>
+<div class="puppet-actions"><button type="button" class="puppet-roll" data-roll="attack">DC Attack / Maneuver</button><button type="button" class="puppet-roll" data-roll="dodge">Evade</button><button type="button" class="puppet-roll" data-roll="anticipate">Anticipate</button></div>
+<p><small>Unavailable maneuvers: Charge, Delay Initiative, Fight Defensively, Safe Step, Draw Arm. Puppet Acrobatics, Escape, Stealth, and Sleight of Hand use the controller's Sleight of Hand check. Other combat modifiers and defensive devices follow their descriptions.</small></p>
+<h3>Construction and Device Slots</h3>
+<div class="puppet-grid">
+<div class="puppet-stat"><strong>Light Slots</strong><span>{{construction.used.Light}} / {{construction.capacity.Light}}</span></div>
+<div class="puppet-stat"><strong>Standard Slots</strong><span>{{construction.used.Standard}} / {{construction.capacity.Standard}}</span></div>
+<div class="puppet-stat"><strong>Heavy Slots</strong><span>{{construction.used.Heavy}} / {{construction.capacity.Heavy}}</span></div>
+<div class="puppet-stat"><strong>Skeleton Cost</strong><span>{{construction.skeletonCost}} Ryo</span></div>
+</div>
+<p>Slot costs: Light 10 Ryo; Standard 20 Ryo; Heavy 30 Ryo. Installing or removing devices requires Repair. Three Standard slots may be exchanged for one Heavy slot, and larger slots may be exchanged for smaller ones.</p>
+<h3>Installed Devices and Weapons</h3>
+{{#each devices}}
+<div class="puppet-device-row"><strong>{{name}}</strong> — {{slot}} slot
+{{#if canAttack}}<p>Weapon Damage {{weaponDamage}} · Base Damage {{baseDamage}} <button type="button" class="puppet-device-attack" data-item-id="{{id}}">DC Attack + Damage</button></p>{{/if}}
+{{#if minimumMechanics}}<small>Mechanics requirement: {{minimumMechanics}}</small>{{/if}}
+{{#if limited}}<p>Uses {{remainingUses}} / {{maxUses}} <button type="button" class="puppet-use-charge" data-item-id="{{id}}">Spend Use (nonattack)</button></p>{{/if}}
+<button type="button" class="puppet-open-device" data-item-id="{{id}}">Open Device Rules</button>
+</div>
+{{else}}<p>No devices installed. Install devices in the puppet's item inventory.</p>{{/each}}
+<button type="button" class="puppet-refill">Village Resupply</button>
+<h3>Puppet Aptitudes</h3>
+<p>Purchased aptitudes belong only to this puppet; their prerequisites use Mechanics instead of attributes/skills and DC instead of CC, where applicable.</p>
+{{#each puppetAptitudes}}<p><button type="button" class="puppet-open-item" data-item-id="{{id}}">{{name}}</button></p>{{else}}<p>No purchased puppet aptitudes recorded.</p>{{/each}}
+<p><small>Eligible aptitudes: {{allowedAptitudes}}</small></p>
+<p><small>Regular actor tabs remain available for the familiar interface, but their normal character Vitality, Chakra, and skill controls are not the puppet's rules-based Absorption or controller statistics. Use this Kugutsu tab for puppet combat and devices.</small></p>
+</div></div>
 </section>
 </form>
 
