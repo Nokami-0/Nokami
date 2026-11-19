@@ -356,6 +356,34 @@ export class ShinobiActorSheet extends BaseActorSheet {
       await item.update({'system.quantidade': qty - 1});
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),content:`<p><strong>${foundry.utils.escapeHTML(this.actor.name)}</strong> uses 1 × <strong>${foundry.utils.escapeHTML(item.name)}</strong> (${qty - 1} remaining).</p>`});
     });
+
+    html.find('.sns-area-place').on('click',async ev=>{
+      ev.preventDefault();
+      const row=ev.currentTarget.closest('[data-item-id]'),item=this.actor.items.get(row?.dataset.itemId);
+      if(!item||!canvas?.scene)return ui.notifications.warn('Open a scene and select an ability.');
+      const token=this.actor.getActiveTokens().find(t=>t.scene?.id===canvas.scene.id);
+      if(!token)return ui.notifications.warn('Place this actor token on the scene first.');
+      const answer=await new Promise(resolve=>new Dialog({
+        title:'Area: '+item.name,
+        content:'<p>Choose only a shape allowed by the ability rules. Visual only; no automatic damage or Chakra cost.</p><label>Shape</label><select name="shape"><option value="cone">Cone</option><option value="circle">Circle</option><option value="ray">Line</option><option value="rect">Rectangle</option></select><label>Distance (scene units)</label><input name="distance" type="number" min="0.1" value="5"><label>Direction (degrees)</label><input name="direction" type="number" value="0"><label>Cone angle</label><input name="angle" type="number" min="1" max="360" value="90"><label>Line width</label><input name="width" type="number" min="0.1" value="1">',
+        buttons:{place:{label:'Place',callback:h=>resolve({t:h.find('[name=shape]').val(),distance:Number(h.find('[name=distance]').val()),direction:Number(h.find('[name=direction]').val()),angle:Number(h.find('[name=angle]').val()),width:Number(h.find('[name=width]').val())})},cancel:{label:'Cancel',callback:()=>resolve(null)}},default:'place',close:()=>resolve(null)
+      }).render(true));
+      if(!answer)return;
+      if(!['cone','circle','ray','rect'].includes(answer.t)||![answer.distance,answer.direction,answer.angle,answer.width].every(Number.isFinite)||answer.distance<=0||answer.width<=0||answer.angle>360)return ui.notifications.error('Invalid area dimensions.');
+      const p=token.center;
+      try{
+        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...answer,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900',flags:{'shinobi-no-sho-revamp':{areaActor:this.actor.id,areaItem:item.id}}}]);
+        ui.notifications.info('Area placed. Move or delete it using Foundry template controls.');
+      }catch(e){console.error(e);ui.notifications.error('Cannot place area: check scene permissions.');}
+    });
+    html.find('.sns-area-clear').on('click',async ev=>{
+      ev.preventDefault();
+      if(!canvas?.scene)return;
+      const areas=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+      if(!areas.length)return ui.notifications.info('No areas from this actor on this scene.');
+      if(!await Dialog.confirm({title:'Erase Areas',content:'Erase '+areas.length+' area templates for this actor?'}))return;
+      try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',areas.map(d=>d.id));}catch(e){console.error(e);ui.notifications.error('Unable to erase templates.');}
+    });
     html.find('.item-use').click(async ev => {
       ev.preventDefault();
       const row = $(ev.currentTarget).closest('.item-row');
