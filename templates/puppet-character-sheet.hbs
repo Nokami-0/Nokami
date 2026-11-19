@@ -924,7 +924,15 @@
       </div>
     </div>
 
-  <div class="tab" data-group="primary" data-tab="puppet-character">
+  <div class="tab" data-group="primary" data-tab="puppet-character"><style>
+/* Puppets have no independent chakra or vitality pool. Hide inherited shinobi resources on this sheet. */
+.shinobi.sheet.actor.puppet input[name*="energias.chakra"],
+.shinobi.sheet.actor.puppet input[name*="energias.vitalidade"],
+.shinobi.sheet.actor.puppet input[name*="chakra"],
+.shinobi.sheet.actor.puppet input[name*="Chakra"]{display:none!important}
+.shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-owner-note{font-weight:600;padding:8px;border-left:3px solid #8c7150}
+</style>
+
 <style>
 .shinobi.sheet.actor.puppet .puppet-rule-panel{padding:14px;color:#332b22;font-size:14px;line-height:1.45}
 .shinobi.sheet.actor.puppet .puppet-rule-panel .puppet-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
@@ -947,14 +955,14 @@
 <div class="puppet-stat"><strong>Hardness</strong><span>{{stats.hardness}}</span><small>Base 1; Armor device may increase it</small></div>
 </div>
 <label>Linked Puppeteer <select name="flags.shinobi-no-sho-revamp.puppetProfile.controllerId"><option value="">Unassigned</option>{{#each controllers}}<option value="{{id}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}</select></label>
-<h3>Control and Chakra Threads</h3>
+<h3>Control and Chakra Threads (Puppeteer Resource)</h3><p class="puppet-owner-note">This puppet has no Chakra pool. All connection and device Chakra costs are paid from the linked puppeteer’s sheet.</p>
 <div class="puppet-grid">
 <div class="puppet-stat"><strong>Mechanics</strong><span>{{stats.mechanics}}</span></div>
 <div class="puppet-stat"><strong>Spirit</strong><span>{{stats.spirit}}</span></div>
 <div class="puppet-stat"><strong>Control Range</strong><span>{{stats.controlRange}} m</span></div>
 <div class="puppet-stat"><strong>Ranged Attack Range</strong><span>{{stats.attackRange}} m</span></div>
 <div class="puppet-stat"><strong>Movement</strong><span>{{puppetMovement}} m</span></div>
-<div class="puppet-stat"><strong>Chakra Threads</strong><span>1 Chakra</span><small>Per puppet; partial action to connect</small></div>
+<div class="puppet-stat"><strong>Controller Connection Cost</strong><span>1 Chakra</span><small>Paid by puppeteer per puppet; partial action to connect</small></div>
 </div>
 <p>Control consumes the puppeteer's own actions. Attacking requires their Standard Action; moving uses their Movement Action. Drawing or storing puppets is a Free Action. A puppet at 0 Absorption cannot act.</p>
 <h3>Combat (Controller's Statistics)</h3>
