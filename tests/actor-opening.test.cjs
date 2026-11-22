@@ -4,7 +4,7 @@ const root=__dirname+'/..';
 function runtime(source, actor, legacy=false){
  class Base {constructor(){this.actor=actor;}async getData(){return {actor};}activateListeners(){}}
  const deepClone=v=>{if(Object.getPrototypeOf(v)!==Object.prototype)throw Error('Cannot clone advanced object');return structuredClone(v)};
- const c={foundry:{utils:{deepClone},appv1:{sheets:{ActorSheet:Base}},applications:{ux:{TextEditor:{enrichHTML:async s=>s}}}},game:{actors:new Map()},SNS_CONDITIONS:[],fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(root+'/integrated/data/'+(url.includes('sns-initial-puppets')?'sns-initial-puppets__actors.json':url.includes('sns-tensai')?'sns-tensai__items.json':url.includes('sns-senjutsu')?'sns-senjutsu__items.json':'sns-magen__items.json'),'utf8'))}),console};
+ const c={Hooks:{on(){}},foundry:{utils:{deepClone},appv1:{sheets:{ActorSheet:Base}},applications:{ux:{TextEditor:{enrichHTML:async s=>s}}}},game:{actors:new Map()},SNS_CONDITIONS:[],fetch:async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(root+'/integrated/data/'+(url.includes('sns-initial-puppets')?'sns-initial-puppets__actors.json':url.includes('sns-tensai')?'sns-tensai__items.json':url.includes('sns-senjutsu')?'sns-senjutsu__items.json':'sns-magen__items.json'),'utf8'))}),console};
  if(legacy){c.ActorSheet=Base;c.TextEditor=c.foundry.applications.ux.TextEditor;delete c.foundry.appv1;delete c.foundry.applications;}
  vm.createContext(c);
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/puppets.js','utf8').replace(/export /g,'')+';this.puppetTabContext=puppetTabContext;this.activatePuppetTab=activatePuppetTab;}).call(this)',c);
@@ -12,9 +12,9 @@ function runtime(source, actor, legacy=false){
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/senjutsu.js','utf8').replace(/export /g,'')+';this.senjutsuSheetContext=senjutsuSheetContext;this.activateSenjutsuTab=activateSenjutsuTab;}).call(this)',c);
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/magen.js','utf8').replace(/export /g,'')+';this.magenSheetContext=magenSheetContext;this.activateMagenTab=activateMagenTab;}).call(this)',c);
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/sizes.js','utf8').replace(/export /g,'')+';this.correctedSizeDetails=correctedSizeDetails;}).call(this)',c);
- vm.runInContext('(function(){'+fs.readFileSync(root+'/module/summon-rules.js','utf8').replace(/^import .*;$/gm,'').replace(/export /g,'')+';this.normalizeSummonProfile=normalizeSummonProfile;}).call(this)',c);
- vm.runInContext(fs.readFileSync(root+'/module/summon-sheet.js','utf8').replace(/^import .*;$/gm,'').replace(/export /g,''),c);
- vm.runInContext(source.replace(/^import .*;?$/gm,'').replace('export class ShinobiActorSheet','class ShinobiActorSheet')+'\nthis.Sheet=ShinobiActorSheet;',c);
+ vm.runInContext('(function(){'+fs.readFileSync(root+'/module/summon-rules.js','utf8').replace(/^import [^;]+;\n/gm,'').replace(/export /g,'')+';this.normalizeSummonProfile=normalizeSummonProfile;}).call(this)',c);
+ vm.runInContext(fs.readFileSync(root+'/module/summon-sheet.js','utf8').replace(/^import [^;]+;\n/gm,'').replace(/export /g,''),c);
+ vm.runInContext(source.replace(/^import [^;]+;\n/gm,'').replace('export class ShinobiActorSheet','class ShinobiActorSheet')+'\nthis.Sheet=ShinobiActorSheet;',c);
  return new c.Sheet();
 }
 const current=fs.readFileSync(root+'/module/actor-sheet.js','utf8');
@@ -27,7 +27,7 @@ for(const [label,summon,synthetic]of [['character',false,false],['summon',true,f
 });
 test('legacy v12 globals remain supported',async()=>{const a=actor();const sheet=runtime(current,a,true);await sheet.getData({});});
 
-test('regression: cloning a live data model throws before the fix',async()=>{const old=current.replace('systemData?.toObject ? systemData.toObject(false) : (systemData || {})','systemData || {}');await assert.rejects(runtime(old,actor()).getData({}),/Cannot clone advanced object/);});
+test('regression: cloning a live data model throws before the fix',async()=>{const old=current.replace(/systemData\?\.toObject\s*\?\s*systemData\.toObject\(false\)\s*:\s*systemData\s*\|\|\s*\{\}/,'systemData || {}');await assert.rejects(runtime(old,actor()).getData({}),/Cannot clone advanced object/);});
 function equippedItem(armor=false){return {id:'equipment',name:armor?'Legacy Armor':'Bite',type:'equipamento',system:{equipped:true},flags:armor?{'sns-weapon-library':{armor:true,bodyHardnessBonus:2}}:{},getFlag(scope,key){if(scope==='sns-weapon-library')throw Error('Flag scope "sns-weapon-library" is not valid or not currently active');return this.flags?.[scope]?.[key]}};}
 for(const [name,summon,token]of [['character',false,false],['summon',true,false],['token',true,true]])test(name+' with equipped species weapons opens when legacy flag scope is inactive',async()=>{
  const a=actor(summon,token);a.items=[equippedItem()];const c=await runtime(current,a).getData({});assert.equal(c.equippedArmor,null);assert.equal(c.equipamentos.length,1);

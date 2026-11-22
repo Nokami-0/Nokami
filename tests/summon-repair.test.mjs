@@ -17,7 +17,7 @@ test('preserve valid custom sheets, ordinary actors, and actors without permissi
 test('sheet repairs do not dismiss zero-HP summon tokens; explicit vitality changes still do',async()=>{
  const fs=await import('node:fs'),vm=await import('node:vm');const hooks={},deleted=[];
  const c={Hooks:{once(){},on:(n,f)=>hooks[n]=f},game:{user:{isGM:true},scenes:[{tokens:[{id:'token',actorId:'summon',getFlag:()=>true}],deleteEmbeddedDocuments:async(type,ids)=>deleted.push(ids)}]}};
- vm.createContext(c);vm.runInContext(fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8').replace(/^import .*;$/gm,'').replace(/export /g,''),c);
+ vm.createContext(c);vm.runInContext(fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8').replace(/^import [^;]+;\n/gm,'').replace(/export /g,''),c);
  const a={id:'summon',getFlag:()=>({species:'Toad'}),system:{energias:{vitalidade:{value:0}}}};
  await hooks.updateActor(a,{'flags.core.-=sheetClass':null});assert.equal(deleted.length,0);
  await hooks.updateActor(a,{'system.energias.vitalidade.value':0});assert.equal(deleted.length,1);
