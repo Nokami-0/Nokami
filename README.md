@@ -2,6 +2,8 @@
 
 A separate Foundry VTT V14 edition using the original **Sonic Tag-Team Heroes 1.5.0** rules by **McShmoodle**. This is an unofficial community adaptation, not a release by the original author.
 
+**AI disclosure** — AI tools were used to assist with the development of this Foundry VTT adaptation.
+
 This edition lives on the `original-stth` branch. The customized system remains on `main`, and Shinobi no Sho remains on its own branch.
 
 ## Install
