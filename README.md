@@ -2,6 +2,8 @@
 
 Foundry VTT system, hosted for Nokami-0 on the dedicated `shinobi-no-sho` branch. Sonic Tag-Team Heroes remains on `main`.
 
+**AI disclosure** — AI tools were used to assist with the development of this Foundry VTT adaptation.
+
 This release packages the existing English Revamp v1.7.40 equipment-fix build with GitHub installation/update URLs. Versions 1.7.41–1.7.42 change distribution metadata only; the gameplay code and catalogs are unchanged.
 
 ## Install in Foundry
