@@ -2,6 +2,8 @@
 
 Unofficial adaptation of STTH 1.5.0. Original game by McShmoodle.
 
+**AI disclosure** — AI tools were used to assist with the development of this Foundry VTT adaptation.
+
 ## Install or update
 
 In Foundry Setup → Game Systems → Install System, paste:
