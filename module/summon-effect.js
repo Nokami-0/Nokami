@@ -29,13 +29,13 @@ function showSummonEffect(board, token) {
   });
 
   function reposition() {
-    const screen = board.app.screen;
-    const view = board.app.view.getBoundingClientRect();
-    const center = board.stage.toGlobal(token.center);
-    const edge = board.stage.toGlobal({x: token.center.x + Math.max(token.w, token.h), y: token.center.y});
-    image.style.left = `${view.left + center.x * view.width / screen.width}px`;
-    image.style.top = `${view.top + center.y * view.height / screen.height}px`;
-    image.style.width = `${(edge.x - center.x) * 2 * view.width / screen.width}px`;
+    const center = token.center;
+    const edge = {x: center.x + Math.max(token.w, token.h), y: center.y};
+    const start = viewportPoint(board, center);
+    const end = viewportPoint(board, edge);
+    image.style.left = `${start.x}px`;
+    image.style.top = `${start.y}px`;
+    image.style.width = `${Math.abs(end.x - start.x) * 2}px`;
   }
 
   const panHook = Hooks.on("canvasPan", reposition);
@@ -62,6 +62,21 @@ function showSummonEffect(board, token) {
   }, {once: true});
   document.body.append(image);
   image.src = SUMMON_GIF;
+}
+
+function viewportPoint(board, point) {
+  if (typeof board.clientCoordinatesFromCanvas === "function") {
+    return board.clientCoordinatesFromCanvas(point);
+  }
+
+  // Keep the renderer-based conversion for older Foundry builds.
+  const screen = board.app.screen;
+  const view = board.app.view.getBoundingClientRect();
+  const global = board.stage.toGlobal(point);
+  return {
+    x: view.left + global.x * view.width / screen.width,
+    y: view.top + global.y * view.height / screen.height
+  };
 }
 
 observeSummonPlacement("shini-no-sho-altered");
