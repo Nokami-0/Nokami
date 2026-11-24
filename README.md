@@ -14,7 +14,7 @@ In Setup → Game Systems → Install System, paste this manifest URL:
 https://raw.githubusercontent.com/Nokami-0/Nokami/shini-no-sho-altered/system.json
 ```
 
-The source manifest declares Foundry 12 minimum and Foundry 13 verified. This upload has not been tested in a live Foundry instance, and Foundry 14 compatibility has not been verified.
+The system declares Foundry 12 as its minimum. Version 1.7.86 uses Scene Regions for weapon and ability areas on Foundry 14. The manifest still lists 13 as verified pending a live Foundry 14 playtest.
 
 For manual installation, download this branch as ZIP, extract it, and name the system folder `shini-no-sho-altered` beneath your Foundry user data `Data/systems/` directory. The folder must contain `system.json` directly. Restart Foundry afterward. Back up worlds before updating.
 

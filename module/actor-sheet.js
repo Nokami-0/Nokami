@@ -1,5 +1,5 @@
 import {placeSnsWeaponArea} from './sns-weapon-area.js';
-import {previewSnsArea} from './sns-area-preview.js';
+import {previewSnsArea,snsAreas,deleteSnsAreas,createSnsArea} from './sns-area-preview.js';
 import {puppetTabContext,activatePuppetTab} from './puppets.js';
 import {summonSheetContext,summonReferenceKind} from './summon-sheet.js';
 import {summonRollRestriction} from './summon-rules.js';
@@ -373,7 +373,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       ev.preventDefault();
       const row=ev.currentTarget.closest('[data-item-id]'),item=this.actor.items.get(row?.dataset.itemId);
       if(!item||!canvas?.scene)return ui.notifications.warn('Open a scene and select an ability.');
-      const token=this.actor.getActiveTokens().find(t=>t.scene?.id===canvas.scene.id);
+      const token=this.actor.getActiveTokens().find(t=>(t.document?.parent?.id ?? t.scene?.id)===canvas.scene.id);
       if(!token)return ui.notifications.warn('Place this actor token on the scene first.');
       const allowed=item.getFlag('shini-no-sho-altered','allowedAreaShapes');
       const choices=['cone','circle','ray','rect'].filter(t=>!Array.isArray(allowed)||allowed.includes(t));
@@ -388,22 +388,22 @@ export class ShinobiActorSheet extends BaseActorSheet {
       if(!answer)return;
       if(!choices.includes(answer.t)||![answer.distance,answer.direction,answer.angle,answer.width].every(Number.isFinite)||answer.distance<=0||answer.width<=0||answer.angle<1||answer.angle>360)return ui.notifications.error('Invalid area dimensions.');
       try{
-        const prior=canvas.scene.templates.filter(d=>d.getFlag('shini-no-sho-altered','areaActor')===this.actor.id&&d.getFlag('shini-no-sho-altered','cleanup')==='next-area'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
-        if(prior.length)await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',prior.map(d=>d.id));
+        const prior=snsAreas(canvas.scene,this.actor.id).filter(d=>d.getFlag('shini-no-sho-altered','cleanup')==='next-area');
         const p=token.center;
         const positioned=await previewSnsArea({t:answer.t,distance:answer.distance,direction:answer.direction,angle:answer.angle,width:answer.width,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900'});
         if(!positioned)return;
-        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...positioned,user:game.user.id,flags:{'shini-no-sho-altered':{areaActor:this.actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
+        await createSnsArea(canvas.scene,positioned,{actorId:this.actor.id,itemId:item.id,cleanup:answer.cleanup,name:item.name});
+        if(prior.length)await deleteSnsAreas(canvas.scene,prior);
         ui.notifications.info(answer.cleanup==='after-use'?'Area placed. It will disappear when this ability is used.':'Area placed. Use Erase to remove it at any time.');
       }catch(e){console.error(e);ui.notifications.error('Cannot place or remove area: check scene permissions.');}
     });
     html.find('.sns-area-clear').on('click',async ev=>{
       ev.preventDefault();
       if(!canvas?.scene)return;
-      const areas=canvas.scene.templates.filter(d=>d.getFlag('shini-no-sho-altered','areaActor')===this.actor.id&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+      const areas=snsAreas(canvas.scene,this.actor.id);
       if(!areas.length)return ui.notifications.info('No areas from this actor on this scene.');
       if(!await Dialog.confirm({title:'Erase Areas',content:'Erase '+areas.length+' area templates for this actor?'}))return;
-      try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',areas.map(d=>d.id));}catch(e){console.error(e);ui.notifications.error('Unable to erase templates.');}
+      try{await deleteSnsAreas(canvas.scene,areas);}catch(e){console.error(e);ui.notifications.error('Unable to erase templates.');}
     });
     html.find('.item-use').click(async ev => {
       ev.preventDefault();
@@ -436,8 +436,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
         });
         // Remove only this ability's one-use visual areas after a successful cast.
         if(canvas?.scene){
-          const spentAreas=canvas.scene.templates.filter(d=>d.getFlag('shini-no-sho-altered','areaActor')===this.actor.id&&d.getFlag('shini-no-sho-altered','areaItem')===item.id&&d.getFlag('shini-no-sho-altered','cleanup')==='after-use'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
-          if(spentAreas.length)try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',spentAreas.map(d=>d.id));}catch(error){console.warn('Area cleanup requires template deletion permission',error);ui.notifications.warn('Ability used; erase its area manually if permissions prevent automatic removal.');}
+          const spentAreas=snsAreas(canvas.scene,this.actor.id).filter(d=>d.getFlag('shini-no-sho-altered','areaItem')===item.id&&d.getFlag('shini-no-sho-altered','cleanup')==='after-use');
+          if(spentAreas.length)try{await deleteSnsAreas(canvas.scene,spentAreas);}catch(error){console.warn('Area cleanup requires template deletion permission',error);ui.notifications.warn('Ability used; erase its area manually if permissions prevent automatic removal.');}
         }
       } catch (error) {
         console.error('Shinobi no Sho resource deduction failed:', error);

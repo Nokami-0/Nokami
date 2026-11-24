@@ -4,7 +4,9 @@
  * mouse-wheel rotation and click-to-confirm. No resource costs are applied here.
  */
 export async function previewSnsArea(data) {
-  if (!canvas?.ready || !canvas?.scene || !canvas?.templates) throw Error('Open a canvas scene first.');
+  if (!canvas?.ready || !canvas?.scene) throw Error('Open a canvas scene first.');
+  if (areaDocumentType() === 'Region') return previewRegion(data);
+  if (!canvas.templates) throw Error('The measured template layer is unavailable.');
   const layer=canvas.templates;
   const Doc=CONFIG.MeasuredTemplate.documentClass;
   const document=new Doc({...data, x:0, y:0}, {parent:canvas.scene});
@@ -70,5 +72,139 @@ export async function previewSnsArea(data) {
     view.addEventListener('contextmenu',context,true);
     window.addEventListener('keydown',key,true);
     ui.notifications.info('Move the cursor to position the area. Mouse wheel rotates; Shift + wheel fine-tunes. Left-click confirms; right-click or Esc cancels.');
+  });
+}
+
+const AREA_SCOPE = 'shini-no-sho-altered';
+
+function areaDocumentType() {
+  return game.release.generation >= 14 ? 'Region' : 'MeasuredTemplate';
+}
+
+export function snsAreas(scene, actorId) {
+  const documents = areaDocumentType() === 'Region' ? scene.regions : scene.templates;
+  return documents.filter(doc => {
+    if (doc.getFlag(AREA_SCOPE, 'areaActor') !== actorId) return false;
+    const creator = doc.getFlag(AREA_SCOPE, 'areaCreator') ?? doc.user?.id ?? doc.user;
+    return game.user.isGM || creator === game.user.id;
+  });
+}
+
+export function deleteSnsAreas(scene, areas) {
+  return scene.deleteEmbeddedDocuments(areaDocumentType(), areas.map(area => area.id));
+}
+
+export function createSnsArea(scene, positioned, {actorId, itemId, cleanup, name}) {
+  const type = areaDocumentType();
+  const data = type === 'Region' ? {
+    name,
+    color: positioned.fillColor,
+    visibility: CONST.REGION_VISIBILITY.ALWAYS,
+    shapes: [regionShape(positioned, scene.grid.size / scene.grid.distance)],
+    ownership: {[game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER}
+  } : {...positioned, user: game.user.id};
+  data.flags = {[AREA_SCOPE]: {areaActor: actorId, areaItem: itemId, cleanup, areaCreator: game.user.id}};
+  return scene.createEmbeddedDocuments(type, [data]);
+}
+
+// Both the preview and the saved region use the same pixel coordinates.
+function regionShape(data, pixelsPerUnit) {
+  const {t, x, y, direction, angle} = data;
+  const length = data.distance * pixelsPerUnit;
+  const halfWidth = data.width * pixelsPerUnit / 2;
+  const radians = direction * Math.PI / 180;
+  let points;
+  if (t === 'ray') {
+    points = [[0,-halfWidth], [length,-halfWidth], [length,halfWidth], [0,halfWidth]];
+  } else if (t === 'rect') {
+    const side = length / Math.SQRT2;
+    points = [[0,0], [side,0], [side,side], [0,side]];
+  } else {
+    const fullCircle = t === 'circle' || angle === 360;
+    const sweep = fullCircle ? 2 * Math.PI : angle * Math.PI / 180;
+    const steps = Math.max(4, Math.ceil(sweep / (Math.PI / 32)));
+    points = fullCircle ? [] : [[0,0]];
+    for (let i = 0; i < steps + (fullCircle ? 0 : 1); i++) {
+      const a = -sweep / 2 + sweep * i / steps;
+      points.push([length * Math.cos(a), length * Math.sin(a)]);
+    }
+  }
+  const cos = Math.cos(radians), sin = Math.sin(radians);
+  return {type: 'polygon', points: points.flatMap(([dx,dy]) => [x + dx*cos - dy*sin, y + dx*sin + dy*cos])};
+}
+
+function previewRegion(data) {
+  const scene = canvas.scene;
+  const view = document.getElementById('board');
+  if (!view) throw Error('Open a canvas scene first.');
+  const overlay = document.createElement('canvas');
+  const ctx = overlay.getContext('2d');
+  if (!ctx) throw Error('Could not draw the area preview.');
+  Object.assign(overlay.style, {position:'fixed', inset:'0', zIndex:'1', pointerEvents:'none'});
+  document.body.append(overlay);
+  const position = {...data};
+  const pixelsPerUnit = scene.grid.size / scene.grid.distance;
+  function draw() {
+    overlay.width = window.innerWidth;
+    overlay.height = window.innerHeight;
+    const {points} = regionShape(position, pixelsPerUnit);
+    ctx.beginPath();
+    for (let i = 0; i < points.length; i += 2) {
+      const p = canvas.clientCoordinatesFromCanvas({x:points[i], y:points[i+1]});
+      if (i === 0) ctx.moveTo(p.x,p.y);
+      else ctx.lineTo(p.x,p.y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = position.fillColor;
+    ctx.globalAlpha = 0.25;
+    ctx.fill();
+    ctx.globalAlpha = 0.8;
+    ctx.strokeStyle = position.fillColor;
+    ctx.stroke();
+  }
+
+  return new Promise(resolve => {
+    const move = event => {
+      const point = canvas.canvasCoordinatesFromClient({x:event.clientX, y:event.clientY});
+      Object.assign(position, canvas.grid.getSnappedPoint(point, {mode:CONST.GRID_SNAPPING_MODES.CENTER}));
+      draw();
+    };
+    const wheel = event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      const step = event.shiftKey ? 5 : 15;
+      position.direction = (position.direction + (event.deltaY > 0 ? step : 360 - step)) % 360;
+      draw();
+    };
+    const finish = result => {
+      controller.abort();
+      Hooks.off('canvasTearDown', teardownHook);
+      Hooks.off('canvasPan', panHook);
+      overlay.remove();
+      resolve(result);
+    };
+    const controller = new AbortController();
+    const options = {capture:true, signal:controller.signal};
+    const teardownHook = Hooks.on('canvasTearDown', () => finish(null));
+    const panHook = Hooks.on('canvasPan', draw);
+    view.addEventListener('pointermove', move, options);
+    view.addEventListener('wheel', wheel, {...options, passive:false});
+    view.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      move(event);
+      finish(position);
+    }, options);
+    view.addEventListener('contextmenu', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      finish(null);
+    }, options);
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape') finish(null);
+    }, options);
+    window.addEventListener('resize', draw, options);
+    draw();
+    ui.notifications.info('Move to position the area. Scroll to rotate. Click to place, or press Esc to cancel.');
   });
 }
