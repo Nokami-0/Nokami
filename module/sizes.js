@@ -14,6 +14,16 @@ export const SNS_SIZE_TABLE=[
 export const NORMAL_SUMMON_SIZES=['child','small','medium','large','huge','gargantuan'];
 export const canonicalSizeId=id=>({immense:'gargantuan',minuscule:'minute',little:'child',kid:'child',average:'medium',big:'large'}[id]||id);
 export function sizeById(id){return SNS_SIZE_TABLE.find(s=>s.id===canonicalSizeId(id))||SNS_SIZE_TABLE[4];}
+export function fixedSize(p = {}){
+ // Catalog fixedSize is authoritative for named summons, including Animal Path.
+ if(p.fixedSize)return canonicalSizeId(p.fixedSize);
+ const n=String(p.name||'').toLowerCase();
+ if(/doki/.test(n))return 'huge';
+ if(/bee \(individual\)/.test(n))return 'tiny';
+ if(/giant bee/.test(n))return 'huge';
+ if(/ordinary spider|spider \(ordinary\)/.test(n))return 'medium';
+ return null;
+}
 export function isSummonSizeLegal(p,size,nc,fixed=null){
  size=canonicalSizeId(size);fixed=fixed?canonicalSizeId(fixed):null;
  if(!Number.isInteger(nc)||nc<0)return false;
@@ -29,11 +39,32 @@ export function correctedSizeDetails(size){
  const id=canonicalSizeId(size?.id);const s=SNS_SIZE_TABLE.find(s=>s.id===id);if(!s)return size;
  return {...size,id:s.id,label:s.label,strengthModifier:s.str,vigorModifier:s.vig,attackVsMedium:s.attack,reachMeters:s.reach,stealthModifier:s.stealth,intimidateModifier:s.intimidate,movementMeters:s.move,heightReference:s.height,weightReference:s.weight,tokenSquares:size.tokenSquares??s.grid};
 }
+export function lockedSummonSize(actor){
+ const flags=actor?.flags?.['shini-no-sho-altered'];
+ if(!flags?.summonProfile)return null;
+ const profile=flags.kuchiyoseSpecies??{name:flags.summonProfile.species};
+ const id=fixedSize(profile);
+ return SNS_SIZE_TABLE.find(size=>size.id===id)??null;
+}
 export async function repairSummonSize(actor){
  const p=actor?.flags?.['shini-no-sho-altered']?.summonProfile;
- if(!actor?.isOwner||!p?.size?.id)return false;
- const size=correctedSizeDetails(p.size);if(JSON.stringify(size)===JSON.stringify(p.size))return false;
- await actor.update({'flags.shini-no-sho-altered.summonProfile.size':size,'system.energias.tamanho':size.label});return true;
+ if(!actor?.isOwner||!p)return false;
+ const locked=lockedSummonSize(actor);
+ if(!locked&&!p.size?.id)return false;
+ const size=correctedSizeDetails(locked?{...p.size,id:locked.id,tokenSquares:locked.grid}:p.size);
+ const updates={};
+ if(JSON.stringify(size)!==JSON.stringify(p.size))updates['flags.shini-no-sho-altered.summonProfile.size']=size;
+ if(locked||Object.keys(updates).length){
+  if(actor.system?.energias?.tamanho!==size.label)updates['system.energias.tamanho']=size.label;
+ }
+ if(locked){
+  for(const axis of ['width','height'])if(actor.prototypeToken?.[axis]!==locked.grid)updates[`prototypeToken.${axis}`]=locked.grid;
+  const reach=`${locked.reach}m`;
+  if(actor.system?.energias?.alcance!==reach)updates['system.energias.alcance']=reach;
+ }
+ if(!Object.keys(updates).length)return false;
+ await actor.update(updates);
+ return true;
 }
 export function openSnsSizeReference(){
  const row=s=>`<tr><td>${s.label}</td><td>${s.str>0?'+':''}${s.str}</td><td>+${s.attack}</td><td>${s.reach}m</td><td>${s.stealth>0?'+':''}${s.stealth}</td><td>${s.intimidate>0?'+':''}${s.intimidate}</td><td>${s.move>0?'+':''}${s.move}m</td><td>${s.height}</td><td>${s.weight}</td></tr>`;

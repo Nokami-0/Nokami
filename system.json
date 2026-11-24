@@ -2,7 +2,7 @@
   "id": "shini-no-sho-altered",
   "title": "Shini no Sho Altered (ENG)",
   "description": "An English Foundry VTT system maintained and distributed by Nokami-0.",
-  "version": "1.7.87",
+  "version": "1.7.88",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -21,6 +21,7 @@
     "module/sns-conditions.js",
     "module/unified-catalog.js",
     "module/kuchiyose-engine.js",
+    "module/summon-size-lock.js",
     "module/sns-compendiums.js",
     "module/kuchiyose-compendium.js",
     "module/ninpou-compendium.js",

@@ -1,4 +1,4 @@
-import {SNS_SIZE_TABLE,NORMAL_SUMMON_SIZES,openSnsSizeReference,sizeById,canonicalSizeId,isSummonSizeLegal} from './sizes.js';
+import {SNS_SIZE_TABLE,NORMAL_SUMMON_SIZES,openSnsSizeReference,sizeById,isSummonSizeLegal,fixedSize} from './sizes.js';
 import {openRashoumonDialog,rashoumonTemplate} from './rashoumon.js';
 import {dokiEquipment} from './doki-equipment.js';
 import {normalizeSummonProfile,skillKey,summonNCCap,summonQuantityLegal,SUMMON_REVISION} from './summon-rules.js';
@@ -14,16 +14,6 @@ function speciesSize(p,nc){
  const name=String(p.name||'').toLowerCase();
  if(/bee swarm/.test(name))return nc>=14?'huge':nc>=12?'large':'medium';
  return 'medium';
-}
-function fixedSize(p){
- // Catalog fixedSize is authoritative for named summons, including Animal Path.
- if(p.fixedSize)return canonicalSizeId(p.fixedSize);
- const n=String(p.name||'').toLowerCase();
- if(/doki/.test(n))return 'huge';
- if(/bee \(individual\)/.test(n))return 'tiny';
- if(/giant bee/.test(n))return 'huge';
- if(/ordinary spider|spider \(ordinary\)/.test(n))return 'medium';
- return null;
 }
 function sizeLegal(p,size,nc){return isSummonSizeLegal(p,size,nc,fixedSize(p));}
 function sizeDetails(size){
@@ -53,7 +43,7 @@ async function actorFor(p,nc,owner,mode,sizeId){
 
  const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
  const skills=String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
- const size=sizeById(sizeId||speciesSize(p,nc));
+ const size=sizeById(fixedSize(p)||sizeId||speciesSize(p,nc));
  const profile=profileFor(p,nc,size,{ownerId:owner.id,commonPenalty:mode==='common'?p.commonPenalty??-3:0});
  const actor=await Actor.create({system:{cabecalho:{nc},energias:{tamanho:size.label,alcance:`${size.reach}m`}},name:`${p.name} (NC ${nc})`,type:'personagem',img,folder:folder.id,ownership:summonOwnership,prototypeToken:{name:p.name,width:size.grid,height:size.grid,texture:{src:img},actorLink:true,disposition:1},flags:{[SYS]:{summonProfile:profile,kuchiyoseSpecies:p,summonRulesRevision:SUMMON_REVISION}}});
  if(nc<4)await actor.update({'system.energias.vitalidade.value':actor.system.energias.vitalidade.max});
@@ -139,7 +129,7 @@ async function summon(owner,p,level,qty,mode,nc,sizeId){
  if(!summonQuantityLegal(p,qty))return ui.notifications.warn(`Quantity for ${p.name}: 1–${p.maximumQuantity||2}.`);
  if(p.name==='Giant Bee'&&level<8)return ui.notifications.warn('Giant Bee requires Bee Kuchiyose 8.');
  const cap=summonNCCap(p,level,qty);if(!Number.isInteger(nc)||!Number.isInteger(level)||nc>cap||nc<0)return ui.notifications.warn(`NC must be 0–${cap}.`);
- const size=sizeById(sizeId||speciesSize(p,nc));if(!sizeLegal(p,size.id,nc))return ui.notifications.warn(`Size ${size.label} is not allowed for ${p.name} at NC ${nc}.`);
+ const size=sizeById(fixedSize(p)||sizeId||speciesSize(p,nc));if(!sizeLegal(p,size.id,nc))return ui.notifications.warn(`Size ${size.label} is not allowed for ${p.name} at NC ${nc}.`);
  const pact=owner.getFlag(SYS,'summonContract');const pactFamily=SPECIES.find(s=>s.name===pact)?.contract||pact;if(pact&&pactFamily!==(p.contract||p.name))return ui.notifications.warn(`Only one blood contract: ${pact}.`);
  const used=owner.getFlag(SYS,'summonSceneUsage')||{};const count=used.scene===scene.id?num(used.count):0;const limit=p.singlePerScene?1:2;if(count>=limit)return ui.notifications.warn(`Summoning limit for this scene reached (${limit}).`);
  if(count&&mode==='hijutsu'&&used.restricted!==false)return ui.notifications.warn('The extra scene use must be Common Power, with its common-power penalties.');
@@ -173,7 +163,7 @@ function dialog(owner){const opts=list().map((p,i)=>`<option value="${i}">${esc(
  const legal=available.filter(z=>sizeLegal(profile||{name:''},z.id,Number(field.val())));
  const effective=legal.some(z=>z.id===selected)?selected:(legal.some(z=>z.id===suggested)?suggested:legal[0]?.id||'');
  
- html.find('[name=size]').html(available.map(z=>`<option value="${z.id}" ${sizeLegal(profile||{name:''},z.id,Number(field.val()))?'':'disabled'}>${esc(z.label)}${sizeLegal(profile||{name:''},z.id,Number(field.val()))?'':' (NC/species restricted)'}</option>`).join('')).val(effective);
+ html.find('[name=size]').html(available.map(z=>`<option value="${z.id}" ${sizeLegal(profile||{name:''},z.id,Number(field.val()))?'':'disabled'}>${esc(z.label)}${sizeLegal(profile||{name:''},z.id,Number(field.val()))?'':' (NC/species restricted)'}</option>`).join('')).val(effective).prop('disabled',Boolean(fixedSize(profile||{})));
  const detail=sizeById(effective||suggested);
  if(!legal.length)html.find('.sns-size-info').text(`No legal size at NC ${field.val()}; increase the power level / NC.`);
  else html.find('.sns-size-info').text(`Selected size: ${detail.label} (height/length ${detail.height}, weight ${detail.weight}); token ${detail.grid}×${detail.grid} squares; Strength/Vigor ${detail.str>=0?'+':''}${detail.str}; reach ${detail.reach}m; Stealth ${detail.stealth}; Intimidate ${detail.intimidate}; movement ${detail.move>=0?'+':''}${detail.move}m.`);
