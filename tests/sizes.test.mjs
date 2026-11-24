@@ -21,9 +21,9 @@ test('species-fixed exceptions and legacy IDs remain valid',()=>{
 });
 test('size metadata repair preserves token footprint and all unrelated actor data',async()=>{
  const original={id:'gargantuan',label:'Huge',tokenSquares:6,custom:'keep'};const updates=[];
- const actor={isOwner:true,flags:{'shinobi-no-sho-revamp':{summonProfile:{size:original,notes:'keep'}}},system:{atributos:{for:{valor:9}},energias:{vitalidade:{value:40}}},update:async d=>updates.push(d)};
+ const actor={isOwner:true,flags:{'shini-no-sho-altered':{summonProfile:{size:original,notes:'keep'}}},system:{atributos:{for:{valor:9}},energias:{vitalidade:{value:40}}},update:async d=>updates.push(d)};
  const before=structuredClone(actor.system);assert.equal(await repairSummonSize(actor),true);assert.deepEqual(actor.system,before);
- const size=updates[0]['flags.shinobi-no-sho-revamp.summonProfile.size'];assert.equal(size.label,'Immense');assert.equal(size.tokenSquares,6);assert.equal(size.custom,'keep');assert.equal(size.strengthModifier,5);assert.equal(Object.keys(updates[0]).length,2);
+ const size=updates[0]['flags.shini-no-sho-altered.summonProfile.size'];assert.equal(size.label,'Immense');assert.equal(size.tokenSquares,6);assert.equal(size.custom,'keep');assert.equal(size.strengthModifier,5);assert.equal(Object.keys(updates[0]).length,2);
  assert.equal(await repairSummonSize({isOwner:false,flags:actor.flags}),false);
 });
 test('full reference dialog displays all ten rows and NC thresholds',()=>{

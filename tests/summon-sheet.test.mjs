@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import Handlebars from 'handlebars';import {parseHTML} from 'linkedom';
 import {summonSheetContext,summonReferenceKind} from '../module/summon-sheet.js';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 Handlebars.registerHelper('checked',v=>v?'checked':'');
 Handlebars.registerHelper('selectOptions',()=>new Handlebars.SafeString(''));
 Handlebars.registerHelper('editor',()=>new Handlebars.SafeString('<div class="editor"></div>'));

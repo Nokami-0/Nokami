@@ -12,7 +12,7 @@ test('missing or string size does not crash summon sheet context',async()=>{
  for(const size of [undefined,'Huge',{label:'Huge'}]){const c=summonSheetContext({getFlag:(_s,k)=>k==='summonProfile'?{species:'Doki',skills:'Athletics',size}:null,system:{}},new Map());assert.equal(c.summonProfile.size.label,size?'Huge':'Unspecified');assert.deepEqual(c.summonProfile.skills,['Athletics']);}
 });
 function actor(sheet,profile=true,owner=true){const cleared=[];return {cleared,isOwner:owner,getFlag:(scope,key)=>scope==='core'?sheet:profile?{}:null,unsetFlag:async(s,k)=>cleared.push([s,k])};}
-test('repair stale stored sheet override on a summon or token actor',async()=>{const a=actor('old-system.RemovedSheet');assert.equal(await repairSummonSheet(a,{'shinobi-no-sho-revamp.ShinobiActorSheet':{cls:class{}}}),true);assert.deepEqual(a.cleared,[['core','sheetClass']]);});
+test('repair stale stored sheet override on a summon or token actor',async()=>{const a=actor('old-system.RemovedSheet');assert.equal(await repairSummonSheet(a,{'shini-no-sho-altered.ShinobiActorSheet':{cls:class{}}}),true);assert.deepEqual(a.cleared,[['core','sheetClass']]);});
 test('preserve valid custom sheets, ordinary actors, and actors without permission',async()=>{for(const a of [actor('custom.Valid'),actor('old.Missing',false),actor('old.Missing',true,false)]){assert.equal(await repairSummonSheet(a,{'custom.Valid':{cls:class{}}}),false);assert.equal(a.cleared.length,0);}});
 test('sheet repairs do not dismiss zero-HP summon tokens; explicit vitality changes still do',async()=>{
  const fs=await import('node:fs'),vm=await import('node:vm');const hooks={},deleted=[];

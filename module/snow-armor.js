@@ -30,7 +30,7 @@ export async function ensureSnowArmor(pack, folder) {
  if (!missing.length) return;
  await Item.createDocuments(missing.map(armor => ({
   name: armor.name, type: "equipamento", folder, img: "icons/equipment/chest/breastplate-collared-steel.webp",
-  flags: { "shinobi-no-sho-revamp": { snowChakraArmor: { maxBarrier: armor.pool, suppression: armor.suppression, winged: Boolean(armor.winged) } } },
+  flags: { "shini-no-sho-altered": { snowChakraArmor: { maxBarrier: armor.pool, suppression: armor.suppression, winged: Boolean(armor.winged) } } },
   system: {
    quantidade: 1, peso: armor.slots, valorRyo: armor.price, isArmor: true,
    absorption: 0, absorptionRemaining: 0, bodyHardnessBonus: armor.bodyHardness ?? 0, weaponCategory: "none",

@@ -3,7 +3,7 @@ import {repairSummonSheet} from './summon-repair.js';
 import {syncDokiLoadout} from './doki-equipment.js';
 import {syncSummonSpecies} from './summon-rules.js';
 import {loadKuchiyoseSpecies,buildKuchiyoseTemplate} from './kuchiyose-engine.js';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const PACK='world.sns-kuchiyose';
 let building;
 export function buildKuchiyoseCompendium(){

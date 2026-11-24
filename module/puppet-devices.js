@@ -67,7 +67,7 @@ export async function ensurePuppetDevices(pack, folder) {
  if (!missing.length) return;
  await Item.createDocuments(missing.map(([name, slots, damage, uses, rules]) => ({
   name, type: "equipamento", folder: location(name),
-  flags: { "shinobi-no-sho-revamp": { puppetDevice: { slots, maxUses: uses, weaponDamage: damage } } },
+  flags: { "shini-no-sho-altered": { puppetDevice: { slots, maxUses: uses, weaponDamage: damage } } },
   system: {
    quantidade: 1, peso: 0, valorRyo: slotPrice(slots), weaponDamage: damage, weaponCategory: "none",
    caracteristicas: `Kugutsu device. Slot: ${slots}. Weapon damage: ${damage ? "+" + damage : "see rules"}. Uses: ${uses ?? "see rules / unlimited"}.`,

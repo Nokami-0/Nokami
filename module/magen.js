@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 let catalogPromise;
 export function validateMagenCatalog(rows){
  if(!Array.isArray(rows)||!rows.length)throw Error('Magen catalog is empty.');const ids=new Set();

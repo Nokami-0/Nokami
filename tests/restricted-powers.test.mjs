@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 globalThis.Hooks={once(){}};
 const {restrictedEntries,buildRestrictedPowers}=await import('../module/restricted-powers.js');
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const catalogs=Object.fromEntries(['Magen','Senjutsu','Tensai'].map(n=>[n,JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-'+n.toLowerCase()+'__items.json',import.meta.url)))]));
 const entries=restrictedEntries(catalogs);
 test('all source cards plus four purchasable power routes in one pack',()=>{

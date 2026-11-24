@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 export function rashoumonRank(actor){
  let rank=0;
  for(const item of actor.items||[]){

@@ -2,7 +2,7 @@ import {SNS_SIZE_TABLE,NORMAL_SUMMON_SIZES,openSnsSizeReference,sizeById,canonic
 import {openRashoumonDialog,rashoumonTemplate} from './rashoumon.js';
 import {dokiEquipment} from './doki-equipment.js';
 import {normalizeSummonProfile,skillKey,summonNCCap,summonQuantityLegal,SUMMON_REVISION} from './summon-rules.js';
-const SYS='shinobi-no-sho-revamp', ROOT=`systems/${SYS}/integrated`;
+const SYS='shini-no-sho-altered', ROOT=`systems/${SYS}/integrated`;
 let SPECIES=[];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num=v=>Math.max(0,Number(v)||0);

@@ -8,7 +8,7 @@ export class ShinobiItemSheet extends BaseItemSheet {
     });
   }
 
-  get template() { return `systems/shinobi-no-sho-revamp/templates/item-sheet.hbs`; }
+  get template() { return `systems/shini-no-sho-altered/templates/item-sheet.hbs`; }
 
   async getData(options) {
     const context = await super.getData(options);

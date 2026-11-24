@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import H from 'handlebars';import {parseHTML} from 'linkedom';
 import {validateMagenCatalog,groupMagenEntries,magenPowerLevel,magenParameters,magenSheetContext,filterMagenEntries,activateMagenTab} from '../module/magen.js';
-const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-magen__items.json',import.meta.url)));const SYS='shinobi-no-sho-revamp';
+const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-magen__items.json',import.meta.url)));const SYS='shini-no-sho-altered';
 test('all core rules, 16 base effects, 22 evolutions and Fluid Illusion are catalogued and restricted',()=>{
  assert.equal(validateMagenCatalog(rows),rows);assert.equal(rows.length,45);assert.equal(rows.filter(r=>r.kind==='Rules').length,6);assert.equal(rows.filter(r=>r.baseEffect).length,22);assert.equal(rows.filter(r=>r.level>0&&!r.baseEffect&&r.kind!=='Limited Aptitude').length,16);assert.equal(rows.filter(r=>r.kind==='Limited Aptitude').length,1);
  assert.equal(rows.find(r=>r.id==='false-speed').chakraCost,2);assert.equal(rows.find(r=>r.id==='false-speed').level,3);

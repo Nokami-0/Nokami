@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const {rashoumonRank,rashoumonParameters,rashoumonTemplate,rashoumonGridSize,rashoumonPositions,summonRashoumon}=await import('../module/rashoumon.js');
 function owner(rank,score=18){return {id:'owner',name:'Summoner',ownership:{player:3},items:rank?[{name:`Rashoumon — Level ${rank}`,type:'aptidao',system:{},flags:{}}]:[],system:{atributos:{esp:{valor:score},int:{valor:score}},energias:{chakra:{value:50}}},async update(data){this.system.energias.chakra.value=data['system.energias.chakra.value'];}};}
 test('requires purchased aptitude, not attribute alone or an innate reference',()=>{
@@ -56,5 +56,5 @@ test('gate sheet registers and renders dimensions and editable per-token Hardnes
  const {RashoumonSheet}=await import('../module/rashoumon-sheet.js');assert.equal(registration.cls,RashoumonSheet);assert.equal(registration.opts.makeDefault,false);
  const data=rashoumonTemplate();data.flags[SYS].rashoumonGate={...rashoumonParameters(owner(3),'esp',5),remainingHardness:4.2,template:false};
  const context=await new RashoumonSheet(data).getData({});const {default:H}=await import('handlebars');const html=H.compile(fs.readFileSync(new URL('../templates/rashoumon-sheet.hbs',import.meta.url),'utf8'))(context);
- assert.match(html,/9 m wide × 9 m high/);assert.match(html,/flags.shinobi-no-sho-revamp.rashoumonGate.remainingHardness/);assert.match(html,/Level 3/);
+ assert.match(html,/9 m wide × 9 m high/);assert.match(html,/flags.shini-no-sho-altered.rashoumonGate.remainingHardness/);assert.match(html,/Level 3/);
 });

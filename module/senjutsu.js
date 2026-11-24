@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';let catalogPromise;
+const SYS='shini-no-sho-altered';let catalogPromise;
 export function validateSenjutsuCatalog(rows){
  if(!Array.isArray(rows)||!rows.length)throw Error('Senjutsu catalog is empty.');const ids=new Set();
  for(const r of rows){if(!r.id||ids.has(r.id)||!Number.isInteger(r.level)||r.level<0||r.level>10||r.restrictedTo!=='Senjutsu'||!['Rules','Benefit','Recharge','Technique','Milestone'].includes(r.kind)||!r.description||!r.sourcePages?.length||!r.cost||!r.action)throw Error('Invalid Senjutsu entry: '+r.name);ids.add(r.id);}return rows;

@@ -1,5 +1,5 @@
 import {previewSnsArea} from './sns-area-preview.js';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 export function snsDeviceArea(item,mechanics){
  const name=item.name.toLowerCase(),d=item.flags?.[SYS]?.puppetDevice||{},slot=String(d.slot||'').toLowerCase(),m=Math.max(0,Number(mechanics)||0);
  if(/flamethrower|flame thrower/.test(name)&&m>=8&&slot==='standard')return {t:'cone',distance:m,angle:90,description:'Flamethrower cone: 1m per Mechanics level'};

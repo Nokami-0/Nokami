@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import H from 'handlebars';import {parseHTML} from 'linkedom';
-const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-initial-puppets__actors.json',import.meta.url)));const SYS='shinobi-no-sho-revamp';
+const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-initial-puppets__actors.json',import.meta.url)));const SYS='shini-no-sho-altered';
 globalThis.FormApplication=class{static get defaultOptions(){return{};}};globalThis.foundry={utils:{mergeObject:(a,b)=>({...a,...b})}};
 const {validatePuppetCatalog,puppetStatistics,puppetDeviceDamage,buildInitialPuppet,buildPuppetCompendium,createInitialPuppet,spendPuppetDeviceUse,puppetTabContext}=await import('../module/puppets.js');
 function controller(){return {id:'pc',name:'Puppeteer',isOwner:true,ownership:{player:3,default:0},items:[],system:{pericias:{mecanismo:{total:6}},atributos:{esp:{valor:4}},combate:{distancia:{total:11},esquiva:{total:10},lerMovimentos:{total:12}}}};}

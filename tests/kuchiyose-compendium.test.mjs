@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-kuchiyose-actors__summons.json',import.meta.url),'utf8'));
 globalThis.Hooks={once(){},on(){}};globalThis.CONFIG={Actor:{sheetClasses:{personagem:{}}}};
 globalThis.FormApplication=class {static get defaultOptions(){return{}}};

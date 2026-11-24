@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 // Only clear a stored override when its sheet class is unavailable. Preserve valid custom sheets.
 export async function repairSummonSheet(actor,registry){
  if(!registry)return false;

@@ -16,7 +16,7 @@ const RichTextEditor = foundry.applications?.ux?.TextEditor ?? globalThis.TextEd
 // activateListeners. This keeps Add/Edit/Delete/Equip functional even when another
 // sheet listener fails while initializing.
 Hooks.on('renderActorSheet',(app,html)=>{
-  if(!(app instanceof ShinobiActorSheet)||app.actor?.flags?.['shinobi-no-sho-revamp']?.puppetProfile)return;
+  if(!(app instanceof ShinobiActorSheet)||app.actor?.flags?.['shini-no-sho-altered']?.puppetProfile)return;
   const root=html?.[0]??html;
   if(!root?.addEventListener||root.dataset?.snsInventoryFallback==='1')return;
   root.dataset.snsInventoryFallback='1';
@@ -59,7 +59,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["shinobi", "sheet", "actor"], 
-      template: "systems/shinobi-no-sho-revamp/templates/actor-sheet.hbs",
+      template: "systems/shini-no-sho-altered/templates/actor-sheet.hbs",
       width: Math.min(1200, Math.max(520, Math.floor(window.innerWidth * 0.90))),
       height: Math.min(900, Math.max(480, Math.floor(window.innerHeight * 0.88))),
       resizable: true,
@@ -163,11 +163,11 @@ export class ShinobiActorSheet extends BaseActorSheet {
         used+=occupied;if(modifier>=0)added+=modifier;else removed+=-modifier;
         const price=Math.max(0,num(sys.valorRyo,num(sys.preco,num(sys.price))));value+=qty*price;
         context.equipamentos.push({id:item.id,name:item.name,img:item.img,system:{...sys,quantidade:qty,peso:cost,valorRyo:price,equipped:Boolean(sys.equipped)},slotsUsed:occupied});
-      }else if(item.type==='poder'){if(item.getFlag('shinobi-no-sho-revamp','basicJutsu'))context.tecnicas.push(item);else context.poderes.push(item);}
+      }else if(item.type==='poder'){if(item.getFlag('shini-no-sho-altered','basicJutsu'))context.tecnicas.push(item);else context.poderes.push(item);}
       else if(item.type==='elemento')context.elementos.push(item);
       else if(item.type==='aptidao')(item.system?.gratuita?context.aptidoesGratuitas:context.aptidoes).push(item);
     }
-    context.preexistingTechniques=items.filter(i=>!i.getFlag('shinobi-no-sho-revamp','basicJutsu')&&i.getFlag('shinobi-no-sho-revamp','hierarchy')?.kind==='Techniques').map(i=>({id:i.id,name:i.name,img:i.img,system:i.system,association:i.getFlag('shinobi-no-sho-revamp','hierarchy')?.owner}));
+    context.preexistingTechniques=items.filter(i=>!i.getFlag('shini-no-sho-altered','basicJutsu')&&i.getFlag('shini-no-sho-altered','hierarchy')?.kind==='Techniques').map(i=>({id:i.id,name:i.name,img:i.img,system:i.system,association:i.getFlag('shini-no-sho-altered','hierarchy')?.owner}));
     context.inventoryValueRyo=value;
     context.compartimentosBase=baseCompartimentos;context.slotsAdded=added;context.slotsRemoved=removed;
     context.compartimentosUsados=used;context.compartimentosMaximos=Math.max(0,baseCompartimentos+added-removed);
@@ -287,7 +287,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       if (isBombLauncher(item)) return fireBombLauncher(this.actor, item);
       if (isSkyKunaiLauncher(item)) return fireSkyKunaiLauncher(this.actor, item);
       if (item.system.weaponCategory === 'none') return ui.notifications.warn('Set a weapon category on this equipment first.');
-      const summonAttack=!!item.getFlag('shinobi-no-sho-revamp','summonAttack');
+      const summonAttack=!!item.getFlag('shini-no-sho-altered','summonAttack');
       if(summonAttack&&Number(this.actor.system.cabecalho?.nc)<4)return ui.notifications.warn('Summons below NC 4 cannot deal attack damage.');
       const ranged=item.system.attackType === 'ranged';
       const attribute=Number((ranged?this.actor.system.atributos?.des:this.actor.system.atributos?.for)?.valor ?? 0);
@@ -375,7 +375,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       if(!item||!canvas?.scene)return ui.notifications.warn('Open a scene and select an ability.');
       const token=this.actor.getActiveTokens().find(t=>t.scene?.id===canvas.scene.id);
       if(!token)return ui.notifications.warn('Place this actor token on the scene first.');
-      const allowed=item.getFlag('shinobi-no-sho-revamp','allowedAreaShapes');
+      const allowed=item.getFlag('shini-no-sho-altered','allowedAreaShapes');
       const choices=['cone','circle','ray','rect'].filter(t=>!Array.isArray(allowed)||allowed.includes(t));
       if(!choices.length)return ui.notifications.warn('This ability has no allowed area shapes configured.');
       const labels={cone:'Cone',circle:'Circle / Burst',ray:'Line / Ray',rect:'Rectangle'};
@@ -388,19 +388,19 @@ export class ShinobiActorSheet extends BaseActorSheet {
       if(!answer)return;
       if(!choices.includes(answer.t)||![answer.distance,answer.direction,answer.angle,answer.width].every(Number.isFinite)||answer.distance<=0||answer.width<=0||answer.angle<1||answer.angle>360)return ui.notifications.error('Invalid area dimensions.');
       try{
-        const prior=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='next-area'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+        const prior=canvas.scene.templates.filter(d=>d.getFlag('shini-no-sho-altered','areaActor')===this.actor.id&&d.getFlag('shini-no-sho-altered','cleanup')==='next-area'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
         if(prior.length)await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',prior.map(d=>d.id));
         const p=token.center;
         const positioned=await previewSnsArea({t:answer.t,distance:answer.distance,direction:answer.direction,angle:answer.angle,width:answer.width,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900'});
         if(!positioned)return;
-        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...positioned,user:game.user.id,flags:{'shinobi-no-sho-revamp':{areaActor:this.actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
+        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...positioned,user:game.user.id,flags:{'shini-no-sho-altered':{areaActor:this.actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
         ui.notifications.info(answer.cleanup==='after-use'?'Area placed. It will disappear when this ability is used.':'Area placed. Use Erase to remove it at any time.');
       }catch(e){console.error(e);ui.notifications.error('Cannot place or remove area: check scene permissions.');}
     });
     html.find('.sns-area-clear').on('click',async ev=>{
       ev.preventDefault();
       if(!canvas?.scene)return;
-      const areas=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+      const areas=canvas.scene.templates.filter(d=>d.getFlag('shini-no-sho-altered','areaActor')===this.actor.id&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
       if(!areas.length)return ui.notifications.info('No areas from this actor on this scene.');
       if(!await Dialog.confirm({title:'Erase Areas',content:'Erase '+areas.length+' area templates for this actor?'}))return;
       try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',areas.map(d=>d.id));}catch(e){console.error(e);ui.notifications.error('Unable to erase templates.');}
@@ -411,7 +411,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       const item = this.actor.items.get(row.data('itemId'));
       if (!item) return;
       let chakraCost = Number(item.system.custoChakra ?? 0);
-      const mode=item.getFlag('shinobi-no-sho-revamp','costMode');
+      const mode=item.getFlag('shini-no-sho-altered','costMode');
       if(mode==='kai'||mode==='bunshin'){
         const selected=await new Promise(resolve=>new Dialog({title:item.name,content:mode==='kai'?'<p>Self-release requires prior successful genjutsu detection. Self-release and canceling your own jutsu cost 0. Releasing another person requires a Spirit or Intelligence test against the original resistance difficulty.</p><label>Use</label><select name="mode"><option value="self">Self-release / cancel own jutsu (0)</option><option value="other">Release another person</option></select><label>Canceled genjutsu chakra cost</label><input name="cost" type="number" min="0" step="1" value="0">':'<label>Use</label><select name="cost"><option value="1">Illusory clones (1 Chakra)</option><option value="4">Feint (4 Chakra)</option></select>',buttons:{use:{label:'Use',callback:h=>resolve(mode==='kai'&&h.find('[name="mode"]').val()==='self'?0:Number(h.find('[name="cost"]').val()))},cancel:{label:'Cancel',callback:()=>resolve(null)}},close:()=>resolve(null)}).render(true));
         if(selected===null)return;chakraCost=selected;
@@ -436,7 +436,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
         });
         // Remove only this ability's one-use visual areas after a successful cast.
         if(canvas?.scene){
-          const spentAreas=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&d.getFlag('shinobi-no-sho-revamp','areaItem')===item.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='after-use'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+          const spentAreas=canvas.scene.templates.filter(d=>d.getFlag('shini-no-sho-altered','areaActor')===this.actor.id&&d.getFlag('shini-no-sho-altered','areaItem')===item.id&&d.getFlag('shini-no-sho-altered','cleanup')==='after-use'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
           if(spentAreas.length)try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',spentAreas.map(d=>d.id));}catch(error){console.warn('Area cleanup requires template deletion permission',error);ui.notifications.warn('Ability used; erase its area manually if permissions prevent automatic removal.');}
         }
       } catch (error) {
@@ -494,7 +494,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
 
   async _onRoll(event) {
     event.preventDefault(); const elemento = event.currentTarget; const nomeTeste = elemento.dataset.nome; const precisao = parseInt(elemento.dataset.precisao) || 0;
-    const restriction=summonRollRestriction(this.actor.getFlag('shinobi-no-sho-revamp','summonProfile'),Number(this.actor.system.cabecalho?.nc),nomeTeste);
+    const restriction=summonRollRestriction(this.actor.getFlag('shini-no-sho-altered','summonProfile'),Number(this.actor.system.cabecalho?.nc),nomeTeste);
     if(restriction)return ui.notifications.warn(restriction);
     const template = `<form><div class="form-group" style="margin-bottom: 10px;"><label>Extra Modifier (+ or -):</label><input type="number" id="modificador" name="modificador" value="0" autofocus /></div><div class="form-group" style="margin-bottom: 10px;"><label>Current Condition:</label><select id="condicao" name="condicao"><option value="0">None</option><option value="2">Advantage (+2)</option><option value="-2">Disadvantage (-2)</option><option value="-4">Severe Condition (-4)</option></select></div></form>`;
     new Dialog({

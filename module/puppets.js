@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';export const PUPPET_PACK='world.sns-puppets';let catalogPromise,building;
+const SYS='shini-no-sho-altered';export const PUPPET_PACK='world.sns-puppets';let catalogPromise,building;
 export function validatePuppetCatalog(rows){
  if(!Array.isArray(rows)||rows.length!==3)throw Error('Expected the three Initial Puppet examples.');const ids=new Set();
  for(const r of rows){if(!r.id||ids.has(r.id)||r.size!=='medium'||!r.aptitudes?.length||r.devices?.length!==4)throw Error('Invalid Initial Puppet: '+r.name);ids.add(r.id);for(const [slot,n]of Object.entries(r.slots))if(r.devices.filter(d=>d.slot===slot).length!==n)throw Error('Invalid device slots: '+r.name);for(const d of r.devices)if(!d.id||!d.rules||!Number.isInteger(d.weaponDamage)||d.weaponDamage<0)throw Error('Invalid puppet device.');}return rows;

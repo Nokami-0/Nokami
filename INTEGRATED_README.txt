@@ -1,6 +1,6 @@
 Shinobi no Sho Revamp 1.5.0 — Unified Catalog & Token Edition
 
-INSTALLATION: Copy ONLY the shinobi-no-sho-revamp folder to Foundry Data/systems/. Select it as your game system. No other module is required to import the included catalogs.
+INSTALLATION: Copy ONLY the shini-no-sho-altered folder to Foundry Data/systems/. Select it as your game system. No other module is required to import the included catalogs.
 
 IMPORT: GM -> Game Settings -> Configure Settings -> System Settings -> Unified Catalog & Token Importer -> Open Importer -> Import All Catalogs.
 

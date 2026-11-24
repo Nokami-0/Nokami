@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 export function dokiEquipment(species,nc){
  if(!species.dokiWeapon)return [];
  const img=species.image||'systems/'+SYS+'/integrated/assets/'+species.token_file;

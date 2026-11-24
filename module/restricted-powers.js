@@ -1,7 +1,7 @@
 import {loadMagenCatalog} from './magen.js';
 import {loadSenjutsuCatalog} from './senjutsu.js';
 import {loadTensaiCatalog} from './tensai.js';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 export const RESTRICTED_PACK='world.sns-restricted-powers';
 export function restrictedEntries(catalogs){
  const result=[];

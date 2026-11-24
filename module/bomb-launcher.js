@@ -1,4 +1,4 @@
-const scope = "shinobi-no-sho-revamp";
+const scope = "shini-no-sho-altered";
 const launcherName = "Kihō’s Wrist-Mounted Bomb Launcher";
 const bombs = {
   smoke: { name: "Smoke Bomb", price: 20, stack: 5, effect: "On impact, creates a 3 m radius smoke cloud until the end of the next round or until strong wind disperses it. Apply normal visibility and concealment rules." },

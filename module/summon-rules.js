@@ -1,5 +1,5 @@
 import {correctedSizeDetails} from './sizes.js';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 export const SUMMON_REVISION=2;
 // Legacy imports used comma-separated skills and sometimes omitted size metadata.
 export function normalizeSummonProfile(value){

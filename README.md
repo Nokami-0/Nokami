@@ -1,6 +1,6 @@
 # Shini no Sho Altered (ENG)
 
-Foundry VTT system, hosted for Nokami-0 on the dedicated `shinobi-no-sho` branch. Sonic Tag-Team Heroes remains on `main`.
+Foundry VTT system, hosted for Nokami-0 on the dedicated `shini-no-sho-altered` branch. Sonic Tag-Team Heroes remains on `main`.
 
 **AI disclosure** — AI tools were used to assist with the development of this Foundry VTT adaptation.
 
@@ -11,12 +11,12 @@ This release packages the existing English Revamp v1.7.40 equipment-fix build wi
 In Setup → Game Systems → Install System, paste this manifest URL:
 
 ```text
-https://raw.githubusercontent.com/Nokami-0/Nokami/shinobi-no-sho/system.json
+https://raw.githubusercontent.com/Nokami-0/Nokami/shini-no-sho-altered/system.json
 ```
 
 The source manifest declares Foundry 12 minimum and Foundry 13 verified. This upload has not been tested in a live Foundry instance, and Foundry 14 compatibility has not been verified.
 
-For manual installation, download this branch as ZIP, extract it, and name the system folder `shinobi-no-sho-revamp` beneath your Foundry user data `Data/systems/` directory. The folder must contain `system.json` directly. Restart Foundry afterward. Back up worlds before updating.
+For manual installation, download this branch as ZIP, extract it, and name the system folder `shini-no-sho-altered` beneath your Foundry user data `Data/systems/` directory. The folder must contain `system.json` directly. Restart Foundry afterward. Back up worlds before updating.
 
 ## Included build
 
@@ -28,15 +28,15 @@ The source manifest credits **Nela Trex/NelaTrex** for the original Foundry syst
 
 Internal UI-reference screenshots and an incomplete temporary image from the supplied archive are omitted from this distribution; they are not used by the system.
 
-## English update source (1.7.42)
+## Shini no Sho Altered update source
 
 This English edition uses only these package distribution URLs:
 
-- Manifest: https://raw.githubusercontent.com/Nokami-0/Nokami/shinobi-no-sho/system.json
-- Download: https://github.com/Nokami-0/Nokami/archive/refs/heads/shinobi-no-sho.zip
-- Project: https://github.com/Nokami-0/Nokami/tree/shinobi-no-sho
+- Manifest: https://raw.githubusercontent.com/Nokami-0/Nokami/shini-no-sho-altered/system.json
+- Download: https://github.com/Nokami-0/Nokami/archive/refs/heads/shini-no-sho-altered.zip
+- Project: https://github.com/Nokami-0/Nokami/tree/shini-no-sho-altered
 
-The upstream author's name is retained as attribution, not as an update destination. The system ID remains `shinobi-no-sho-revamp` for compatibility with existing worlds. Gameplay files and catalogs are unchanged by this metadata release.
+Foundry treats `shini-no-sho-altered` as a separate system. Existing worlds stay tied to the previous system ID. Keep the previous system installed to open those worlds, and back them up before attempting a migration.
 
 An older installed package can retain its old manifest URL. Updating the hosted English manifest cannot redirect an installed package that is still checking the upstream author's manifest. Reinstall the English package once using the manifest above (preserving worlds), or close Foundry and replace the installed system folder with this branch's download. Then use Foundry's normal Update button for later English releases. Do not switch the installed package's manifest back to the upstream URL.
 

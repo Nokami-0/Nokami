@@ -1,5 +1,5 @@
 /* Character-sheet browser for source-labeled clan/Hijutsu compendium entries. */
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 export async function openSnsAbilityBrowser(actor, techniquesOnly=false){
  const packs=game.packs.filter(p=>p.metadata?.type==='Item'&&p.collection.startsWith('world.sns-'));

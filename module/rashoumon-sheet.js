@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const BaseActorSheet=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
 export class RashoumonSheet extends BaseActorSheet{
  static get defaultOptions(){return foundry.utils.mergeObject(super.defaultOptions,{width:500,height:540,classes:['shinobi','sheet','rashoumon']});}

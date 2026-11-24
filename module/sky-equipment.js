@@ -1,4 +1,4 @@
-const scope = "shinobi-no-sho-revamp";
+const scope = "shini-no-sho-altered";
 const launcherName = "Sky Ninja — Handheld Kunai Launcher";
 const entries = [
   ["Sky Ninja — Winged Mechanical Device", 900, 3, "Flight gear. Requires Agility 5 and Spirit 5. Occupies the back slot. Launch from a prepared platform as a Standard Action. Spend 2 Chakra to start and 1 at the start of each subsequent round. Fly up to 12 m per round. At 0 Chakra, glide or descend up to 12 m horizontally per round until landing. No armor absorption."],

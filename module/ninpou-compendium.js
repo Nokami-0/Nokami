@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 export const NINPOU_PACK='world.sns-ninpou';
 export const NINPOU_REVISION=1;
 export const NINPOU_ELEMENTS={'non-elemental':'Non-Elemental Ninpou',doton:'Earth — Doton',fuuton:'Wind — Fuuton',katon:'Fire — Katon',raiton:'Lightning — Raiton',suiton:'Water — Suiton'};

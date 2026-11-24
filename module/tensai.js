@@ -1,4 +1,4 @@
-const SYS='shinobi-no-sho-revamp';let catalogPromise;
+const SYS='shini-no-sho-altered';let catalogPromise;
 export function validateTensaiCatalog(rows){
  if(!Array.isArray(rows)||!rows.length)throw Error('Tensai catalog is empty.');const ids=new Set();
  for(const r of rows){if(!r.id||ids.has(r.id)||!Number.isInteger(r.level)||r.level<0||r.level>10||r.restrictedTo!=='Tensai'||!['Rules','Versatility','Power Route','Restricted Aptitude','Special Aptitude','Clan Reference','Technique','Level Choice'].includes(r.kind)||!r.description||!r.sourcePages?.length||!r.prerequisites)throw Error('Invalid Tensai entry: '+r.name);ids.add(r.id);}return rows;

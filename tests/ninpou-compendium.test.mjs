@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {parseHTML} from 'linkedom';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const catalog=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-common-ninpou__items.json',import.meta.url)));
 const support=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-sealing-medical__items.json',import.meta.url)));
 const hooks={};globalThis.Hooks={once:(name,cb)=>hooks[name]=cb,on(){}};globalThis.FormApplication=class{};globalThis.fetch=async url=>({ok:true,json:async()=>structuredClone(url.includes('sns-sealing-medical')?support:catalog)});

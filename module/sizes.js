@@ -30,10 +30,10 @@ export function correctedSizeDetails(size){
  return {...size,id:s.id,label:s.label,strengthModifier:s.str,vigorModifier:s.vig,attackVsMedium:s.attack,reachMeters:s.reach,stealthModifier:s.stealth,intimidateModifier:s.intimidate,movementMeters:s.move,heightReference:s.height,weightReference:s.weight,tokenSquares:size.tokenSquares??s.grid};
 }
 export async function repairSummonSize(actor){
- const p=actor?.flags?.['shinobi-no-sho-revamp']?.summonProfile;
+ const p=actor?.flags?.['shini-no-sho-altered']?.summonProfile;
  if(!actor?.isOwner||!p?.size?.id)return false;
  const size=correctedSizeDetails(p.size);if(JSON.stringify(size)===JSON.stringify(p.size))return false;
- await actor.update({'flags.shinobi-no-sho-revamp.summonProfile.size':size,'system.energias.tamanho':size.label});return true;
+ await actor.update({'flags.shini-no-sho-altered.summonProfile.size':size,'system.energias.tamanho':size.label});return true;
 }
 export function openSnsSizeReference(){
  const row=s=>`<tr><td>${s.label}</td><td>${s.str>0?'+':''}${s.str}</td><td>+${s.attack}</td><td>${s.reach}m</td><td>${s.stealth>0?'+':''}${s.stealth}</td><td>${s.intimidate>0?'+':''}${s.intimidate}</td><td>${s.move>0?'+':''}${s.move}m</td><td>${s.height}</td><td>${s.weight}</td></tr>`;

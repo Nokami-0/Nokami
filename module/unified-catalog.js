@@ -1,4 +1,4 @@
-const SYS = 'shinobi-no-sho-revamp';
+const SYS = 'shini-no-sho-altered';
 const BASE = `systems/${SYS}/integrated`;
 const FLAG = 'unifiedCatalogId';
 const IMG = `${BASE}/assets/icons`;

@@ -2,7 +2,7 @@ import {placeSnsWeaponArea} from './sns-weapon-area.js';
 import { ShinobiActorSheet } from './actor-sheet.js';
 import {puppetStatistics,puppetAptitudes,puppetCurrentAbsorption,promptCustomPuppet,puppetSlotSummary,puppetDeviceDamage,spendPuppetDeviceUse,registerPuppetMenu,buildPuppetCompendium} from './puppets.js';
 import {rollShinobiTest} from './dice.js';
-const SYS='shinobi-no-sho-revamp';const Base=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
+const SYS='shini-no-sho-altered';const Base=foundry.appv1?.sheets?.ActorSheet??globalThis.ActorSheet;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export class PuppetActorSheet extends ShinobiActorSheet{
  static get defaultOptions(){return foundry.utils.mergeObject(super.defaultOptions,{classes:['shinobi','sheet','actor','puppet'],tabs:[{navSelector:".sheet-tabs[data-group='primary']",contentSelector:'.sheet-body',initial:'overview'}]});}

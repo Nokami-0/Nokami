@@ -1,13 +1,17 @@
 {
-  "id": "shinobi-no-sho-revamp",
+  "id": "shini-no-sho-altered",
   "title": "Shini no Sho Altered (ENG)",
-  "description": "Nokami-0's English edition of Shinobi no Sho Revamp. Updates and downloads are served from Nokami-0/Nokami, branch shinobi-no-sho. Original system by Nela Trex/NelaTrex.",
-  "version": "1.7.82",
+  "description": "An English Foundry VTT system maintained and distributed by Nokami-0.",
+  "version": "1.7.83",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
   },
   "authors": [
+    {
+      "name": "Nokami-0 (English edition maintainer)",
+      "url": "https://github.com/Nokami-0"
+    },
     {
       "name": "Nela Trex/NelaTrex"
     }
@@ -25,7 +29,7 @@
     "module/restricted-powers.js"
   ],
   "template": "template.json",
-  "url": "https://github.com/Nokami-0/Nokami/tree/shinobi-no-sho",
-  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/shinobi-no-sho/system.json",
-  "download": "https://github.com/Nokami-0/Nokami/archive/refs/heads/shinobi-no-sho.zip"
+  "url": "https://github.com/Nokami-0/Nokami/tree/shini-no-sho-altered",
+  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/shini-no-sho-altered/system.json",
+  "download": "https://github.com/Nokami-0/Nokami/archive/refs/heads/shini-no-sho-altered.zip"
 }

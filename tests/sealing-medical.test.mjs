@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {parseHTML} from 'linkedom';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-sealing-medical__items.json',import.meta.url)));
 globalThis.Hooks={once(){},on(){}};globalThis.FormApplication=class{};
 const {validateSupportNinjutsuCatalog,ninpouFolderPath,ninpouItem,filterNinpouEntries,openNinpouBrowser}=await import('../module/ninpou-compendium.js');

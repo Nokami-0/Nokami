@@ -1,5 +1,5 @@
 import {normalizeSummonProfile} from './summon-rules.js';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 export function summonSheetContext(actor,actors){
  const profile=normalizeSummonProfile(actor.getFlag?.(SYS,'summonProfile'));
  const isSummon=Boolean(profile||actor.getFlag?.(SYS,'summonTemplate'));

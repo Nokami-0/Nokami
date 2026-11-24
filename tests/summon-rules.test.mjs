@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
 import {normalizeSummonProfile,summonStats,summonNCCap,summonQuantityLegal,skillKey,syncSummonSpecies,SUMMON_REVISION,summonRollRestriction} from '../module/summon-rules.js';
 import {summonEquipmentBase,dokiEquipment} from '../module/doki-equipment.js';
-const SYS='shinobi-no-sho-revamp';
+const SYS='shini-no-sho-altered';
 const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-kuchiyose-actors__summons.json',import.meta.url)));
 globalThis.Hooks={once(){},on(){}};globalThis.fetch=async()=>({ok:true,json:async()=>rows});
 const {buildKuchiyoseTemplate}=await import('../module/kuchiyose-engine.js');
