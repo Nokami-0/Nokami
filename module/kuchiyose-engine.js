@@ -155,7 +155,7 @@ async function summon(owner,p,level,qty,mode,nc,sizeId){
    const pos=freePosition(token,scene,size.grid,spawned);
    if(!pos)throw new Error('No available map space for summon size.');
    const td=await actor.getTokenDocument({...pos,width:size.grid,height:size.grid,actorLink:true,flags:{[SYS]:{summonedBy:owner.id,summonScene:scene.id}}});
-   const docs=await scene.createEmbeddedDocuments('Token',[td.toObject()]);spawned.push(...docs);
+   const docs=await scene.createEmbeddedDocuments('Token',[td.toObject()],{shiniSummonEffect:true});spawned.push(...docs);
    // Select new summon for the summoner when their client is performing the summon.
    if(game.user.id===Object.keys(actor.ownership||{}).find(id=>id!=='default'&&actor.ownership[id]>=3)){
      const placed=canvas.tokens.get(docs[0]?.id);if(placed)placed.control({releaseOthers:true});
