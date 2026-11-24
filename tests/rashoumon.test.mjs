@@ -47,7 +47,7 @@ test('failed placement refunds chakra and removes generated actor',async()=>{
 test('catalog dispatch uses gate template without creature NC or invented attacks',()=>{
  const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-kuchiyose-actors__summons.json',import.meta.url)));assert.equal(rows.filter(r=>r.specialSummon==='rashoumon').length,1);
  const t=rashoumonTemplate();assert.equal(t.type,'personagem');assert.equal(t.items.length,0);assert.equal(t.flags.core.sheetClass,`${SYS}.RashoumonSheet`);assert.equal(t.flags[SYS].summonProfile,undefined);
- const source=fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8');assert.match(source,/if\(p.specialSummon==='rashoumon'\)return openRashoumonDialog\(owner\)/);assert.match(source,/if\(p.specialSummon==='rashoumon'\)return rashoumonTemplate\(\)/);
+ const source=fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8');assert.match(source,/if\(qty===1&&selections\[0\].profile.specialSummon==='rashoumon'\)return openRashoumonDialog\(owner\)/);assert.match(source,/if\(p.specialSummon==='rashoumon'\)return rashoumonTemplate\(\)/);
 });
 test('gate sheet registers and renders dimensions and editable per-token Hardness',async()=>{
  let registration;globalThis.Hooks={once:(name,callback)=>callback()};

@@ -30,5 +30,5 @@ test('full reference dialog displays all ten rows and NC thresholds',()=>{
  let content;globalThis.Dialog=class{constructor(data){content=data.content;}render(){return this;}};openSnsSizeReference();for(const s of SNS_SIZE_TABLE)assert.ok(content.includes(s.label));assert.match(content,/minimum NC 14/);
 });
 test('invalid NC sizes retain a visible error and the dropdown includes the correct six rows',()=>{
- const s=fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8');assert.match(s,/\[fixedSize\(profile\|\|\{\}\)\]:NORMAL_SUMMON_SIZES/);assert.match(s,/else html.find\('\.sns-size-info'\)/);
+ const s=fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8');assert.match(s,/locked\?\[locked\]:NORMAL_SUMMON_SIZES/);assert.match(s,/No legal size at NC/);
 });

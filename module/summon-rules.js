@@ -55,3 +55,21 @@ export async function syncSummonSpecies(actor,species,templateFactory){
 }
 
 
+
+export function summonContractFamily(profile) {
+ return profile.contract || profile.name;
+}
+
+export function summonGroupError(profiles, existingContract) {
+ if(!profiles.length||profiles.some(profile=>!profile))return 'Select a creature in every row.';
+ const quantity=profiles.length;
+ if(profiles.some(profile=>profile.specialSummon==='rashoumon'))return 'Rashoumon must be summoned separately.';
+ const family=summonContractFamily(profiles[0]);
+ if(existingContract&&existingContract!==family)return `Only one blood contract: ${existingContract}.`;
+ if(profiles.some(profile=>summonContractFamily(profile)!==family))return 'All creatures must share the same blood contract.';
+ const limited=profiles.find(profile=>!summonQuantityLegal(profile,quantity));
+ if(limited)return `Quantity for ${limited.name}: 1–${limited.maximumQuantity||2}.`;
+ const doki=profiles.filter(profile=>profile.dokiWeapon).map(profile=>profile.dokiWeapon);
+ if(new Set(doki).size!==doki.length)return 'Select different Doki variants for this cast.';
+ return null;
+}
