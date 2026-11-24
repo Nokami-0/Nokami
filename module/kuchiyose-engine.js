@@ -79,7 +79,7 @@ export async function loadKuchiyoseSpecies(){
 export function buildKuchiyoseTemplate(p){
  if(p.specialSummon==='rashoumon')return rashoumonTemplate();
  const locked=fixedSize(p),size=sizeById(locked||speciesSize(p,4));
- const nc=Math.max(4,Number.isFinite(size.minNC)?size.minNC:4);
+ const nc=locked?4:Math.max(4,Number.isFinite(size.minNC)?size.minNC:4);
  const skills=String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
  const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
  const profile=profileFor(p,nc,size,{template:true});
@@ -95,7 +95,7 @@ export function buildKuchiyoseTemplate(p){
   'Innate / conditional / summoner techniques: '+(p.techniques||'None'),
   'Listed attacks: '+(p.attacks_description||attacks(p).map(a=>a.join(' — ')).join('; ')||'See source; no attack invented'),
   'Prerequisite: '+(p.prerequisite||'Follow species and summoning source rules'),
-  'Size: '+size.label+'; template NC '+nc+' is the existing size engine minimum, not a printed fixed NPC level.',
+  'Size: '+size.label+'; template NC '+nc+' is a starting value for this compendium template.',
   'NC 4: 12 attribute points. Higher NC: allocate according to the source progression. Vitality is half normal; power points are floor(NC/2). Check source exceptions.',
   p.notes||'',p.stats_status||''
  ].filter(Boolean).join('\n\n');
@@ -224,12 +224,6 @@ function dialog(owner){
      const cap=summonNCCap(profile,level,qty);
      ncInput.prop('disabled',false).attr('max',cap);
      const locked=fixedSize(profile);
-     const speciesIndex=row.find('[name=species]').val();
-     if(locked&&element.dataset.speciesIndex!==speciesIndex){
-      const minimum=sizeById(locked).minNC;
-      if(Number(ncInput.val())<minimum&&minimum<=cap)ncInput.val(minimum);
-     }
-     element.dataset.speciesIndex=speciesIndex;
      if(Number(ncInput.val())>cap)ncInput.val(cap);
      const nc=Number(ncInput.val());
      const choices=locked?[locked]:NORMAL_SUMMON_SIZES;

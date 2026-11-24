@@ -28,8 +28,8 @@ export function isSummonSizeLegal(p,size,nc,fixed=null){
  size=canonicalSizeId(size);fixed=fixed?canonicalSizeId(fixed):null;
  if(!Number.isInteger(nc)||nc<0)return false;
  const s=SNS_SIZE_TABLE.find(s=>s.id===size);if(!s)return false;
- if(fixed&&size!==fixed)return false;
- if(!fixed&&!NORMAL_SUMMON_SIZES.includes(size))return false;
+ if(fixed)return size===fixed;
+ if(!NORMAL_SUMMON_SIZES.includes(size))return false;
  if(nc<s.minNC||nc>(s.maxNC??Infinity))return false;
  if(/salamander/i.test(p.name||'')&&!['child','small','medium','large','huge'].includes(size))return false;
  if(/bee swarm/i.test(p.name||'')&&!['medium',...(nc>=12?['large']:[]),...(nc>=14?['huge']:[])].includes(size))return false;
@@ -68,5 +68,5 @@ export async function repairSummonSize(actor){
 }
 export function openSnsSizeReference(){
  const row=s=>`<tr><td>${s.label}</td><td>${s.str>0?'+':''}${s.str}</td><td>+${s.attack}</td><td>${s.reach}m</td><td>${s.stealth>0?'+':''}${s.stealth}</td><td>${s.intimidate>0?'+':''}${s.intimidate}</td><td>${s.move>0?'+':''}${s.move}m</td><td>${s.height}</td><td>${s.weight}</td></tr>`;
- return new Dialog({title:'Creature Sizes — Basic Book 271–272',content:`<div style="overflow:auto"><table><thead><tr><th>Size</th><th>STR/VIG</th><th>Attack vs Medium</th><th>Reach</th><th>Stealth</th><th>Intimidate</th><th>Move</th><th>Height/length</th><th>Weight</th></tr></thead><tbody>${SNS_SIZE_TABLE.map(row).join('')}</tbody></table></div><p>Labels distinguish duplicate machine translations. The third tier (Little, translated as Kid) is the smallest normal Kuchiyose option: minimum NC 14. Small: maximum NC 8; Large: minimum NC 12; Huge: 14; Immense: 16. Species restrictions still apply. Strength/Vigor adjustments are applied after character creation; Strength size bonuses do not increase Melee Combat accuracy. Temporary size changes do not grant the permanent-size prerequisite/Vitality benefits. Movement never falls below 1m. Attack adjustments apply against Dodge, Block or Anticipate; you cannot Block an enemy at least two categories larger.</p>`,buttons:{close:{label:'Close'}},width:1000}).render(true);
+ return new Dialog({title:'Creature Sizes — Basic Book 271–272',content:`<div style="overflow:auto"><table><thead><tr><th>Size</th><th>STR/VIG</th><th>Attack vs Medium</th><th>Reach</th><th>Stealth</th><th>Intimidate</th><th>Move</th><th>Height/length</th><th>Weight</th></tr></thead><tbody>${SNS_SIZE_TABLE.map(row).join('')}</tbody></table></div><p>Labels distinguish duplicate machine translations. The third tier (Little, translated as Kid) is the smallest normal Kuchiyose option: minimum NC 14. Small: maximum NC 8; Large: minimum NC 12; Huge: 14; Immense: 16. Species with a fixed size use that size at any otherwise legal NC. Strength/Vigor adjustments are applied after character creation; Strength size bonuses do not increase Melee Combat accuracy. Temporary size changes do not grant the permanent-size prerequisite/Vitality benefits. Movement never falls below 1m. Attack adjustments apply against Dodge, Block or Anticipate; you cannot Block an enemy at least two categories larger.</p>`,buttons:{close:{label:'Close'}},width:1000}).render(true);
 }

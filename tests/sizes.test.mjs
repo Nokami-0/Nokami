@@ -15,7 +15,11 @@ test('normal Kuchiyose uses the third size tier, not either smaller Tiny row',()
 test('species-fixed exceptions and legacy IDs remain valid',()=>{
  assert.equal(isSummonSizeLegal({contract:'Bees'},'tiny',4,'tiny'),true);
  assert.equal(isSummonSizeLegal({contract:'Bees'},'child',14,'tiny'),false);
- assert.equal(isSummonSizeLegal({name:'Doki'},'huge',14,'huge'),true);
+ assert.equal(isSummonSizeLegal({name:'Doki'},'huge',3,'huge'),true);
+ assert.equal(isSummonSizeLegal({name:'Doki'},'medium',3,'huge'),false);
+ assert.equal(isSummonSizeLegal({name:'Doki'},'huge',-1,'huge'),false);
+ assert.equal(isSummonSizeLegal({},'huge',3),false);
+ assert.equal(isSummonSizeLegal({},'small',9,'small'),true);
  assert.equal(sizeById('immense').id,'gargantuan');assert.equal(sizeById('little').id,'child');
  assert.equal(isSummonSizeLegal({},'immense',16),true);
 });
