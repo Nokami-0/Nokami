@@ -122,7 +122,7 @@ function freePosition(t,scene,squares=1,spawned=[]){
 }
 async function summon(owner,selections,level,mode){
  const qty=selections.length;
- if(qty===1&&selections[0].profile.specialSummon==='rashoumon')return openRashoumonDialog(owner);
+ if(qty===1&&selections[0].profile?.specialSummon==='rashoumon')return openRashoumonDialog(owner);
  if(!game.user.isGM)return ui.notifications.warn('GM permission required to spawn and deduct chakra.');
  const token=canvas.tokens.controlled.find(t=>t.actor?.id===owner.id);if(!token)return ui.notifications.warn('Select the summoner token on the canvas.');
  const scene=canvas.scene;if(!scene)return ui.notifications.warn('Open a scene first.');
@@ -159,10 +159,6 @@ async function summon(owner,selections,level,mode){
    if(!pos)throw new Error('No available map space for summon size.');
    const td=await actor.getTokenDocument({...pos,width:size.grid,height:size.grid,actorLink:true,flags:{[SYS]:{summonedBy:owner.id,summonScene:scene.id}}});
    const docs=await scene.createEmbeddedDocuments('Token',[td.toObject()]);spawned.push(...docs);
-   // Select new summon for the summoner when their client is performing the summon.
-   if(game.user.id===Object.keys(actor.ownership||{}).find(id=>id!=='default'&&actor.ownership[id]>=3)){
-     const placed=canvas.tokens.get(docs[0]?.id);if(placed)placed.control({releaseOthers:true});
-   }
 
   }
   if(!pact)await owner.setFlag(SYS,'summonContract',summonContractFamily(profiles[0]));await owner.setFlag(SYS,'summonSceneUsage',{scene:scene.id,count:count+1,restricted:(used.scene===scene.id&&!!used.restricted)||mode==='hijutsu',common:(used.scene===scene.id&&!!used.common)||mode==='common'});
@@ -171,7 +167,14 @@ async function summon(owner,selections,level,mode){
 }
 function dialog(owner){
  const catalog=list();
- const options=catalog.map((profile,index)=>`<option value="${index}">${esc(profile.name)} (${esc(profile.group)})</option>`).join('');
+ const pact=owner.getFlag(SYS,'summonContract');
+ const pactFamily=catalog.find(profile=>profile.name===pact)?.contract||pact;
+ const usage=owner.getFlag(SYS,'summonSceneUsage');
+ const usedHere=usage?.scene===canvas.scene?.id&&usage?.count>0;
+ const defaultMode=usedHere&&usage.restricted===true&&!usage.common?'common':'hijutsu';
+ const matching=profile=>!pactFamily||summonContractFamily(profile)===pactFamily;
+ const firstMatch=catalog.findIndex(profile=>matching(profile)&&profile.specialSummon!=='rashoumon');
+ const options=catalog.map((profile,index)=>`<option value="${index}" ${matching(profile)||profile.specialSummon==='rashoumon'?'':'disabled'}>${esc(profile.name)} (${esc(profile.group)})</option>`).join('');
  const quantities=Array.from({length:8},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');
  const rowMarkup=(index)=>`<fieldset class="sns-creature-row"><legend>Creature ${index+1}</legend>
   <div class="form-group"><label>Creature</label><select name="species" aria-label="Creature ${index+1}">${options}</select></div>
@@ -187,12 +190,15 @@ function dialog(owner){
   title:'Kuchiyose — Summon Creature',
   content:`<form><div class="form-group"><label>Power level used</label><input type="number" name="level" min="1" value="${num(owner.getFlag(SYS,'kuchiyoseLevel'))||1}"></div>
    <div class="form-group"><label>Quantity</label><select name="qty">${quantities}</select></div>
+   ${pactFamily?`<p>Blood contract: <strong>${esc(pactFamily)}</strong></p>`:""}
    <div class="sns-creature-rows" style="max-height:45vh;overflow:auto">${rowMarkup(0)}</div>
    <div class="form-group"><label>Kuchiyose type</label><select name="mode"><option value="hijutsu">Restricted Hijutsu</option><option value="common">Common Power (−3)</option></select></div>
    <p class="sns-qty-help"></p><p>A GM must allocate NC 4+ attributes and energies using the character creation table.</p></form>`,
   buttons:{cast:{label:'Summon',callback:html=>summon(owner,readRows(html),Number(html.find('[name=level]').val()),html.find('[name=mode]').val())}},
   render:html=>{
    const rows=html.find('.sns-creature-rows');
+   if(firstMatch>=0)rows.find('[name=species]').val(String(firstMatch));
+   html.find('[name=mode]').val(defaultMode);
    const update=()=>{
     const first=readRows(html)[0]?.profile;
     const special=first?.specialSummon==='rashoumon';
@@ -238,7 +244,7 @@ function dialog(owner){
       :`No legal size at NC ${nc}. Adjust the power level or NC (maximum ${cap}).`;
      row.find('.sns-size-info').text(info);
     });
-    const error=summonGroupError(readRows(html).map(({profile})=>profile));
+    const error=summonGroupError(readRows(html).map(({profile})=>profile),pactFamily);
     html.find('.sns-qty-help').text(error||`One cast · ${2*level} chakra (current: ${num(owner.system?.energias?.chakra?.value)})`);
    };
    html.on('change','[name=qty], [name=species]',update);
