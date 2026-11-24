@@ -1,8 +1,8 @@
 {
   "id": "shinobi-no-sho-revamp",
-  "title": "shinobi no sho (english)",
+  "title": "Shini no Sho Altered (ENG)",
   "description": "Nokami-0's English edition of Shinobi no Sho Revamp. Updates and downloads are served from Nokami-0/Nokami, branch shinobi-no-sho. Original system by Nela Trex/NelaTrex.",
-  "version": "1.7.81",
+  "version": "1.7.82",
   "compatibility": {
     "minimum": "12",
     "verified": "13"

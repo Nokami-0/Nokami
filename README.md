@@ -1,4 +1,4 @@
-# Shinobi no Sho — Revamp (English)
+# Shini no Sho Altered (ENG)
 
 Foundry VTT system, hosted for Nokami-0 on the dedicated `shinobi-no-sho` branch. Sonic Tag-Team Heroes remains on `main`.
 
