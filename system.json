@@ -2,7 +2,7 @@
   "id": "shini-no-sho-altered",
   "title": "Shini no Sho Altered (ENG)",
   "description": "An English Foundry VTT system maintained and distributed by Nokami-0.",
-  "version": "1.7.91",
+  "version": "1.7.92",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -27,7 +27,8 @@
     "module/ninpou-compendium.js",
     "module/rashoumon-sheet.js",
     "module/puppet-sheet.js",
-    "module/restricted-powers.js"
+    "module/restricted-powers.js",
+    "module/campaign-time.mjs"
   ],
   "url": "https://github.com/Nokami-0/Nokami/tree/shini-no-sho-altered",
   "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/shini-no-sho-altered/system.json",
@@ -42,5 +43,8 @@
       "aptidao": {},
       "elemento": {}
     }
-  }
+  },
+  "styles": [
+    "styles/campaign-time.css"
+  ]
 }

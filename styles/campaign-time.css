@@ -1,0 +1,42 @@
+.sns-campaign-time-window .sns-clock-body {display:grid; gap:12px; padding:16px; overflow:auto}
+.sns-campaign-time-window .sns-clock-header,.sns-campaign-time-window .sns-clock-nav {display:flex; align-items:center; justify-content:space-between; gap:8px}
+.sns-campaign-time-window .sns-clock-time {font-size:1.8rem; font-variant-numeric:tabular-nums}
+.sns-campaign-time-window .sns-clock-phases {list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(75px,1fr)); gap:4px; padding:0; margin:0}
+.sns-campaign-time-window .sns-clock-phases li {padding:5px 3px; text-align:center; border-radius:4px}
+.sns-campaign-time-window .sns-clock-phases span {display:block; font-size:.72rem; white-space:nowrap}
+.sns-campaign-time-window .sns-clock-grid {display:grid; grid-template-columns:repeat(7,1fr); gap:3px; text-align:center}
+.sns-campaign-time-window .sns-clock-grid span {min-height:1.75rem; padding:4px}
+.sns-campaign-time-window .sns-clock-body [aria-current] {background:var(--sns-blue,#174977); color:#fff; border-radius:4px}
+.sns-campaign-time-window .sns-clock-controls,.sns-campaign-time-window .sns-clock-set {display:flex; flex-wrap:wrap; align-items:center; gap:6px}
+.sns-campaign-time-window .sns-clock-body button {width:auto; flex:0 1 auto}
+
+.sns-campaign-time-window .sns-clock-weather {padding:8px; border:1px solid var(--sns-line,#cbd9e6); border-radius:4px}
+.sns-campaign-time-window .sns-clock-weather-list {display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-block:5px}
+.sns-campaign-time-window .sns-clock-weather-list button {min-height:1.4rem; line-height:1}
+
+/* Campaign weather is clipped to the board and never intercepts map input. */
+.sns-weather-overlay {position:fixed; z-index:1; overflow:hidden; pointer-events:none; container-type:size}
+.sns-weather-overlay span {position:absolute; display:block; pointer-events:none}
+.sns-rain-drop {
+  left:calc(var(--sns-place) * 1.22 + 4%); top:-50px; width:1.5px; height:var(--sns-span);
+  background:linear-gradient(transparent,rgba(190,226,255,.8));
+  animation:sns-rain-fall var(--sns-duration) linear var(--sns-delay) infinite;
+}
+.sns-wind-gust {
+  left:0; top:var(--sns-place); width:var(--sns-span); height:2px;
+  background:linear-gradient(90deg,transparent,rgba(228,245,255,.74),transparent);
+  box-shadow:15px 5px 8px -1px rgba(213,236,255,.45);
+  animation:sns-wind-blow var(--sns-duration) linear var(--sns-delay) infinite;
+}
+@keyframes sns-rain-fall {
+  from {transform:translate(-4cqw,0) rotate(13deg)}
+  to {transform:translate(-22cqw,calc(100cqh + 55px)) rotate(13deg)}
+}
+@keyframes sns-wind-blow {
+  from {transform:translateX(-210px); opacity:.12}
+  30%,70% {opacity:.8}
+  to {transform:translate(105cqw,-24px); opacity:.12}
+}
+@media (prefers-reduced-motion: reduce) {
+  .sns-rain-drop,.sns-wind-gust {animation-play-state:paused; opacity:.45}
+}
