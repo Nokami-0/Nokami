@@ -14,7 +14,7 @@ const TIMER = "campaignTimer";
 const LIGHTING = "clockLighting";
 const FOLLOW_WEATHER = "clockWeather";
 const RATES = [1, 10, 60, 240];
-const LIGHT_LEVELS = [[0,.9],[5,.9],[8,.15],[12,0],[16,.08],[20,.8],[24,.9]];
+const LIGHT_LEVELS = [[0,.98],[5,.98],[8,.18],[12,0],[16,.1],[20,.9],[24,.98]];
 const PRESETS = {
   Windy: /wind|leav/i, Foggy: /fog|mist/i, Snowy: /snow|blizzard/i,
   Rainy: /rain/i, Thunderstorm: /rainstorm|thunder|storm|rain/i, Sandstorm: /sand|dust/i,
@@ -52,7 +52,7 @@ export function changeFieldWeather(weather, action, type) {
 }
 
 const PARTICLES = "clockParticleWeather";
-const PARTICLE_PRESETS = {"sns-rain": "Rainy", "sns-wind": "Windy"};
+const PARTICLE_PRESETS = {"sns-rain": "Rainy", "sns-wind": "Windy", "sns-sun": "Sunny"};
 
 export function sceneParticleWeather(follow, conditions, override) {
   return follow ? normalizeWeather(conditions).filter(type => Object.values(PARTICLE_PRESETS).includes(type))
@@ -94,6 +94,12 @@ function registerWeatherParticles(systemId, Hooks) {
     overlay.className = "sns-weather-overlay";
     overlay.setAttribute("aria-hidden", "true");
     for (const type of types) {
+      if (type === "Sunny") {
+        const sun = document.createElement("div");
+        sun.className = "sns-sunny-light";
+        overlay.append(sun);
+        continue;
+      }
       const rain = type === "Rainy";
       const count = rain ? 84 : 28;
       for (let index = 0; index < count; index++) {
@@ -267,13 +273,22 @@ export function registerCampaignClock(systemId, Hooks) {
           const scene = this.sceneForEdit();
           if (!scene) return;
           const enabled = !scene.getFlag(systemId, LIGHTING);
-          if (enabled && scene.environment.darknessLevelLock) {
-            return ui.notifications.warn("Unlock Darkness Level in the scene settings first.");
+          if (enabled && scene.environment?.darknessLevelLock) {
+            return ui.notifications.warn("Unlock Darkness Level in Scene Configuration to enable automatic lighting.");
           }
-          await scene.update({
-            [`flags.${systemId}.${LIGHTING}`]: enabled,
-            ...(enabled ? {[darknessField(scene)]: darknessAt(game.time.worldTime)} : {})
-          }, {animateDarkness: 1000});
+          if (this.updatingLighting) return;
+          this.updatingLighting = true;
+          try {
+            const changes = {[`flags.${systemId}.${LIGHTING}`]: enabled};
+            if (enabled) changes[darknessField(scene)] = darknessAt(game.time.worldTime);
+            await scene.update(changes, {animateDarkness: 1000});
+            if (this.rendered) await this.render();
+          } catch (error) {
+            console.error("Shini no Sho day/night lighting could not update", error);
+            ui.notifications.error("Could not change day/night lighting for this scene.");
+          } finally {
+            this.updatingLighting = false;
+          }
         },
         async setVisualWeather() {
           const scene = this.sceneForEdit();
@@ -309,6 +324,7 @@ export function registerCampaignClock(systemId, Hooks) {
     monthOffset = 0;
     updating = false;
     updatingWeather = false;
+    updatingLighting = false;
 
     async _prepareContext(options) {
       const now = campaignDate(game.time.worldTime);
@@ -332,7 +348,7 @@ export function registerCampaignClock(systemId, Hooks) {
         rates: RATES.map(rate => ({rate, selected: rate === timer().rate})),
         followWeather: Boolean(scene?.getFlag(systemId, FOLLOW_WEATHER)),
         particlePresets: Object.entries(PARTICLE_PRESETS).map(([key, type]) => ({
-          key, name: type === "Rainy" ? "Shini no Sho Falling Rain" : "Shini no Sho Wind Gusts",
+          key, name: {Rainy: "Falling Rain", Windy: "Wind Gusts", Sunny: "Sunny Light"}[type],
           selected: !scene?.getFlag(systemId, FOLLOW_WEATHER) && scene?.getFlag(systemId, PARTICLES) === key
         })),
         visualPresets: Object.entries(CONFIG.weatherEffects ?? {}).map(([key, config]) => ({
@@ -416,6 +432,7 @@ export function registerCampaignClock(systemId, Hooks) {
         (changes.flags?.[systemId] || "weather" in changes || "name" in changes)) return clock.render();
   });
   Hooks.on("canvasReady", () => {
+    void syncLighting();
     if (clock?.rendered) return clock.render();
   });
   return () => (clock ??= new CampaignClock()).render({force: true});
