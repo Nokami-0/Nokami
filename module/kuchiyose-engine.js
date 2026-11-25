@@ -253,12 +253,54 @@ function dialog(owner){
   }
  }).render(true);
 }
+function activeSummons(scene, ownerId) {
+ return scene.tokens.filter(token =>
+  token.getFlag(SYS, 'summonedBy') === ownerId ||
+  (token.getFlag(SYS, 'rashoumonGate') === true && token.getFlag(SYS, 'rashoumonOwner') === ownerId)
+ );
+}
+
+function openDesummonDialog(owner) {
+ if (!game.user.isGM) return ui.notifications.warn('GM permission required to desummon creatures.');
+ const scene = canvas.scene;
+ if (!scene) return ui.notifications.warn('Open a scene first.');
+ const summons = activeSummons(scene, owner.id);
+ if (!summons.length) return ui.notifications.info('This summoner has no active summons on this scene.');
+ const options = summons.map(token => `<option value="${esc(token.id)}">${esc(token.name)}</option>`).join('');
+ const all = summons.length > 1 ? '<option value="all">All listed summons</option>' : '';
+ return new Dialog({
+  title: 'Desummon',
+  content: `<form><div class="form-group"><label for="sns-desummon-target">Summon</label><select id="sns-desummon-target" name="summon">${options}${all}</select></div></form>`,
+  buttons: {
+   dismiss: {
+    label: 'Desummon',
+    callback: async html => {
+     if (!game.user.isGM || canvas.scene?.id !== scene.id) return ui.notifications.warn('Return to the summon’s scene first.');
+     const choice = html.find('[name=summon]').val();
+     const selected = new Set(summons.filter(token => choice === 'all' || token.id === choice).map(token => token.id));
+     const ids = activeSummons(scene, owner.id).filter(token => selected.has(token.id)).map(token => token.id);
+     if (!ids.length) return ui.notifications.info('Those summons have already left the scene.');
+     try {
+      const removed = await scene.deleteEmbeddedDocuments('Token', ids);
+      ui.notifications.info(`Desummoned ${removed.length} summon(s).`);
+     } catch (error) {
+      console.error('Kuchiyose desummon failed', error);
+      ui.notifications.error('Could not remove the selected summons.');
+     }
+    }
+   },
+   cancel: {label: 'Cancel'}
+  },
+  default: 'cancel'
+ }).render(true);
+}
+
 function createCustom(owner){if(!game.user.isGM)return ui.notifications.warn('GM required.');new Dialog({title:'Create Custom Summon',content:'<form><label>Name <input name="name"></label><label>Image path <input name="img"></label><label>Skills (comma-separated) <input name="skills"></label></form>',buttons:{create:{label:'Create',callback:async html=>{const get=k=>String(html.find(`[name="${k}"]`).val()||'').trim();if(!get('name'))return ui.notifications.warn('Name required.');const p={name:get('name'),image:get('img'),skills:get('skills'),group:'Custom',source:'User-defined',key_attributes:'',notes:'Custom profile; assign aptitudes, attacks, and statistics manually.'};const a=await actorFor(p,4,owner,'hijutsu');await a.setFlag(SYS,'customSpecies',p);a.sheet.render(true);}}}}).render(true)}
 Hooks.once('ready',async()=>{try{await loadKuchiyoseSpecies()}catch(e){console.error(e);ui.notifications.warn('Could not load Kuchiyose species.')}});
 Hooks.on('renderActorSheet',(app,html)=>{if(app.actor.flags?.[SYS]?.puppetProfile||app.actor.flags?.[SYS]?.rashoumonGate||app.actor.type!=='personagem'||!app.isEditable||app.actor.getFlag(SYS,'summonProfile')||app.actor.getFlag(SYS,'summonTemplate'))return;const root=html instanceof jQuery?html:$(html);if(root.find('.sns-kuchiyose-engine').length)return;
- const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-open-kuchiyose">Summon Compendium</button><button type="button" class="sns-open-puppets">Puppets</button><button type="button" class="sns-size-reference">Size Reference</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div></section>`);
+ const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;flex-wrap:wrap;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-desummon">Desummon</button><button type="button" class="sns-open-kuchiyose">Summon Compendium</button><button type="button" class="sns-open-puppets">Puppets</button><button type="button" class="sns-size-reference">Size Reference</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div></section>`);
  const target=root.find('.sheet-body').first();(target.length?target:root.find('form').first()).prepend(panel);
- panel.find('.sns-open-puppets').on('click',()=>{const pack=game.packs.get('world.sns-puppets');if(pack)pack.render(true);else ui.notifications.warn('The GM can build Puppets — Initial Types in System Settings.');});panel.find('.sns-size-reference').on('click',()=>openSnsSizeReference());panel.find('.sns-klevel').on('change',e=>app.actor.setFlag(SYS,'kuchiyoseLevel',num(e.target.value)));panel.find('.sns-cast').on('click',()=>dialog(app.actor));panel.find('.sns-open-kuchiyose').on('click',()=>{const pack=game.packs.get('world.sns-kuchiyose');if(pack)pack.render(true);else ui.notifications.warn('Ask the GM to build the Kuchiyose compendium in System Settings.');});panel.find('.sns-custom').on('click',()=>createCustom(app.actor));panel.find('.sns-reset-scene').on('click',async()=>{if(!game.user.isGM)return ui.notifications.warn('GM only.');const yes=await Dialog.confirm({title:'Reset Kuchiyose Uses',content:'Reset this character’s Kuchiyose uses for the current scene? Use only when beginning a new scene.'});if(yes){await app.actor.setFlag(SYS,'summonSceneUsage',{scene:canvas.scene?.id||'',count:0});ui.notifications.info('Kuchiyose uses reset for this scene.');}});});
+ panel.find('.sns-open-puppets').on('click',()=>{const pack=game.packs.get('world.sns-puppets');if(pack)pack.render(true);else ui.notifications.warn('The GM can build Puppets — Initial Types in System Settings.');});panel.find('.sns-size-reference').on('click',()=>openSnsSizeReference());panel.find('.sns-klevel').on('change',e=>app.actor.setFlag(SYS,'kuchiyoseLevel',num(e.target.value)));panel.find('.sns-cast').on('click',()=>dialog(app.actor));panel.find('.sns-desummon').on('click',()=>openDesummonDialog(app.actor));panel.find('.sns-open-kuchiyose').on('click',()=>{const pack=game.packs.get('world.sns-kuchiyose');if(pack)pack.render(true);else ui.notifications.warn('Ask the GM to build the Kuchiyose compendium in System Settings.');});panel.find('.sns-custom').on('click',()=>createCustom(app.actor));panel.find('.sns-reset-scene').on('click',async()=>{if(!game.user.isGM)return ui.notifications.warn('GM only.');const yes=await Dialog.confirm({title:'Reset Kuchiyose Uses',content:'Reset this character’s Kuchiyose uses for the current scene? Use only when beginning a new scene.'});if(yes){await app.actor.setFlag(SYS,'summonSceneUsage',{scene:canvas.scene?.id||'',count:0});ui.notifications.info('Kuchiyose uses reset for this scene.');}});});
 Hooks.on('renderActorSheet',(app,html)=>{
  const actor=app.actor,profile=normalizeSummonProfile(actor.getFlag(SYS,'summonProfile'));
  if(!profile||!actor.testUserPermission(game.user,'OWNER'))return;
