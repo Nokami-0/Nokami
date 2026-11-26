@@ -18,6 +18,7 @@ let building;
 const placeholderArt = 'icons/svg/mystery-man.svg';
 const tokenDirectory = `systems/${SYS}/assets/tokens/bestiary`;
 const henchmanTokenNames = {
+ 'Hoshigakure:0': 'hoshi-shinobi',
  'land-of-iron:samurai-henchman': 'land-of-iron-samurai',
  'otogakure:masked-henchman': 'oto-masked-ninja',
  'konohagakure:chunin-examiner': 'konoha-chunin-examiner',
