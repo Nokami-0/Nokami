@@ -1,0 +1,76 @@
+<section class="sns-clock-body">
+  <header class="sns-clock-header">
+    <div><strong>{{dateLabel}}</strong><br><span>{{phase}}</span></div>
+    <strong class="sns-clock-time">{{time}}</strong>
+  </header>
+  <ul class="sns-clock-phases" aria-label="Time phases">
+    {{#each phases}}<li {{#if active}}aria-current="time"{{/if}}><strong>{{label}}</strong> <span>{{range}}</span></li>{{/each}}
+  </ul>
+  <section class="sns-clock-weather" data-weather-scene="{{sceneId}}" aria-label="Field weather">
+    <strong>Field Weather</strong>{{#if scene}} <span>· {{scene}}</span>{{/if}}
+    {{#if scene}}
+      <div class="sns-clock-weather-list">
+        {{#each weather}}
+          <span>{{this}}{{#if @root.isGM}} <button type="button" data-action="removeWeather" data-weather="{{this}}" aria-label="Remove {{this}}">×</button>{{/if}}</span>
+        {{else}}
+          <span>Clear</span>
+        {{/each}}
+      </div>
+      {{#if isGM}}
+        <div class="sns-clock-controls">
+          <select name="visualWeather" aria-label="Scene weather effect">
+            <option value="">No effect</option>
+            <option value="follow" {{#if followWeather}}selected{{/if}}>Follow field weather</option>
+            {{#each particlePresets}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+            {{#each visualPresets}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+          </select>
+          <button type="button" data-action="setVisualWeather">Apply Effect</button>
+          <button type="button" data-action="toggleLighting" aria-pressed="{{lighting}}">Day/Night Lighting {{#if lighting}}On{{else}}Off{{/if}}</button>
+        </div>
+        <div class="sns-clock-controls">
+          <select name="weatherType" aria-label="Weather to add">
+            {{#each weatherTypes}}<option value="{{this}}">{{this}}</option>{{/each}}
+          </select>
+          <button type="button" data-action="addWeather">Add Weather</button>
+          {{#if weather.length}}<button type="button" data-action="clearWeather">Clear Weather</button>{{/if}}
+        </div>
+      {{/if}}
+    {{else}}
+      <div>Open a scene to track weather.</div>
+    {{/if}}
+  </section>
+  <nav class="sns-clock-nav" aria-label="Calendar navigation">
+    <button type="button" data-action="previousMonth" aria-label="Previous month">‹</button>
+    <strong>{{calendar.label}}</strong>
+    <button type="button" data-action="nextMonth" aria-label="Next month">›</button>
+    <button type="button" data-action="currentMonth">Current Month</button>
+  </nav>
+  <div class="sns-clock-grid">
+    <strong>Sun</strong><strong>Mon</strong><strong>Tue</strong><strong>Wed</strong><strong>Thu</strong><strong>Fri</strong><strong>Sat</strong>
+    {{#each calendar.cells}}<span {{#if current}}aria-current="date"{{/if}}>{{day}}</span>{{/each}}
+  </div>
+  <div class="sns-clock-controls" aria-label="Campaign timer">
+    <strong>Timer {{#if timerRunning}}Running{{else}}Paused{{/if}}</strong>
+    {{#if isGM}}
+      <button type="button" data-action="toggleTimer">{{#if timerRunning}}Pause{{else}}Start{{/if}}</button>
+      <select name="clockRate" aria-label="Timer speed">
+        {{#each rates}}<option value="{{rate}}" {{#if selected}}selected{{/if}}>{{rate}}×</option>{{/each}}
+      </select>
+      <button type="button" data-action="setRate">Set Speed</button>
+    {{/if}}
+  </div>
+  {{#if isGM}}
+    <div class="sns-clock-controls">
+      <button type="button" data-action="advanceTime" data-seconds="600">+10 Min</button>
+      <button type="button" data-action="advanceTime" data-seconds="3600">+1 Hour</button>
+      <button type="button" data-action="advanceTime" data-seconds="14400">+4 Hours</button>
+      <button type="button" data-action="advanceTime" data-seconds="86400">+1 Day</button>
+      <button type="button" data-action="nextPhase">Next Phase</button>
+    </div>
+    <div class="sns-clock-set">
+      <label for="sns-module-campaign-date">Campaign date and time</label>
+      <input id="sns-module-campaign-date" type="datetime-local" name="campaignTime" value="{{inputTime}}">
+      <button type="button" data-action="setTime">Set</button>
+    </div>
+  {{/if}}
+</section>

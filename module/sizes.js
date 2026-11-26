@@ -14,12 +14,22 @@ export const SNS_SIZE_TABLE=[
 export const NORMAL_SUMMON_SIZES=['child','small','medium','large','huge','gargantuan'];
 export const canonicalSizeId=id=>({immense:'gargantuan',minuscule:'minute',little:'child',kid:'child',average:'medium',big:'large'}[id]||id);
 export function sizeById(id){return SNS_SIZE_TABLE.find(s=>s.id===canonicalSizeId(id))||SNS_SIZE_TABLE[4];}
+export function fixedSize(p = {}){
+ // Catalog fixedSize is authoritative for named summons, including Animal Path.
+ if(p.fixedSize)return canonicalSizeId(p.fixedSize);
+ const n=String(p.name||'').toLowerCase();
+ if(/doki/.test(n))return 'huge';
+ if(/bee \(individual\)/.test(n))return 'tiny';
+ if(/giant bee/.test(n))return 'huge';
+ if(/ordinary spider|spider \(ordinary\)/.test(n))return 'medium';
+ return null;
+}
 export function isSummonSizeLegal(p,size,nc,fixed=null){
  size=canonicalSizeId(size);fixed=fixed?canonicalSizeId(fixed):null;
  if(!Number.isInteger(nc)||nc<0)return false;
  const s=SNS_SIZE_TABLE.find(s=>s.id===size);if(!s)return false;
- if(fixed&&size!==fixed)return false;
- if(!fixed&&!NORMAL_SUMMON_SIZES.includes(size))return false;
+ if(fixed)return size===fixed;
+ if(!NORMAL_SUMMON_SIZES.includes(size))return false;
  if(nc<s.minNC||nc>(s.maxNC??Infinity))return false;
  if(/salamander/i.test(p.name||'')&&!['child','small','medium','large','huge'].includes(size))return false;
  if(/bee swarm/i.test(p.name||'')&&!['medium',...(nc>=12?['large']:[]),...(nc>=14?['huge']:[])].includes(size))return false;
@@ -29,13 +39,34 @@ export function correctedSizeDetails(size){
  const id=canonicalSizeId(size?.id);const s=SNS_SIZE_TABLE.find(s=>s.id===id);if(!s)return size;
  return {...size,id:s.id,label:s.label,strengthModifier:s.str,vigorModifier:s.vig,attackVsMedium:s.attack,reachMeters:s.reach,stealthModifier:s.stealth,intimidateModifier:s.intimidate,movementMeters:s.move,heightReference:s.height,weightReference:s.weight,tokenSquares:size.tokenSquares??s.grid};
 }
+export function lockedSummonSize(actor){
+ const flags=actor?.flags?.['shinobi-no-sho-revamp'];
+ if(!flags?.summonProfile)return null;
+ const profile=flags.kuchiyoseSpecies??{name:flags.summonProfile.species};
+ const id=fixedSize(profile);
+ return SNS_SIZE_TABLE.find(size=>size.id===id)??null;
+}
 export async function repairSummonSize(actor){
  const p=actor?.flags?.['shinobi-no-sho-revamp']?.summonProfile;
- if(!actor?.isOwner||!p?.size?.id)return false;
- const size=correctedSizeDetails(p.size);if(JSON.stringify(size)===JSON.stringify(p.size))return false;
- await actor.update({'flags.shinobi-no-sho-revamp.summonProfile.size':size,'system.energias.tamanho':size.label});return true;
+ if(!actor?.isOwner||!p)return false;
+ const locked=lockedSummonSize(actor);
+ if(!locked&&!p.size?.id)return false;
+ const size=correctedSizeDetails(locked?{...p.size,id:locked.id,tokenSquares:locked.grid}:p.size);
+ const updates={};
+ if(JSON.stringify(size)!==JSON.stringify(p.size))updates['flags.shinobi-no-sho-revamp.summonProfile.size']=size;
+ if(locked||Object.keys(updates).length){
+  if(actor.system?.energias?.tamanho!==size.label)updates['system.energias.tamanho']=size.label;
+ }
+ if(locked){
+  for(const axis of ['width','height'])if(actor.prototypeToken?.[axis]!==locked.grid)updates[`prototypeToken.${axis}`]=locked.grid;
+  const reach=`${locked.reach}m`;
+  if(actor.system?.energias?.alcance!==reach)updates['system.energias.alcance']=reach;
+ }
+ if(!Object.keys(updates).length)return false;
+ await actor.update(updates);
+ return true;
 }
 export function openSnsSizeReference(){
  const row=s=>`<tr><td>${s.label}</td><td>${s.str>0?'+':''}${s.str}</td><td>+${s.attack}</td><td>${s.reach}m</td><td>${s.stealth>0?'+':''}${s.stealth}</td><td>${s.intimidate>0?'+':''}${s.intimidate}</td><td>${s.move>0?'+':''}${s.move}m</td><td>${s.height}</td><td>${s.weight}</td></tr>`;
- return new Dialog({title:'Creature Sizes — Basic Book 271–272',content:`<div style="overflow:auto"><table><thead><tr><th>Size</th><th>STR/VIG</th><th>Attack vs Medium</th><th>Reach</th><th>Stealth</th><th>Intimidate</th><th>Move</th><th>Height/length</th><th>Weight</th></tr></thead><tbody>${SNS_SIZE_TABLE.map(row).join('')}</tbody></table></div><p>Labels distinguish duplicate machine translations. The third tier (Little, translated as Kid) is the smallest normal Kuchiyose option: minimum NC 14. Small: maximum NC 8; Large: minimum NC 12; Huge: 14; Immense: 16. Species restrictions still apply. Strength/Vigor adjustments are applied after character creation; Strength size bonuses do not increase Melee Combat accuracy. Temporary size changes do not grant the permanent-size prerequisite/Vitality benefits. Movement never falls below 1m. Attack adjustments apply against Dodge, Block or Anticipate; you cannot Block an enemy at least two categories larger.</p>`,buttons:{close:{label:'Close'}},width:1000}).render(true);
+ return new Dialog({title:'Creature Sizes — Basic Book 271–272',content:`<div style="overflow:auto"><table><thead><tr><th>Size</th><th>STR/VIG</th><th>Attack vs Medium</th><th>Reach</th><th>Stealth</th><th>Intimidate</th><th>Move</th><th>Height/length</th><th>Weight</th></tr></thead><tbody>${SNS_SIZE_TABLE.map(row).join('')}</tbody></table></div><p>Labels distinguish duplicate machine translations. The third tier (Little, translated as Kid) is the smallest normal Kuchiyose option: minimum NC 14. Small: maximum NC 8; Large: minimum NC 12; Huge: 14; Immense: 16. Species with a fixed size use that size at any otherwise legal NC. Strength/Vigor adjustments are applied after character creation; Strength size bonuses do not increase Melee Combat accuracy. Temporary size changes do not grant the permanent-size prerequisite/Vitality benefits. Movement never falls below 1m. Attack adjustments apply against Dodge, Block or Anticipate; you cannot Block an enemy at least two categories larger.</p>`,buttons:{close:{label:'Close'}},width:1000}).render(true);
 }

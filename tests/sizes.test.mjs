@@ -15,7 +15,11 @@ test('normal Kuchiyose uses the third size tier, not either smaller Tiny row',()
 test('species-fixed exceptions and legacy IDs remain valid',()=>{
  assert.equal(isSummonSizeLegal({contract:'Bees'},'tiny',4,'tiny'),true);
  assert.equal(isSummonSizeLegal({contract:'Bees'},'child',14,'tiny'),false);
- assert.equal(isSummonSizeLegal({name:'Doki'},'huge',14,'huge'),true);
+ assert.equal(isSummonSizeLegal({name:'Doki'},'huge',3,'huge'),true);
+ assert.equal(isSummonSizeLegal({name:'Doki'},'medium',3,'huge'),false);
+ assert.equal(isSummonSizeLegal({name:'Doki'},'huge',-1,'huge'),false);
+ assert.equal(isSummonSizeLegal({},'huge',3),false);
+ assert.equal(isSummonSizeLegal({},'small',9,'small'),true);
  assert.equal(sizeById('immense').id,'gargantuan');assert.equal(sizeById('little').id,'child');
  assert.equal(isSummonSizeLegal({},'immense',16),true);
 });
@@ -30,5 +34,5 @@ test('full reference dialog displays all ten rows and NC thresholds',()=>{
  let content;globalThis.Dialog=class{constructor(data){content=data.content;}render(){return this;}};openSnsSizeReference();for(const s of SNS_SIZE_TABLE)assert.ok(content.includes(s.label));assert.match(content,/minimum NC 14/);
 });
 test('invalid NC sizes retain a visible error and the dropdown includes the correct six rows',()=>{
- const s=fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8');assert.match(s,/\[fixedSize\(profile\|\|\{\}\)\]:NORMAL_SUMMON_SIZES/);assert.match(s,/else html.find\('\.sns-size-info'\)/);
+ const s=fs.readFileSync(new URL('../module/kuchiyose-engine.js',import.meta.url),'utf8');assert.match(s,/locked\?\[locked\]:NORMAL_SUMMON_SIZES/);assert.match(s,/No legal size at NC/);
 });

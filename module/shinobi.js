@@ -1,3 +1,4 @@
+import {henchmanNumbers} from "./village-henchmen.mjs";
 import { SHINOBI_CONFIG } from "./config.js";
 import {summonStats,normalizeSummonProfile} from './summon-rules.js';
 class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
@@ -131,6 +132,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
 
   prepareDerivedData() {
     const summonProfile=normalizeSummonProfile(this.parent?.getFlag?.('shinobi-no-sho-revamp','summonProfile'));
+    const henchman = typeof this.parent?.getFlag?.('shinobi-no-sho-revamp','villageHenchman') === 'string';
     const nc = summonProfile ? Number(this.cabecalho.nc ?? 0) : this.cabecalho.nc || 1;
     if(summonProfile&&nc<4)for(const attr of Object.values(this.atributos))attr.valor=0;
     if(summonProfile?.intelligenceZero)this.atributos.int.valor=0;
@@ -155,7 +157,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     let vitBase = 10 + (3 * vigFinal) + (5 * nc);
     if (conf.corpulencia) vitBase += (vigFinal * 3);
     if (conf.cloneReserva) vitBase -= 3;
-    this.energias.vitalidade.max = vitBase;
+    this.energias.vitalidade.max = henchman ? 1 : vitBase;
 
     // Chakra MÁX
     let chkBase = 10 + (3 * (conf.controlePerfeito1 ? intFinal : espFinal));
@@ -164,7 +166,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     if (conf.byakugou) chkBase -= 15;
     if (conf.chakraExpandido) chkBase = Math.floor(chkBase * 1.5);
     if (conf.rinnegan) chkBase = Math.floor(chkBase * 0.9);
-    this.energias.chakra.max = chkBase;
+    this.energias.chakra.max = henchman ? 0 : chkBase;
 
     // Dureza (A base editável do jogador fica salva. Aqui somamos os bônus.)
     let durezaExtra = 0;
@@ -209,7 +211,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
       const valorDoAtributo = attrsFinal[attrLigado] || 0;
       let totalCalc = (combateItem.base !== undefined ? combateItem.base : 3) + valorDoAtributo + (combateItem.outro || 0);
       if (conf.combateDefensivo && key === "corporal") totalCalc -= 2;
-      Object.defineProperty(combateItem, "total", { value: totalCalc, configurable: true });
+      Object.defineProperty(combateItem, "total", { value: henchman ? henchmanNumbers(nc).accuracy : totalCalc, configurable: true });
     }
 
     // Sociais
@@ -229,14 +231,14 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     for (let key of Object.keys(this.calculadora || {})) {
       const calc = this.calculadora[key];
       const baseAtributo = Math.ceil(atributosBaseDano[key] / 2);
-      const totalBase = Math.max(0, baseAtributo + calc.dda + calc.outro);
+      const totalBase = henchman ? henchmanNumbers(nc).damage : Math.max(0, baseAtributo + calc.dda + calc.outro);
       const extraGrau = calc.meioGrau ? 0.5 : 0;
       Object.defineProperty(calc, "baseAtributo", { value: baseAtributo, configurable: true });
       Object.defineProperty(calc, "totalBase", { value: totalBase, configurable: true });
       Object.defineProperty(calc, "grau1", { value: Math.ceil(totalBase * (1 + extraGrau)), configurable: true });
       Object.defineProperty(calc, "grau2", { value: Math.ceil(totalBase * (2 + extraGrau)), configurable: true });
       Object.defineProperty(calc, "grau3", { value: Math.ceil(totalBase * (3 + extraGrau)), configurable: true });
-      Object.defineProperty(calc, "grau4", { value: Math.ceil(totalBase * (4 + extraGrau)), configurable: true });
+      Object.defineProperty(calc, "grau4", { value: Math.ceil(totalBase * ((henchman ? 3 : 4) + extraGrau)), configurable: true });
     }
 
     if(summonProfile){

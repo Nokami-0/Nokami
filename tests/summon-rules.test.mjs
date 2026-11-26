@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
-import {normalizeSummonProfile,summonStats,summonNCCap,summonQuantityLegal,skillKey,syncSummonSpecies,SUMMON_REVISION,summonRollRestriction} from '../module/summon-rules.js';
+import {normalizeSummonProfile,summonStats,summonNCCap,summonQuantityLegal,summonGroupError,skillKey,syncSummonSpecies,SUMMON_REVISION,summonRollRestriction} from '../module/summon-rules.js';
 import {summonEquipmentBase,dokiEquipment} from '../module/doki-equipment.js';
 const SYS='shinobi-no-sho-revamp';
 const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-kuchiyose-actors__summons.json',import.meta.url)));
@@ -60,3 +60,14 @@ test('Intelligence-zero and individual-bee automatic-failure rules block inappro
  assert.equal(summonRollRestriction({species:'Bee (Individual)'},4,'Dodge'),null);
 });
 
+
+test('one cast supports the three distinct Doki while respecting its contract and quantity',()=>{
+ const doki=rows.filter(profile=>profile.dokiWeapon);
+ assert.deepEqual(doki.map(profile=>profile.dokiWeapon).sort(),['claws','club','unarmed']);
+ assert.equal(summonGroupError(doki,'Doki'),null);
+ assert.match(summonGroupError([doki[0],doki[0]],'Doki'),/different Doki/);
+ assert.match(summonGroupError([...doki,doki[0]],'Doki'),/Quantity/);
+ assert.match(summonGroupError([doki[0],rows.find(profile=>profile.name==='Eagle')]),/blood contract/);
+ assert.match(summonGroupError(doki,'Toad'),/Only one blood contract/);
+ assert.ok(doki.every(profile=>summonNCCap(profile,8,3)===15));
+});

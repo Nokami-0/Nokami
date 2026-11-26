@@ -1,4 +1,4 @@
-import {previewSnsArea} from './sns-area-preview.js';
+import {previewSnsArea,snsAreas,deleteSnsAreas,createSnsArea} from './sns-area-preview.js';
 const SYS='shinobi-no-sho-revamp';
 export function snsDeviceArea(item,mechanics){
  const name=item.name.toLowerCase(),d=item.flags?.[SYS]?.puppetDevice||{},slot=String(d.slot||'').toLowerCase(),m=Math.max(0,Number(mechanics)||0);
@@ -10,7 +10,7 @@ export function snsDeviceArea(item,mechanics){
 }
 export async function placeSnsWeaponArea(actor,item,originActor=actor,controller=null){
  if(!canvas?.scene)throw Error('Open a scene first.');
- const token=originActor.getActiveTokens().find(t=>t.scene?.id===canvas.scene.id);
+ const token=originActor.getActiveTokens().find(t=>(t.document?.parent?.id ?? t.scene?.id)===canvas.scene.id);
  if(!token)throw Error('Place the attacking character or puppet token on the current scene.');
  const mechanics=Number(controller?.system?.pericias?.mecanismo?.total??actor.system?.pericias?.mecanismo?.total??0);
  const preset=snsDeviceArea(item,mechanics);
@@ -21,7 +21,7 @@ export async function placeSnsWeaponArea(actor,item,originActor=actor,controller
  const p=token.center;
  const doc=await previewSnsArea({t:answer.t,distance:answer.distance,direction:0,angle:preset?.angle||90,width:1,x:p.x,y:p.y,user:game.user.id,fillColor:'#e87724'});
  if(!doc)return;
- const existing=canvas.scene.templates.filter(x=>x.getFlag(SYS,'areaActor')===actor.id&&x.getFlag(SYS,'cleanup')==='next-area');
- if(existing.length)await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',existing.map(x=>x.id));
- await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...doc,user:game.user.id,flags:{[SYS]:{areaActor:actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
+ const existing=snsAreas(canvas.scene,actor.id).filter(doc=>doc.getFlag(SYS,'cleanup')==='next-area');
+ await createSnsArea(canvas.scene,doc,{actorId:actor.id,itemId:item.id,cleanup:answer.cleanup,name:item.name});
+ if(existing.length)await deleteSnsAreas(canvas.scene,existing);
 }

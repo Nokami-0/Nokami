@@ -1,6 +1,6 @@
 # Shini no Sho Altered (ENG)
 
-Foundry VTT system, hosted for Nokami-0 on the dedicated `shinobi-no-sho` branch. Sonic Tag-Team Heroes remains on `main`.
+Foundry VTT system, hosted for Nokami-0 on the dedicated `shinobi-no-sho-revamp` branch. Sonic Tag-Team Heroes remains on `main`.
 
 **AI disclosure** — AI tools were used to assist with the development of this Foundry VTT adaptation.
 
@@ -14,7 +14,7 @@ In Setup → Game Systems → Install System, paste this manifest URL:
 https://raw.githubusercontent.com/Nokami-0/Nokami/shinobi-no-sho/system.json
 ```
 
-The source manifest declares Foundry 12 minimum and Foundry 13 verified. This upload has not been tested in a live Foundry instance, and Foundry 14 compatibility has not been verified.
+The system declares Foundry 12 as its minimum. Version 1.7.86 uses Scene Regions for weapon and ability areas on Foundry 14. The manifest still lists 13 as verified pending a live Foundry 14 playtest.
 
 For manual installation, download this branch as ZIP, extract it, and name the system folder `shinobi-no-sho-revamp` beneath your Foundry user data `Data/systems/` directory. The folder must contain `system.json` directly. Restart Foundry afterward. Back up worlds before updating.
 
@@ -28,7 +28,7 @@ The source manifest credits **Nela Trex/NelaTrex** for the original Foundry syst
 
 Internal UI-reference screenshots and an incomplete temporary image from the supplied archive are omitted from this distribution; they are not used by the system.
 
-## English update source (1.7.42)
+## Shini no Sho Altered update source
 
 This English edition uses only these package distribution URLs:
 
@@ -36,7 +36,7 @@ This English edition uses only these package distribution URLs:
 - Download: https://github.com/Nokami-0/Nokami/archive/refs/heads/shinobi-no-sho.zip
 - Project: https://github.com/Nokami-0/Nokami/tree/shinobi-no-sho
 
-The upstream author's name is retained as attribution, not as an update destination. The system ID remains `shinobi-no-sho-revamp` for compatibility with existing worlds. Gameplay files and catalogs are unchanged by this metadata release.
+Foundry treats `shinobi-no-sho-revamp` as a separate system. Existing worlds stay tied to the previous system ID. Keep the previous system installed to open those worlds, and back them up before attempting a migration.
 
 An older installed package can retain its old manifest URL. Updating the hosted English manifest cannot redirect an installed package that is still checking the upstream author's manifest. Reinstall the English package once using the manifest above (preserving worlds), or close Foundry and replace the installed system folder with this branch's download. Then use Foundry's normal Update button for later English releases. Do not switch the installed package's manifest back to the upstream URL.
 

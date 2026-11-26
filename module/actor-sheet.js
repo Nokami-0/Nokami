@@ -1,5 +1,6 @@
+import {henchmanNumbers} from "./village-henchmen.mjs";
 import {placeSnsWeaponArea} from './sns-weapon-area.js';
-import {previewSnsArea} from './sns-area-preview.js';
+import {previewSnsArea,snsAreas,deleteSnsAreas,createSnsArea} from './sns-area-preview.js';
 import {puppetTabContext,activatePuppetTab} from './puppets.js';
 import {summonSheetContext,summonReferenceKind} from './summon-sheet.js';
 import {summonRollRestriction} from './summon-rules.js';
@@ -63,6 +64,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       width: Math.min(1200, Math.max(520, Math.floor(window.innerWidth * 0.90))),
       height: Math.min(900, Math.max(480, Math.floor(window.innerHeight * 0.88))),
       resizable: true,
+      scrollY: [".window-content", ".sheet-body", ".sheet-body .tab", ".sheet-body [style*='overflow-y: auto']"],
       tabs: [
         { navSelector: ".sheet-tabs[data-group='primary']", contentSelector: ".sheet-body", initial: "principal" },
         { navSelector: ".sheet-tabs[data-group='secundario']", contentSelector: ".principal-body", initial: "status" }
@@ -292,15 +294,22 @@ export class ShinobiActorSheet extends BaseActorSheet {
       const ranged=item.system.attackType === 'ranged';
       const attribute=Number((ranged?this.actor.system.atributos?.des:this.actor.system.atributos?.for)?.valor ?? 0);
       const dda=Number(item.system.weaponDamage ?? 0), modifier=Number(item.system.weaponBonus ?? 0);
-      const base=summonAttack?summonEquipmentBase(attribute,item):Math.max(0,Math.ceil(attribute/2)+dda+modifier);
-      const options=[1,2,3,4].map(n=>`<option value="${n}">Damage degree ${n}</option>`).join('');
+      const henchman=this.actor.getFlag('shinobi-no-sho-revamp','villageHenchman');
+      const targets=henchman?[...(game.user.targets ?? [])]:[];
+      const capped=henchman&&(!targets.length||targets.some(token=>!token.actor?.getFlag('shinobi-no-sho-revamp','villageHenchman')));
+      const base=henchman?henchmanNumbers(this.actor.system.cabecalho.nc).damage
+        :summonAttack?summonEquipmentBase(attribute,item):Math.max(0,Math.ceil(attribute/2)+dda+modifier);
+      const degrees=capped?[1,2,3]:[1,2,3,4];
+      const options=degrees.map(n=>`<option value="${n}">Damage degree ${n}</option>`).join('');
       const degree=await new Promise(resolve=>new Dialog({
         title:`${item.name}: weapon damage`,
-        content:`<form><p>Base damage: ${base}. Select the damage degree determined by the actual attack and defense result.</p><select name="degree">${options}</select><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')} (apply when resolving the attack).</p></form>`,
+        content:`<form><p>Base damage: ${base}. Select the damage degree determined by the actual attack and defense result.</p><select name="degree">${options}</select><p>${capped?'Against ordinary opponents, Henchman damage caps at Degree 3.':`Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}.`}</p></form>`,
         buttons:{apply:{label:'Calculate',callback:html=>resolve(Number(html.find('[name=degree]').val()))},cancel:{label:'Cancel',callback:()=>resolve(null)}},
         default:'apply',close:()=>resolve(null)
       }).render(true));
-      if (degree===null || ![1,2,3,4].includes(degree)) return;
+      if (!degrees.includes(degree)) return;
+      if (henchman) return ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
+        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Henchman base damage: ${base}. Degree ${degree}: <strong>${base*degree} damage</strong>.</p>`});
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
         content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier)} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
@@ -373,7 +382,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       ev.preventDefault();
       const row=ev.currentTarget.closest('[data-item-id]'),item=this.actor.items.get(row?.dataset.itemId);
       if(!item||!canvas?.scene)return ui.notifications.warn('Open a scene and select an ability.');
-      const token=this.actor.getActiveTokens().find(t=>t.scene?.id===canvas.scene.id);
+      const token=this.actor.getActiveTokens().find(t=>(t.document?.parent?.id ?? t.scene?.id)===canvas.scene.id);
       if(!token)return ui.notifications.warn('Place this actor token on the scene first.');
       const allowed=item.getFlag('shinobi-no-sho-revamp','allowedAreaShapes');
       const choices=['cone','circle','ray','rect'].filter(t=>!Array.isArray(allowed)||allowed.includes(t));
@@ -388,22 +397,22 @@ export class ShinobiActorSheet extends BaseActorSheet {
       if(!answer)return;
       if(!choices.includes(answer.t)||![answer.distance,answer.direction,answer.angle,answer.width].every(Number.isFinite)||answer.distance<=0||answer.width<=0||answer.angle<1||answer.angle>360)return ui.notifications.error('Invalid area dimensions.');
       try{
-        const prior=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='next-area'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
-        if(prior.length)await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',prior.map(d=>d.id));
+        const prior=snsAreas(canvas.scene,this.actor.id).filter(d=>d.getFlag('shinobi-no-sho-revamp','cleanup')==='next-area');
         const p=token.center;
         const positioned=await previewSnsArea({t:answer.t,distance:answer.distance,direction:answer.direction,angle:answer.angle,width:answer.width,user:game.user.id,x:p.x,y:p.y,fillColor:'#ff9900'});
         if(!positioned)return;
-        await canvas.scene.createEmbeddedDocuments('MeasuredTemplate',[{...positioned,user:game.user.id,flags:{'shinobi-no-sho-revamp':{areaActor:this.actor.id,areaItem:item.id,cleanup:answer.cleanup}}}]);
+        await createSnsArea(canvas.scene,positioned,{actorId:this.actor.id,itemId:item.id,cleanup:answer.cleanup,name:item.name});
+        if(prior.length)await deleteSnsAreas(canvas.scene,prior);
         ui.notifications.info(answer.cleanup==='after-use'?'Area placed. It will disappear when this ability is used.':'Area placed. Use Erase to remove it at any time.');
       }catch(e){console.error(e);ui.notifications.error('Cannot place or remove area: check scene permissions.');}
     });
     html.find('.sns-area-clear').on('click',async ev=>{
       ev.preventDefault();
       if(!canvas?.scene)return;
-      const areas=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
+      const areas=snsAreas(canvas.scene,this.actor.id);
       if(!areas.length)return ui.notifications.info('No areas from this actor on this scene.');
       if(!await Dialog.confirm({title:'Erase Areas',content:'Erase '+areas.length+' area templates for this actor?'}))return;
-      try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',areas.map(d=>d.id));}catch(e){console.error(e);ui.notifications.error('Unable to erase templates.');}
+      try{await deleteSnsAreas(canvas.scene,areas);}catch(e){console.error(e);ui.notifications.error('Unable to erase templates.');}
     });
     html.find('.item-use').click(async ev => {
       ev.preventDefault();
@@ -436,8 +445,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
         });
         // Remove only this ability's one-use visual areas after a successful cast.
         if(canvas?.scene){
-          const spentAreas=canvas.scene.templates.filter(d=>d.getFlag('shinobi-no-sho-revamp','areaActor')===this.actor.id&&d.getFlag('shinobi-no-sho-revamp','areaItem')===item.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='after-use'&&(game.user.isGM||d.user===game.user.id||d.user?.id===game.user.id));
-          if(spentAreas.length)try{await canvas.scene.deleteEmbeddedDocuments('MeasuredTemplate',spentAreas.map(d=>d.id));}catch(error){console.warn('Area cleanup requires template deletion permission',error);ui.notifications.warn('Ability used; erase its area manually if permissions prevent automatic removal.');}
+          const spentAreas=snsAreas(canvas.scene,this.actor.id).filter(d=>d.getFlag('shinobi-no-sho-revamp','areaItem')===item.id&&d.getFlag('shinobi-no-sho-revamp','cleanup')==='after-use');
+          if(spentAreas.length)try{await deleteSnsAreas(canvas.scene,spentAreas);}catch(error){console.warn('Area cleanup requires template deletion permission',error);ui.notifications.warn('Ability used; erase its area manually if permissions prevent automatic removal.');}
         }
       } catch (error) {
         console.error('Shinobi no Sho resource deduction failed:', error);
@@ -494,6 +503,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
 
   async _onRoll(event) {
     event.preventDefault(); const elemento = event.currentTarget; const nomeTeste = elemento.dataset.nome; const precisao = parseInt(elemento.dataset.precisao) || 0;
+    const henchman = this.actor.getFlag('shinobi-no-sho-revamp','villageHenchman');
+    if (henchman && !elemento.dataset.combatRoll) return ui.notifications.warn('Henchmen automatically fail ordinary attribute and skill tests.');
     const restriction=summonRollRestriction(this.actor.getFlag('shinobi-no-sho-revamp','summonProfile'),Number(this.actor.system.cabecalho?.nc),nomeTeste);
     if(restriction)return ui.notifications.warn(restriction);
     const template = `<form><div class="form-group" style="margin-bottom: 10px;"><label>Extra Modifier (+ or -):</label><input type="number" id="modificador" name="modificador" value="0" autofocus /></div><div class="form-group" style="margin-bottom: 10px;"><label>Current Condition:</label><select id="condicao" name="condicao"><option value="0">None</option><option value="2">Advantage (+2)</option><option value="-2">Disadvantage (-2)</option><option value="-4">Severe Condition (-4)</option></select></div></form>`;

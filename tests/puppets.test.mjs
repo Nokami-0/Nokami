@@ -1,6 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import H from 'handlebars';import {parseHTML} from 'linkedom';
 const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-initial-puppets__actors.json',import.meta.url)));const SYS='shinobi-no-sho-revamp';
-globalThis.FormApplication=class{static get defaultOptions(){return{};}};globalThis.foundry={utils:{mergeObject:(a,b)=>({...a,...b})}};
+globalThis.CONFIG = {statusEffects: []};
+globalThis.FormApplication=class{static get defaultOptions(){return{};}};globalThis.foundry={utils:{deepClone:structuredClone,mergeObject:(a,b)=>({...a,...b})}};
 const {validatePuppetCatalog,puppetStatistics,puppetDeviceDamage,buildInitialPuppet,buildPuppetCompendium,createInitialPuppet,spendPuppetDeviceUse,puppetTabContext}=await import('../module/puppets.js');
 function controller(){return {id:'pc',name:'Puppeteer',isOwner:true,ownership:{player:3,default:0},items:[],system:{pericias:{mecanismo:{total:6}},atributos:{esp:{valor:4}},combate:{distancia:{total:11},esquiva:{total:10},lerMovimentos:{total:12}}}};}
 globalThis.fetch=async()=>({ok:true,json:async()=>structuredClone(rows)});
@@ -31,10 +32,10 @@ test('the Puppets tab renders three create actions and a separate actor-compendi
 });
 let registered;class Base{constructor(actor){this.actor=actor;}static get defaultOptions(){return{};}async getData(){return{actor:this.actor};}async _updateObject(e,d){return d;}activateListeners(){}}
 foundry.appv1={sheets:{ActorSheet:Base}};foundry.documents={collections:{Actors:{registerSheet:(s,c)=>{registered=c;}}}};
-globalThis.Hooks={once:(name,cb)=>{if(name==='init'){globalThis.game={...(globalThis.game||{}),settings:{registerMenu(){}}};cb();}}};const {PuppetActorSheet}=await import('../module/puppet-sheet.js');
+globalThis.Hooks={on(){},once:(name,cb)=>{if(name==='init'){globalThis.game={...(globalThis.game||{}),settings:{registerMenu(){}}};cb();}}};const {PuppetActorSheet}=await import('../module/puppet-sheet.js');
 test('dedicated puppet sheet opens unassigned templates and controller-linked tokens with source device cards',async()=>{
  const pc=controller();const actors=[pc];actors.get=id=>actors.find(a=>a.id===id);game.actors=actors;
- for(const assigned of [false,true]){const data=buildInitialPuppet(rows[0],assigned?pc:null);const context=await new PuppetActorSheet(data).getData({});const html=H.compile(fs.readFileSync(new URL('../templates/puppet-sheet.hbs',import.meta.url),'utf8'))(context);const {document}=parseHTML(html);assert.equal(document.querySelectorAll('details').length,4);assert.ok(html.includes(assigned?'Puppeteer':'Not assigned'));assert.equal(context.stats.absorptionMax,assigned?30:0);assert.equal(context.devices[0].baseDamage,assigned?6:3);}
+ for(const assigned of [false,true]){const data=buildInitialPuppet(rows[0],assigned?pc:null);for(const item of data.items)Object.defineProperty(item,"getFlag",{value:(scope,key)=>item.flags?.[scope]?.[key]});const context=await new PuppetActorSheet(data).getData({});const html=H.compile(fs.readFileSync(new URL('../templates/puppet-sheet.hbs',import.meta.url),'utf8'))(context);const {document}=parseHTML(html);assert.equal(document.querySelectorAll('details').length,4);assert.ok(html.includes(assigned?'Puppeteer':'Not assigned'));assert.equal(context.stats.absorptionMax,assigned?30:0);assert.equal(context.devices[0].baseDamage,assigned?6:3);}
  assert.equal(registered,PuppetActorSheet);
 });
 test('first controller assignment fills Absorption; later edits clamp without granting a free repair',async()=>{
