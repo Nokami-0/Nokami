@@ -2,7 +2,7 @@ import {shinnoBase, shinnoRevival} from './shinno.mjs';
 import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
 import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
-import {fubukiKakuyoku, mizoreFuyukuma, karenbana} from './film-mercenaries.mjs';
+import {fubukiKakuyoku, mizoreFuyukuma, karenbana, nadareRoga} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
 import {sora} from "./sora.mjs";
@@ -205,6 +205,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:dotoKazahana, folderName:'Land of Snow'},
   {actor:ishidate, folderName:'Land of the Moon'},
   {actor:karenbana, folderName:'Land of the Moon'},
+  {actor:nadareRoga, folderName:'Land of Snow'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
   ...villageSpecialists,
