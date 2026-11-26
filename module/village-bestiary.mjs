@@ -12,6 +12,7 @@ import {villageHenchmen, villageHenchmanActor} from './village-henchmen.mjs';
 
 const SYS = 'shinobi-no-sho-revamp';
 const PACK = 'world.sns-village-henchmen';
+const BOSS_PACK = 'world.sns-village-bosses';
 let building;
 
 const placeholderArt = 'icons/svg/mystery-man.svg';
@@ -56,7 +57,8 @@ async function build() {
  let added = 0;
  let renamed = 0;
  try {
-  const existing = new Map((await pack.getDocuments()).map(actor => [actor.getFlag(SYS,'villageHenchman'), actor]));
+  const documents = await pack.getDocuments();
+  const existing = new Map(documents.map(actor => [actor.getFlag(SYS,'villageHenchman'), actor]));
   const folders = new Map(pack.folders.map(folder => [folder.name, folder.id]));
   for (const row of villageHenchmen) {
    const actor = existing.get(row.id);
@@ -82,10 +84,43 @@ async function build() {
    await ActorClass.create({...template,folder},{pack:pack.collection});
    added++;
   }
+  if (await moveMedicToHenchmen(pack, folders.get('Konohagakure'), documents)) added++;
  } finally {
   if (locked) await pack.configure({locked:true});
  }
  return {pack, added, renamed};
+}
+
+async function moveMedicToHenchmen(pack, folder, documents) {
+ const id = 'konoha-medic';
+ const bosses = game.packs.get(BOSS_PACK);
+ const previous = (await bosses?.getDocuments())?.find(actor => actor.getFlag(SYS,'bestiaryBoss') === id);
+ const current = documents.find(actor => actor.getFlag(SYS,'bestiarySupport') === id);
+ if (!current) {
+  const template = withTokenArt(konohaMedic, id);
+  const source = previous?.toObject() ?? template;
+  delete source._id;
+  const flags = source.flags[SYS] ??= {};
+  delete flags.bestiaryBoss;
+  flags.bestiarySupport = id;
+  if (previous) {
+   const art = defaultArtUpdates(previous, template);
+   if (art.img) source.img = art.img;
+   if (art['prototypeToken.texture.src']) source.prototypeToken.texture = {...source.prototypeToken.texture, src: template.img};
+  }
+  const created = await CONFIG.Actor.documentClass.create({...source,folder},{pack:pack.collection});
+  if (!created) throw Error('Could not create the Konoha Medic in Henchmen.');
+ }
+ if (previous) {
+  const locked = bosses.locked;
+  if (locked) await bosses.configure({locked:false});
+  try {
+   await previous.delete();
+  } finally {
+   if (locked) await bosses.configure({locked:true});
+  }
+ }
+ return !current;
 }
 
 function banditBalanceUpdate(actor) {
@@ -114,7 +149,7 @@ function banditBalanceUpdate(actor) {
 }
 
 async function buildBossBestiary() {
- const collection = 'world.sns-village-bosses';
+ const collection = BOSS_PACK;
  const Compendiums = foundry.documents?.collections?.CompendiumCollection ?? globalThis.CompendiumCollection;
  const pack = game.packs.get(collection) ?? await Compendiums.createCompendium({
   name:'sns-village-bosses', label:'Shini no Sho — Village Bestiary: Bosses',
@@ -131,7 +166,6 @@ async function buildBossBestiary() {
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
   {actor:banditLeader, folderName:'Bandits'},
-  {actor:konohaMedic, folderName:'Konohagakure'},
   {actor:kazuma, folderName:'Twelve Guardian Ninja'},
   {actor:sora, folderName:'Twelve Guardian Ninja'},
   {actor:dotoKazahana, folderName:'Land of Snow'},
