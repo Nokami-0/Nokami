@@ -1,3 +1,5 @@
+import {kazuma} from "./kazuma.mjs";
+import {konohaMedic} from "./konoha-medic.mjs";
 import {banditLeader} from "./bandit-leader.mjs";
 import {ranmaru} from "./ranmaru.mjs";
 import {kaguyaClanLeader} from './kaguya-clan-leader.mjs';
@@ -95,7 +97,9 @@ async function buildBossBestiary() {
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
-  {actor:banditLeader, folderName:'Bandits'}
+  {actor:banditLeader, folderName:'Bandits'},
+  {actor:konohaMedic, folderName:'Konohagakure'},
+  {actor:kazuma, folderName:'Twelve Guardian Ninja'}
  ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
  if (!missing.length && !balanceUpdate) return;
 
