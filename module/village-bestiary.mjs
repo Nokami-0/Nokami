@@ -21,6 +21,7 @@ let building;
 const placeholderArt = 'icons/svg/mystery-man.svg';
 const tokenDirectory = `systems/${SYS}/assets/tokens/bestiary`;
 const henchmanTokenNames = {
+ 'bandits:thief-henchman': 'thief-henchman',
  'sunagakure:puppet-user': 'suna-puppet-user',
  'Hoshigakure:0': 'hoshi-shinobi',
  'land-of-iron:samurai-henchman': 'land-of-iron-samurai',

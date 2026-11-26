@@ -135,6 +135,19 @@ villageHenchmen.push({
   tactics:'Carries a medium wooden puppet fitted with a Hidden Blade and Senbon Launcher. Resolve the puppet’s attacks using this henchman’s normal accuracy and damage. The kunai is a backup.'
 });
 
+villageHenchmen.push({
+  id:'bandits:thief-henchman',
+  village:'Bandits',
+  english:'Roadside gang',
+  continuity:'Naruto-inspired encounter',
+  role:'Masked thief',
+  name:'Thief Henchman',
+  weapon:'Short Sword',
+  attack:'melee',
+  gear:['Face Mask', 'Loot Pouch'],
+  tactics:'Works in pairs to distract travelers and steal their valuables. Uses a short sword if cornered and retreats once the gang loses the advantage.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
