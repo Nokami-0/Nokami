@@ -26,6 +26,14 @@ export function anbuOperatives(systemId, basicJutsu) {
         equipment('Smoke Bomb',2,{consumable:true, descricao:'Use the normal Smoke Bomb rules. Track scene effects manually.'})]
     },
     {
+      id:'suna-anbu', name:'Suna ANBU Puppeteer', village:'Sunagakure',
+      agility:9, perception:10, skills:{mecanismo:5, furtividade:5, prontidao:5, procurar:4, concentracao:4},
+      jutsu:'Henge No Jutsu',
+      mission:'A masked Hidden Sand operative who uses chakra threads to control a puppet from cover. Assign this actor as the puppet’s controller when deploying it.',
+      gear:[equipment('Horned ANBU Mask'), equipment('Puppet Storage Scroll'),
+        equipment('Smoke Bomb',2,{consumable:true, descricao:'Use the normal Smoke Bomb rules. Track scene effects manually.'})]
+    },
+    {
       id:'kiri-hunter-nin', name:'Kiri Hunter-nin', village:'Kirigakure',
       agility:9, perception:10, skills:{rastrear:5, procurar:5, prontidao:5, furtividade:4, concentracao:4},
       jutsu:'Tadayou', mission:'Track missing-nin and recover their remains to protect village secrets.',
