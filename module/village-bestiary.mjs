@@ -56,6 +56,31 @@ async function build() {
  return {pack, added, renamed};
 }
 
+function banditBalanceUpdate(actor) {
+ const system = actor?._source.system;
+ if (system?.cabecalho.nc !== 8) return;
+ const previousAttributes = {for:8, des:4, agi:5, per:5, vig:7, int:4, esp:3};
+ const revised = banditLeader.system;
+ const updates = {'system.cabecalho.nc':revised.cabecalho.nc};
+ for (const [key, value] of Object.entries(previousAttributes)) {
+  if (system.atributos[key].valor !== value) return;
+  updates[`system.atributos.${key}.valor`] = revised.atributos[key].valor;
+ }
+ for (const [key, skill] of Object.entries(revised.pericias)) {
+  if (system.pericias[key].pontos !== 4) return;
+  updates[`system.pericias.${key}.pontos`] = skill.pontos;
+ }
+ if (system.sociais.carisma.valor !== 4 || system.periciasSociais.intimidar.pontos !== 4) return;
+ updates['system.sociais.carisma.valor'] = revised.sociais.carisma.valor;
+ updates['system.periciasSociais.intimidar.pontos'] = revised.periciasSociais.intimidar.pontos;
+ for (const [key, oldMax] of [['vitalidade',71], ['chakra',19]]) {
+  if (system.energias[key].value !== oldMax) return;
+  updates[`system.energias.${key}.value`] = revised.energias[key].value;
+  updates[`system.energias.${key}.max`] = revised.energias[key].max;
+ }
+ return updates;
+}
+
 async function buildBossBestiary() {
  const collection = 'world.sns-village-bosses';
  const Compendiums = foundry.documents?.collections?.CompendiumCollection ?? globalThis.CompendiumCollection;
@@ -63,18 +88,21 @@ async function buildBossBestiary() {
   name:'sns-village-bosses', label:'Shini no Sho — Village Bestiary: Bosses',
   type:'Actor', package:'world', ownership:{PLAYER:'NONE', ASSISTANT:'OWNER'}
  });
- const existing = new Set((await pack.getDocuments()).map(actor => actor.getFlag(SYS,'bestiaryBoss')));
+ const existing = new Map((await pack.getDocuments()).map(actor => [actor.getFlag(SYS,'bestiaryBoss'), actor]));
+ const bandit = existing.get('bandit-leader');
+ const balanceUpdate = banditBalanceUpdate(bandit);
  const missing = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
   {actor:banditLeader, folderName:'Bandits'}
  ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
- if (!missing.length) return;
+ if (!missing.length && !balanceUpdate) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
+  if (balanceUpdate) await bandit.update(balanceUpdate);
   for (const {actor, folderName} of missing) {
    const folder = pack.folders.find(folder => folder.name === folderName)
     ?? await CONFIG.Folder.documentClass.create({name:folderName,type:'Actor',sorting:'a'},{pack:pack.collection});
