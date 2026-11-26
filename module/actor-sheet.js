@@ -1,3 +1,4 @@
+import {henchmanNumbers} from "./village-henchmen.mjs";
 import {placeSnsWeaponArea} from './sns-weapon-area.js';
 import {previewSnsArea,snsAreas,deleteSnsAreas,createSnsArea} from './sns-area-preview.js';
 import {puppetTabContext,activatePuppetTab} from './puppets.js';
@@ -293,15 +294,22 @@ export class ShinobiActorSheet extends BaseActorSheet {
       const ranged=item.system.attackType === 'ranged';
       const attribute=Number((ranged?this.actor.system.atributos?.des:this.actor.system.atributos?.for)?.valor ?? 0);
       const dda=Number(item.system.weaponDamage ?? 0), modifier=Number(item.system.weaponBonus ?? 0);
-      const base=summonAttack?summonEquipmentBase(attribute,item):Math.max(0,Math.ceil(attribute/2)+dda+modifier);
-      const options=[1,2,3,4].map(n=>`<option value="${n}">Damage degree ${n}</option>`).join('');
+      const henchman=this.actor.getFlag('shini-no-sho-altered','villageHenchman');
+      const targets=henchman?[...(game.user.targets ?? [])]:[];
+      const capped=henchman&&(!targets.length||targets.some(token=>!token.actor?.getFlag('shini-no-sho-altered','villageHenchman')));
+      const base=henchman?henchmanNumbers(this.actor.system.cabecalho.nc).damage
+        :summonAttack?summonEquipmentBase(attribute,item):Math.max(0,Math.ceil(attribute/2)+dda+modifier);
+      const degrees=capped?[1,2,3]:[1,2,3,4];
+      const options=degrees.map(n=>`<option value="${n}">Damage degree ${n}</option>`).join('');
       const degree=await new Promise(resolve=>new Dialog({
         title:`${item.name}: weapon damage`,
-        content:`<form><p>Base damage: ${base}. Select the damage degree determined by the actual attack and defense result.</p><select name="degree">${options}</select><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')} (apply when resolving the attack).</p></form>`,
+        content:`<form><p>Base damage: ${base}. Select the damage degree determined by the actual attack and defense result.</p><select name="degree">${options}</select><p>${capped?'Against ordinary opponents, Henchman damage caps at Degree 3.':`Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}.`}</p></form>`,
         buttons:{apply:{label:'Calculate',callback:html=>resolve(Number(html.find('[name=degree]').val()))},cancel:{label:'Cancel',callback:()=>resolve(null)}},
         default:'apply',close:()=>resolve(null)
       }).render(true));
-      if (degree===null || ![1,2,3,4].includes(degree)) return;
+      if (!degrees.includes(degree)) return;
+      if (henchman) return ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
+        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Henchman base damage: ${base}. Degree ${degree}: <strong>${base*degree} damage</strong>.</p>`});
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
         content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier)} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
@@ -495,6 +503,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
 
   async _onRoll(event) {
     event.preventDefault(); const elemento = event.currentTarget; const nomeTeste = elemento.dataset.nome; const precisao = parseInt(elemento.dataset.precisao) || 0;
+    const henchman = this.actor.getFlag('shini-no-sho-altered','villageHenchman');
+    if (henchman && !elemento.dataset.combatRoll) return ui.notifications.warn('Henchmen automatically fail ordinary attribute and skill tests.');
     const restriction=summonRollRestriction(this.actor.getFlag('shini-no-sho-altered','summonProfile'),Number(this.actor.system.cabecalho?.nc),nomeTeste);
     if(restriction)return ui.notifications.warn(restriction);
     const template = `<form><div class="form-group" style="margin-bottom: 10px;"><label>Extra Modifier (+ or -):</label><input type="number" id="modificador" name="modificador" value="0" autofocus /></div><div class="form-group" style="margin-bottom: 10px;"><label>Current Condition:</label><select id="condicao" name="condicao"><option value="0">None</option><option value="2">Advantage (+2)</option><option value="-2">Disadvantage (-2)</option><option value="-4">Severe Condition (-4)</option></select></div></form>`;

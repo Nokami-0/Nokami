@@ -573,7 +573,7 @@
                   <tbody>
                     {{#each listaCombate as |combate|}}
                     <tr>
-                      <td style="font-weight: bold; text-align: left;"><a class="rollable" data-nome="{{combate.nomeAmigavel}}" data-precisao="{{combate.dados.total}}" style="cursor: pointer;">{{combate.nomeAmigavel}}</a></td>
+                      <td style="font-weight: bold; text-align: left;"><a class="rollable" data-combat-roll="true" data-nome="{{combate.nomeAmigavel}}" data-precisao="{{combate.dados.total}}" style="cursor: pointer;">{{combate.nomeAmigavel}}</a></td>
                       <td><input type="number" value="{{combate.dados.total}}" class="attr-readonly" style="font-weight: bold;" readonly /></td>
                       <td><input type="number" name="system.combate.{{combate.chave}}.base" value="{{combate.dados.base}}" class="attr-input {{#if combate.erroLimite}}error{{/if}}"/></td>
                       <td><select name="system.combate.{{combate.chave}}.attr" style="width: 90px; padding: 2px; border: 1px solid #b8b0a1; background: transparent;">{{selectOptions ../opcoesAtributos selected=combate.dados.attr}}</select></td>
