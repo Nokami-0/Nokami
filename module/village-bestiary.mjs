@@ -1,3 +1,4 @@
+import {ghostSamurai} from './ghost-samurai.mjs';
 import {villageHenchmen, villageHenchmanActor} from './village-henchmen.mjs';
 
 const SYS = 'shini-no-sho-altered';
@@ -52,12 +53,35 @@ async function build() {
  return {pack, added, renamed};
 }
 
+async function buildBossBestiary() {
+ const collection = 'world.sns-village-bosses';
+ const Compendiums = foundry.documents?.collections?.CompendiumCollection ?? globalThis.CompendiumCollection;
+ const pack = game.packs.get(collection) ?? await Compendiums.createCompendium({
+  name:'sns-village-bosses', label:'Shini no Sho — Village Bestiary: Bosses',
+  type:'Actor', package:'world', ownership:{PLAYER:'NONE', ASSISTANT:'OWNER'}
+ });
+ if ((await pack.getDocuments()).some(actor =>
+  actor.getFlag(SYS,'bestiaryBoss') === ghostSamurai.flags[SYS].bestiaryBoss)) return;
+
+ const locked = pack.locked;
+ if (locked) await pack.configure({locked:false});
+ try {
+  const name = ghostSamurai.system.cabecalho.filiacao;
+  const folder = pack.folders.find(folder => folder.name === name)
+   ?? await CONFIG.Folder.documentClass.create({name,type:'Actor',sorting:'a'},{pack:pack.collection});
+  await CONFIG.Actor.documentClass.create({...ghostSamurai,folder:folder.id},{pack:pack.collection});
+ } finally {
+  if (locked) await pack.configure({locked:true});
+ }
+}
+
 const bestiaryHooks = foundry.helpers?.Hooks ?? globalThis.Hooks;
 bestiaryHooks.once('ready', async () => {
  if (!game.user.isGM || (game.users.activeGM && game.users.activeGM.id !== game.user.id)) return;
  game.snsVillageBestiary = {build:buildVillageBestiary};
  try {
   await buildVillageBestiary();
+  await buildBossBestiary();
  } catch (error) {
   console.error('Could not build the Shini no Sho Village Bestiary',error);
   ui.notifications.warn('Village Bestiary build failed. See the console for details.');
