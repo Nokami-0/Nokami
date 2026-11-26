@@ -1,3 +1,4 @@
+import {shinnoBase, shinnoRevival} from './shinno.mjs';
 import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
 import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
@@ -197,6 +198,8 @@ async function buildBossBestiary(basicJutsu) {
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
   {actor:banditLeader, folderName:'Bandits'},
+  {actor:shinnoBase, folderName:'Land of the Sky'},
+  {actor:shinnoRevival, folderName:'Land of the Sky'},
   {actor:kazuma, folderName:'Twelve Guardian Ninja'},
   {actor:sora, folderName:'Twelve Guardian Ninja'},
   {actor:dotoKazahana, folderName:'Land of Snow'},
