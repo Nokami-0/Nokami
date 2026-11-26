@@ -95,6 +95,19 @@ villageHenchmen.push({
   tactics:'A masked foot soldier in a gray tunic. Use him as a sentry in a Sound hideout. He fights with ordinary taijutsu or a backup kunai and calls for reinforcements when intruders get past him. Either attack uses the same henchman damage. He has no special sound techniques.'
 });
 
+villageHenchmen.push({
+  id:'konohagakure:chunin-examiner',
+  village:'Konohagakure',
+  english:'Hidden Leaf',
+  continuity:'Chūnin Exams',
+  role:'Assistant exam proctor',
+  name:'Konoha Chūnin Examiner',
+  weapon:'Unarmed',
+  sidearm:'Kunai',
+  attack:'melee',
+  tactics:'A gray-uniformed Leaf chūnin with a clipboard. Tracks candidates and records infractions for the chief proctor. Run routine exam supervision as part of the scene. If a disputed incident requires a skill test, use a full NPC for the chief proctor. In combat, the examiner calls for backup and uses basic taijutsu or a kunai.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
