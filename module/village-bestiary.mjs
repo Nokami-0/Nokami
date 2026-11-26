@@ -1,3 +1,4 @@
+import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
 import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
 import {fubukiKakuyoku, mizoreFuyukuma, karenbana} from './film-mercenaries.mjs';
@@ -191,6 +192,7 @@ async function buildBossBestiary(basicJutsu) {
  }));
  const templates = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
+  {actor:samuraiCaptain, folderName:'Land of Iron'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
   {actor:banditLeader, folderName:'Bandits'},
