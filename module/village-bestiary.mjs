@@ -20,6 +20,7 @@ let building;
 const placeholderArt = 'icons/svg/mystery-man.svg';
 const tokenDirectory = `systems/${SYS}/assets/tokens/bestiary`;
 const henchmanTokenNames = {
+ 'sunagakure:puppet-user': 'suna-puppet-user',
  'Hoshigakure:0': 'hoshi-shinobi',
  'land-of-iron:samurai-henchman': 'land-of-iron-samurai',
  'otogakure:masked-henchman': 'oto-masked-ninja',
@@ -67,7 +68,9 @@ async function build() {
   const existing = new Map(documents.map(actor => [actor.getFlag(SYS,'villageHenchman'), actor]));
   const folders = new Map(pack.folders.map(folder => [folder.name, folder.id]));
   for (const row of villageHenchmen) {
-   const actor = existing.get(row.id);
+   const previousPuppetUser = row.id === 'sunagakure:puppet-user' && documents.find(document =>
+    document.name === row.name && !document.getFlag(SYS, 'villageHenchman'));
+   const actor = existing.get(row.id) ?? previousPuppetUser;
    const template = withTokenArt(villageHenchmanActor(row), henchmanTokenNames[row.id]);
    const techniques = villageBasicTechniques(row, basicJutsu);
    if (actor) {
@@ -79,6 +82,11 @@ async function build() {
     }
     if (Object.keys(changes).length) renamed++;
     Object.assign(changes, defaultArtUpdates(actor, template));
+    if (actor === previousPuppetUser) {
+     changes[`flags.${SYS}.villageHenchman`] = row.id;
+     changes.img = template.img;
+     changes['prototypeToken.texture.src'] = template.prototypeToken.texture.src;
+    }
     if (Object.keys(changes).length) await actor.update(changes);
     const missing = techniques.filter(technique => !actor.items.some(item =>
      item.type === technique.type && item.name.toLowerCase() === technique.name.toLowerCase()));

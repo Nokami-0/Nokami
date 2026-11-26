@@ -122,6 +122,19 @@ villageHenchmen.push({
   tactics:'A nameless Kaguya clan fighter from the raid on Kirigakure. The Kirigakure folder marks the encounter location. The raider is an attacker from the clan and fights at close range with ordinary taijutsu. Reserve Shikotsumyaku and bone techniques for a rare bloodline wielder.'
 });
 
+villageHenchmen.push({
+  id:'sunagakure:puppet-user',
+  village:'Sunagakure',
+  english:'Hidden Sand',
+  continuity:'Manga and anime setting',
+  role:'Puppet user',
+  name:'Suna Shinobi — Puppet User Henchman',
+  weapon:'Kunai',
+  attack:'melee',
+  gear:['Goggles', 'Face Wrap', 'Water Flask', 'Medium Wooden Puppet'],
+  tactics:'Carries a medium wooden puppet fitted with a Hidden Blade and Senbon Launcher. Resolve the puppet’s attacks using this henchman’s normal accuracy and damage. The kunai is a backup.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
@@ -141,14 +154,16 @@ export function villageHenchmanActor(row) {
       databook:{biografia:`<p><strong>${row.english} · ${row.continuity} · ${row.role}</strong></p><p>${row.tactics}</p>
        <p>Original nameless NPC. Default campaign NC 4. Edit NC to scale accuracy and base damage. Ordinary attribute and skill tests fail. Against ordinary opponents, damage caps at Degree 3. No coup de grâce or opportunity attacks against ordinary opponents. Opponents can simulate one die against this henchman. Core 4.1b, p. 281.</p>`}
     },
-    items:weapons.map(weapon => ({
+    items:[...weapons.map(weapon => ({
       name:weapon, type:'equipamento', img:'icons/svg/sword.svg',
       system:{descricao:`${row.attack === 'melee' ? 'Melee' : 'Ranged'} henchman attack. Default accuracy ${accuracy}. Uses the henchman base damage for the actor’s current NC.`,
         weaponCategory:{Unarmed:'natural', Katana:'martial', Wakizashi:'martial'}[weapon] ?? 'simple',
         attackType:row.attack,
         damageType:{Unarmed:'Bludgeoning', 'Short Sword':'Slashing', Katana:'Slashing', Wakizashi:'Slashing'}[weapon] ?? 'Piercing',
         weaponDamage:damage, equipped:true, quantidade:1}
-    })),
+    })), ...(row.gear ?? []).map(name => ({
+      name, type:'equipamento', img:'icons/svg/item-bag.svg', system:{quantidade:1}
+    }))],
     flags:{'shini-no-sho-altered':{villageHenchman:row.id}}
   };
 }
