@@ -1,3 +1,4 @@
+import {kaguyaClanLeader} from './kaguya-clan-leader.mjs';
 import {ghostSamurai} from './ghost-samurai.mjs';
 import {villageHenchmen, villageHenchmanActor} from './village-henchmen.mjs';
 
@@ -60,16 +61,21 @@ async function buildBossBestiary() {
   name:'sns-village-bosses', label:'Shini no Sho — Village Bestiary: Bosses',
   type:'Actor', package:'world', ownership:{PLAYER:'NONE', ASSISTANT:'OWNER'}
  });
- if ((await pack.getDocuments()).some(actor =>
-  actor.getFlag(SYS,'bestiaryBoss') === ghostSamurai.flags[SYS].bestiaryBoss)) return;
+ const existing = new Set((await pack.getDocuments()).map(actor => actor.getFlag(SYS,'bestiaryBoss')));
+ const missing = [
+  {actor:ghostSamurai, folderName:'Land of Birds'},
+  {actor:kaguyaClanLeader, folderName:'Kirigakure'}
+ ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
+ if (!missing.length) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
-  const name = ghostSamurai.system.cabecalho.filiacao;
-  const folder = pack.folders.find(folder => folder.name === name)
-   ?? await CONFIG.Folder.documentClass.create({name,type:'Actor',sorting:'a'},{pack:pack.collection});
-  await CONFIG.Actor.documentClass.create({...ghostSamurai,folder:folder.id},{pack:pack.collection});
+  for (const {actor, folderName} of missing) {
+   const folder = pack.folders.find(folder => folder.name === folderName)
+    ?? await CONFIG.Folder.documentClass.create({name:folderName,type:'Actor',sorting:'a'},{pack:pack.collection});
+   await CONFIG.Actor.documentClass.create({...actor,folder:folder.id},{pack:pack.collection});
+  }
  } finally {
   if (locked) await pack.configure({locked:true});
  }
