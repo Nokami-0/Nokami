@@ -1,3 +1,4 @@
+import {fubukiKakuyoku, mizoreFuyukuma, karenbana} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
 import {sora} from "./sora.mjs";
@@ -134,7 +135,10 @@ async function buildBossBestiary() {
   {actor:kazuma, folderName:'Twelve Guardian Ninja'},
   {actor:sora, folderName:'Twelve Guardian Ninja'},
   {actor:dotoKazahana, folderName:'Land of Snow'},
-  {actor:ishidate, folderName:'Land of the Moon'}
+  {actor:ishidate, folderName:'Land of the Moon'},
+  {actor:karenbana, folderName:'Land of the Moon'},
+  {actor:fubukiKakuyoku, folderName:'Land of Snow'},
+  {actor:mizoreFuyukuma, folderName:'Land of Snow'}
  ].map(({actor, folderName}) => {
   const id = actor.flags[SYS].bestiaryBoss;
   return {id, actor: withTokenArt(actor, id), folderName};
