@@ -218,12 +218,29 @@ async function buildBossBestiary(basicJutsu) {
  const suna = existing.get('suna-anbu');
  const sunaItems = suna ? templates.find(({id}) => id === 'suna-anbu').actor.items.filter(item =>
   !suna.items.some(current => current.type === item.type && current.name === item.name)) : [];
- if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !sunaItems.length) return;
+ const captain = existing.get('land-of-iron-samurai-captain');
+ const captainItems = captain ? samuraiCaptain.items.filter(item =>
+  !captain.items.some(current => current.type === item.type && current.name === item.name)) : [];
+ const oldCaptainArmor = captain?.items.find(item =>
+  item.name === 'Land of Iron Battle Armor' && item.system.absorption === 15);
+ if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !sunaItems.length && !captainItems.length && !oldCaptainArmor) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
   if (balanceUpdate) await bandit.update(balanceUpdate);
+  if (captainItems.length) await captain.createEmbeddedDocuments('Item', captainItems);
+  if (oldCaptainArmor) {
+   const armor = samuraiCaptain.items.find(item => item.name === oldCaptainArmor.name).system;
+   await oldCaptainArmor.update({
+    'system.absorption': armor.absorption,
+    'system.absorptionRemaining': Math.min(armor.absorption, oldCaptainArmor.system.absorptionRemaining + 5),
+    'system.bodyHardnessBonus': armor.bodyHardnessBonus,
+    'system.valorRyo': armor.valorRyo,
+    'system.peso': armor.peso,
+    'system.descricao': armor.descricao
+   });
+  }
   if (sunaItems.length) await suna.createEmbeddedDocuments('Item', sunaItems);
   for (const {current, changes} of artUpdates) await current.update(changes);
   if (oldTouch) {
