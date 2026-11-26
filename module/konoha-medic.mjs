@@ -3,7 +3,7 @@ export const konohaMedic = {
   type: 'personagem',
   img: 'icons/svg/mystery-man.svg',
   prototypeToken: {name: 'Konoha Medic', actorLink: false, disposition: 1},
-  flags: {'shini-no-sho-altered': {bestiaryBoss: 'konoha-medic'}},
+  flags: {'shini-no-sho-altered': {bestiarySupport: 'konoha-medic'}},
   system: {
     cabecalho: {nome: 'Konoha Medic', nc: 8, patente: 'Medical Ninja', filiacao: 'Konohagakure'},
     atributos: {
