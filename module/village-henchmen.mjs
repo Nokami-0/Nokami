@@ -82,6 +82,19 @@ villageHenchmen.push({
   tactics:'An armored samurai with a helmet and face mask. Use him in pairs to guard a gate or a corridor at the Five Kage Summit. Choose either blade for a standard melee attack. Carrying two weapons grants no extra attacks. The armor is part of the uniform and grants no extra protection in this ordinary henchman build.'
 });
 
+villageHenchmen.push({
+  id:'otogakure:masked-henchman',
+  village:'Otogakure',
+  english:'Hidden Sound',
+  continuity:'Manga and anime setting',
+  role:'Masked hideout sentry',
+  name:'Oto Masked Ninja',
+  weapon:'Unarmed',
+  sidearm:'Kunai',
+  attack:'melee',
+  tactics:'A masked foot soldier in a gray tunic. Use him as a sentry in a Sound hideout. He fights with ordinary taijutsu or a backup kunai and calls for reinforcements when intruders get past him. Either attack uses the same henchman damage. He has no special sound techniques.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
