@@ -1,3 +1,4 @@
+import {dotoKazahana} from "./doto-kazahana.mjs";
 import {sora} from "./sora.mjs";
 import {kazuma} from "./kazuma.mjs";
 import {konohaMedic} from "./konoha-medic.mjs";
@@ -101,7 +102,8 @@ async function buildBossBestiary() {
   {actor:banditLeader, folderName:'Bandits'},
   {actor:konohaMedic, folderName:'Konohagakure'},
   {actor:kazuma, folderName:'Twelve Guardian Ninja'},
-  {actor:sora, folderName:'Twelve Guardian Ninja'}
+  {actor:sora, folderName:'Twelve Guardian Ninja'},
+  {actor:dotoKazahana, folderName:'Land of Snow'}
  ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
  if (!missing.length && !balanceUpdate) return;
 
