@@ -1,3 +1,4 @@
+import {ranmaru} from "./ranmaru.mjs";
 import {kaguyaClanLeader} from './kaguya-clan-leader.mjs';
 import {ghostSamurai} from './ghost-samurai.mjs';
 import {villageHenchmen, villageHenchmanActor} from './village-henchmen.mjs';
@@ -64,7 +65,8 @@ async function buildBossBestiary() {
  const existing = new Set((await pack.getDocuments()).map(actor => actor.getFlag(SYS,'bestiaryBoss')));
  const missing = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
-  {actor:kaguyaClanLeader, folderName:'Kirigakure'}
+  {actor:kaguyaClanLeader, folderName:'Kirigakure'},
+  {actor:ranmaru, folderName:'Kurosuki Family'}
  ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
  if (!missing.length) return;
 
