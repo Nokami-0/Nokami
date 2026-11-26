@@ -179,6 +179,16 @@ async function buildBossBestiary(basicJutsu) {
  const ishidateActor = existing.get('ishidate');
  const oldTouch = ishidateActor?.items.find(item => item.type === 'poder' && item.name === 'Petrifying Touch'
   && item.system.descricao === previousPetrifyingTouch);
+ const puppetAptitudes = await Promise.all([
+  ['sns-aptitude-individual__items.json', 'Engineer'],
+  ['sns-hijutsu-vol2-chapter2__items.json', 'Kugutsu (Puppets)']
+ ].map(async ([file, name]) => {
+  const response = await fetch(`systems/${SYS}/integrated/data/${file}`);
+  if (!response.ok) throw Error(`Could not load ${file} (HTTP ${response.status}).`);
+  const item = (await response.json()).find(item => item.name === name && item.type === 'aptidao');
+  if (!item) throw Error(`Could not find ${name} in ${file}.`);
+  return item;
+ }));
  const templates = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
@@ -192,7 +202,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
   ...villageSpecialists,
-  ...anbuOperatives(SYS, basicJutsu)
+  ...anbuOperatives(SYS, basicJutsu, puppetAptitudes)
  ].map(({actor, folderName}) => {
   const id = actor.flags[SYS].bestiaryBoss;
   return {id, actor: id.startsWith('village-specialist:') ? actor : withTokenArt(actor, id), folderName};
@@ -203,12 +213,16 @@ async function buildBossBestiary(basicJutsu) {
   const changes = defaultArtUpdates(current, actor);
   return Object.keys(changes).length ? [{current, changes}] : [];
  });
- if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length) return;
+ const suna = existing.get('suna-anbu');
+ const sunaItems = suna ? templates.find(({id}) => id === 'suna-anbu').actor.items.filter(item =>
+  !suna.items.some(current => current.type === item.type && current.name === item.name)) : [];
+ if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !sunaItems.length) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
   if (balanceUpdate) await bandit.update(balanceUpdate);
+  if (sunaItems.length) await suna.createEmbeddedDocuments('Item', sunaItems);
   for (const {current, changes} of artUpdates) await current.update(changes);
   if (oldTouch) {
    const touch = ishidate.items.find(item => item.name === 'Petrifying Touch');
