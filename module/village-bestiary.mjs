@@ -1,3 +1,4 @@
+import {banditLeader} from "./bandit-leader.mjs";
 import {ranmaru} from "./ranmaru.mjs";
 import {kaguyaClanLeader} from './kaguya-clan-leader.mjs';
 import {ghostSamurai} from './ghost-samurai.mjs';
@@ -66,7 +67,8 @@ async function buildBossBestiary() {
  const missing = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
-  {actor:ranmaru, folderName:'Kurosuki Family'}
+  {actor:ranmaru, folderName:'Kurosuki Family'},
+  {actor:banditLeader, folderName:'Bandits'}
  ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
  if (!missing.length) return;
 
