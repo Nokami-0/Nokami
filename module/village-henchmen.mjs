@@ -108,6 +108,20 @@ villageHenchmen.push({
   tactics:'A gray-uniformed Leaf chūnin with a clipboard. Tracks candidates and records infractions for the chief proctor. Run routine exam supervision as part of the scene. If a disputed incident requires a skill test, use a full NPC for the chief proctor. In combat, the examiner calls for backup and uses basic taijutsu or a kunai.'
 });
 
+villageHenchmen.push({
+  id:'kaguya:clan-raider',
+  village:'Kirigakure',
+  english:'Hidden Mist encounter',
+  continuity:'Manga and anime, historical',
+  role:'Kaguya clan attacker',
+  name:'Kaguya Clan Raider',
+  clan:'Kaguya',
+  affiliation:'Kaguya clan',
+  weapon:'Unarmed',
+  attack:'melee',
+  tactics:'A nameless Kaguya clan fighter from the raid on Kirigakure. The Kirigakure folder marks the encounter location. The raider is an attacker from the clan and fights at close range with ordinary taijutsu. Reserve Shikotsumyaku and bone techniques for a rare bloodline wielder.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
@@ -122,7 +136,7 @@ export function villageHenchmanActor(row) {
     name, type:'personagem', img:'icons/svg/mystery-man.svg',
     prototypeToken:{name, actorLink:false, disposition:-1},
     system:{
-      cabecalho:{nome:name, nc, patente:'Henchman', filiacao:row.village},
+      cabecalho:{nome:name, nc, patente:'Henchman', filiacao:row.affiliation ?? row.village, cla:row.clan ?? ''},
       energias:{vitalidade:{value:1,max:1}, chakra:{value:0,max:0}},
       databook:{biografia:`<p><strong>${row.english} · ${row.continuity} · ${row.role}</strong></p><p>${row.tactics}</p>
        <p>Original nameless NPC. Default campaign NC 4. Edit NC to scale accuracy and base damage. Ordinary attribute and skill tests fail. Against ordinary opponents, damage caps at Degree 3. No coup de grâce or opportunity attacks against ordinary opponents. Opponents can simulate one die against this henchman. Core 4.1b, p. 281.</p>`}
