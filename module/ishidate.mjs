@@ -1,3 +1,5 @@
+export const previousPetrifyingTouch = 'Standard action. Make one melee touch attack against a target within 1 m using normal defense. On a hit, one leg partially petrifies. The target cannot move under its own power through the end of its next turn, but can still attack and defend. This attack deals no damage and cannot fully petrify a creature. A successful Iryou Ninjutsu treatment ends the effect early. Apply and clear the effect manually.';
+
 export const ishidate = {
   name: 'Ishidate',
   type: 'personagem',
@@ -32,7 +34,7 @@ export const ishidate = {
       name: 'Petrifying Touch', type: 'poder', img: 'icons/svg/eye.svg',
       system: {
         tipo: 'Petrification Gauntlet', nivelUsado: 1, custo: 'Once per target per scene',
-        descricao: 'Standard action. Make one melee touch attack against a target within 1 m using normal defense. On a hit, one leg partially petrifies. The target cannot move under its own power through the end of its next turn, but can still attack and defend. This attack deals no damage and cannot fully petrify a creature. A successful Iryou Ninjutsu treatment ends the effect early. Apply and clear the effect manually.'
+        descricao: 'Standard action. Make a melee touch attack against normal defense within 1 m. On a hit, apply the base Petrify progression (Basic Book 4.1b, p. 238): the target is Slow immediately (half speed, no sprint or dash). At the start of its second turn under the effect, it becomes incapacitated. The effect ends at the end of that second turn. Iryou Ninjutsu treatment ends it early. No damage. Resolve the conditions manually. The gauntlet uses Petrify’s progression as a physical effect rather than casting Magen.'
       }
     }
   ]

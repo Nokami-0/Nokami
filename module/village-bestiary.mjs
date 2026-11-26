@@ -1,4 +1,4 @@
-import {ishidate} from "./ishidate.mjs";
+import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
 import {sora} from "./sora.mjs";
 import {kazuma} from "./kazuma.mjs";
@@ -96,6 +96,9 @@ async function buildBossBestiary() {
  const existing = new Map((await pack.getDocuments()).map(actor => [actor.getFlag(SYS,'bestiaryBoss'), actor]));
  const bandit = existing.get('bandit-leader');
  const balanceUpdate = banditBalanceUpdate(bandit);
+ const ishidateActor = existing.get('ishidate');
+ const oldTouch = ishidateActor?.items.find(item => item.type === 'poder' && item.name === 'Petrifying Touch'
+  && item.system.descricao === previousPetrifyingTouch);
  const missing = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
@@ -107,12 +110,16 @@ async function buildBossBestiary() {
   {actor:dotoKazahana, folderName:'Land of Snow'},
   {actor:ishidate, folderName:'Land of the Moon'}
  ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
- if (!missing.length && !balanceUpdate) return;
+ if (!missing.length && !balanceUpdate && !oldTouch) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
   if (balanceUpdate) await bandit.update(balanceUpdate);
+  if (oldTouch) {
+   const touch = ishidate.items.find(item => item.name === 'Petrifying Touch');
+   await ishidateActor.updateEmbeddedDocuments('Item', [{_id:oldTouch.id, 'system.descricao':touch.system.descricao}]);
+  }
   for (const {actor, folderName} of missing) {
    const folder = pack.folders.find(folder => folder.name === folderName)
     ?? await CONFIG.Folder.documentClass.create({name:folderName,type:'Actor',sorting:'a'},{pack:pack.collection});
