@@ -32,12 +32,46 @@ function attacks(p){
  if(p.dokiWeapon==='unarmed')return [['Unarmed Strike','Bludgeoning']];
  const n=p.name.toLowerCase();if(n.includes('spider'))return [['Bite','Piercing'],['Body Strike','Bludgeoning']];if(n.includes('snake'))return [['Bite','Piercing'],['Tail Strike','Bludgeoning']];if(n.includes('eagle'))return [['Claws','Slashing'],['Beak','Piercing']];if(n.includes('dog'))return [['Bite','Piercing']];if(n.includes('slug'))return [['Body Slam','Bludgeoning']];if(n.includes('monkey'))return [['Punch','Bludgeoning'],['Kick','Bludgeoning']];if(n.includes('bee'))return [['Sting','Piercing']];if(n.includes('toad')||n.includes('frog'))return [['Club','Bludgeoning'],['Spear','Piercing'],['Sword','Slashing']];return []}
 function list(){return [...SPECIES,...game.actors.filter(a=>a.getFlag(SYS,'customSpecies')).map(a=>a.getFlag(SYS,'customSpecies'))]}
+const summonFolderTasks = new Map();
+
+function findSummonFolder(ownerId) {
+ return game.folders.find(folder => folder.type === 'Actor' && folder.getFlag(SYS, 'summonerActorId') === ownerId);
+}
+
+function ensureSummonFolder(owner) {
+ const pending = summonFolderTasks.get(owner.id);
+ if (pending) return pending;
+ const task = (async () => {
+  const folder = findSummonFolder(owner.id);
+  if (!folder) return Folder.create({type:'Actor', name:owner.name, flags:{[SYS]:{summonerActorId:owner.id}}});
+  if (folder.name !== owner.name) await folder.update({name:owner.name});
+  return folder;
+ })().finally(() => summonFolderTasks.delete(owner.id));
+ summonFolderTasks.set(owner.id, task);
+ return task;
+}
+
+async function migrateSummonFolders() {
+ for (const actor of game.actors) {
+  const profile = actor.getFlag(SYS, 'summonProfile');
+  const folder = actor.folder;
+  if (!profile?.ownerId || folder?.type !== 'Actor' || !folder.name.startsWith('Summons — ') ||
+      folder.getFlag(SYS, 'summonerActorId')) continue;
+  const owner = game.actors.get(profile.ownerId);
+  if (!owner) continue;
+  try {
+   const target = await ensureSummonFolder(owner);
+   await actor.update({folder:target.id});
+  } catch (error) {
+   console.error('Could not move existing summon to its summoner folder', actor.id, error);
+  }
+ }
+}
+
 async function actorFor(p,nc,owner,mode,sizeId){
  const summonerUsers=game.users.filter(u=>!u.isGM&&owner.testUserPermission(u,'OWNER'));
  const primary=summonerUsers.find(u=>u.active)||summonerUsers[0]||game.user;
- const folderName=`Summons — ${primary.name}`;
- let folder=game.folders.find(f=>f.type==='Actor'&&f.name===folderName);
- if(!folder)folder=await Folder.create({type:'Actor',name:folderName});
+ const folder=await ensureSummonFolder(owner);
  // Foundry permissions belong to Actors, not folders. The folder only shows documents the player can see.
  const summonOwnership={default:0,[primary.id]:3};
 
@@ -357,6 +391,15 @@ function openDesummonDialog(owner, actorId = null) {
 
 function createCustom(owner){if(!game.user.isGM)return ui.notifications.warn('GM required.');new Dialog({title:'Create Custom Summon',content:'<form><label>Name <input name="name"></label><label>Image path <input name="img"></label><label>Skills (comma-separated) <input name="skills"></label></form>',buttons:{create:{label:'Create',callback:async html=>{const get=k=>String(html.find(`[name="${k}"]`).val()||'').trim();if(!get('name'))return ui.notifications.warn('Name required.');const p={name:get('name'),image:get('img'),skills:get('skills'),group:'Custom',source:'User-defined',key_attributes:'',notes:'Custom profile; assign aptitudes, attacks, and statistics manually.'};const a=await actorFor(p,4,owner,'hijutsu');await a.setFlag(SYS,'customSpecies',p);a.sheet.render(true);}}}}).render(true)}
 Hooks.once('ready',async()=>{try{await loadKuchiyoseSpecies()}catch(e){console.error(e);ui.notifications.warn('Could not load Kuchiyose species.')}});
+Hooks.once('ready', () => {
+ if (game.user.isGM && (!game.users.activeGM || game.users.activeGM.id === game.user.id)) return migrateSummonFolders();
+});
+Hooks.on('updateActor', async (actor, changes) => {
+ if (!game.user.isGM || (game.users.activeGM && game.users.activeGM.id !== game.user.id) ||
+     actor.isToken || !('name' in changes)) return;
+ const folder = findSummonFolder(actor.id);
+ if (folder && folder.name !== actor.name) await folder.update({name:actor.name});
+});
 Hooks.on('renderActorSheet',(app,html)=>{if(app.actor.flags?.[SYS]?.puppetProfile||app.actor.flags?.[SYS]?.rashoumonGate||app.actor.type!=='personagem'||!app.isEditable||app.actor.getFlag(SYS,'summonProfile')||app.actor.getFlag(SYS,'summonTemplate'))return;const root=html instanceof jQuery?html:$(html);if(root.find('.sns-kuchiyose-engine').length)return;
  const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;flex-wrap:wrap;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-desummon">Desummon</button><button type="button" class="sns-open-kuchiyose">Summon Compendium</button><button type="button" class="sns-open-puppets">Puppets</button><button type="button" class="sns-size-reference">Size Reference</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div><h4>Summoned Creatures</h4><ul class="sns-summon-roster"></ul></section>`);
  const target=root.find('.sheet-body').first();(target.length?target:root.find('form').first()).prepend(panel);
