@@ -1,3 +1,4 @@
+import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
 import {fubukiKakuyoku, mizoreFuyukuma, karenbana} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
@@ -53,6 +54,9 @@ async function build() {
   name:'sns-village-henchmen', label:'Shini no Sho — Village Bestiary: Henchmen',
   type:'Actor', package:'world', ownership:{PLAYER:'NONE', ASSISTANT:'OWNER'}
  });
+ const response = await fetch(`systems/${SYS}/integrated/data/sns-basic-jutsu__items.json`);
+ if (!response.ok) throw Error(`Could not load the Basic Jutsu catalog (HTTP ${response.status}).`);
+ const basicJutsu = await response.json();
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  let added = 0;
@@ -64,6 +68,7 @@ async function build() {
   for (const row of villageHenchmen) {
    const actor = existing.get(row.id);
    const template = withTokenArt(villageHenchmanActor(row), henchmanTokenNames[row.id]);
+   const techniques = villageBasicTechniques(row, basicJutsu);
    if (actor) {
     const changes = {};
     if (row.legacyName) {
@@ -74,6 +79,9 @@ async function build() {
     if (Object.keys(changes).length) renamed++;
     Object.assign(changes, defaultArtUpdates(actor, template));
     if (Object.keys(changes).length) await actor.update(changes);
+    const missing = techniques.filter(technique => !actor.items.some(item =>
+     item.type === technique.type && item.name.toLowerCase() === technique.name.toLowerCase()));
+    if (missing.length) await actor.createEmbeddedDocuments('Item', missing);
     continue;
    }
    let folder = folders.get(row.village);
@@ -82,7 +90,7 @@ async function build() {
     folder = created.id;
     folders.set(row.village,folder);
    }
-   await ActorClass.create({...template,folder},{pack:pack.collection});
+   await ActorClass.create({...template,items:[...template.items,...techniques],folder},{pack:pack.collection});
    added++;
   }
   if (await moveMedicToHenchmen(pack, folders.get('Konohagakure'), documents)) added++;
@@ -173,10 +181,11 @@ async function buildBossBestiary() {
   {actor:ishidate, folderName:'Land of the Moon'},
   {actor:karenbana, folderName:'Land of the Moon'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
-  {actor:mizoreFuyukuma, folderName:'Land of Snow'}
+  {actor:mizoreFuyukuma, folderName:'Land of Snow'},
+  ...villageSpecialists
  ].map(({actor, folderName}) => {
   const id = actor.flags[SYS].bestiaryBoss;
-  return {id, actor: withTokenArt(actor, id), folderName};
+  return {id, actor: id.startsWith('village-specialist:') ? actor : withTokenArt(actor, id), folderName};
  });
  const missing = templates.filter(({id}) => !existing.has(id));
  const artUpdates = templates.flatMap(({id, actor}) => {
