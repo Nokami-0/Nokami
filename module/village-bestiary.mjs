@@ -1,3 +1,4 @@
+import {anbuOperatives} from './anbu-operatives.mjs';
 import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
 import {fubukiKakuyoku, mizoreFuyukuma, karenbana} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
@@ -97,7 +98,7 @@ async function build() {
  } finally {
   if (locked) await pack.configure({locked:true});
  }
- return {pack, added, renamed};
+ return {pack, added, renamed, basicJutsu};
 }
 
 async function moveMedicToHenchmen(pack, folder, documents) {
@@ -157,7 +158,7 @@ function banditBalanceUpdate(actor) {
  return updates;
 }
 
-async function buildBossBestiary() {
+async function buildBossBestiary(basicJutsu) {
  const collection = BOSS_PACK;
  const Compendiums = foundry.documents?.collections?.CompendiumCollection ?? globalThis.CompendiumCollection;
  const pack = game.packs.get(collection) ?? await Compendiums.createCompendium({
@@ -182,7 +183,8 @@ async function buildBossBestiary() {
   {actor:karenbana, folderName:'Land of the Moon'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
-  ...villageSpecialists
+  ...villageSpecialists,
+  ...anbuOperatives(SYS, basicJutsu)
  ].map(({actor, folderName}) => {
   const id = actor.flags[SYS].bestiaryBoss;
   return {id, actor: id.startsWith('village-specialist:') ? actor : withTokenArt(actor, id), folderName};
@@ -219,8 +221,8 @@ bestiaryHooks.once('ready', async () => {
  if (!game.user.isGM || (game.users.activeGM && game.users.activeGM.id !== game.user.id)) return;
  game.snsVillageBestiary = {build:buildVillageBestiary};
  try {
-  await buildVillageBestiary();
-  await buildBossBestiary();
+  const {basicJutsu} = await buildVillageBestiary();
+  await buildBossBestiary(basicJutsu);
  } catch (error) {
   console.error('Could not build the Shini no Sho Village Bestiary',error);
   ui.notifications.warn('Village Bestiary build failed. See the console for details.');
