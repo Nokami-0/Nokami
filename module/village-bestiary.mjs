@@ -27,7 +27,7 @@ async function build() {
   const folders = new Map(pack.folders.map(folder => [folder.name, folder.id]));
   for (const row of villageHenchmen) {
    const actor = existing.get(row.id);
-   if (actor) {
+   if (actor && row.legacyName) {
     const changes = {};
     if (actor.name === row.legacyName) changes.name = row.name;
     if (actor.system.cabecalho.nome === row.legacyName) changes['system.cabecalho.nome'] = row.name;
@@ -36,8 +36,8 @@ async function build() {
      await actor.update(changes);
      renamed++;
     }
-    continue;
    }
+   if (actor) continue;
    let folder = folders.get(row.village);
    if (!folder) {
     const created = await FolderClass.create({name:row.village,type:'Actor',sorting:'a'},{pack:pack.collection});

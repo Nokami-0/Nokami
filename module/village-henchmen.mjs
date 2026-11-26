@@ -69,6 +69,19 @@ export const villageHenchmen = villages.flatMap(([village, prefix, english, cont
   }))
 );
 
+villageHenchmen.push({
+  id:'land-of-iron:samurai-henchman',
+  village:'Land of Iron',
+  english:'Land of Iron',
+  continuity:'Manga and anime',
+  role:'Armored summit guard',
+  name:'Land of Iron Samurai',
+  weapon:'Katana',
+  sidearm:'Wakizashi',
+  attack:'melee',
+  tactics:'An armored samurai with a helmet and face mask. Use him in pairs to guard a gate or a corridor at the Five Kage Summit. Choose either blade for a standard melee attack. Carrying two weapons grants no extra attacks. The armor is part of the uniform and grants no extra protection in this ordinary henchman build.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
@@ -78,7 +91,7 @@ export function villageHenchmanActor(row) {
   const nc = 4;
   const {accuracy, damage} = henchmanNumbers(nc);
   const {name} = row;
-  const damageType = {Unarmed:'Bludgeoning', 'Short Sword':'Slashing'}[row.weapon] ?? 'Piercing';
+  const weapons = row.sidearm ? [row.weapon, row.sidearm] : [row.weapon];
   return {
     name, type:'personagem', img:'icons/svg/mystery-man.svg',
     prototypeToken:{name, actorLink:false, disposition:-1},
@@ -88,12 +101,14 @@ export function villageHenchmanActor(row) {
       databook:{biografia:`<p><strong>${row.english} · ${row.continuity} · ${row.role}</strong></p><p>${row.tactics}</p>
        <p>Original nameless NPC. Default campaign NC 4. Edit NC to scale accuracy and base damage. Ordinary attribute and skill tests fail. Against ordinary opponents, damage caps at Degree 3. No coup de grâce or opportunity attacks against ordinary opponents. Opponents can simulate one die against this henchman. Core 4.1b, p. 281.</p>`}
     },
-    items:[{
-      name:row.weapon, type:'equipamento', img:'icons/svg/sword.svg',
+    items:weapons.map(weapon => ({
+      name:weapon, type:'equipamento', img:'icons/svg/sword.svg',
       system:{descricao:`${row.attack === 'melee' ? 'Melee' : 'Ranged'} henchman attack. Default accuracy ${accuracy}. Uses the henchman base damage for the actor’s current NC.`,
-        weaponCategory:row.weapon === 'Unarmed' ? 'natural' : 'simple', attackType:row.attack, damageType,
+        weaponCategory:{Unarmed:'natural', Katana:'martial', Wakizashi:'martial'}[weapon] ?? 'simple',
+        attackType:row.attack,
+        damageType:{Unarmed:'Bludgeoning', 'Short Sword':'Slashing', Katana:'Slashing', Wakizashi:'Slashing'}[weapon] ?? 'Piercing',
         weaponDamage:damage, equipped:true, quantidade:1}
-    }],
+    })),
     flags:{'shini-no-sho-altered':{villageHenchman:row.id}}
   };
 }
