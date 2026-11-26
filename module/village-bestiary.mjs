@@ -1,3 +1,4 @@
+import {sora} from "./sora.mjs";
 import {kazuma} from "./kazuma.mjs";
 import {konohaMedic} from "./konoha-medic.mjs";
 import {banditLeader} from "./bandit-leader.mjs";
@@ -99,7 +100,8 @@ async function buildBossBestiary() {
   {actor:ranmaru, folderName:'Kurosuki Family'},
   {actor:banditLeader, folderName:'Bandits'},
   {actor:konohaMedic, folderName:'Konohagakure'},
-  {actor:kazuma, folderName:'Twelve Guardian Ninja'}
+  {actor:kazuma, folderName:'Twelve Guardian Ninja'},
+  {actor:sora, folderName:'Twelve Guardian Ninja'}
  ].filter(({actor}) => !existing.has(actor.flags[SYS].bestiaryBoss));
  if (!missing.length && !balanceUpdate) return;
 
