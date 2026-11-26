@@ -3,6 +3,7 @@ export class ShinobiItemSheet extends BaseItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["shinobi", "sheet", "item"], width: 520, height: 480,
+      scrollY: [".window-content", ".sheet-body", ".sheet-body .tab"],
       // Ligação correta às abas
       tabs: [{ navSelector: ".tabs", contentSelector: ".sheet-body", initial: "caracteristicas" }]
     });

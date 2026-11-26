@@ -63,6 +63,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       width: Math.min(1200, Math.max(520, Math.floor(window.innerWidth * 0.90))),
       height: Math.min(900, Math.max(480, Math.floor(window.innerHeight * 0.88))),
       resizable: true,
+      scrollY: [".window-content", ".sheet-body", ".sheet-body .tab", ".sheet-body [style*='overflow-y: auto']"],
       tabs: [
         { navSelector: ".sheet-tabs[data-group='primary']", contentSelector: ".sheet-body", initial: "principal" },
         { navSelector: ".sheet-tabs[data-group='secundario']", contentSelector: ".principal-body", initial: "status" }
