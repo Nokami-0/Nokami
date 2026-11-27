@@ -46,7 +46,7 @@ const henchmanTokenNames = {
  'kaguya:clan-raider': 'kaguya-clan-raider'
 };
 
-const filmTokenReplacements = new Set(['mizore-fuyukuma', 'fubuki-kakuyoku']);
+const filmTokenReplacements = new Set(['mizore-fuyukuma', 'fubuki-kakuyoku', 'nadare-roga']);
 
 function withTokenArt(actor, tokenName) {
  if (!tokenName) return actor;
