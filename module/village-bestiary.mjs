@@ -1,3 +1,4 @@
+import {waraji} from './waraji.mjs';
 import {fuka} from './fuka.mjs';
 import {gitai} from './gitai.mjs';
 import {tonbei} from './tonbei.mjs';
@@ -334,6 +335,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:kamikiri(SYS), folderName:'Otogakure'},
   {actor:genyumaru(SYS), folderName:'Otogakure'},
   {actor:gato(SYS), folderName:'Land of Waves'},
+  {actor:waraji(SYS), folderName:'Land of Waves'},
   {actor:gatsu(SYS), folderName:'Land of Stone'},
   {actor:sazanami(SYS), folderName:'Independent Shinobi'},
   {actor:directorMakino(SYS), folderName:'Land of Fire'},
