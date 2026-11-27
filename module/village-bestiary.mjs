@@ -1,3 +1,4 @@
+import {demonBrothers} from './demon-brothers.mjs';
 import {soundAndClanNpcs} from './sound-and-clan-npcs.mjs';
 import {villageTraining} from './village-training.mjs';
 import {shinnoBase, shinnoRevival} from './shinno.mjs';
@@ -249,6 +250,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
   ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog),
+  ...demonBrothers(SYS, basicJutsu, ninpou),
   ...villageSpecialists,
   ...anbuOperatives(SYS, basicJutsu, puppetAptitudes)
  ].map(({actor, folderName}) => {
