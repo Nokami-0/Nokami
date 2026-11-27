@@ -1,3 +1,4 @@
+import {gatsu} from './gatsu.mjs';
 import {gato} from './gato.mjs';
 import {kamikiri} from './kamikiri.mjs';
 import {suzumebachi} from './suzumebachi.mjs';
@@ -264,6 +265,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:suzumebachi(SYS), folderName:'Iwagakure'},
   {actor:kamikiri(SYS), folderName:'Otogakure'},
   {actor:gato(SYS), folderName:'Land of Waves'},
+  {actor:gatsu(SYS), folderName:'Land of Stone'},
   {actor:oboro(SYS), folderName:'Amegakure'},
   ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog, ninpou),
   ...demonBrothers(SYS, basicJutsu, ninpou),
