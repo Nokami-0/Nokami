@@ -1,3 +1,4 @@
+import {aptitudeEffects} from '../module/aptitude-effects.js';
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
 import {normalizeSummonProfile,summonStats,summonNCCap,summonQuantityLegal,summonGroupError,skillKey,syncSummonSpecies,SUMMON_REVISION,summonRollRestriction} from '../module/summon-rules.js';
 import {summonEquipmentBase,dokiEquipment} from '../module/doki-equipment.js';
@@ -47,7 +48,7 @@ test('revision migration fills old world summons once without changing attribute
 test('actual character derived-data method applies summon rules while keeping ordinary actor calculations',()=>{
  const source=fs.readFileSync(new URL('../module/shinobi.js',import.meta.url),'utf8');
  const cls=source.slice(source.indexOf('class ShinobiPersonagemData'),source.indexOf('class ShinobiPoderData'));
- const Model=vm.runInNewContext(cls+';ShinobiPersonagemData',{foundry:{abstract:{TypeDataModel:class{}}},normalizeSummonProfile,summonStats,game:{actors:new Map()},console});
+ const Model=vm.runInNewContext(cls+';ShinobiPersonagemData',{foundry:{abstract:{TypeDataModel:class{}}},aptitudeEffects,normalizeSummonProfile,summonStats,game:{actors:new Map()},console});
  function model(profile){const m=new Model();Object.assign(m,{parent:{getFlag:()=>profile,items:[]},cabecalho:{nc:12},configuracoes:{},atributos:Object.fromEntries(['for','des','agi','per','vig','int','esp'].map(k=>[k,{valor:8}])),sociais:{},energias:{vitalidade:{},chakra:{},iniciativa:{pericia:'prontidao',atributo:'per',bonus:0},reacaoEsquiva:{pericia:'esquiva',fixo:0,bonus:0},deslocamento:{base:10,atributo:'agi',divisor:2,bonus:0}},defesas:{dureza:0},pericias:{atletismo:{attr:'for',pontos:5,outro:0},prontidao:{attr:'per',pontos:0,outro:0},arte:{attr:'int',pontos:6,outro:0},furtividade:{attr:'agi',pontos:0,outro:0}},combate:{corporal:{attr:'for',base:3,outro:0},esquiva:{attr:'agi',base:3,outro:0}},periciasSociais:{},calculadora:{},recursoExtra:{ativo:'nenhum'}});return m;}
  const ordinary=model();ordinary.prepareDerivedData();assert.equal(ordinary.energias.vitalidade.max,94);assert.equal(ordinary.pericias.atletismo.total,9);assert.equal(ordinary.combate.corporal.total,11);
  const summon=model({species:'Turtle',skills:['Athletics (Swimming)'],commonPenalty:-3});summon.prepareDerivedData();assert.equal(summon.energias.vitalidade.max,47);assert.equal(summon.pericias.atletismo.total,8);assert.equal(summon.pericias.arte.total,0);assert.equal(summon.combate.corporal.total,8);assert.equal(summon.defesas.durezaTotal,2);

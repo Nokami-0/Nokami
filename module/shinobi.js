@@ -1,3 +1,4 @@
+import {aptitudeEffects} from './aptitude-effects.js';
 import {henchmanNumbers} from "./village-henchmen.mjs";
 import { SHINOBI_CONFIG } from "./config.js";
 import {summonStats,normalizeSummonProfile} from './summon-rules.js';
@@ -136,7 +137,8 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     const nc = summonProfile ? Number(this.cabecalho.nc ?? 0) : this.cabecalho.nc || 1;
     if(summonProfile&&nc<4)for(const attr of Object.values(this.atributos))attr.valor=0;
     if(summonProfile?.intelligenceZero)this.atributos.int.valor=0;
-    const conf = this.configuracoes || {};
+    const {config, bonus} = aptitudeEffects(this.parent, 'shini-no-sho-altered');
+    const conf = {...this.configuracoes, ...config};
     
     // Atributos base e efetivos (para cálculos, como o bônus do Modo Bijuu)
     const forFinal = this.atributos.for.valor || 0;
@@ -150,14 +152,14 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     const attrsFinal = { for: forFinal, des: desFinal, agi: agiFinal, per: perFinal, vig: vigFinal, int: intFinal, esp: espFinal };
 
     // Precisões
-    for (let key of Object.keys(this.atributos || {})) { this.atributos[key].precisao = this.atributos[key].valor; }
+    for (let key of Object.keys(this.atributos || {})) { this.atributos[key].precisao = this.atributos[key].valor + (key === 'vig' && conf.corpulencia ? 2 : 0) - (key === 'agi' && conf.resiliencia ? 3 : 0); }
     for (let key of Object.keys(this.sociais || {})) { this.sociais[key].precisao = this.sociais[key].valor; }
 
     // Vitalidade MÁX
     let vitBase = 10 + (3 * vigFinal) + (5 * nc);
     if (conf.corpulencia) vitBase += (vigFinal * 3);
     if (conf.cloneReserva) vitBase -= 3;
-    this.energias.vitalidade.max = henchman ? 1 : vitBase;
+    this.energias.vitalidade.max = henchman ? 1 : Math.max(1,vitBase + bonus('vitality'));
 
     // Chakra MÁX
     let chkBase = 10 + (3 * (conf.controlePerfeito1 ? intFinal : espFinal));
@@ -166,7 +168,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     if (conf.byakugou) chkBase -= 15;
     if (conf.chakraExpandido) chkBase = Math.floor(chkBase * 1.5);
     if (conf.rinnegan) chkBase = Math.floor(chkBase * 0.9);
-    this.energias.chakra.max = henchman ? 0 : chkBase;
+    this.energias.chakra.max = henchman ? 0 : Math.max(0,chkBase + bonus('chakra'));
 
     // Dureza (A base editável do jogador fica salva. Aqui somamos os bônus.)
     let durezaExtra = 0;
@@ -189,7 +191,9 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     Object.defineProperty(this.defesas, "armorAbsorptionMax", { value: Math.max(0,Number(equippedArmor?.system.absorption ?? 0)), configurable: true });
     Object.defineProperty(this.defesas, "armorAbsorptionRemaining", { value: Math.max(0,Number(equippedArmor?.system.absorptionRemaining ?? equippedArmor?.system.absorption ?? 0)), configurable: true });
     const durezaBase = this.defesas.dureza || 0;
-    Object.defineProperty(this.defesas, "durezaTotal", { value: durezaBase + durezaExtra, configurable: true });
+    Object.defineProperty(this.defesas, "durezaTotal", { value: Math.max(0,durezaBase + durezaExtra + bonus('hardness')), configurable: true });
+
+    Object.defineProperty(this.defesas, "absorptionTotal", { value: Math.max(0,(this.defesas.absorcao || 0) + bonus('absorption')), configurable: true });
 
     // Perícias Gerais
     for (let key of Object.keys(this.pericias || {})) {
@@ -198,7 +202,8 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
       if (conf.furtividadePerceptiva && key === "furtividade") attrLigado = "per";
       const valorDoAtributo = attrsFinal[attrLigado] || 0;
       const baseCalc = Math.ceil(valorDoAtributo / 2);
-      const totalCalc = baseCalc + pericia.pontos + pericia.outro;
+      const resiliencePenalty = conf.resiliencia && ['acrobacia','furtividade'].includes(key) ? 3 : 0;
+      const totalCalc = baseCalc + pericia.pontos + pericia.outro + bonus(`skill.${key}`) - resiliencePenalty;
       Object.defineProperty(pericia, "base", { value: baseCalc, configurable: true });
       Object.defineProperty(pericia, "total", { value: totalCalc, configurable: true });
     }
@@ -211,6 +216,8 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
       const valorDoAtributo = attrsFinal[attrLigado] || 0;
       let totalCalc = (combateItem.base !== undefined ? combateItem.base : 3) + valorDoAtributo + (combateItem.outro || 0);
       if (conf.combateDefensivo && key === "corporal") totalCalc -= 2;
+      totalCalc += bonus(`combat.${key}`);
+      if (conf.resiliencia && key === 'esquiva') totalCalc -= 3;
       Object.defineProperty(combateItem, "total", { value: henchman ? henchmanNumbers(nc).accuracy : totalCalc, configurable: true });
     }
 
@@ -231,7 +238,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     for (let key of Object.keys(this.calculadora || {})) {
       const calc = this.calculadora[key];
       const baseAtributo = Math.ceil(atributosBaseDano[key] / 2);
-      const totalBase = henchman ? henchmanNumbers(nc).damage : Math.max(0, baseAtributo + calc.dda + calc.outro);
+      const totalBase = henchman ? henchmanNumbers(nc).damage : Math.max(0, baseAtributo + calc.dda + calc.outro + bonus(`damage.${key}`));
       const extraGrau = calc.meioGrau ? 0.5 : 0;
       Object.defineProperty(calc, "baseAtributo", { value: baseAtributo, configurable: true });
       Object.defineProperty(calc, "totalBase", { value: totalBase, configurable: true });
@@ -254,23 +261,23 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
     }
 
     // Iniciativa
-    let iniBonusExtra = (conf.diligente ? 3 : 0) + (conf.acelerado ? 2 : 0) + (conf.shykakyu ? 2 : 0);
+    let iniBonusExtra = (conf.diligente ? 3 : 0) + (conf.acelerado && !conf.corpulencia ? 2 : 0) + (conf.shykakyu ? 2 : 0);
     const iniPericia = this.pericias[this.energias.iniciativa.pericia] ? this.pericias[this.energias.iniciativa.pericia].total : 0;
     const iniAttrVal = attrsFinal[this.energias.iniciativa.atributo] || 0;
-    Object.defineProperty(this.energias.iniciativa, "total", { value: iniPericia + iniAttrVal + this.energias.iniciativa.bonus + iniBonusExtra, configurable: true });
+    Object.defineProperty(this.energias.iniciativa, "total", { value: iniPericia + iniAttrVal + this.energias.iniciativa.bonus + iniBonusExtra + bonus('initiative'), configurable: true });
 
     // Reação Esquiva
-    let escBonusExtra = (conf.combateDefensivo ? 3 : 0) - (conf.resiliencia ? 3 : 0);
     let keyEsquiva = conf.sharinganEsquiva ? "lerMovimentos" : this.energias.reacaoEsquiva.pericia;
+    let escBonusExtra = (conf.combateDefensivo ? 3 : 0) - (conf.resiliencia && keyEsquiva !== 'esquiva' ? 3 : 0);
     const escPericia = this.combate[keyEsquiva] ? this.combate[keyEsquiva].total : 0;
     Object.defineProperty(this.energias.reacaoEsquiva, "total", { value: escPericia + this.energias.reacaoEsquiva.fixo + this.energias.reacaoEsquiva.bonus + escBonusExtra, configurable: true });
 
     // Deslocamento
-    let divExtra = (conf.velocista || conf.acelerado) ? 1 : (this.energias.deslocamento.divisor || 2);
+    let divExtra = (conf.velocista || (conf.acelerado && !conf.corpulencia)) ? 1 : (this.energias.deslocamento.divisor || 2);
     let attrDesloc = conf.shunjutsu1 ? "esp" : this.energias.deslocamento.atributo;
     const desAttrVal = attrsFinal[attrDesloc] || 0;
     let desBonusExtra = conf.resiliencia ? -5 : 0;
-    Object.defineProperty(this.energias.deslocamento, "total", { value: this.energias.deslocamento.base + Math.floor(desAttrVal / divExtra) + this.energias.deslocamento.bonus + desBonusExtra, configurable: true });
+    Object.defineProperty(this.energias.deslocamento, "total", { value: this.energias.deslocamento.base + Math.floor(desAttrVal / divExtra) + this.energias.deslocamento.bonus + desBonusExtra + bonus('movement'), configurable: true });
 
     // Recurso Extra MAX
     let maxRecurso = 0;
@@ -289,7 +296,7 @@ class ShinobiPersonagemData extends foundry.abstract.TypeDataModel {
 
 class ShinobiEquipamentoData extends foundry.abstract.TypeDataModel { static defineSchema() { const fields = foundry.data.fields; return { caracteristicas: new fields.StringField({ initial: "" }), descricao: new fields.StringField({ initial: "" }), quantidade: new fields.NumberField({ initial: 1, integer: true, min: 0 }), consumable: new fields.BooleanField({ initial: false }), consumableKind: new fields.StringField({ initial: "" }), valorRyo: new fields.NumberField({ initial: 0, min: 0, integer: true }), hardness: new fields.NumberField({ initial: 0, min: 0, integer: true }), absorption: new fields.NumberField({ initial: 0, min: 0, integer: true }), absorptionRemaining: new fields.NumberField({ initial: 0, min: 0, integer: true }), isArmor: new fields.BooleanField({ initial: false }), bodyHardnessBonus: new fields.NumberField({ initial: 0, min: 0, integer: true }), peso: new fields.NumberField({ initial: 0, min: 0 }), modificadorCompartimento: new fields.NumberField({ initial: 0, integer: true }), weaponCategory: new fields.StringField({ initial: "none" }), weaponDamage: new fields.NumberField({ initial: 0, integer: true }), weaponBonus: new fields.NumberField({ initial: 0, integer: true }), attackType: new fields.StringField({ initial: "melee" }), weaponSize: new fields.StringField({ initial: "light" }), damageType: new fields.StringField({ initial: "piercing" }), weaponRange: new fields.NumberField({ initial: 0, min: 0 }), criticalRange: new fields.StringField({ initial: "15-16" }), unitsPerSlot: new fields.NumberField({ initial: 1, integer: true, min: 1 }), equipped: new fields.BooleanField({ initial: false }) }; } }
 class ShinobiPoderData extends foundry.abstract.TypeDataModel { static defineSchema() { const fields = foundry.data.fields; return { caracteristicas: new fields.StringField({ initial: "" }), descricao: new fields.StringField({ initial: "" }), tipo: new fields.StringField({ initial: "" }), elemento: new fields.StringField({ initial: "" }), nivelUsado: new fields.NumberField({ initial: 1, min: 0, integer: true }), hardness: new fields.NumberField({ initial: 0, min: 0, integer: true }), hardnessActive: new fields.BooleanField({ initial: false }), custo: new fields.StringField({ initial: "" }), custoChakra: new fields.NumberField({ initial: 0, min: 0, integer: true }), custoVitalidade: new fields.NumberField({ initial: 0, min: 0, integer: true }) }; } }
-class ShinobiAptidaoData extends foundry.abstract.TypeDataModel { static defineSchema() { const fields = foundry.data.fields; return { caracteristicas: new fields.StringField({ initial: "" }), descricao: new fields.StringField({ initial: "" }), tipo: new fields.StringField({ initial: "" }), custo: new fields.StringField({ initial: "" }), custoChakra: new fields.NumberField({ initial: 0, min: 0, integer: true }), custoVitalidade: new fields.NumberField({ initial: 0, min: 0, integer: true }), nivel: new fields.StringField({ initial: "" }), preRequisito: new fields.StringField({ initial: "" }), gratuita: new fields.BooleanField({ initial: false }) }; } }
+class ShinobiAptidaoData extends foundry.abstract.TypeDataModel { static defineSchema() { const fields = foundry.data.fields; return { aptitudeChoice: new fields.StringField({ initial: "" }), aptitudeModifiers: new fields.StringField({ initial: "" }), aptitudeInactive: new fields.BooleanField({ initial: false }), caracteristicas: new fields.StringField({ initial: "" }), descricao: new fields.StringField({ initial: "" }), tipo: new fields.StringField({ initial: "" }), custo: new fields.StringField({ initial: "" }), custoChakra: new fields.NumberField({ initial: 0, min: 0, integer: true }), custoVitalidade: new fields.NumberField({ initial: 0, min: 0, integer: true }), nivel: new fields.StringField({ initial: "" }), preRequisito: new fields.StringField({ initial: "" }), gratuita: new fields.BooleanField({ initial: false }) }; } }
 class ShinobiElementoData extends foundry.abstract.TypeDataModel { static defineSchema() { const fields = foundry.data.fields; return { caracteristicas: new fields.StringField({ initial: "" }), descricao: new fields.StringField({ initial: "" }), nivel: new fields.StringField({ initial: "" }), efeitos: new fields.StringField({ initial: "" }), nivelUsado: new fields.NumberField({ initial: 1, min: 0, integer: true }), custo: new fields.StringField({ initial: "" }), custoChakra: new fields.NumberField({ initial: 0, min: 0, integer: true }), custoVitalidade: new fields.NumberField({ initial: 0, min: 0, integer: true }) }; } }
 
 import { ShinobiActorSheet } from "./actor-sheet.js";

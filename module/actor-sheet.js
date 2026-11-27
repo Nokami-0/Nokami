@@ -1,3 +1,4 @@
+import {aptitudeEffects, weaponAptitudeEffects} from './aptitude-effects.js';
 import {henchmanNumbers} from "./village-henchmen.mjs";
 import {placeSnsWeaponArea} from './sns-weapon-area.js';
 import {previewSnsArea,snsAreas,deleteSnsAreas,createSnsArea} from './sns-area-preview.js';
@@ -76,9 +77,27 @@ export class ShinobiActorSheet extends BaseActorSheet {
     const context = await super.getData(options);
     const systemData = this.actor.system;
     context.system = foundry.utils.deepClone(systemData?.toObject ? systemData.toObject(false) : (systemData || {}));
+    const derivedFields = {
+      atributos:['precisao'], sociais:['precisao'], pericias:['base','total'],
+      periciasSociais:['base','total'], combate:['total'],
+      energias:['total','max'], calculadora:['baseAtributo','totalBase','grau1','grau2','grau3','grau4']
+    };
+    for (const [group, fields] of Object.entries(derivedFields)) {
+      for (const [key, value] of Object.entries(systemData?.[group] ?? {})) {
+        const destination = context.system[group]?.[key];
+        if (!destination) continue;
+        for (const field of fields) {
+          if (value?.[field] !== undefined) destination[field] = value[field];
+        }
+      }
+    }
+    if (context.system.defesas) {
+      context.system.defesas.durezaTotal = systemData.defesas.durezaTotal;
+      context.system.defesas.absorptionTotal = systemData.defesas.absorptionTotal;
+    }
     Object.assign(context,summonSheetContext(this.actor,game.actors));
     if(!context.isSummon){Object.assign(context,await puppetTabContext(this.actor));}
-    const conf = context.system.configuracoes || {};
+    const {config:conf, bonus:aptitudeBonus} = aptitudeEffects(this.actor, 'shini-no-sho-altered');
 
     const nomesPericias = {
       voo: { nome: "Flight", sigla: "AGI" }, acrobacia: { nome: "Acrobatics", sigla: "AGI" }, arte: { nome: "Art", sigla: "INT" }, atletismo: { nome: "Athletics", sigla: "STR" },
@@ -144,6 +163,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
       else baseCompartimentos = 6;
     }
 
+    baseCompartimentos = Math.max(0, baseCompartimentos + aptitudeBonus('inventory'));
+
     // Calculate inventory safely even for legacy items with missing fields.
     const num=(v,d=0)=>v===undefined||v===null||v===''||!Number.isFinite(Number(v))?d:Number(v);
     const armor=i=>Boolean(i.system?.isArmor||i.system?.snsArmor||i?.flags?.['sns-weapon-library']?.armor);
@@ -164,7 +185,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
         const occupied=Math.ceil(qty/perSlot)*cost,modifier=num(sys.modificadorCompartimento);
         used+=occupied;if(modifier>=0)added+=modifier;else removed+=-modifier;
         const price=Math.max(0,num(sys.valorRyo,num(sys.preco,num(sys.price))));value+=qty*price;
-        context.equipamentos.push({id:item.id,name:item.name,img:item.img,system:{...sys,quantidade:qty,peso:cost,valorRyo:price,equipped:Boolean(sys.equipped)},slotsUsed:occupied});
+        const aptitude = weaponAptitudeEffects(this.actor,item,'shini-no-sho-altered');
+        context.equipamentos.push({aptitudeDamage:aptitude.damage, aptitudeAccuracy:aptitude.accuracy, id:item.id,name:item.name,img:item.img,system:{...sys,quantidade:qty,peso:cost,valorRyo:price,equipped:Boolean(sys.equipped)},slotsUsed:occupied});
       }else if(item.type==='poder'){if(item.getFlag('shini-no-sho-altered','basicJutsu'))context.tecnicas.push(item);else context.poderes.push(item);}
       else if(item.type==='elemento')context.elementos.push(item);
       else if(item.type==='aptidao')(item.system?.gratuita?context.aptidoesGratuitas:context.aptidoes).push(item);
@@ -293,25 +315,35 @@ export class ShinobiActorSheet extends BaseActorSheet {
       if(summonAttack&&Number(this.actor.system.cabecalho?.nc)<4)return ui.notifications.warn('Summons below NC 4 cannot deal attack damage.');
       const ranged=item.system.attackType === 'ranged';
       const attribute=Number((ranged?this.actor.system.atributos?.des:this.actor.system.atributos?.for)?.valor ?? 0);
+      const aptitude = weaponAptitudeEffects(this.actor,item,'shini-no-sho-altered');
       const dda=Number(item.system.weaponDamage ?? 0), modifier=Number(item.system.weaponBonus ?? 0);
       const henchman=this.actor.getFlag('shini-no-sho-altered','villageHenchman');
       const targets=henchman?[...(game.user.targets ?? [])]:[];
       const capped=henchman&&(!targets.length||targets.some(token=>!token.actor?.getFlag('shini-no-sho-altered','villageHenchman')));
       const base=henchman?henchmanNumbers(this.actor.system.cabecalho.nc).damage
-        :summonAttack?summonEquipmentBase(attribute,item):Math.max(0,Math.ceil(attribute/2)+dda+modifier);
+        :summonAttack?summonEquipmentBase(attribute,item):Math.max(0,Math.ceil(attribute/2)+dda+modifier+aptitude.damage);
+      const accuracy = (this.actor.system.combate?.[ranged ? 'distancia' : 'corporal']?.total ?? 0) + aptitude.accuracy;
+      const criticalMin = aptitude.criticalMin;
       const degrees=capped?[1,2,3]:[1,2,3,4];
       const options=degrees.map(n=>`<option value="${n}">Damage degree ${n}</option>`).join('');
       const degree=await new Promise(resolve=>new Dialog({
         title:`${item.name}: weapon damage`,
-        content:`<form><p>Base damage: ${base}. Select the damage degree determined by the actual attack and defense result.</p><select name="degree">${options}</select><p>${capped?'Against ordinary opponents, Henchman damage caps at Degree 3.':`Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}.`}</p></form>`,
-        buttons:{apply:{label:'Calculate',callback:html=>resolve(Number(html.find('[name=degree]').val()))},cancel:{label:'Cancel',callback:()=>resolve(null)}},
+        content:`<form><p>Base damage: ${base}${aptitude.damage && !henchman && !summonAttack ? ` (aptitudes: +${aptitude.damage})` : ''}. Select the damage degree determined by the actual attack and defense result.</p><select name="degree">${options}</select><p>${capped?'Against ordinary opponents, Henchman damage caps at Degree 3.':`Critical threat: ${criticalMin === 16 ? '16' : `${criticalMin}–16`}.`}</p></form>`,
+        buttons:{attack:{label:'Roll Attack',callback:()=>resolve('attack')},apply:{label:'Calculate',callback:html=>resolve(Number(html.find('[name=degree]').val()))},cancel:{label:'Cancel',callback:()=>resolve(null)}},
         default:'apply',close:()=>resolve(null)
       }).render(true));
+      if (degree === 'attack') {
+        return this._onRoll(ev, {
+          nome: foundry.utils.escapeHTML(item.name),
+          precisao: accuracy,
+          combatRoll: 'true'
+        }, criticalMin);
+      }
       if (!degrees.includes(degree)) return;
       if (henchman) return ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
         content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Henchman base damage: ${base}. Degree ${degree}: <strong>${base*degree} damage</strong>.</p>`});
       await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),
-        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier)} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${foundry.utils.escapeHTML(item.system.criticalRange || '15-16')}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
+        content:`<h3>${foundry.utils.escapeHTML(item.name)}</h3><p>Base damage: ${summonAttack?'max(3, Strength '+attribute+' − 3)':'ceil('+(ranged?'Dexterity':'Strength')+' '+attribute+' / 2)'} + ${summonAttack?('Martial weapon bonus '+(item.system.weaponCategory==='martial'?1:0)):('Weapon Damage '+dda+' + Modifier '+modifier+(aptitude.damage?' + Aptitudes '+aptitude.damage:''))} = <strong>${base}</strong></p><p>Damage degree ${degree}: <strong>${base*degree} damage</strong>.</p><p>Critical threat: ${criticalMin === 16 ? '16' : `${criticalMin}–16`}. Resolve attack, critical result, defenses and hardness using the combat rules.</p>`});
     });
     html.find('.sns-armor-damage').click(async ev => {
       ev.preventDefault();
@@ -326,7 +358,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       const armorRemaining=armor?Math.max(0,Number(armor.system.absorptionRemaining ?? armor.system.absorption)||0):0;
       const armorBlocked=bypassAbsorption?0:Math.min(armorRemaining,afterHardness);
       const afterArmor=afterHardness-armorBlocked;
-      const characterAbsorption=bypassAbsorption?0:Math.max(0,Number(this.actor.system.defesas.absorcao)||0);
+      const characterAbsorption=bypassAbsorption?0:Math.max(0,Number(this.actor.system.defesas.absorptionTotal ?? this.actor.system.defesas.absorcao)||0);
       const characterBlocked=Math.min(characterAbsorption,afterArmor);
       const resourceDamage=afterArmor-characterBlocked;
       const resourcePath=`system.energias.${damageResource}.value`;
@@ -501,10 +533,10 @@ export class ShinobiActorSheet extends BaseActorSheet {
     });
   }
 
-  async _onRoll(event) {
-    event.preventDefault(); const elemento = event.currentTarget; const nomeTeste = elemento.dataset.nome; const precisao = parseInt(elemento.dataset.precisao) || 0;
+  async _onRoll(event, rollData = event.currentTarget.dataset, criticalMin = 15) {
+    event.preventDefault(); const nomeTeste = rollData.nome; const precisao = parseInt(rollData.precisao) || 0;
     const henchman = this.actor.getFlag('shini-no-sho-altered','villageHenchman');
-    if (henchman && !elemento.dataset.combatRoll) return ui.notifications.warn('Henchmen automatically fail ordinary attribute and skill tests.');
+    if (henchman && !rollData.combatRoll) return ui.notifications.warn('Henchmen automatically fail ordinary attribute and skill tests.');
     const restriction=summonRollRestriction(this.actor.getFlag('shini-no-sho-altered','summonProfile'),Number(this.actor.system.cabecalho?.nc),nomeTeste);
     if(restriction)return ui.notifications.warn(restriction);
     const template = `<form><div class="form-group" style="margin-bottom: 10px;"><label>Extra Modifier (+ or -):</label><input type="number" id="modificador" name="modificador" value="0" autofocus /></div><div class="form-group" style="margin-bottom: 10px;"><label>Current Condition:</label><select id="condicao" name="condicao"><option value="0">None</option><option value="2">Advantage (+2)</option><option value="-2">Disadvantage (-2)</option><option value="-4">Severe Condition (-4)</option></select></div></form>`;
@@ -517,7 +549,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
             const modTotal = (parseInt(html.find("#modificador").val()) || 0) + (parseInt(html.find("#condicao").val()) || 0);
             const roll = await rollShinobiTest(precisao, modTotal);
             const somaDados = roll.dice[0].total; let textoGrau = "", corCaixa = "rgba(0,0,0,0.05)", corBorda = "#333";
-            if (somaDados <= 3) { textoGrau = "CRITICAL FAILURE (2-3)"; corCaixa = "rgba(255, 0, 0, 0.15)"; corBorda = "darkred"; } else if (somaDados <= 8) { textoGrau = "DEGREE 1 (4-8)"; } else if (somaDados <= 11) { textoGrau = "DEGREE 2 (9-11)"; } else if (somaDados <= 14) { textoGrau = "DEGREE 3 (12-14)"; } else { textoGrau = "CRITICAL HIT! DEGREE 4 (15-16)"; corCaixa = "rgba(0, 255, 0, 0.15)"; corBorda = "darkgreen"; }
+            if (somaDados <= 3) { textoGrau = "CRITICAL FAILURE (2-3)"; corCaixa = "rgba(255, 0, 0, 0.15)"; corBorda = "darkred"; } else if (somaDados >= criticalMin) { textoGrau = `CRITICAL HIT! DEGREE 4 (${criticalMin}–16)`; corCaixa = "rgba(0, 255, 0, 0.15)"; corBorda = "darkgreen"; } else if (somaDados <= 8) { textoGrau = "DEGREE 1 (4-8)"; } else if (somaDados <= 11) { textoGrau = "DEGREE 2 (9-11)"; } else { textoGrau = `DEGREE 3 (12–${criticalMin - 1})`; }
             const chatHtml = `<div style="padding: 8px; border: 2px solid ${corBorda}; border-radius: 5px; background: ${corCaixa};"><h3 style="margin-top: 0; border-bottom: 1px solid ${corBorda}; text-align: center;">${nomeTeste}</h3><p style="margin: 5px 0; font-size: 12px; text-align: center;"><strong>Accuracy:</strong> ${precisao} | <strong>Mods:</strong> ${modTotal}</p><h4 style="margin: 5px 0; text-align: center;">Dice (2d8): 🎲 ${somaDados}</h4><h2 style="margin: 5px 0; text-align: center; font-size: 28px; color: #000;">Total: ${roll.total}</h2><h3 style="margin: 0; text-align: center; font-weight: bold; color: ${corBorda};">${textoGrau}</h3></div>`;
             ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), content: chatHtml, rolls: [roll] });
           }
