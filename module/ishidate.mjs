@@ -1,3 +1,5 @@
+import {odourlessPoisonMist} from './bestiary-poisons.mjs';
+
 export const previousPetrifyingTouch = 'Standard action. Make one melee touch attack against a target within 1 m using normal defense. On a hit, one leg partially petrifies. The target cannot move under its own power through the end of its next turn, but can still attack and defend. This attack deals no damage and cannot fully petrify a creature. A successful Iryou Ninjutsu treatment ends the effect early. Apply and clear the effect manually.';
 
 export const ishidate = {
@@ -23,6 +25,7 @@ export const ishidate = {
     }
   },
   items: [
+    odourlessPoisonMist(),
     {
       name: 'Unarmed Strike', type: 'equipamento', img: 'icons/svg/fist.svg',
       system: {

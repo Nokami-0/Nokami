@@ -1,3 +1,4 @@
+import {poisonLoadoutChanges} from './bestiary-poisons.mjs';
 import {demonBrothers} from './demon-brothers.mjs';
 import {soundAndClanNpcs} from './sound-and-clan-npcs.mjs';
 import {villageTraining} from './village-training.mjs';
@@ -281,10 +282,16 @@ async function buildBossBestiary(basicJutsu) {
   const skills = skillUpdates(villageTraining(id, current).skills);
   return items.length || Object.keys(skills).length ? [{current, items, skills}] : [];
  });
+ const poisonUpdates = templates.flatMap(({id, actor}) => {
+  const current = existing.get(id);
+  if (!current) return [];
+  const changes = poisonLoadoutChanges(current, actor, id);
+  return changes.create.length || changes.update.length ? [{current, ...changes}] : [];
+ });
  const captain = existing.get('land-of-iron-samurai-captain');
  const oldCaptainArmor = captain?.items.find(item =>
   item.name === 'Land of Iron Battle Armor' && item.system.absorption === 15);
- if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !oldCaptainArmor && !loadoutUpdates.length) return;
+ if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !oldCaptainArmor && !loadoutUpdates.length && !poisonUpdates.length) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
@@ -293,6 +300,10 @@ async function buildBossBestiary(basicJutsu) {
   for (const {current, items, skills} of loadoutUpdates) {
    if (Object.keys(skills).length) await current.update(skills);
    if (items.length) await current.createEmbeddedDocuments('Item', items);
+  }
+  for (const {current, create, update} of poisonUpdates) {
+   if (update.length) await current.updateEmbeddedDocuments('Item', update);
+   if (create.length) await current.createEmbeddedDocuments('Item', create);
   }
   if (oldCaptainArmor) {
    const armor = samuraiCaptain.items.find(item => item.name === oldCaptainArmor.name).system;
