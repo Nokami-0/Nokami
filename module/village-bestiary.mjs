@@ -1,3 +1,4 @@
+import {jiga} from './jiga.mjs';
 import {lordSagi} from './lord-sagi.mjs';
 import {renga} from './renga.mjs';
 import {michiruTsuki} from './michiru-tsuki.mjs';
@@ -332,6 +333,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:ishidate, folderName:'Land of the Moon'},
   {actor:michiruTsuki(SYS), folderName:'Land of the Moon'},
   {actor:renga(SYS), folderName:'Land of Vegetables'},
+  {actor:jiga(SYS), folderName:'Land of Vegetables'},
   {actor:karenbana, folderName:'Land of the Moon'},
   {actor:kongo, folderName:'Land of the Moon'},
   {actor:nadareRoga, folderName:'Land of Snow'},
