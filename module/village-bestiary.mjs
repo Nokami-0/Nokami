@@ -1,3 +1,4 @@
+import {suiko} from './suiko.mjs';
 import {ryugan} from './ryugan.mjs';
 import {waraji} from './waraji.mjs';
 import {fuka} from './fuka.mjs';
@@ -338,6 +339,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:gato(SYS), folderName:'Land of Waves'},
   {actor:waraji(SYS), folderName:'Land of Waves'},
   {actor:ryugan(SYS), folderName:'Takumi Village'},
+  {actor:suiko(SYS), folderName:'Takumi Village'},
   {actor:gatsu(SYS), folderName:'Land of Stone'},
   {actor:sazanami(SYS), folderName:'Independent Shinobi'},
   {actor:directorMakino(SYS), folderName:'Land of Fire'},
