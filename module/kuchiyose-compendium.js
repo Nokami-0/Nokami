@@ -16,6 +16,9 @@ async function refreshSummonArt(actor, species) {
  const {img} = buildKuchiyoseTemplate(species);
  const filename = species.token_file?.match(/^summons\/(.+)\.webp$/)?.[1];
  const previous = filename ? [`${assetRoot}${filename}.png`] : ['icons/svg/shield.svg', `${assetRoot}summons/rashoumon.webp`];
+ if (filename === 'kamizuru-giant-bee') {
+  previous.push(`${assetRoot}summons/giant-bee.webp`, `${assetRoot}giant-bee.png`);
+ }
  if (filename === 'kamizuru-bee-swarm') {
   previous.push(`${assetRoot}summons/bee-swarm.webp`, `${assetRoot}bee-swarm.png`);
  }
