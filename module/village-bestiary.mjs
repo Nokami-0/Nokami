@@ -1,3 +1,4 @@
+import {tonbei} from './tonbei.mjs';
 import {directorMakino} from './director-makino.mjs';
 import {sazanami} from './sazanami.mjs';
 import {genyumaru} from './genyumaru.mjs';
@@ -334,6 +335,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:gatsu(SYS), folderName:'Land of Stone'},
   {actor:sazanami(SYS), folderName:'Independent Shinobi'},
   {actor:directorMakino(SYS), folderName:'Land of Fire'},
+  {actor:tonbei(SYS), folderName:'Tsuchigumo Clan'},
   {actor:ranke(SYS), folderName:'Haido’s Knights'},
   {actor:kamira(SYS), folderName:'Haido’s Knights'},
   {actor:oboro(SYS), folderName:'Amegakure'},
