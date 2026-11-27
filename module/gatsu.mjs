@@ -10,6 +10,8 @@ export function gatsu(systemId) {
    databook:{biografia:'<p>A bounty hunter from the Land of Stone who fights with a club. His tabletop profile emphasizes tracking fugitives and taking them into custody.</p>'}
   },
   items:[
+   {name:'Expert (Tracking)',type:'aptidao',img:'icons/svg/book.svg',system:{aptitudeChoice:'Tracking',descricao:'Expert (Basic Book 4.1b, p. 76). Gain +2 Accuracy on Tracking tests. The actor sheet applies this bonus.'}},
+   {name:'Powerful Attack',type:'aptidao',img:'icons/svg/book.svg',system:{preRequisito:'Melee Combat 7',descricao:'Declare before a melee attack. Apply −1 Accuracy and +1 base damage to that attack. Resolve manually.'}},
    {name:'Club',type:'equipamento',img:'icons/svg/sword.svg',system:{quantidade:1,equipped:true,weaponCategory:'simple',weaponDamage:2,weaponSize:'heavy',attackType:'melee',damageType:'bludgeoning'}},
    {name:'Bounty Notices',type:'equipamento',img:'icons/svg/book.svg',system:{quantidade:1,descricao:'A collection of current bounty notices and notes on fugitives.'}}
   ]
