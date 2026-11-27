@@ -1,3 +1,4 @@
+import {kamikiri} from './kamikiri.mjs';
 import {suzumebachi} from './suzumebachi.mjs';
 import {shiin} from './shiin.mjs';
 import {menma} from './menma.mjs';
@@ -259,6 +260,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:menma(SYS), folderName:'Shiin Clan'},
   {actor:shiin(SYS), folderName:'Shiin Clan'},
   {actor:suzumebachi(SYS), folderName:'Iwagakure'},
+  {actor:kamikiri(SYS), folderName:'Otogakure'},
   {actor:oboro(SYS), folderName:'Amegakure'},
   ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog, ninpou),
   ...demonBrothers(SYS, basicJutsu, ninpou),
