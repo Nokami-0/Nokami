@@ -42,7 +42,7 @@ export function anbuOperatives(systemId, basicJutsu, puppetAptitudes) {
       jutsu:'Tadayou', mission:'Track missing-nin and recover their remains to protect village secrets.',
       gear:[equipment('Hunter-nin Mask'), weapon('Senbon',6,'ranged'),
         equipment('Waterproof Field Pouch'), equipment('Recovery Scroll Case')],
-      signature:villageSpecialists.find(entry => entry.folderName === 'Kirigakure').actor.items
+      signature:villageSpecialists.find(entry => entry.folderName === 'Kirigakure').actor.items.filter(item => item.type === 'poder')
     }
   ];
   return profiles.map(profile => ({

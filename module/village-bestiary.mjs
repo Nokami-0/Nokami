@@ -1,7 +1,7 @@
 import {shinnoBase, shinnoRevival} from './shinno.mjs';
 import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
-import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
+import {villageBasicTechniques, villageSpecialists, villageLoadoutItems} from './village-techniques.mjs';
 import {fubukiKakuyoku, mizoreFuyukuma, karenbana, nadareRoga, kongo} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
@@ -203,6 +203,9 @@ async function buildBossBestiary(basicJutsu) {
   if (!item) throw Error(`Could not find ${name} in ${file}.`);
   return item;
  }));
+ const response = await fetch(`systems/${SYS}/integrated/data/sns-common-ninpou__items.json`);
+ if (!response.ok) throw Error(`Could not load the Ninpou catalog (HTTP ${response.status}).`);
+ const ninpou = await response.json();
  const templates = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:samuraiCaptain, folderName:'Land of Iron'},
@@ -224,13 +227,24 @@ async function buildBossBestiary(basicJutsu) {
   ...anbuOperatives(SYS, basicJutsu, puppetAptitudes)
  ].map(({actor, folderName}) => {
   const id = actor.flags[SYS].bestiaryBoss;
-  return {id, actor: id.startsWith('village-specialist:') ? actor : withTokenArt(actor, id), folderName};
+  const loadout = villageLoadoutItems(id, actor.system.cabecalho.filiacao, basicJutsu, ninpou);
+  const profile = {...actor, items:[...actor.items, ...loadout]};
+  const specialist = id.startsWith('village-specialist:');
+  const additions = specialist ? profile.items : loadout;
+  return {id, actor: specialist ? profile : withTokenArt(profile, id), folderName, loadout:additions};
  });
  const missing = templates.filter(({id}) => !existing.has(id));
  const artUpdates = templates.flatMap(({id, actor}) => {
   const current = existing.get(id);
   const changes = defaultArtUpdates(current, actor);
   return Object.keys(changes).length ? [{current, changes}] : [];
+ });
+ const loadoutUpdates = templates.flatMap(({id, loadout}) => {
+  const current = existing.get(id);
+  if (!current) return [];
+  const items = loadout.filter(item => !current.items.some(owned =>
+   owned.type === item.type && owned.name.toLowerCase() === item.name.toLowerCase()));
+  return items.length ? [{current, items}] : [];
  });
  const suna = existing.get('suna-anbu');
  const sunaItems = suna ? templates.find(({id}) => id === 'suna-anbu').actor.items.filter(item =>
@@ -240,12 +254,13 @@ async function buildBossBestiary(basicJutsu) {
   !captain.items.some(current => current.type === item.type && current.name === item.name)) : [];
  const oldCaptainArmor = captain?.items.find(item =>
   item.name === 'Land of Iron Battle Armor' && item.system.absorption === 15);
- if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !sunaItems.length && !captainItems.length && !oldCaptainArmor) return;
+ if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !sunaItems.length && !captainItems.length && !oldCaptainArmor && !loadoutUpdates.length) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
   if (balanceUpdate) await bandit.update(balanceUpdate);
+  for (const {current, items} of loadoutUpdates) await current.createEmbeddedDocuments('Item', items);
   if (captainItems.length) await captain.createEmbeddedDocuments('Item', captainItems);
   if (oldCaptainArmor) {
    const armor = samuraiCaptain.items.find(item => item.name === oldCaptainArmor.name).system;
