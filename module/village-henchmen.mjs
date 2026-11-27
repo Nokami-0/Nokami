@@ -180,6 +180,20 @@ villageHenchmen.push(
   }
 );
 
+villageHenchmen.push({
+  id:'kurosuki:gang-member',
+  village:'Kurosuki Family',
+  english:'Kurosuki Gang',
+  continuity:'Anime',
+  role:'Rogue genin',
+  name:'Kurosuki Gang Member',
+  affiliation:'Kurosuki Family · Former Kirigakure',
+  weapon:'Kunai',
+  attack:'melee',
+  gear:['Gang Uniform'],
+  tactics:'Use several members as a group guarding approaches or surrounding targets. They use ordinary kunai attacks and henchman rules.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
