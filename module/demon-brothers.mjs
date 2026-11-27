@@ -1,3 +1,4 @@
+import {lesserParalysingPoison} from './bestiary-poisons.mjs';
 import {SNS_WEAPONS} from './weapon-catalog.js';
 
 const chainRules = 'Once per round for the pair, one brother spends a Standard Action to ready the chain. Before his next turn, the other spends a Standard Action to make one Close Combat attack against a target between them and within 3 m of both. Both brothers must be able to act, have their gauntlets equipped, and be within 6 m of each other. On a hit the target cannot leave its space until the end of its next turn, but can attack and defend. It can spend a Standard Action to escape with Strength or Escape (Difficulty 16). The bind ends if either brother releases the chain, is incapacitated, or moves out of range. This maneuver deals no damage and does not apply venom.';
@@ -52,10 +53,10 @@ export function demonBrothers(systemId, basicJutsu, ninpou) {
             tipo:'Ninpou',elemento:'suiton',nivelUsado:2,custoChakra:2,custo:'2 Chakra',
             descricao:`${profile.effectRule}\n\n${rule.description}\n\nBasic Book 4.1b, p. ${rule.sourcePages}. Resolve the effect manually.`
           }},
-          equipment('Clawed Gauntlet',`${profile.arm}-arm gauntlet. A first hit that deals Vitality damage can expend its prepared dose. See Gauntlet Venom.`,{
+          equipment('Clawed Gauntlet',`${profile.arm}-arm gauntlet. A claw strike must deal Degree 3 or higher damage to deliver the prepared Lesser Paralysing Poison. See Gauntlet Venom.`,{
             equipped:true,attackType:'melee',weaponCategory:'simple',weaponSize:'light',weaponDamage:2,damageType:'slashing'
           }),
-          equipment('Gauntlet Venom','One prepared dose. Expend it on the first claw hit that deals Vitality damage. The target tests Vigor against Difficulty 16. On failure, it moves at half speed until the end of its next turn. Does not stack. Track manually.'),
+          lesserParalysingPoison(),
           equipment('Retractable Shuriken Chain','One shared weapon for the pair. '+chainRules),
           equipment('Rebreather','Standard face-mounted rebreather.'),
           equipment('Kunai','Standard throwing kunai.',{quantidade:3,equipped:true,weaponCategory:'simple',

@@ -1,3 +1,5 @@
+import {odourlessPoisonMist} from './bestiary-poisons.mjs';
+
 const systemId = 'shinobi-no-sho-revamp';
 
 function mercenary({id, name, nc, affiliation, attributes, skills, vitality, chakra, biography, items}) {
@@ -86,12 +88,9 @@ export const karenbana = mercenary({
       system: {equipped: true, weaponCategory: 'simple', attackType: 'melee', weaponSize: 'light', weaponDamage: 1,
         damageType: 'piercing', weaponRange: 15, quantidade: 1}
     },
-    technique('Illusory Petals', 'Magen', 4, 4, 'Standard action. One target within 10 m that can see Karenbana makes its normal genjutsu resistance test (difficulty 18). On failure, its next attack against Karenbana before the end of its next turn takes a −2 Accuracy penalty. A successful Kai ends the effect. No damage, and repeated uses do not stack.'),
+    technique('Illusory Petals', 'Magen', 4, 4, 'Standard action. One target within 10 m that can see Karenbana and is suffering the effects of her clan’s Odourless Poison Mist makes its normal genjutsu resistance test (difficulty 18). On failure, its next attack against Karenbana before the end of its next turn takes a −2 Accuracy penalty. A successful Kai ends the effect. No damage, and repeated uses do not stack.'),
     technique('Hiding with Camouflage Technique', 'Ninjutsu', 3, 3, 'Standard action. Make a normal Stealth test. Until the end of Karenbana’s next turn, observers use appropriate senses to oppose it. The camouflage masks her visually, while hearing, scent and disturbed surroundings can reveal her. It ends immediately after she attacks or uses another technique.'),
-    {
-      name: 'Reaction-Dulling Powder', type: 'equipamento', img: 'icons/svg/poison.svg',
-      system: {quantidade: 2, descricao: 'Standard action. Expend one dose and make a ranged attack against one target within 3 m. On a hit, the target makes a Vigor test (difficulty 17). On failure, it takes −2 Accuracy on its next defense test before the end of its next turn. No damage. Penalties from this item do not stack. Track consumption manually.'}
-    }
+    odourlessPoisonMist(2)
   ]
 });
 
@@ -127,5 +126,5 @@ export const kongo = mercenary({
     name:'Unarmed Strike', type:'equipamento', img:'icons/svg/fist.svg',
     system:{equipped:true, weaponCategory:'natural', attackType:'melee', weaponSize:'light',
       weaponDamage:0, damageType:'bludgeoning', quantidade:1}
-  }]
+  }, odourlessPoisonMist()]
 });
