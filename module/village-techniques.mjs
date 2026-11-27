@@ -3,7 +3,7 @@ const common = new Set(['Bunshin No Jutsu', 'Henge No Jutsu', 'Kai (Release)', '
 const waterVillages = new Set(['Kirigakure', 'Amegakure', 'Takigakure', 'Uzushiogakure']);
 
 export function villageBasicTechniques(row, catalog) {
-  if (row.village === 'Land of Iron' || row.clan) return [];
+  if (row.village === 'Land of Iron' || row.village === 'Bandits' || row.clan) return [];
   return catalog.filter(({name}) => common.has(name) || name === 'Kinobori' ||
     (name === 'Tadayou' && waterVillages.has(row.village)));
 }

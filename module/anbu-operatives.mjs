@@ -15,7 +15,7 @@ function weapon(name, quantidade, attackType = 'melee') {
   });
 }
 
-export function anbuOperatives(systemId, basicJutsu) {
+export function anbuOperatives(systemId, basicJutsu, puppetAptitudes) {
   const common = ['Bunshin No Jutsu', 'Kawarimi No Jutsu', 'Shunshin No Jutsu', 'Kinobori', 'Kai (Release)'];
   const profiles = [
     {
@@ -23,6 +23,17 @@ export function anbuOperatives(systemId, basicJutsu) {
       agility:10, perception:9, skills:{furtividade:5, acrobacia:5, prontidao:5, procurar:4, concentracao:4},
       jutsu:'Henge No Jutsu', mission:'Covert reconnaissance, protection, and investigation.',
       gear:[equipment('ANBU Animal Mask'), weapon('Shuriken',4,'ranged'),
+        equipment('Smoke Bomb',2,{consumable:true, descricao:'Use the normal Smoke Bomb rules. Track scene effects manually.'})]
+    },
+    {
+      id:'suna-anbu', name:'Suna ANBU Puppeteer', village:'Sunagakure',
+      agility:9, perception:10, skills:{mecanismo:5, furtividade:5, prontidao:5, procurar:4, concentracao:4},
+      jutsu:'Henge No Jutsu',
+      mission:'A masked Hidden Sand operative who uses chakra threads to control a puppet from cover. Assign this actor as the puppet’s controller when deploying it.',
+      signature:puppetAptitudes,
+      gear:[equipment('Horned ANBU Mask'), weapon('Senbon',6,'ranged'),
+        equipment('Puppet Storage Scroll',1,{descricao:'Carries one medium Balanced Puppet. Deploy it from the Puppets tab and assign this operative as controller.'}),
+        equipment('Puppet Repair Kit'),
         equipment('Smoke Bomb',2,{consumable:true, descricao:'Use the normal Smoke Bomb rules. Track scene effects manually.'})]
     },
     {

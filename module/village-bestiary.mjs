@@ -1,6 +1,8 @@
+import {shinnoBase, shinnoRevival} from './shinno.mjs';
+import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
 import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
-import {fubukiKakuyoku, mizoreFuyukuma, karenbana} from './film-mercenaries.mjs';
+import {fubukiKakuyoku, mizoreFuyukuma, karenbana, nadareRoga, kongo} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
 import {sora} from "./sora.mjs";
@@ -20,6 +22,19 @@ let building;
 const placeholderArt = 'icons/svg/mystery-man.svg';
 const tokenDirectory = `systems/${SYS}/assets/tokens/bestiary`;
 const henchmanTokenNames = {
+ 'Iwagakure:0': 'iwa-shinobi',
+ 'Sunagakure:0': 'suna-shinobi',
+ 'Kirigakure:0': 'kiri-shinobi',
+ 'Amegakure:0': 'ame-shinobi',
+ 'Konohagakure:0': 'konoha-shinobi',
+ 'Kumogakure:0': 'kumo-shinobi',
+ 'Soragakure:0': 'sky-ninja',
+ 'cult:member': 'cult-member',
+ 'cult:zombie-ninja': 'zombie-ninja',
+ 'independent:fox-mask': 'fox-mask-ninja',
+ 'yukigakure:snow-ninja-henchman': 'snow-ninja-henchman',
+ 'bandits:thief-henchman': 'thief-henchman',
+ 'sunagakure:puppet-user': 'suna-puppet-user',
  'Hoshigakure:0': 'hoshi-shinobi',
  'land-of-iron:samurai-henchman': 'land-of-iron-samurai',
  'otogakure:masked-henchman': 'oto-masked-ninja',
@@ -67,7 +82,9 @@ async function build() {
   const existing = new Map(documents.map(actor => [actor.getFlag(SYS,'villageHenchman'), actor]));
   const folders = new Map(pack.folders.map(folder => [folder.name, folder.id]));
   for (const row of villageHenchmen) {
-   const actor = existing.get(row.id);
+   const previousPuppetUser = row.id === 'sunagakure:puppet-user' && documents.find(document =>
+    document.name === row.name && !document.getFlag(SYS, 'villageHenchman'));
+   const actor = existing.get(row.id) ?? previousPuppetUser;
    const template = withTokenArt(villageHenchmanActor(row), henchmanTokenNames[row.id]);
    const techniques = villageBasicTechniques(row, basicJutsu);
    if (actor) {
@@ -79,6 +96,11 @@ async function build() {
     }
     if (Object.keys(changes).length) renamed++;
     Object.assign(changes, defaultArtUpdates(actor, template));
+    if (actor === previousPuppetUser) {
+     changes[`flags.${SYS}.villageHenchman`] = row.id;
+     changes.img = template.img;
+     changes['prototypeToken.texture.src'] = template.prototypeToken.texture.src;
+    }
     if (Object.keys(changes).length) await actor.update(changes);
     const missing = techniques.filter(technique => !actor.items.some(item =>
      item.type === technique.type && item.name.toLowerCase() === technique.name.toLowerCase()));
@@ -171,20 +193,35 @@ async function buildBossBestiary(basicJutsu) {
  const ishidateActor = existing.get('ishidate');
  const oldTouch = ishidateActor?.items.find(item => item.type === 'poder' && item.name === 'Petrifying Touch'
   && item.system.descricao === previousPetrifyingTouch);
+ const puppetAptitudes = await Promise.all([
+  ['sns-aptitude-individual__items.json', 'Engineer'],
+  ['sns-hijutsu-vol2-chapter2__items.json', 'Kugutsu (Puppets)']
+ ].map(async ([file, name]) => {
+  const response = await fetch(`systems/${SYS}/integrated/data/${file}`);
+  if (!response.ok) throw Error(`Could not load ${file} (HTTP ${response.status}).`);
+  const item = (await response.json()).find(item => item.name === name && item.type === 'aptidao');
+  if (!item) throw Error(`Could not find ${name} in ${file}.`);
+  return item;
+ }));
  const templates = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
+  {actor:samuraiCaptain, folderName:'Land of Iron'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
   {actor:banditLeader, folderName:'Bandits'},
+  {actor:shinnoBase, folderName:'Land of the Sky'},
+  {actor:shinnoRevival, folderName:'Land of the Sky'},
   {actor:kazuma, folderName:'Twelve Guardian Ninja'},
   {actor:sora, folderName:'Twelve Guardian Ninja'},
   {actor:dotoKazahana, folderName:'Land of Snow'},
   {actor:ishidate, folderName:'Land of the Moon'},
   {actor:karenbana, folderName:'Land of the Moon'},
+  {actor:kongo, folderName:'Land of the Moon'},
+  {actor:nadareRoga, folderName:'Land of Snow'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
   ...villageSpecialists,
-  ...anbuOperatives(SYS, basicJutsu)
+  ...anbuOperatives(SYS, basicJutsu, puppetAptitudes)
  ].map(({actor, folderName}) => {
   const id = actor.flags[SYS].bestiaryBoss;
   return {id, actor: id.startsWith('village-specialist:') ? actor : withTokenArt(actor, id), folderName};
@@ -195,12 +232,33 @@ async function buildBossBestiary(basicJutsu) {
   const changes = defaultArtUpdates(current, actor);
   return Object.keys(changes).length ? [{current, changes}] : [];
  });
- if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length) return;
+ const suna = existing.get('suna-anbu');
+ const sunaItems = suna ? templates.find(({id}) => id === 'suna-anbu').actor.items.filter(item =>
+  !suna.items.some(current => current.type === item.type && current.name === item.name)) : [];
+ const captain = existing.get('land-of-iron-samurai-captain');
+ const captainItems = captain ? samuraiCaptain.items.filter(item =>
+  !captain.items.some(current => current.type === item.type && current.name === item.name)) : [];
+ const oldCaptainArmor = captain?.items.find(item =>
+  item.name === 'Land of Iron Battle Armor' && item.system.absorption === 15);
+ if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !sunaItems.length && !captainItems.length && !oldCaptainArmor) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
   if (balanceUpdate) await bandit.update(balanceUpdate);
+  if (captainItems.length) await captain.createEmbeddedDocuments('Item', captainItems);
+  if (oldCaptainArmor) {
+   const armor = samuraiCaptain.items.find(item => item.name === oldCaptainArmor.name).system;
+   await oldCaptainArmor.update({
+    'system.absorption': armor.absorption,
+    'system.absorptionRemaining': Math.min(armor.absorption, oldCaptainArmor.system.absorptionRemaining + 5),
+    'system.bodyHardnessBonus': armor.bodyHardnessBonus,
+    'system.valorRyo': armor.valorRyo,
+    'system.peso': armor.peso,
+    'system.descricao': armor.descricao
+   });
+  }
+  if (sunaItems.length) await suna.createEmbeddedDocuments('Item', sunaItems);
   for (const {current, changes} of artUpdates) await current.update(changes);
   if (oldTouch) {
    const touch = ishidate.items.find(item => item.name === 'Petrifying Touch');

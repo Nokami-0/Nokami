@@ -94,3 +94,38 @@ export const karenbana = mercenary({
     }
   ]
 });
+
+export const nadareRoga = mercenary({
+  id: 'nadare-roga', name: 'Nadare Rōga', nc: 12, affiliation: 'Yukigakure',
+  attributes: {for: 6, des: 8, agi: 9, per: 9, vig: 8, int: 9, esp: 12},
+  skills: {concentracao: 6, prontidao: 6, acrobacia: 5, procurar: 5, rastrear: 4},
+  vitality: 94, chakra: 48,
+  biography: '<p><strong>Film · Ninja Clash in the Land of Snow</strong></p><p>A member of Dotō’s Snow Ninja team. His techniques shape existing snow and ice, so use snowy slopes or ice fields when staging his encounter. The statistics and technique effects are tabletop adaptations. Resolve effects and usage limits manually.</p>',
+  items: [
+    snowArmor(),
+    {
+      name: 'Kunai', type: 'equipamento', img: 'icons/svg/dagger.svg',
+      system: {equipped: true, weaponCategory: 'simple', attackType: 'melee', weaponSize: 'light',
+        weaponDamage: 1, damageType: 'piercing', weaponRange: 15, quantidade: 1,
+        descricao: 'Standard shinobi backup weapon for this tabletop build.'}
+    },
+    technique('Wolf Fang Avalanche Technique', 'Ice Release', 5, 5,
+      'Standard action. Requires a snow-covered slope. Shape the sliding snow into wolves that surge down a 15 m line, 2 m wide. Roll one ranged ninjutsu attack and resolve it against each creature in the line for 7 base damage using normal damage degrees. A Lightning Release technique that intercepts the pack disperses the wolves from that point onward. Once per scene.'),
+    technique('Tearing Dragon Fierce Tiger', 'Ice Release', 5, 5,
+      'Standard action. Requires nearby ice. Shape it into a tiger and make one ranged ninjutsu attack within 18 m for 8 base damage using normal damage degrees. If an ongoing Water Release effect lies in its path, Nadare may target that effect instead. Resolve the clash normally and freeze the water if he wins.'),
+    technique('One Horned White Whale', 'Ice Release', 6, 7,
+      'Standard action. Requires a large mass of existing ice. Form a horned whale and place a 3 m radius impact area centered within 15 m. Roll one ranged ninjutsu attack and resolve it against each creature in the area for 9 base damage using normal damage degrees. Once per scene.')
+  ]
+});
+
+export const kongo = mercenary({
+  id: 'kongo', name: 'Kongō', nc: 11, affiliation: 'Wandering Ninja Clan',
+  attributes: {for:11, des:5, agi:5, per:6, vig:11, int:4, esp:5},
+  skills: {atletismo:5, prontidao:5, escapar:4}, vitality:98, chakra:25,
+  biography: '<p><strong>Film · Guardians of the Crescent Moon Kingdom</strong></p><p>Kongō is the trio’s close-combat bruiser. Use the normal unarmed attack and forced-movement maneuvers when appropriate. Karenbana disrupts opponents while Ishidate threatens Petrifying Touch.</p>',
+  items: [{
+    name:'Unarmed Strike', type:'equipamento', img:'icons/svg/fist.svg',
+    system:{equipped:true, weaponCategory:'natural', attackType:'melee', weaponSize:'light',
+      weaponDamage:0, damageType:'bludgeoning', quantidade:1}
+  }]
+});
