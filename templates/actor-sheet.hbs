@@ -503,6 +503,7 @@
                     <div>
                       <label style="font-size: 10px; font-weight: bold; color: #665c4d;">ABSORPTION</label><br>
                       <input type="number" name="system.defesas.absorcao" value="{{system.defesas.absorcao}}" style="width: 80px; text-align: center; border: 1px solid #b8b0a1; background: rgba(0,0,0,0.05); font-size: 18px; font-weight: bold; margin-top: 5px; border-radius: 3px;"/>
+                      <span title="Effective Absorption">Total {{system.defesas.absorptionTotal}}</span>
                     </div>
                     <div>
                       <label style="font-size: 10px; font-weight: bold; color: #a13d3d;">BLEEDING</label><br>
@@ -670,7 +671,7 @@
           <tbody>
             {{#each equipamentos as |item|}}
             <tr class="item-row" data-item-id="{{item.id}}">
-              <td style="font-weight:bold;text-align:left;cursor:pointer" class="item-to-chat" title="Send item to chat"><img src="{{item.img}}" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;border-radius:3px"/>{{item.name}}</td>
+              <td style="font-weight:bold;text-align:left;cursor:pointer" class="item-to-chat" title="Send item to chat"><img src="{{item.img}}" style="width:24px;height:24px;vertical-align:middle;margin-right:8px;border-radius:3px"/>{{item.name}}{{#if item.aptitudeDamage}} <small>(+{{item.aptitudeDamage}} aptitude damage)</small>{{/if}}{{#if item.aptitudeAccuracy}} <small>({{item.aptitudeAccuracy}} aptitude accuracy adjustment)</small>{{/if}}</td>
               <td>{{item.system.quantidade}}</td>
               <td title="Total occupied slots for this stack">{{item.slotsUsed}}</td><td title="Value per unit: {{item.system.valorRyo}} Ryo">{{item.system.valorRyo}}</td>
               <td class="sns-equipment-actions-cell"><div class="sns-equipment-actions">

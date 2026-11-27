@@ -62,6 +62,10 @@
 
         {{#if isAptidao}}
         <div style="flex-shrink: 0;"><label style="font-weight: bold; font-size: 11px; color: darkred;">LEGACY COST (REFERENCE ONLY)</label><input type="text" name="system.custo" value="{{system.custo}}" style="width: 100%; border: 1px solid #c78b8b; background: rgba(250, 230, 230, 0.5); padding: 6px; border-radius: 3px; font-weight: bold; color: darkred;"/></div>
+        <label>APTITUDE CHOICE <input type="text" name="system.aptitudeChoice" value="{{system.aptitudeChoice}}" placeholder="Shooter: bows or throwing · Expert: skill name"/></label>
+        <label><input type="checkbox" name="system.aptitudeInactive" {{checked system.aptitudeInactive}}> Disable this item's automatic effects</label>
+        <label>ADDITIONAL STAT MODIFIERS <textarea name="system.aptitudeModifiers" rows="3" placeholder="initiative=2&#10;skill.Stealth=1">{{system.aptitudeModifiers}}</textarea></label>
+        <small>One modifier per line. Supports vitality, chakra, hardness, absorption, initiative, movement, inventory, skill.Skill Name, combat.corporal, combat.distancia, combat.esquiva, combat.lerMovimentos, damage.danoForca, damage.danoDestreza and damage.danoEspirito. Add only bonuses the aptitude does not already apply.</small>
         {{/if}}
 
         {{#if isElement}}

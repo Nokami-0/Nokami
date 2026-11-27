@@ -14,6 +14,7 @@ function runtime(source, actor, legacy=false){
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/sizes.js','utf8').replace(/export /g,'')+';this.correctedSizeDetails=correctedSizeDetails;}).call(this)',c);
  vm.runInContext('(function(){'+fs.readFileSync(root+'/module/summon-rules.js','utf8').replace(/^import .*;$/gm,'').replace(/export /g,'')+';this.normalizeSummonProfile=normalizeSummonProfile;}).call(this)',c);
  vm.runInContext(fs.readFileSync(root+'/module/summon-sheet.js','utf8').replace(/^import .*;$/gm,'').replace(/export /g,''),c);
+ vm.runInContext(fs.readFileSync(root+'/module/aptitude-effects.js','utf8').replace(/^export /gm,''),c);
  vm.runInContext(source.replace(/^import .*;?$/gm,'').replace('export class ShinobiActorSheet','class ShinobiActorSheet')+'\nthis.Sheet=ShinobiActorSheet;',c);
  return new c.Sheet();
 }
