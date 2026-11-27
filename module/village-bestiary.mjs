@@ -1,3 +1,4 @@
+import {fuka} from './fuka.mjs';
 import {gitai} from './gitai.mjs';
 import {tonbei} from './tonbei.mjs';
 import {directorMakino} from './director-makino.mjs';
@@ -338,6 +339,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:directorMakino(SYS), folderName:'Land of Fire'},
   {actor:tonbei(SYS), folderName:'Tsuchigumo Clan'},
   {actor:gitai(SYS), folderName:'Land of Demons'},
+  {actor:fuka(SYS), folderName:'Twelve Guardian Ninja'},
   {actor:ranke(SYS), folderName:'Haido’s Knights'},
   {actor:kamira(SYS), folderName:'Haido’s Knights'},
   {actor:oboro(SYS), folderName:'Amegakure'},
