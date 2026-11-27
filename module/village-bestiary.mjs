@@ -55,7 +55,7 @@ const henchmanTokenNames = {
  'kaguya:clan-raider': 'kaguya-clan-raider'
 };
 
-const tokenArtReplacements = new Set(['mizore-fuyukuma', 'fubuki-kakuyoku', 'nadare-roga', 'ishidate', 'karenbana', 'kongo', 'kiri-hunter-nin', 'suna-anbu', 'konoha-anbu']);
+const tokenArtReplacements = new Set(['mizore-fuyukuma', 'fubuki-kakuyoku', 'nadare-roga', 'ishidate', 'karenbana', 'kongo', 'kiri-hunter-nin', 'suna-anbu', 'konoha-anbu', 'ranke']);
 
 function withTokenArt(actor, tokenName) {
  if (!tokenName) return actor;
@@ -286,7 +286,7 @@ async function buildBossBestiary(basicJutsu) {
   const additions = specialist || id === 'suna-anbu' || id === 'land-of-iron-samurai-captain'
    ? profile.items
    : [...loadout, ...profile.items.filter(item => item.type === 'aptidao')];
-  const tokenName = tokenArtReplacements.has(id) ? `${id}${['kiri-hunter-nin', 'suna-anbu', 'konoha-anbu'].includes(id) ? '-card' : '-film'}` : id;
+  const tokenName = tokenArtReplacements.has(id) ? `${id}${['kiri-hunter-nin', 'suna-anbu', 'konoha-anbu', 'ranke'].includes(id) ? '-card' : '-film'}` : id;
   return {id, actor: specialist ? profile : withTokenArt(profile, tokenName), folderName, loadout:additions};
  });
  const missing = templates.filter(({id}) => !existing.has(id));
