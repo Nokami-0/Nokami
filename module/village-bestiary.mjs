@@ -46,6 +46,8 @@ const henchmanTokenNames = {
  'kaguya:clan-raider': 'kaguya-clan-raider'
 };
 
+const filmTokenReplacements = new Set(['mizore-fuyukuma', 'fubuki-kakuyoku']);
+
 function withTokenArt(actor, tokenName) {
  if (!tokenName) return actor;
  const src = `${tokenDirectory}/${tokenName}.webp`;
@@ -267,15 +269,15 @@ async function buildBossBestiary(basicJutsu) {
   const additions = specialist || id === 'suna-anbu' || id === 'land-of-iron-samurai-captain'
    ? profile.items
    : [...loadout, ...profile.items.filter(item => item.type === 'aptidao')];
-  const tokenName = id === 'mizore-fuyukuma' ? 'mizore-fuyukuma-film' : id;
+  const tokenName = filmTokenReplacements.has(id) ? `${id}-film` : id;
   return {id, actor: specialist ? profile : withTokenArt(profile, tokenName), folderName, loadout:additions};
  });
  const missing = templates.filter(({id}) => !existing.has(id));
  const artUpdates = templates.flatMap(({id, actor}) => {
   const current = existing.get(id);
   const changes = defaultArtUpdates(current, actor);
-  if (id === 'mizore-fuyukuma' && current) {
-   const previousArt = `${tokenDirectory}/mizore-fuyukuma.webp`;
+  if (filmTokenReplacements.has(id) && current) {
+   const previousArt = `${tokenDirectory}/${id}.webp`;
    if (current.img === previousArt) changes.img = actor.img;
    if (current.prototypeToken.texture?.src === previousArt) {
     changes['prototypeToken.texture.src'] = actor.prototypeToken.texture.src;
