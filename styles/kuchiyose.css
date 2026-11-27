@@ -1,0 +1,47 @@
+.sns-kuchiyose-engine {
+  margin: 4px 8px;
+  padding: 5px 8px;
+  border: 1px solid #887a59;
+}
+
+.sns-kuchiyose-engine .sns-kuchiyose-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+}
+
+.sns-kuchiyose-toolbar label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.sns-kuchiyose-toolbar input.sns-klevel {
+  width: 3rem;
+  height: 26px;
+}
+
+.sns-kuchiyose-engine .sns-kuchiyose-toolbar button,
+.sns-kuchiyose-engine .sns-summon-roster button {
+  flex: 0 0 auto;
+  width: auto;
+  min-height: 26px;
+  height: auto;
+  margin: 0;
+  padding: 2px 7px;
+  line-height: 1.3;
+}
+
+.sns-kuchiyose-roster {
+  margin-top: 4px;
+}
+
+.sns-kuchiyose-roster summary {
+  cursor: pointer;
+}
+
+.sns-kuchiyose-roster ul {
+  margin: 4px 0 0;
+}

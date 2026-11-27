@@ -401,7 +401,23 @@ Hooks.on('updateActor', async (actor, changes) => {
  if (folder && folder.name !== actor.name) await folder.update({name:actor.name});
 });
 Hooks.on('renderActorSheet',(app,html)=>{if(app.actor.flags?.[SYS]?.puppetProfile||app.actor.flags?.[SYS]?.rashoumonGate||app.actor.type!=='personagem'||!app.isEditable||app.actor.getFlag(SYS,'summonProfile')||app.actor.getFlag(SYS,'summonTemplate'))return;const root=html instanceof jQuery?html:$(html);if(root.find('.sns-kuchiyose-engine').length)return;
- const panel=$(`<section class="sns-kuchiyose-engine" style="padding:8px;margin:8px;border:1px solid #887a59"><strong>Kuchiyose Summoning</strong><div style="display:flex;flex-wrap:wrap;gap:5px"><label>Power level <input class="sns-klevel" type="number" min="0" style="width:50px" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label><button type="button" class="sns-cast">Summon Creature</button><button type="button" class="sns-desummon">Desummon</button><button type="button" class="sns-open-kuchiyose">Summon Compendium</button><button type="button" class="sns-open-puppets">Puppets</button><button type="button" class="sns-size-reference">Size Reference</button><button type="button" class="sns-custom">+ Custom Summon</button><button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button></div><h4>Summoned Creatures</h4><ul class="sns-summon-roster"></ul></section>`);
+ const panel=$(`<section class="sns-kuchiyose-engine">
+  <div class="sns-kuchiyose-toolbar">
+   <strong>Kuchiyose</strong>
+   <label>Power level <input class="sns-klevel" type="number" min="0" value="${num(app.actor.getFlag(SYS,'kuchiyoseLevel'))}"></label>
+   <button type="button" class="sns-cast">Summon Creature</button>
+   <button type="button" class="sns-desummon">Desummon</button>
+   <button type="button" class="sns-open-kuchiyose">Summon Compendium</button>
+   <button type="button" class="sns-open-puppets">Puppets</button>
+   <button type="button" class="sns-size-reference">Size Reference</button>
+   ${game.user.isGM ? `<button type="button" class="sns-custom">+ Custom Summon</button>
+   <button type="button" class="sns-reset-scene" title="GM: reset usage when a new scene begins">Reset Uses</button>` : ''}
+  </div>
+  <details class="sns-kuchiyose-roster">
+   <summary>Summoned Creatures</summary>
+   <ul class="sns-summon-roster"></ul>
+  </details>
+ </section>`);
  const target=root.find('.sheet-body').first();(target.length?target:root.find('form').first()).prepend(panel);
  const roster = panel.find('.sns-summon-roster');
  summonRosters.set(app, {owner: app.actor, roster});
