@@ -249,7 +249,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:nadareRoga, folderName:'Land of Snow'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
-  ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog),
+  ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog, ninpou),
   ...demonBrothers(SYS, basicJutsu, ninpou),
   ...villageSpecialists,
   ...anbuOperatives(SYS, basicJutsu, puppetAptitudes)
