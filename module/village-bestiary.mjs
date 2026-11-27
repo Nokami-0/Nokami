@@ -1,3 +1,4 @@
+import {zori} from './zori.mjs';
 import {foolishBrothers} from './foolish-brothers.mjs';
 import {jiga} from './jiga.mjs';
 import {lordSagi} from './lord-sagi.mjs';
@@ -348,6 +349,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:genyumaru(SYS), folderName:'Otogakure'},
   {actor:gato(SYS), folderName:'Land of Waves'},
   {actor:waraji(SYS), folderName:'Land of Waves'},
+  {actor:zori(SYS), folderName:'Land of Waves'},
   {actor:ryugan(SYS), folderName:'Takumi Village'},
   {actor:suiko(SYS), folderName:'Takumi Village'},
   {actor:gatsu(SYS), folderName:'Land of Stone'},
