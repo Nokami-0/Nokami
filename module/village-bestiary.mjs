@@ -1,3 +1,4 @@
+import {lordSagi} from './lord-sagi.mjs';
 import {renga} from './renga.mjs';
 import {michiruTsuki} from './michiru-tsuki.mjs';
 import {suiko} from './suiko.mjs';
@@ -318,6 +319,7 @@ async function buildBossBestiary(basicJutsu) {
  const clanCatalog = await clanResponse.json();
  const templates = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
+  {actor:lordSagi(SYS), folderName:'Land of Birds'},
   {actor:samuraiCaptain, folderName:'Land of Iron'},
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
