@@ -1,3 +1,4 @@
+import {villageTraining} from './village-training.mjs';
 import {shinnoBase, shinnoRevival} from './shinno.mjs';
 import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
@@ -130,8 +131,11 @@ async function moveMedicToHenchmen(pack, folder, documents) {
  const current = documents.find(actor => actor.getFlag(SYS,'bestiarySupport') === id);
  if (!current) {
   const template = withTokenArt(konohaMedic, id);
-  const source = previous?.toObject() ?? template;
+  const source = previous?.toObject() ?? structuredClone(template);
   delete source._id;
+  const training = villageTraining(id, source);
+  source.system.pericias = {...source.system.pericias, ...training.skills};
+  source.items.push(...missingItems(source, training.items));
   const flags = source.flags[SYS] ??= {};
   delete flags.bestiaryBoss;
   flags.bestiarySupport = id;
@@ -143,6 +147,13 @@ async function moveMedicToHenchmen(pack, folder, documents) {
   const created = await CONFIG.Actor.documentClass.create({...source,folder},{pack:pack.collection});
   if (!created) throw Error('Could not create the Konoha Medic in Henchmen.');
  }
+ if (current) {
+  const training = villageTraining(id, current);
+  const changes = skillUpdates(training.skills);
+  if (Object.keys(changes).length) await current.update(changes);
+  const items = missingItems(current, training.items);
+  if (items.length) await current.createEmbeddedDocuments('Item', items);
+ }
  if (previous) {
   const locked = bosses.locked;
   if (locked) await bosses.configure({locked:false});
@@ -153,6 +164,16 @@ async function moveMedicToHenchmen(pack, folder, documents) {
   }
  }
  return !current;
+}
+
+function missingItems(actor, items) {
+ return items.filter(item => !actor.items.some(owned =>
+  owned.type === item.type && owned.name.toLowerCase() === item.name.toLowerCase()));
+}
+
+function skillUpdates(skills) {
+ return Object.fromEntries(Object.entries(skills).map(([skill, data]) =>
+  [`system.pericias.${skill}.pontos`, data.pontos]));
 }
 
 function banditBalanceUpdate(actor) {
@@ -228,10 +249,16 @@ async function buildBossBestiary(basicJutsu) {
  ].map(({actor, folderName}) => {
   const id = actor.flags[SYS].bestiaryBoss;
   const loadout = villageLoadoutItems(id, actor.system.cabecalho.filiacao, basicJutsu, ninpou);
-  const profile = {...actor, items:[...actor.items, ...loadout]};
+  const training = villageTraining(id, actor);
+  const profile = {
+   ...actor,
+   system:{...actor.system, pericias:{...actor.system.pericias, ...training.skills}},
+   items:[...actor.items, ...loadout, ...missingItems(actor, training.items)]
+  };
   const specialist = id.startsWith('village-specialist:');
-  const additions = specialist ? profile.items : loadout;
-  if (id === 'kaguya-clan-leader') additions.push(...actor.items.filter(item => item.type === 'aptidao'));
+  const additions = specialist || id === 'suna-anbu' || id === 'land-of-iron-samurai-captain'
+   ? profile.items
+   : [...loadout, ...profile.items.filter(item => item.type === 'aptidao')];
   return {id, actor: specialist ? profile : withTokenArt(profile, id), folderName, loadout:additions};
  });
  const missing = templates.filter(({id}) => !existing.has(id));
@@ -243,26 +270,23 @@ async function buildBossBestiary(basicJutsu) {
  const loadoutUpdates = templates.flatMap(({id, loadout}) => {
   const current = existing.get(id);
   if (!current) return [];
-  const items = loadout.filter(item => !current.items.some(owned =>
-   owned.type === item.type && owned.name.toLowerCase() === item.name.toLowerCase()));
-  return items.length ? [{current, items}] : [];
+  const items = missingItems(current, loadout);
+  const skills = skillUpdates(villageTraining(id, current).skills);
+  return items.length || Object.keys(skills).length ? [{current, items, skills}] : [];
  });
- const suna = existing.get('suna-anbu');
- const sunaItems = suna ? templates.find(({id}) => id === 'suna-anbu').actor.items.filter(item =>
-  !suna.items.some(current => current.type === item.type && current.name === item.name)) : [];
  const captain = existing.get('land-of-iron-samurai-captain');
- const captainItems = captain ? samuraiCaptain.items.filter(item =>
-  !captain.items.some(current => current.type === item.type && current.name === item.name)) : [];
  const oldCaptainArmor = captain?.items.find(item =>
   item.name === 'Land of Iron Battle Armor' && item.system.absorption === 15);
- if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !sunaItems.length && !captainItems.length && !oldCaptainArmor && !loadoutUpdates.length) return;
+ if (!missing.length && !balanceUpdate && !oldTouch && !artUpdates.length && !oldCaptainArmor && !loadoutUpdates.length) return;
 
  const locked = pack.locked;
  if (locked) await pack.configure({locked:false});
  try {
   if (balanceUpdate) await bandit.update(balanceUpdate);
-  for (const {current, items} of loadoutUpdates) await current.createEmbeddedDocuments('Item', items);
-  if (captainItems.length) await captain.createEmbeddedDocuments('Item', captainItems);
+  for (const {current, items, skills} of loadoutUpdates) {
+   if (Object.keys(skills).length) await current.update(skills);
+   if (items.length) await current.createEmbeddedDocuments('Item', items);
+  }
   if (oldCaptainArmor) {
    const armor = samuraiCaptain.items.find(item => item.name === oldCaptainArmor.name).system;
    await oldCaptainArmor.update({
@@ -274,7 +298,6 @@ async function buildBossBestiary(basicJutsu) {
     'system.descricao': armor.descricao
    });
   }
-  if (sunaItems.length) await suna.createEmbeddedDocuments('Item', sunaItems);
   for (const {current, changes} of artUpdates) await current.update(changes);
   if (oldTouch) {
    const touch = ishidate.items.find(item => item.name === 'Petrifying Touch');
