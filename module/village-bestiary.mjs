@@ -1,3 +1,4 @@
+import {oboro} from './oboro.mjs';
 import {poisonLoadoutChanges} from './bestiary-poisons.mjs';
 import {demonBrothers} from './demon-brothers.mjs';
 import {soundAndClanNpcs} from './sound-and-clan-npcs.mjs';
@@ -252,6 +253,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:nadareRoga, folderName:'Land of Snow'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
+  {actor:oboro(SYS), folderName:'Amegakure'},
   ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog, ninpou),
   ...demonBrothers(SYS, basicJutsu, ninpou),
   ...villageSpecialists,
