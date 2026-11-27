@@ -1,3 +1,4 @@
+import {directorMakino} from './director-makino.mjs';
 import {sazanami} from './sazanami.mjs';
 import {genyumaru} from './genyumaru.mjs';
 import {kamira} from './kamira.mjs';
@@ -332,6 +333,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:gato(SYS), folderName:'Land of Waves'},
   {actor:gatsu(SYS), folderName:'Land of Stone'},
   {actor:sazanami(SYS), folderName:'Independent Shinobi'},
+  {actor:directorMakino(SYS), folderName:'Land of Fire'},
   {actor:ranke(SYS), folderName:'Haido’s Knights'},
   {actor:kamira(SYS), folderName:'Haido’s Knights'},
   {actor:oboro(SYS), folderName:'Amegakure'},
