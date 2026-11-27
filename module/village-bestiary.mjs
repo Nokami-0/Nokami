@@ -1,3 +1,4 @@
+import {michiruTsuki} from './michiru-tsuki.mjs';
 import {suiko} from './suiko.mjs';
 import {ryugan} from './ryugan.mjs';
 import {waraji} from './waraji.mjs';
@@ -326,6 +327,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:sora, folderName:'Twelve Guardian Ninja'},
   {actor:dotoKazahana, folderName:'Land of Snow'},
   {actor:ishidate, folderName:'Land of the Moon'},
+  {actor:michiruTsuki(SYS), folderName:'Land of the Moon'},
   {actor:karenbana, folderName:'Land of the Moon'},
   {actor:kongo, folderName:'Land of the Moon'},
   {actor:nadareRoga, folderName:'Land of Snow'},
