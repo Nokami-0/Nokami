@@ -211,7 +211,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "toad-frog.png",
+    "token_file": "ninja-toad.webp",
     "aptitudes": "Attack on the Move, Specialist, Warrior, Insight, Reflexes, Speedster, Mastery, Expert, Innate Skill, Weapon Proficiency",
     "techniques": "Tadayou; Toad Oil",
     "attacks_description": "Club (Bludgeoning); Spear (Piercing); Sword (Slashing)",
