@@ -49,6 +49,7 @@ const henchmanTokenNames = {
  'yukigakure:snow-ninja-henchman': 'snow-ninja-henchman',
  'bandits:thief-henchman': 'thief-henchman',
  'kurosuki:gang-member': 'kurosuki-gang-member',
+ 'haido:soldier': 'haido-soldier',
  'sunagakure:puppet-user': 'suna-puppet-user',
  'Hoshigakure:0': 'hoshi-shinobi',
  'land-of-iron:samurai-henchman': 'land-of-iron-samurai',

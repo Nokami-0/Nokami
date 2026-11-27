@@ -194,6 +194,19 @@ villageHenchmen.push({
   tactics:'Use several members as a group guarding approaches or surrounding targets. They use ordinary kunai attacks and henchman rules.'
 });
 
+villageHenchmen.push({
+  id:'haido:soldier',
+  village:'Haido’s Knights',
+  english:'Haido’s Army',
+  continuity:'Film',
+  role:'Armored foot soldier',
+  name:'Haido’s Soldier',
+  weapon:'Unarmed',
+  attack:'melee',
+  gear:['Soldier Armor'],
+  tactics:'Use these soldiers as a group supporting Haido’s named knights. The armored strike uses normal henchman damage. The suit is part of the uniform.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
