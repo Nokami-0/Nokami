@@ -1,3 +1,4 @@
+import {genyumaru} from './genyumaru.mjs';
 import {kamira} from './kamira.mjs';
 import {ranke} from './ranke.mjs';
 import {gatsu} from './gatsu.mjs';
@@ -325,6 +326,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:shiin(SYS), folderName:'Shiin Clan'},
   {actor:suzumebachi(SYS), folderName:'Iwagakure'},
   {actor:kamikiri(SYS), folderName:'Otogakure'},
+  {actor:genyumaru(SYS), folderName:'Otogakure'},
   {actor:gato(SYS), folderName:'Land of Waves'},
   {actor:gatsu(SYS), folderName:'Land of Stone'},
   {actor:ranke(SYS), folderName:'Haido’s Knights'},
