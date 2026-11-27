@@ -24,7 +24,7 @@ export function rashoumonParameters(actor,attribute,quantity,existing=0){
  return {rank,score,maximum,quantity,hardness:hardness/quantity,totalHardness:hardness,chakra:Math.ceil(score/2),widthMeters:score/2,heightMeters:score/2,rangeMeters:5+score,action:rank>=2&&quantity===1?'Partial':'Movement',nonDegrading:rank===3};
 }
 export function rashoumonTemplate(){
- return {name:'Rashoumon (Rashomon) — Defensive Gates',type:'personagem',img:'icons/svg/shield.svg',system:{},prototypeToken:{name:'Rashoumon Gate',actorLink:false,texture:{src:'icons/svg/shield.svg'},displayBars:0},flags:{core:{sheetClass:`${SYS}.RashoumonSheet`},[SYS]:{kuchiyoseCompendiumKey:'Rashoumon (Rashomon)',rashoumonGate:{template:true},summonRulesRevision:2}},items:[]};
+ return {name:'Rashoumon (Rashomon) — Defensive Gates',type:'personagem',img:`systems/${SYS}/integrated/assets/summons/rashoumon.webp`,system:{},prototypeToken:{name:'Rashoumon Gate',actorLink:false,texture:{src:`systems/${SYS}/integrated/assets/summons/rashoumon.webp`},displayBars:0},flags:{core:{sheetClass:`${SYS}.RashoumonSheet`},[SYS]:{kuchiyoseCompendiumKey:'Rashoumon (Rashomon)',rashoumonGate:{template:true},summonRulesRevision:2}},items:[]};
 }
 export function rashoumonGridSize(parameters,grid){
  const units=String(grid.units||'m').toLowerCase();

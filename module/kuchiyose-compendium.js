@@ -11,13 +11,18 @@ export function buildKuchiyoseCompendium(){
  if(building)return building;
  building=build().finally(()=>{building=null;});return building;
 }
-async function refreshToadArt(actor, species) {
- if (species.name !== 'Toad / Frog') return;
- const previous = `systems/${SYS}/assets/toad-frog.png`;
- const source = buildKuchiyoseTemplate(species);
+async function refreshSummonArt(actor, species) {
+ const assetRoot = `systems/${SYS}/integrated/assets/`;
+ const {img} = buildKuchiyoseTemplate(species);
+ const filename = species.token_file?.match(/^summons\/(.+)\.webp$/)?.[1];
+ const previous = filename ? [`${assetRoot}${filename}.png`] : ['icons/svg/shield.svg'];
+ if (filename === 'ninja-toad') {
+  previous.push(`${assetRoot}toad-frog.png`, `${assetRoot}ninja-toad.webp`,
+   `systems/${SYS}/assets/toad-frog.png`, `systems/${SYS}/assets/ninja-toad.webp`);
+ }
  const changes = {};
- if (actor.img === previous) changes.img = source.img;
- if (actor.prototypeToken?.texture?.src === previous) changes['prototypeToken.texture.src'] = source.prototypeToken.texture.src;
+ if (previous.includes(actor.img)) changes.img = img;
+ if (previous.includes(actor.prototypeToken?.texture?.src)) changes['prototypeToken.texture.src'] = img;
  if (Object.keys(changes).length) await actor.update(changes);
 }
 async function build(){
@@ -30,7 +35,7 @@ async function build(){
   const docs=await pack.getDocuments(),keys=new Set(docs.map(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')).filter(Boolean));
   const folders=new Map(pack.folders.map(f=>[f.name,f.id]));
   for(const species of rows){
-   if(keys.has(species.name)){const actor=docs.find(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')===species.name);await repairSummonSize(actor);await repairSummonSheet(actor,CONFIG.Actor.sheetClasses?.personagem);await syncDokiLoadout(actor,species);await syncSummonSpecies(actor,species,buildKuchiyoseTemplate);await refreshToadArt(actor,species);existing++;continue;}
+   if(keys.has(species.name)){const actor=docs.find(a=>a.getFlag(SYS,'kuchiyoseCompendiumKey')===species.name);await repairSummonSize(actor);await repairSummonSheet(actor,CONFIG.Actor.sheetClasses?.personagem);await syncDokiLoadout(actor,species);await syncSummonSpecies(actor,species,buildKuchiyoseTemplate);await refreshSummonArt(actor,species);existing++;continue;}
    const group=species.group||'Other Kuchiyose';
    let folder=folders.get(group);
    if(!folder){const f=await Folder.create({name:group,type:'Actor',sorting:'a'},{pack:pack.collection});folder=f.id;folders.set(group,folder);}
@@ -40,8 +45,9 @@ async function build(){
  }finally{if(locked)await pack.configure({locked:true});}
  // Update existing generated world summons too, without replacing attributes or HP.
  for(const actor of game.actors||[]){
-  const species=rows.find(p=>p.name===actor.getFlag(SYS,'summonProfile')?.species);
-  if(species&&actor.isOwner){await repairSummonSize(actor);await syncDokiLoadout(actor,species);await syncSummonSpecies(actor,species,buildKuchiyoseTemplate);await refreshToadArt(actor,species);}
+  const name = actor.getFlag(SYS,'summonProfile')?.species ?? actor.getFlag(SYS,'kuchiyoseCompendiumKey');
+  const species=rows.find(p=>p.name===name);
+  if(species&&actor.isOwner){await repairSummonSize(actor);await syncDokiLoadout(actor,species);await syncSummonSpecies(actor,species,buildKuchiyoseTemplate);await refreshSummonArt(actor,species);}
  }
  return {added,existing,total:rows.length,pack:pack.collection};
 }
