@@ -231,6 +231,7 @@ async function buildBossBestiary(basicJutsu) {
   const profile = {...actor, items:[...actor.items, ...loadout]};
   const specialist = id.startsWith('village-specialist:');
   const additions = specialist ? profile.items : loadout;
+  if (id === 'kaguya-clan-leader') additions.push(...actor.items.filter(item => item.type === 'aptidao'));
   return {id, actor: specialist ? profile : withTokenArt(profile, id), folderName, loadout:additions};
  });
  const missing = templates.filter(({id}) => !existing.has(id));

@@ -1,3 +1,12 @@
+const leaderAptitudes = [
+  ['Fighter', '', 'Ignore the normal −2 Accuracy penalty when performing special combat maneuvers unarmed or with natural weapons. Basic Book 4.1b, p. 63.'],
+  ['Throw', 'Strength 6 and Fighter', 'When using Takedown unarmed, you may throw the target backward or upward up to 1 m per Strength, to a maximum of 10 m. The Clan Leader’s Strength 9 allows up to 9 m. If thrown upward, the target falls at the end of the turn. Basic Book 4.1b, p. 68.'],
+  ['Aggressive Takedown', 'Fighter', 'On a successful Takedown, you can also deal damage. The target gets a Vigor test against 2 + your Close Combat Accuracy to remain standing. When combined with Throw, only throw the target if it fails that test. Basic Book 4.1b, p. 70.']
+].map(([name, preRequisito, descricao]) => ({
+  name, type:'aptidao', img:'icons/svg/fist.svg',
+  system:{preRequisito, descricao:`${descricao} Resolve manually.`}
+}));
+
 export const kaguyaClanLeader = {
   name: 'Kaguya Clan Leader',
   type: 'personagem',
@@ -32,5 +41,5 @@ export const kaguyaClanLeader = {
     name: 'Unarmed Attack', type: 'equipamento', img: 'icons/svg/fist.svg',
     system: {equipped: true, attackType: 'melee', weaponCategory: 'natural',
       weaponDamage: 0, damageType: 'bludgeoning', criticalRange: '15-16', quantidade: 1}
-  }]
+  }, ...leaderAptitudes]
 };
