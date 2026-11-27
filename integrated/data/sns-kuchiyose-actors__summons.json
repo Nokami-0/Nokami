@@ -11,7 +11,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "eagle.png",
+    "token_file": "summons/eagle.webp",
     "aptitudes": "Attack in Motion, Specialist, Reflexes, Intuition, Speedster, Expert, Innate Skill, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown",
     "techniques": "Wing Flap",
     "attacks_description": "Claws (Slashing); Beak (Piercing)",
@@ -52,7 +52,7 @@
     "prerequisite": "Hatake clan",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "ninken-ninja-dog.png",
+    "token_file": "summons/ninken-ninja-dog.webp",
     "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Speedster, Expert, Innate Skill, Fighter, Blind Spot, Stunning Attack, Power Attack, Aggressive Takedown, Standing Up, Aggressive Disarm, Sweep, Sensor",
     "techniques": "Tadayou; Doton: Tsuiga no Jutsu (summoner)",
     "attacks_description": "Bite (Piercing)",
@@ -97,7 +97,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "giant-snake.png",
+    "token_file": "summons/giant-snake.webp",
     "aptitudes": "Attack in Motion, Specialist, Reflexes, Intuition, Speedster, Expert, Innate Skill, Fighter, Blind Spot, Throw, Stunning Attack, Power Attack, Aggressive Takedown, Sensor",
     "techniques": "Kinobori; Kawarimi no Jutsu; Immerse; Frighten Lv 2",
     "attacks_description": "Bite (Piercing); Tail Strike (Bludgeoning)",
@@ -153,7 +153,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "slug-katsuyu-species.png",
+    "token_file": "summons/slug-katsuyu-species.webp",
     "aptitudes": "Acuity, Attack on the Move, Intuition, Reflexes, Medical Ninja, Expert, Innate Skill, Blind-Fight, Mastery, Enhanced Endurance (Stamina), Diehard",
     "techniques": "Tadayou; Kinobori; Acid; Katsuyu Daibunretsu; Byakugou no In (summoner)",
     "attacks_description": "Body Slam (Bludgeoning)",
@@ -211,7 +211,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "ninja-toad.webp",
+    "token_file": "summons/ninja-toad.webp",
     "aptitudes": "Attack on the Move, Specialist, Warrior, Insight, Reflexes, Speedster, Mastery, Expert, Innate Skill, Weapon Proficiency",
     "techniques": "Tadayou; Toad Oil",
     "attacks_description": "Club (Bludgeoning); Spear (Piercing); Sword (Slashing)",
@@ -262,7 +262,7 @@
     "prerequisite": "Sarutobi clan",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "monkey-enma-species.png",
+    "token_file": "summons/monkey-enma-species.webp",
     "aptitudes": "Attack on the Move, Specialist, Reflexes, Speedster, Expert, Innate Skill, Fighter, Blind Fight, Blind Spot, Throw, Stunning Attack, Multiple Attack, Power Attack, Aggressive Takedown, Standing, Aggressive Disarm, Grappling Punch, Reverse Kick, Flying Kick",
     "techniques": "Henge no Jutsu; Henge: Kongounyoi — Adamantine Staff",
     "attacks_description": "Punch (Bludgeoning); Kick (Bludgeoning)",
@@ -309,7 +309,7 @@
     "prerequisite": "Sarutobi clan",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "monkey-revised.png",
+    "token_file": "summons/monkey-revised.webp",
     "fixedSize": "large",
     "attackList": [
       {
@@ -366,7 +366,7 @@
     "prerequisite": "Hoshigaki clan",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "shark.png",
+    "token_file": "summons/shark.webp",
     "fixedSize": "large",
     "attackList": [
       {
@@ -410,7 +410,7 @@
     "prerequisite": "Shimura clan",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "baku.png",
+    "token_file": "summons/baku.webp",
     "attackList": [
       {
         "name": "Trunk Strike",
@@ -462,7 +462,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "spider-ordinary.png",
+    "token_file": "summons/spider-ordinary.webp",
     "attackList": [
       {
         "name": "Bite",
@@ -510,7 +510,7 @@
     "prerequisite": "Kuchiyose 6 (Spiders)",
     "status": "named special",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "kyodaigumo-giant-spider.png",
+    "token_file": "summons/kyodaigumo-giant-spider.webp",
     "fixedSize": "huge",
     "attackList": [
       {
@@ -569,7 +569,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "weasel.png",
+    "token_file": "summons/weasel.webp",
     "attackList": [
       {
         "name": "Scythe",
@@ -607,7 +607,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "seafood.png",
+    "token_file": "summons/seafood.webp",
     "attackList": [
       {
         "name": "Body Slam",
@@ -644,7 +644,7 @@
     "prerequisite": "One salamander per scene; maximum Huge size. Dokugiri requires Kuchiyose 6.",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "salamander.png",
+    "token_file": "summons/salamander.webp",
     "fixedSize": "huge",
     "attackList": [
       {
@@ -692,7 +692,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "turtle.png",
+    "token_file": "summons/turtle.webp",
     "attackList": [
       {
         "name": "Shell Strike",
@@ -748,7 +748,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "drill-beaked-bird.png",
+    "token_file": "summons/drill-beaked-bird.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -784,7 +784,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "chimera-dog.png",
+    "token_file": "summons/chimera-dog.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -821,7 +821,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "chimera-chameleon.png",
+    "token_file": "summons/chimera-chameleon.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -858,7 +858,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "panda.png",
+    "token_file": "summons/panda.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -894,7 +894,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "bull.png",
+    "token_file": "summons/bull.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -925,7 +925,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "crustacean.png",
+    "token_file": "summons/crustacean.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -962,7 +962,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "centipede.png",
+    "token_file": "summons/centipede.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -999,7 +999,7 @@
     "prerequisite": "Rinnegan; Occultism16; Rinne Ninpou7; Chikushudou",
     "status": "special species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "rhinoceros.png",
+    "token_file": "summons/rhinoceros.webp",
     "fixedSize": "gargantuan",
     "attackList": [
       {
@@ -1030,7 +1030,7 @@
     "prerequisite": "Spirit or Intelligence 6; Bee Kuchiyose 1",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "bee-individual.png",
+    "token_file": "summons/bee-individual.webp",
     "attackList": [
       {
         "name": "Sting",
@@ -1066,7 +1066,7 @@
     "prerequisite": "Spirit or Intelligence 6; Bee Kuchiyose 1",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "bee-swarm.png",
+    "token_file": "summons/bee-swarm.webp",
     "attackList": [
       {
         "name": "Sting",
@@ -1107,7 +1107,7 @@
     "prerequisite": "Bee Kuchiyose8",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "giant-bee.png",
+    "token_file": "summons/giant-bee.webp",
     "attackList": [
       {
         "name": "Sting",
@@ -1143,7 +1143,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "doki-club.png",
+    "token_file": "summons/doki-club.webp",
     "dokiWeapon": "club",
     "fixedSize": "huge",
     "attackList": [
@@ -1203,7 +1203,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "doki-claws.png",
+    "token_file": "summons/doki-claws.webp",
     "dokiWeapon": "claws",
     "fixedSize": "huge",
     "attackList": [
@@ -1263,7 +1263,7 @@
     "prerequisite": "",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "doki-armless.png",
+    "token_file": "summons/doki-armless.webp",
     "dokiWeapon": "unarmed",
     "fixedSize": "huge",
     "attackList": [

@@ -75,7 +75,7 @@ async function actorFor(p,nc,owner,mode,sizeId){
  // Foundry permissions belong to Actors, not folders. The folder only shows documents the player can see.
  const summonOwnership={default:0,[primary.id]:3};
 
- const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
+ const img=p.image||`${ROOT}/assets/${p.token_file||'summons/eagle.webp'}`;
  const skills=String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
  const size=sizeById(fixedSize(p)||sizeId||speciesSize(p,nc));
  const profile=profileFor(p,nc,size,{ownerId:owner.id,commonPenalty:mode==='common'?p.commonPenalty??-3:0});
@@ -96,7 +96,7 @@ function profileFor(p,nc,size,extra={}){
  notes:p.notes||'',sourceNotes:p.notes||'',...extra};
 }
 function summonItems(p,nc,skills){
- const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
+ const img=p.image||`${ROOT}/assets/${p.token_file||'summons/eagle.webp'}`;
  const flag=(key,extra={})=>({[SYS]:{summonContentKey:key,...extra}});
  const weapons=p.dokiWeapon?dokiEquipment(p,nc):(p.attackList||attacks(p).map(([name,damageType])=>({name,damageType,category:'natural'}))).map(a=>({name:`${a.name} (${a.damageType})`,type:'equipamento',img,system:{descricao:'Species attack. Base melee damage = max(3, Strength − 3), +1 only for a martial weapon. Ignore ordinary Weapon Damage. NC below 4 cannot deal attack damage.',weaponCategory:a.category||'natural',weaponDamage:0,damageType:a.damageType.toLowerCase().includes('slashing')?'slashing':a.damageType.toLowerCase().includes('piercing')?'piercing':'bludgeoning',attackType:'melee',equipped:true,quantidade:1},flags:flag('attack:'+`${a.name} (${a.damageType})`,{summonAttack:true,noDamage:nc<4,baseDamageFormula:'max(3, Strength - 3) + (martial ? 1 : 0)'})}));
  return [...weapons,...String(p.aptitudes||'').split(',').map(x=>x.trim()).filter(Boolean).map(name=>({name:`Allowed Aptitude: ${name}`,type:'aptidao',img,system:{descricao:'Species aptitude OPTION. Choose three free with prerequisites; others require purchase. This reference is not itself an active aptitude.'},flags:flag('aptitude:'+name,{summonAllowedAptitude:true})})),...skills.map(name=>({name:`Skill: ${name}`,type:'aptidao',img,system:{descricao:'Innate species skill: use its linked attribute for accuracy, not purchased skill points. Respect any specialty in parentheses; unlisted skills are zero.'},flags:flag('skill:'+skillKey(name),{speciesSkill:true,skillKey:skillKey(name)})})),
@@ -115,7 +115,7 @@ export function buildKuchiyoseTemplate(p){
  const locked=fixedSize(p),size=sizeById(locked||speciesSize(p,4));
  const nc=locked?4:Math.max(4,Number.isFinite(size.minNC)?size.minNC:4);
  const skills=String(p.skills||'').split(',').map(s=>s.trim()).filter(Boolean);
- const img=p.image||`${ROOT}/assets/${p.token_file||'eagle.png'}`;
+ const img=p.image||`${ROOT}/assets/${p.token_file||'summons/eagle.webp'}`;
  const profile=profileFor(p,nc,size,{template:true});
  const text=[
   'Kuchiyose species template — allocate attributes and energies at the chosen NC before combat.',
