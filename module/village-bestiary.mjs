@@ -267,12 +267,20 @@ async function buildBossBestiary(basicJutsu) {
   const additions = specialist || id === 'suna-anbu' || id === 'land-of-iron-samurai-captain'
    ? profile.items
    : [...loadout, ...profile.items.filter(item => item.type === 'aptidao')];
-  return {id, actor: specialist ? profile : withTokenArt(profile, id), folderName, loadout:additions};
+  const tokenName = id === 'mizore-fuyukuma' ? 'mizore-fuyukuma-film' : id;
+  return {id, actor: specialist ? profile : withTokenArt(profile, tokenName), folderName, loadout:additions};
  });
  const missing = templates.filter(({id}) => !existing.has(id));
  const artUpdates = templates.flatMap(({id, actor}) => {
   const current = existing.get(id);
   const changes = defaultArtUpdates(current, actor);
+  if (id === 'mizore-fuyukuma' && current) {
+   const previousArt = `${tokenDirectory}/mizore-fuyukuma.webp`;
+   if (current.img === previousArt) changes.img = actor.img;
+   if (current.prototypeToken.texture?.src === previousArt) {
+    changes['prototypeToken.texture.src'] = actor.prototypeToken.texture.src;
+   }
+  }
   return Object.keys(changes).length ? [{current, changes}] : [];
  });
  const loadoutUpdates = templates.flatMap(({id, loadout}) => {
