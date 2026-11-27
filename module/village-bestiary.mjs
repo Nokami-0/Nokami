@@ -381,7 +381,7 @@ async function buildBossBestiary(basicJutsu) {
    ? profile.items
    : [...loadout, ...profile.items.filter(item => item.type === 'aptidao')];
   const tokenName = tokenArtReplacements.has(id) ? `${id}${['kiri-hunter-nin', 'suna-anbu', 'konoha-anbu', 'ranke'].includes(id) ? '-card' : '-film'}` : id;
-  return {id, actor: specialist ? profile : withTokenArt(profile, id === 'kotohime' ? null : tokenName), folderName, loadout:additions};
+  return {id, actor: specialist ? profile : withTokenArt(profile, ['kotohime', 'konoha-anbu-elite'].includes(id) ? null : tokenName), folderName, loadout:additions};
  });
  const missing = templates.filter(({id}) => !existing.has(id));
  const artUpdates = templates.flatMap(({id, actor}) => {
