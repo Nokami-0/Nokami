@@ -57,18 +57,75 @@ const henchmanTokenNames = {
 
 const tokenArtReplacements = new Set(['mizore-fuyukuma', 'fubuki-kakuyoku', 'nadare-roga', 'ishidate', 'karenbana', 'kongo', 'kiri-hunter-nin', 'suna-anbu', 'konoha-anbu', 'ranke']);
 
+const originalTokenNames = new Set([
+ 'aburame-clan-member',
+ 'ame-shinobi',
+ 'bandit-leader',
+ 'cult-member',
+ 'dosu-kinuta',
+ 'doto-kazahana',
+ 'fubuki-kakuyoku',
+ 'gato',
+ 'gatsu',
+ 'gozu',
+ 'hoshi-shinobi',
+ 'hyuga-shinobi',
+ 'ishidate',
+ 'iwa-shinobi',
+ 'kaguya-clan-leader',
+ 'kaguya-clan-raider',
+ 'kamikiri',
+ 'karenbana',
+ 'kazuma-furiido',
+ 'kedoin-clan-member',
+ 'kin-tsuchi',
+ 'kiri-hunter-nin',
+ 'kiri-shinobi',
+ 'kongo',
+ 'konoha-anbu',
+ 'konoha-chunin-examiner',
+ 'konoha-medic',
+ 'konoha-shinobi',
+ 'kumo-shinobi',
+ 'kurosuki-gang-member',
+ 'land-of-birds-ghost-samurai',
+ 'land-of-iron-samurai',
+ 'meizu',
+ 'menma',
+ 'mizore-fuyukuma',
+ 'nadare-roga',
+ 'nara-clan-member',
+ 'oboro',
+ 'ranmaru',
+ 'shiin',
+ 'shinno-base',
+ 'sky-ninja',
+ 'sora',
+ 'suna-anbu',
+ 'suna-shinobi',
+ 'suzumebachi',
+ 'uchiha-clan-member',
+ 'zaku-abumi',
+ 'zombie-ninja'
+]);
+
 function withTokenArt(actor, tokenName) {
  if (!tokenName) return actor;
- const src = `${tokenDirectory}/${tokenName}.webp`;
+ const originalName = tokenName.replace(/-(?:card|film)$/, '');
+ const assetName = originalTokenNames.has(originalName) ? `${originalName}-original` : tokenName;
+ const src = `${tokenDirectory}/${assetName}.webp`;
  return {...actor, img: src, prototypeToken: {...actor.prototypeToken, texture: {src}}};
 }
 
 function defaultArtUpdates(actor, template) {
  const changes = {};
  if (!actor || !template.prototypeToken.texture) return changes;
- if (actor.img === placeholderArt) changes.img = template.img;
+ const target = template.prototypeToken.texture.src;
+ const stem = target.endsWith('-original.webp') ? target.slice(0, -'-original.webp'.length) : null;
+ const previous = stem ? [`${stem}.webp`, `${stem}-film.webp`, `${stem}-card.webp`] : [];
+ if (actor.img === placeholderArt || previous.includes(actor.img)) changes.img = template.img;
  const current = actor.prototypeToken.texture?.src;
- if (!current || current === placeholderArt) changes['prototypeToken.texture.src'] = template.prototypeToken.texture.src;
+ if (!current || current === placeholderArt || previous.includes(current)) changes['prototypeToken.texture.src'] = target;
  return changes;
 }
 
