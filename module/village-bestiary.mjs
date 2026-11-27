@@ -1,3 +1,4 @@
+import {soundAndClanNpcs} from './sound-and-clan-npcs.mjs';
 import {villageTraining} from './village-training.mjs';
 import {shinnoBase, shinnoRevival} from './shinno.mjs';
 import {samuraiCaptain} from './samurai-captain.mjs';
@@ -227,6 +228,9 @@ async function buildBossBestiary(basicJutsu) {
  const response = await fetch(`systems/${SYS}/integrated/data/sns-common-ninpou__items.json`);
  if (!response.ok) throw Error(`Could not load the Ninpou catalog (HTTP ${response.status}).`);
  const ninpou = await response.json();
+ const clanResponse = await fetch(`systems/${SYS}/integrated/data/sns-basic-book-clans__items.json`);
+ if (!clanResponse.ok) throw Error(`Could not load clan abilities (HTTP ${clanResponse.status}).`);
+ const clanCatalog = await clanResponse.json();
  const templates = [
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:samuraiCaptain, folderName:'Land of Iron'},
@@ -244,6 +248,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:nadareRoga, folderName:'Land of Snow'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
+  ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog),
   ...villageSpecialists,
   ...anbuOperatives(SYS, basicJutsu, puppetAptitudes)
  ].map(({actor, folderName}) => {
