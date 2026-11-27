@@ -1066,7 +1066,7 @@
     "prerequisite": "Spirit or Intelligence 6; Bee Kuchiyose 1",
     "status": "species",
     "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
-    "token_file": "summons/bee-swarm.webp",
+    "token_file": "summons/kamizuru-bee-swarm.webp",
     "attackList": [
       {
         "name": "Sting",
