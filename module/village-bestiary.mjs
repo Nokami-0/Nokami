@@ -1,3 +1,4 @@
+import {suzumebachi} from './suzumebachi.mjs';
 import {shiin} from './shiin.mjs';
 import {menma} from './menma.mjs';
 import {oboro} from './oboro.mjs';
@@ -257,6 +258,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
   {actor:menma(SYS), folderName:'Shiin Clan'},
   {actor:shiin(SYS), folderName:'Shiin Clan'},
+  {actor:suzumebachi(SYS), folderName:'Iwagakure'},
   {actor:oboro(SYS), folderName:'Amegakure'},
   ...soundAndClanNpcs(SYS, basicJutsu, clanCatalog, ninpou),
   ...demonBrothers(SYS, basicJutsu, ninpou),
