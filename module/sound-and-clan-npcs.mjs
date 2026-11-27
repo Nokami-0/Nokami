@@ -24,12 +24,14 @@ const reflexes = aptitude('Reflexes','Gain +1 Accuracy on Dodge. Basic Book 4.1b
 const intuition = aptitude('Intuition','Gain +1 Accuracy on Read Motion. Basic Book 4.1b, p. 63. Apply manually.');
 const diligent = aptitude('Diligent','Gain +3 on Initiative checks. Once per scene you may reroll Initiative and must accept the second result. Basic Book 4.1b, p. 63. Apply manually.');
 
-export function soundAndClanNpcs(systemId, basicJutsu, clanCatalog) {
+export function soundAndClanNpcs(systemId, basicJutsu, clanCatalog, ninpou) {
   function clanItem(name) {
     const item = clanCatalog.find(entry => entry.name === name);
     if (!item) throw Error(`Missing clan catalog entry: ${name}`);
     return item;
   }
+  const fireCannon = ninpou.find(item => item.id === 'effect:katon:cannon');
+  if (!fireCannon) throw Error('Missing Katon Cannon catalog entry');
   const byakugan = clanItem('Byakugan');
   const gentleFist = clanItem('LEVEL 1: JUUKEN');
   const soundBasics = ['Bunshin No Jutsu','Kawarimi No Jutsu','Kai (Release)'];
@@ -83,6 +85,34 @@ export function soundAndClanNpcs(systemId, basicJutsu, clanCatalog) {
           `${clanItem('Kikai Ninpou').system.descricao}\n\nLearned effect: Cannon (Level 2). Standard Action. Use two available kikaichuu groups for a single ranged attack. Range is 10 m + 2 m per Handling Animals level. On a hit, resolve 4 base damage using normal damage degrees and drain 2 Chakra. Apply handling, swarm availability and the power rules manually. Basic Book 4.1b, pp. 95, 147.`,2),
         weapon('Kunai',3),gear('Hooded Coat'),gear('Dark Glasses'),gear('Field Pouch')
       ]
+    },
+    {
+      id:'nara-clan-member', name:'Nara Clan Member', folder:'Konohagakure', clan:'Nara',
+      attrs:{for:4,des:6,agi:7,per:8,vig:5,int:9,esp:8},
+      skills:{concentracao:6,prontidao:5,procurar:4,furtividade:4,rastrear:3},
+      basics:['Kai (Release)','Kawarimi No Jutsu','Kinobori'],
+      items:[intuition,diligent,weapon('Kunai',3),weapon('Shuriken',4),gear('Smoke Bomb',1,{consumable:true}),
+        gear('Leaf Flak Vest',1,{equipped:true,isArmor:true,absorption:5,absorptionRemaining:5}),gear('Field Pouch'),
+        ...['LEVEL 1: KAGE SHIBARI NO JUTSU','LEVEL 3: KAGE MANE NO JUTSU'].map((prefix,index) => {
+          const name = clanCatalog.find(entry => entry.name.startsWith(prefix))?.name;
+          const rule = clanItem(name);
+          return jutsu(index ? 'Shadow Possession (Kage Mane)' : 'Shadow Prison (Kage Shibari)',
+            'Kagejutsu',3,`Kagejutsu Level 3. Range 11 m. Resolve the effect manually.
+
+${rule.system.descricao}`,3);
+        })]
+    },
+    {
+      id:'uchiha-clan-member', name:'Uchiha Clan Member', folder:'Konohagakure', clan:'Uchiha',
+      attrs:{for:5,des:8,agi:7,per:8,vig:6,int:7,esp:8},
+      skills:{prontidao:5,concentracao:5,acrobacia:4,procurar:4,furtividade:3},
+      basics:['Kai (Release)','Kawarimi No Jutsu','Bunshin No Jutsu','Kinobori'],
+      items:[reflexes,weapon('Kunai',3),weapon('Shuriken',6),gear('Field Pouch'),
+        {...clanItem('Sharingan'),system:{...clanItem('Sharingan').system,custoChakra:1,custo:'1 Chakra',preRequisito:'Perception 3'}},
+        {...clanItem('NIDAN SHARINGAN'),name:'Nidan Sharingan',system:{...clanItem('NIDAN SHARINGAN').system,preRequisito:'Perception 6 and Sharingan'}},
+        jutsu('Katon — Cannon','Ninpou',2,`Level 2. At Spirit 8, range 26 m. Paid cast: 4 base damage before normal damage degrees. Resolve manually.
+
+${fireCannon.description}`,2)]
     },
     {
       id:'kedoin-clan-member', name:'Kedōin Clan Member', folder:'Kedōin Clan', clan:'Kedōin',
