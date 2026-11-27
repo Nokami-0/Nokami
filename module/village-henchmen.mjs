@@ -161,6 +161,25 @@ villageHenchmen.push({
   tactics:'Watches the deck and boarding points, using a kunai from cover and a climbing line to move between levels. Use normal henchman rules for the attack. The uniform provides warmth and has no combat armor bonus.'
 });
 
+
+villageHenchmen.push(
+  {
+    id:'cult:member', village:'Cult and Undead', english:'Cult encounter', continuity:'Homebrew',
+    role:'Ritual chamber guard', name:'Cult Member', weapon:'Unarmed', attack:'melee',
+    gear:['Red Face Seal'], tactics:'Guards the ritual chamber. The red seal is a cult insignia.'
+  },
+  {
+    id:'cult:zombie-ninja', village:'Cult and Undead', english:'Cult encounter', continuity:'Homebrew',
+    role:'Undead guard', name:'Zombie Ninja', weapon:'Unarmed', attack:'melee',
+    gear:['Yellow Binding Seal'], tactics:'The yellow seal animates the zombie. It collapses at 0 Vitality or if the seal is removed. It does not rise again automatically. Resolve the seal manually.'
+  },
+  {
+    id:'independent:fox-mask', village:'Independent Shinobi', english:'Independent encounter', continuity:'Homebrew',
+    role:'Masked sentry', name:'Fox-Mask Ninja', weapon:'Kunai', attack:'melee',
+    gear:['Fox Mask'], tactics:'A masked shinobi without an assigned village or clan. Use the ordinary henchman rules.'
+  }
+);
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};

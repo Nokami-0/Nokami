@@ -117,3 +117,15 @@ export const nadareRoga = mercenary({
       'Standard action. Requires a large mass of existing ice. Form a horned whale and place a 3 m radius impact area centered within 15 m. Roll one ranged ninjutsu attack and resolve it against each creature in the area for 9 base damage using normal damage degrees. Once per scene.')
   ]
 });
+
+export const kongo = mercenary({
+  id: 'kongo', name: 'Kongō', nc: 11, affiliation: 'Wandering Ninja Clan',
+  attributes: {for:11, des:5, agi:5, per:6, vig:11, int:4, esp:5},
+  skills: {atletismo:5, prontidao:5, escapar:4}, vitality:98, chakra:25,
+  biography: '<p><strong>Film · Guardians of the Crescent Moon Kingdom</strong></p><p>Kongō is the trio’s close-combat bruiser. Use the normal unarmed attack and forced-movement maneuvers when appropriate. Karenbana disrupts opponents while Ishidate threatens Petrifying Touch.</p>',
+  items: [{
+    name:'Unarmed Strike', type:'equipamento', img:'icons/svg/fist.svg',
+    system:{equipped:true, weaponCategory:'natural', attackType:'melee', weaponSize:'light',
+      weaponDamage:0, damageType:'bludgeoning', quantidade:1}
+  }]
+});

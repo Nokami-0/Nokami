@@ -2,7 +2,7 @@ import {shinnoBase, shinnoRevival} from './shinno.mjs';
 import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
 import {villageBasicTechniques, villageSpecialists} from './village-techniques.mjs';
-import {fubukiKakuyoku, mizoreFuyukuma, karenbana, nadareRoga} from './film-mercenaries.mjs';
+import {fubukiKakuyoku, mizoreFuyukuma, karenbana, nadareRoga, kongo} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
 import {sora} from "./sora.mjs";
@@ -22,6 +22,16 @@ let building;
 const placeholderArt = 'icons/svg/mystery-man.svg';
 const tokenDirectory = `systems/${SYS}/assets/tokens/bestiary`;
 const henchmanTokenNames = {
+ 'Iwagakure:0': 'iwa-shinobi',
+ 'Sunagakure:0': 'suna-shinobi',
+ 'Kirigakure:0': 'kiri-shinobi',
+ 'Amegakure:0': 'ame-shinobi',
+ 'Konohagakure:0': 'konoha-shinobi',
+ 'Kumogakure:0': 'kumo-shinobi',
+ 'Soragakure:0': 'sky-ninja',
+ 'cult:member': 'cult-member',
+ 'cult:zombie-ninja': 'zombie-ninja',
+ 'independent:fox-mask': 'fox-mask-ninja',
  'yukigakure:snow-ninja-henchman': 'snow-ninja-henchman',
  'bandits:thief-henchman': 'thief-henchman',
  'sunagakure:puppet-user': 'suna-puppet-user',
@@ -206,6 +216,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:dotoKazahana, folderName:'Land of Snow'},
   {actor:ishidate, folderName:'Land of the Moon'},
   {actor:karenbana, folderName:'Land of the Moon'},
+  {actor:kongo, folderName:'Land of the Moon'},
   {actor:nadareRoga, folderName:'Land of Snow'},
   {actor:fubukiKakuyoku, folderName:'Land of Snow'},
   {actor:mizoreFuyukuma, folderName:'Land of Snow'},
