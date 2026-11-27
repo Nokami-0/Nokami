@@ -26,6 +26,16 @@ export function anbuOperatives(systemId, basicJutsu, puppetAptitudes) {
         equipment('Smoke Bomb',2,{consumable:true, descricao:'Use the normal Smoke Bomb rules. Track scene effects manually.'})]
     },
     {
+      id:'konoha-anbu-elite', name:'Konoha ANBU Elite', village:'Konohagakure', nc:11,
+      agility:10, perception:10, skills:{furtividade:5, acrobacia:5, prontidao:5, procurar:5, concentracao:4},
+      jutsu:'Henge No Jutsu', mission:'A masked field operative trained to coordinate other ANBU. The teamwork maneuver is a tabletop adaptation.',
+      gear:[equipment('ANBU Animal Mask'), equipment('Hooded Field Cloak')],
+      signature:[
+        {name:'Expert (Stealth)',type:'aptidao',img:'icons/svg/book.svg',system:{aptitudeChoice:'Stealth',descricao:'Gain +2 Accuracy on Stealth tests.'}},
+        {name:'ANBU Teamwork',type:'poder',img:'icons/svg/book.svg',system:{tipo:'Teamwork Maneuver',nivelUsado:1,custoChakra:0,custo:'0 Chakra',descricao:'Partial Action, once per round. Signal one allied ANBU within 6 m who can see or hear you. They gain +1 Accuracy on their next attack before the end of their next turn. This bonus does not stack with itself. Resolve manually.'}}
+      ]
+    },
+    {
       id:'suna-anbu', name:'Suna ANBU Puppeteer', village:'Sunagakure',
       agility:9, perception:10, skills:{mecanismo:5, furtividade:5, prontidao:5, procurar:4, concentracao:4},
       jutsu:'Henge No Jutsu',
@@ -52,10 +62,10 @@ export function anbuOperatives(systemId, basicJutsu, puppetAptitudes) {
       prototypeToken:{name:profile.name, actorLink:false, disposition:-1},
       flags:{[systemId]:{bestiaryBoss:profile.id}},
       system:{
-        cabecalho:{nome:profile.name,nc:10,patente:'ANBU Specialist',filiacao:profile.village},
+        cabecalho:{nome:profile.name,nc:profile.nc ?? 10,patente:'ANBU Specialist',filiacao:profile.village},
         atributos:{for:{valor:6},des:{valor:8},agi:{valor:profile.agility},per:{valor:profile.perception},vig:{valor:7},int:{valor:7},esp:{valor:8}},
         pericias:Object.fromEntries(Object.entries(profile.skills).map(([key,pontos]) => [key,{pontos}])),
-        energias:{vitalidade:{value:81,max:81},chakra:{value:34,max:34}},
+        energias:{vitalidade:{value:31 + 5 * (profile.nc ?? 10),max:31 + 5 * (profile.nc ?? 10)},chakra:{value:34,max:34}},
         databook:{biografia:`<p>${profile.mission} This is a full NPC. Use the item rules for Chakra costs and resolve technique effects manually.</p>`}
       },
       items:[
