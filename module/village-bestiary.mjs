@@ -58,6 +58,8 @@ const henchmanTokenNames = {
 const tokenArtReplacements = new Set(['mizore-fuyukuma', 'fubuki-kakuyoku', 'nadare-roga', 'ishidate', 'karenbana', 'kongo', 'kiri-hunter-nin', 'suna-anbu', 'konoha-anbu', 'ranke']);
 
 const originalTokenNames = new Set([
+ 'ranke',
+ 'suna-puppet-user',
  'aburame-clan-member',
  'ame-shinobi',
  'bandit-leader',
@@ -112,7 +114,7 @@ const originalTokenNames = new Set([
 function withTokenArt(actor, tokenName) {
  if (!tokenName) return actor;
  const originalName = tokenName.replace(/-(?:card|film)$/, '');
- const assetName = originalTokenNames.has(originalName) ? `${originalName}-original` : tokenName;
+ const assetName = originalTokenNames.has(originalName) ? `${originalName}-cutout` : tokenName;
  const src = `${tokenDirectory}/${assetName}.webp`;
  return {...actor, img: src, prototypeToken: {...actor.prototypeToken, texture: {src}}};
 }
@@ -121,8 +123,8 @@ function defaultArtUpdates(actor, template) {
  const changes = {};
  if (!actor || !template.prototypeToken.texture) return changes;
  const target = template.prototypeToken.texture.src;
- const stem = target.endsWith('-original.webp') ? target.slice(0, -'-original.webp'.length) : null;
- const previous = stem ? [`${stem}.webp`, `${stem}-film.webp`, `${stem}-card.webp`] : [];
+ const stem = target.endsWith('-cutout.webp') ? target.slice(0, -'-cutout.webp'.length) : null;
+ const previous = stem ? [`${stem}.webp`, `${stem}-film.webp`, `${stem}-card.webp`, `${stem}-original.webp`] : [];
  if (actor.img === placeholderArt || previous.includes(actor.img)) changes.img = template.img;
  const current = actor.prototypeToken.texture?.src;
  if (!current || current === placeholderArt || previous.includes(current)) changes['prototypeToken.texture.src'] = target;
