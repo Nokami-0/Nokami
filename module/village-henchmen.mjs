@@ -148,6 +148,19 @@ villageHenchmen.push({
   tactics:'Works in pairs to distract travelers and steal their valuables. Uses a short sword if cornered and retreats once the gang loses the advantage.'
 });
 
+villageHenchmen.push({
+  id:'yukigakure:snow-ninja-henchman',
+  village:'Yukigakure',
+  english:'Land of Snow',
+  continuity:'Film',
+  role:'Shipboard guard',
+  name:'Snow Ninja Henchman',
+  weapon:'Kunai',
+  attack:'ranged',
+  gear:['Snow Shinobi Mask', 'Cold-Weather Uniform', 'Climbing Line'],
+  tactics:'Watches the deck and boarding points, using a kunai from cover and a climbing line to move between levels. Use normal henchman rules for the attack. The uniform provides warmth and has no combat armor bonus.'
+});
+
 export function henchmanNumbers(nc) {
   const level = Math.max(1, Math.trunc(Number(nc) || 1));
   return {accuracy:3 + level, damage:Math.max(Math.floor(level / 2), level - 3)};
