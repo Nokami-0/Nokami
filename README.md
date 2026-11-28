@@ -13,9 +13,9 @@ Shini no Sho is maintained on separate branches. Use the manifest that matches y
 | [Altered (ENG)](https://github.com/Nokami-0/Nokami/tree/shini-no-sho-altered) | `shini-no-sho-altered` | [system.json](https://raw.githubusercontent.com/Nokami-0/Nokami/shini-no-sho-altered/system.json) |
 | [Revamp (ENG, Legacy)](https://github.com/Nokami-0/Nokami/tree/shinobi-no-sho) | `shinobi-no-sho-revamp` | [system.json](https://raw.githubusercontent.com/Nokami-0/Nokami/shinobi-no-sho/system.json) |
 
-## Shinigami no Sho (Bleach) for Foundry VTT 14
+## Shinigami no Sho (Bleach) for Foundry VTT 13 and 14
 
-[Source and installation guide](https://github.com/Nokami-0/Nokami/tree/main/shinigami-no-sho) · [Foundry manifest](https://raw.githubusercontent.com/Nokami-0/Nokami/main/shinigami-no-sho/system.json) · [v0.1.0 ZIP](https://raw.githubusercontent.com/Nokami-0/Nokami/main/shinigami-no-sho/downloads/shinigami-no-sho-v0.1.0.zip)
+[Source and installation guide](https://github.com/Nokami-0/Shinigami-no-sho) · [Foundry manifest](https://raw.githubusercontent.com/Nokami-0/Shinigami-no-sho/main/system.json) · [v0.1.3 ZIP](https://raw.githubusercontent.com/Nokami-0/Shinigami-no-sho/main/downloads/shinigami-no-sho-v0.1.3.zip)
 
 In Foundry Setup → Game Systems → Install System, paste the Shinigami no Sho manifest URL. The system ID is `shinigami-no-sho`.
 

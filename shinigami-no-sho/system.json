@@ -2,9 +2,9 @@
   "id": "shinigami-no-sho",
   "title": "Shinigami no Sho",
   "description": "Unofficial Foundry VTT adaptation of the English Shinigami no Sho rulebook and The World Beyond the East supplement. AI assisted with implementation.",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "compatibility": {
-    "minimum": "14"
+    "minimum": "13"
   },
   "authors": [
     {
@@ -52,9 +52,30 @@
       "path": "packs/beyond-east",
       "type": "Item",
       "system": "shinigami-no-sho"
+    },
+    {
+      "name": "gear",
+      "label": "Weapons and Armor",
+      "path": "packs/gear",
+      "type": "Item",
+      "system": "shinigami-no-sho"
+    },
+    {
+      "name": "maneuvers",
+      "label": "Combat Maneuvers",
+      "path": "packs/maneuvers",
+      "type": "Item",
+      "system": "shinigami-no-sho"
+    },
+    {
+      "name": "rule-index",
+      "label": "Rulebook Chapter Indexes",
+      "path": "packs/rule-index",
+      "type": "JournalEntry",
+      "system": "shinigami-no-sho"
     }
   ],
-  "url": "https://github.com/Nokami-0/Nokami/tree/main/shinigami-no-sho",
-  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/shinigami-no-sho/system.json",
-  "download": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/shinigami-no-sho/downloads/shinigami-no-sho-v0.1.0.zip"
+  "url": "https://github.com/Nokami-0/Shinigami-no-sho",
+  "manifest": "https://raw.githubusercontent.com/Nokami-0/Shinigami-no-sho/main/system.json",
+  "download": "https://raw.githubusercontent.com/Nokami-0/Shinigami-no-sho/main/downloads/shinigami-no-sho-v0.1.3.zip"
 }
