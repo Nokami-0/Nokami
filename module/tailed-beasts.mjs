@@ -126,7 +126,7 @@ export function tailedBeasts(systemId) {
     pericias:{atletismo:{pontos:5},prontidao:{pontos:5},concentracao:{pontos:5},...(row.id==='chomei' ? {voo:{pontos:6}} : {})},
     defesas:{dureza:row.hardness},
     energias:{tamanho:size.label,alcance:`${size.reach} m`,deslocamento:{bonus:size.move},vitalidade:{value:vitality,max:vitality},chakra:{value:chakra,max:chakra}},
-    databook:{biografia:`<p>${row.name}, the ${designation}-Tails, in its natural body. Size bonuses are included in Strength and Vigor. These are standalone encounter statistics. Use normal scene rules for defeats and handle any later re-formation in the story.</p><p>Token uses the supplied illustration. Art credit: ${row.id==='saiken' ? 'IGNAT474 (signature on supplied image)' : row.id==='gyuki' ? 'supplied illustration' : 'alxnarutoall (signature on supplied image)'}.</p>`}
+    databook:{biografia:`<p>${row.name}, the ${designation}-Tails, in its natural body. Size bonuses are included in Strength and Vigor. These are standalone encounter statistics. Vitality and Chakra are unlimited. Resolve defeat through encounter objectives such as sealing or retreat.</p><p>Token uses the supplied illustration. Art credit: ${row.id==='saiken' ? 'IGNAT474 (signature on supplied image)' : row.id==='gyuki' ? 'supplied illustration' : 'alxnarutoall (signature on supplied image)'}.</p>`}
    },
    items
   }};

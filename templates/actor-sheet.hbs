@@ -452,17 +452,21 @@
                   <div class="energia-box vit" style="flex: 1;">
                     <h3><svg class="sns-resource-symbol sns-vitality-symbol" viewBox="0 0 24 24" aria-label="Vitality" role="img"><path fill="#ed263b" d="M12 21.35 10.55 20.03C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35Z"/></svg> VITALITY</h3>
                     <div class="energia-inputs">
+                      {{#if unlimitedResources}}<strong>∞ Unlimited</strong>{{else}}
                       <label>CURRENT</label><input type="number" name="system.energias.vitalidade.value" value="{{system.energias.vitalidade.value}}"/>
                       <span>/</span>
                       <label>MAX</label><input type="number" value="{{system.energias.vitalidade.max}}" readonly style="background:transparent; border:none;"/>
+                      {{/if}}
                     </div>
                   </div>
                   <div class="energia-box chk" style="flex: 1;">
                     <h3><svg class="sns-resource-symbol sns-chakra-symbol" viewBox="0 0 24 24" aria-label="Chakra" role="img"><path fill="#24b8ff" d="M12 2C9.5 6 5 11.5 5 16a7 7 0 0 0 14 0c0-4.5-4.5-10-7-14Z"/><path fill="#8de4ff" opacity=".6" d="M10 10c-2 3-3 5-3 7 0 2 1.5 3.5 3 4-1-2-1-4 0-6 1-2 1-3 0-5Z"/></svg> CHAKRA</h3>
                     <div class="energia-inputs">
+                      {{#if unlimitedResources}}<strong>∞ Unlimited</strong>{{else}}
                       <label>CURRENT</label><input type="number" name="system.energias.chakra.value" value="{{system.energias.chakra.value}}"/>
                       <span>/</span>
                       <label>MAX</label><input type="number" value="{{system.energias.chakra.max}}" readonly style="background:transparent; border:none;"/>
+                      {{/if}}
                     </div>
                     <div style="position: absolute; right: 10px; top: 10px; font-size: 40px; opacity: 0.2; font-family: 'Yusei Magic';">氣</div>
                   </div>
