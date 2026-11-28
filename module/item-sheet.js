@@ -11,6 +11,11 @@ export class ShinobiItemSheet extends BaseItemSheet {
 
   get template() { return `systems/shinobi-no-sho-revamp/templates/item-sheet.hbs`; }
 
+  async _updateObject(event, formData) {
+    if (formData['system.powerPoints'] === '') formData['system.powerPoints'] = null;
+    return super._updateObject(event, formData);
+  }
+
   async getData(options) {
     const context = await super.getData(options);
     context.system = context.item.system;

@@ -12,6 +12,17 @@ import { fireBombLauncher, isBombLauncher } from "./bomb-launcher.js";
 import { openSnsAbilityBrowser } from "./sns-ability-browser.js";
 import { SNS_CONDITIONS } from "./sns-conditions.js";
 import { rollShinobiTest } from "./dice.js";
+function powerPoolRow(item, isSummon) {
+  const {id, name, img, system} = item;
+  const purchased = system.powerPoints;
+  const legacyLevel = Number(item.type === 'poder' ? system.nivelUsado : system.nivel);
+  const legacyCost = isSummon
+    ? Math.max(0, Number.isFinite(legacyLevel) ? legacyLevel : 0)
+    : item.type === 'poder' ? 1 : 0;
+  const powerPoints = Number.isSafeInteger(purchased) && purchased >= 0 ? purchased : legacyCost;
+  return {id, name, img, system, powerPoints};
+}
+
 const BaseActorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
 const RichTextEditor = foundry.applications?.ux?.TextEditor ?? globalThis.TextEditor;
 // Fallback inventory controls are installed by the render hook, independently of
@@ -187,8 +198,8 @@ export class ShinobiActorSheet extends BaseActorSheet {
         const price=Math.max(0,num(sys.valorRyo,num(sys.preco,num(sys.price))));value+=qty*price;
         const aptitude = weaponAptitudeEffects(this.actor,item,'shinobi-no-sho-revamp');
         context.equipamentos.push({aptitudeDamage:aptitude.damage, aptitudeAccuracy:aptitude.accuracy, id:item.id,name:item.name,img:item.img,system:{...sys,quantidade:qty,peso:cost,valorRyo:price,equipped:Boolean(sys.equipped)},slotsUsed:occupied});
-      }else if(item.type==='poder'){if(item.getFlag('shinobi-no-sho-revamp','basicJutsu'))context.tecnicas.push(item);else context.poderes.push(item);}
-      else if(item.type==='elemento')context.elementos.push(item);
+      }else if(item.type==='poder'){if(item.getFlag('shinobi-no-sho-revamp','basicJutsu'))context.tecnicas.push(item);else context.poderes.push(powerPoolRow(item, context.isSummon));}
+      else if(item.type==='elemento')context.elementos.push(powerPoolRow(item, context.isSummon));
       else if(item.type==='aptidao')(item.system?.gratuita?context.aptidoesGratuitas:context.aptidoes).push(item);
     }
     context.preexistingTechniques=items.filter(i=>!i.getFlag('shinobi-no-sho-revamp','basicJutsu')&&i.getFlag('shinobi-no-sho-revamp','hierarchy')?.kind==='Techniques').map(i=>({id:i.id,name:i.name,img:i.img,system:i.system,association:i.getFlag('shinobi-no-sho-revamp','hierarchy')?.owner}));
@@ -226,12 +237,17 @@ export class ShinobiActorSheet extends BaseActorSheet {
     Object.values(context.system.combate || {}).forEach(c => { let valorBase = c.base !== undefined ? c.base : 3; gastosPericias += (valorBase - 3); });
     Object.values(context.system.periciasSociais || {}).forEach(ps => gastosPericias += (Number(ps?.pontos) || 0));
     
-    let gastosPoderesEAptidoes = context.poderes.length + (context.aptidoes.length * 2);
-    if(context.isSummon){ptsPericiasTotais=0;gastosPericias=0;gastosPoderesEAptidoes=context.poderes.reduce((sum,i)=>sum+(Number(i.system.nivelUsado)||0),0)+context.elementos.reduce((sum,i)=>sum+(Number(i.system.nivel)||0),0)+context.aptidoes.length*2;}
+    const gastosPoderesEAptidoes = [...context.poderes, ...context.elementos]
+      .reduce((total, item) => total + item.powerPoints, context.aptidoes.length * 2);
+    if (context.isSummon) {
+      ptsPericiasTotais = 0;
+      gastosPericias = 0;
+    }
 
     context.evolucao = {
       ncAtual: nc, atributos: ptsAtributosTotais - gastosAtributos, pericias: ptsPericiasTotais - gastosPericias,
-      poderes: ptsPoderesTotais - gastosPoderesEAptidoes, sociais: ptsSociaisTotais - gastosSociais,
+      poderes: ptsPoderesTotais - gastosPoderesEAptidoes,
+      poderesGastos: gastosPoderesEAptidoes, poderesTotais: ptsPoderesTotais, sociais: ptsSociaisTotais - gastosSociais,
       limiteAtributo: nc, limitePericiaPoder: Math.floor(nc / 2)
     };
     context.evolucao.atributosNegativo = context.evolucao.atributos < 0; context.evolucao.periciasNegativo = context.evolucao.pericias < 0; context.evolucao.poderesNegativo = context.evolucao.poderes < 0; context.evolucao.sociaisNegativo = context.evolucao.sociais < 0;
