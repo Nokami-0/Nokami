@@ -39,3 +39,41 @@ test('equipping a species weapon and legacy armor never reads an inactive flag s
  const source=fs.readFileSync(root+'/module/equipment-state.js','utf8').replace('export async function','async function');const c={};vm.createContext(c);vm.runInContext(source+';this.setEquipmentState=setEquipmentState;',c);
  for(const armor of [false,true]){const i=equippedItem(armor);const items=[i];items.get=id=>items.find(x=>x.id===id);const a={isOwner:true,items,updateEmbeddedDocuments:async()=>{}};assert.equal(await c.setEquipmentState(a,i.id,true),true);}
 });
+
+test('custom powers track purchased points independently of casting and keep legacy defaults',async()=>{
+ const a=actor();
+ const power={id:'power',name:'Custom Fuuton',type:'poder',system:{powerPoints:2,nivelUsado:1,custoChakra:3},getFlag:()=>undefined};
+ const effect={id:'effect',name:'Separate effect card',type:'elemento',system:{powerPoints:0,nivel:'3'},getFlag:()=>undefined};
+ const legacy={id:'legacy',name:'Legacy jutsu',type:'poder',system:{nivelUsado:5},getFlag:()=>undefined};
+ const basic={id:'basic',name:'Basic jutsu',type:'poder',system:{powerPoints:5},getFlag:(_scope,key)=>key==='basicJutsu'};
+ a.items=[power,effect,legacy,basic];
+ const sheet=runtime(current,a);
+ const initial=await sheet.getData({});
+ assert.equal(initial.evolucao.poderesGastos,3);
+ assert.equal(initial.evolucao.poderes,1);
+ assert.equal(initial.elementos[0].powerPoints,0);
+ power.system.nivelUsado=2;
+ assert.equal((await sheet.getData({})).evolucao.poderes,1);
+ power.system.powerPoints=4;
+ const upgraded=await sheet.getData({});
+ assert.equal(upgraded.evolucao.poderes,-1);
+ assert.equal(upgraded.evolucao.poderesNegativo,true);
+ assert.equal(upgraded.poderes[0].system.custoChakra,3);
+ for(const helper of ['checked','selectOptions','editor']) H.registerHelper(helper,()=> '');
+ const html=H.compile(fs.readFileSync(root+'/templates/actor-sheet.hbs','utf8'))(upgraded);
+ assert.match(html,/5 \/ 4 spent · -1 remaining/);
+ power.system.powerPoints=null;
+ assert.equal((await sheet.getData({})).poderes[0].powerPoints,1);
+});
+
+test('summon power pool keeps legacy level accounting and supports explicit costs',async()=>{
+ const a=actor(true);
+ a.items=[
+  {id:'power',type:'poder',system:{nivelUsado:2},getFlag:()=>undefined},
+  {id:'effect',type:'elemento',system:{nivel:'4',powerPoints:0},getFlag:()=>undefined}
+ ];
+ const sheet=runtime(current,a);
+ assert.equal((await sheet.getData({})).evolucao.poderes,0);
+ a.items[1].system.powerPoints=null;
+ assert.equal((await sheet.getData({})).evolucao.poderes,-4);
+});

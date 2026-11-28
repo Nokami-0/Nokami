@@ -46,6 +46,13 @@
     <div class="tab" data-group="primary" data-tab="caracteristicas" style="height: 100%;">
       <!-- Esta "caixa de proteção" trata do layout sem interferir com o Foundry -->
       <div style="display: flex; flex-direction: column; gap: 15px; height: 100%;">
+        {{#if (or isPoder isElement)}}
+        <label>POWER POINTS SPENT
+          <input type="number" name="system.powerPoints" min="0" step="1" value="{{system.powerPoints}}" placeholder="Default"/>
+        </label>
+        <small>Enter the total points invested in this power. Increase it when you buy upgrades. Enter 0 for an effect already paid for by its parent power. Leave blank to use the default. Casting level and Chakra cost are separate.</small>
+        {{/if}}
+
         {{#if isPoder}}
         <fieldset><legend>Power / Jutsu Hardness</legend>
           <label>Hardness bonus</label><input type="number" name="system.hardness" min="0" step="1" value="{{system.hardness}}" />
