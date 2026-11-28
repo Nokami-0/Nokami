@@ -168,7 +168,7 @@ async function summon(owner,selections,level,mode){
  if(error)return ui.notifications.warn(error);
  const plans=[];
  for(const {profile,nc,sizeId} of selections){
-  if(profile.name==='Giant Bee'&&level<8)return ui.notifications.warn('Giant Bee requires Bee Kuchiyose 8.');
+  if(['Giant Bee','Queen Bee'].includes(profile.name)&&level<8)return ui.notifications.warn(profile.name+' requires Bee Kuchiyose 8.');
   const cap=summonNCCap(profile,level,qty);
   if(!Number.isInteger(nc)||!Number.isInteger(level)||nc>cap||nc<0)return ui.notifications.warn(`${profile.name}: NC must be 0–${cap}.`);
   const size=sizeById(fixedSize(profile)||sizeId||speciesSize(profile,nc));
