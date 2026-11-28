@@ -4,6 +4,15 @@ Unofficial adaptation of STTH 1.5.0. Original game by McShmoodle.
 
 **AI disclosure** — AI tools were used to assist with the development of this Foundry VTT adaptation.
 
+## Shini no Sho for Foundry VTT
+
+Shini no Sho is maintained on separate branches. Use the manifest that matches your world's installed system ID.
+
+| Edition | Foundry system ID | Manifest |
+| --- | --- | --- |
+| [Altered (ENG)](https://github.com/Nokami-0/Nokami/tree/shini-no-sho-altered) | `shini-no-sho-altered` | [system.json](https://raw.githubusercontent.com/Nokami-0/Nokami/shini-no-sho-altered/system.json) |
+| [Revamp (ENG, Legacy)](https://github.com/Nokami-0/Nokami/tree/shinobi-no-sho) | `shinobi-no-sho-revamp` | [system.json](https://raw.githubusercontent.com/Nokami-0/Nokami/shinobi-no-sho/system.json) |
+
 ## Install or update
 
 In Foundry Setup → Game Systems → Install System, paste:
