@@ -1,4 +1,7 @@
-# Shini no Sho Altered (ENG)
+# Shini no Sho Revamp (ENG, Legacy)
+
+Use this branch for worlds with the system ID `shinobi-no-sho-revamp`. [Shini no Sho Altered (ENG)](https://github.com/Nokami-0/Nokami/tree/shini-no-sho-altered) uses its own system ID.
+
 
 Foundry VTT system, hosted for Nokami-0 on the dedicated `shinobi-no-sho-revamp` branch. Sonic Tag-Team Heroes remains on `main`.
 

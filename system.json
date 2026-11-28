@@ -1,8 +1,8 @@
 {
   "id": "shinobi-no-sho-revamp",
-  "title": "Shini no Sho Altered (ENG)",
+  "title": "Shini no Sho Revamp (ENG, Legacy)",
   "description": "An English Foundry VTT system maintained and distributed by Nokami-0.",
-  "version": "1.7.192",
+  "version": "1.7.193",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
