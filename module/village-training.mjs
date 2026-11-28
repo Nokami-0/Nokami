@@ -1,4 +1,5 @@
 const rules = {
+  'Expert (Art)': [76, '', 'Gain +2 Accuracy on Art tests.', 'Art'],
   Fighter: [63, '', 'Ignore the normal −2 Accuracy penalty for special combat maneuvers performed unarmed or with natural weapons.'],
   Throw: [68, 'Strength 6 and Fighter', 'When using an unarmed Takedown, you may throw the target backward or upward up to 1 m per Strength (maximum 10 m). An upward throw ends with a fall at the end of the turn.'],
   Intuition: [63, '', 'Gain +1 Accuracy on Read Motion.'],
@@ -40,16 +41,48 @@ const training = {
   'village-specialist:Hoshigakure': ['Diligent', 'acrobacia', 3]
 };
 
+// Additional training for full NPC profiles with a specific role or fighting style.
+const loreAptitudes = {
+  'kaguya-clan-leader': ['Standing'],
+  banna: ['Diligent'],
+  'shinno-body-revival': ['Fighter'],
+  suien: ['Block Weapon'],
+  fujin: ['Fighter'],
+  raijin: ['Fighter'],
+  renga: ['Intuition'],
+  jiga: ['Intuition'],
+  suzumebachi: ['Diligent'],
+  hanzaki: ['Block Weapon'],
+  genyumaru: ['Fighter'],
+  waraji: ['Block Weapon'],
+  zori: ['Block Weapon'],
+  ryugan: ['Block Weapon'],
+  suiko: ['Standing'],
+  gatsu: ['Block Weapon'],
+  sazanami: ['Block Weapon'],
+  tonbei: ['Intuition'],
+  gitai: ['Standing'],
+  shiin: ['Deep Illusion'],
+  oboro: ['Intuition'],
+  'kin-tsuchi': ['Deep Illusion'],
+  'dosu-kinuta': ['Reflexes'],
+  menma: ['Expert (Art)'],
+  'konoha-anbu-elite': ['Intuition']
+};
+
 export function villageTraining(id, actor) {
   const [aptitudes, skill, points] = training[id] ?? [];
   const attributes = actor.system.atributos ?? {};
-  const meetsRequirements = name => (name !== "Throw" || attributes.for?.valor >= 6) &&
-    (name !== "Deep Illusion" || attributes.int?.valor >= 5);
-  const items = [aptitudes].flat().filter(Boolean).filter(meetsRequirements).map(name => {
-    const [page, preRequisito, description] = rules[name];
+  const owned = name => actor.items?.some(item => item.type === 'aptidao' && item.name.toLowerCase() === name.toLowerCase());
+  const planned = [...[aptitudes].flat().filter(Boolean), ...(loreAptitudes[id] ?? [])];
+  const meetsRequirements = name =>
+    (name !== 'Deep Illusion' || attributes.int?.valor >= 5) &&
+    (name !== 'Throw' || (attributes.for?.valor >= 6 && (owned('Fighter') || planned.includes('Fighter'))));
+  const items = planned.filter(meetsRequirements).map(name => {
+    const [page, preRequisito, description, aptitudeChoice] = rules[name];
     return {
       name, type:'aptidao', img:'icons/svg/book.svg',
-      system:{preRequisito, descricao:`${description} Basic Book 4.1b${page ? `, p. ${page}` : ''}. Apply manually.`}
+      system:{preRequisito, ...(aptitudeChoice ? {aptitudeChoice} : {}), descricao:`${description} Basic Book 4.1b${page ? `, p. ${page}` : ''}. Apply manually.`}
     };
   });
   const learned = actor.system.pericias?.[skill]?.pontos;

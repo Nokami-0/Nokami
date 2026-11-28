@@ -7,8 +7,8 @@ globalThis.foundry={utils:{mergeObject:(a,b)=>({...a,...b})}};
 globalThis.fetch=async()=>({ok:true,json:async()=>structuredClone(rows)});
 const {buildKuchiyoseTemplate,loadKuchiyoseSpecies}=await import('../module/kuchiyose-engine.js');
 const {buildKuchiyoseCompendium}=await import('../module/kuchiyose-compendium.js');
-test('all 29 species produce sourced editable Actor templates with valid artwork',async()=>{
- assert.equal((await loadKuchiyoseSpecies()).length,30);
+test('all 30 species produce sourced editable Actor templates with valid artwork',async()=>{
+ assert.equal((await loadKuchiyoseSpecies()).length,31);
  for(const row of rows.filter(r=>!r.specialSummon)){
   const data=buildKuchiyoseTemplate(row);
   assert.equal(data.name,row.name);assert.equal(data.type,'personagem');assert.equal(data.flags[SYS].summonTemplate,true);
@@ -31,8 +31,8 @@ test('compendium builds all species once, restores lock and preserves edited ent
  globalThis.CompendiumCollection={createCompendium:async options=>{assert.equal(options.type,'Actor');return pack={collection:'world.sns-kuchiyose',locked:true,folders,configure:async o=>{pack.locked=o.locked},getDocuments:async()=>docs};}};
  globalThis.Folder={create:async(data,options)=>{assert.equal(options.pack,pack.collection);const folder={id:'folder'+folders.length,...data};folders.push(folder);return folder;}};
  globalThis.Actor={create:async(data,options)=>{if(!options?.pack)worldCreates++;docs.push({...data,getFlag:(_id,key)=>data.flags[SYS]?.[key]});}};
- const first=await buildKuchiyoseCompendium();assert.equal(first.added,30);assert.equal(pack.locked,true);assert.equal(worldCreates,0);
- docs[0].name='GM custom edit';const second=await buildKuchiyoseCompendium();assert.equal(second.added,0);assert.equal(second.existing,30);assert.equal(docs[0].name,'GM custom edit');assert.equal(docs.length,30);assert.ok(folders.some(f=>f.name==='Animal Path (Rinnegan)'));
+ const first=await buildKuchiyoseCompendium();assert.equal(first.added,31);assert.equal(pack.locked,true);assert.equal(worldCreates,0);
+ docs[0].name='GM custom edit';const second=await buildKuchiyoseCompendium();assert.equal(second.added,0);assert.equal(second.existing,31);assert.equal(docs[0].name,'GM custom edit');assert.equal(docs.length,31);assert.ok(folders.some(f=>f.name==='Animal Path (Rinnegan)'));
 });
 test('non-GMs cannot build compendium',()=>{
  game.user.isGM=false;assert.throws(()=>buildKuchiyoseCompendium(),/Only the GM/);game.user.isGM=true;
