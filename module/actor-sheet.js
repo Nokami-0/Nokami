@@ -12,6 +12,11 @@ import { fireBombLauncher, isBombLauncher } from "./bomb-launcher.js";
 import { openSnsAbilityBrowser } from "./sns-ability-browser.js";
 import { SNS_CONDITIONS } from "./sns-conditions.js";
 import { rollShinobiTest } from "./dice.js";
+function hasUnlimitedResources(actor) {
+  const id = actor?.getFlag?.('shini-no-sho-altered', 'bestiaryBoss');
+  return /^(?:bijuu-(?:shukaku|matatabi|isobu|son-goku|kokuo|saiken|chomei|gyuki|kurama))$/.test(id ?? '');
+}
+
 function powerPoolRow(item, isSummon) {
   const {id, name, img, system} = item;
   const purchased = system.powerPoints;
@@ -106,6 +111,7 @@ export class ShinobiActorSheet extends BaseActorSheet {
       context.system.defesas.durezaTotal = systemData.defesas.durezaTotal;
       context.system.defesas.absorptionTotal = systemData.defesas.absorptionTotal;
     }
+    context.unlimitedResources = hasUnlimitedResources(this.actor);
     Object.assign(context,summonSheetContext(this.actor,game.actors));
     if(!context.isSummon){Object.assign(context,await puppetTabContext(this.actor));}
     const {config:conf, bonus:aptitudeBonus} = aptitudeEffects(this.actor, 'shini-no-sho-altered');
@@ -379,11 +385,12 @@ export class ShinobiActorSheet extends BaseActorSheet {
       const resourceDamage=afterArmor-characterBlocked;
       const resourcePath=`system.energias.${damageResource}.value`;
       const resourceBefore=Math.max(0,Number(this.actor.system.energias?.[damageResource]?.value)||0);
-      const actualResourceLoss=Math.min(resourceBefore,resourceDamage);
+      const unlimited = hasUnlimitedResources(this.actor);
+      const actualResourceLoss = unlimited ? 0 : Math.min(resourceBefore, resourceDamage);
       if(armorBlocked)await this.actor.updateEmbeddedDocuments("Item",[{_id:armor.id,"system.absorptionRemaining":armorRemaining-armorBlocked}]);
       if(actualResourceLoss)await this.actor.update({[resourcePath]:resourceBefore-actualResourceLoss});
       const resourceLabel=damageResource==='chakra'?'Chakra':'Vitality';
-      await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),content:`<h3>${resourceLabel} Damage Taken</h3><p>Incoming: ${damage}; Hardness prevented: ${Math.min(damage,hardness)}; Armor Absorption spent: ${armorBlocked}; Character Absorption prevented: ${characterBlocked}; ${resourceLabel} lost: ${actualResourceLoss}.</p><p>Remaining ${resourceLabel}: ${resourceBefore-actualResourceLoss}; Armor Absorption: ${armorRemaining-armorBlocked}.</p>`});
+      await ChatMessage.create({speaker:ChatMessage.getSpeaker({actor:this.actor}),content:`<h3>${resourceLabel} Damage Taken</h3><p>Incoming: ${damage}; Hardness prevented: ${Math.min(damage,hardness)}; Armor Absorption spent: ${armorBlocked}; Character Absorption prevented: ${characterBlocked}; ${resourceLabel} lost: ${actualResourceLoss}.</p><p>Remaining ${resourceLabel}: ${unlimited ? 'Unlimited' : resourceBefore-actualResourceLoss}; Armor Absorption: ${armorRemaining-armorBlocked}.</p>`});
       this.render(false);
     });
     html.find('.sns-armor-repair').click(async ev=>{
@@ -479,17 +486,18 @@ export class ShinobiActorSheet extends BaseActorSheet {
       }
       const chakra = Number(this.actor.system.energias?.chakra?.value ?? 0);
       const vitality = Number(this.actor.system.energias?.vitalidade?.value ?? 0);
-      if (chakra < chakraCost || vitality < vitalityCost) {
+      const unlimited = hasUnlimitedResources(this.actor);
+      if (!unlimited && (chakra < chakraCost || vitality < vitalityCost)) {
         return ui.notifications.warn(`Not enough resources for ${item.name}. Requires ${chakraCost} Chakra and ${vitalityCost} Vitality.`);
       }
       try {
-        await this.actor.update({
+        if (!unlimited) await this.actor.update({
           'system.energias.chakra.value': chakra - chakraCost,
           'system.energias.vitalidade.value': vitality - vitalityCost
         });
         await ChatMessage.create({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-          content: `<strong>${foundry.utils.escapeHTML(item.name)}</strong> used. Spent ${chakraCost} Chakra and ${vitalityCost} Vitality.`
+          content: `<strong>${foundry.utils.escapeHTML(item.name)}</strong> used. ${unlimited ? 'Chakra and Vitality are unlimited.' : `Spent ${chakraCost} Chakra and ${vitalityCost} Vitality.`}`
         });
         // Remove only this ability's one-use visual areas after a successful cast.
         if(canvas?.scene){
