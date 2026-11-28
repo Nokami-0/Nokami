@@ -1,0 +1,12 @@
+{
+  "_id": "b6497afeb172cd77",
+  "_key": "!items!b6497afeb172cd77",
+  "name": "Stabilize (Medicine)",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Roll Medicine against difficulty 16 to stabilize a dying character.",
+    "source": "Shinigami no Sho 4.5, p. 256",
+    "action": "Standard"
+  }
+}

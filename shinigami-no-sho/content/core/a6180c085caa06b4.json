@@ -1,0 +1,11 @@
+{
+  "_id": "a6180c085caa06b4",
+  "_key": "!items!a6180c085caa06b4",
+  "name": "Dead",
+  "type": "condition",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "Lethal Vitality of −21 or lower means the character has died.",
+    "source": "Shinigami no Sho 4.5, p. 256"
+  }
+}

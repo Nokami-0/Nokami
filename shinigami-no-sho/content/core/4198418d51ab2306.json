@@ -1,0 +1,11 @@
+{
+  "_id": "4198418d51ab2306",
+  "_key": "!items!4198418d51ab2306",
+  "name": "Bakudō",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Binding and defensive Kidō effects. Use the selected effect for action, range, duration and cost.",
+    "source": "Shinigami no Sho 4.5, p. 88"
+  }
+}

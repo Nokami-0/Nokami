@@ -1,0 +1,15 @@
+{
+  "_id": "02517e8d728d073e",
+  "_key": "!items!02517e8d728d073e",
+  "name": "Voodoo Connection",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Adze technique with range based on Occultism. Apply the supplement’s targeting and sustained effects.",
+    "source": "The World Beyond the East, p. 11",
+    "action": "Complete",
+    "range": "10 m + 2 m per Occultism level",
+    "duration": "Sustained",
+    "cost": 4
+  }
+}

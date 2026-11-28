@@ -1,0 +1,12 @@
+{
+  "_id": "785d2ca50ea26839",
+  "_key": "!items!785d2ca50ea26839",
+  "name": "Dodge",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Reaction. No defense roll. The attack normally tests against 9 plus the defender’s Dodge accuracy.",
+    "source": "Shinigami no Sho 4.5, p. 253",
+    "action": "Reaction"
+  }
+}

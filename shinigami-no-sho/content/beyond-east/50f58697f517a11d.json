@@ -1,0 +1,14 @@
+{
+  "_id": "50f58697f517a11d",
+  "_key": "!items!50f58697f517a11d",
+  "name": "Purify Spirit",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Deal 2× power level plus half the target’s campaign level. Cost is half base damage. Consult the supplement for valid targets and the level 8 upgrade.",
+    "source": "The World Beyond the East, p. 14",
+    "action": "Standard",
+    "range": "Touch",
+    "level": 2
+  }
+}

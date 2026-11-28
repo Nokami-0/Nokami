@@ -1,0 +1,11 @@
+{
+  "_id": "a66c2e3dcced4470",
+  "_key": "!items!a66c2e3dcced4470",
+  "name": "Shikai",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "First Zanpakutō release. Apply the form, restrictions and effects selected for this sword.",
+    "source": "Shinigami no Sho 4.5, p. 114"
+  }
+}

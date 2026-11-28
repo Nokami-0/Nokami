@@ -1,0 +1,11 @@
+{
+  "_id": "c6a18de1561c5dbb",
+  "_key": "!items!c6a18de1561c5dbb",
+  "name": "Spirit Weapons",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Awọn ohun ija ẹmi. Ancestral weapons have no sealed form or Bankai. Pay applicable passive effects when drawing the weapon.",
+    "source": "The World Beyond the East, p. 8"
+  }
+}

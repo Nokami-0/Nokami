@@ -1,0 +1,15 @@
+{
+  "_id": "b4a251eff6fdeabe",
+  "_key": "!items!b4a251eff6fdeabe",
+  "name": "Divine Armor",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Level 8 effect. Grants hardness of 1 per 2 power levels, 3× power level absorption, Accelerated, and additional limbs. The listed cost is per active turn.",
+    "source": "The World Beyond the East, p. 14",
+    "action": "Partial",
+    "cost": 3,
+    "level": 8,
+    "duration": "While sustained"
+  }
+}

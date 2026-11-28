@@ -1,0 +1,11 @@
+{
+  "_id": "6ca0652fcfaa8961",
+  "_key": "!items!6ca0652fcfaa8961",
+  "name": "Draconic Magic",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Dragon power. Apply the available effects and their extensions from the supplement.",
+    "source": "The World Beyond the East, p. 15"
+  }
+}

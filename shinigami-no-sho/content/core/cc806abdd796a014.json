@@ -1,0 +1,11 @@
+{
+  "_id": "cc806abdd796a014",
+  "_key": "!items!cc806abdd796a014",
+  "name": "Seele Schneider",
+  "type": "equipment",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "Quincy equipment with specialized blade and projectile uses. Apply the relevant use and recovery rules.",
+    "source": "Shinigami no Sho 4.5, p. 243"
+  }
+}

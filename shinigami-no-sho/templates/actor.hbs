@@ -1,0 +1,104 @@
+<div class="sns-scroll">
+  <header class="sns-hero">
+    <img class="sns-portrait" src="{{actor.img}}" alt="" {{#if editable}}data-action="editImage" data-edit="img"{{/if}}>
+    <div>
+      <p class="sns-title">Shinigami no Sho</p>
+      <input name="name" type="text" value="{{actor.name}}" aria-label="Character name" {{#unless editable}}disabled{{/unless}}>
+      <div class="sns-identity">
+        <label>Campaign level <input type="number" min="1" name="system.campaignLevel" value="{{system.campaignLevel}}" {{#unless editable}}disabled{{/unless}}></label>
+        <label>Lineage <select name="system.lineage" {{#unless editable}}disabled{{/unless}}>
+          {{selectOptions lineages selected=system.lineage}}
+        </select></label>
+      </div>
+    </div>
+  </header>
+
+  <div class="sns-resources">
+    <section>
+      <label>Vitality <span><input type="number" name="system.vitality.value" value="{{system.vitality.value}}" max="{{system.vitality.max}}" {{#unless editable}}disabled{{/unless}}> / {{system.vitality.max}}</span></label>
+      <p>{{state}}{{#if system.stabilized}} · Stabilized{{/if}}</p>
+      {{#if editable}}
+        <button type="button" data-action="vitality" data-mode="damage">Lethal damage</button>
+        <button type="button" data-action="vitality" data-mode="heal">Heal</button>
+        {{#if dying}}
+          <button type="button" data-action="stabilize">{{#if system.stabilized}}Resume bleeding{{else}}Stabilize{{/if}}</button>
+          {{#unless system.stabilized}}<button type="button" data-action="bleed">Bleed 2</button>{{/unless}}
+        {{/if}}
+      {{/if}}
+    </section>
+    <section>
+      <label>Reiatsu <span><input type="number" min="0" name="system.reiatsu.value" value="{{system.reiatsu.value}}" max="{{system.reiatsu.max}}" {{#unless editable}}disabled{{/unless}}> / {{system.reiatsu.max}}</span></label>
+      {{#if (eq system.reiatsu.value 0)}}<p>Exhausted</p>{{/if}}
+      {{#if editable}}<button type="button" data-action="rest">Full night’s rest</button>{{/if}}
+    </section>
+    <section>
+      <p>Initiative <strong>{{system.initiative}}</strong></p>
+      <p>Dodge difficulty <strong>{{dodge}}</strong></p>
+    </section>
+  </div>
+
+  <details open>
+    <summary>Attributes and combat</summary>
+    <div class="sns-stats">
+      {{#each attributes}}
+      <div class="sns-stat">
+        <button type="button" data-action="roll" data-group="attributes" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}}</button>
+        <input type="number" min="0" name="system.attributes.{{key}}" value="{{value}}" aria-label="{{label}}" {{#unless @root.editable}}disabled{{/unless}}>
+      </div>
+      {{/each}}
+    </div>
+    <div class="sns-stats">
+      {{#each combat}}
+      <div class="sns-stat">
+        <button type="button" data-action="roll" data-group="combat" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}}</button>
+        <input type="number" min="0" name="system.combatBase.{{key}}" value="{{base}}" aria-label="{{label}} base" title="Base value" {{#unless @root.editable}}disabled{{/unless}}>
+        <strong title="Total accuracy">{{value}}</strong>
+      </div>
+      {{/each}}
+    </div>
+  </details>
+
+  <details open>
+    <summary>Expertise</summary>
+    <div class="sns-stats">
+      {{#each expertise}}
+      <div class="sns-stat">
+        <button type="button" data-action="roll" data-group="expertise" data-key="{{key}}" {{#unless @root.editable}}disabled{{/unless}}>{{label}}</button>
+        <input type="number" min="0" name="system.expertiseRanks.{{key}}" value="{{rank}}" aria-label="{{label}} purchased ranks" title="Purchased ranks" {{#unless @root.editable}}disabled{{/unless}}>
+        <strong title="Total accuracy">{{value}}</strong>
+      </div>
+      {{/each}}
+    </div>
+  </details>
+
+  {{#each groups}}
+  <details open>
+    <summary>{{label}}</summary>
+    {{#if @root.editable}}<button type="button" data-action="addItem" data-type="{{type}}">Add {{label}}</button>{{/if}}
+    <ul class="sns-items">
+      {{#each items}}
+      <li data-item-id="{{id}}" draggable="true">
+        <img src="{{img}}" alt="">
+        <button class="sns-item-name" type="button" data-action="editItem" data-id="{{id}}">{{name}}</button>
+        {{#if action}}<span>{{action}}</span>{{/if}}
+        {{#if @root.editable}}
+          {{#if equipment}}<button type="button" data-action="equip" data-id="{{id}}">{{#if equipped}}Unequip{{else}}Equip{{/if}}</button>{{/if}}
+          {{#if usable}}<button type="button" data-action="useItem" data-id="{{id}}">Use</button>{{/if}}
+          <button type="button" data-action="deleteItem" data-id="{{id}}" aria-label="Remove {{name}}"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ul>
+  </details>
+  {{/each}}
+
+  <details>
+    <summary>Adjustments and notes</summary>
+    <div class="sns-fields">
+      <label>Vitality maximum modifier <input type="number" name="system.vitalityBonus" value="{{system.vitalityBonus}}" {{#unless editable}}disabled{{/unless}}></label>
+      <label>Reiatsu maximum modifier <input type="number" name="system.reiatsuBonus" value="{{system.reiatsuBonus}}" {{#unless editable}}disabled{{/unless}}></label>
+      <label>Initiative modifier <input type="number" name="system.initiativeBonus" value="{{system.initiativeBonus}}" {{#unless editable}}disabled{{/unless}}></label>
+    </div>
+    <label>Notes <textarea name="system.notes" rows="5" {{#unless editable}}disabled{{/unless}}>{{system.notes}}</textarea></label>
+  </details>
+</div>

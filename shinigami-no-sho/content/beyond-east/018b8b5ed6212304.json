@@ -1,0 +1,11 @@
+{
+  "_id": "018b8b5ed6212304",
+  "_key": "!items!018b8b5ed6212304",
+  "name": "Power of Faith",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Passive Templar sacred-weapon effect. Apply the supplement’s listed Strength, damage, accuracy, technique difficulty and movement bonuses.",
+    "source": "The World Beyond the East, p. 13"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_id": "60499122ca09d133",
+  "_key": "!items!60499122ca09d133",
+  "name": "Uganga",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Shamanic magic. Resolve the selected effect and any ritual requirements from the supplement.",
+    "source": "The World Beyond the East, p. 9"
+  }
+}

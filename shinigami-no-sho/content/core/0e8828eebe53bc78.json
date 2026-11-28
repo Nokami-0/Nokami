@@ -1,0 +1,11 @@
+{
+  "_id": "0e8828eebe53bc78",
+  "_key": "!items!0e8828eebe53bc78",
+  "name": "Arrancar",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Apply the Hollow section’s evolution and Arrancar rules, including Resurrección when eligible.",
+    "source": "Shinigami no Sho 4.5, p. 195"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "_id": "4d6f28b60eb9a7b5",
+  "_key": "!items!4d6f28b60eb9a7b5",
+  "name": "Divine Blessing",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Templar power that follows Schrift rules.",
+    "source": "The World Beyond the East, p. 14",
+    "prerequisites": "Divine Gift aptitude"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_id": "1885db25d593b570",
+  "_key": "!items!1885db25d593b570",
+  "name": "Dragon",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Spiritual beings with draconic powers. Use the supplement’s development rules.",
+    "source": "The World Beyond the East, p. 15"
+  }
+}

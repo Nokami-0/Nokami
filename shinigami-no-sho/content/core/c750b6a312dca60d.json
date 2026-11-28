@@ -1,0 +1,11 @@
+{
+  "_id": "c750b6a312dca60d",
+  "_key": "!items!c750b6a312dca60d",
+  "name": "Incapacitated",
+  "type": "condition",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "At 0 Vitality, the character is conscious but defenseless and unable to act.",
+    "source": "Shinigami no Sho 4.5, p. 256"
+  }
+}

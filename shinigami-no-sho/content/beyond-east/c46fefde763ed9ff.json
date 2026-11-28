@@ -1,0 +1,11 @@
+{
+  "_id": "c46fefde763ed9ff",
+  "_key": "!items!c46fefde763ed9ff",
+  "name": "Divine Gift",
+  "type": "aptitude",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "Templar aptitude required to purchase Divine Blessing.",
+    "source": "The World Beyond the East, p. 13"
+  }
+}

@@ -1,0 +1,17 @@
+<div class="sns-scroll">
+  <header class="sns-hero">
+    <img class="sns-portrait" src="{{item.img}}" alt="" {{#if editable}}data-action="editImage" data-edit="img"{{/if}}>
+    <div><p class="sns-title">{{kind}}</p><input name="name" value="{{item.name}}" aria-label="Entry name" {{#unless editable}}disabled{{/unless}}></div>
+  </header>
+  <div class="sns-fields">
+    <label>Level <input type="number" name="system.level" min="0" value="{{system.level}}" {{#unless editable}}disabled{{/unless}}></label>
+    <label>Action <select name="system.action" {{#unless editable}}disabled{{/unless}}>{{selectOptions actions selected=system.action}}</select></label>
+    <label>Reiatsu cost <input type="number" name="system.cost" min="0" value="{{system.cost}}" placeholder="Variable / —" {{#unless editable}}disabled{{/unless}}></label>
+    <label>Range <input name="system.range" value="{{system.range}}" {{#unless editable}}disabled{{/unless}}></label>
+    <label>Duration <input name="system.duration" value="{{system.duration}}" {{#unless editable}}disabled{{/unless}}></label>
+    {{#if equipment}}<label>Quantity <input type="number" min="0" name="system.quantity" value="{{system.quantity}}" {{#unless editable}}disabled{{/unless}}></label>{{/if}}
+  </div>
+  <label>Prerequisites <input name="system.prerequisites" value="{{system.prerequisites}}" {{#unless editable}}disabled{{/unless}}></label>
+  <label>Rules <textarea name="system.description" rows="7" {{#unless editable}}disabled{{/unless}}>{{system.description}}</textarea></label>
+  <label>Source <input name="system.source" value="{{system.source}}" {{#unless editable}}disabled{{/unless}}></label>
+</div>

@@ -1,0 +1,11 @@
+{
+  "_id": "e3f16bb611bf9d82",
+  "_key": "!items!e3f16bb611bf9d82",
+  "name": "Zanpakutō (Sealed)",
+  "type": "equipment",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "Record the chosen sealed weapon’s qualities and weapon statistics in this entry.",
+    "source": "Shinigami no Sho 4.5, p. 111"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "_id": "8a1cc2d242a6439e",
+  "_key": "!items!8a1cc2d242a6439e",
+  "name": "Anticipate",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Reaction. Use Read Movement in an opposed check against the attack.",
+    "source": "Shinigami no Sho 4.5, p. 253",
+    "action": "Reaction"
+  }
+}

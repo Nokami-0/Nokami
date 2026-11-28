@@ -1,0 +1,11 @@
+{
+  "_id": "df77d8b57f516653",
+  "_key": "!items!df77d8b57f516653",
+  "name": "Ulinzi",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Healing power. Its healing is halved in combat and increases by 1 per power level outside combat. It can also heal an amputated limb under the supplement rules.",
+    "source": "The World Beyond the East, p. 10"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_id": "edf6a1c21ee06842",
+  "_key": "!items!edf6a1c21ee06842",
+  "name": "Exhaustion from Reiatsu Loss",
+  "type": "condition",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "At 0 Reiatsu, the character is exhausted until they recover at least 1 Reiatsu.",
+    "source": "Shinigami no Sho 4.5, p. 257"
+  }
+}

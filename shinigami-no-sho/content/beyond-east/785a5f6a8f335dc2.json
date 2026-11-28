@@ -1,0 +1,11 @@
+{
+  "_id": "785a5f6a8f335dc2",
+  "_key": "!items!785a5f6a8f335dc2",
+  "name": "Adze",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Spirits that feed on blood and souls. See the supplement for feeding and ancestry rules.",
+    "source": "The World Beyond the East, p. 11"
+  }
+}

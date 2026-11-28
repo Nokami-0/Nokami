@@ -1,0 +1,11 @@
+{
+  "_id": "515270c4aa11976e",
+  "_key": "!items!515270c4aa11976e",
+  "name": "Bankai",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "Advanced Zanpakutō release. Apply the selected form, activation requirements and effects.",
+    "source": "Shinigami no Sho 4.5, p. 117"
+  }
+}

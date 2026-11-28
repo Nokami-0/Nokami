@@ -1,0 +1,11 @@
+{
+  "_id": "ae9be6c9d0946246",
+  "_key": "!items!ae9be6c9d0946246",
+  "name": "Blut",
+  "type": "aptitude",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "Quincy circulate spiritual energy to enhance their offense or defense. Consult the Quincy section for levels and use restrictions.",
+    "source": "Shinigami no Sho 4.5, p. 222"
+  }
+}

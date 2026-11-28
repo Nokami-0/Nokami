@@ -1,0 +1,11 @@
+{
+  "_id": "2726c7cdbc49c0bc",
+  "_key": "!items!2726c7cdbc49c0bc",
+  "name": "Shunpo",
+  "type": "aptitude",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "Shinigami movement aptitude. Purchase its levels and apply movement effects and costs from the Skills chapter.",
+    "source": "Shinigami no Sho 4.5, p. 49"
+  }
+}

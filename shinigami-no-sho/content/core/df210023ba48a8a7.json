@@ -1,0 +1,11 @@
+{
+  "_id": "df210023ba48a8a7",
+  "_key": "!items!df210023ba48a8a7",
+  "name": "Quincy",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Quincy manipulate reishi and have their own equipment, abilities and power progression.",
+    "source": "Shinigami no Sho 4.5, p. 222"
+  }
+}

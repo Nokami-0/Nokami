@@ -1,0 +1,11 @@
+{
+  "_id": "2f6d2baad53efcd2",
+  "_key": "!items!2f6d2baad53efcd2",
+  "name": "Human and Fullbringer",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Fullbringers draw power from the souls of objects and have rules for developing their personal Fullbring.",
+    "source": "Shinigami no Sho 4.5, p. 209"
+  }
+}

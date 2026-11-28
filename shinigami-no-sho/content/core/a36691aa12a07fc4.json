@@ -1,0 +1,12 @@
+{
+  "_id": "a36691aa12a07fc4",
+  "_key": "!items!a36691aa12a07fc4",
+  "name": "Stabilize (Vigor)",
+  "type": "technique",
+  "img": "icons/svg/lightning.svg",
+  "system": {
+    "description": "A dying character can roll Vigor against difficulty 18 to stabilize.",
+    "source": "Shinigami no Sho 4.5, p. 256",
+    "action": "Reaction"
+  }
+}

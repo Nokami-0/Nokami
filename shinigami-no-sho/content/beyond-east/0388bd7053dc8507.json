@@ -1,0 +1,11 @@
+{
+  "_id": "0388bd7053dc8507",
+  "_key": "!items!0388bd7053dc8507",
+  "name": "Sacred Weapons",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Templar weapon power with exclusive effects described in the supplement.",
+    "source": "The World Beyond the East, p. 13"
+  }
+}

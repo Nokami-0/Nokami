@@ -1,0 +1,11 @@
+{
+  "_id": "51ce502e397ec43a",
+  "_key": "!items!51ce502e397ec43a",
+  "name": "Unconscious",
+  "type": "condition",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "At −1 through −10 Vitality from lethal damage, the character becomes unconscious.",
+    "source": "Shinigami no Sho 4.5, p. 256"
+  }
+}

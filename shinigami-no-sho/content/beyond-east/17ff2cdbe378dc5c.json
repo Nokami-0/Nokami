@@ -1,0 +1,11 @@
+{
+  "_id": "17ff2cdbe378dc5c",
+  "_key": "!items!17ff2cdbe378dc5c",
+  "name": "Shaman",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Human spirit practitioners who work with ancestral spirits. The supplement describes their societies and available powers.",
+    "source": "The World Beyond the East, p. 7"
+  }
+}

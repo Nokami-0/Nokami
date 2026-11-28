@@ -1,0 +1,60 @@
+{
+  "id": "shinigami-no-sho",
+  "title": "Shinigami no Sho",
+  "description": "Unofficial Foundry VTT adaptation of the English Shinigami no Sho rulebook and The World Beyond the East supplement. AI assisted with implementation.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "14"
+  },
+  "authors": [
+    {
+      "name": "Shinigami no Sho community adaptation"
+    }
+  ],
+  "esmodules": [
+    "scripts/system.mjs"
+  ],
+  "styles": [
+    "styles/system.css"
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {}
+    },
+    "Item": {
+      "power": {},
+      "technique": {},
+      "aptitude": {},
+      "equipment": {},
+      "condition": {},
+      "lineage": {}
+    }
+  },
+  "initiative": "1d8 + @initiative",
+  "primaryTokenAttribute": "vitality",
+  "secondaryTokenAttribute": "reiatsu",
+  "grid": {
+    "distance": 1,
+    "units": "m"
+  },
+  "packs": [
+    {
+      "name": "core",
+      "label": "Shinigami no Sho 4.5",
+      "path": "packs/core",
+      "type": "Item",
+      "system": "shinigami-no-sho"
+    },
+    {
+      "name": "beyond-east",
+      "label": "The World Beyond the East",
+      "path": "packs/beyond-east",
+      "type": "Item",
+      "system": "shinigami-no-sho"
+    }
+  ],
+  "url": "https://github.com/Nokami-0/Nokami/tree/main/shinigami-no-sho",
+  "manifest": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/shinigami-no-sho/system.json",
+  "download": "https://raw.githubusercontent.com/Nokami-0/Nokami/main/shinigami-no-sho/downloads/shinigami-no-sho-v0.1.0.zip"
+}

@@ -1,0 +1,11 @@
+{
+  "_id": "3ad50ff3bb968425",
+  "_key": "!items!3ad50ff3bb968425",
+  "name": "Dying",
+  "type": "condition",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "description": "At −11 through −20 Vitality from lethal damage, lose 2 Vitality per turn until stabilized. Use a Vigor check at difficulty 18 as a reaction, or a Medicine check at difficulty 16 as a standard action.",
+    "source": "Shinigami no Sho 4.5, p. 256"
+  }
+}

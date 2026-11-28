@@ -1,0 +1,11 @@
+{
+  "_id": "bc90437488ad5957",
+  "_key": "!items!bc90437488ad5957",
+  "name": "Hadō",
+  "type": "power",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "Destructive Kidō effects. Use the selected effect for action, range, duration and cost.",
+    "source": "Shinigami no Sho 4.5, p. 88"
+  }
+}

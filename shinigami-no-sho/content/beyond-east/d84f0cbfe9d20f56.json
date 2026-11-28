@@ -1,0 +1,11 @@
+{
+  "_id": "d84f0cbfe9d20f56",
+  "_key": "!items!d84f0cbfe9d20f56",
+  "name": "Templar",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Spiritual knights with sacred weapons. Apply the supplement’s restrictions when choosing their powers.",
+    "source": "The World Beyond the East, p. 13"
+  }
+}

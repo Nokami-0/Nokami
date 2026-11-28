@@ -1,0 +1,11 @@
+{
+  "_id": "2b8985d3ba3f8461",
+  "_key": "!items!2b8985d3ba3f8461",
+  "name": "Hollow",
+  "type": "lineage",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "description": "Hollows are corrupted spirits. Consult this section for Hollow development and forms.",
+    "source": "Shinigami no Sho 4.5, p. 195"
+  }
+}
