@@ -1,3 +1,4 @@
+import {tailedBeasts} from './tailed-beasts.mjs';
 import {suien} from './suien.mjs';
 import {hanzaki} from './hanzaki.mjs';
 import {kotohime} from './kotohime.mjs';
@@ -325,6 +326,7 @@ async function buildBossBestiary(basicJutsu) {
  if (!clanResponse.ok) throw Error(`Could not load clan abilities (HTTP ${clanResponse.status}).`);
  const clanCatalog = await clanResponse.json();
  const templates = [
+  ...tailedBeasts(SYS),
   {actor:ghostSamurai, folderName:'Land of Birds'},
   {actor:lordSagi(SYS), folderName:'Land of Birds'},
   {actor:samuraiCaptain, folderName:'Land of Iron'},
