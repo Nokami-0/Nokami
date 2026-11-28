@@ -33,7 +33,7 @@ import {villageTraining} from './village-training.mjs';
 import {shinnoBase, shinnoRevival} from './shinno.mjs';
 import {samuraiCaptain} from './samurai-captain.mjs';
 import {anbuOperatives} from './anbu-operatives.mjs';
-import {villageBasicTechniques, villageSpecialists, villageLoadoutItems} from './village-techniques.mjs';
+import {villageBasicTechniques, villageSpecialists, villageLoadoutItems, villageLoreNinpou} from './village-techniques.mjs';
 import {fubukiKakuyoku, mizoreFuyukuma, karenbana, nadareRoga, kongo} from './film-mercenaries.mjs';
 import {ishidate, previousPetrifyingTouch} from "./ishidate.mjs";
 import {dotoKazahana} from "./doto-kazahana.mjs";
@@ -381,12 +381,12 @@ async function buildBossBestiary(basicJutsu) {
   const profile = {
    ...actor,
    system:{...actor.system, pericias:{...actor.system.pericias, ...training.skills}},
-   items:[...actor.items, ...loadout, ...missingItems(actor, training.items)]
+   items:[...actor.items, ...loadout, ...missingItems(actor, [...training.items, ...villageLoreNinpou(id, actor, ninpou)])]
   };
   const specialist = id.startsWith('village-specialist:');
   const additions = specialist || id === 'suna-anbu' || id === 'land-of-iron-samurai-captain'
    ? profile.items
-   : [...loadout, ...profile.items.filter(item => item.type === 'aptidao')];
+   : [...loadout, ...actor.items.filter(item => item.type === 'aptidao')];
   const tokenName = tokenArtReplacements.has(id) ? `${id}${['kiri-hunter-nin', 'suna-anbu', 'konoha-anbu', 'ranke'].includes(id) ? '-card' : '-film'}` : id;
   return {id, actor: specialist ? profile : withTokenArt(profile, ['kotohime', 'konoha-anbu-elite'].includes(id) ? null : tokenName), folderName, loadout:additions};
  });
@@ -406,8 +406,11 @@ async function buildBossBestiary(basicJutsu) {
  const loadoutUpdates = templates.flatMap(({id, loadout}) => {
   const current = existing.get(id);
   if (!current) return [];
-  const items = missingItems(current, loadout);
-  const skills = skillUpdates(villageTraining(id, current).skills);
+  const training = villageTraining(id, current);
+  const candidates = [...loadout, ...training.items, ...villageLoreNinpou(id, current, ninpou)];
+  const items = missingItems(current, candidates).filter((item, index, all) =>
+   all.findIndex(other => other.type === item.type && other.name.toLowerCase() === item.name.toLowerCase()) === index);
+  const skills = skillUpdates(training.skills);
   return items.length || Object.keys(skills).length ? [{current, items, skills}] : [];
  });
  const poisonUpdates = templates.flatMap(({id, actor}) => {

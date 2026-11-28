@@ -75,6 +75,34 @@ const basicTraining = {
   'sora': ['Kawarimi No Jutsu', 'Kinobori']
 };
 
+const signatureNinpou = {
+  kujaku: ['fuuton', 'Wind', 'repel', 'Wind Return', 'Wield both Fujaku Hishō Shōken blades. Use the catalog Repel rules for this adaptation.'],
+  gitai: ['doton', 'Earth', 'tremor', 'Earth Ninpou — Tremor', 'This tabletop option reflects Gitai’s ground-shaking Earth Release.']
+};
+
+export function villageLoreNinpou(id, actor, ninpou) {
+  const training = signatureNinpou[id];
+  if (!training) return [];
+  const [element, label, effect, name, note] = training;
+  const rule = ninpou.find(item => item.id === `effect:${element}:${effect}`);
+  const spirit = actor.system.atributos?.esp?.valor ?? 0;
+  const chakra = actor.system.energias?.chakra?.max ?? 0;
+  if (!rule || spirit < rule.level || chakra < rule.level) return [];
+  return [ninpouItem(rule, label, name, note)];
+}
+
+function ninpouItem(rule, label, name = `${label} Ninpou — ${rule.name.split(' — ').at(-1)}`, note = '') {
+  const {level, element} = rule;
+  const source = `${rule.sourceBook}, pp. ${rule.sourcePages}.`;
+  return {
+    name, type:'poder', img:'icons/svg/book.svg',
+    system:{
+      tipo:'Ninpou', elemento:element, nivelUsado:level, custoChakra:level, custo:`${level} Chakra`,
+      descricao:[note, rule.description, source, 'Spend the listed Chakra using the sheet, then resolve the effect using the normal Ninpou rules.'].filter(Boolean).join('\n\n')
+    }
+  };
+}
+
 export function villageLoadoutItems(id, village, basicJutsu, ninpou) {
   const isSpecialist = id.startsWith('village-specialist:');
   const basics = isSpecialist
@@ -85,12 +113,5 @@ export function villageLoadoutItems(id, village, basicJutsu, ninpou) {
   const [element, label, effect] = training;
   const rule = ninpou.find(item => item.id === `effect:${element}:${effect}`);
   if (!rule) throw Error(`Missing ${label} Ninpou effect: ${effect}`);
-  const level = rule.level;
-  return [...basics, {
-    name:`${label} Ninpou — ${rule.name.split(' — ').at(-1)}`, type:'poder', img:'icons/svg/book.svg',
-    system:{
-      tipo:'Ninpou', elemento:element, nivelUsado:level, custoChakra:level, custo:`${level} Chakra`,
-      descricao:`${rule.description}\n\nBasic Book 4.1b, pp. ${rule.sourcePages}. Spend the listed Chakra using the sheet, then resolve the effect using the normal Ninpou rules.`
-    }
-  }];
+  return [...basics, ninpouItem(rule, label)];
 }

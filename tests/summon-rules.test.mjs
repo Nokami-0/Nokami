@@ -7,7 +7,7 @@ const rows=JSON.parse(fs.readFileSync(new URL('../integrated/data/sns-kuchiyose-
 globalThis.Hooks={once(){},on(){}};globalThis.fetch=async()=>({ok:true,json:async()=>rows});
 const {buildKuchiyoseTemplate}=await import('../module/kuchiyose-engine.js');
 test('all species contain verified skills, attacks, power choices and individually readable ability cards',()=>{
- assert.equal(rows.filter(r=>!r.specialSummon).length,29);
+ assert.equal(rows.filter(r=>!r.specialSummon).length,30);
  for(const row of rows.filter(r=>!r.specialSummon)){
   assert.equal(row.verifiedRevision,2,row.name);assert.ok(row.skills.length>0,row.name);assert.ok(row.aptitudes.length>0,row.name);assert.ok(row.attackList.length>0,row.name);assert.ok(row.powerOptions,row.name);
   for(const skill of row.skills.split(','))assert.ok(skillKey(skill),row.name+': '+skill);
