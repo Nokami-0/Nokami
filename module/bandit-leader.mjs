@@ -36,3 +36,17 @@ export const banditLeader = {
     }
   }]
 };
+
+export function banna(systemId) {
+  const actor = structuredClone(banditLeader);
+  actor.name = 'Banna';
+  actor.prototypeToken.name = actor.name;
+  actor.flags = {[systemId]: {bestiaryBoss: 'banna'}};
+  actor.system.cabecalho = {nome: actor.name, nc: 6, patente: 'Bandit', filiacao: 'Bandits'};
+  actor.system.databook.biografia = '<p>A petty thief who impersonates Naruto Uzumaki. His tabletop stats use the roadside bandit profile. His club uses the standard Mace profile.</p><p>Token artwork credit: JEJESZ 777 (signature on supplied art).</p>';
+  actor.items.push({
+    name: 'Hidden Leaf Forehead Protector', type: 'equipamento', img: 'icons/svg/item-bag.svg',
+    system: {quantidade: 1, descricao: 'Part of Banna’s Naruto disguise.'}
+  });
+  return actor;
+}

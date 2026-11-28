@@ -40,7 +40,7 @@ import {dotoKazahana} from "./doto-kazahana.mjs";
 import {sora} from "./sora.mjs";
 import {kazuma} from "./kazuma.mjs";
 import {konohaMedic} from "./konoha-medic.mjs";
-import {banditLeader} from "./bandit-leader.mjs";
+import {banditLeader,banna} from "./bandit-leader.mjs";
 import {ranmaru} from "./ranmaru.mjs";
 import {kaguyaClanLeader} from './kaguya-clan-leader.mjs';
 import {ghostSamurai} from './ghost-samurai.mjs';
@@ -331,6 +331,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:kaguyaClanLeader, folderName:'Kirigakure'},
   {actor:ranmaru, folderName:'Kurosuki Family'},
   {actor:banditLeader, folderName:'Bandits'},
+  {actor:banna(SYS), folderName:'Bandits'},
   {actor:shinnoBase, folderName:'Land of the Sky'},
   {actor:shinnoRevival, folderName:'Land of the Sky'},
   {actor:kazuma, folderName:'Twelve Guardian Ninja'},
