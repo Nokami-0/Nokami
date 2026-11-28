@@ -1,4 +1,5 @@
 import {suien} from './suien.mjs';
+import {hanzaki} from './hanzaki.mjs';
 import {kotohime} from './kotohime.mjs';
 import {zori} from './zori.mjs';
 import {foolishBrothers} from './foolish-brothers.mjs';
@@ -351,6 +352,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:suzumebachi(SYS), folderName:'Iwagakure'},
   {actor:kamikiri(SYS), folderName:'Otogakure'},
   {actor:kotohime(SYS), folderName:'Otogakure'},
+  {actor:hanzaki(SYS), folderName:'Otogakure'},
   {actor:genyumaru(SYS), folderName:'Otogakure'},
   {actor:gato(SYS), folderName:'Land of Waves'},
   {actor:waraji(SYS), folderName:'Land of Waves'},
