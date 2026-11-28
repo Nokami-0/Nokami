@@ -6,6 +6,7 @@ import {jiga} from './jiga.mjs';
 import {lordSagi} from './lord-sagi.mjs';
 import {renga} from './renga.mjs';
 import {michiruTsuki} from './michiru-tsuki.mjs';
+import {kujaku} from './kujaku.mjs';
 import {suiko} from './suiko.mjs';
 import {ryugan} from './ryugan.mjs';
 import {waraji} from './waraji.mjs';
@@ -356,6 +357,7 @@ async function buildBossBestiary(basicJutsu) {
   {actor:zori(SYS), folderName:'Land of Waves'},
   {actor:ryugan(SYS), folderName:'Takumi Village'},
   {actor:suiko(SYS), folderName:'Takumi Village'},
+  {actor:kujaku(SYS), folderName:'Takumi Village'},
   {actor:gatsu(SYS), folderName:'Land of Stone'},
   {actor:sazanami(SYS), folderName:'Independent Shinobi'},
   {actor:directorMakino(SYS), folderName:'Land of Fire'},
