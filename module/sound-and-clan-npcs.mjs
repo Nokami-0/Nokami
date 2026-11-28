@@ -122,7 +122,20 @@ ${fireCannon.description}`,2)]
         jutsu('Face Copying Technique','Kedōin Clan Technique',4,'Personal. After observing a person up close, spend one minute to copy their appearance, scent and chakra signature for up to three days. Use Disguise if someone challenges the impersonation through knowledge of the person or conversation. The technique does not copy memories, skills or jutsu. Tabletop adaptation.')]
     }
   ];
-  return entries.map(({id,name,folder,clan,attrs,skills,basics,items}) => {
+  const hyuga = entries.find(entry => entry.id === 'hyuga-shinobi');
+  entries.push({
+    id:'hyuga-elder', name:'Elder of the Hyūga Clan', folder:hyuga.folder, clan:hyuga.clan,
+    nc:10, rank:'Clan Elder',
+    biography:'<p>A main-branch elder of the Hyūga clan. This tabletop NPC emphasizes perception and experience, with the same Byakugan and Gentle Fist rules as the Hyūga Shinobi.</p>',
+    attrs:{for:5,des:8,agi:7,per:10,vig:6,int:9,esp:9},
+    skills:{procurar:5,prontidao:5,concentracao:5},
+    basics:['Kai (Release)','Kawarimi No Jutsu'],
+    items:[
+      ...hyuga.items.filter(item => item.type !== 'equipamento' || item.name === 'Unarmed Strike'),
+      gear('Hyūga Clan Robes')
+    ]
+  });
+  return entries.map(({id,name,folder,clan,attrs,skills,basics,items,nc=8,rank='Specialist',biography}) => {
     const vitality = 50 + 3 * attrs.vig;
     const chakra = 10 + 3 * attrs.esp;
     return {
@@ -131,11 +144,11 @@ ${fireCannon.description}`,2)]
         name,type:'personagem',prototypeToken:{name,actorLink:false,disposition:-1},
         flags:{[systemId]:{bestiaryBoss:id}},
         system:{
-          cabecalho:{nome:name,nc:8,patente:'Specialist',filiacao:folder,cla:clan ?? ''},
+          cabecalho:{nome:name,nc,patente:rank,filiacao:folder,cla:clan ?? ''},
           atributos:Object.fromEntries(Object.entries(attrs).map(([key,valor]) => [key,{valor}])),
           pericias:Object.fromEntries(Object.entries(skills).map(([key,pontos]) => [key,{pontos}])),
           energias:{vitalidade:{value:vitality,max:vitality},chakra:{value:chakra,max:chakra}},
-          databook:{biografia:'<p>Full NPC. Use the listed rules for Chakra costs and resolve equipment, aptitude and technique effects manually.</p>'}
+          databook:{biografia:biography ?? '<p>Full NPC. Use the listed rules for Chakra costs and resolve equipment, aptitude and technique effects manually.</p>'}
         },
         items:[...items,...basicJutsu.filter(item => basics.includes(item.name))]
       }
