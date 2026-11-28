@@ -1132,6 +1132,43 @@
     "techniques": "Venomous Stingers"
   },
   {
+    "name": "Queen Bee",
+    "group": "Kamizuru — Bee Kuchiyose",
+    "source": "Giant Bee rules — Kamizuru Clan Revised (155AMU)",
+    "page": "3–4",
+    "key_attributes": "Agility, Dexterity, Spirit",
+    "skills": "Acrobatics, Athletics, Escape, Stealth, Search, Alertness, Tracking, Poisoncraft, Flight",
+    "powers": "Hachiton",
+    "notes": "Suzumebachi’s Queen Bee is a named tabletop variant of the Giant Bee. It uses the same Hachiton and venom rules, with Giant Bee summoning requirements. Thousand Bee Stings remains a swarm technique.",
+    "prerequisite": "Bee Kuchiyose8",
+    "status": "species",
+    "stats_status": "Verified species template, not a named fixed NPC. Allocate 12 attribute points at NC4, +6 per further NC; ordinary minimum/maximum attribute rules apply (Intelligence0 species redistribute that minimum). Choose three free allowed aptitudes with prerequisites. Only one power; floor(NC/2) power points.",
+    "token_file": "summons/kamizuru-queen-bee.webp",
+    "attackList": [
+      {
+        "name": "Sting",
+        "damageType": "Piercing",
+        "category": "natural"
+      }
+    ],
+    "powerOptions": "Hachiton",
+    "verifiedRevision": 2,
+    "contract": "Bees",
+    "maximumQuantity": 1,
+    "innateAbilities": [
+      {
+        "name": "Venomous Stingers",
+        "rules": "Natural venom needs no purchased materials. Summon Poisoncraft determines resistance and available poisons. Switching venom takes about24hours; extraction requires the summoner’s Beekeeper aptitude.",
+        "prerequisites": ""
+      }
+    ],
+    "aptitudes": "Acuity, Attack in Motion, Specialist, Intuition, Reflexes, Mobility, Opportunist, Quick Retreat, Fighter, Chemist",
+    "attacks_description": "Sting (Piercing)",
+    "commonPenalty": -3,
+    "techniques": "Venomous Stingers",
+    "fixedSize": "huge"
+  },
+  {
     "name": "Doki (Club)",
     "group": "Additional Kuchiyose",
     "source": "Hijutsu Volume 2 (2026)",
